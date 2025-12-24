@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=780, initial-scale=0.5">
+    <!-- Viewport importante para controlar el zoom y escala -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Flota de Vehículos por MMA | Bomberos</title>
     <style>
         :root {
@@ -22,6 +23,9 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-text-size-adjust: 100%; /* Previene el ajuste automático de texto en iOS */
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
         }
 
         body {
@@ -31,18 +35,36 @@
             padding: 20px;
             color: #333;
             line-height: 1.6;
+            /* Forzar el tamaño para que se vea como escritorio */
+            min-width: 1000px;
+            overflow-x: auto;
         }
 
         .container {
             max-width: 1200px;
+            min-width: 1000px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
             padding: 30px;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
+            /* Escalado para móvil */
+            transform-origin: top center;
+        }
+
+        /* Estilo específico para iframe/embebido */
+        body.iframe-mode {
+            padding: 10px;
+            min-width: 980px;
+            background: #f0f2f5;
+        }
+        
+        body.iframe-mode .container {
+            transform: scale(0.95);
+            transform-origin: top center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         .container::before {
@@ -115,6 +137,7 @@
             overflow: hidden;
             min-width: 140px;
             justify-content: center;
+            -webkit-tap-highlight-color: transparent;
         }
         
         .legend-item::before {
@@ -252,8 +275,8 @@
 
         .vehicle-item {
             display: block;
-            padding: 5px 15px;
-            margin: 10px;
+            padding: 12px 15px;
+            margin: 8px;
             margin-left: 0;
             border-radius: 10px;
             font-size: 1.05em;
@@ -262,7 +285,6 @@
             border: 2px solid transparent;
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(5px);
         }
 
         .vehicle-item::before {
@@ -276,13 +298,9 @@
             opacity: 0.5;
         }
 
-        .vehicle-item.hidden,
-        .vehicle-item-R.hidden,
-        .vehicle-item-V.hidden,
-        .vehicle-item-B.hidden,
-        .vehicle-item-A.hidden,
-        .vehicle-item-G.hidden {
-            display: none;
+        /* Regla mejorada para ocultar todos los tipos de vehículos */
+        [class*="vehicle-item"].hidden {
+            display: none !important;
         }
         
         .vehicle-item.highlight {
@@ -406,7 +424,19 @@
             opacity: 0.9;
         }
 
+        /* ELIMINAR TODOS LOS MEDIA QUERIES PARA MÓVIL */
+        /* Esto forzará la vista de escritorio siempre */
         
+        /* Solo mantener esto para iframes muy pequeños */
+        @media (max-width: 500px) {
+            body.iframe-mode {
+                min-width: 480px;
+            }
+            
+            body.iframe-mode .container {
+                transform: scale(0.85);
+            }
+        }
 
         /* Animación de carga */
         @keyframes fadeIn {
@@ -446,7 +476,7 @@
 <div class="container">
     <div class="bg-decoration"></div>
     
-    <h2>🚒 Vehículos por MMA</h2>
+    <h2>🚒 Flota de Vehículos por MMA</h2>
 
     <div class="legend">
         <span class="legend-item extincion" data-filter="R">
@@ -477,11 +507,11 @@
     </div>
 
     <div class="compact-grid">
-        <!-- El contenido de las tarjetas se mantiene igual -->
         <!-- MMA: 750 kg -->
         <div class="mma-card" data-mma="750">
             <div class="mma-header">
-                <div class="mma-value">750 kg</div>              
+                <div class="mma-value">750 kg</div>
+                
             </div>
             <div class="vehicle-item" data-category="E">
                 <span class="vehicle-icon">⛽</span>
@@ -1023,6 +1053,11 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Detectar si estamos en un iframe
+        if (window.self !== window.top) {
+            document.body.classList.add('iframe-mode');
+        }
+        
         const legendItems = document.querySelectorAll('.legend-item:not(#show-all)');
         const showAllBtn = document.getElementById('show-all');
         const filterInfo = document.getElementById('filter-info');
@@ -1044,12 +1079,12 @@
                 filterInfo.classList.remove('hidden');
                 const activeLegendItem = document.querySelector(`.legend-item[data-filter="${filterCategory}"]`);
                 const categoryName = activeLegendItem ? activeLegendItem.textContent.trim() : '';
-                filterInfo.textContent = ` Mostrando solo vehículos de: ${categoryName}`;
+                filterInfo.textContent = `🚨 Mostrando solo vehículos de: ${categoryName}`;
             } else {
                 filterInfo.classList.add('hidden');
             }
             
-            // Filtrar vehículos
+            // Filtrar vehículos - USAR SELECTOR POR ATRIBUTO data-category
             const allVehicles = document.querySelectorAll('[data-category]');
             const allCards = document.querySelectorAll('.mma-card');
             
@@ -1100,6 +1135,12 @@
                     showAllBtn.innerHTML = '<span>👁️</span> Mostrar Todos';
                 }
             });
+            
+            // Añadir touch events para mejor soporte táctil
+            item.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                this.click();
+            }, { passive: false });
         });
         
         // Botón "Mostrar Todos"
@@ -1108,6 +1149,12 @@
             legendItems.forEach(item => item.classList.remove('active'));
             this.innerHTML = '<span>👁️</span> Mostrar Todos';
         });
+        
+        // Añadir touch event para "Mostrar Todos"
+        showAllBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            this.click();
+        }, { passive: false });
         
         // Inicializar
         applyFilter(null);
@@ -1120,6 +1167,24 @@
                 countElement.textContent = vehicleCount;
             }
         });
+        
+        // Ajustar para iframes pequeños
+        function adjustForIframe() {
+            if (window.self !== window.top) {
+                const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+                
+                if (viewportWidth < 600) {
+                    document.body.style.minWidth = '480px';
+                    document.querySelector('.container').style.transform = 'scale(0.8)';
+                } else if (viewportWidth < 800) {
+                    document.querySelector('.container').style.transform = 'scale(0.9)';
+                }
+            }
+        }
+        
+        // Ajustar al cargar y al redimensionar
+        adjustForIframe();
+        window.addEventListener('resize', adjustForIframe);
     });
 </script>
 
