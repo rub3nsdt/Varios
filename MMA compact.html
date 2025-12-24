@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Compacta de Vehículos por MMA</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.6em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .legend-item:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .legend-item.active {
+            opacity: 1;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: 2px solid white;
+        }
+        
+        .extincion { background-color: #f78686 !important; color: #333; }
+        .salvamento { background-color: #388e3ca9 !important; color: #333; }
+        .apoyo { background-color: #1976d298 !important; color: #333; }
+        .especial { background-color: #d088f1af !important; color: #333; }
+        .mando { background-color: #fbc12d6c !important; color: #333; }
+        .auxiliar { background-color: #75757586 !important; color: #333; }
+        
+        .show-all-btn {
+            background-color: #2c3e50 !important;
+            color: white !important;
+            margin-left: 10px;
+        }
+
+        .compact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .mma-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid #2c3e50;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .mma-card.hidden {
+            display: none;
+        }
+
+        .mma-card.highlight {
+            border-left-width: 6px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .mma-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .mma-value {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+
+        .mma-unit {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+
+        .vehicle-item {
+            display: block;
+            padding: 6px 10px;
+            margin: 5px 0;
+            border-radius: 6px;
+            font-size: 1.05em;
+            transition: all 0.3s ease;
+            opacity: 1;
+        }
+
+        /* Con esto: */
+        .vehicle-item.hidden,
+        .vehicle-item-R.hidden,
+        .vehicle-item-V.hidden,
+        .vehicle-item-B.hidden,
+        .vehicle-item-A.hidden,
+        .vehicle-item-G.hidden {
+            display: none;
+        }
+
+        
+        .vehicle-item.highlight {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .vehicle-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .vehicle-icon {
+            margin-right: 8px;
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
+        /* Colores originales de los vehículos */
+        .vehicle-item { background-color: #d088f156; border: 1px solid #e9ecef; font-size: 1.05em;}
+        .vehicle-item-R { background-color: #fc9a9abb; border: 1px solid #e9ecef; font-size: 1.05em;}
+        .vehicle-item-V { background-color: #c7ffb9b6; border: 1px solid #e9ecef; font-size: 1.05em;}
+        .vehicle-item-B { background-color: #ace5ff98; border: 1px solid #e9ecef; font-size: 1.05em;}
+        .vehicle-item-A { background-color: #f8f1b4a9; border: 1px solid #e9ecef; font-size: 1.05em;}
+        .vehicle-item-G { background-color: #c2c2c28e; border: 1px solid #e9ecef; font-size: 1.05em; }
+        
+        .filter-info {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            font-weight: 500;
+            color: #1565c0;
+        }
+        
+        .filter-info.hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .compact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .legend {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Vehículos por MMA</h2>
+
+    <div class="legend">
+        <span class="legend-item extincion" data-filter="R">Extinción</span>
+        <span class="legend-item salvamento" data-filter="V">Salvamento/Altura</span>
+        <span class="legend-item apoyo" data-filter="B">Agua</span>
+        <span class="legend-item especial" data-filter="E">Especiales</span>
+        <span class="legend-item mando" data-filter="A">Grúa</span>
+        <span class="legend-item auxiliar" data-filter="G">Ligeros/Bus</span>
+        <span class="legend-item show-all-btn" id="show-all">Mostrar Todos</span>
+    </div>
+    
+    <div class="filter-info hidden" id="filter-info">
+        Mostrando solo vehículos de la categoría seleccionada
+    </div>
+
+    <div class="compact-grid">
+        <!-- MMA: 750 kg -->
+        <div class="mma-card" data-mma="750">
+            <div class="mma-header">
+                <div class="mma-value">750 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">⛽</span>
+                <span class="vehicle-name">Remolque Cisterna de Gasolina</span>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🌬️</span>
+                <span class="vehicle-name">Remolque Ventilador Gran Caudal</span>
+            </div>
+        </div>
+
+        <!-- MMA: 1.400 kg -->
+        <div class="mma-card" data-mma="1400">
+            <div class="mma-header">
+                <div class="mma-value">1.400 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🛢️</span>
+                <span class="vehicle-name">Remolque Cisterna de Gasoil</span>
+            </div>
+        </div>
+
+        <!-- MMA: 1.600 kg -->
+        <div class="mma-card" data-mma="1600">
+            <div class="mma-header">
+                <div class="mma-value">1.600 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🚤</span>
+                <span class="vehicle-name">Remolque de Embarcación</span>
+            </div>
+        </div>
+
+        <!-- MMA: 1.750 kg -->
+        <div class="mma-card" data-mma="1750">
+            <div class="mma-header">
+                <div class="mma-value">1.750 kg</div>
+            </div>
+            <div class="vehicle-item-G" data-category="G">
+                <span class="vehicle-icon">🚗</span>
+                <span class="vehicle-name">Coche Mov. Internos (sin rotativos)</span>
+            </div>
+            <div class="vehicle-item-G" data-category="G">
+                <span class="vehicle-icon">🚔</span>
+                <span class="vehicle-name">Coche Mov. Internos (con rotativos) RENT</span>
+            </div>
+        </div>
+
+        <!-- MMA: 2.000 kg -->
+        <div class="mma-card" data-mma="2000">
+            <div class="mma-header">
+                <div class="mma-value">2.000 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">⚡</span>
+                <span class="vehicle-name">Remolque Grupo Electrógeno</span>
+            </div>
+        </div>
+
+        <!-- MMA: 2.220 kg -->
+        <div class="mma-card" data-mma="2220">
+            <div class="mma-header">
+                <div class="mma-value">2.220 kg</div>
+            </div>
+            <div class="vehicle-item-G" data-category="G">
+                <span class="vehicle-icon">🚔</span>
+                <span class="vehicle-name">Coche Mov. Internos (con rotativos) PROP</span>
+            </div>
+        </div>
+
+        <!-- MMA: 2.500 kg -->
+        <div class="mma-card" data-mma="2500">
+            <div class="mma-header">
+                <div class="mma-value">2.500 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🧼</span>
+                <span class="vehicle-name">Remolque de Espumógeno</span>
+            </div>
+        </div>
+
+        <!-- MMA: 2.950 kg -->
+        <div class="mma-card" data-mma="2950">
+            <div class="mma-header">
+                <div class="mma-value">2.950 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🚜</span>
+                <span class="vehicle-name">Minicargadora</span>
+            </div>
+        </div>
+
+        <!-- MMA: 2.990 kg -->
+        <div class="mma-card" data-mma="2990">
+            <div class="mma-header">
+                <div class="mma-value">2.990 kg</div>
+            </div>
+            <div class="vehicle-item-G" data-category="G">
+                <span class="vehicle-icon">🚔</span>
+                <span class="vehicle-name">Coche de Mandos (con rotativos)</span>
+            </div>
+        </div>
+
+        <!-- MMA: 3.050 kg -->
+        <div class="mma-card" data-mma="3050">
+            <div class="mma-header">
+                <div class="mma-value">3.050 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🐝</span>
+                <span class="vehicle-name">Furgoneta de Enjambres</span>
+            </div>
+            <div class="vehicle-item-G" data-category="G">
+                <span class="vehicle-icon">🚐</span>
+                <span class="vehicle-name">Furgoneta Transporte Personal y Carga Media</span>
+            </div>
+        </div>
+
+        <!-- MMA: 3.200 kg -->
+        <div class="mma-card" data-mma="3200">
+            <div class="mma-header">
+                <div class="mma-value">3.200 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🚑</span>
+                <span class="vehicle-name">Furgoneta de Múltiples Víctimas</span>
+            </div>
+            <div class="vehicle-item-G" data-category="G">
+                <span class="vehicle-icon">🚐</span>
+                <span class="vehicle-name">Furgoneta Transporte Personal y Carga Grande 1753 a 1759</span>
+            </div>
+        </div>
+
+        <!-- MMA: 3.500 kg -->
+        <div class="mma-card" data-mma="3500">
+            <div class="mma-header">
+                <div class="mma-value">3.500 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🐕‍🦺</span>
+                <span class="vehicle-name">Furgón de Búsqueda Técnica</span>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🧱</span>
+                <span class="vehicle-name">Furgoneta BREC</span>
+            </div>
+            <div class="vehicle-item-G" data-category="G">
+                <span class="vehicle-icon">🚐</span>
+                <span class="vehicle-name">Furgoneta Transporte Personal y Carga Grande 1656 a 1663</span>
+            </div>
+        </div>
+
+        <!-- MMA: 5.000 kg -->
+        <div class="mma-card" data-mma="5000">
+            <div class="mma-header">
+                <div class="mma-value">5.000 kg</div>
+            </div>
+            <div class="vehicle-item-V" data-category="V">
+                <span class="vehicle-icon">🚒</span>
+                <span class="vehicle-name">FC30</span>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">📡</span>
+                <span class="vehicle-name">Furgoneta de Centro de Mando</span>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🤿</span>
+                <span class="vehicle-name">Furgoneta de Salvamento Acuático</span>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🍔</span>
+                <span class="vehicle-name">Furgoneta de Avituallamiento</span>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">☢️</span>
+                <span class="vehicle-name">Furgón de Detección RBQ</span>
+            </div>
+            <div class="vehicle-item-G" data-category="G">
+                <span class="vehicle-icon">📦</span>
+                <span class="vehicle-name">Furgón de Carga (Tamaño Grande)</span>
+            </div>
+        </div>
+
+        <!-- MMA: 5.500 kg -->
+        <div class="mma-card" data-mma="5500">
+            <div class="mma-header">
+                <div class="mma-value">5.500 kg</div>
+            </div>
+            <div class="vehicle-item-B" data-category="B">
+                <span class="vehicle-icon">🚛</span>
+                <span class="vehicle-name">DSAG 1387 y 1389</span>
+            </div>
+        </div>
+
+        <!-- MMA: 7.200 kg -->
+        <div class="mma-card" data-mma="7200">
+            <div class="mma-header">
+                <div class="mma-value">7.200 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">👕</span>
+                <span class="vehicle-name">Furgoneta de Vestuario UALI</span>
+            </div>
+        </div>
+
+        <!-- MMA: 8.680 kg -->
+        <div class="mma-card" data-mma="8680">
+            <div class="mma-header">
+                <div class="mma-value">8.680 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🚜</span>
+                <span class="vehicle-name">Retropala</span>
+            </div>
+        </div>
+
+        <!-- MMA: 8.800 kg -->
+        <div class="mma-card" data-mma="8800">
+            <div class="mma-header">
+                <div class="mma-value">8.800 kg</div>
+            </div>
+            <div class="vehicle-item-V" data-category="V">
+                <span class="vehicle-icon">🚒</span>
+                <span class="vehicle-name">FC60</span>
+            </div>
+        </div>
+
+        <!-- MMA: 9.500 kg -->
+        <div class="mma-card" data-mma="9500">
+            <div class="mma-header">
+                <div class="mma-value">9.500 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🌬️</span>
+                <span class="vehicle-name">Electroventilador 1359</span>
+            </div>
+        </div>
+
+        <!-- MMA: 9.800 kg -->
+        <div class="mma-card" data-mma="9800">
+            <div class="mma-header">
+                <div class="mma-value">9.800 kg</div>
+            </div>
+            <div class="vehicle-item-R" data-category="R">
+                <span class="vehicle-icon">🚒</span>
+                <span class="vehicle-name">BUL de renting</span>
+            </div>
+            <div class="vehicle-item-B" data-category="B">
+                <span class="vehicle-icon">🚛</span>
+                <span class="vehicle-name">DSAG 1723 al 1725</span>
+            </div>
+        </div>
+
+        <!-- MMA: 10.000 kg -->
+        <div class="mma-card" data-mma="10000">
+            <div class="mma-header">
+                <div class="mma-value">10.000 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🌬️</span>
+                <span class="vehicle-name">Electroventilador 1718</span>
+            </div>
+            <div class="vehicle-item-G" data-category="G">
+                <span class="vehicle-icon">🚌</span>
+                <span class="vehicle-name">Microbús</span>
+            </div>
+        </div>
+
+        <!-- MMA: 10.335 kg -->
+        <div class="mma-card" data-mma="10335">
+            <div class="mma-header">
+                <div class="mma-value">10.335 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🏗️</span>
+                <span class="vehicle-name">Apiladora</span>
+            </div>
+        </div>
+
+        <!-- MMA: 12.000 kg -->
+        <div class="mma-card" data-mma="12000">
+            <div class="mma-header">
+                <div class="mma-value">12.000 kg</div>
+            </div>
+            <div class="vehicle-item-R" data-category="R">
+                <span class="vehicle-icon">🚒</span>
+                <span class="vehicle-name">BUL de propiedad</span>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🪵</span>
+                <span class="vehicle-name">Vehículos de Apeos</span>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🚛</span>
+                <span class="vehicle-name">Rampa de Carga 1363</span>
+            </div>
+        </div>
+
+        <!-- MMA: 13.000 kg -->
+        <div class="mma-card" data-mma="13000">
+            <div class="mma-header">
+                <div class="mma-value">13.000 kg</div>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🏚️</span>
+                <span class="vehicle-name">Salvamento y Desescombro</span>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🚿</span>
+                <span class="vehicle-name">Descontaminación</span>
+            </div>
+        </div>
+
+        <!-- MMA: 13.200 kg -->
+        <div class="mma-card" data-mma="13200">
+            <div class="mma-header">
+                <div class="mma-value">13.200 kg</div>
+            </div>
+            <div class="vehicle-item-R" data-category="R">
+                <span class="vehicle-icon">🚛</span>
+                <span class="vehicle-name">COBO</span>
+            </div>
+        </div>
+
+        <!-- MMA: 13.500 kg -->
+        <div class="mma-card" data-mma="13500">
+            <div class="mma-header">
+                <div class="mma-value">13.500 kg</div>
+            </div>
+            <div class="vehicle-item-V" data-category="V">
+                <span class="vehicle-icon">🚒</span>
+                <span class="vehicle-name">Es27</span>
+            </div>
+        </div>
+
+        <!-- MMA: 14.000 kg -->
+        <div class="mma-card" data-mma="14000">
+            <div class="mma-header">
+                <div class="mma-value">14.000 kg</div>
+            </div>
+            <div class="vehicle-item-B" data-category="B">
+                <span class="vehicle-icon">🌲</span>
+                <span class="vehicle-name">Bomba Forestal</span>
+            </div>
+        </div>
+
+        <!-- MMA: 15.000 kg -->
+        <div class="mma-card" data-mma="15000">
+            <div class="mma-header">
+                <div class="mma-value">15.000 kg</div>
+            </div>
+            <div class="vehicle-item-R" data-category="R">
+                <span class="vehicle-icon">🚒</span>
+                <span class="vehicle-name">BUP</span>
+            </div>
+            <div class="vehicle-item-V" data-category="V">
+                <span class="vehicle-icon">🧗</span>
+                <span class="vehicle-name">EA32 y ES32</span>
+            </div>
+            <div class="vehicle-item-A" data-category="A">
+                <span class="vehicle-icon">🚨</span>
+                <span class="vehicle-name">Vehículos de Emergencias</span>
+            </div>
+        </div>
+
+        <!-- MMA: 16.000 kg -->
+        <div class="mma-card" data-mma="16000">
+            <div class="mma-header">
+                <div class="mma-value">16.000 kg</div>
+            </div>
+            <div class="vehicle-item-V" data-category="V">
+                <span class="vehicle-icon">🧗</span>
+                <span class="vehicle-name">EA</span>
+            </div>
+            <div class="vehicle-item-B" data-category="B">
+                <span class="vehicle-icon">🚒</span>
+                <span class="vehicle-name">BRP</span>
+            </div>
+            <div class="vehicle-item-B" data-category="B">
+                <span class="vehicle-icon">💧</span>
+                <span class="vehicle-name">Tanques Pequeños</span>
+            </div>
+        </div>
+
+        <!-- MMA: 18.000 kg -->
+        <div class="mma-card" data-mma="18000">
+            <div class="mma-header">
+                <div class="mma-value">18.000 kg</div>
+            </div>
+            <div class="vehicle-item-B" data-category="B">
+                <span class="vehicle-icon">💧</span>
+                <span class="vehicle-name">Tanques Medianos</span>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🚛</span>
+                <span class="vehicle-name">Rampa de Carga 1364</span>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🦾</span>
+                <span class="vehicle-name">Polibrazo Cabina Simple</span>
+            </div>
+            <div class="vehicle-item" data-category="E">
+                <span class="vehicle-icon">🦾</span>
+                <span class="vehicle-name">Polibrazo Cabina Doble</span>
+            </div>
+        </div>
+
+        <!-- MMA: 19.000 kg -->
+        <div class="mma-card" data-mma="19000">
+            <div class="mma-header">
+                <div class="mma-value">19.000 kg</div>
+            </div>
+            <div class="vehicle-item-G" data-category="G">
+                <span class="vehicle-icon">🚌</span>
+                <span class="vehicle-name">Autobús</span>
+            </div>
+        </div>
+
+        <!-- MMA: 26.000 kg -->
+        <div class="mma-card" data-mma="26000">
+            <div class="mma-header">
+                <div class="mma-value">26.000 kg</div>
+            </div>
+            <div class="vehicle-item-V" data-category="V">
+                <span class="vehicle-icon">🧗</span>
+                <span class="vehicle-name">ES55</span>
+            </div>
+            <div class="vehicle-item-B" data-category="B">
+                <span class="vehicle-icon">💧</span>
+                <span class="vehicle-name">Tanques Grandes</span>
+            </div>
+            <div class="vehicle-item-A" data-category="A">
+                <span class="vehicle-icon">🏗️</span>
+                <span class="vehicle-name">Grúa 35t (Luna)</span>
+            </div>
+        </div>
+
+        <!-- MMA: 35.000 kg -->
+        <div class="mma-card" data-mma="35000">
+            <div class="mma-header">
+                <div class="mma-value">35.000 kg</div>
+            </div>
+            <div class="vehicle-item-V" data-category="V">
+                <span class="vehicle-icon">🧗</span>
+                <span class="vehicle-name">BR53</span>
+            </div>
+        </div>
+
+        <!-- MMA: 36.000 kg -->
+        <div class="mma-card" data-mma="36000">
+            <div class="mma-header">
+                <div class="mma-value">36.000 kg</div>
+            </div>
+            <div class="vehicle-item-A" data-category="A">
+                <span class="vehicle-icon">🏗️</span>
+                <span class="vehicle-name">Grúa 50t (Grove)</span>
+            </div>
+        </div>
+
+        <!-- MMA: 40.000 kg -->
+        <div class="mma-card" data-mma="40000">
+            <div class="mma-header">
+                <div class="mma-value">40.000 kg</div>
+            </div>
+            <div class="vehicle-item-V" data-category="V">
+                <span class="vehicle-icon">🧗</span>
+                <span class="vehicle-name">BR70</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const legendItems = document.querySelectorAll('.legend-item:not(#show-all)');
+    const showAllBtn = document.getElementById('show-all');
+    const filterInfo = document.getElementById('filter-info');
+    let currentFilter = null;
+
+    function applyFilter(filterCategory) {
+        currentFilter = filterCategory;
+        
+        // Actualizar leyenda
+        legendItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('data-filter') === filterCategory) {
+                item.classList.add('active');
+            }
+        });
+        
+        // Mostrar/ocultar mensaje
+        if (filterCategory) {
+            filterInfo.classList.remove('hidden');
+            filterInfo.textContent = `Mostrando solo vehículos de la categoría: ${document.querySelector(`.legend-item[data-filter="${filterCategory}"]`).textContent}`;
+        } else {
+            filterInfo.classList.add('hidden');
+        }
+        
+        // Filtrar vehículos
+        const allVehicles = document.querySelectorAll('[data-category]');
+        const allCards = document.querySelectorAll('.mma-card');
+        
+        allVehicles.forEach(vehicle => {
+            const vehicleCategory = vehicle.getAttribute('data-category');
+            
+            if (!filterCategory || vehicleCategory === filterCategory) {
+                vehicle.classList.remove('hidden');
+                vehicle.classList.add('highlight');
+            } else {
+                vehicle.classList.add('hidden');
+                vehicle.classList.remove('highlight');
+            }
+        });
+        
+        // Mostrar/ocultar tarjetas basado en si tienen vehículos visibles
+        allCards.forEach(card => {
+            const hasVisibleVehicles = card.querySelector('[data-category]:not(.hidden)');
+            
+            if (hasVisibleVehicles) {
+                card.classList.remove('hidden');
+                card.classList.add('highlight');
+            } else {
+                card.classList.add('hidden');
+                card.classList.remove('highlight');
+            }
+        });
+    }
+    
+    // Event listeners para leyenda
+    legendItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const filterCategory = this.getAttribute('data-filter');
+            
+            // Si ya está activo, desactivar
+            if (currentFilter === filterCategory) {
+                applyFilter(null);
+            } else {
+                applyFilter(filterCategory);
+            }
+        });
+    });
+    
+    // Botón "Mostrar Todos"
+    showAllBtn.addEventListener('click', function() {
+        applyFilter(null);
+        legendItems.forEach(item => item.classList.remove('active'));
+    });
+    
+    // Inicializar
+    applyFilter(null);
+});
+</script>
+
+</body>
+</html>
