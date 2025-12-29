@@ -626,7 +626,7 @@
             }
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 760px) {
             .hero-header h1 {
                 font-size: 2rem;
             }
@@ -677,6 +677,52 @@
                 align-self: flex-start;
             }
         }
+
+        @media (max-width: 760px) {
+    /* Reducir fuentes progresivamente */
+        html {
+            font-size: 14px;
+        }
+        
+        .hero-header h1 {
+            font-size: 1.5rem;
+        }
+        
+        .card-title-top {
+            font-size: 1.25rem;
+        }
+        
+        /* Simplificar layout */
+        .logo-container {
+            gap: 10px;
+        }
+        
+       
+        
+        .nav-item {
+            min-width: 80px;
+            padding: 0.5rem;
+            font-size: 0.75rem;
+        }
+        
+        /* Ajustar espaciados */
+        .horizontal-cards-container {
+            gap: 1.5rem;
+        }
+        
+        .card-content {
+            padding: 1.25rem;
+        }
+        
+        /* Ajustar botones flotantes */
+        .floating-btn, .floating-btn-left {
+            width: 45px;
+            height: 45px;
+            font-size: 1.25rem;
+        }
+    }
+
+
     </style>
 </head>
 <body>
@@ -2332,23 +2378,13 @@
                         
                         <ul class="visual-list">
                             <li>Las Administraciones pueden proceder a la <strong>ejecución forzosa</strong> de actos administrativos previo apercibimiento ⚖️➡️🔨</li>
-                            <li>Requiere <strong>previo apercibimiento</strong> al obligado ⚠️</li>
                             <li><strong>Excepciones:</strong> No procede cuando:
                                 <ul class="nested-list">
                                     <li>Se suspenda la ejecución conforme a la Ley ⏸️</li>
                                     <li>La Constitución o Ley exijan intervención judicial 👨‍⚖️</li>
                                 </ul>
                             </li>
-                        </ul>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: linear-gradient(135deg, #2c3e50, #4a6491);">
-                                <i class="fas fa-balance-scale"></i>
-                            </div>
-                            <div>
-                                <strong>Intervención judicial:</strong> Cuando la Constitución o la Ley exijan la intervención de un órgano judicial, la Administración no podrá proceder a la ejecución forzosa por sí misma.
-                            </div>
-                        </div>
+                        </ul>                        
                     </div>
                     
                     <!-- Artículo 100 -->
@@ -2377,15 +2413,6 @@
                                 </ul>
                             </li>
                         </ul>
-                        
-                        <div class="tip-box">
-                            <div class="box-icon" style="background: linear-gradient(135deg, #00BCD4, #0097A7);">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <div>
-                                <strong>Principio de proporcionalidad:</strong> La ejecución forzosa debe realizarse respetando siempre el principio de proporcionalidad, eligiendo el medio menos gravoso para el administrado.
-                            </div>
-                        </div>
                     </div>
                     
                     <!-- Artículo 101 -->
@@ -2399,19 +2426,8 @@
                         
                         <ul class="visual-list">
                             <li>Para el cobro de <strong>cantidades líquidas</strong> se seguirá el procedimiento de apremio 💰➡️🏦</li>
-                            <li>El procedimiento se regula por las <strong>normas específicas</strong> de apremio 📜</li>
                             <li><strong>Límite importante:</strong> No puede imponerse obligación pecuniaria que no esté establecida por <strong>norma de rango legal</strong> 🚫📜</li>
-                            <li>Garantiza que las deudas sean <strong>ciertas, líquidas y exigibles</strong> ✅</li>
-                        </ul>
-                        
-                        <div class="warning-box">
-                            <div class="box-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div>
-                                <strong>Reserva de ley:</strong> En ningún caso podrá imponerse a los administrados una obligación pecuniaria que no estuviese establecida con arreglo a una norma de rango legal.
-                            </div>
-                        </div>
+                        </ul>                        
                     </div>
                     
                     <!-- Artículo 102 -->
@@ -2521,18 +2537,6 @@
                                     <li>De acuerdo con el <strong>procedimiento legalmente establecido</strong> 📜✅</li>
                                 </ul>
                             </li>
-                            <li>Busca evitar que los particulares obstaculicen la <strong>actuación administrativa legítima</strong> 🛡️🏛️</li>
-                            <li>Garantiza la <strong>eficacia de la Administración</strong> en el ejercicio de sus funciones ⚡</li>
-                        </ul>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: linear-gradient(135deg, #2c3e50, #3498db);">
-                                <i class="fas fa-gavel"></i>
-                            </div>
-                            <div>
-                                <strong>Vías alternativas:</strong> Los particulares afectados por actuaciones administrativas podrán recurrir a los recursos administrativos y contencioso-administrativos, pero no a las acciones posesorias.
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
