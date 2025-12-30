@@ -678,70 +678,49 @@
             }
         }
 
-/* Añade esto al final de tu CSS, después de las otras media queries */
         @media (max-width: 760px) {
-            body {
-                transform: scale(0.5);
-                transform-origin: top left;
-                width: 200vw;
-                height: 200vh;
-                overflow-x: auto;
-                position: relative;
-            }
-            
-            .container {
-                transform: scale(1);
-                width: 200%;
-            }
-            
-            .visual-nav {
-                transform: scale(1);
-                max-width: 200%;
-                position: relative;
-                top: 0;
-            }
-            
-            .hero-header {
-                border-radius: 15px;
-            }
-            
-            .horizontal-card {
-                margin: 1.5rem 0;
-            }
-            
-            .floating-btn, .floating-btn-left {
-                transform: scale(2);
-                z-index: 1000;
-            }
-            
-            .floating-btn {
-                right: 12px;
-                bottom: 12px;
-            }
-            
-            .floating-btn-left {
-                left: 12px;
-                bottom: 12px;
-            }
-            
-            .visual-footer {
-                margin-top: 2.5rem;
-                border-radius: 15px;
-            }
+    /* Reducir fuentes progresivamente */
+        html {
+            font-size: 12px;
         }
-
-        /* Ajuste adicional para pantallas muy pequeñas */
-        @media (max-width: 380px) {
-            body {
-                transform: scale(0.45);
-                width: 222vw;
-                height: 222vh;
-            }
-            
-            .floating-btn, .floating-btn-left {
-                transform: scale(2.2);
-            }
+        
+        .hero-header h1 {
+            font-size: 1.5rem;
         }
+        
+        .card-title-top {
+            font-size: 1.25rem;
+        }
+        
+        /* Simplificar layout */
+        .logo-container {
+            gap: 10px;
+        }
+        
+       
+        
+        .nav-item {
+            min-width: 80px;
+            padding: 0.5rem;
+            font-size: 0.75rem;
+        }
+        
+        /* Ajustar espaciados */
+        .horizontal-cards-container {
+            gap: 1.5rem;
+        }
+        
+        .card-content {
+            padding: 1.25rem;
+        }
+        
+        /* Ajustar botones flotantes */
+        .floating-btn, .floating-btn-left {
+            width: 45px;
+            height: 45px;
+            font-size: 1.25rem;
+        }
+    }
 
 
     </style>
