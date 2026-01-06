@@ -610,6 +610,186 @@
             font-size: 3rem;
             opacity: 0.1;
         }
+
+        /* Estilo para iconos en pasos de línea de tiempo */
+        .step-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Para la cuadrícula de ejemplos detallados */
+        .examples-grid.detailed {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .examples-grid.detailed .example-card {
+            padding: 1.2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid var(--color-info);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .examples-grid.detailed .example-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background: white;
+        }
+
+        .examples-grid.detailed .example-icon {
+            font-size: 1.8rem;
+            color: var(--color-info);
+            margin-bottom: 0.8rem;
+            text-align: center;
+        }
+
+        .examples-grid.detailed .example-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.3;
+        }
+
+        .examples-grid.detailed .example-card div:last-child {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        /* Estilos para ejemplos compactos */
+        .compact-examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .compact-example-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 0.8rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-info);
+            transition: all 0.3s ease;
+            min-height: 60px;
+        }
+
+        .compact-example-item:hover {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .compact-icon {
+            font-size: 1.2rem;
+            color: var(--color-info);
+            min-width: 24px;
+            text-align: center;
+            padding-top: 0.2rem;
+        }
+
+        .compact-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            flex: 1;
+        }
+
+        .compact-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .compact-desc {
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.2;
+        }
+
+        /* Responsividad para compact examples */
+        @media (max-width: 768px) {
+            .compact-examples-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 0.6rem;
+            }
+            
+            .compact-example-item {
+                padding: 0.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .compact-examples-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .compact-title {
+                font-size: 0.85rem;
+            }
+            
+            .compact-desc {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .examples-grid.detailed {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .examples-grid.detailed {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .examples-grid.detailed {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Estilo para listas de iconos dentro de las tarjetas de ejemplo */
+        .example-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.5rem;
+        }
+
+        .example-list li {
+            padding: 0.4rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .example-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-success);
+            font-weight: bold;
+        }
         
         /* Responsividad */
         @media (max-width: 992px) {
@@ -846,17 +1026,23 @@
                         
                         <div class="procedure-timeline">
                             <div class="timeline-step">
-                                <div class="step-number">a</div>
+                                <div class="step-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-landmark"></i>
+                                </div>
                                 <div class="step-title">Ingresos patrimoniales</div>
                                 <div style="font-size: 0.85rem;">Ingresos procedentes de su patrimonio y demás de derecho privado</div>
                             </div>
                             <div class="timeline-step">
-                                <div class="step-number">b</div>
+                                <div class="step-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                </div>
                                 <div class="step-title">Tributos propios</div>
                                 <div style="font-size: 0.85rem;">Tasas, contribuciones especiales e impuestos</div>
                             </div>
                             <div class="timeline-step">
-                                <div class="step-number">c</div>
+                                <div class="step-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
                                 <div class="step-title">Participaciones</div>
                                 <div style="font-size: 0.85rem;">En tributos del Estado y comunidades autónomas</div>
                             </div>
@@ -864,17 +1050,23 @@
                         
                         <div class="procedure-timeline">
                             <div class="timeline-step">
-                                <div class="step-number">d</div>
+                                <div class="step-icon" style="background: linear-gradient(135deg, #27ae60, #219653);">
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                </div>
                                 <div class="step-title">Subvenciones</div>
                                 <div style="font-size: 0.85rem;">Ayudas y transferencias</div>
                             </div>
                             <div class="timeline-step">
-                                <div class="step-number">e</div>
+                                <div class="step-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                                    <i class="fas fa-tag"></i>
+                                </div>
                                 <div class="step-title">Precios públicos</div>
                                 <div style="font-size: 0.85rem;">Contraprestaciones por servicios</div>
                             </div>
                             <div class="timeline-step">
-                                <div class="step-number">f</div>
+                                <div class="step-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
                                 <div class="step-title">Operaciones de crédito</div>
                                 <div style="font-size: 0.85rem;">Producto de préstamos y créditos</div>
                             </div>
@@ -882,12 +1074,16 @@
                         
                         <div class="procedure-timeline">
                             <div class="timeline-step">
-                                <div class="step-number">g</div>
+                                <div class="step-icon" style="background: linear-gradient(135deg, #2c3e50, #4a6491);">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
                                 <div class="step-title">Multas y sanciones</div>
                                 <div style="font-size: 0.85rem;">En el ámbito de sus competencias</div>
                             </div>
                             <div class="timeline-step">
-                                <div class="step-number">h</div>
+                                <div class="step-icon" style="background: linear-gradient(135deg, #9E9E9E, #757575);">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
                                 <div class="step-title">Otras prestaciones</div>
                                 <div style="font-size: 0.85rem;">Demás prestaciones de derecho público</div>
                             </div>
@@ -934,7 +1130,7 @@
                             <div class="section-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
                                 <i class="fas fa-balance-scale"></i>
                             </div>
-                            <span>Artículo 20: Hecho imponible</span>
+                            <span>Artículo 20: Hecho imponible - Definición general</span>
                         </div>
                         
                         <ul class="visual-list">
@@ -948,67 +1144,397 @@
                                 <i class="fas fa-info-circle"></i>
                             </div>
                             <div>
-                                <strong>No se considera voluntaria</strong> la solicitud o recepción cuando venga impuesta por disposiciones legales o reglamentarias, o cuando los bienes, servicios o actividades requeridos sean imprescindibles para la vida privada o social del solicitante.
+                                <strong>Condiciones para considerar prestación como tasa:</strong> Cuando los servicios no sean de solicitud o recepción voluntaria para los administrados, o cuando no se presten o realicen por el sector privado.
+                            </div>
+                        </div>
+                            
+                        <div class="emphasis-box">
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <i class="fas fa-list-ol" style="font-size: 2rem; color: #FF9800;"></i>
+                                <div>
+                                    <h4 style="margin-bottom: 0.5rem; color: #E65100;">23 supuestos específicos</h4>
+                                    <p>Las entidades locales podrán establecer tasas por cualquier supuesto de utilización privativa, y en particular por los siguientes:</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <h4>📋 Ejemplos de utilización privativa del dominio público (Art. 20.3):</h4>
-                        <div class="examples-grid">
-                            <div class="example-card">
-                                <div class="example-icon"><i class="fas fa-truck-loading"></i></div>
-                                <div class="example-title">Sacas de materiales</div>
-                                <div>Sacas de arena y otros materiales de construcción en terrenos de dominio público local</div>
+                        <div class="compact-examples-grid">
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-mountain"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>a)</strong> Sacas de materiales</span>
+                                    <span class="compact-desc">Sacas de arena y otros materiales de construcción en terrenos públicos</span>
+                                </div>
                             </div>
-                            <div class="example-card">
-                                <div class="example-icon"><i class="fas fa-road"></i></div>
-                                <div class="example-title">Apertura de zanjas</div>
-                                <div>Apertura de zanjas, calicatas y calas en terrenos de uso público local</div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-water"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>b)</strong> Pozos y cisternas</span>
+                                    <span class="compact-desc">Construcción de pozos de nieve o cisternas para aguas pluviales</span>
+                                </div>
                             </div>
-                            <div class="example-card">
-                                <div class="example-icon"><i class="fas fa-parking"></i></div>
-                                <div class="example-title">Entradas de vehículos</div>
-                                <div>Entradas de vehículos a través de aceras y reservas de vía pública para aparcamiento exclusivo</div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-swimming-pool"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>c)</strong> Balnearios</span>
+                                    <span class="compact-desc">Balnearios y disfrute de aguas no consistente en uso común</span>
+                                </div>
                             </div>
-                            <div class="example-card">
-                                <div class="example-icon"><i class="fas fa-store"></i></div>
-                                <div class="example-title">Instalación de quioscos</div>
-                                <div>Instalación de quioscos en la vía pública</div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-tint"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>d)</strong> Vertidos</span>
+                                    <span class="compact-desc">Vertido y desagüe de canalones en terrenos de uso público</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-layer-group"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>e)</strong> Subsuelo</span>
+                                    <span class="compact-desc">Ocupación del subsuelo de terrenos de uso público local</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-digging"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>f)</strong> Zanjas</span>
+                                    <span class="compact-desc">Apertura de zanjas, calicatas y calas para instalaciones</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-pallet"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>g)</strong> Mercancías</span>
+                                    <span class="compact-desc">Ocupación con mercancías, materiales, escombros, vallas</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-truck-loading"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>h)</strong> Entradas vehículos</span>
+                                    <span class="compact-desc">Entradas de vehículos a través de aceras para aparcamiento</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-door-closed"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>i)</strong> Instalaciones subterráneas</span>
+                                    <span class="compact-desc">Instalación de rejas, lucernarios que ocupen suelo o subsuelo</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-archway"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>j)</strong> Ocupación aérea</span>
+                                    <span class="compact-desc">Ocupación del vuelo con terrazas, balcones, marquesinas</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-bolt"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>k)</strong> Tendidos</span>
+                                    <span class="compact-desc">Tendidos, tuberías y galerías para conducciones de energía</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-chair"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>l)</strong> Mobiliario urbano</span>
+                                    <span class="compact-desc">Ocupación con mesas, sillas, tribunas con finalidad lucrativa</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-store"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>m)</strong> Quioscos</span>
+                                    <span class="compact-desc">Instalación de quioscos en la vía pública</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-utensils"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>n)</strong> Puestos ambulantes</span>
+                                    <span class="compact-desc">Instalación de puestos, barracas, casetas de venta</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-store-alt"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>ñ)</strong> Escaparates</span>
+                                    <span class="compact-desc">Portadas, escaparates y vitrinas</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-car-battery"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>o)</strong> Rodaje vehículos</span>
+                                    <span class="compact-desc">Rodaje y arrastre de vehículos no gravados por IVTM</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-horse"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>p)</strong> Tránsito ganado</span>
+                                    <span class="compact-desc">Tránsito de ganados sobre vías públicas</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-gopuram"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>q)</strong> Muros contención</span>
+                                    <span class="compact-desc">Muros de contención en vías públicas locales</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-gas-pump"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>r)</strong> Depósitos combustible</span>
+                                    <span class="compact-desc">Depósitos y distribuidores de combustible en terreno público</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-ad"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>s)</strong> Anuncios</span>
+                                    <span class="compact-desc">Instalación de anuncios ocupando terreno público</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-road"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>t)</strong> Construcción carreteras</span>
+                                    <span class="compact-desc">Construcción de atarjeas y pasos sobre cunetas</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-parking"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>u)</strong> Estacionamiento</span>
+                                    <span class="compact-desc">Estacionamiento en zonas determinadas de municipios</span>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    
+                    <!-- Sección de ejemplos compactos para Artículo 20.4 -->                       
+                        <div class="emphasis-box">
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <i class="fas fa-tasks" style="font-size: 2rem; color: #FF9800;"></i>
+                                <div>
+                                    <h4 style="margin-bottom: 0.5rem; color: #E65100;">22 servicios específicos</h4>
+                                    <p>Las entidades locales podrán establecer tasas por prestación de servicios o realización de actividades administrativas, y en particular por:</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <h4>🏛️ Ejemplos de prestación de servicios (Art. 20.4):</h4>
-                        <div class="examples-grid">
-                            <div class="example-card">
-                                <div class="example-icon"><i class="fas fa-file-alt"></i></div>
-                                <div class="example-title">Documentos administrativos</div>
-                                <div>Documentos que expidan o de que entiendan las Administraciones o autoridades locales</div>
+                        <div class="compact-examples-grid">
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>a)</strong> Documentos</span>
+                                    <span class="compact-desc">Documentos que expidan las Administraciones locales a instancia de parte</span>
+                                </div>
                             </div>
-                            <div class="example-card">
-                                <div class="example-icon"><i class="fas fa-license"></i></div>
-                                <div class="example-title">Licencias urbanísticas</div>
-                                <div>Otorgamiento de las licencias urbanísticas exigidas por la legislación del suelo</div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-shield-alt"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>b)</strong> Uso de escudo</span>
+                                    <span class="compact-desc">Autorización para utilizar el escudo de la entidad local en distintivos</span>
+                                </div>
                             </div>
-                            <div class="example-card">
-                                <div class="example-icon"><i class="fas fa-fire-extinguisher"></i></div>
-                                <div class="example-title">Servicios de incendios</div>
-                                <div>Servicios de prevención y extinción de incendios, salvamentos y protección</div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-taxi"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>c)</strong> Licencias taxi</span>
+                                    <span class="compact-desc">Otorgamiento de licencias de autotaxis y vehículos de alquiler</span>
+                                </div>
                             </div>
-                            <div class="example-card">
-                                <div class="example-icon"><i class="fas fa-graduation-cap"></i></div>
-                                <div class="example-title">Enseñanzas especiales</div>
-                                <div>Enseñanzas especiales en establecimientos docentes de las entidades locales</div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-tree"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>d)</strong> Guardería rural</span>
+                                    <span class="compact-desc">Guardería rural</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-bullhorn"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>e)</strong> Voz pública</span>
+                                    <span class="compact-desc">Voz pública</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-eye"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>f)</strong> Vigilancia especial</span>
+                                    <span class="compact-desc">Vigilancia especial de establecimientos que lo soliciten</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-calendar-alt"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>g)</strong> Servicios eventos</span>
+                                    <span class="compact-desc">Servicios por celebración de espectáculos públicos, grandes transportes</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-drafting-compass"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>h)</strong> Licencias urbanísticas</span>
+                                    <span class="compact-desc">Otorgamiento de licencias urbanísticas o actividades de control</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-store"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>i)</strong> Licencias apertura</span>
+                                    <span class="compact-desc">Otorgamiento de licencias de apertura de establecimientos</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-car"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>j)</strong> Inspección vehículos</span>
+                                    <span class="compact-desc">Inspección de vehículos, calderas, motores, transformadores</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-fire-extinguisher"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>k)</strong> Servicios incendios</span>
+                                    <span class="compact-desc">Servicios de prevención y extinción de incendios, salvamentos</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-vial"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>l)</strong> Inspección sanitaria</span>
+                                    <span class="compact-desc">Servicios de inspección sanitaria y análisis</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-spray-can"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>m)</strong> Sanidad preventiva</span>
+                                    <span class="compact-desc">Desinfectación, desinsectación, desratización a domicilio</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-hospital"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>n)</strong> Asistencia hospitalaria</span>
+                                    <span class="compact-desc">Asistencias y estancias en hospitales, clínicas, ambulancias</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-home"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>ñ)</strong> Residencias</span>
+                                    <span class="compact-desc">Asistencias en residencias de ancianos, guarderías, albergues</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-swimmer"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>o)</strong> Instalaciones deportivas</span>
+                                    <span class="compact-desc">Casas de baños, piscinas, instalaciones deportivas</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-monument"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>p)</strong> Servicios fúnebres</span>
+                                    <span class="compact-desc">Cementerios locales, conducción de cadáveres</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-broadcast-tower"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>q)</strong> Instalaciones servicio</span>
+                                    <span class="compact-desc">Colocación de tuberías, cables en postes o galerías</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-water"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>r)</strong> Alcantarillado</span>
+                                    <span class="compact-desc">Servicios de alcantarillado y depuración de aguas</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-trash-alt"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>s)</strong> Residuos</span>
+                                    <span class="compact-desc">Recogida de residuos sólidos urbanos, tratamiento</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-tint"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>t)</strong> Abastecimientos</span>
+                                    <span class="compact-desc">Distribución de agua, gas, electricidad y otros</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-utensils"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>u)</strong> Mataderos y mercados</span>
+                                    <span class="compact-desc">Servicio de matadero, lonjas, mercados, inspección</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>v)</strong> Enseñanza especial</span>
+                                    <span class="compact-desc">Enseñanzas especiales en establecimientos docentes</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-landmark"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>w)</strong> Visitas culturales</span>
+                                    <span class="compact-desc">Visitas a museos, bibliotecas, monumentos, zoológicos</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-columns"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>x)</strong> Publicidad</span>
+                                    <span class="compact-desc">Utilización de columnas y carteles para anuncios</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-road"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>y)</strong> Enarenado</span>
+                                    <span class="compact-desc">Enarenado de vías públicas a solicitud particular</span>
+                                </div>
+                            </div>
+                            <div class="compact-example-item">
+                                <div class="compact-icon"><i class="fas fa-traffic-light"></i></div>
+                                <div class="compact-content">
+                                    <span class="compact-title"><strong>z)</strong> Regulación tráfico</span>
+                                    <span class="compact-desc">Actividades singulares de regulación y control del tráfico</span>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="tip-box">
-                            <div class="box-icon" style="background: linear-gradient(135deg, #00BCD4, #0097A7);">
-                                <i class="fas fa-ring"></i>
+                        <div class="info-box">
+                            <div class="box-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                                <i class="fas fa-heart"></i>
                             </div>
                             <div>
                                 <strong>Matrimonios civiles:</strong> Los Ayuntamientos podrán establecer una tasa para la celebración de los matrimonios en forma civil.
                             </div>
                         </div>
-                    </div>
+                        
+                        <ul class="visual-list" style="margin-bottom: 40px;">
+                            <li>Las contraprestaciones económicas establecidas coactivamente por prestación de servicios públicos realizados de forma directa mediante personificación privada o gestión indirecta tendrán la condición de <strong>prestaciones patrimoniales de carácter público no tributario</strong> 💰</li>
+                            <li>Se incluyen las exigidas por explotación de obras o prestación de servicios en régimen de <strong>concesión, sociedades de economía mixta, entidades públicas empresariales, sociedades de capital íntegramente público y demás fórmulas de Derecho privado</strong> 🏛️</li>
+                            <li>Estas contraprestaciones se regularán mediante <strong>ordenanza</strong> previo informe preceptivo de las Administraciones Públicas competentes 📜</li>
+                        </ul>
+
+
                     
                     <div class="section">
                         <div class="section-title">
