@@ -915,6 +915,119 @@
             margin-bottom: 0.5rem;
             color: #333;
         }
+
+        /* Estilos para box conceptual compacto */
+        .compact-concept-box {
+            background: linear-gradient(135deg, #f9f0ff, #f3e5f5);
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #9b59b6;
+            box-shadow: 0 4px 10px rgba(155, 89, 182, 0.1);
+        }
+
+        .compact-concept-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .compact-concept-icon {
+            font-size: 1.8rem;
+            color: #9b59b6;
+            background: rgba(155, 89, 182, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .compact-concept-title h4 {
+            color: #333;
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+
+        .compact-concept-title p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .compact-reasons-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .compact-reason {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 8px;
+            min-width: 100px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .compact-reason:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+        }
+
+        .compact-reason i {
+            font-size: 1.4rem;
+            color: #9b59b6;
+        }
+
+        .compact-reason span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .compact-reasons-grid {
+                gap: 0.6rem;
+            }
+            
+            .compact-reason {
+                min-width: 90px;
+                padding: 0.6rem;
+            }
+            
+            .compact-reason i {
+                font-size: 1.2rem;
+            }
+            
+            .compact-reason span {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .compact-reasons-grid {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .compact-reason {
+                flex-direction: row;
+                justify-content: flex-start;
+                min-width: auto;
+                gap: 1rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -1145,6 +1258,42 @@
                             </div>
                             <div>
                                 <strong>Condiciones para considerar prestación como tasa:</strong> Cuando los servicios no sean de solicitud o recepción voluntaria para los administrados, o cuando no se presten o realicen por el sector privado.
+                            </div>
+                        </div>
+
+                        <div class="compact-concept-box">
+                            <div class="compact-concept-header">
+                                <div class="compact-concept-icon">
+                                    <i class="fas fa-link"></i>
+                                </div>
+                                <div class="compact-concept-title">
+                                    <h4>Relación con el sujeto pasivo</h4>
+                                    <p>La tasa aplica cuando la actividad es motivada por el sujeto por:</p>
+                                </div>
+
+
+                            <div class="compact-reasons-grid" style="margin-left: auto;">
+                                <div class="compact-reason">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Seguridad</span>
+                                </div>
+                                <div class="compact-reason">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <span>Salubridad</span>
+                                </div>
+                                <div class="compact-reason">
+                                    <i class="fas fa-tint"></i>
+                                    <span>Abastecimiento</span>
+                                </div>
+                                <div class="compact-reason">
+                                    <i class="fas fa-building"></i>
+                                    <span>Orden urbanístico</span>
+                                </div>
+                                <div class="compact-reason">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                    <span>Otras razones</span>
+                                </div>
+                            </div>
                             </div>
                         </div>
                             
