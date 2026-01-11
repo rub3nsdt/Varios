@@ -759,6 +759,196 @@
             gap: 10px;
         }
 
+        /* Añade esto al final del CSS, antes de los media queries */
+
+        /* Estilos para subsecciones anidadas */
+        .subsection {
+            margin-left: 0;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .subsection-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subsection-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: var(--gradient-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        /* Para destacar puntos importantes */
+        .key-point {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 4px solid var(--color-secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+
+        .key-point strong {
+            color: var(--color-secondary);
+        }
+
+        /* Para listas dentro de listas */
+        .visual-list .nested-list {
+            list-style: none;
+            padding-left: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .visual-list .nested-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .visual-list .nested-list li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-secondary);
+            font-weight: bold;
+            background: none;
+            width: auto;
+            height: auto;
+            top: 0.5rem;
+        }
+
+        /* Para tablas de datos */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .data-table th {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            background: white;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover td {
+            background-color: #f8f9fa;
+        }
+
+        /* Para los elementos simplificados del padrón */
+        .simplified-data-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem;
+            justify-content: center;
+        }
+
+        .data-item {
+            flex: 1 1 250px;
+            max-width: 300px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 3px solid var(--color-secondary);
+            font-size: 0.9rem;
+        }
+
+        .data-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            background: var(--gradient-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        /* Para bloques más pequeños de derechos/deberes */
+        .compact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem;
+        }
+
+        .compact-card {
+            flex: 1 1 250px;
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--color-secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .compact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+        }
+
+        .compact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 0 auto 0.8rem;
+            font-size: 1rem;
+        }
+
+        .compact-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            color: #333;
+        }
+
+        .compact-desc {
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.3;
+        }
+
+
     </style>
 </head>
 <body>
@@ -842,7 +1032,7 @@
     <main class="container">
         <div class="horizontal-cards-container">
             
-            <!-- EL MUNICIPIO -->
+            <!-- EL MUNICIPIO - VERSIÓN COMPLETA -->
             <div class="horizontal-card" id="municipio">
                 <div class="card-header-top" style="background: var(--gradient-primary);">
                     <div class="card-title-container">
@@ -851,146 +1041,322 @@
                         </div>
                         <div>
                             <div class="card-title-top">🏘️ EL MUNICIPIO</div>
-                            <div class="card-subtitle-top">Artículos 11-18 - Elementos, territorio, población y padrón municipal</div>
+                            <div class="card-subtitle-top">Artículos 11-18 - La entidad local básica de la organización territorial del Estado</div>
                         </div>
                     </div>
-                    <div class="article-number-badge">Art. 11-18</div>
+                    <div class="article-number-badge">Art. 11-18 LBRL</div>
                 </div>
                 
                 <div class="card-content">
+                    <!-- ARTÍCULO 11 -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--gradient-primary);">
                                 <i class="fas fa-cube"></i>
                             </div>
-                            <span>Artículo 11: Concepto y elementos del municipio</span>
+                            <span>Artículo 11: Concepto y elementos esenciales del municipio</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Definición legal:</strong> El Municipio es la entidad local básica de la organización territorial del Estado.
                         </div>
                         
                         <ul class="visual-list">
-                            <li>El Municipio es la <strong>entidad local básica</strong> de la organización territorial del Estado</li>
-                            <li>Tiene <strong>personalidad jurídica y plena capacidad</strong> para cumplir sus fines</li>
-                            <li>Elementos del Municipio: <span class="highlight-number">1</span>) territorio, <span class="highlight-number">2</span>) población y <span class="highlight-number">3</span>) organización</li>
+                            <li><strong>Personalidad jurídica propia</strong> y plena capacidad para el cumplimiento de sus fines</li>
+                            <li><strong>Tres elementos constitutivos:</strong>
+                                <ul class="nested-list">
+                                    <li><strong>Territorio:</strong> Término municipal donde ejerce competencias</li>
+                                    <li><strong>Población:</strong> Conjunto de vecinos inscritos en el padrón</li>
+                                    <li><strong>Organización:</strong> Gobierno y administración municipal (Ayuntamiento)</li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     
+                    <!-- ARTÍCULO 12 -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--gradient-secondary);">
                                 <i class="fas fa-map-marked-alt"></i>
                             </div>
-                            <span>Artículo 12: Territorio municipal</span>
+                            <span>Artículo 12: El territorio municipal</span>
                         </div>
                         
                         <ul class="visual-list">
-                            <li>El <strong>término municipal</strong> es el territorio donde el ayuntamiento ejerce competencias</li>
+                            <li>El <strong>término municipal</strong> es el ámbito territorial donde el ayuntamiento ejerce sus competencias</li>
                             <li>Cada municipio pertenece a <span class="highlight-number">una sola provincia</span></li>
+                            <li>La alteración del término municipal (ampliación, reducción, fusión) corresponde al <strong>Pleno municipal</strong></li>
                         </ul>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-secondary);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <strong>Delimitación territorial:</strong> La creación o supresión de municipios, así como la alteración de términos municipales, requiere acuerdo del Pleno y sigue el procedimiento establecido en la legislación.
+                            </div>
+                        </div>
                     </div>
                     
+                    <!-- ARTÍCULO 15 -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--gradient-success);">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <span>Artículo 15: Población y padrón municipal</span>
+                            <span>Artículo 15: La población municipal y condición de vecino</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Obligación universal:</strong> Toda persona que viva en España debe inscribirse en el Padrón del municipio donde resida habitualmente.
                         </div>
                         
                         <ul class="visual-list">
-                            <li>Toda persona que viva en España debe <strong>inscribirse en el padrón</strong> del municipio donde resida habitualmente</li>
-                            <li>Quien viva en varios municipios se inscribe <span class="highlight-number">donde habite más tiempo al año</span></li>
-                            <li>Los inscritos en el padrón son <strong>vecinos del municipio</strong></li>
-                            <li>La condición de vecino se adquiere al <strong>inscribirse en el padrón</strong></li>
+                            <li><strong>Residencia habitual:</strong> Lugar donde se vive la mayor parte del año</li>
+                            <li>Quien viva en varios municipios se inscribe únicamente en el que habite durante <span class="highlight-number">más tiempo al año</span></li>
+                            <li>El conjunto de personas inscritas constituye la <strong>población del municipio</strong></li>
+                            <li>Los inscritos en el Padrón municipal son los <strong>vecinos del municipio</strong></li>
+                            <li>La condición de vecino se adquiere en el mismo momento de su <strong>inscripción en el Padrón</strong></li>
                         </ul>
                     </div>
                     
+                    <!-- ARTÍCULO 16 -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--gradient-accent);">
                                 <i class="fas fa-address-book"></i>
                             </div>
-                            <span>Artículo 16: Padrón municipal</span>
+                            <span>Artículo 16: El Padrón municipal - Registro administrativo de vecinos</span>
                         </div>
                         
-                        <div class="emphasis-box">
-                            <div style="display: flex; align-items: center; gap: 15px;">
-                                <i class="fas fa-clock" style="font-size: 2rem; color: var(--color-accent);"></i>
+                        <!-- Subsección 16.1 -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <span>Naturaleza y efectos del padrón</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li>Registro administrativo donde constan los vecinos de un municipio</li>
+                                <li>Sus datos constituyen <strong>prueba de la residencia</strong> en el municipio y del domicilio habitual</li>
+                                <li>Las certificaciones tienen carácter de <strong>documento público y fehaciente</strong> para todos los efectos administrativos</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Subsección 16.1 - Renovación -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon">
+                                    <i class="fas fa-history"></i>
+                                </div>
+                                <span>Renovación periódica obligatoria</span>
+                            </div>
+                            
+                            <div class="warning-box">
+                                <div class="box-icon" style="background: var(--gradient-accent);">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
                                 <div>
-                                    <h4>Renovación periódica obligatoria</h4>
-                                    <p>La inscripción de <strong>extranjeros no comunitarios sin autorización de residencia permanente</strong> debe renovarse cada <span class="highlight-number">2</span> años.</p>
+                                    <strong>Caducidad por falta de renovación:</strong> La inscripción de extranjeros no comunitarios sin autorización de residencia permanente debe renovarse cada <span class="highlight-number">2 años</span>.
+                                </div>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li>El transcurso del plazo de 2 años sin renovación es causa para acordar la <strong>caducidad de la inscripción</strong></li>
+                                <li>La caducidad puede declararse <strong>sin necesidad de audiencia previa</strong> del interesado</li>
+                                <li>Para españoles y comunitarios con residencia permanente: <strong>sin renovación periódica obligatoria</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Subsección 16.2 - Datos obligatorios -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <span>Datos obligatorios del padrón</span>
+                            </div>
+                            
+                            <div class="simplified-data-grid">
+                                <div class="data-item">
+                                    <div class="data-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <span><strong>Nombre y apellidos</strong></span>
+                                </div>
+                                <div class="data-item">
+                                    <div class="data-icon">
+                                        <i class="fas fa-venus-mars"></i>
+                                    </div>
+                                    <span><strong>Sexo</strong></span>
+                                </div>
+                                <div class="data-item">
+                                    <div class="data-icon">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <span><strong>Domicilio habitual</strong></span>
+                                </div>
+                                <div class="data-item">
+                                    <div class="data-icon">
+                                        <i class="fas fa-flag"></i>
+                                    </div>
+                                    <span><strong>Nacionalidad</strong></span>
+                                </div>
+                                <div class="data-item">
+                                    <div class="data-icon">
+                                        <i class="fas fa-birthday-cake"></i>
+                                    </div>
+                                    <span><strong>Lugar y fecha nacimiento</strong></span>
+                                </div>
+                                <div class="data-item">
+                                    <div class="data-icon">
+                                        <i class="fas fa-id-card"></i>
+                                    </div>
+                                    <span><strong>DNI/NIE/Pasaporte</strong></span>
+                                </div>
+                                <div class="data-item">
+                                    <div class="data-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <span><strong>Título académico</strong> <em>(opcional)</em></span>
                                 </div>
                             </div>
                         </div>
                         
-                        <ul class="visual-list">
-                            <li>Datos obligatorios del padrón: nombre, sexo, domicilio, nacionalidad, lugar y fecha de nacimiento, DNI/NIE/pasaporte</li>
-                            <li>Los datos se ceden a otras Administraciones sin consentimiento cuando sean <strong>necesarios para ejercer competencias</strong></li>
-                            <li>Pueden servir para elaborar <strong>estadísticas oficiales</strong> con secreto estadístico</li>
-                        </ul>
+                        <!-- Subsección 16.3 - Cesión de datos -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon">
+                                    <i class="fas fa-share-alt"></i>
+                                </div>
+                                <span>Cesiones de datos y protección</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li>Los datos se ceden a otras Administraciones públicas <strong>sin consentimiento previo</strong> cuando:
+                                    <ul class="nested-list">
+                                        <li>Sean necesarios para el ejercicio de sus competencias</li>
+                                        <li>Exclusivamente para asuntos donde la residencia o domicilio sean datos relevantes</li>
+                                    </ul>
+                                </li>
+                                <li>Pueden utilizarse para elaborar <strong>estadísticas oficiales</strong> con sometimiento al secreto estadístico</li>
+                                <li>Se garantiza el respeto a los <strong>derechos fundamentales</strong> reconocidos en la Constitución</li>
+                            </ul>
+                        </div>
                     </div>
                     
+                    <!-- ARTÍCULO 18 -->
                     <div class="section">
                         <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-primary);">
+                            <div class="section-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
                                 <i class="fas fa-gavel"></i>
                             </div>
                             <span>Artículo 18: Derechos y deberes de los vecinos</span>
                         </div>
                         
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: var(--gradient-primary);">
+                        <!-- Derechos en bloques pequeños -->
+                        <div class="compact-grid">
+                            <div class="compact-card">
+                                <div class="compact-icon">
                                     <i class="fas fa-vote-yea"></i>
                                 </div>
-                                <div class="step-title">Ser elector y elegible</div>
-                                <div style="font-size: 0.85rem;">Según legislación electoral</div>
+                                <div class="compact-title">Ser elector y elegible</div>
+                                <div class="compact-desc">Según legislación electoral</div>
                             </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: var(--gradient-secondary);">
+                            
+                            <div class="compact-card">
+                                <div class="compact-icon">
                                     <i class="fas fa-handshake"></i>
                                 </div>
-                                <div class="step-title">Participar gestión municipal</div>
-                                <div style="font-size: 0.85rem;">Cuando se solicite colaboración</div>
+                                <div class="compact-title">Participar en gestión</div>
+                                <div class="compact-desc">Cuando se solicite colaboración</div>
                             </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: var(--gradient-success);">
+                            
+                            <div class="compact-card">
+                                <div class="compact-icon">
                                     <i class="fas fa-concierge-bell"></i>
                                 </div>
-                                <div class="step-title">Usar servicios públicos</div>
-                                <div style="font-size: 0.85rem;">Conforme a normas aplicables</div>
+                                <div class="compact-title">Usar servicios públicos</div>
+                                <div class="compact-desc">Conforme a normas aplicables</div>
                             </div>
-                        </div>
-                        
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: var(--gradient-accent);">
+                            
+                            <div class="compact-card">
+                                <div class="compact-icon">
                                     <i class="fas fa-hand-holding-usd"></i>
                                 </div>
-                                <div class="step-title">Contribuir económicamente</div>
-                                <div style="font-size: 0.85rem;">Para competencias municipales</div>
+                                <div class="compact-title">Contribuir económicamente</div>
+                                <div class="compact-desc">Para competencias municipales</div>
                             </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                            
+                            <div class="compact-card">
+                                <div class="compact-icon">
                                     <i class="fas fa-info-circle"></i>
                                 </div>
-                                <div class="step-title">Ser informado</div>
-                                <div style="font-size: 0.85rem;">Prevía petición razonada</div>
+                                <div class="compact-title">Ser informado</div>
+                                <div class="compact-desc">Prevía petición razonada</div>
                             </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                            
+                            <div class="compact-card">
+                                <div class="compact-icon">
                                     <i class="fas fa-file-signature"></i>
                                 </div>
-                                <div class="step-title">Ejercer iniciativa popular</div>
-                                <div style="font-size: 0.85rem;">En términos previstos en ley</div>
+                                <div class="compact-title">Pedir consulta popular</div>
+                                <div class="compact-desc">En términos previstos en ley</div>
+                            </div>
+                            
+                            <div class="compact-card">
+                                <div class="compact-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="compact-title">Exigir servicios públicos</div>
+                                <div class="compact-desc">Cuando sean obligatorios</div>
+                            </div>
+                            
+                            <div class="compact-card">
+                                <div class="compact-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="compact-title">Ejercer iniciativa popular</div>
+                                <div class="compact-desc">Según artículo 70 bis</div>
                             </div>
                         </div>
                         
-                        <div class="warning-box">
-                            <div class="box-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
-                                <i class="fas fa-exclamation-triangle"></i>
+                        <!-- Deberes -->
+                        <div class="subsection" style="margin-top: 2rem;">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-accent);">
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                </div>
+                                <span>Deber principal de los vecinos</span>
+                            </div>
+                            
+                            <div class="key-point">
+                                <strong>Contribución económica y personal:</strong> Los vecinos deben contribuir mediante las prestaciones económicas y personales legalmente previstas a la realización de las competencias municipales.
+                            </div>
+                        </div>
+                        
+                        <!-- Advertencia sobre extranjeros -->
+                        <div class="danger-box" style="margin-top: 2rem; margin-bottom: 0;">
+                            <div class="box-icon" style="background: var(--gradient-accent);">
+                                <i class="fas fa-exclamation-circle"></i>
                             </div>
                             <div>
-                                <strong>Extranjeros:</strong> La inscripción en el padrón <strong>NO constituye prueba de residencia legal</strong> en España ni atribuye derechos no conferidos por la legislación vigente.
+                                <h4 style="margin-top: 0; color: #c0392b;">Limitación para extranjeros (Art. 18.2)</h4>
+                                <p>La inscripción de los extranjeros en el padrón municipal <strong>NO constituye prueba de su residencia legal en España</strong> ni les atribuye ningún derecho que no les confiera la legislación vigente, especialmente en materia de derechos y libertades de los extranjeros en España.</p>
                             </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Resumen final -->
+                    <div class="info-box" style="margin-top: 0;">
+                        <div class="box-icon" style="background: var(--gradient-primary);">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-top: 0; color: var(--color-primary);">Resumen clave del municipio</h4>
+                            <p>El municipio es la <strong>célula básica</strong> de la organización territorial española, con personalidad jurídica propia. Su existencia se fundamenta en tres pilares: territorio definido, población registrada y organización democrática. El padrón municipal es el instrumento esencial para determinar la vecindad y los derechos asociados a ella.</p>
                         </div>
                     </div>
                 </div>
