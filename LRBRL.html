@@ -529,6 +529,8 @@
             opacity: 0.1;
         }
 
+        
+
         /* Estilo para iconos en pasos de línea de tiempo */
         .step-icon {
             display: inline-block;
@@ -544,7 +546,7 @@
         }
         
         /* Responsividad */
-        @media (max-width: 992px) {
+        @media (max-width: 768px) {
             .card-title-container {
                 flex-direction: column;
                 text-align: center;
@@ -644,7 +646,7 @@
         /* Grid para competencias */
         .competences-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 1.5rem;
             margin: 1.5rem 0;
         }
@@ -698,6 +700,65 @@
             border-bottom: 2px solid #f0f0f0;
             color: #333;
         }
+
+        /* Estilos para los niveles de servicios */
+        .services-tier {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .tier-header {
+            padding: 1.2rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        }
+
+        /* Para la cuadrícula de servicios pequeños */
+        .services-mini-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .services-mini-grid > div {
+            background: rgba(255,255,255,0.7);
+            padding: 0.7rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -756,7 +817,15 @@
                     <i class="fas fa-tasks"></i>
                 </div>
                 <span>Competencias</span>
-                <small>Art. 25-26</small>
+                <small>Art. 25</small>
+            </a>
+
+            <a href="#servicios" class="nav-item" style="background: linear-gradient(135deg, #FFF3E0, #FFFFFF);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                    <i class="fas fa-concierge-bell"></i>
+                </div>
+                <span>Servicios</span>
+                <small>Art. 26</small>
             </a>
             
             <a href="#madrid" class="nav-item" style="background: linear-gradient(135deg, #FFEBEE, #FFFFFF);">
@@ -767,13 +836,6 @@
                 <small>Ley 22/2006</small>
             </a>
             
-            <a href="#servicios" class="nav-item" style="background: linear-gradient(135deg, #FFF3E0, #FFFFFF);">
-                <div class="nav-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
-                    <i class="fas fa-concierge-bell"></i>
-                </div>
-                <span>Servicios</span>
-                <small>Art. 26</small>
-            </a>
         </div>
     </div>
     
@@ -1168,59 +1230,232 @@
                             <div class="section-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
                                 <i class="fas fa-concierge-bell"></i>
                             </div>
-                            <span>Artículo 26: Servicios mínimos municipales</span>
+                            <span>Artículo 26: Servicios mínimos municipales según población</span>
                         </div>
                         
-                        <div class="comparative-container">
-                            <div class="comparative-item">
-                                <div class="comparative-title"><i class="fas fa-city"></i> Todos los municipios</div>
-                                <ul class="visual-list">
-                                    <li>Alumbrado público</li>
-                                    <li>Cementerio</li>
-                                    <li>Recogida de residuos</li>
-                                    <li>Limpieza viaria</li>
-                                    <li>Abastecimiento agua potable</li>
-                                    <li>Alcantarillado</li>
-                                    <li>Acceso a núcleos población</li>
-                                    <li>Pavimentación vías públicas</li>
-                                </ul>
-                            </div>
-                            <div class="comparative-item">
-                                <div class="comparative-title"><i class="fas fa-users"></i> +5.000 habitantes</div>
-                                <ul class="visual-list">
-                                    <li>Parque público</li>
-                                    <li>Biblioteca pública</li>
-                                    <li>Tratamiento de residuos</li>
-                                </ul>
+                        <div class="emphasis-box">
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <i class="fas fa-chart-line" style="font-size: 2rem; color: #FF9800;"></i>
+                                <div>
+                                    <h4 style="margin-bottom: 0.5rem">Niveles de servicios por población</h4>
+                                    <p>Los municipios deben prestar servicios obligatorios según su número de habitantes</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="comparative-container">
-                            <div class="comparative-item">
-                                <div class="comparative-title"><i class="fas fa-users"></i> +20.000 habitantes</div>
-                                <ul class="visual-list">
-                                    <li>Protección civil</li>
-                                    <li>Evaluación necesidades sociales</li>
-                                    <li>Atención inmediata exclusión social</li>
-                                    <li>Prevención y extinción incendios</li>
-                                    <li>Instalaciones deportivas uso público</li>
-                                </ul>
+                        <!-- Nivel 1: Todos los municipios -->
+                        <div class="services-tier" style="margin-bottom: 2.5rem;">
+                            <div class="tier-header" style="background: linear-gradient(135deg, #3498db, #2980b9); padding: 1.2rem; border-radius: 12px 12px 0 0; color: white; display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                    <i class="fas fa-city"></i>
+                                </div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.4rem;">Nivel 1: Todos los municipios</h3>
+                                    <p style="margin: 0.3rem 0 0; opacity: 0.9;">Servicios obligatorios para cualquier municipio</p>
+                                </div>
                             </div>
-                            <div class="comparative-item">
-                                <div class="comparative-title"><i class="fas fa-users"></i> +50.000 habitantes</div>
-                                <ul class="visual-list">
-                                    <li>Transporte colectivo urbano</li>
-                                    <li>Medio ambiente urbano</li>
-                                </ul>
+                            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; padding: 1.5rem; background: #f8f9fa; border-radius: 0 0 12px 12px; border: 2px solid #3498db; border-top: none;">
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #3498db, #2980b9); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <span>Alumbrado público</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #3498db, #2980b9); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-monument"></i>
+                                    </div>
+                                    <span>Cementerio</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #3498db, #2980b9); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </div>
+                                    <span>Recogida de residuos</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #3498db, #2980b9); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-broom"></i>
+                                    </div>
+                                    <span>Limpieza viaria</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #3498db, #2980b9); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <span>Abastecimiento agua potable</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #3498db, #2980b9); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                    <span>Alcantarillado</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #3498db, #2980b9); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+                                    <span>Acceso a núcleos población</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #3498db, #2980b9); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+                                    <span>Pavimentación vías públicas</span>
+                                </div>
                             </div>
                         </div>
                         
+                        <!-- Nivel 2: +5.000 habitantes -->
+                        <div class="services-tier" style="margin-bottom: 2.5rem;">
+                            <div class="tier-header" style="background: linear-gradient(135deg, #2ecc71, #27ae60); padding: 1.2rem; border-radius: 12px 12px 0 0; color: white; display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.4rem;">Nivel 2: Más de <span class="highlight-number">5.000</span> habitantes</h3>
+                                    <p style="margin: 0.3rem 0 0; opacity: 0.9;">Servicios adicionales obligatorios</p>
+                                </div>
+                            </div>
+                            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; padding: 1.5rem; background: #f8f9fa; border-radius: 0 0 12px 12px; border: 2px solid #2ecc71; border-top: none;">
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #2ecc71, #27ae60); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-tree"></i>
+                                    </div>
+                                    <span>Parque público</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #2ecc71, #27ae60); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <span>Biblioteca pública</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #2ecc71, #27ae60); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-recycle"></i>
+                                    </div>
+                                    <span>Tratamiento de residuos</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Nivel 3: +20.000 habitantes -->
+                        <div class="services-tier" style="margin-bottom: 2.5rem;">
+                            <div class="tier-header" style="background: linear-gradient(135deg, #f39c12, #e67e22); padding: 1.2rem; border-radius: 12px 12px 0 0; color: white; display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.4rem;">Nivel 3: Más de <span class="highlight-number">20.000</span> habitantes</h3>
+                                    <p style="margin: 0.3rem 0 0; opacity: 0.9;">Servicios adicionales obligatorios</p>
+                                </div>
+                            </div>
+                            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; padding: 1.5rem; background: #f8f9fa; border-radius: 0 0 12px 12px; border: 2px solid #f39c12; border-top: none;">
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #f39c12, #e67e22); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <span>Protección civil</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #f39c12, #e67e22); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <span>Evaluación necesidades sociales</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #f39c12, #e67e22); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-hands-helping"></i>
+                                    </div>
+                                    <span>Atención inmediata exclusión social</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #f39c12, #e67e22); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-fire-extinguisher"></i>
+                                    </div>
+                                    <span>Prevención y extinción incendios</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #f39c12, #e67e22); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-futbol"></i>
+                                    </div>
+                                    <span>Instalaciones deportivas uso público</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Nivel 4: +50.000 habitantes -->
+                        <div class="services-tier" style="margin-bottom: 2.5rem;">
+                            <div class="tier-header" style="background: linear-gradient(135deg, #9b59b6, #8e44ad); padding: 1.2rem; border-radius: 12px 12px 0 0; color: white; display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.4rem;">Nivel 4: Más de <span class="highlight-number">50.000</span> habitantes</h3>
+                                    <p style="margin: 0.3rem 0 0; opacity: 0.9;">Servicios adicionales obligatorios</p>
+                                </div>
+                            </div>
+                            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; padding: 1.5rem; background: #f8f9fa; border-radius: 0 0 12px 12px; border: 2px solid #9b59b6; border-top: none;">
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #9b59b6, #8e44ad); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-bus"></i>
+                                    </div>
+                                    <span>Transporte colectivo urbano</span>
+                                </div>
+                                <div class="service-item" style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #9b59b6, #8e44ad); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                        <i class="fas fa-leaf"></i>
+                                    </div>
+                                    <span>Medio ambiente urbano</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Municipios pequeños (<20.000 hab) -->
                         <div class="danger-box">
                             <div class="box-icon" style="background: var(--gradient-accent);">
                                 <i class="fas fa-exclamation-circle"></i>
                             </div>
                             <div>
-                                <strong>Municipios <span class="highlight-number">&lt;20.000</span> habitantes:</strong> La Diputación provincial coordinará servicios de residuos, abastecimiento agua, limpieza viaria, acceso a núcleos, pavimentación y alumbrado público.
+                                <h4 style="margin-top: 0; color: #c0392b;">Municipios con menos de <span class="highlight-number">20.000</span> habitantes</h4>
+                                <p>La Diputación provincial coordinará la prestación de estos servicios:</p>
+                                <div class="services-mini-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.8rem; margin-top: 1rem;">
+                                    <div style="background: rgba(255,255,255,0.7); padding: 0.7rem; border-radius: 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fas fa-trash-alt" style="color: #e74c3c;"></i>
+                                        <span>Recogida y tratamiento de residuos</span>
+                                    </div>
+                                    <div style="background: rgba(255,255,255,0.7); padding: 0.7rem; border-radius: 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fas fa-tint" style="color: #e74c3c;"></i>
+                                        <span>Abastecimiento de agua potable</span>
+                                    </div>
+                                    <div style="background: rgba(255,255,255,0.7); padding: 0.7rem; border-radius: 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fas fa-broom" style="color: #e74c3c;"></i>
+                                        <span>Limpieza viaria</span>
+                                    </div>
+                                    <div style="background: rgba(255,255,255,0.7); padding: 0.7rem; border-radius: 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fas fa-road" style="color: #e74c3c;"></i>
+                                        <span>Acceso a núcleos de población</span>
+                                    </div>
+                                    <div style="background: rgba(255,255,255,0.7); padding: 0.7rem; border-radius: 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fas fa-road" style="color: #e74c3c;"></i>
+                                        <span>Pavimentación de vías urbanas</span>
+                                    </div>
+                                    <div style="background: rgba(255,255,255,0.7); padding: 0.7rem; border-radius: 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fas fa-lightbulb" style="color: #e74c3c;"></i>
+                                        <span>Alumbrado público</span>
+                                    </div>
+                                </div>
+                                <p style="margin-top: 1rem; font-size: 0.95rem;"><strong>Nota:</strong> El municipio podrá asumir estos servicios si demuestra un coste efectivo menor que la propuesta de la Diputación.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: #2980b9;">Progresividad de servicios</h4>
+                                <p>Cada nivel incluye <strong>todos los servicios del nivel anterior</strong>, más los servicios adicionales propios de ese nivel. Por ejemplo, un municipio de 25.000 habitantes debe prestar todos los servicios de los niveles 1, 2 y 3.</p>
                             </div>
                         </div>
                     </div>
@@ -1498,46 +1733,20 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    // Calculamos la posición relativa al viewport y le sumamos el scroll actual
+                    const headerOffset = 100;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
                     window.scrollTo({
-                        top: targetElement.offsetTop - 100,
+                        top: offsetPosition,
                         behavior: 'smooth'
                     });
                 }
             });
         });
         
-        // Resaltar números importantes en rojo solo en el contenido
-        document.addEventListener('DOMContentLoaded', function() {
-            // Seleccionar solo elementos de contenido (no títulos)
-            const contentElements = document.querySelectorAll('.visual-list li, .info-box > div:not(.box-icon), .warning-box > div:not(.box-icon), .danger-box > div:not(.box-icon), .emphasis-box > div, .timeline-step > div:not(.step-icon, .step-number), .competence-card > div:not(.competence-icon), .comparative-item li');
-            
-            // Patrones para números importantes
-            const numberPatterns = [
-                /\b(\d{1,3}(?:\.\d{3})*)\s*(?:habitantes|hab\.|años|año|meses|días|horas|%|por ciento|euros|€)\b/gi,
-                /\b(\d{1,3}(?:\.\d{3})*)\s*(?:y\s*\d{1,3}(?:\.\d{3})*)?\s*(?:mil|millones|millón)?\b/gi
-            ];
-            
-            contentElements.forEach(element => {
-                let html = element.innerHTML;
-                
-                // Reemplazar números importantes
-                numberPatterns.forEach(pattern => {
-                    html = html.replace(pattern, (match) => {
-                        // Extraer solo el número para resaltarlo
-                        const numberMatch = match.match(/\d[\d.,]*/);
-                        if (numberMatch) {
-                            return match.replace(numberMatch[0], `<span class="highlight-number">${numberMatch[0]}</span>`);
-                        }
-                        return match;
-                    });
-                });
-                
-                // Reemplazar porcentajes específicos
-                html = html.replace(/(\d+)%/g, '<span class="highlight-number">$1%</span>');
-                
-                element.innerHTML = html;
-            });
-        });
+        
     </script>
 </body>
 </html>
