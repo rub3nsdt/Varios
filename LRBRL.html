@@ -873,8 +873,8 @@
         }
 
         .data-item {
-            flex: 1 1 250px;
-            max-width: 300px;
+            flex: 1 1 300px;
+            
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             padding: 0.8rem 1rem;
             border-radius: 8px;
@@ -886,8 +886,8 @@
         }
 
         .data-icon {
-            width: 28px;
-            height: 28px;
+            width: 35px;
+            height: 35px;
             border-radius: 6px;
             background: var(--gradient-secondary);
             display: flex;
@@ -896,6 +896,27 @@
             color: white;
             font-size: 0.8rem;
             flex-shrink: 0;
+        }
+
+        .simplified-data-grid-1 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem;
+            justify-content: center;
+        }
+
+        .data-item-1 {
+            flex: 1 1 250px;
+            max-width: 300px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 3px solid var(--color-secondary);
+            font-size: 0.9rem;
         }
 
         /* Para bloques más pequeños de derechos/deberes */
@@ -946,6 +967,49 @@
             font-size: 0.8rem;
             color: #666;
             line-height: 1.3;
+        }
+
+        /* Añade esto a tu CSS si no existe la clase .gradient-warning */
+        .gradient-warning {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+        }
+
+        /* Colores para atribuciones delegables y no delegables */
+        .data-item.delegable {
+            border-left-color: #27ae60 !important;
+        }
+
+        .data-item.delegable .data-icon {
+            background: linear-gradient(135deg, #27ae60, #219653) !important;
+        }
+
+        .data-item.no-delegable {
+            border-left-color: #e74c3c !important;
+        }
+
+        .data-item.no-delegable .data-icon {
+            background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
+        }
+
+        /* Indicador visual para tipo de atribución */
+        .attribution-type {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 2rem;
+            vertical-align: middle;
+        }
+
+        .attribution-type.delegable {
+            background: rgba(39, 174, 96, 0.15);
+            color: #27ae60;
+        }
+
+        .attribution-type.no-delegable {
+            background: rgba(231, 76, 60, 0.15);
+            color: #e74c3c;
         }
 
 
@@ -1167,44 +1231,44 @@
                                 <span>Datos obligatorios del padrón</span>
                             </div>
                             
-                            <div class="simplified-data-grid">
-                                <div class="data-item">
+                            <div class="simplified-data-grid-1">
+                                <div class="data-item-1">
                                     <div class="data-icon">
                                         <i class="fas fa-user"></i>
                                     </div>
                                     <span><strong>Nombre y apellidos</strong></span>
                                 </div>
-                                <div class="data-item">
+                                <div class="data-item-1">
                                     <div class="data-icon">
                                         <i class="fas fa-venus-mars"></i>
                                     </div>
                                     <span><strong>Sexo</strong></span>
                                 </div>
-                                <div class="data-item">
+                                <div class="data-item-1">
                                     <div class="data-icon">
                                         <i class="fas fa-home"></i>
                                     </div>
                                     <span><strong>Domicilio habitual</strong></span>
                                 </div>
-                                <div class="data-item">
+                                <div class="data-item-1">
                                     <div class="data-icon">
                                         <i class="fas fa-flag"></i>
                                     </div>
                                     <span><strong>Nacionalidad</strong></span>
                                 </div>
-                                <div class="data-item">
+                                <div class="data-item-1">
                                     <div class="data-icon">
                                         <i class="fas fa-birthday-cake"></i>
                                     </div>
                                     <span><strong>Lugar y fecha nacimiento</strong></span>
                                 </div>
-                                <div class="data-item">
+                                <div class="data-item-1">
                                     <div class="data-icon">
                                         <i class="fas fa-id-card"></i>
                                     </div>
                                     <span><strong>DNI/NIE/Pasaporte</strong></span>
                                 </div>
-                                <div class="data-item">
+                                <div class="data-item-1">
                                     <div class="data-icon">
                                         <i class="fas fa-graduation-cap"></i>
                                     </div>
@@ -1339,7 +1403,7 @@
                 </div>
             </div>
             
-            <!-- ORGANIZACIÓN MUNICIPAL -->
+            <!-- ORGANIZACIÓN MUNICIPAL - VERSIÓN MEJORADA -->
             <div class="horizontal-card" id="organizacion">
                 <div class="card-header-top" style="background: var(--gradient-secondary);">
                     <div class="card-title-container">
@@ -1355,6 +1419,7 @@
                 </div>
                 
                 <div class="card-content">
+                    <!-- ARTÍCULO 19 - VERSIÓN SIMPLIFICADA -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--gradient-secondary);">
@@ -1364,39 +1429,162 @@
                         </div>
                         
                         <ul class="visual-list">
-                            <li>Corresponde al <strong>ayuntamiento</strong> (Alcalde y Concejales), excepto en Concejo Abierto</li>
-                            <li>Concejales elegidos por <strong>sufragio universal, igual, libre, directo y secreto</strong></li>
-                            <li>Alcalde elegido por Concejales o vecinos según legislación electoral</li>
+                            <li>El Gobierno y la administración municipal corresponde al <strong>ayuntamiento</strong> (Alcalde y Concejales)</li>
+                            <li>Excepción: municipios que funcionen en régimen de <strong>Concejo Abierto</strong></li>
+                            <div class="compact-grid">
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="compact-title" style="font-size: 1rem"><strong>Concejales</strong></div>
+                                    <div class="compact-desc" style="font-size: 0.95rem">Elegidos por sufragio universal, igual, libre, directo y secreto</div>
+                                </div>
+                                
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-success);">
+                                        <i class="fas fa-crown"></i>
+                                    </div>
+                                    <div class="compact-title" style="font-size: 1rem"><strong>Alcalde</strong></div>
+                                    <div class="compact-desc" style="font-size: 0.95rem">Elegido por los Concejales o por los vecinos según legislación electoral</div>
+                                </div>
+                            </div>
+                            <li>Los municipios del Título X (régimen especial) se ajustan a lo dispuesto en dicho título</li>
+                            <li>En lo no previsto por el Título X, se aplica el régimen común</li>
                         </ul>
                     </div>
                     
+                    <!-- ARTÍCULO 20 -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--gradient-primary);">
                                 <i class="fas fa-layer-group"></i>
                             </div>
-                            <span>Artículo 20: Organización municipal</span>
+                            <span>Artículo 20: Organización municipal - Órganos obligatorios y facultativos</span>
                         </div>
                         
-                        <div class="comparative-container">
-                            <div class="comparative-item">
-                                <div class="comparative-title"><i class="fas fa-user-tie"></i> Órganos en todos los ayuntamientos</div>
-                                <ul class="visual-list">
-                                    <li>Alcalde</li>
-                                    <li>Tenientes de Alcalde</li>
-                                    <li>Pleno</li>
-                                </ul>
+                        <!-- Órganos obligatorios -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <span>Órganos que existen en TODOS los ayuntamientos</span>
                             </div>
-                            <div class="comparative-item">
-                                <div class="comparative-title"><i class="fas fa-users-cog"></i> Órganos según población</div>
-                                <ul class="visual-list">
-                                    <li><strong>Junta de Gobierno Local</strong>: municipios > <span class="highlight-number">5.000</span> hab. o según reglamento</li>
-                                    <li><strong>Órganos de estudio/informe</strong>: municipios > <span class="highlight-number">5.000</span> hab.</li>
-                                </ul>
+                            
+                            <div class="compact-grid">
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-crown"></i>
+                                    </div>
+                                    <div class="compact-title">Alcalde</div>
+                                    <div class="compact-desc">Presidente de la Corporación</div>
+                                </div>
+                                
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-user-friends"></i>
+                                    </div>
+                                    <div class="compact-title">Tenientes de Alcalde</div>
+                                    <div class="compact-desc">Sustituyen al Alcalde por orden</div>
+                                </div>
+                                
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="compact-title">Pleno</div>
+                                    <div class="compact-desc">Todos los Concejales</div>
+                                </div>
                             </div>
+                        </div>
+                        
+                        <!-- Órganos según población -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-success);">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <span>Órganos según población del municipio</span>
+                            </div>
+                            
+                            <div class="procedure-timeline">
+                                <div class="timeline-step">
+                                    <div class="highlight-number" style="font-size: 1.1rem;">+5.000</div>
+                                    <div class="step-title">Junta de Gobierno Local</div>
+                                    <div style="font-size: 0.85rem;">Obligatoria en municipios >5.000 hab.</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="highlight-number" style="font-size: 1.1rem;">+5.000</div>
+                                    <div class="step-title">Órganos estudio/seguimiento</div>
+                                    <div style="font-size: 0.85rem;">Municipios >5.000 hab.</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="highlight-number" style="font-size: 1.1rem;">Todos</div>
+                                    <div class="step-title">Comisión Especial de Cuentas</div>
+                                    <div style="font-size: 0.85rem;">Según artículo 116</div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box">
+                                <div class="box-icon" style="background: var(--gradient-secondary);">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div>
+                                    <strong>Municipios pequeños:</strong> En municipios con <span class="highlight-number">menos de 5.000</span> habitantes, la Junta de Gobierno Local y los Órganos estudio/seguimiento pueden crearse si lo dispone el reglamento orgánico o lo acuerda el Pleno.
+                                </div>
+                            </div>
+
+                            <div class="info-box" style="border-left: 6px solid #9b59b6; background: linear-gradient(135deg, #f8f4fc, #e8ddf2);">
+                                <div class="box-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-top: 0; color: #8e44ad;">Órganos de estudio/seguimiento</h4>
+                                    
+                                    <div class="simplified-data-grid" style="grid-template-columns: repeat(2, 1fr);">
+                                        <div class="data-item" style="border-left-color: #9b59b6;">
+                                            <div class="data-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                                <i class="fas fa-search"></i>
+                                            </div>
+                                            <span><strong>Estudio, informe o consulta</strong> de asuntos a decidir por el Pleno</span>
+                                        </div>
+                                        <div class="data-item" style="border-left-color: #9b59b6;">
+                                            <div class="data-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <span><strong>Seguimiento</strong> de la gestión del Alcalde, Junta y concejales con delegaciones</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p style="margin-top: 1rem; font-size: 0.95rem;"><strong><i class="fas fa-users" style="color: #9b59b6;"></i> Participación proporcional:</strong> Todos los grupos políticos participan en proporción a sus concejales en el Pleno.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Órganos complementarios -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                                <span>Órganos complementarios</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li><strong>Comisión Especial de Sugerencias y Reclamaciones</strong>:
+                                    <ul class="nested-list">
+                                        <li>En municipios del <span class="highlight-number">Título X</span> (régimen especial)</li>
+                                        <li>En otros municipios si lo acuerda el Pleno por mayoría absoluta</li>
+                                        <li>O si lo dispone el reglamento orgánico</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Órganos de participación</strong>: Las CCAA pueden establecer organización complementaria</li>
+                                <li><strong>Órganos propios</strong>: Los municipios pueden crear otros órganos en sus reglamentos orgánicos</li>
+                            </ul>
                         </div>
                     </div>
                     
+                    <!-- ARTÍCULO 21 - VERSIÓN EXHAUSTIVA -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--gradient-accent);">
@@ -1405,55 +1593,169 @@
                             <span>Artículo 21: Atribuciones del Alcalde</span>
                         </div>
                         
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-number">1</div>
-                                <div class="step-title">Dirigir gobierno municipal</div>
+                        <!-- Atribuciones NO DELEGABLES del Alcalde -->
+                        <span class="attribution-type delegable">DELEGABLE</span></span>
+                        <span class="attribution-type no-delegable" style="margin-left: 0.5rem;">NO DELEGABLE</span>
+                        <div class="simplified-data-grid">
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <span><strong>a) Dirigir</strong> gobierno y administración municipal
+                                
                             </div>
-                            <div class="timeline-step">
-                                <div class="step-number">2</div>
-                                <div class="step-title">Representar al ayuntamiento</div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <span><strong>b) Representar</strong> al ayuntamiento
+                                
                             </div>
-                            <div class="timeline-step">
-                                <div class="step-number">3</div>
-                                <div class="step-title">Convocar y presidir sesiones</div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <span><strong>c) Convocar y presidir</strong> sesiones del Pleno y Junta de Gobierno
+                                
                             </div>
-                            <div class="timeline-step">
-                                <div class="step-number">4</div>
-                                <div class="step-title">Dirigir servicios y obras</div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <span><strong>d) Dirigir, inspeccionar e impulsar</strong> servicios y obras municipales
+                                
+                            </div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-scroll"></i>
+                                </div>
+                                <span><strong>e) Dictar bandos</strong>
+                                
+                            </div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                                <span><strong>f) Gestión económica:</strong> disponer gastos hasta <span class="highlight-number">10%</span> recursos ordinarios (tesorería <span class="highlight-number"> <15%</span> ingresos corrientes)
+                                
+                            </div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <span><strong>g) Aprobar oferta empleo público </strong>y bases de pruebas
+                                
+                            </div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <span><strong>h) Jefatura superior</strong> de todo el personal
+                                
+                            </div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <span><strong>i) Jefatura Policía Municipal</strong>
+                                
+                            </div>
+                        
+
+                        <!-- Continuación de atribuciones del Alcalde -->
+                        
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-map"></i>
+                                </div>
+                                <span><strong>j) Aprobación instrumentos planeamiento</strong> de desarrollo no atribuidos al Pleno
+                                
+                            </div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <span><strong>k) Ejercer acciones judiciales</strong> en materias de su competencia
+                                
+                            </div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <span><strong>l) Iniciativa para proponer declaración de lesividad</strong>
+                                
+                            </div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-first-aid"></i>
+                                </div>
+                                <span><strong>m) Adoptar medidas urgentes</strong> en caso de catástrofe o riesgo grave
+
+                                
+                            </div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <span><strong>n) Sancionar faltas</strong> de desobediencia o infracción de ordenanzas
+                                
+                            </div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <span><strong>o) Aprobar proyectos obras y servicios</strong> cuando sea competente
+                                
+                            </div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-file-signature"></i>
+                                </div>
+                                <span><strong>q) Otorgamiento de licencias</strong> salvo que las leyes lo atribuyan a otro órgano
+                                
+                            </div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <span><strong>r) Ordenar publicación y ejecución</strong> y hacer cumplir acuerdos
+                                
+                            </div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-list"></i>
+                                </div>
+                                <span><strong>s) Otras atribuciones legales</strong>
+                                
                             </div>
                         </div>
-                        
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-number">5</div>
-                                <div class="step-title">Dictar bandos</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">6</div>
-                                <div class="step-title">Gestionar presupuesto</div>
-                                <div style="font-size: 0.85rem;">Límites: <span class="highlight-number">10%</span> recursos ordinarios</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">7</div>
-                                <div class="step-title">Jefatura superior personal</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">8</div>
-                                <div class="step-title">Jefatura Policía Municipal</div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: var(--gradient-accent);">
-                                <i class="fas fa-exchange-alt"></i>
+
+                        <div class="info-box" style="margin-top: 1.5rem;">
+                            <div class="box-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                <i class="fas fa-info-circle"></i>
                             </div>
                             <div>
-                                <strong>Delegación:</strong> El Alcalde puede delegar atribuciones excepto convocar/presidir sesiones, decidir empates, concertar créditos, jefatura personal, separación funcionarios y otras específicas.
+                                <p><strong>Excepción:</strong> La atribución j) (aprobación instrumentos de planeamiento) puede delegarse SOLO en la Junta de Gobierno Local, no en otros órganos.</p>
+                                <p><strong>Regla general:</strong> Las atribuciones a), e), j), k), l) y m) son NO DELEGABLES. El resto puede delegarse salvo las específicamente prohibidas (concertar crédito, jefatura personal, separación funcionarios).</p>
                             </div>
+                        </div>
+                        
+                        <!-- Tenientes de Alcalde -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <span>Tenientes de Alcalde (Art. 21.2)</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li>Corresponde al Alcalde <strong>nombrar a los Tenientes de Alcalde</strong></li>
+                            </ul>
                         </div>
                     </div>
                     
+                    <!-- ARTÍCULO 22 - VERSIÓN EXHAUSTIVA -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--gradient-success);">
@@ -1462,27 +1764,161 @@
                             <span>Artículo 22: Atribuciones del Pleno</span>
                         </div>
                         
-                        <ul class="visual-list">
-                            <li><strong>Control y fiscalización</strong> de órganos de gobierno</li>
-                            <li><strong>Alteración término municipal</strong> y creación/supresión municipios</li>
-                            <li><strong>Alteración capitalidad</strong> y cambio de nombre municipio</li>
-                            <li><strong>Aprobación planeamiento general</strong> y reglamentos</li>
-                            <li><strong>Aprobación y modificación presupuestos</strong></li>
-                            <li><strong>Aceptación delegación de competencias</strong> de otras Administraciones</li>
-                            <li><strong>Plantilla de personal</strong> y relaciones de puestos de trabajo</li>
-                            <li><strong>Concertación operaciones crédito</strong> superiores al <span class="highlight-number">10%</span> recursos ordinarios</li>
-                        </ul>
-                        
-                        <div class="warning-box">
-                            <div class="box-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
-                                <i class="fas fa-vote-yea"></i>
+                        <!-- Atribuciones NO DELEGABLES del Pleno -->
+                        <span class="attribution-type delegable">DELEGABLE</span></span>
+                        <span class="attribution-type no-delegable" style="margin-left: 0.5rem;">NO DELEGABLE</span>
+                        <div class="simplified-data-grid">
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <span><strong>a) Control y fiscalización</strong> órganos de gobierno
+                                
                             </div>
-                            <div>
-                                <strong>Moción de censura y cuestión de confianza:</strong> El Pleno vota sobre moción de censura al Alcalde y cuestión de confianza planteada por el mismo. Votación pública y por llamamiento nominal.
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                </div>
+                                <span><strong>b) Participación organizaciones supramunicipales:</strong> alteración término municipal; creación/supresión municipios; alteración capitalidad; cambio nombre
+                                
+                            </div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-map"></i>
+                                </div>
+                                <span><strong>c)  Aprobación inicial planeamiento general </strong> y aprobación que ponga fin a tramitación municipal
+                                
+                            </div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                                <span><strong>d) Aprobación reglamento orgánico y ordenanzas</strong>
+                                
+                            </div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <span><strong>e) Determinación recursos tributarios</strong> aprobación y modificación presupuestos; aprobación cuentas
+                                
+                            </div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <span><strong>f) Aprobación formas de gestión de servicios y expedientes de municipalización</strong>
+                                
+                            </div>
+                        
+
+                        <!-- Continuación de atribuciones del Pleno -->
+                        
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <span><strong>g) Aceptación delegación competencias</strong> hecha por otras Administraciones
+                                
+                            </div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <span><strong>h) Plantear conflictos de competencias</strong> a otras entidades y Administraciones
+                                
+                            </div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <span><strong>i) Aprobación plantilla de personal</strong> y relación de puestos de trabajo; fijación retribuciones complementarias
+                                
+                            </div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <span><strong>j) Ejercicio acciones judiciales y administrativas</strong> en materia de competencia plenaria
+                                
+                            </div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <span><strong>k) Declaración de lesividad</strong> de los actos del Ayuntamiento
+                                
+                            </div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-landmark"></i>
+                                </div>
+                                <span><strong>l) Alteración calificación jurídica de bienes de dominio público</strong>
+                                
+                            </div>
+                        
+
+                        <!-- Últimas atribuciones del Pleno -->
+                        
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                </div>
+                                <span><strong>m) Concertar operaciones de crédito</strong> > <span class="highlight-number"> >10%</span> recursos ordinarios (tesorería <span class="highlight-number"> >15%</span> ingresos corrientes)
+                                
+                            </div>
+                            <div class="data-item delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <span><strong>ñ) Aprobación proyectos de obras y servicios</strong> cuando sea competente y no estén previstos en presupuestos
+                                
+                            </div>
+                            <div class="data-item no-delegable">
+                                <div class="data-icon">
+                                    <i class="fas fa-vote-yea"></i>
+                                </div>
+                                <span><strong>p) Aquellas otras que deban corresponder al Pleno</strong> por exigir su aprobación una mayoría especial
+                                
                             </div>
                         </div>
-                    </div>
+
+                        <!-- Atribuciones especiales del Pleno -->
+                        <div class="warning-box" style="margin-top: 1.5rem;">
+                            <div class="box-icon" style="background: var(--gradient-accent);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: #c0392b;">Atribuciones ESPECIALES NO DELEGABLES (Art. 22.3)</h4>
+                                <div class="simplified-data-grid" style="grid-template-columns: repeat(2, 1fr);">
+                                    <div class="data-item no-delegable">
+                                        <div class="data-icon">
+                                            <i class="fas fa-vote-yea"></i>
+                                        </div>
+                                        <span><strong>Moción de censura</strong> al Alcalde</span>
+                                    </div>
+                                    <div class="data-item no-delegable">
+                                        <div class="data-icon">
+                                            <i class="fas fa-handshake"></i>
+                                        </div>
+                                        <span><strong>Cuestión de confianza</strong> del Alcalde</span>
+                                    </div>
+                                </div>
+                                <p style="margin-top: 0.8rem; font-size: 0.95rem;">Votación <strong>pública y mediante llamamiento nominal</strong>, según legislación electoral general.</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box" style="margin-top: 1.5rem;">
+                            <div class="box-icon" style="background: var(--gradient-success);">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div>
+                                <p><strong>Delegación del Pleno:</strong> El Pleno puede delegar únicamente las atribuciones DELEGABLES (sin indicador rojo). Las delegaciones solo pueden realizarse en las Comisiones del Pleno.</p>
+                                <p><strong>Atribuciones NO DELEGABLES:</strong> Las letras a), b), c), d), e), f), g), h), p) del apartado 2, más las del apartado 3 (moción de censura y cuestión de confianza).</p>
+                            </div>
+                        </div>
                     
+                    <!-- ARTÍCULO 23 -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--gradient-secondary);">
@@ -1491,13 +1927,88 @@
                             <span>Artículo 23: Junta de Gobierno Local</span>
                         </div>
                         
-                        <ul class="visual-list">
-                            <li>Integrada por <strong>Alcalde y Concejales</strong> (no superior a un tercio del número legal)</li>
-                            <li>Nombrados y separados <strong>libremente por el Alcalde</strong></li>
-                            <li>Atribuciones: <strong>asistir al Alcalde</strong> y las que éste u otro órgano delegue</li>
-                            <li>Tenientes de Alcalde sustituyen al Alcalde por orden de nombramiento</li>
-                        </ul>
+                        <!-- Composición -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-secondary);">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <span>Composición y nombramiento</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li>Integrada por <strong>Alcalde y Concejales</strong></li>
+                                <li>Número de Concejales <strong>no superior a <span class="highlight-number">1/3</span></strong> del número legal de miembros</li>
+                                <li>Nombrados y separados <strong>libremente por el Alcalde</strong></li>
+                                <li>El Alcalde debe <strong>dar cuenta al Pleno</strong> de los nombramientos y separaciones</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Atribuciones -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <span>Atribuciones principales</span>
+                            </div>
+                            
+                            <div class="compact-grid">
+                                <div class="compact-card" style="border-top-color: #2ecc71;">
+                                    <div class="compact-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                                        <i class="fas fa-hands-helping"></i>
+                                    </div>
+                                    <div class="compact-title">Asistir al Alcalde</div>
+                                    <div class="compact-desc">En ejercicio de sus atribuciones</div>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #2ecc71;">
+                                    <div class="compact-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </div>
+                                    <div class="compact-title">Atribuciones delegadas</div>
+                                    <div class="compact-desc">Por el Alcalde u otros órganos</div>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #2ecc71;">
+                                    <div class="compact-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                                        <i class="fas fa-gavel"></i>
+                                    </div>
+                                    <div class="compact-title">Atribuciones legales</div>
+                                    <div class="compact-desc">Que las leyes le atribuyan específicamente</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tenientes de Alcalde -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <span>Tenientes de Alcalde</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li>Sustituyen al Alcalde <strong>por orden de su nombramiento</strong></li>
+                                <li>En casos de <strong>vacante, ausencia o enfermedad</strong> del Alcalde</li>
+                                <li>Designados y removidos <strong>libremente por el Alcalde</strong></li>
+                                <li>Se designan de entre los miembros de la Junta de Gobierno Local</li>
+                                <li><strong>Donde no exista Junta</strong>: se designan de entre los Concejales</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Delegación -->
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-secondary);">
+                                <i class="fas fa-share-square"></i>
+                            </div>
+                            <div>
+                                <strong>Delegación del Alcalde:</strong> El Alcalde puede delegar el ejercicio de determinadas atribuciones en los miembros de la Junta de Gobierno Local y, donde ésta no exista, en los Tenientes de Alcalde. También puede realizar delegaciones especiales para cometidos específicos en favor de cualquier Concejal.
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
             
