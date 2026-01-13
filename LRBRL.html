@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=740px, initial-scale=0.45">
     <title>Guía Visual LBRL y Capitalidad de Madrid</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -1156,13 +1156,16 @@
 
         /* Estilos para competencias compactas */
         .compact-competences-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 1rem;
             margin: 1.5rem 0;
+            justify-content: center;
         }
 
         .compact-competence-item {
+            flex: 1 1 250px;
+            max-width: 300px;
             display: flex;
             align-items: flex-start;
             gap: 15px;
@@ -1215,10 +1218,11 @@
             flex-wrap: wrap;
             gap: 1.2rem;
             margin: 1.5rem 0;
+            align-items: flex-start;
         }
 
         .service-level-card {
-            flex: 1 1 calc(50% - 1.2rem);
+            flex: 1 1 450px;
             background: white;
             border-radius: 12px;
             overflow: hidden;
@@ -1286,6 +1290,132 @@
         .service-item-text {
             flex: 1;
             font-size: 0.9rem;
+        }
+
+
+        /* ESTILOS PARA LA SECCIÓN DE CAPITALIDAD */
+        /* Añadir al final del CSS existente */
+
+        /* Para atribuciones con letras */
+        .attribution-list {
+            counter-reset: attribution-counter;
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5rem 0;
+        }
+
+        .attribution-item {
+            counter-increment: attribution-counter;
+            margin-bottom: 1.2rem;
+            padding: 1.2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--color-madrid);
+            position: relative;
+            padding-left: 3.5rem;
+        }
+
+        .attribution-item:before {
+            content: counter(attribution-counter, lower-alpha) ")";
+            position: absolute;
+            left: 1.2rem;
+            top: 1.2rem;
+            width: 30px;
+            height: 30px;
+            background: var(--gradient-madrid);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .attribution-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .attribution-desc {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Para sublistas dentro de atribuciones */
+        .attribution-sublist {
+            list-style: none;
+            padding-left: 1.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .attribution-sublist li {
+            position: relative;
+            padding: 0.3rem 0;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .attribution-sublist li:before {
+            content: '•';
+            position: absolute;
+            left: -1rem;
+            color: var(--color-madrid);
+            font-weight: bold;
+        }
+
+        /* Para requisitos de mayoría */
+        .majority-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* Para limitaciones de delegación */
+        .delegation-limitation {
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            border-left: 4px solid var(--color-info);
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .delegation-title {
+            font-weight: 600;
+            color: var(--color-info);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Para artículos con múltiples apartados */
+        .article-content {
+            margin: 1.5rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Para destacar elementos especiales */
+        .special-note {
+            background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+            border-left: 4px solid #FF9800;
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin: 1.2rem 0;
+            font-size: 0.95rem;
         }
 
 
@@ -2503,7 +2633,7 @@
                         <!-- Servicios en dos columnas -->
                         <div class="two-columns-grid">
                             <!-- Columna izquierda: Niveles 1 y 2 -->
-                            <div>
+                            
                                 <!-- Nivel 1: Todos los municipios -->
                                 <div class="service-level-card" style="margin-bottom: 1.5rem;">
                                     <div class="service-level-header" style="background: linear-gradient(135deg, #3498db, #2980b9);">
@@ -2603,10 +2733,10 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            
                             
                             <!-- Columna derecha: Niveles 3 y 4 -->
-                            <div>
+                            
                                 <!-- Nivel 3: +20.000 habitantes -->
                                 <div class="service-level-card" style="margin-bottom: 1.5rem;">
                                     <div class="service-level-header" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
@@ -2682,7 +2812,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            
                         </div>
                         
                         <!-- Municipios pequeños y diputaciones -->
@@ -2736,7 +2866,7 @@
                         
                         <ul class="visual-list">
                             <li>Las entidades locales responden <strong>directamente de daños y perjuicios</strong> causados a particulares</li>
-                            <li>Por <strong>funcionamiento de servicios públicos</strong> o actuación de autoridades, funcionarios o agentes</li>
+                            <li>Por <strong>funcionamiento de servicios públicos o actuación de autoridades, funcionarios o agentes</strong></li>
                             <li>En términos establecidos en la <strong>legislación general sobre responsabilidad administrativa</strong></li>
                         </ul>
                     </div>
@@ -2750,7 +2880,7 @@
                         </div>
                         
                         <ul class="visual-list">
-                            <li>Se rigen por <strong>Ley 7/2007 (Estatuto Básico del Empleado Público)</strong> y legislación estatal/autonómica</li>
+                            <li>Se rigen por <strong>Ley 7/2007 (Estatuto Básico del Empleado Público)</strong> y legislación estatal/autonómica en los términos del artículo <span class="highlight-number">149.1.18.ª</span> de la Constitución</li>
                             <li>Los puestos de trabajo en Administración local serán desempeñados <strong>generalmente por personal funcionario</strong></li>
                             <li>Función pública reservada a funcionarios de carrera: ejercicio de <strong>potestades públicas, salvaguardia de intereses generales, ejercicio de autoridad</strong></li>
                             <li>Objetivo: garantizar <strong>objetividad, imparcialidad e independencia</strong></li>
@@ -2759,171 +2889,1187 @@
                 </div>
             </div>
             
-            <!-- CAPITALIDAD Y RÉGIMEN ESPECIAL DE MADRID -->
-            <div class="horizontal-card" id="madrid">
-                <div class="card-header-top" style="background: var(--gradient-madrid);">
-                    <div class="card-title-container">
-                        <div class="card-icon-large">
-                            <i class="fas fa-monument"></i>
+            <!-- CAPITALIDAD Y RÉGIMEN ESPECIAL DE MADRID - VERSIÓN VISUAL COMPLETA -->
+<div class="horizontal-card" id="madrid">
+    <div class="card-header-top" style="background: var(--gradient-madrid);">
+        <div class="card-title-container">
+            <div class="card-icon-large">
+                <i class="fas fa-monument"></i>
+            </div>
+            <div>
+                <div class="card-title-top">🏙️ CAPITALIDAD Y RÉGIMEN ESPECIAL DE MADRID</div>
+                <div class="card-subtitle-top">Ley 22/2006 - Artículos 7 al 22: Gobierno y Administración municipal de la capital</div>
+            </div>
+        </div>
+        <div class="article-number-badge">Ley 22/2006</div>
+    </div>
+    
+    <div class="card-content">
+        <!-- ARTÍCULO 7: ORGANIZACIÓN - VERSIÓN VISUAL -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon" style="background: var(--gradient-madrid);">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <span>Artículo 7: Organización del gobierno municipal</span>
+            </div>
+            
+            <div class="key-point">
+                <strong>Estructura dual:</strong> El gobierno municipal de Madrid se organiza en <span class="highlight-number">órganos deliberantes</span> y <span class="highlight-number">órganos ejecutivos</span>.
+            </div>
+            
+            <div class="two-columns-grid">
+                <div class="service-level-card">
+                    <div class="service-level-header" style="background: linear-gradient(135deg, #C40B0B, #8B0000);">
+                        <div class="service-level-icon">
+                            <i class="fas fa-landmark"></i>
                         </div>
                         <div>
-                            <div class="card-title-top">🏙️ CAPITALIDAD Y RÉGIMEN ESPECIAL DE MADRID</div>
-                            <div class="card-subtitle-top">Ley 22/2006 - Gobierno, administración y organización especial</div>
+                            <h4 style="margin: 0; font-size: 1.1rem;">Órgano deliberante</h4>
+                            <p style="margin: 0.3rem 0 0; opacity: 0.9; font-size: 0.9rem;">De representación política</p>
                         </div>
                     </div>
-                    <div class="article-number-badge">Ley 22/2006</div>
+                    <div class="service-level-body">
+                        <ul class="visual-list">
+                            <li><strong>El Pleno</strong> - Máximo órgano de representación política</li>
+                            <li>Formado por el <span class="highlight-number">Alcalde y todos los Concejales</span></li>
+                            <li>Órgano de <strong>control y fiscalización</strong></li>
+                            <li>Sesiones <strong>públicas</strong> por defecto</li>
+                            <li>Puede funcionar en <strong>Comisiones</strong></li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="card-content">
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-madrid);">
-                                <i class="fas fa-sitemap"></i>
-                            </div>
-                            <span>Artículo 7: Organización gobierno municipal</span>
+                <div class="service-level-card">
+                    <div class="service-level-header" style="background: linear-gradient(135deg, #C40B0B, #8B0000);">
+                        <div class="service-level-icon">
+                            <i class="fas fa-user-tie"></i>
                         </div>
-                        
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: var(--gradient-madrid);">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <div class="step-title">Órgano deliberante</div>
-                                <div style="font-size: 0.85rem;">El Pleno</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: var(--gradient-madrid);">
-                                    <i class="fas fa-user-tie"></i>
-                                </div>
-                                <div class="step-title">Órganos ejecutivos</div>
-                                <div style="font-size: 0.85rem;">Alcalde, Junta de Gobierno, Tenientes de Alcalde, Concejales con responsabilidades</div>
-                            </div>
+                        <div>
+                            <h4 style="margin: 0; font-size: 1.1rem;">Órganos ejecutivos</h4>
+                            <p style="margin: 0.3rem 0 0; opacity: 0.9; font-size: 0.9rem;">De dirección política y administrativa</p>
                         </div>
                     </div>
-                    
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-madrid);">
-                                <i class="fas fa-landmark"></i>
-                            </div>
-                            <span>Artículo 9: El Pleno</span>
-                        </div>
-                        
+                    <div class="service-level-body">
                         <ul class="visual-list">
-                            <li><strong>Máxima representación política</strong> de ciudadanos en gobierno municipal</li>
-                            <li>Formado por <strong>Alcalde y Concejales</strong> (pueden asistir miembros no electos Junta Gobierno)</li>
-                            <li>Sesiones <strong>públicas</strong> (pueden ser secretas para asuntos que afecten derechos fundamentales)</li>
-                            <li>Puede funcionar en <strong>Comisiones</strong> formadas por Concejales designados por grupos políticos</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-primary);">
-                                <i class="fas fa-tasks"></i>
-                            </div>
-                            <span>Artículo 11: Atribuciones del Pleno (Madrid)</span>
-                        </div>
-                        
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-number">a</div>
-                                <div class="step-title">Control y fiscalización</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">b</div>
-                                <div class="step-title">Moción censura/cuestión confianza</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">c</div>
-                                <div class="step-title">Aprobación reglamentos orgánicos</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">d</div>
-                                <div class="step-title">Aprobación ordenanzas y reglamentos</div>
-                            </div>
-                        </div>
-                        
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-number">e</div>
-                                <div class="step-title">Delimitación término municipal</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">f</div>
-                                <div class="step-title">Participación organizaciones supramunicipales</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">g</div>
-                                <div class="step-title">Determinación recursos tributarios</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">h</div>
-                                <div class="step-title">Aprobación presupuestos y cuentas</div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: var(--gradient-madrid);">
-                                <i class="fas fa-vote-yea"></i>
-                            </div>
-                            <div>
-                                <strong>Mayoría absoluta:</strong> Se requiere mayoría absoluta para acuerdos sobre reglamentos orgánicos, delimitación término municipal, participación organizaciones supramunicipales, transferencia funciones y planeamiento general.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-accent);">
-                                <i class="fas fa-crown"></i>
-                            </div>
-                            <span>Artículo 14: Alcalde de Madrid</span>
-                        </div>
-                        
-                        <ul class="visual-list">
-                            <li><strong>Impulsa política municipal</strong> y dirige acción de órganos ejecutivos</li>
-                            <li><strong>Máxima representación</strong> de la ciudad</li>
-                            <li>Atribuciones: determinar programa político, convocar/presidir sesiones, decidir empates, nombrar/cesar miembros Junta Gobierno, dictar bandos, adoptar medidas urgentes, jefatura superior personal, ejercicio acciones judiciales</li>
-                            <li>Puede delegar competencias excepto convocar/presidir sesiones, decidir empates, nombrar/cesar miembros, dictar bandos y medidas urgentes</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-secondary);">
-                                <i class="fas fa-user-friends"></i>
-                            </div>
-                            <span>Artículo 16: Junta de Gobierno de Madrid</span>
-                        </div>
-                        
-                        <ul class="visual-list">
-                            <li><strong>Órgano ejecutivo</strong> de dirección política y administrativa</li>
-                            <li>Número no excede <strong>un tercio del número legal</strong> de miembros del Pleno (más Alcalde)</li>
-                            <li>Alcalde puede nombrar miembros <strong>que no sean concejales</strong></li>
-                            <li>Responde políticamente ante el Pleno de forma <strong>solidaria</strong></li>
-                            <li>Sesiones <strong>secretas</strong> (pueden ser públicas por acuerdo)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-success);">
-                                <i class="fas fa-map-marked-alt"></i>
-                            </div>
-                            <span>Artículo 22: Los Distritos de Madrid</span>
-                        </div>
-                        
-                        <ul class="visual-list">
-                            <li>El Pleno debe crear <strong>Distritos como divisiones territoriales</strong> propias</li>
-                            <li>Dotadas de órganos de gestión <strong>desconcentrada</strong></li>
-                            <li>Objetivo: impulsar <strong>participación ciudadana</strong> en gestión asuntos municipales</li>
-                            <li>Presidencia del Distrito corresponde a <strong>un Concejal</strong></li>
+                            <li><strong>Alcalde</strong> - Dirección política y administrativa</li>
+                            <li><strong>Junta de Gobierno</strong> - Órgano ejecutivo principal</li>
+                            <li><strong>Tenientes de Alcalde</strong> - Sustitutos del Alcalde</li>
+                            <li><strong>Concejales con responsabilidades</strong> - Con funciones de gobierno</li>
+                            <li><strong>Miembros no electos</strong> - Particularidad única de Madrid <span class="highlight-number">(Art. 7)</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
+            
+            <div class="special-note">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-star" style="color: #FF9800; font-size: 1.2rem;"></i>
+                    <div>
+                        <strong>Particularidad excepcional:</strong> La Junta de Gobierno de Madrid puede incluir <span class="highlight-number">miembros no electos</span> (personas sin condición de concejales), según <span class="highlight-number">legislación básica</span> de gobierno y administración local.
+                    </div>
+                </div>
+            </div>
         </div>
+        
+        <!-- ARTÍCULO 9: EL PLENO - VERSIÓN VISUAL -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon" style="background: var(--gradient-madrid);">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <span>Artículo 9: El Pleno de Madrid - Características y funcionamiento</span>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <div class="subsection-icon" style="background: var(--gradient-madrid);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span>Composición y naturaleza</span>
+                </div>
+                
+                <ul class="visual-list">
+                    <li>Órgano de <strong>máxima representación política</strong> de los ciudadanos</li>
+                    <li>Formado por <span class="highlight-number">Alcalde + Concejales</span></li>
+                    <li>Asistencia permitida a <strong>miembros no electos</strong> de la Junta de Gobierno</li>
+                    <li>Ejerce <strong>atribuciones asignadas expresamente</strong></li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <div class="subsection-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <span>Transparencia y publicidad</span>
+                </div>
+                
+                <ul class="visual-list">
+                    <li>Sesiones <strong>públicas por defecto</strong></li>
+                    <li>Excepción: asuntos que afecten al <span class="highlight-number">artículo 18.1 CE</span> (derecho al honor, intimidad, propia imagen)</li>
+                    <li>Debate y votación secretos requieren <span class="highlight-number">mayoría absoluta</span></li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <div class="subsection-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <span>Organización interna</span>
+                </div>
+                
+                <ul class="visual-list">
+                    <li>Puede funcionar en <strong>Comisiones</strong></li>
+                    <li>Composición proporcional según <span class="highlight-number">grupos políticos</span></li>
+                    <li>Regulación supletoria: <strong>Reglamento Orgánico</strong> municipal</li>
+                    <li>Interpretación por <strong>Resoluciones del Presidente</strong> (Alcalde)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- ARTÍCULO 11: ATRIBUCIONES DEL PLENO - VERSIÓN VISUAL COMPLETA -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon" style="background: var(--color-primary);">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <span>Artículo 11: Atribuciones del Pleno de Madrid</span>
+            </div>
+            
+            <div class="key-point">
+                <strong>Sistema exhaustivo:</strong> <span class="highlight-number">17 atribuciones específicas</span> más cláusula residual. Reglas especiales de mayoría y delegación.
+            </div>
+            
+            <!-- Indicadores visuales -->
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.5rem; align-items: center;">
+                <span class="attribution-type delegable">DELEGABLE</span>
+                <span class="attribution-type no-delegable">NO DELEGABLE</span>
+                <span class="majority-badge">MAYORÍA ABSOLUTA</span>
+                <span style="padding: 0.3rem 0.8rem; border-radius: 20px; background: rgba(155, 89, 182, 0.15); color: #9b59b6; font-weight: 600; font-size: 0.85rem;">
+                    <i class="fas fa-exclamation-circle"></i> Requiere mayoría especial
+                </span>
+            </div>
+            
+            <!-- Atribuciones en cuadrícula visual mejorada -->
+            <div class="simplified-data-grid" style="grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));">
+                <!-- a) Control y fiscalización - NO DELEGABLE -->
+                <div class="data-item no-delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <strong>a) Control y fiscalización</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            De los órganos de gobierno
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- b) Moción censura/cuestión confianza - NO DELEGABLE -->
+                <div class="data-item no-delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-vote-yea"></i>
+                    </div>
+                    <div>
+                        <strong>b) Moción censura / Cuestión confianza</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            Votación pública y llamamiento nominal
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- c) Reglamentos orgánicos - NO DELEGABLE + MAYORÍA ABSOLUTA -->
+                <div class="data-item no-delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div>
+                        <strong>c) Reglamentos orgánicos</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            <span class="majority-badge" style="margin-left: 0;">Mayoría absoluta</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- d) Ordenanzas y reglamentos - DELEGABLE -->
+                <div class="data-item delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div>
+                        <strong>d) Ordenanzas y reglamentos</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            Aprobación y modificación
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- e) Término municipal - NO DELEGABLE + MAYORÍA ABSOLUTA -->
+                <div class="data-item no-delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div>
+                        <strong>e) Delimitación término municipal</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            <span class="majority-badge" style="margin-left: 0;">Mayoría absoluta</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- f) Organizaciones supramunicipales - NO DELEGABLE + MAYORÍA ABSOLUTA -->
+                <div class="data-item no-delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div>
+                        <strong>f) Participación organizaciones</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            <span class="majority-badge" style="margin-left: 0;">Mayoría absoluta</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- g) Recursos tributarios - NO DELEGABLE -->
+                <div class="data-item no-delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <div>
+                        <strong>g) Recursos tributarios</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            Determinación de recursos propios
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- h) Presupuestos y cuentas - NO DELEGABLE -->
+                <div class="data-item no-delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div>
+                        <strong>h) Presupuestos y cuentas</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            Aprobación y autorización gastos
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- i) Avales y garantías - DELEGABLE -->
+                <div class="data-item delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div>
+                        <strong>i) Avales y garantías</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            Según <span class="highlight-number">TRLHL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- j) Planeamiento - NO DELEGABLE -->
+                <div class="data-item no-delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <div>
+                        <strong>j) Planeamiento urbanístico</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            Aprobación final instrumentos
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- k) Transferencia funciones - NO DELEGABLE + MAYORÍA ABSOLUTA -->
+                <div class="data-item no-delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div>
+                        <strong>k) Transferencia de funciones</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            <span class="majority-badge" style="margin-left: 0;">Mayoría absoluta</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- l) Formas gestión - DELEGABLE -->
+                <div class="data-item delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div>
+                        <strong>l) Formas gestión servicios</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            Creación organismos y aprobación estatutos
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- m) Revisión oficio/lesividad - NO DELEGABLE -->
+                <div class="data-item no-delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div>
+                        <strong>m) Revisión oficio y lesividad</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            Facultades de revisión
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- n) Acciones judiciales - DELEGABLE -->
+                <div class="data-item delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div>
+                        <strong>n) Acciones judiciales</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            En materias de su competencia
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ñ) Régimen retributivo - NO DELEGABLE -->
+                <div class="data-item no-delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div>
+                        <strong>ñ) Régimen retributivo</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            Miembros Pleno, Alcalde, Junta y directivos
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- o) Conflictos competencia - DELEGABLE -->
+                <div class="data-item delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div>
+                        <strong>o) Conflictos de competencia</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            A otras Entidades y Administraciones
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- p) Creación escalas funcionarios - NO DELEGABLE -->
+                <div class="data-item no-delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <strong>p) Creación escalas funcionarios</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            Atribución condición agente autoridad
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- q) Otras atribuciones - DELEGABLE -->
+                <div class="data-item delegable">
+                    <div class="data-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <div>
+                        <strong>q) Otras atribuciones legales</strong>
+                        <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                            Asignadas por leyes
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reglas de mayoría -->
+            <div class="info-box" style="margin-top: 1.5rem;">
+                <div class="box-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <div>
+                    <h4 style="margin-top: 0; color: #8e44ad;">Reglas de mayoría para adopción de acuerdos</h4>
+                    
+                    <div class="simplified-data-grid" style="grid-template-columns: repeat(2, 1fr); margin: 1rem 0;">
+                        <div style="background: rgba(255,255,255,0.9); padding: 1rem; border-radius: 8px; border-left: 4px solid #9b59b6;">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                                <div style="width: 30px; height: 30px; border-radius: 6px; background: linear-gradient(135deg, #9b59b6, #8e44ad); display: flex; align-items: center; justify-content: center; color: white;">
+                                    <i class="fas fa-exclamation"></i>
+                                </div>
+                                <strong>Mayoría absoluta obligatoria</strong>
+                            </div>
+                            <div style="font-size: 0.9rem;">
+                                <ul style="padding-left: 1.2rem; margin: 0;">
+                                    <li>Párrafos <span class="highlight-number">c), e), f) y k)</span></li>
+                                    <li>Tramitación instrumentos planeamiento general</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.9); padding: 1rem; border-radius: 8px; border-left: 4px solid #27ae60;">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                                <div style="width: 30px; height: 30px; border-radius: 6px; background: linear-gradient(135deg, #27ae60, #219653); display: flex; align-items: center; justify-content: center; color: white;">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <strong>Mayoría simple suficiente</strong>
+                            </div>
+                            <div style="font-size: 0.9rem;">
+                                Para el resto de acuerdos no sujetos a regla especial
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Limitaciones de delegación -->
+            <div class="warning-box">
+                <div class="box-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                    <i class="fas fa-ban"></i>
+                </div>
+                <div>
+                    <h4 style="margin-top: 0; color: #d35400;">Limitaciones estrictas de delegación (Art. 11.3)</h4>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.8rem;">
+                        <span style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">a) Control</span>
+                        <span style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">b) Moción censura</span>
+                        <span style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">c) Reglamentos orgánicos</span>
+                        <span style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">e) Término municipal</span>
+                        <span style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">f) Organizaciones</span>
+                        <span style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">g) Recursos tributarios</span>
+                        <span style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">h) Presupuestos</span>
+                        <span style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">j) Planeamiento</span>
+                        <span style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">k) Transferencia</span>
+                        <span style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">m) Revisión oficio</span>
+                        <span style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">ñ) Régimen retributivo</span>
+                        <span style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">p) Funcionarios</span>
+                    </div>
+                    
+                    <p style="margin-top: 1rem; font-size: 0.95rem;"><strong><i class="fas fa-exclamation-triangle" style="color: #e67e22;"></i> Restricción adicional:</strong> Las delegaciones del Pleno <span class="highlight-number">sólo pueden realizarse en sus Comisiones</span>.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ARTÍCULO 14: EL ALCALDE - VERSIÓN VISUAL -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon" style="background: linear-gradient(135deg, #C40B0B, #8B0000);">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <span>Artículo 14: El Alcalde de Madrid - Atribuciones y facultades</span>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <div class="subsection-icon" style="background: var(--gradient-madrid);">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <span>Posición y responsabilidad</span>
+                </div>
+                
+                <ul class="visual-list">
+                    <li><strong>Impulsa la política municipal</strong> y dirige acción de órganos ejecutivos</li>
+                    <li>Ejerce <strong>superior dirección de la Administración ejecutiva</strong></li>
+                    <li>Responde ante el Pleno por su <span class="highlight-number">gestión política</span></li>
+                    <li>Máxima representación de la ciudad</li>
+                </ul>
+            </div>
+            
+            <!-- Atribuciones del Alcalde en cuadrícula -->
+            <div class="subsection">
+                <div class="subsection-title">
+                    <div class="subsection-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                        <i class="fas fa-list-check"></i>
+                    </div>
+                    <span>Atribuciones del Alcalde (Art. 14.3)</span>
+                </div>
+                
+                <div class="key-point">
+                    <strong>Sistema de delegación especial:</strong> Algunas atribuciones tienen <span class="highlight-number">limitaciones específicas</span> de delegación según Art. 14.4.
+                </div>
+                
+                <!-- Indicadores de delegabilidad -->
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 1rem 0; align-items: center;">
+                    <span class="attribution-type delegable">DELEGABLE</span>
+                    <span class="attribution-type no-delegable">NO DELEGABLE</span>
+                    <span style="padding: 0.3rem 0.8rem; border-radius: 20px; background: rgba(155, 89, 182, 0.15); color: #9b59b6; font-weight: 600; font-size: 0.85rem;">
+                        <i class="fas fa-users"></i> Sólo en Junta de Gobierno
+                    </span>
+                </div>
+                
+                <div class="simplified-data-grid" style="grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));">
+                    <!-- a) Programa acción política - SÓLO JUNTA -->
+                    <div class="data-item" style="border-left-color: #9b59b6;">
+                        <div class="data-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div>
+                            <strong>a) Determinar programa acción política</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                                Directrices y supervisión <span style="color: #9b59b6; font-weight: 600;">(Sólo delegable en Junta)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- b) Convocar y presidir - NO DELEGABLE -->
+                    <div class="data-item no-delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <div>
+                            <strong>b) Convocar y presidir sesiones</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                                Pleno y Junta de Gobierno
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- c) Voto calidad - NO DELEGABLE -->
+                    <div class="data-item no-delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-vote-yea"></i>
+                        </div>
+                        <div>
+                            <strong>c) Decidir empates con voto calidad</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                                En todos los órganos colegiados
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- d) Nombramientos - NO DELEGABLE -->
+                    <div class="data-item no-delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <strong>d) Nombrar y cesar miembros</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                                Junta, Tenientes, Presidentes Distritos
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- e) Bandos - PARCIAL NO DELEGABLE -->
+                    <div class="data-item no-delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div>
+                            <strong>e) Dictar bandos y decretos</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                                <span class="highlight-number">Adopción de bandos NO delegable</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- f) Medidas urgentes - NO DELEGABLE -->
+                    <div class="data-item no-delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div>
+                            <strong>f) Medidas urgente necesidad</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                                Cuenta inmediata al Pleno
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- g) Dirección personal - DELEGABLE -->
+                    <div class="data-item delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div>
+                            <strong>g) Superior dirección personal</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                                Y jefatura Policía Municipal
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- h) Organización áreas - SÓLO JUNTA -->
+                    <div class="data-item" style="border-left-color: #9b59b6;">
+                        <div class="data-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div>
+                            <strong>h) Acordar estructura áreas</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                                Número, denominación, competencias <span style="color: #9b59b6; font-weight: 600;">(Sólo delegable en Junta)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- i) Acciones judiciales - DELEGABLE -->
+                    <div class="data-item delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div>
+                            <strong>i) Acciones judiciales/administrativas</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                                En materias de su competencia
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- j) Ejecución normas - DELEGABLE -->
+                    <div class="data-item delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <div>
+                            <strong>j) Asegurar ejecución Leyes</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                                Y acuerdos municipales
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- k) Firma convenios - DELEGABLE -->
+                    <div class="data-item delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div>
+                            <strong>k) Firma de convenios</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- l) Revisión oficio - DELEGABLE -->
+                    <div class="data-item delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div>
+                            <strong>l) Revisión oficio y lesividad</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- m) Autorización gastos - DELEGABLE -->
+                    <div class="data-item delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-money-check-alt"></i>
+                        </div>
+                        <div>
+                            <strong>m) Autorización/disposición gastos</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- n) Ordenación pagos - DELEGABLE -->
+                    <div class="data-item delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-euro-sign"></i>
+                        </div>
+                        <div>
+                            <strong>n) Ordenación de pagos</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- ñ) Nombramiento personal - DELEGABLE -->
+                    <div class="data-item delegable">
+                        <div class="data-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div>
+                            <strong>ñ) Nombramiento del personal</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #555;">
+                                Funcionario, laboral y eventual
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Delegación del Alcalde -->
+            <div class="info-box">
+                <div class="box-icon" style="background: var(--gradient-madrid);">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                <div>
+                    <h4 style="margin-top: 0; color: #C40B0B;">Sistema de delegación del Alcalde (Art. 14.4)</h4>
+                    
+                    <div class="simplified-data-grid" style="grid-template-columns: repeat(3, 1fr); margin: 1rem 0;">
+                        <div style="background: rgba(255,255,255,0.9); padding: 1rem; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                            <strong style="color: #e74c3c;">NO DELEGABLES</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">
+                                b), c), d), e) (bandos), f)
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.9); padding: 1rem; border-radius: 8px; border-left: 4px solid #9b59b6;">
+                            <strong style="color: #9b59b6;">SÓLO EN JUNTA</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">
+                                a) y h)
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.9); padding: 1rem; border-radius: 8px; border-left: 4px solid #27ae60;">
+                            <strong style="color: #27ae60;">DELEGABLES</strong>
+                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">
+                                Resto de atribuciones
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 0.8rem; font-size: 0.95rem;"><strong>Órganos receptores:</strong> Junta de Gobierno, sus miembros, demás concejales u órganos directivos, mediante <span class="highlight-number">decreto</span>.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ARTÍCULO 15: TENIENTES DE ALCALDE - VERSIÓN VISUAL -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <span>Artículo 15: Los Tenientes de Alcalde</span>
+            </div>
+            
+            <div class="compact-grid" style="justify-content: center; max-width: 800px; margin: 0 auto;">
+                <div class="compact-card" style="border-top-color: #3498db;">
+                    <div class="compact-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="compact-title">Designación</div>
+                    <div class="compact-desc">Nombrados por el Alcalde entre miembros de la Junta de Gobierno</div>
+                </div>
+                
+                <div class="compact-card" style="border-top-color: #3498db;">
+                    <div class="compact-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                        <i class="fas fa-sort-numeric-down"></i>
+                    </div>
+                    <div class="compact-title">Orden de sustitución</div>
+                    <div class="compact-desc">Por orden de su nombramiento</div>
+                </div>
+                
+                <div class="compact-card" style="border-top-color: #3498db;">
+                    <div class="compact-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                        <i class="fas fa-user-injured"></i>
+                    </div>
+                    <div class="compact-title">Causas de sustitución</div>
+                    <div class="compact-desc">Vacante, ausencia o enfermedad del Alcalde</div>
+                </div>
+            </div>
+            
+            <div class="info-box" style="margin-top: 1.5rem;">
+                <div class="box-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div>
+                    <p><strong>Requisito esencial:</strong> Los Tenientes de Alcalde deben ostentar la <span class="highlight-number">condición de Concejal</span> y pertenecer a la Junta de Gobierno.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ARTÍCULO 16: JUNTA DE GOBIERNO - VERSIÓN VISUAL -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon" style="background: linear-gradient(135deg, #27ae60, #219653);">
+                    <i class="fas fa-users-cog"></i>
+                </div>
+                <span>Artículo 16: Junta de Gobierno - Composición y características</span>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <div class="subsection-icon" style="background: linear-gradient(135deg, #27ae60, #219653);">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <span>Composición y nombramiento</span>
+                </div>
+                
+                <ul class="visual-list">
+                    <li>Órgano <strong>ejecutivo de dirección política y administrativa</strong></li>
+                    <li>Nombramiento y separación <strong>libre por el Alcalde</strong></li>
+                    <li>Número máximo: <span class="highlight-number">1/3 del número legal</span> de miembros del Pleno (más el Alcalde)</li>
+                    <li><strong>Miembros no electos permitidos</strong> según legislación básica</li>
+                    <li>Derechos económicos fijados por el <span class="highlight-number">Pleno</span></li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <div class="subsection-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <span>Responsabilidad política</span>
+                </div>
+                
+                <ul class="visual-list">
+                    <li>Responde políticamente ante el Pleno de forma <strong>solidaria</strong></li>
+                    <li>Responsabilidad directa individual por gestión propia</li>
+                    <li>Secretaría designada por el Alcalde entre sus miembros</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <div class="subsection-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                        <i class="fas fa-door-closed"></i>
+                    </div>
+                    <span>Régimen de sesiones</span>
+                </div>
+                
+                <ul class="visual-list">
+                    <li>Sesiones <strong>secretas por defecto</strong></li>
+                    <li>Sesiones públicas por acuerdo de la propia Junta</li>
+                    <li>Asistencia de concejales no pertenecientes y órganos directivos <span class="highlight-number">por convocatoria expresa</span> del Alcalde</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- ARTÍCULO 17: ATRIBUCIONES JUNTA DE GOBIERNO - BLOQUES COMPACTOS -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <span>Artículo 17: Atribuciones de la Junta de Gobierno - Formato compacto</span>
+            </div>
+            
+            <div class="key-point">
+                <strong>Amplias competencias ejecutivas:</strong> <span class="highlight-number">14 atribuciones específicas</span> más cláusula residual. Sistema de delegación con limitaciones.
+            </div>
+            
+            <!-- Atribuciones en bloques compactos -->
+            <div class="compact-competences-grid">
+                <!-- a) Proyectos normativos -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">a) Proyectos normativos</div>
+                        <div class="compact-competence-desc">Aprobación proyectos de ordenanzas, reglamentos (excepto Pleno), estatutos organismos, empresas y fundaciones.</div>
+                    </div>
+                </div>
+                
+                <!-- b) Planes y directrices -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">b) Planes y directrices</div>
+                        <div class="compact-competence-desc">Adoptar planes, programas y directrices vinculantes para todos los órganos, organismos y empresas municipales.</div>
+                    </div>
+                </div>
+                
+                <!-- c) Proyecto presupuesto -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">c) Proyecto de presupuesto</div>
+                        <div class="compact-competence-desc">Aprobación del proyecto de presupuesto municipal.</div>
+                    </div>
+                </div>
+                
+                <!-- d) Urbanismo -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">d) Urbanismo</div>
+                        <div class="compact-competence-desc">Sometimiento a información pública de Avances de planeamiento, aprobaciones no atribuidas al Pleno, instrumentos gestión y proyectos urbanización.</div>
+                    </div>
+                </div>
+                
+                <!-- e) Contratación y patrimonio -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">e) Contratación y patrimonio</div>
+                        <div class="compact-competence-desc">Gestión de contratos, concesiones y patrimonio. Designación mesas contratación y presidentes.</div>
+                    </div>
+                </div>
+                
+                <!-- f) Expropiaciones -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">f) Expropiaciones</div>
+                        <div class="compact-competence-desc">Aprobación relaciones bienes expropiables y proyectos expropiatorios, incluidos urbanísticos por tasación conjunta.</div>
+                    </div>
+                </div>
+                
+                <!-- g) Gestión económica -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">g) Gestión económica</div>
+                        <div class="compact-competence-desc">Desarrollo gestión económica, gastos plurianuales, operaciones crédito, modificaciones presupuestarias (excepto créditos extraordinarios).</div>
+                    </div>
+                </div>
+                
+                <!-- h) Organización administrativa -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">h) Organización administrativa</div>
+                        <div class="compact-competence-desc">Establecer organización y estructura Administración ejecutiva. Nombramiento y cese titulares órganos directivos.</div>
+                    </div>
+                </div>
+                
+                <!-- i) Acciones judiciales -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">i) Acciones judiciales</div>
+                        <div class="compact-competence-desc">Ejercicio acciones judiciales y administrativas en materias de su competencia.</div>
+                    </div>
+                </div>
+                
+                <!-- j) Revisión oficio -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">j) Revisión oficio y lesividad</div>
+                        <div class="compact-competence-desc">Facultades revisión oficio y declaración lesividad de sus actos.</div>
+                    </div>
+                </div>
+                
+                <!-- k) Potestad sancionadora -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">k) Potestad sancionadora</div>
+                        <div class="compact-competence-desc">Ejercicio potestad sancionadora y concesión de licencias.</div>
+                    </div>
+                </div>
+                
+                <!-- l) Protección datos -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">l) Protección datos</div>
+                        <div class="compact-competence-desc">Creación, modificación o supresión ficheros datos carácter personal.</div>
+                    </div>
+                </div>
+                
+                <!-- m) Gestión personal -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">m) Gestión de personal</div>
+                        <div class="compact-competence-desc">Modificaciones plantilla, RPT, retribuciones, oferta empleo, selección, separación funcionarios, despido laboral, disciplina, incompatibilidades.</div>
+                    </div>
+                </div>
+                
+                <!-- n) Otras atribuciones -->
+                <div class="compact-competence-item" style="border-left-color: #f39c12;">
+                    <div class="compact-competence-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <div class="compact-competence-content">
+                        <div class="compact-competence-title">n) Otras atribuciones</div>
+                        <div class="compact-competence-desc">Demás atribuciones legales y las que legislación estatal o autonómica asignen al municipio no atribuidas a otros órganos.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Delegación Junta de Gobierno -->
+            <div class="info-box" style="margin-top: 1.5rem;">
+                <div class="box-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                    <i class="fas fa-share-square"></i>
+                </div>
+                <div>
+                    <h4 style="margin-top: 0; color: #d35400;">Limitaciones de delegación de la Junta (Art. 17.2)</h4>
+                    <p>La Junta de Gobierno <strong>NO puede delegar</strong> las funciones de los párrafos <span class="highlight-number">a), b), c), d), h) e i)</span>.</p>
+                    <p>Puede delegar o desconcentrar las demás en sus miembros, demás concejales u órganos directivos.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ARTÍCULO 19: PRINCIPIOS GENERALES - VERSIÓN VISUAL -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <span>Artículo 19: Principios generales de la Administración municipal</span>
+            </div>
+            
+            <div class="compact-grid" style="justify-content: center; max-width: 1000px; margin: 0 auto;">
+                <div class="compact-card" style="border-top-color: #2c3e50;">
+                    <div class="compact-icon" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="compact-title">Sometimiento pleno</div>
+                    <div class="compact-desc">A la Ley y al Derecho</div>
+                </div>
+                
+                <div class="compact-card" style="border-top-color: #2c3e50;">
+                    <div class="compact-icon" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <div class="compact-title">Principios organizativos</div>
+                    <div class="compact-desc">Jerarquía, eficacia, descentralización funcional, desconcentración, coordinación</div>
+                </div>
+                
+                <div class="compact-card" style="border-top-color: #2c3e50;">
+                    <div class="compact-icon" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="compact-title">Servicio al ciudadano</div>
+                    <div class="compact-desc">Principio rector de la actividad administrativa</div>
+                </div>
+            </div>
+            
+            <div class="subsection" style="margin-top: 2rem;">
+                <div class="subsection-title">
+                    <div class="subsection-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <span>Relaciones interadministrativas</span>
+                </div>
+                
+                <ul class="visual-list">
+                    <li>Con otras Administraciones: <strong>información, colaboración, coordinación, respeto competencial</strong></li>
+                    <li>Con ciudadanos: <span class="highlight-number">transparencia y participación</span></li>
+                </ul>
+            </div>
+            
+            <div class="key-point">
+                <strong>Dirección única:</strong> La Administración del Ayuntamiento actúa bajo <span class="highlight-number">superior dirección del Alcalde</span>, sirviendo con objetividad a los intereses generales de Madrid.
+            </div>
+        </div>
+        
+        <!-- ARTÍCULO 21: ÓRGANOS DIRECTIVOS - VERSIÓN VISUAL -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <span>Artículo 21: Órganos directivos</span>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <div class="subsection-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <span>Creación y designación</span>
+                </div>
+                
+                <ul class="visual-list">
+                    <li>Creación por <strong>Junta de Gobierno</strong> en marco del Reglamento orgánico</li>
+                    <li>Nombramiento según <span class="highlight-number">competencia profesional y experiencia</span></li>
+                    <li>Sujetos a régimen de incompatibilidades de <span class="highlight-number">Ley 53/1984</span></li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <div class="subsection-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <span>Funciones principales</span>
+                </div>
+                
+                <ul class="visual-list">
+                    <li><strong>Desarrollar y ejecutar</strong> planes y decisiones de órganos políticos</li>
+                    <li><strong>Impulsar ejecución</strong> de decisiones políticas</li>
+                    <li><strong>Planificar y coordinar</strong> actividades de su ámbito</li>
+                    <li><strong>Evaluar y proponer</strong> innovación y mejora de servicios</li>
+                    <li>Ejercer funciones <strong>delegadas o atribuidas</strong> específicamente</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- ARTÍCULO 22: LOS DISTRITOS - VERSIÓN VISUAL -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon" style="background: linear-gradient(135deg, #16a085, #138d75);">
+                    <i class="fas fa-map-marked"></i>
+                </div>
+                <span>Artículo 22: Los Distritos - Desconcentración territorial</span>
+            </div>
+            
+            <div class="key-point">
+                <strong>Mandato legal:</strong> El Pleno <span class="highlight-number">debe crear Distritos</span> como divisiones territoriales propias con órganos de gestión desconcentrada.
+            </div>
+            
+            <div class="two-columns-grid">
+                <div class="service-level-card">
+                    <div class="service-level-header" style="background: linear-gradient(135deg, #16a085, #138d75);">
+                        <div class="service-level-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0; font-size: 1.1rem;">Finalidad principal</h4>
+                        </div>
+                    </div>
+                    <div class="service-level-body">
+                        <ul class="visual-list">
+                            <li><strong>Impulsar participación ciudadana</strong> en gestión municipal</li>
+                            <li><strong>Mejorar gestión</strong> de asuntos municipales</li>
+                            <li>Mantener <span class="highlight-number">unidad de gobierno y gestión</span> de la ciudad</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-level-card">
+                    <div class="service-level-header" style="background: linear-gradient(135deg, #16a085, #138d75);">
+                        <div class="service-level-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0; font-size: 1.1rem;">Presidencia</h4>
+                        </div>
+                    </div>
+                    <div class="service-level-body">
+                        <div style="text-align: center; padding: 1rem 0;">
+                            <div style="font-size: 2.5rem; color: #16a085; margin-bottom: 0.5rem;">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h4 style="margin: 0; color: #333;">Concejal</h4>
+                            <p style="margin-top: 0.5rem; font-size: 0.95rem; color: #666;">La Presidencia del Distrito corresponde en todo caso a un Concejal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <div class="box-icon" style="background: linear-gradient(135deg, #16a085, #138d75);">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div>
+                    <p><strong>Equilibrio institucional:</strong> Los Distritos combinan <span class="highlight-number">desconcentración administrativa</span> para mejorar servicios y participación, manteniendo la <span class="highlight-number">unidad política</span> a través de la Presidencia ejercida por un Concejal.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     </main>
     
     <!-- Botones flotantes -->
