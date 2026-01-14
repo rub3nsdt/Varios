@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesos Forzados - Guía Visual del Cuerpo de Bomberos de Madrid</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-fire: #D32F2F;
+            --color-fire-light: #FF5252;
+            --color-fire-dark: #B71C1C;
+            --color-rescue: #2196F3;
+            --color-rescue-light: #64B5F6;
+            --color-rescue-dark: #1976D2;
+            --color-tools: #FF9800;
+            --color-tools-light: #FFB74D;
+            --color-tools-dark: #F57C00;
+            --color-security: #4CAF50;
+            --color-security-light: #81C784;
+            --color-security-dark: #388E3C;
+            --color-metal: #607D8B;
+            --color-metal-light: #90A4AE;
+            --color-metal-dark: #455A64;
+            --color-text: #333333;
+            --color-light: #f8f9fa;
+            --color-dark: #212121;
+            --gradient-fire: linear-gradient(135deg, #D32F2F 0%, #FF5252 100%);
+            --gradient-rescue: linear-gradient(135deg, #2196F3 0%, #64B5F6 100%);
+            --gradient-tools: linear-gradient(135deg, #FF9800 0%, #FFB74D 100%);
+            --gradient-security: linear-gradient(135deg, #4CAF50 0%, #81C784 100%);
+            --gradient-metal: linear-gradient(135deg, #607D8B 0%, #90A4AE 100%);
+            --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(45deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .hero-header {
+            background: var(--gradient-fire);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+        }
+        
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .logo-icon {
+            background: rgba(255, 255, 255, 0.2);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-icon:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+        
+        .hero-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            font-weight: 800;
+        }
+        
+        .hero-header p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.95;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        
+        .stat-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.3rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .stat-number.red {
+            color: #FFEB3B;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Navegación */
+        .visual-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 2.5rem auto;
+            padding: 1.2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            max-width: 1400px;
+            position: sticky;
+            top: 15px;
+            z-index: 99;
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 100px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            font-size: 0.9rem;
+        }
+        
+        .nav-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .nav-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        /* Sistema de tarjetas */
+        .horizontal-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .horizontal-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .horizontal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        /* Encabezado de tarjeta */
+        .card-header-top {
+            padding: 2rem 2rem 1.5rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .card-title-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card-icon-large {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-title-top {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-subtitle-top {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 12px;
+        }
+        
+        .topic-number-badge {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Elementos dentro del contenido */
+        .highlight-number {
+            color: var(--color-fire);
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            color: #333;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .visual-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .visual-list li {
+            padding: 0.9rem 0;
+            padding-left: 3rem;
+            position: relative;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .visual-list li:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+            padding-left: 3.2rem;
+            border-left-color: var(--color-fire);
+        }
+        
+        .visual-list li:before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 1.4rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        
+        /* Cajas especiales */
+        .info-box, .tip-box, .warning-box, .danger-box, .legal-box {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-box::before, .tip-box::before, .warning-box::before, .danger-box::before, .legal-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            border-left: 6px solid var(--color-rescue);
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+            border-left: 6px solid var(--color-security);
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #FFF8E1, #FFECB3);
+            border-left: 6px solid var(--color-tools);
+        }
+        
+        .danger-box {
+            background: linear-gradient(135deg, #FFEBEE, #FFCDD2);
+            border-left: 6px solid var(--color-fire);
+        }
+        
+        .legal-box {
+            background: linear-gradient(135deg, #F3E5F5, #E1BEE7);
+            border-left: 6px solid #9C27B0;
+        }
+        
+        .box-icon {
+            font-size: 1.3rem;
+            min-width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        /* Diagramas y elementos visuales */
+        .visual-diagram {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px dashed #ddd;
+            text-align: center;
+        }
+        
+        .diagram-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+        
+        .diagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .diagram-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .diagram-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .diagram-icon {
+            font-size: 2rem;
+            color: var(--color-fire);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        .visual-footer {
+            background: linear-gradient(135deg, var(--color-dark), #424242);
+            color: white;
+            padding: 3.5rem 0;
+            text-align: center;
+            margin-top: 5rem;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .visual-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 0L0 0 892.25 114.72 1200 0z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        /* Botones flotantes */
+        .floating-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: var(--gradient-fire);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1) rotate(15deg);
+        }
+        
+        .floating-btn-left {
+            left: 25px;
+            right: auto;
+            background: var(--gradient-rescue);
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+        }
+        
+        .floating-btn-left:hover {
+            transform: scale(1.1) rotate(-15deg);
+        }
+        
+        /* Etiquetas de categoría */
+        .category-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        
+        .tag-legal { background: #E3F2FD; color: #1565C0; }
+        .tag-tools { background: #FFF3E0; color: #EF6C00; }
+        .tag-security { background: #E8F5E9; color: #2E7D32; }
+        .tag-doors { background: #F3E5F5; color: #7B1FA2; }
+        .tag-locks { background: #E0F2F1; color: #00695C; }
+        
+        /* Iconos decorativos flotantes */
+        .floating-icon {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        /* Estilo para subtítulos dentro de las secciones */
+        .section h4 {
+            margin: 1.5rem 0 1rem 0;
+            color: #333;
+            font-size: 1.2rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid var(--color-fire);
+            padding-left: 1rem;
+        }
+        
+        /* Timeline horizontal */
+        .procedure-timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            justify-content: space-between;
+        }
+        
+        .timeline-step {
+            flex: 1;
+            min-width: 150px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            border-top: 4px solid var(--color-rescue);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: var(--color-rescue);
+            color: white;
+            border-radius: 50%;
+            line-height: 32px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .step-title {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+            color: var(--color-dark);
+        }
+        
+        /* Tablas */
+        .visual-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .visual-table th {
+            background: var(--gradient-rescue);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .visual-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .visual-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .visual-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        /* Responsividad */
+        @media (max-width: 992px) {
+            .card-title-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .topic-number-badge {
+                align-self: center;
+            }
+            
+            .procedure-timeline {
+                flex-direction: column;
+            }
+            
+            .diagram-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-header p {
+                font-size: 1rem;
+            }
+            
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .stat-box {
+                min-width: 150px;
+                padding: 0.8rem 1rem;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .visual-nav {
+                padding: 1rem;
+                top: 10px;
+                gap: 10px;
+            }
+            
+            .nav-item {
+                min-width: 90px;
+                padding: 0.8rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .nav-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
+            }
+            
+            .card-title-top {
+                font-size: 1.6rem;
+            }
+            
+            .card-content {
+                padding: 1.5rem;
+            }
+            
+            .card-header-top {
+                padding: 1.5rem 1.5rem 1.2rem;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .floating-btn, .floating-btn-left {
+                width: 45px;
+                height: 45px;
+                font-size: 1.25rem;
+            }
+            
+            .floating-btn-left {
+                left: 15px;
+                bottom: 85px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .card-title-top {
+                font-size: 1.25rem;
+            }
+            
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .stats-container {
+                gap: 1rem;
+            }
+            
+            .stat-box {
+                min-width: 120px;
+            }
+        }
+        
+        /* Estilos para listas anidadas */
+        .nested-list {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+            list-style: none;
+        }
+        
+        .nested-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        .nested-list li:before {
+            content: '•';
+            position: absolute;
+            left: 0.5rem;
+            top: 0.3rem;
+            color: var(--color-rescue);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Para destacar especialmente algunos elementos */
+        .emphasis-box {
+            background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+            border-left: 6px solid #FF9800;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .emphasis-box::before {
+            content: '⚠️';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            opacity: 0.2;
+        }
+        
+        /* Estilo para iconos en pasos de línea de tiempo */
+        .step-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Comparación de tipos */
+        .comparison-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .comparison-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--color-tools);
+            transition: transform 0.3s ease;
+        }
+        
+        .comparison-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .comparison-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--color-tools-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .comparison-icon {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="hero-header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <div class="logo-icon" style="background: var(--gradient-fire);">
+                    <i class="fas fa-fire-extinguisher"></i>
+                </div>
+                <div class="logo-icon" style="background: var(--gradient-rescue);">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="logo-icon" style="background: var(--gradient-tools);">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div class="logo-icon" style="background: var(--gradient-security);">
+                    <i class="fas fa-lock"></i>
+                </div>
+            </div>
+            
+            <h1>🚒 ACCESOS FORZADOS - CONCEPTOS BÁSICOS</h1>
+            <p>Guía visual completa para intervenciones del Cuerpo de Bomberos del Ayuntamiento de Madrid</p>
+            
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number red"><span class="highlight-number">26.000</span></div>
+                    <div class="stat-label">Intervenciones totales (2022)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number red"><span class="highlight-number">3.000+</span></div>
+                    <div class="stat-label">Aperturas de puertas (SEHV)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number red"><span class="highlight-number">2.400+</span></div>
+                    <div class="stat-label">Rescates realizados</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navegación simplificada -->
+    <div class="container">
+        <div class="visual-nav">
+            <a href="#introduccion" class="nav-item" style="background: linear-gradient(135deg, #FFEBEE, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-fire);">
+                    <i class="fas fa-door-closed"></i>
+                </div>
+                <span>Introducción</span>
+                <small>Tema 1</small>
+            </a>
+            
+            <a href="#aspectos-legales" class="nav-item" style="background: linear-gradient(135deg, #E3F2FD, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-rescue);">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <span>Aspectos Legales</span>
+                <small>Tema 2</small>
+            </a>
+            
+            <a href="#puertas" class="nav-item" style="background: linear-gradient(135deg, #F3E5F5, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-security);">
+                    <i class="fas fa-door-open"></i>
+                </div>
+                <span>Puertas</span>
+                <small>Tema 3</small>
+            </a>
+            
+            <a href="#cerraduras" class="nav-item" style="background: linear-gradient(135deg, #E0F2F1, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-metal);">
+                    <i class="fas fa-key"></i>
+                </div>
+                <span>Cerraduras</span>
+                <small>Tema 4</small>
+            </a>
+            
+            <a href="#escudos" class="nav-item" style="background: linear-gradient(135deg, #FFF3E0, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-tools);">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span>Escudos</span>
+                <small>Tema 5</small>
+            </a>
+        </div>
+    </div>
+    
+    <main class="container">
+        <div class="horizontal-cards-container">
+            
+            <!-- TEMA 1: INTRODUCCIÓN -->
+            <div class="horizontal-card" id="introduccion">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-door-closed"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: var(--gradient-fire);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-fire-extinguisher"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🚪 INTRODUCCIÓN A LOS ACCESOS FORZADOS</div>
+                            <div class="card-subtitle-top">Tema 1 - Morfología de la ciudad, tipos de intervenciones y herramientas</div>
+                            <div>
+                                <span class="category-tag tag-tools">Herramientas</span>
+                                <span class="category-tag tag-security">Seguridad</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Tema 1</div>
+                </div>
+                
+                <div class="card-content">
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-fire);">
+                                <i class="fas fa-city"></i>
+                            </div>
+                            <span>1.1. Morfología de la Ciudad</span>
+                        </div>
+                        
+                        <ul class="visual-list">
+                            <li>Madrid tiene <span class="highlight-number">21 distritos</span> con intervenciones diferentes según el parque de bomberos</li>
+                            <li>Distritos con población mayor → más aperturas por asistencia médica</li>
+                            <li>Nivel de seguridad varía según poder adquisitivo y antigüedad del barrio</li>
+                            <li>Es importante conocer <strong>todos los tipos de cerraduras</strong>, desde las más antiguas hasta las más modernas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-rescue);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <span>1.2. Tipos de Intervenciones</span>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--gradient-fire);">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div>
+                                <strong>Clave SEHV:</strong> Más de <span class="highlight-number">3.000</span> aperturas de puertas de un total de <span class="highlight-number">26.000</span> intervenciones (2022)
+                            </div>
+                        </div>
+                        
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: var(--gradient-rescue);">
+                                    <i class="fas fa-user-fall"></i>
+                                </div>
+                                <div class="step-title">Persona caída</div>
+                                <div style="font-size: 0.85rem;">Persona mayor que avisa a teleasistencia</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: var(--gradient-fire);">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="step-title">Incendio</div>
+                                <div style="font-size: 0.85rem;">Crítico - puerta no debe sufrir daños para controlar ventilación</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: var(--gradient-security);">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <div class="step-title">Violencia de género</div>
+                                <div style="font-size: 0.85rem;">Prestación de medios a Policía Nacional</div>
+                            </div>
+                        </div>
+                        
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: #9C27B0;">
+                                    <i class="fas fa-user-injured"></i>
+                                </div>
+                                <div class="step-title">Persona no responde</div>
+                                <div style="font-size: 0.85rem;">Vecino/familiar avisa de ausencia de señales de vida</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: #2196F3;">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                                <div class="step-title">Fugas</div>
+                                <div style="font-size: 0.85rem;">Agua, gas, olor a gas</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: #FF9800;">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="step-title">Otros</div>
+                                <div style="font-size: 0.85rem;">Cuartos de contadores, etc.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-tools);">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <span>1.3. Herramientas</span>
+                        </div>
+                        
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-wrench comparison-icon"></i>
+                                    Herramientas Manuales
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Alicates, tenacillas, lima</li>
+                                    <li>Brocas y puntas Torx</li>
+                                    <li>Mordaza de presión para partir cilindros</li>
+                                    <li>En Maletín de Apertura (MAP) y cajas de vehículos</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-battery-full comparison-icon"></i>
+                                    Herramientas de Batería
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Amoladora angular (radial)</li>
+                                    <li>Amoladora recta (fresadora)</li>
+                                    <li>Taladro percutor</li>
+                                    <li>En proceso de implantación</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-unlock-alt comparison-icon"></i>
+                                    Herramientas Cerrajería
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Micas</li>
+                                    <li>Extractor de campana</li>
+                                    <li>Tornillos y arandelas</li>
+                                    <li>Fresas, etc.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-security);">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <span>1.4. Seguridad en Intervención</span>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-security);">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                            <div>
+                                <strong>Uniformidad y EPI's:</strong> Siempre utilizar equipo de protección individual según el tipo de intervención
+                            </div>
+                        </div>
+                        
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: #4CAF50;">
+                                    <i class="fas fa-vest"></i>
+                                </div>
+                                <div class="step-title">Traje de Intervención Ligero (T.I.L.)</div>
+                                <div style="font-size: 0.85rem;">Para intervenciones generales</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: #D32F2F;">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="step-title">Traje de Fuego (E2)</div>
+                                <div style="font-size: 0.85rem;">Para intervenciones con riesgo de incendio</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TEMA 2: ASPECTOS LEGALES -->
+            <div class="horizontal-card" id="aspectos-legales">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: var(--gradient-rescue);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">⚖️ ASPECTOS LEGALES</div>
+                            <div class="card-subtitle-top">Tema 2 - Derechos, deberes, intervenciones y responsabilidad</div>
+                            <div>
+                                <span class="category-tag tag-legal">Legal</span>
+                                <span class="category-tag tag-security">Responsabilidad</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Tema 2</div>
+                </div>
+                
+                <div class="card-content">
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-rescue);">
+                                <i class="fas fa-book-law"></i>
+                            </div>
+                            <span>2.1. Introducción - Derechos y Deberes</span>
+                        </div>
+                        
+                        <div class="legal-box">
+                            <div class="box-icon" style="background: var(--gradient-rescue);">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div>
+                                <strong>Domicilio vs Morada:</strong> Domicilio = lugar cerrado donde se desarrolla vida privada. Morada = domicilio, despacho profesional o establecimiento fuera de horas.
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-heartbeat comparison-icon"></i>
+                                    Derecho a la Vida (Art. 15 CE)
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Todos tienen derecho a la vida e integridad física</li>
+                                    <li>Derecho a ser atendidos por Administraciones en emergencias</li>
+                                    <li>Se convierte en obligación de protección de poderes públicos</li>
+                                    <li>Marco jurídico: Ley 2/1985 de Protección Civil</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-user-secret comparison-icon"></i>
+                                    Derecho al Honor (Art. 18.1 CE)
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Derecho al honor, intimidad personal y familiar</li>
+                                    <li>Inviolabilidad de la morada o domicilio</li>
+                                    <li>Entrada legítima: evitar daños inminentes graves</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-door-closed comparison-icon"></i>
+                                    Inviolabilidad Domicilio (Art. 18.2 CE)
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Ninguna entrada sin consentimiento o resolución judicial</li>
+                                    <li>Excepción: flagrante delito</li>
+                                    <li>Ley 17/2015: entrada en domicilio para emergencias</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #9C27B0;">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <span>2.2. Intervención de Bomberos</span>
+                        </div>
+                        
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-exclamation-circle comparison-icon"></i>
+                                    Intervenciones Urgentes (99,99%)
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Incendio confirmado en interior</li>
+                                    <li>Persona en situación de riesgo que necesita rescate</li>
+                                    <li>Reconocimiento condiciones estructurales comprometidas</li>
+                                    <li>Petición de Policía por delito confirmado</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-clock comparison-icon"></i>
+                                    Intervenciones No Urgentes (0,01%)
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Aperturas programadas (desalojos judiciales)</li>
+                                    <li>Expedientes de ruina</li>
+                                    <li>Cuadros psiquiátricos peligrosos</li>
+                                    <li>Apoyo sin acceder al interior salvo petición expresa</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #9C27B0;">
+                                <i class="fas fa-balance-scale-left"></i>
+                            </div>
+                            <div>
+                                <strong>Valoración del Mando:</strong> Debe considerar "cumplimiento del deber" (art 20.7 CP) y "estado de necesidad" (20.5 CP). El mal causado no debe ser mayor que el que se trata de evitar.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-fire);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <span>2.3. Responsabilidad del Interviniente</span>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: var(--color-fire);">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <div>
+                                <strong>Régimen disciplinario:</strong> EBEP (Estatuto Básico Empleado Público) y Reglamento del Cuerpo de Bomberos
+                            </div>
+                        </div>
+                        
+                        <table class="visual-table">
+                            <thead>
+                                <tr>
+                                    <th>Intervención</th>
+                                    <th>Delito</th>
+                                    <th>Responsabilidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Acción Indebida</strong></td>
+                                    <td>Allanamiento de morada</td>
+                                    <td>Penal y Patrimonial</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Inacción</strong></td>
+                                    <td>Omisión deber de Socorro</td>
+                                    <td>Penal</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>No Urgente - Inacción</strong></td>
+                                    <td>Desobediencia / Denegación de Auxilio</td>
+                                    <td>Penal y Disciplinaria</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--color-fire);">
+                                <i class="fas fa-handcuffs"></i>
+                            </div>
+                            <div>
+                                <strong>Allanamiento de Morada (Art 202 CP):</strong> Particular que entre en morada ajena contra voluntad del morador. Agravante para agentes: prisión de <span class="highlight-number">15 a 24 meses</span> e inhabilitación <span class="highlight-number">6 a 12 años</span>.
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--color-fire);">
+                                <i class="fas fa-user-slash"></i>
+                            </div>
+                            <div>
+                                <strong>Omisión del Deber de Socorro (Art 195 CP):</strong> No socorrer a víctimas cuando se puede hacer sin grave peligro. Multa de <span class="highlight-number">3 a 12 meses</span>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TEMA 3: LAS PUERTAS -->
+            <div class="horizontal-card" id="puertas">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-door-open"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: var(--gradient-security);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-door-closed"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🚪 LAS PUERTAS</div>
+                            <div class="card-subtitle-top">Tema 3 - Normativa, tipos de puertas y retenedores anti-pánico</div>
+                            <div>
+                                <span class="category-tag tag-doors">Puertas</span>
+                                <span class="category-tag tag-security">Seguridad</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Tema 3</div>
+                </div>
+                
+                <div class="card-content">
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-security);">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            <span>3.1. Normativa Aplicable - UNE 1627:2011</span>
+                        </div>
+                        
+                        <table class="visual-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Tiempo Resistencia</th>
+                                    <th>Tipo Ladrón</th>
+                                    <th>Herramientas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CLASE 1</strong></td>
+                                    <td>N/A</td>
+                                    <td>Ocasional</td>
+                                    <td>Pequeñas y sencillas</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CLASE 2</strong></td>
+                                    <td><span class="highlight-number">3'</span></td>
+                                    <td>Ocasional</td>
+                                    <td>Sencillas</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CLASE 3</strong></td>
+                                    <td><span class="highlight-number">5'</span></td>
+                                    <td>Sin práctica</td>
+                                    <td>Barra, destornillador, martillo, taladro</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CLASE 4</strong></td>
+                                    <td><span class="highlight-number">10'</span></td>
+                                    <td>Con práctica</td>
+                                    <td>Martillo pesado, hacha, cincel, taladro</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CLASE 5</strong></td>
+                                    <td><span class="highlight-number">15'</span></td>
+                                    <td>Experimentado</td>
+                                    <td>Taladro, sierra de espadín, amoladora</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CLASE 6</strong></td>
+                                    <td><span class="highlight-number">20'</span></td>
+                                    <td>Muy experimentado</td>
+                                    <td>Herramientas eléctricas "potentes"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-security);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <strong>Plan B en Bomberos:</strong> Medios aéreos (auto-escalas) y maniobras de acceso mediante cuerda. Analizar si la apertura se demora y trabajar en planes alternativos simultáneamente.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #8D6E63;">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <span>3.2. Tipos de Puertas más Comunes</span>
+                        </div>
+                        
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-tree comparison-icon"></i>
+                                    Puertas de Madera
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Tablero de madera sin refuerzo metálico</li>
+                                    <li>Bisagras metálicas (3) sin anti-palanca</li>
+                                    <li>Cerradura sencilla (monopunto)</li>
+                                    <li>Cerco sin refuerzos, recibido con grapas y espuma</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-shield-alt comparison-icon"></i>
+                                    Puertas Blindadas
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Construcción sándwich: núcleo madera + chapas metálicas</li>
+                                    <li>Bisagras con refuerzo anti-palanca (bulón)</li>
+                                    <li>Cerradura con 3+ cierres + resbalón</li>
+                                    <li>Cerco con refuerzos metálicos</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-fort-awesome comparison-icon"></i>
+                                    Puertas Acorazadas
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Núcleo metálico revestido con contrachapados</li>
+                                    <li>"U" perimetral característica para identificación</li>
+                                    <li>Bisagras robustas con bulones grandes</li>
+                                    <li>Varios cierres, anti-apalancamiento, sistemas anti-pánico</li>
+                                    <li>Cerco metálico (imán se ve atraído)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <span>3.3. Retenedores Anti-Pánico</span>
+                        </div>
+                        
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: #4CAF50;">
+                                    <i class="fas fa-link"></i>
+                                </div>
+                                <div class="step-title">Retenedor de Cadena</div>
+                                <div style="font-size: 0.85rem;">Más común. Se puede instalar separado o con cerrojo FAC. En emergencia: cortar con cizallas.</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: #2196F3;">
+                                    <i class="fas fa-grip-lines"></i>
+                                </div>
+                                <div class="step-title">Retenedor de Pletina</div>
+                                <div style="font-size: 0.85rem;">Habitual en puertas acorazadas.</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: #D32F2F;">
+                                    <i class="fas fa-ban"></i>
+                                </div>
+                                <div class="step-title">Retenedor de Barra</div>
+                                <div style="font-size: 0.85rem;">Vulnerable a sierra de sable. Sistema doble de control de acceso.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <strong>Retenedor de Barra - Posición bloqueada:</strong> Si se gira un cuarto de vuelta, el tetón se encastra en el marco metálico bloqueando por completo la apertura. En emergencia, solo queda buscar acceso alternativo o tirar la puerta abajo.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TEMA 4: LAS CERRADURAS -->
+            <div class="horizontal-card" id="cerraduras">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-key"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: var(--gradient-metal);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-unlock-alt"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🔐 LAS CERRADURAS</div>
+                            <div class="card-subtitle-top">Tema 4 - Historia, tipos, elementos y funcionamiento</div>
+                            <div>
+                                <span class="category-tag tag-locks">Cerraduras</span>
+                                <span class="category-tag tag-security">Mecanismos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Tema 4</div>
+                </div>
+                
+                <div class="card-content">
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-metal);">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <span>4.1. Historia de las Cerraduras</span>
+                        </div>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Funcionamiento Básico Histórico</div>
+                            <div class="procedure-timeline">
+                                <div class="timeline-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Tranca trabada</div>
+                                    <div style="font-size: 0.85rem;">Cierre deslizante horizontal trabado por mecanismo dentado</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">Llave insertada</div>
+                                    <div style="font-size: 0.85rem;">Dientes de llave encajan con dientes de cerradura</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">Liberación</div>
+                                    <div style="font-size: 0.85rem;">Liberan la tranca para desplazarla y abrir</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #795548;">
+                                <i class="fas fa-th-large"></i>
+                            </div>
+                            <span>4.2. Tipos de Cerraduras</span>
+                        </div>
+                        
+                        <div class="diagram-grid">
+                            <div class="diagram-item">
+                                <div class="diagram-icon"><i class="fas fa-box"></i></div>
+                                <div><strong>Embutir</strong></div>
+                                <div>Encastradas dentro de la puerta (no visibles)</div>
+                            </div>
+                            <div class="diagram-item">
+                                <div class="diagram-icon"><i class="fas fa-layer-group"></i></div>
+                                <div><strong>Sobreponer</strong></div>
+                                <div>Instaladas sobre parte interna de la puerta</div>
+                            </div>
+                            <div class="diagram-item">
+                                <div class="diagram-icon"><i class="fas fa-th"></i></div>
+                                <div><strong>Perfilería Metálica</strong></div>
+                                <div>Para puertas con tubos metálicos cuadrados (40mm)</div>
+                            </div>
+                            <div class="diagram-item">
+                                <div class="diagram-icon"><i class="fas fa-running"></i></div>
+                                <div><strong>Anti-pánico</strong></div>
+                                <div>Puertas emergencia (abren hacia fuera)</div>
+                            </div>
+                            <div class="diagram-item">
+                                <div class="diagram-icon"><i class="fas fa-eye-slash"></i></div>
+                                <div><strong>Invisibles</strong></div>
+                                <div>Secundarias, accionamiento remoto o app</div>
+                            </div>
+                            <div class="diagram-item">
+                                <div class="diagram-icon"><i class="fas fa-microchip"></i></div>
+                                <div><strong>Inteligentes</strong></div>
+                                <div>Instaladas sobre cilindro, motor gira llave por dentro</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #795548;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <strong>Cerraduras Anti-pánico:</strong> Resbalón instalado al contrario (parte plana hacia nosotros). Métodos normales con mica no efectivos → usar agujas o alambres.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #607D8B;">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <span>4.3. Elementos de una Cerradura</span>
+                        </div>
+                        
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-external-link-alt comparison-icon"></i>
+                                    Elementos Externos
+                                </div>
+                                <ul class="visual-list">
+                                    <li><strong>Frontal:</strong> Pletina que tapa agujero en canto</li>
+                                    <li><strong>Resbalón:</strong> Pieza con forma de cuña que cierra</li>
+                                    <li><strong>Petaca:</strong> Parte que se introduce en el marco</li>
+                                    <li><strong>Tornillo sujeción:</strong> Une cilindro con cerradura</li>
+                                    <li><strong>Manilla:</strong> Para retraer resbalón</li>
+                                    <li><strong>Cilindro:</strong> Acciona cerradura internamente</li>
+                                    <li><strong>Escudo:</strong> Protege cilindro y función decorativa</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-cogs comparison-icon"></i>
+                                    Elementos Internos
+                                </div>
+                                <ul class="visual-list">
+                                    <li><strong>Salvaguarda:</strong> Impide desplazamiento petaca</li>
+                                    <li><strong>Guarda:</strong> Con surcos donde encaja salvaguarda</li>
+                                    <li><strong>Palanca vinculación:</strong> Desplaza para que leva actúe</li>
+                                    <li><strong>Leva:</strong> Levanta salvaguarda y desplaza guarda</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #9E9E9E;">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <span>4.4. Funcionamiento de una Cerradura</span>
+                        </div>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Proceso de Apertura</div>
+                            <div class="procedure-timeline">
+                                <div class="timeline-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Llave echada</div>
+                                    <div style="font-size: 0.85rem;">Petaca desplazada totalmente a izquierda</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">Girar llave</div>
+                                    <div style="font-size: 0.85rem;">Leva levanta salvaguarda y desplaza guarda</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">Segunda vuelta</div>
+                                    <div style="font-size: 0.85rem;">Palanca vinculación se desplaza</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">Retraer resbalón</div>
+                                    <div style="font-size: 0.85rem;">Leva levanta palanca que acciona mecanismo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #3F51B5;">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <span>4.5. El Resbalón</span>
+                        </div>
+                        
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-square comparison-icon"></i>
+                                    Resbalones Estándar
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Cara biselada orientada hacia cerradero</li>
+                                    <li>Permite retraerse hacia cerradura al cerrar</li>
+                                    <li>Cara plana impide apertura una vez cerrado</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-ban comparison-icon"></i>
+                                    Resbalones Anti-Tarjeta
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Varias caras planas</li>
+                                    <li>Permiten cierre normal pero dificultan apertura con mica</li>
+                                    <li>Imposibilitan en algunos casos apertura con mica</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TEMA 5: ESCUDOS PROTECTORES -->
+            <div class="horizontal-card" id="escudos">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: var(--gradient-tools);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🛡️ ESCUDOS PROTECTORES</div>
+                            <div class="card-subtitle-top">Tema 5 - Protección de cilindros frente a ataques</div>
+                            <div>
+                                <span class="category-tag tag-security">Protección</span>
+                                <span class="category-tag tag-locks">Cilindros</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Tema 5</div>
+                </div>
+                
+                <div class="card-content">
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #9E9E9E;">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <span>5.1. Embellecedores</span>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #9E9E9E;">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div>
+                                <strong>Función meramente estética:</strong> Típico de puertas de trastero. No ofrece protección ante ningún tipo de ataque (rotura, extracción, taladrado o fresado).
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;">
+                                <i class="fas fa-shield"></i>
+                            </div>
+                            <span>5.2. Escudos de Baja Seguridad</span>
+                        </div>
+                        
+                        <ul class="visual-list">
+                            <li>Solo protegen frente a <strong>rotura del cilindro con mordaza de presión</strong></li>
+                            <li>No protegen contra rotura con extractor de campana, extracción, taladrado o fresado</li>
+                            <li>Cuerpo medio hueco que sobresale de la puerta (no embutido)</li>
+                            <li>Instalación desde interior con dos tornillos que unen parte interior y exterior</li>
+                            <li>Se puede partir si se agarra bien con mordaza de presión</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <span>5.3. Escudos de Media Seguridad</span>
+                        </div>
+                        
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-industry comparison-icon"></i>
+                                    Escudos Ezcurra
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Pieza negra de metal protege cuerpo del cilindro</li>
+                                    <li>Evita partir o taladrar el cilindro</li>
+                                    <li>Orificio con diámetro ligeramente inferior al rotor → evita extracción (no fresado)</li>
+                                    <li>Forma redondeada dificulta asiento del extractor de campana</li>
+                                    <li>Anclaje con dos tornillos pasantes</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <i class="fas fa-cog comparison-icon"></i>
+                                    TESA E700 o Similar
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Añade lenteja o giraloco que protege al rotor</li>
+                                    <li>Lenteja de 2-3mm → se elimina apalancando con palanqueta</li>
+                                    <li>Una vez retirada lenteja, se puede extraer rotor con extractor o fresarlo</li>
+                                    <li>Mejora en sistemas de anclaje y materiales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4CAF50;">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <span>5.4. Escudos de Alta Seguridad - TESA E800</span>
+                        </div>
+                        
+                        <ul class="visual-list">
+                            <li><strong>Cuerpo:</strong> Acero macizo reforzado con incrustaciones de bolas de acero que impiden avance de broca</li>
+                            <li><strong>Contraplaca interior:</strong> Acero de <span class="highlight-number">4mm</span> espesor. Sujeción con cuatro tornillos de acero bonificado</li>
+                            <li><strong>Lenteja:</strong> Acero inoxidable macizo, grosor <span class="highlight-number">9-10mm</span>. Para eliminarla: cortar con radial o broca de corona</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #D32F2F;">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <span>5.5. Escudos Acorazados - DISEC</span>
+                        </div>
+                        
+                        <div class="emphasis-box">
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <i class="fas fa-shield-alt" style="font-size: 2rem; color: #D32F2F;"></i>
+                                <div>
+                                    <h4 style="margin-bottom: 0.5rem; color: #D32F2F;">Tecnologías DISEC - Grado 5 (único en mercado)</h4>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="diagram-grid">
+                            <div class="diagram-item">
+                                <div class="diagram-icon"><i class="fas fa-gem"></i></div>
+                                <div><strong>Diamond</strong></div>
+                                <div>Inserciones acero diamantado anti-corte con radial</div>
+                            </div>
+                            <div class="diagram-item">
+                                <div class="diagram-icon"><i class="fas fa-screwdriver"></i></div>
+                                <div><strong>Tornillos Aeroflex</strong></div>
+                                <div>Rosca solo en parte final del vástago</div>
+                            </div>
+                            <div class="diagram-item">
+                                <div class="diagram-icon"><i class="fas fa-circle"></i></div>
+                                <div><strong>Tungsteno</strong></div>
+                                <div>4 rodamientos carburo de tungsteno antifresado</div>
+                            </div>
+                            <div class="diagram-item">
+                                <div class="diagram-icon"><i class="fas fa-layer-group"></i></div>
+                                <div><strong>Manganeso</strong></div>
+                                <div>Lenteja anti-taladro gruesa con placa acero al manganeso</div>
+                            </div>
+                            <div class="diagram-item">
+                                <div class="diagram-icon"><i class="fas fa-archway"></i></div>
+                                <div><strong>Antisketting</strong></div>
+                                <div>Arco reforzado anti-deslizamiento unido a lenteja</div>
+                            </div>
+                            <div class="diagram-item">
+                                <div class="diagram-icon"><i class="fas fa-dot-circle"></i></div>
+                                <div><strong>Esfera</strong></div>
+                                <div>Forma ovalada antipinzamiento y anti-corona</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección de información adicional -->
+            <div class="horizontal-card" style="border-top: 5px solid #9C27B0;">
+                <div class="card-header-top" style="background: linear-gradient(135deg, #9C27B0, #BA68C8);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">📄 INFORMACIÓN ADICIONAL</div>
+                            <div class="card-subtitle-top">Licencia, elaboración y estadísticas</div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">CC BY-NC-SA 4.0</div>
+                </div>
+                
+                <div class="card-content">
+                    <div class="section">
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Acerca de este Documento</div>
+                            <ul class="visual-list">
+                                <li>Elaborado por la <strong>Unidad de Accesos Forzados del Cuerpo de Bomberos del Ayuntamiento de Madrid</strong></li>
+                                <li>Documentación de apoyo para cursos de Nuevos Ingresos y Bomberos</li>
+                                <li>No incluye maniobras de apertura (reservadas a cursos presenciales)</li>
+                                <li>Distribuido bajo licencia <strong>Creative Commons CC BY-NC-SA 4.0 ©2025</strong></li>
+                                <li>Elaborado y maquetado por <strong>David García Cancela</strong> (excepto Tema 2 por Pablo García Redondo)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #9C27B0;">
+                                <i class="fas fa-creative-commons"></i>
+                            </div>
+                            <div>
+                                <strong>Licencia Creative Commons:</strong> Se puede copiar, redistribuir, remezclar y adaptar con atribución (BY), uso no comercial (NC) y compartir igual (SA).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    
+    <!-- Botones flotantes -->
+    <button class="floating-btn" id="scrollTopBtn" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <button class="floating-btn floating-btn-left" id="scrollNextBtn" title="Siguiente sección">
+        <i class="fas fa-arrow-down"></i>
+    </button>
+    
+    <!-- Footer -->
+    <footer class="visual-footer">
+        <div class="container">
+            <div class="footer-content">
+                <h2 style="color: #ffffff; margin-bottom: 1.5rem; font-size: 2rem;">🚒 Accesos Forzados - Conceptos Básicos</h2>
+                <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.9;">
+                    Guía visual completa basada en la documentación de la Unidad de Accesos Forzados del Cuerpo de Bomberos del Ayuntamiento de Madrid
+                </p>
+                
+                <div class="footer-icons">
+                    <div class="footer-icon">
+                        <i class="fas fa-fire-extinguisher"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-door-closed"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2.5rem;">
+                    <p style="opacity: 0.8; font-size: 0.95rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-info-circle"></i> Esta guía visual tiene carácter informativo y no sustituye la formación presencial de la Unidad de Accesos Forzados.
+                    </p>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">
+                        © 2025 Guía Visual de Accesos Forzados - Basado en documentación del Cuerpo de Bomberos del Ayuntamiento de Madrid - CC BY-NC-SA 4.0
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Botón para volver arriba
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Función para navegar a la siguiente sección
+        const scrollNextBtn = document.getElementById('scrollNextBtn');
+        
+        // Obtener todas las secciones con IDs de navegación
+        const sections = Array.from(document.querySelectorAll('.horizontal-card[id]'));
+        
+        // Ordenar las secciones por su posición en la página
+        sections.sort((a, b) => {
+            return a.offsetTop - b.offsetTop;
+        });
+        
+        // Función para encontrar la sección actual
+        function getCurrentSection() {
+            // Margen para considerar que una sección está "activa"
+            const margin = 150;
+            
+            for (let i = sections.length - 1; i >= 0; i--) {
+                if (window.scrollY + margin >= sections[i].offsetTop) {
+                    return i;
+                }
+            }
+            return 0;
+        }
+        
+        // Función para navegar a la siguiente sección
+        function goToNextSection() {
+            const currentIndex = getCurrentSection();
+            const nextIndex = currentIndex + 1;
+            
+            if (nextIndex < sections.length) {
+                const nextSection = sections[nextIndex];
+                window.scrollTo({
+                    top: nextSection.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+                
+                // Actualizar URL sin recargar la página
+                history.pushState(null, null, `#${nextSection.id}`);
+            } else {
+                // Si estamos en la última sección, ir al principio
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Evento para el botón de siguiente sección
+        scrollNextBtn.addEventListener('click', goToNextSection);
+        
+        // Mostrar/ocultar botón según la posición
+        window.addEventListener('scroll', () => {
+            const currentIndex = getCurrentSection();
+            
+            // Mostrar siempre el botón, pero cambiar el icono si estamos en la última sección
+            if (currentIndex === sections.length - 1) {
+                scrollNextBtn.innerHTML = '<i class="fas fa-home"></i>';
+                scrollNextBtn.title = "Volver al inicio";
+            } else {
+                scrollNextBtn.innerHTML = '<i class="fas fa-arrow-down"></i>';
+                scrollNextBtn.title = "Siguiente sección";
+            }
+            
+            // Ocultar botón cuando estamos cerca del final de la última sección
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                scrollNextBtn.style.opacity = '0.5';
+            } else {
+                scrollNextBtn.style.opacity = '1';
+            }
+        });
+        
+        // Navegación con teclado (tecla derecha o barra espaciadora)
+        document.addEventListener('keydown', (e) => {
+            // Tecla derecha o barra espaciadora (excepto cuando se está escribiendo en un campo)
+            if ((e.key === 'ArrowRight' || e.key === ' ') && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                
+                e.preventDefault(); // Evitar comportamiento por defecto del espacio
+                goToNextSection();
+            }
+            
+            // Tecla izquierda para ir a la sección anterior
+            if (e.key === 'ArrowLeft' && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                
+                e.preventDefault();
+                const currentIndex = getCurrentSection();
+                const prevIndex = currentIndex - 1;
+                
+                if (prevIndex >= 0) {
+                    const prevSection = sections[prevIndex];
+                    window.scrollTo({
+                        top: prevSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+        
+        // Inicializar: mostrar el botón después de cargar
+        window.addEventListener('load', () => {
+            scrollNextBtn.style.display = 'flex';
+            
+            // Resaltar números importantes en rojo
+            document.querySelectorAll('.highlight-number').forEach(element => {
+                element.style.color = '#D32F2F';
+                element.style.fontWeight = '800';
+            });
+            
+            // Añadir color rojo a números importantes en listas
+            document.querySelectorAll('.visual-list li').forEach(li => {
+                const text = li.innerHTML;
+                // Buscar patrones de números importantes
+                const updatedText = text.replace(/(\d+)(?=\s*(días|meses|años|mm|cm|metros|veces|intervenciones|aperturas|rescates|distritos|clase|bisagras|cierres|tornillos|placas|gorjas|pernos|vueltas|filas|barras))/gi, 
+                    '<span class="highlight-number" style="color:#D32F2F;font-weight:800;">$1</span>');
+                li.innerHTML = updatedText;
+            });
+        });
+    </script>
+</body>
+</html>
