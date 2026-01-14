@@ -306,9 +306,7 @@
         /* Elementos dentro del contenido */
         .highlight-number {
             color: var(--color-fire);
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            font-weight: 400;
         }
         
         .section {
@@ -887,6 +885,542 @@
         .comparison-icon {
             font-size: 1.5rem;
         }
+
+
+        /* Añadir estas clases al CSS existente */
+
+        /* Para contenedores de información detallada */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-grid-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--color-rescue);
+            transition: all 0.3s ease;
+        }
+
+        .info-grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .info-grid-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--color-rescue-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-grid-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        /* Para listas de herramientas con iconos */
+        .tool-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+
+        .tool-list li {
+            padding: 0.7rem 0;
+            padding-left: 3rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .tool-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tool-list li:before {
+            content: '🔧';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            font-size: 1.2rem;
+        }
+
+        /* Para estadísticas destacadas */
+        .stat-highlight {
+            background: linear-gradient(135deg, rgba(255, 82, 82, 0.1), rgba(255, 82, 82, 0.05));
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid var(--color-fire);
+            position: relative;
+        }
+
+        .stat-highlight-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--color-fire);
+            line-height: 1;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-highlight-label {
+            font-size: 1.1rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* Para tablas de herramientas */
+        .tools-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .tools-table th {
+            background: linear-gradient(135deg, #FF9800, #FFB74D);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .tools-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .tools-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .tools-table tr:hover {
+            background-color: #fff8e1;
+        }
+
+        .tool-category {
+            font-weight: 700;
+            color: var(--color-tools-dark);
+            font-size: 1.1rem;
+        }
+
+        /* ESTILOS NUEVOS PARA DISEÑO ULTRACOMPACTO */
+
+        /* Sistema de tarjetas de cuadrícula densa */
+        .compact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .compact-card {
+            /* Quitamos el flex shorthand y lo separamos para tener control */
+            flex-grow: 1;
+            flex-shrink: 1;
+            /* Por defecto, altura automática para que no se corte el texto */
+            flex-basis: auto; 
+            
+            background: white;
+            border-radius: 12px;
+            padding: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Regla específica para cuando las tarjetas están dentro del grid */
+        .compact-grid .compact-card {
+            /* Aquí recuperamos los 300px para que mantengan el ancho igualado */
+            flex-basis: 300px;
+        }
+
+        .compact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .compact-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .compact-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .compact-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        /* Listas compactas */
+        .compact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .compact-list li {
+            padding: 0.4rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            border-bottom: 1px dotted #f0f0f0;
+        }
+
+        .compact-list li:last-child {
+            border-bottom: none;
+        }
+
+        .compact-list li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        /* Chips de categoría */
+        .compact-chip {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Tarjetas de estadísticas */
+        .stats-compact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-compact {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* Tarjetas de herramientas */
+        .tools-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .tool-card {
+            flex: 1 1 180px;
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid #FF9800;
+        }
+
+        .tool-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #FF9800;
+        }
+
+        /* Acordeón compacto */
+        .compact-accordion {
+            margin: 1rem 0;
+        }
+
+        .accordion-item {
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .accordion-header {
+            background: #f8f9fa;
+            padding: 0.8rem 1rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid #D32F2F;
+        }
+
+        .accordion-content {
+            padding: 0.8rem 1rem;
+            background: white;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            border-top: 1px solid #f0f0f0;
+        }
+        /* ESTILOS PARA ASPECTOS LEGALES */
+
+        /* Tablas legales compactas */
+        .legal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .legal-table th {
+            background: linear-gradient(135deg, #1976D2, #64B5F6);
+            color: white;
+            padding: 0.8rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .legal-table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .legal-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .legal-table tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        /* Chips de tipo de intervención */
+        .intervention-chip {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 0.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tarjetas de jurisprudencia */
+        .legal-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-left: 5px solid #1976D2;
+            font-size: 0.85rem;
+        }
+
+        .legal-article {
+            font-weight: 700;
+            color: #1976D2;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Grid para clasificación de intervenciones */
+        .intervention-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .intervention-item {
+            flex: 1 1 220px;
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+            border-top: 4px solid;
+        }
+
+        .intervention-percentage {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #D32F2F;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ESTILOS PARA PUERTAS */
+
+        /* Tabla de clases de seguridad */
+        .security-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .security-table th {
+            background: linear-gradient(135deg, #388E3C, #81C784);
+            color: white;
+            padding: 0.7rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .security-table td {
+            padding: 0.7rem;
+            border-bottom: 1px solid #f0f0f0;
+            text-align: center;
+        }
+
+        .security-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .security-table tr:hover {
+            background-color: #e8f5e9;
+        }
+
+        /* Chips de tipo de puerta */
+        .door-chip {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 0.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Comparación de tipos de puertas */
+        .door-comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .door-type {
+            flex: 1 1 250px;
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+            border-top: 4px solid;
+            text-align: center;
+        }
+
+        .door-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Elementos de puerta */
+        .door-elements {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1rem 0;
+            justify-content: center;
+        }
+
+        .door-element {
+            flex: 1 1 120px;
+            background: white;
+            border-radius: 8px;
+            padding: 0.8rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            font-size: 0.8rem;
+        }
+
+        /* Retenedores anti-pánico */
+        .retainer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .retainer-item {
+            flex: 1 1 220px;
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+            text-align: center;
+            border-left: 4px solid;
+        }
+
+        .dos-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+
+        }
+
+
     </style>
 </head>
 <body>
@@ -913,15 +1447,15 @@
             
             <div class="stats-container">
                 <div class="stat-box">
-                    <div class="stat-number red"><span class="highlight-number">26.000</span></div>
+                    <div class="stat-number red">26.000</div>
                     <div class="stat-label">Intervenciones totales (2022)</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number red"><span class="highlight-number">3.000+</span></div>
+                    <div class="stat-number red">3.000+</div>
                     <div class="stat-label">Aperturas de puertas (SEHV)</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number red"><span class="highlight-number">2.400+</span></div>
+                    <div class="stat-number red">2.400+</div>
                     <div class="stat-label">Rescates realizados</div>
                 </div>
             </div>
@@ -976,7 +1510,7 @@
     <main class="container">
         <div class="horizontal-cards-container">
             
-            <!-- TEMA 1: INTRODUCCIÓN -->
+            <!-- TEMA 1: INTRODUCCIÓN - VERSIÓN ULTRACOMPACTA -->
             <div class="horizontal-card" id="introduccion">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-door-closed"></i>
@@ -989,10 +1523,11 @@
                         </div>
                         <div>
                             <div class="card-title-top">🚪 INTRODUCCIÓN A LOS ACCESOS FORZADOS</div>
-                            <div class="card-subtitle-top">Tema 1 - Morfología de la ciudad, tipos de intervenciones y herramientas</div>
+                            <div class="card-subtitle-top">Tema 1 - Operaciones, herramientas y seguridad en Madrid</div>
                             <div>
-                                <span class="category-tag tag-tools">Herramientas</span>
-                                <span class="category-tag tag-security">Seguridad</span>
+                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Madrid 21D</span>
+                                <span class="compact-chip" style="background: #E3F2FD; color: #1976D2;">SEHV 3000+</span>
+                                <span class="compact-chip" style="background: #FFF3E0; color: #EF6C00;">3 Tipos Herramientas</span>
                             </div>
                         </div>
                     </div>
@@ -1000,192 +1535,224 @@
                 </div>
                 
                 <div class="card-content">
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-fire);">
-                                <i class="fas fa-city"></i>
-                            </div>
-                            <span>1.1. Morfología de la Ciudad</span>
-                        </div>
-                        
-                        <ul class="visual-list">
-                            <li>Madrid tiene <span class="highlight-number">21 distritos</span> con intervenciones diferentes según el parque de bomberos</li>
-                            <li>Distritos con población mayor → más aperturas por asistencia médica</li>
-                            <li>Nivel de seguridad varía según poder adquisitivo y antigüedad del barrio</li>
-                            <li>Es importante conocer <strong>todos los tipos de cerraduras</strong>, desde las más antiguas hasta las más modernas</li>
-                        </ul>
-                    </div>
                     
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-rescue);">
-                                <i class="fas fa-exclamation-triangle"></i>
+                    <!-- MORFOLOGÍA DE LA CIUDAD -->
+                    <div class="compact-grid" style="margin-top: 0;">
+                        <div class="compact-card" style="border-top-color: #D32F2F;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #D32F2F;">
+                                    <i class="fas fa-city"></i>
+                                </div>
+                                <div class="compact-title">Madrid: 21 Distritos, 21 Realidades</div>
                             </div>
-                            <span>1.2. Tipos de Intervenciones</span>
+                            <ul class="compact-list">
+                                <li style="color: #D32F2F;"><strong>Centro:</strong> Cerraduras antiguas</li>
+                                <li style="color: #1976D2;"><strong>Barrios modernos:</strong> Mayor seguridad</li>
+                                <li style="color: #388E3C;"><strong>Distritos mayores:</strong> +Aperturas médicas</li>
+                                <li style="color: #FF9800;"><strong>Parque 8º:</strong> Fuegos de pastos</li>
+                                <li style="color: #7B1FA2;"><strong>Parque 9º-10º:</strong> RBQ especializado</li>
+                                <li style="color: #00796B;"><strong>Parque 1º-12º:</strong> Enjambres</li>
+                            </ul>
                         </div>
                         
-                        <div class="danger-box">
-                            <div class="box-icon" style="background: var(--gradient-fire);">
-                                <i class="fas fa-fire"></i>
-                            </div>
-                            <div>
-                                <strong>Clave SEHV:</strong> Más de <span class="highlight-number">3.000</span> aperturas de puertas de un total de <span class="highlight-number">26.000</span> intervenciones (2022)
-                            </div>
-                        </div>
-                        
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: var(--gradient-rescue);">
-                                    <i class="fas fa-user-fall"></i>
+                        <div class="compact-card" style="border-top-color: #1976D2;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #1976D2;">
+                                    <i class="fas fa-exclamation-triangle"></i>
                                 </div>
-                                <div class="step-title">Persona caída</div>
-                                <div style="font-size: 0.85rem;">Persona mayor que avisa a teleasistencia</div>
+                                <div class="compact-title">Tipos de Intervenciones</div>
                             </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: var(--gradient-fire);">
-                                    <i class="fas fa-fire"></i>
-                                </div>
-                                <div class="step-title">Incendio</div>
-                                <div style="font-size: 0.85rem;">Crítico - puerta no debe sufrir daños para controlar ventilación</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: var(--gradient-security);">
-                                    <i class="fas fa-user-shield"></i>
-                                </div>
-                                <div class="step-title">Violencia de género</div>
-                                <div style="font-size: 0.85rem;">Prestación de medios a Policía Nacional</div>
-                            </div>
-                        </div>
-                        
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: #9C27B0;">
-                                    <i class="fas fa-user-injured"></i>
-                                </div>
-                                <div class="step-title">Persona no responde</div>
-                                <div style="font-size: 0.85rem;">Vecino/familiar avisa de ausencia de señales de vida</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: #2196F3;">
-                                    <i class="fas fa-tint"></i>
-                                </div>
-                                <div class="step-title">Fugas</div>
-                                <div style="font-size: 0.85rem;">Agua, gas, olor a gas</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: #FF9800;">
-                                    <i class="fas fa-cogs"></i>
-                                </div>
-                                <div class="step-title">Otros</div>
-                                <div style="font-size: 0.85rem;">Cuartos de contadores, etc.</div>
-                            </div>
+                            <ul class="compact-list">
+                                <li><span style="color: #D32F2F; font-weight: 700;">SEHV:</span> Persona caída/No responde</li>
+                                <li><span style="color: #FF9800; font-weight: 700;">INCENDIO:</span> Crítico - Control ventilación</li>
+                                <li><span style="color: #9C27B0; font-weight: 700;">VIOLENCIA:</span> Apoyo a Policía Nacional</li>
+                                <li><span style="color: #4CAF50; font-weight: 700;">FUGAS:</span> Agua/Gas - Daños vecinos</li>
+                                <li><span style="color: #795548; font-weight: 700;">ESPECIALES:</span> Grilletes, enjambres, RBQ</li>
+                                <li><span style="color: #607D8B; font-weight: 700;">INDIRECTAS:</span> En otras intervenciones</li>
+                            </ul>
                         </div>
                     </div>
                     
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-tools);">
+                    <!-- HERRAMIENTAS - DISEÑO COMPACTO -->
+                    <div class="compact-card" style="border-top-color: #FF9800; margin: 1.5rem 0; flex-basis: auto;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #FF9800;">
                                 <i class="fas fa-tools"></i>
                             </div>
-                            <span>1.3. Herramientas</span>
+                            <div class="compact-title">🛠️ Herramientas en Maletín MAP</div>
                         </div>
                         
-                        <div class="comparison-container">
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-wrench comparison-icon"></i>
-                                    Herramientas Manuales
+                        <div class="tools-compact">
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-wrench"></i>
                                 </div>
-                                <ul class="visual-list">
-                                    <li>Alicates, tenacillas, lima</li>
-                                    <li>Brocas y puntas Torx</li>
-                                    <li>Mordaza de presión para partir cilindros</li>
-                                    <li>En Maletín de Apertura (MAP) y cajas de vehículos</li>
-                                </ul>
+                                <div style="font-weight: 700; color: #FF9800;">MANUALES</div>
+                                <div style="font-size: 0.8rem; margin-top: 0.3rem;">
+                                    Alicates • Tenacillas • Lima • Brocas Torx • Mordaza presión
+                                </div>
+                                <div style="margin-top: 4px;">
+                                    <img src="image accesos/Manuales.png" alt="" style="max-width: 100%; height: auto;">
+                                </div>
                             </div>
                             
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-battery-full comparison-icon"></i>
-                                    Herramientas de Batería
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-battery-full"></i>
                                 </div>
-                                <ul class="visual-list">
-                                    <li>Amoladora angular (radial)</li>
-                                    <li>Amoladora recta (fresadora)</li>
-                                    <li>Taladro percutor</li>
-                                    <li>En proceso de implantación</li>
-                                </ul>
+                                <div style="font-weight: 700; color: #4CAF50;">BATERÍA</div>
+                                <div style="font-size: 0.8rem; margin-top: 0.3rem;">
+                                    Amoladora angular • Amoladora recta • Taladro percutor
+                                </div>
+                                <div>
+                                    <img src="image accesos/Batería.png" alt="" style="max-width: 50%; height: auto;">
+                                </div>
                             </div>
                             
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-unlock-alt comparison-icon"></i>
-                                    Herramientas Cerrajería
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-unlock-alt"></i>
                                 </div>
-                                <ul class="visual-list">
-                                    <li>Micas</li>
-                                    <li>Extractor de campana</li>
-                                    <li>Tornillos y arandelas</li>
-                                    <li>Fresas, etc.</li>
-                                </ul>
+                                <div style="font-weight: 700; color: #9C27B0;">CERRAJERÍA</div>
+                                <div style="font-size: 0.8rem; margin-top: 0.3rem;">
+                                    Micas • Extractor campana • Tornillos • Fresas
+                                </div>
+                                 <div>
+                                    <img src="image accesos/Específica.png" alt="" style="max-width: 90%; height: auto;">
+                                </div>
                             </div>
+                        </div>
+                        
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: #FFF8E1; border-radius: 8px; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle" style="color: #FF9800; margin-right: 0.5rem;"></i>
+                            <strong>MAP:</strong> Equipado en todas las BUP, EMER y BUL. Herramientas grandes (mordaza) en vehículos.
                         </div>
                     </div>
                     
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-security);">
-                                <i class="fas fa-hard-hat"></i>
-                            </div>
-                            <span>1.4. Seguridad en Intervención</span>
-                        </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: var(--gradient-security);">
-                                <i class="fas fa-tshirt"></i>
-                            </div>
-                            <div>
-                                <strong>Uniformidad y EPI's:</strong> Siempre utilizar equipo de protección individual según el tipo de intervención
-                            </div>
-                        </div>
-                        
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: #4CAF50;">
+                    <!-- SEGURIDAD EN INTERVENCIÓN -->
+                    <div class="compact-grid">
+                        <div class="compact-card" style="border-top-color: #4CAF50;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #4CAF50;">
                                     <i class="fas fa-vest"></i>
                                 </div>
-                                <div class="step-title">Traje de Intervención Ligero (T.I.L.)</div>
-                                <div style="font-size: 0.85rem;">Para intervenciones generales</div>
+                                <div class="compact-title">Seguridad: EPI's Obligatorios</div>
                             </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: #D32F2F;">
-                                    <i class="fas fa-fire"></i>
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.8rem;">
+                                <div style="text-align: center; flex: 1;">
+                                    <div style="width: 60px; height: 60px; background: #4CAF50; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: white;">
+                                        <i class="fas fa-tshirt"></i>
+                                    </div>
+                                    <div style="font-weight: 700; font-size: 0.9rem;">T.I.L.</div>
+                                    <div style="font-size: 0.75rem; color: #666;">Intervenciones generales</div>
                                 </div>
-                                <div class="step-title">Traje de Fuego (E2)</div>
-                                <div style="font-size: 0.85rem;">Para intervenciones con riesgo de incendio</div>
+                                
+                                <div style="text-align: center; flex: 1;">
+                                    <div style="width: 60px; height: 60px; background: #D32F2F; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: white;">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div style="font-weight: 700; font-size: 0.9rem;">TRAJE E2</div>
+                                    <div style="font-size: 0.75rem; color: #666;">Incendios/Altas temp.</div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 1rem; font-size: 0.85rem; color: #666;">
+                                <i class="fas fa-check-circle" style="color: #4CAF50; margin-right: 0.3rem;"></i>
+                                Casco, guantes, calzado, ERA según riesgo
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #9C27B0;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #9C27B0;">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="compact-title">Datos Clave Rápidos</div>
+                            </div>
+                            <ul class="compact-list">
+                                <li><strong>99,99%</strong> Intervenciones urgentes</li>
+                                <li><strong>0,01%</strong> No urgentes (desalojos programados)</li>
+                                <li><strong>Rara</strong> guardia sin acceso forzado</li>
+                                <li><strong>Conocer TODAS</strong> cerraduras antiguas/modernas</li>
+                                <li><strong>Plan B:</strong> Medios aéreos y cuerdas</li>
+                                <li><strong>Uniformidad:</strong> Obligatoria en toda intervención</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- BLOQUES DE INFORMACIÓN ADICIONAL - REEMPLAZO ACORDEONES -->
+                    <div class="compact-grid" style="margin-top: 1rem;">
+                        <div class="compact-card" style="border-top-color: #795548;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #795548;">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="compact-title">📊 Detalles Estadísticos 2022</div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; font-size: 0.85rem; margin-top: 0.5rem;">
+                                <div>
+                                    <div style="color: #D32F2F; font-weight: 700; font-size: 1.1rem;">26.000</div>
+                                    <div>Total intervenciones Madrid</div>
+                                </div>
+                                <div>
+                                    <div style="color: #FF9800; font-weight: 700; font-size: 1.1rem;">3.000+</div>
+                                    <div>Aperturas clave SEHV</div>
+                                </div>
+                                <div>
+                                    <div style="color: #4CAF50; font-weight: 700; font-size: 1.1rem;">2.400+</div>
+                                    <div>Rescates realizados</div>
+                                </div>
+                                <div>
+                                    <div style="color: #9C27B0; font-weight: 700; font-size: 1.1rem;">+X%</div>
+                                    <div>Aperturas indirectas</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #607D8B;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #607D8B;">
+                                    <i class="fas fa-suitcase"></i>
+                                </div>
+                                <div class="compact-title">🔧 Distribución Herramientas</div>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+                                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <div style="width: 8px; height: 8px; background: #FF9800; border-radius: 50%; margin-right: 0.5rem;"></div>
+                                    <div><strong>MAP:</strong> En todas las BUP, EMER y BUL</div>
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <div style="width: 8px; height: 8px; background: #D32F2F; border-radius: 50%; margin-right: 0.5rem;"></div>
+                                    <div><strong>Vehículos:</strong> Mordaza presión (no duplicable)</div>
+                                </div>
+                                <div style="display: flex; align-items: center;">
+                                    <div style="width: 8px; height: 8px; background: #4CAF50; border-radius: 50%; margin-right: 0.5rem;"></div>
+                                    <div><strong>Transición:</strong> Implantación herramientas batería</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- TEMA 2: ASPECTOS LEGALES -->
+            <!-- TEMA 2: ASPECTOS LEGALES - VERSIÓN ULTRACOMPACTA -->
             <div class="horizontal-card" id="aspectos-legales">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-gavel"></i>
                 </div>
                 
-                <div class="card-header-top" style="background: var(--gradient-rescue);">
+                <div class="card-header-top" style="background: linear-gradient(135deg, #1976D2, #64B5F6);">
                     <div class="card-title-container">
                         <div class="card-icon-large">
                             <i class="fas fa-balance-scale"></i>
                         </div>
                         <div>
                             <div class="card-title-top">⚖️ ASPECTOS LEGALES</div>
-                            <div class="card-subtitle-top">Tema 2 - Derechos, deberes, intervenciones y responsabilidad</div>
+                            <div class="card-subtitle-top">Tema 2 - Marco jurídico, derechos, deberes y responsabilidad</div>
                             <div>
-                                <span class="category-tag tag-legal">Legal</span>
-                                <span class="category-tag tag-security">Responsabilidad</span>
+                                <span class="compact-chip" style="background: #E3F2FD; color: #1976D2;">Art. 18.2 CE</span>
+                                <span class="compact-chip" style="background: #F3E5F5; color: #7B1FA2;">EBEP</span>
+                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">C.P.</span>
                             </div>
                         </div>
                     </div>
@@ -1193,191 +1760,411 @@
                 </div>
                 
                 <div class="card-content">
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-rescue);">
-                                <i class="fas fa-book-law"></i>
-                            </div>
-                            <span>2.1. Introducción - Derechos y Deberes</span>
-                        </div>
-                        
-                        <div class="legal-box">
-                            <div class="box-icon" style="background: var(--gradient-rescue);">
-                                <i class="fas fa-home"></i>
-                            </div>
+                    <!-- ALERTA LEGAL PRINCIPAL -->
+                    <div style="margin-bottom: 1.5rem; padding: 1rem; background: linear-gradient(135deg, #FFF3E0, #FFECB3); border-radius: 10px; border-left: 5px solid #FF9800;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="font-size: 2rem;">⚠️</div>
                             <div>
-                                <strong>Domicilio vs Morada:</strong> Domicilio = lugar cerrado donde se desarrolla vida privada. Morada = domicilio, despacho profesional o establecimiento fuera de horas.
-                            </div>
-                        </div>
-                        
-                        <div class="comparison-container">
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-heartbeat comparison-icon"></i>
-                                    Derecho a la Vida (Art. 15 CE)
-                                </div>
-                                <ul class="visual-list">
-                                    <li>Todos tienen derecho a la vida e integridad física</li>
-                                    <li>Derecho a ser atendidos por Administraciones en emergencias</li>
-                                    <li>Se convierte en obligación de protección de poderes públicos</li>
-                                    <li>Marco jurídico: Ley 2/1985 de Protección Civil</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-user-secret comparison-icon"></i>
-                                    Derecho al Honor (Art. 18.1 CE)
-                                </div>
-                                <ul class="visual-list">
-                                    <li>Derecho al honor, intimidad personal y familiar</li>
-                                    <li>Inviolabilidad de la morada o domicilio</li>
-                                    <li>Entrada legítima: evitar daños inminentes graves</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-door-closed comparison-icon"></i>
-                                    Inviolabilidad Domicilio (Art. 18.2 CE)
-                                </div>
-                                <ul class="visual-list">
-                                    <li>Ninguna entrada sin consentimiento o resolución judicial</li>
-                                    <li>Excepción: flagrante delito</li>
-                                    <li>Ley 17/2015: entrada en domicilio para emergencias</li>
-                                </ul>
+                                <div style="font-weight: 700; font-size: 1rem; margin-bottom: 0.3rem;">Bomberos NO estamos facultados para "entrada y registro"</div>
+                                <div style="font-size: 0.85rem;">Sí estamos implícitamente incluidos para acceso en cumplimiento de derechos de protección física en emergencias.</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #9C27B0;">
-                                <i class="fas fa-user-shield"></i>
+                    <!-- DEFINICIONES CLAVE -->
+                    <div class="compact-grid">
+                        <div class="compact-card" style="border-top-color: #1976D2;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #1976D2;">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="compact-title">🏠 Definiciones Legales</div>
                             </div>
-                            <span>2.2. Intervención de Bomberos</span>
+                            <ul class="compact-list">
+                                <li><strong>DOMICILIO:</strong> Lugar cerrado con vida privada (propio/alquiler, estable/transitorio)</li>
+                                <li><strong>MORADA:</strong> Domicilio, despacho profesional, establecimiento fuera de horas</li>
+                                <li><strong>FCSE:</strong> Fuerzas y Cuerpos de Seguridad del Estado</li>
+                                <li><strong>EBEP:</strong> Estatuto Básico Empleado Público</li>
+                                <li><strong>C.P.:</strong> Código Penal (Ley Orgánica 10/1995)</li>
+                                <li><strong>P.C.:</strong> Protección Civil (Ley 2/1985, mod. 17/2015)</li>
+                            </ul>
                         </div>
                         
-                        <div class="comparison-container">
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-exclamation-circle comparison-icon"></i>
-                                    Intervenciones Urgentes (99,99%)
+                        <div class="compact-card" style="border-top-color: #D32F2F;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #D32F2F;">
+                                    <i class="fas fa-user-shield"></i>
                                 </div>
-                                <ul class="visual-list">
-                                    <li>Incendio confirmado en interior</li>
-                                    <li>Persona en situación de riesgo que necesita rescate</li>
-                                    <li>Reconocimiento condiciones estructurales comprometidas</li>
-                                    <li>Petición de Policía por delito confirmado</li>
+                                <div class="compact-title">🔐 Derechos Fundamentales (CE)</div>
+                            </div>
+                            <ul class="compact-list">
+                                <li><strong style="color: #D32F2F;">Art. 15 CE:</strong> Derecho a la vida e integridad física</li>
+                                <li><strong style="color: #1976D2;">Art. 18.1 CE:</strong> Derecho al honor, intimidad, imagen</li>
+                                <li><strong style="color: #7B1FA2;">Art. 18.2 CE:</strong> Inviolabilidad domicilio</li>
+                                <li><strong style="color: #388E3C;">Art. 53 CE:</strong> Máxima protección derechos fundamentales</li>
+                            </ul>
+                            <div style="margin-top: 0.8rem; padding: 0.6rem; background: #F3E5F5; border-radius: 6px; font-size: 0.8rem;">
+                                <i class="fas fa-scale-balanced" style="color: #7B1FA2; margin-right: 0.3rem;"></i>
+                                <strong>Excepción entrada:</strong> Consentimiento titular, resolución judicial, flagrante delito, evitar daños graves.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BLOQUE COMPLETO DEBERES/OBLIGACIONES DE LOS PODERES PÚBLICOS -->
+                    <div class="compact-grid" style="margin: 1.5rem 0;">
+                        <div class="compact-card" style="border-top-color: #388E3C; grid-column: 1 / -1;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #388E3C;">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <div class="compact-title">🛡️ Deberes/Obligaciones de los Poderes Públicos</div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                <!-- DEBER 1: PROTECCIÓN -->
+                                <div style="padding: 1rem; background: #E8F5E9; border-radius: 8px;">
+                                    <div style="font-weight: 700; color: #388E3C; margin-bottom: 0.5rem; font-size: 0.95rem; display: flex; align-items: center;">
+                                        <i class="fas fa-heartbeat" style="margin-right: 0.5rem;"></i>
+                                        I. Deber de Protección
+                                    </div>
+                                    <div style="font-size: 0.85rem; line-height: 1.4;">
+                                        <strong>Derecho → Obligación:</strong> Art. 15 CE → Art. 5.1 Ley 2/1985 PC
+                                        <div style="margin-top: 0.5rem; padding-left: 1rem;">
+                                            <div style="display: flex; margin-bottom: 0.3rem;">
+                                                <div style="min-width: 6px; height: 6px; background: #388E3C; border-radius: 50%; margin: 0.3rem 0.5rem 0 0;"></div>
+                                                <div><strong>Ley 17/2015 (Art. 2):</strong> Garantizar protección en emergencias</div>
+                                            </div>
+                                            <div style="display: flex;">
+                                                <div style="min-width: 6px; height: 6px; background: #388E3C; border-radius: 50%; margin: 0.3rem 0.5rem 0 0;"></div>
+                                                <div><strong>Art. 3.1 Reglamento:</strong> "Atender al salvamento de personas y bienes"</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- DEBER 2: COLABORACIÓN -->
+                                <div style="padding: 1rem; background: #E3F2FD; border-radius: 8px;">
+                                    <div style="font-weight: 700; color: #1976D2; margin-bottom: 0.5rem; font-size: 0.95rem; display: flex; align-items: center;">
+                                        <i class="fas fa-handshake" style="margin-right: 0.5rem;"></i>
+                                        II. Deber de Colaboración
+                                    </div>
+                                    <div style="font-size: 0.85rem; line-height: 1.4;">
+                                        <strong>Con FCSE y Órganos Judiciales:</strong>
+                                        <div style="margin-top: 0.5rem; padding-left: 1rem;">
+                                            <div style="display: flex; margin-bottom: 0.3rem;">
+                                                <div style="min-width: 6px; height: 6px; background: #1976D2; border-radius: 50%; margin: 0.3rem 0.5rem 0 0;"></div>
+                                                <div><strong>Art. 591.1 LEC:</strong> "Todas las personas y entidades... obligadas a prestar colaboración"</div>
+                                            </div>
+                                            <div style="display: flex;">
+                                                <div style="min-width: 6px; height: 6px; background: #1976D2; border-radius: 50%; margin: 0.3rem 0.5rem 0 0;"></div>
+                                                <div><strong>Art. 3.4 Reglamento:</strong> "Deber de colaborar con misiones de seguridad ciudadana"</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="margin-top: 0.8rem; padding: 0.6rem; background: rgba(255, 255, 255, 0.7); border-radius: 6px; font-size: 0.8rem;">
+                                        <i class="fas fa-exclamation-triangle" style="color: #FF9800; margin-right: 0.3rem;"></i>
+                                        <strong>Límite:</strong> Evaluación riesgo. No colaborar si riesgo inadmisible para interviniente.
+                                    </div>
+                                </div>
+                                
+                                <!-- DEBER 3: CUMPLIMIENTO ÓRDENES SUPERIOR -->
+                                <div style="padding: 1rem; background: #FFF3E0; border-radius: 8px;">
+                                    <div style="font-weight: 700; color: #FF9800; margin-bottom: 0.5rem; font-size: 0.95rem; display: flex; align-items: center;">
+                                        <i class="fas fa-users-cog" style="margin-right: 0.5rem;"></i>
+                                        III. Cumplimiento Órdenes Superior Jerárquico
+                                    </div>
+                                    <div style="font-size: 0.85rem; line-height: 1.4;">
+                                        <div style="margin-bottom: 0.5rem;">
+                                            <div style="display: flex; margin-bottom: 0.3rem;">
+                                                <div style="min-width: 6px; height: 6px; background: #FF9800; border-radius: 50%; margin: 0.3rem 0.5rem 0 0;"></div>
+                                                <div><strong>EBEP (Art. 54.3):</strong> "Obedecerán... salvo infracción manifiesta"</div>
+                                            </div>
+                                            <div style="display: flex;">
+                                                <div style="min-width: 6px; height: 6px; background: #FF9800; border-radius: 50%; margin: 0.3rem 0.5rem 0 0;"></div>
+                                                <div><strong>Art. 5.2 Reglamento:</strong> "Cumplirá puntual y exactamente... órdenes de sus mandos"</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="padding: 0.6rem; background: rgba(255, 152, 0, 0.1); border-radius: 6px; margin-top: 0.5rem;">
+                                            <div style="font-weight: 700; color: #FF9800; font-size: 0.8rem; margin-bottom: 0.2rem;">Aplicación:</div>
+                                            <div style="font-size: 0.8rem;">
+                                                • Órdenes en intervención (mando)<br>
+                                                • Gestión en parque (responsabilidad)<br>
+                                                • Tareas/misiones operativas asignadas
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- REGLAMENTO BOMBEROS CITACIÓN -->
+                            <div style="margin-top: 1rem; padding: 0.8rem; background: #F3E5F5; border-radius: 8px; font-size: 0.85rem; border-left: 4px solid #7B1FA2;">
+                                <div style="display: flex;">
+                                    <div style="font-weight: 700; color: #7B1FA2; min-width: 120px;">📜 Reglamento (27/7/1984):</div>
+                                    <div>"Intervenciones justificadas cuando existan situaciones de siniestro o calamidad colectiva con riesgo inminente para integridad o tranquilidad de personas, o daños graves en bienes..."</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CLASIFICACIÓN DE INTERVENCIONES -->
+                    <div class="compact-card" style="border-top-color: #FF9800; margin: 1.5rem 0;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="compact-title">🚨 Clasificación de Intervenciones</div>
+                        </div>
+                        
+                        <div class="intervention-grid">
+                            <div class="intervention-item" style="border-top-color: #D32F2F;">
+                                <div class="intervention-percentage">99,99%</div>
+                                <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; color: #D32F2F;">URGENTES</div>
+                                <ul style="font-size: 0.8rem; padding-left: 1.2rem;">
+                                    <li>Incendio confirmado</li>
+                                    <li>Persona en riesgo/rescate</li>
+                                    <li>Condiciones estructurales</li>
+                                    <li>Petición Policía por delito</li>
                                 </ul>
                             </div>
                             
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-clock comparison-icon"></i>
-                                    Intervenciones No Urgentes (0,01%)
-                                </div>
-                                <ul class="visual-list">
-                                    <li>Aperturas programadas (desalojos judiciales)</li>
+                            <div class="intervention-item" style="border-top-color: #1976D2;">
+                                <div class="intervention-percentage">0,01%</div>
+                                <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; color: #1976D2;">NO URGENTES</div>
+                                <ul style="font-size: 0.8rem; padding-left: 1.2rem;">
+                                    <li>Desalojos judiciales</li>
                                     <li>Expedientes de ruina</li>
-                                    <li>Cuadros psiquiátricos peligrosos</li>
-                                    <li>Apoyo sin acceder al interior salvo petición expresa</li>
+                                    <li>Cuadros psiquiátricos</li>
+                                    <li>Aperturas programadas</li>
                                 </ul>
                             </div>
                         </div>
                         
-                        <div class="info-box">
-                            <div class="box-icon" style="background: #9C27B0;">
-                                <i class="fas fa-balance-scale-left"></i>
+                        <div style="margin-top: 1rem; display: flex; gap: 1rem; font-size: 0.85rem;">
+                            <div style="flex: 1; padding: 0.8rem; background: #FFEBEE; border-radius: 8px;">
+                                <div style="font-weight: 700; color: #D32F2F; margin-bottom: 0.3rem;">Urgentes:</div>
+                                <div>Acceso inmediato, máxima prioridad</div>
                             </div>
-                            <div>
-                                <strong>Valoración del Mando:</strong> Debe considerar "cumplimiento del deber" (art 20.7 CP) y "estado de necesidad" (20.5 CP). El mal causado no debe ser mayor que el que se trata de evitar.
+                            <div style="flex: 1; padding: 0.8rem; background: #E3F2FD; border-radius: 8px;">
+                                <div style="font-weight: 700; color: #1976D2; margin-bottom: 0.3rem;">No urgentes:</div>
+                                <div>Esperar FCSE, apoyo sin acceso interior</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-fire);">
+                    <!-- VALORACIÓN DEL MANDO -->
+                    <div class="compact-grid">
+                        <div class="compact-card" style="border-top-color: #4CAF50;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #4CAF50;">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div class="compact-title">📋 Valoración del Mando</div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-size: 0.85rem;">
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                                    <div style="color: #D32F2F; font-weight: 700; margin-right: 0.5rem;">1.</div>
+                                    <div><strong>Cumplimiento del deber</strong> (Art. 20.7 CP) - Obligación de prestar servicio</div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                                    <div style="color: #1976D2; font-weight: 700; margin-right: 0.5rem;">2.</div>
+                                    <div><strong>Estado de necesidad</strong> (Art. 20.5 CP) - Exención responsabilidad penal</div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 1rem; padding: 0.8rem; background: #E8F5E9; border-radius: 8px; font-size: 0.8rem;">
+                                <div style="font-weight: 700; color: #388E3C; margin-bottom: 0.3rem;">Criterios a aplicar:</div>
+                                <div>1. Mal causado ≤ Mal que se evita</div>
+                                <div>2. No provocado intencionadamente</div>
+                                <div>3. Sin obligación de sacrificarse</div>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #9C27B0;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #9C27B0;">
+                                    <i class="fas fa-handcuffs"></i>
+                                </div>
+                                <div class="compact-title">⚖️ Responsabilidades del Interviniente</div>
+                            </div>
+                            <div style="font-size: 0.85rem; margin-top: 0.5rem;">
+                                <div style="margin-bottom: 0.8rem;">
+                                    <div style="font-weight: 700; color: #D32F2F;">Normativa general:</div>
+                                    <div>EBEP (Art. 94.1) - Régimen disciplinario</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700; color: #1976D2;">Normativa específica:</div>
+                                    <div>Reglamento Bomberos Madrid (Art. 72.1)</div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                <span class="intervention-chip" style="background: #FFEBEE; color: #D32F2F;">Disciplinaria</span>
+                                <span class="intervention-chip" style="background: #E3F2FD; color: #1976D2;">Penal</span>
+                                <span class="intervention-chip" style="background: #E8F5E9; color: #388E3C;">Patrimonial</span>
+                                <span class="intervention-chip" style="background: #FFF3E0; color: #FF9800;">Administrativa</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- TABLAS DE DELITOS Y RESPONSABILIDADES -->
+                    <div class="compact-card" style="border-top-color: #D32F2F; margin: 1.5rem 0;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #D32F2F;">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
-                            <span>2.3. Responsabilidad del Interviniente</span>
+                            <div class="compact-title">🚨 Delitos y Responsabilidades - Intervención URGENTE</div>
                         </div>
                         
-                        <div class="warning-box">
-                            <div class="box-icon" style="background: var(--color-fire);">
-                                <i class="fas fa-gavel"></i>
-                            </div>
-                            <div>
-                                <strong>Régimen disciplinario:</strong> EBEP (Estatuto Básico Empleado Público) y Reglamento del Cuerpo de Bomberos
-                            </div>
-                        </div>
-                        
-                        <table class="visual-table">
+                        <table class="legal-table">
                             <thead>
                                 <tr>
                                     <th>Intervención</th>
                                     <th>Delito</th>
                                     <th>Responsabilidad</th>
+                                    <th>Artículo/Consecuencia</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><strong>Acción Indebida</strong></td>
                                     <td>Allanamiento de morada</td>
-                                    <td>Penal y Patrimonial</td>
+                                    <td>
+                                        <span style="color: #D32F2F;">Penal</span><br>
+                                        <span style="color: #388E3C;">Patrimonial</span>
+                                    </td>
+                                    <td>Art. 202 CP<br><span class="highlight-number">Prisión 15-24 meses + 6-12 años inhabilitación</span></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Inacción</strong></td>
-                                    <td>Omisión deber de Socorro</td>
-                                    <td>Penal</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>No Urgente - Inacción</strong></td>
-                                    <td>Desobediencia / Denegación de Auxilio</td>
-                                    <td>Penal y Disciplinaria</td>
+                                    <td>Omisión deber de socorro</td>
+                                    <td><span style="color: #D32F2F;">Penal</span></td>
+                                    <td>Art. 195 CP<br><span class="highlight-number"> Multa 3-12 meses</span></td>
                                 </tr>
                             </tbody>
                         </table>
                         
-                        <div class="danger-box">
-                            <div class="box-icon" style="background: var(--color-fire);">
-                                <i class="fas fa-handcuffs"></i>
+                        <div style="margin-top: 1rem; font-size: 0.8rem; color: #666;">
+                            <i class="fas fa-info-circle" style="color: #1976D2; margin-right: 0.3rem;"></i>
+                            <strong>Allanamiento agravado:</strong> Agente autoridad → Prisión 15-24 meses + Inhabilitación 6-12 años (Art. 204 CP)
+                        </div>
+                    </div>
+                    
+                    <!-- INTERVENCIÓN NO URGENTE -->
+                    <div class="compact-card" style="border-top-color: #795548; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #795548;">
+                                <i class="fas fa-clock"></i>
                             </div>
-                            <div>
-                                <strong>Allanamiento de Morada (Art 202 CP):</strong> Particular que entre en morada ajena contra voluntad del morador. Agravante para agentes: prisión de <span class="highlight-number">15 a 24 meses</span> e inhabilitación <span class="highlight-number">6 a 12 años</span>.
+                            <div class="compact-title">⏰ Delitos - Intervención NO URGENTE</div>
+                        </div>
+                        
+                        <table class="legal-table">
+                            <thead>
+                                <tr>
+                                    <th>Intervención</th>
+                                    <th>Delito/Infracción</th>
+                                    <th>Responsabilidad</th>
+                                    <th>Consecuencia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Inacción</strong></td>
+                                    <td>Desobediencia</td>
+                                    <td><span style="color: #D32F2F;">Penal</span></td>
+                                    <td>Art. 410.1 CP<br><span class="highlight-number">Multa 3-12 meses + inhabilitación 6 meses a 2 años</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Inacción</strong></td>
+                                    <td>Denegación de Auxilio</td>
+                                    <td><span style="color: #D32F2F;">Penal</span></td>
+                                    <td>Art. 412 CP<br><span class="highlight-number">Multa 12-18 meses + suspensión 2-3 años</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Inacción</strong></td>
+                                    <td>Incumplimiento órdenes superior</td>
+                                    <td>
+                                        <span style="color: #FF9800;">Disciplinaria</span><br>
+                                        <span style="color: #D32F2F; font-size: 0.75rem;">*Posible penal si desobedece</span>
+                                    </td>
+                                    <td>
+                                        Art. 73.3 Reglamento<br>
+                                        Art. 95.2.i EBEP<br>
+                                        Falta muy grave (suspensión/separación)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- ARTÍCULOS LEGALES CLAVE -->
+                    <div class="compact-grid">
+                        <div class="compact-card" style="border-top-color: #1976D2;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #1976D2;">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                                <div class="compact-title">📚 Artículos Clave</div>
+                            </div>
+                            <div class="legal-card">
+                                <div class="legal-article">Art. 18.2 CE</div>
+                                <div>Inviolabilidad domicilio. Excepciones: consentimiento, resolución judicial, flagrante delito.</div>
+                            </div>
+                            <div class="legal-card">
+                                <div class="legal-article">Art. 202 CP</div>
+                                <div>Allanamiento de morada. Particular que entre en morada ajena contra voluntad del morador.</div>
+                            </div>
+                            <div class="legal-card">
+                                <div class="legal-article">Art. 195 CP</div>
+                                <div>Omisión del deber de socorro. No socorrer a víctimas pudiendo hacerlo sin grave peligro.</div>
                             </div>
                         </div>
                         
-                        <div class="danger-box">
-                            <div class="box-icon" style="background: var(--color-fire);">
-                                <i class="fas fa-user-slash"></i>
+                        <div class="compact-card" style="border-top-color: #7B1FA2;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #7B1FA2;">
+                                    <i class="fas fa-scale-balanced"></i>
+                                </div>
+                                <div class="compact-title">⚖️ Principios Jurídicos</div>
                             </div>
-                            <div>
-                                <strong>Omisión del Deber de Socorro (Art 195 CP):</strong> No socorrer a víctimas cuando se puede hacer sin grave peligro. Multa de <span class="highlight-number">3 a 12 meses</span>.
+                            <ul class="compact-list">
+                                <li><strong>Legalidad:</strong> Actuar conforme a ley</li>
+                                <li><strong>Proporcionalidad:</strong> Medios adecuados al fin</li>
+                                <li><strong>Buena fe:</strong> Intención correcta en actuación</li>
+                                <li><strong>Jerarquía:</strong> Cumplimiento órdenes superiores</li>
+                                <li><strong>Colaboración:</strong> Con FCSE y Administración Justicia</li>
+                                <li><strong>Responsabilidad:</strong> Asumir consecuencias actos/omisiones</li>
+                            </ul>
+                            
+                            <div style="margin-top: 1rem; padding: 0.8rem; background: #F3E5F5; border-radius: 8px; font-size: 0.8rem;">
+                                <i class="fas fa-exclamation-circle" style="color: #7B1FA2; margin-right: 0.3rem;"></i>
+                                <strong>Orden superior:</strong> Se obedece salvo que constituya infracción manifiesta (EBEP Art. 54.3)
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- TEMA 3: LAS PUERTAS -->
+            <!-- TEMA 3: LAS PUERTAS - VERSIÓN ULTRACOMPACTA -->
             <div class="horizontal-card" id="puertas">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-door-open"></i>
                 </div>
                 
-                <div class="card-header-top" style="background: var(--gradient-security);">
+                <div class="card-header-top" style="background: linear-gradient(135deg, #388E3C, #81C784);">
                     <div class="card-title-container">
                         <div class="card-icon-large">
                             <i class="fas fa-door-closed"></i>
                         </div>
                         <div>
                             <div class="card-title-top">🚪 LAS PUERTAS</div>
-                            <div class="card-subtitle-top">Tema 3 - Normativa, tipos de puertas y retenedores anti-pánico</div>
+                            <div class="card-subtitle-top">Tema 3 - Normativa UNE 1627, tipos de puertas y retenedores anti-pánico</div>
                             <div>
-                                <span class="category-tag tag-doors">Puertas</span>
-                                <span class="category-tag tag-security">Seguridad</span>
+                                <span class="compact-chip" style="background: #E8F5E9; color: #388E3C;">6 Clases</span>
+                                <span class="compact-chip" style="background: #FFF3E0; color: #F57C00;">Madera/Blind/Acoraz</span>
+                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Anti-pánico</span>
                             </div>
                         </div>
                     </div>
@@ -1385,15 +2172,21 @@
                 </div>
                 
                 <div class="card-content">
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-security);">
+                    <!-- NORMA UNE 1627:2011 -->
+                    <div class="compact-card" style="border-top-color: #388E3C; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #388E3C;">
                                 <i class="fas fa-file-contract"></i>
                             </div>
-                            <span>3.1. Normativa Aplicable - UNE 1627:2011</span>
+                            <div class="compact-title">📋 Norma UNE 1627:2011 - 6 Clases de Seguridad</div>
                         </div>
                         
-                        <table class="visual-table">
+                        <div style="margin: 1rem 0; font-size: 0.85rem; text-align: center;">
+                            <div style="color: #388E3C; font-weight: 700;">"Comprar tiempo":</div>
+                            <div>Todas las puertas pueden abrirse - Mayor seguridad = Más tiempo necesario</div>
+                        </div>
+                        
+                        <table class="security-table">
                             <thead>
                                 <tr>
                                     <th>Clase</th>
@@ -1411,159 +2204,266 @@
                                 </tr>
                                 <tr>
                                     <td><strong>CLASE 2</strong></td>
-                                    <td><span class="highlight-number">3'</span></td>
+                                    <td><span style="color: #D32F2F; font-weight: 700;">3'</span></td>
                                     <td>Ocasional</td>
                                     <td>Sencillas</td>
                                 </tr>
                                 <tr>
                                     <td><strong>CLASE 3</strong></td>
-                                    <td><span class="highlight-number">5'</span></td>
+                                    <td><span style="color: #D32F2F; font-weight: 700;">5'</span></td>
                                     <td>Sin práctica</td>
                                     <td>Barra, destornillador, martillo, taladro</td>
                                 </tr>
                                 <tr>
                                     <td><strong>CLASE 4</strong></td>
-                                    <td><span class="highlight-number">10'</span></td>
+                                    <td><span style="color: #D32F2F; font-weight: 700;">10'</span></td>
                                     <td>Con práctica</td>
                                     <td>Martillo pesado, hacha, cincel, taladro</td>
                                 </tr>
                                 <tr>
                                     <td><strong>CLASE 5</strong></td>
-                                    <td><span class="highlight-number">15'</span></td>
+                                    <td><span style="color: #D32F2F; font-weight: 700;">15'</span></td>
                                     <td>Experimentado</td>
                                     <td>Taladro, sierra de espadín, amoladora</td>
                                 </tr>
                                 <tr>
                                     <td><strong>CLASE 6</strong></td>
-                                    <td><span class="highlight-number">20'</span></td>
+                                    <td><span style="color: #D32F2F; font-weight: 700;">20'</span></td>
                                     <td>Muy experimentado</td>
                                     <td>Herramientas eléctricas "potentes"</td>
                                 </tr>
                             </tbody>
                         </table>
                         
-                        <div class="info-box">
-                            <div class="box-icon" style="background: var(--gradient-security);">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <div>
-                                <strong>Plan B en Bomberos:</strong> Medios aéreos (auto-escalas) y maniobras de acceso mediante cuerda. Analizar si la apertura se demora y trabajar en planes alternativos simultáneamente.
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: #E8F5E9; border-radius: 8px; font-size: 0.85rem;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-helicopter" style="color: #388E3C; margin-right: 0.5rem;"></i>
+                                <div>
+                                    <strong>Plan B en Bomberos:</strong> Medios aéreos (auto-escalas) y maniobras de acceso mediante cuerda.
+                                    <div style="font-size: 0.8rem; margin-top: 0.3rem;">Analizar demora apertura y trabajar en alternativas simultáneamente.</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #8D6E63;">
-                                <i class="fas fa-tree"></i>
+                    <!-- TIPOS DE PUERTAS MÁS COMUNES -->
+                    <div class="compact-card" style="border-top-color: #F57C00; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #F57C00;">
+                                <i class="fas fa-th-large"></i>
                             </div>
-                            <span>3.2. Tipos de Puertas más Comunes</span>
+                            <div class="compact-title">🏠 Tipos de Puertas Más Comunes</div>
                         </div>
                         
-                        <div class="comparison-container">
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-tree comparison-icon"></i>
-                                    Puertas de Madera
+                        <div class="door-comparison">
+                            <div class="door-type" style="border-top-color: #8D6E63;">
+                                <div class="door-icon" style="color: #8D6E63;">
+                                    <i class="fas fa-tree"></i>
                                 </div>
-                                <ul class="visual-list">
-                                    <li>Tablero de madera sin refuerzo metálico</li>
-                                    <li>Bisagras metálicas (3) sin anti-palanca</li>
+                                <div style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; color: #8D6E63;">
+                                    Madera
+                                </div>
+                                <ul style="text-align: left; font-size: 0.8rem; padding-left: 1.2rem;">
+                                    <li>Tablero madera sin refuerzo metálico</li>
+                                    <li>3 bisagras metálicas sin anti-palanca</li>
                                     <li>Cerradura sencilla (monopunto)</li>
-                                    <li>Cerco sin refuerzos, recibido con grapas y espuma</li>
+                                    <li>Cerco sin refuerzos, grapas + espuma</li>
                                 </ul>
                             </div>
                             
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-shield-alt comparison-icon"></i>
-                                    Puertas Blindadas
+                            <div class="door-type" style="border-top-color: #78909C;">
+                                <div class="door-icon" style="color: #78909C;">
+                                    <i class="fas fa-shield-alt"></i>
                                 </div>
-                                <ul class="visual-list">
-                                    <li>Construcción sándwich: núcleo madera + chapas metálicas</li>
+                                <div style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; color: #78909C;">
+                                    Blindadas
+                                </div>
+                                <ul style="text-align: left; font-size: 0.8rem; padding-left: 1.2rem;">
+                                    <li>Sándwich: madera + chapas metálicas</li>
                                     <li>Bisagras con refuerzo anti-palanca (bulón)</li>
-                                    <li>Cerradura con 3+ cierres + resbalón</li>
+                                    <li>3+ cierres + resbalón</li>
                                     <li>Cerco con refuerzos metálicos</li>
+                                    <li>Recibido con grapas + espuma</li>
                                 </ul>
                             </div>
                             
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-fort-awesome comparison-icon"></i>
-                                    Puertas Acorazadas
+                            <div class="door-type" style="border-top-color: #D32F2F;">
+                                <div class="door-icon" style="color: #D32F2F;">
+                                    <i class="fas fa-fort-awesome"></i>
                                 </div>
-                                <ul class="visual-list">
-                                    <li>Núcleo metálico revestido con contrachapados</li>
-                                    <li>"U" perimetral característica para identificación</li>
+                                <div style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; color: #D32F2F;">
+                                    Acorazadas
+                                </div>
+                                <ul style="text-align: left; font-size: 0.8rem; padding-left: 1.2rem;">
+                                    <li>Núcleo metálico + contrachapados</li>
+                                    <li>"U" perimetral (identificación)</li>
                                     <li>Bisagras robustas con bulones grandes</li>
-                                    <li>Varios cierres, anti-apalancamiento, sistemas anti-pánico</li>
-                                    <li>Cerco metálico (imán se ve atraído)</li>
+                                    <li>Varios cierres + anti-apalancamiento</li>
+                                    <li>Sistemas secundarios anti-pánico</li>
+                                    <li>Cerco metálico (imán atrae)</li>
                                 </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- ELEMENTOS DE IDENTIFICACIÓN -->
+                        <div style="margin-top: 1.5rem; padding: 1rem; background: #FFF3E0; border-radius: 8px;">
+                            <div style="font-weight: 700; color: #F57C00; margin-bottom: 0.8rem; font-size: 0.9rem;">
+                                <i class="fas fa-fingerprint" style="margin-right: 0.5rem;"></i>
+                                Identificación Visual Rápida
+                            </div>
+                            <div class="door-elements">
+                                <div class="door-element">
+                                    <div class="dos-columnas">
+                                    <div>  
+                                    <div style="color: #8D6E63; font-weight: 700;">MADERA</div>
+                                    <div style="font-size: 0.75rem; margin-top: 0.3rem;">Tablero liso, bisagras visibles</div>
+                                    </div>  
+                                    <div>
+                                    <img src="image accesos/Madera.png" alt="" style="max-width: 60%; height: auto;">
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="door-element">
+                                    <div class="dos-columnas">
+                                    <div>
+                                    <div style="color: #78909C; font-weight: 700;">BLINDADAS</div>
+                                    <div style="font-size: 0.75rem; margin-top: 0.3rem;">Peso mayor, varios cierres</div>
+                                    </div>  
+                                    <div>
+                                    <img src="image accesos/Blindada.png" alt="" style="max-width: 60%; height: auto;">
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="door-element">
+                                    <div class="dos-columnas">
+                                    <div>
+                                    <div style="color: #D32F2F; font-weight: 700;">ACORAZADAS</div>
+                                    <div style="font-size: 0.75rem; margin-top: 0.3rem;">"U" perimetral, imán atrae</div>
+                                    </div>  
+                                    <div>
+                                    <img src="image accesos/Acorazada.png" alt="" style="max-width: 60%; height: auto;">
+                                    </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #FF9800;">
-                                <i class="fas fa-lock"></i>
-                            </div>
-                            <span>3.3. Retenedores Anti-Pánico</span>
-                        </div>
-                        
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: #4CAF50;">
-                                    <i class="fas fa-link"></i>
-                                </div>
-                                <div class="step-title">Retenedor de Cadena</div>
-                                <div style="font-size: 0.85rem;">Más común. Se puede instalar separado o con cerrojo FAC. En emergencia: cortar con cizallas.</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: #2196F3;">
-                                    <i class="fas fa-grip-lines"></i>
-                                </div>
-                                <div class="step-title">Retenedor de Pletina</div>
-                                <div style="font-size: 0.85rem;">Habitual en puertas acorazadas.</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: #D32F2F;">
-                                    <i class="fas fa-ban"></i>
-                                </div>
-                                <div class="step-title">Retenedor de Barra</div>
-                                <div style="font-size: 0.85rem;">Vulnerable a sierra de sable. Sistema doble de control de acceso.</div>
-                            </div>
-                        </div>
-                        
-                        <div class="warning-box">
-                            <div class="box-icon" style="background: #D32F2F;">
+                    <!-- RETENEDORES ANTI-PÁNICO -->
+                    <div class="compact-card" style="border-top-color: #D32F2F;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #D32F2F;">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
-                            <div>
-                                <strong>Retenedor de Barra - Posición bloqueada:</strong> Si se gira un cuarto de vuelta, el tetón se encastra en el marco metálico bloqueando por completo la apertura. En emergencia, solo queda buscar acceso alternativo o tirar la puerta abajo.
+                            <div class="compact-title">🚨 Retenedores Anti-Pánico</div>
+                        </div>
+                        
+                        <div style="margin: 1rem 0; font-size: 0.85rem; text-align: center;">
+                            <div style="color: #D32F2F; font-weight: 700;">Sistemas de seguridad interior:</div>
+                            <div>Permiten abrir parcialmente la puerta sin desbloquear completamente</div>
+                        </div>
+                        
+                        <div class="retainer-grid">
+                            <div class="retainer-item" style="border-left-color: #4CAF50;">
+                                <div>
+                                    <img src="image accesos/Cadena.png" alt="" style="max-width: 50%; height: auto;">
+                                </div>
+                                <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; color: #4CAF50;">
+                                    Cadena
+                                </div>
+                                <div style="font-size: 0.8rem; margin-bottom: 0.5rem;">
+                                    Más común - Instalación separada o con cerrojo FAC
+                                </div>
+                                <div style="font-size: 0.75rem; padding: 0.4rem; background: #E8F5E9; border-radius: 4px;">
+                                    <strong>Emergencia:</strong> Cortar con cizallas
+                                </div>
+                            </div>
+                            
+                            <div class="retainer-item" style="border-left-color: #2196F3;">
+                                <div>
+                                    <img src="image accesos/Pletina.png" alt="" style="max-width: 40%; height: auto;">
+                                </div>
+                                <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; color: #2196F3;">
+                                    Pletina
+                                </div>
+                                <div style="font-size: 0.8rem; margin-bottom: 0.5rem;">
+                                    Habitual en puertas acorazadas
+                                </div>
+                                <div style="font-size: 0.75rem; padding: 0.4rem; background: #E3F2FD; border-radius: 4px;">
+                                    Sistemas metálicos de refuerzo
+                                </div>
+                            </div>
+                            
+                            <div class="retainer-item" style="border-left-color: #FF9800;">
+                                <div>
+                                    <img src="image accesos/Barra.png" alt="" style="max-width: 40%; height: auto;">
+                                </div>
+                                <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; color: #FF9800;">
+                                    Barra
+                                </div>
+                                <div style="font-size: 0.8rem; margin-bottom: 0.5rem;">
+                                    Barra en cerco + tetón de traba
+                                </div>
+                                <div style="font-size: 0.75rem; padding: 0.4rem; background: #FFF3E0; border-radius: 4px;">
+                                    <strong>Vulnerable:</strong> Sierra de sable
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- SISTEMA DE BARRERA DOBLE -->
+                        <div style="margin-top: 1.5rem; padding: 1rem; background: #FFEBEE; border-radius: 8px; border-left: 4px solid #D32F2F;">
+                            <div style="font-weight: 700; color: #D32F2F; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                ⚠️ Sistema Doble Control - ¡CRÍTICO!
+                            </div>
+                            <div style="font-size: 0.85rem;">
+                                <div style="display: flex; margin-bottom: 0.5rem;">
+                                    <div style="min-width: 20px; color: #4CAF50;">✅</div>
+                                    <div><strong>1/8 vuelta:</strong> Tetón engrana pletina → Cortar con Sierra Sable</div>
+                                </div>
+                                <div style="display: flex;">
+                                    <div style="min-width: 20px; color: #D32F2F;">❌</div>
+                                    <div><strong>1/4 vuelta:</strong> Tetón encastra marco metálico → Solo acceso alternativo o derribo</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CONSIDERACIONES TÉCNICAS -->
+                        <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem;">
+                            <div style="padding: 0.8rem; background: #F3E5F5; border-radius: 8px; flex: 1 1 250px;">
+                                <div style="font-weight: 700; color: #7B1FA2; margin-bottom: 0.3rem;">📐 Instalación</div>
+                                <div>En cerco o junto a cerrojos FAC/Lince</div>
+                            </div>
+                            <div style="padding: 0.8rem; background: #E0F2F1; border-radius: 8px; flex: 1 1 250px;">
+                                <div style="font-weight: 700; color: #00796B; margin-bottom: 0.3rem;">⚙️ Funcionamiento</div>
+                                <div>Limitación apertura, no bloqueo total</div>
+                            </div>
+                            <div style="padding: 0.8rem; background: #FFF8E1; border-radius: 8px; flex: 1 1 250px;">
+                                <div style="font-weight: 700; color: #FF8F00; margin-bottom: 0.3rem;">🔧 Intervención</div>
+                                <div>Corte directo en emergencias</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- TEMA 4: LAS CERRADURAS -->
+            <!-- TEMA 4: LAS CERRADURAS - VERSIÓN ULTRACOMPACTA -->
             <div class="horizontal-card" id="cerraduras">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-key"></i>
                 </div>
                 
-                <div class="card-header-top" style="background: var(--gradient-metal);">
+                <div class="card-header-top" style="background: linear-gradient(135deg, #5D4037, #8D6E63);">
                     <div class="card-title-container">
                         <div class="card-icon-large">
                             <i class="fas fa-unlock-alt"></i>
                         </div>
                         <div>
                             <div class="card-title-top">🔐 LAS CERRADURAS</div>
-                            <div class="card-subtitle-top">Tema 4 - Historia, tipos, elementos y funcionamiento</div>
+                            <div class="card-subtitle-top">Tema 4 - Historia, tipos, elementos, funcionamiento y sistemas especiales</div>
                             <div>
-                                <span class="category-tag tag-locks">Cerraduras</span>
-                                <span class="category-tag tag-security">Mecanismos</span>
+                                <span class="compact-chip" style="background: #EFEBE9; color: #5D4037;">Historia</span>
+                                <span class="compact-chip" style="background: #D7CCC8; color: #795548;">6 Tipos</span>
+                                <span class="compact-chip" style="background: #BCAAA4; color: #6D4C41;">Elementos</span>
                             </div>
                         </div>
                     </div>
@@ -1571,196 +2471,714 @@
                 </div>
                 
                 <div class="card-content">
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-metal);">
+                    <!-- HISTORIA DE LAS CERRADURAS -->
+                    <div class="compact-card" style="border-top-color: #5D4037; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #5D4037;">
                                 <i class="fas fa-history"></i>
                             </div>
-                            <span>4.1. Historia de las Cerraduras</span>
+                            <div class="compact-title">📜 Historia de las Cerraduras</div>
                         </div>
                         
-                        <div class="visual-diagram">
-                            <div class="diagram-title">Funcionamiento Básico Histórico</div>
-                            <div class="procedure-timeline">
-                                <div class="timeline-step">
-                                    <div class="step-number">1</div>
-                                    <div class="step-title">Tranca trabada</div>
-                                    <div style="font-size: 0.85rem;">Cierre deslizante horizontal trabado por mecanismo dentado</div>
-                                </div>
-                                <div class="timeline-step">
-                                    <div class="step-number">2</div>
-                                    <div class="step-title">Llave insertada</div>
-                                    <div style="font-size: 0.85rem;">Dientes de llave encajan con dientes de cerradura</div>
-                                </div>
-                                <div class="timeline-step">
-                                    <div class="step-number">3</div>
-                                    <div class="step-title">Liberación</div>
-                                    <div style="font-size: 0.85rem;">Liberan la tranca para desplazarla y abrir</div>
-                                </div>
+                        <div class="procedure-timeline" style="grid-template-columns: repeat(3, 1fr); margin: 1rem 0;">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Tranca dentada</div>
+                                <div style="font-size: 0.75rem;">Cierre horizontal con dientes a diferentes alturas</div>
                             </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Llave específica</div>
+                                <div style="font-size: 0.75rem;">Útil con rebajes que encajan con los dientes</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Liberación</div>
+                                <div style="font-size: 0.75rem;">Llave levanta dientes y libera tranca</div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: #EFEBE9; border-radius: 8px; font-size: 0.85rem;">
+                            <i class="fas fa-lightbulb" style="color: #5D4037; margin-right: 0.5rem;"></i>
+                            <strong>Principio inalterado:</strong> Mecanismo básico sigue igual, solo mejoran materiales y complejidad.
                         </div>
                     </div>
                     
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #795548;">
+                    <!-- TIPOS DE CERRADURAS -->
+                    <div class="compact-card" style="border-top-color: #795548; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #795548;">
                                 <i class="fas fa-th-large"></i>
                             </div>
-                            <span>4.2. Tipos de Cerraduras</span>
+                            <div class="compact-title">🔧 Tipos de Cerraduras</div>
                         </div>
                         
-                        <div class="diagram-grid">
-                            <div class="diagram-item">
-                                <div class="diagram-icon"><i class="fas fa-box"></i></div>
-                                <div><strong>Embutir</strong></div>
-                                <div>Encastradas dentro de la puerta (no visibles)</div>
-                            </div>
-                            <div class="diagram-item">
-                                <div class="diagram-icon"><i class="fas fa-layer-group"></i></div>
-                                <div><strong>Sobreponer</strong></div>
-                                <div>Instaladas sobre parte interna de la puerta</div>
-                            </div>
-                            <div class="diagram-item">
-                                <div class="diagram-icon"><i class="fas fa-th"></i></div>
-                                <div><strong>Perfilería Metálica</strong></div>
-                                <div>Para puertas con tubos metálicos cuadrados (40mm)</div>
-                            </div>
-                            <div class="diagram-item">
-                                <div class="diagram-icon"><i class="fas fa-running"></i></div>
-                                <div><strong>Anti-pánico</strong></div>
-                                <div>Puertas emergencia (abren hacia fuera)</div>
-                            </div>
-                            <div class="diagram-item">
-                                <div class="diagram-icon"><i class="fas fa-eye-slash"></i></div>
-                                <div><strong>Invisibles</strong></div>
-                                <div>Secundarias, accionamiento remoto o app</div>
-                            </div>
-                            <div class="diagram-item">
-                                <div class="diagram-icon"><i class="fas fa-microchip"></i></div>
-                                <div><strong>Inteligentes</strong></div>
-                                <div>Instaladas sobre cilindro, motor gira llave por dentro</div>
-                            </div>
+                        <div class="compact-grid">
+                            <!-- Columna izquierda -->
+                            
+                                <div class="compact-card" style="border-top-color: #8D6E63;">
+                                    <div class="compact-header" style="padding-bottom: 0.5rem;">
+                                        <div class="compact-icon" style="background: #8D6E63; width: 40px; height: 40px;">
+                                            <i class="fas fa-box"></i>
+                                        </div>
+                                        <div class="compact-title" style="font-size: 1rem;">Embutir</div>
+                                    </div>
+                                    <div style="font-size: 0.85rem;">
+                                        <strong>Encastradas en puerta</strong> (no visibles)
+                                        <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
+                                            <li><strong>Multipunto:</strong> +2 cierres secundarios</li>
+                                            <li><strong>Monopunto:</strong> 1 cierre (petaca)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #A1887F;">
+                                    <div class="compact-header" style="padding-bottom: 0.5rem;">
+                                        <div class="compact-icon" style="background: #A1887F; width: 40px; height: 40px;">
+                                            <i class="fas fa-th"></i>
+                                        </div>
+                                        <div class="compact-title" style="font-size: 1rem;">Perfil Metálico</div>
+                                    </div>
+                                    <div style="font-size: 0.85rem;">
+                                        <strong>Para tubos cuadrados 40mm</strong>
+                                        <div style="margin-top: 0.3rem;">Más estrechas, adaptadas a puertas metálicas</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #78909C;">
+                                    <div class="compact-header" style="padding-bottom: 0.5rem;">
+                                        <div class="compact-icon" style="background: #78909C; width: 40px; height: 40px;">
+                                            <i class="fas fa-eye-slash"></i>
+                                        </div>
+                                        <div class="compact-title" style="font-size: 1rem;">Invisibles</div>
+                                    </div>
+                                    <div style="font-size: 0.85rem;">
+                                        <strong>Secundarias, mando/app</strong>
+                                        <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
+                                            <li>Aviso por pilas bajas</li>
+                                            <li>Apertura manual de emergencia</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            
+                            
+                                <div class="compact-card" style="border-top-color: #78909C;">
+                                    <div class="compact-header" style="padding-bottom: 0.5rem;">
+                                        <div class="compact-icon" style="background: #78909C; width: 40px; height: 40px;">
+                                            <i class="fas fa-layer-group"></i>
+                                        </div>
+                                        <div class="compact-title" style="font-size: 1rem;">Sobreponer</div>
+                                    </div>
+                                    <div style="font-size: 0.85rem;">
+                                        <strong>Sobre parte interna</strong> (no embutidas)
+                                        <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
+                                            <li><strong>Multipunto:</strong> Varios cierres</li>
+                                            <li><strong>Monopunto:</strong> Un cierre</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #D32F2F;">
+                                    <div class="compact-header" style="padding-bottom: 0.5rem;">
+                                        <div class="compact-icon" style="background: #D32F2F; width: 40px; height: 40px;">
+                                            <i class="fas fa-running"></i>
+                                        </div>
+                                        <div class="compact-title" style="font-size: 1rem;">Anti-pánico</div>
+                                    </div>
+                                    <div style="font-size: 0.85rem;">
+                                        <strong>Puertas emergencia</strong> (abren hacia fuera)
+                                        <div style="margin-top: 0.3rem; color: #D32F2F; font-weight: 700;">
+                                            Resbalón invertido → Mica no funciona
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #1976D2;">
+                                    <div class="compact-header" style="padding-bottom: 0.5rem;">
+                                        <div class="compact-icon" style="background: #1976D2; width: 40px; height: 40px;">
+                                            <i class="fas fa-microchip"></i>
+                                        </div>
+                                        <div class="compact-title" style="font-size: 1rem;">Inteligentes</div>
+                                    </div>
+                                    <div style="font-size: 0.85rem;">
+                                        <strong>Motor sobre cilindro</strong>
+                                        <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
+                                            <li>Gira llave por dentro</li>
+                                            <li>No añade seguridad</li>
+                                            <li>Ataque directo al cilindro</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            
                         </div>
                         
-                        <div class="info-box">
-                            <div class="box-icon" style="background: #795548;">
-                                <i class="fas fa-info-circle"></i>
+                        <!-- NOTA IMPORTANTE ANTI-PÁNICO -->
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: #FFEBEE; border-radius: 8px; border-left: 4px solid #D32F2F;">
+                            <div style="font-weight: 700; color: #D32F2F; margin-bottom: 0.3rem; font-size: 0.9rem;">
+                                ⚠️ Cerraduras Anti-pánico: Método especial requerido
                             </div>
-                            <div>
-                                <strong>Cerraduras Anti-pánico:</strong> Resbalón instalado al contrario (parte plana hacia nosotros). Métodos normales con mica no efectivos → usar agujas o alambres.
+                            <div style="font-size: 0.85rem;">
+                                Resbalón instalado al revés (parte plana hacia nosotros). <strong>Mica no funciona</strong> → usar agujas o alambres de apertura.
                             </div>
                         </div>
                     </div>
                     
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #607D8B;">
+                    <!-- ELEMENTOS EXTERNOS E INTERNOS DE UNA CERRADURA - REVISADO Y COMPLETO -->
+                    <div class="compact-card" style="border-top-color: #5D4037; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #5D4037;">
                                 <i class="fas fa-puzzle-piece"></i>
                             </div>
-                            <span>4.3. Elementos de una Cerradura</span>
+                            <div class="compact-title">🧩 Elementos de una Cerradura</div>
                         </div>
                         
-                        <div class="comparison-container">
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-external-link-alt comparison-icon"></i>
-                                    Elementos Externos
-                                </div>
-                                <ul class="visual-list">
-                                    <li><strong>Frontal:</strong> Pletina que tapa agujero en canto</li>
-                                    <li><strong>Resbalón:</strong> Pieza con forma de cuña que cierra</li>
-                                    <li><strong>Petaca:</strong> Parte que se introduce en el marco</li>
-                                    <li><strong>Tornillo sujeción:</strong> Une cilindro con cerradura</li>
-                                    <li><strong>Manilla:</strong> Para retraer resbalón</li>
-                                    <li><strong>Cilindro:</strong> Acciona cerradura internamente</li>
-                                    <li><strong>Escudo:</strong> Protege cilindro y función decorativa</li>
-                                </ul>
+                        <!-- ELEMENTOS EXTERNOS -->
+                        <div style="margin: 1.5rem 0;">
+                            <div style="font-weight: 700; color: #5D4037; margin-bottom: 1rem; font-size: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #D7CCC8;">
+                                <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
+                                Elementos Externos (Visibles)
                             </div>
                             
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-cogs comparison-icon"></i>
-                                    Elementos Internos
+                            <div class="dos-columnas">
+                            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #8D6E63; flex: 1 1 150px;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Frontal</div>
+                                    <div style="font-size: 0.85rem;">Pletina que tapa el agujero en el canto de la puerta</div>
+                                    <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
+                                        • Madera: embutido perfecto<br>
+                                        • Metálica: sobresale (dificulta mica)
+                                    </div>
                                 </div>
-                                <ul class="visual-list">
-                                    <li><strong>Salvaguarda:</strong> Impide desplazamiento petaca</li>
-                                    <li><strong>Guarda:</strong> Con surcos donde encaja salvaguarda</li>
-                                    <li><strong>Palanca vinculación:</strong> Desplaza para que leva actúe</li>
-                                    <li><strong>Leva:</strong> Levanta salvaguarda y desplaza guarda</li>
-                                </ul>
+                                
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #A1887F;flex: 1 1 150px;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Resbalón</div>
+                                    <div style="font-size: 0.85rem;">Pieza con forma de cuña que cierra la puerta</div>
+                                    <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
+                                        • Cara achaflanada hacia marco<br>
+                                        • Cara plana impide apertura
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #BCAAA4;flex: 1 1 150px;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Petaca</div>
+                                    <div style="font-size: 0.85rem;">Parte que se introduce en el marco al "echar llave"</div>
+                                    <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
+                                        • Pletina metálica o bulones<br>
+                                        • Se retrae completamente para accionar resbalón
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #8D6E63;flex: 1 1 150px;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Tornillo sujeción</div>
+                                    <div style="font-size: 0.85rem;">Une el cilindro con la cerradura</div>
+                                    <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
+                                        • Mantiene cilindro en posición<br>
+                                        • Atraviesa frontal y cilindro
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #A1887F;flex: 1 1 150px;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Manilla</div>
+                                    <div style="font-size: 0.85rem;">Para retraer el resbalón manualmente</div>
+                                    <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
+                                        • Requiere petaca totalmente retraída<br>
+                                        • Picaporte en puertas baño
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #BCAAA4;flex: 1 1 150px;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Cilindro</div>
+                                    <div style="font-size: 0.85rem;">Acciona internamente la cerradura</div>
+                                    <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
+                                        • Retrae petaca y acciona resbalón<br>
+                                        • Europeo, tubular, Fichet, etc.
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #8D6E63;flex: 1 1 150px;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Escudo protector</div>
+                                    <div style="font-size: 0.85rem;">Protege cilindro y función decorativa</div>
+                                    <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
+                                        • Tapa orificio cilindro<br>
+                                        • Anti-rotura, anti-extracción, etc.
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: center; align-items: center; padding: 1rem;">
+                                <img src="image accesos/Externos.png" alt="" style="max-width: 100%; height: auto;">
+                            </div>
+                        </div>
+                        </div>
+                        
+                        <!-- ELEMENTOS INTERNOS -->
+                        <div style="margin: 1.5rem 0;">
+                            <div style="font-weight: 700; color: #5D4037; margin-bottom: 1rem; font-size: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #D7CCC8;">
+                                <i class="fas fa-cogs" style="margin-right: 0.5rem;"></i>
+                                Elementos Internos (Mecanismo)
+                            </div>
+                            
+                            <div class="dos-columnas">
+                            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                                <div style="padding: 1rem; background: #D7CCC8; border-radius: 8px; border-left: 4px solid #5D4037;flex: 1 1 150px;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Salvaguarda</div>
+                                    <div style="font-size: 0.85rem;">Encaja en surcos de la guarda para bloquear</div>
+                                    <div style="font-size: 0.8rem; color: #4E342E; margin-top: 0.3rem;">
+                                        • Impide desplazamiento petaca<br>
+                                        • Se levanta con leva al girar llave
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #D7CCC8; border-radius: 8px; border-left: 4px solid #6D4C41; flex: 1 1 150px;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Guarda</div>
+                                    <div style="font-size: 0.85rem;">Tiene surcos donde encaja la salvaguarda</div>
+                                    <div style="font-size: 0.8rem; color: #4E342E; margin-top: 0.3rem;">
+                                        • Se desplaza al girar llave<br>
+                                        • Libera línea de corte
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #D7CCC8; border-radius: 8px; border-left: 4px solid #795548; flex: 1 1 150px;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Palanca vinculación</div>
+                                    <div style="font-size: 0.85rem;">Se desplaza para que leva pueda actuar</div>
+                                    <div style="font-size: 0.8rem; color: #4E342E; margin-top: 0.3rem;">
+                                        • Permite segunda vuelta de leva<br>
+                                        • Acciona mecanismo retracción resbalón
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #D7CCC8; border-radius: 8px; border-left: 4px solid #8D6E63; flex: 1 1 150px;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Leva</div>
+                                    <div style="font-size: 0.85rem;">Pieza del cilindro que actúa sobre mecanismo</div>
+                                    <div style="font-size: 0.8rem; color: #4E342E; margin-top: 0.3rem;">
+                                        • Levanta salvaguarda<br>
+                                        • Desplaza guarda<br>
+                                        • Acciona palanca vinculación
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #D7CCC8; border-radius: 8px; border-left: 4px solid #A1887F; flex: 1 1 150px;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Mecanismo resbalón</div>
+                                    <div style="font-size: 0.85rem;">Conjunto que permite retraer resbalón</div>
+                                    <div style="font-size: 0.8rem; color: #4E342E; margin-top: 0.3rem;">
+                                        • Accionado por palanca vinculación<br>
+                                        • Conectado directamente al resbalón
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: center; align-items: center; padding: 1rem;">
+                                <img src="image accesos/Interno.png" alt="" style="max-width: 100%; height: auto;">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FUNCIONAMIENTO DE UNA CERRADURA -->
+                    <div class="compact-card" style="border-top-color: #8D6E63; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #8D6E63;">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <div class="compact-title">⚙️ Funcionamiento de una Cerradura</div>
+                        </div>
+
+                        <div style="display: flex; justify-content: center; align-items: center; padding: 1rem;">
+                                <img src="image accesos/Funcionamiento.png" alt="" style="max-width: 100%; height: auto;">
+                            </div>
+                        
+                        <div class="procedure-timeline" style="grid-template-columns: repeat(4, 1fr); margin: 1rem 0;">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Llave echada</div>
+                                <div style="font-size: 0.75rem;">Petaca desplazada, salvaguarda bloquea</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Girar llave</div>
+                                <div style="font-size: 0.75rem;">Leva levanta salvaguarda</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Segunda vuelta</div>
+                                <div style="font-size: 0.75rem;">Palanca se desplaza</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">4</div>
+                                <div class="step-title">Retraer resbalón</div>
+                                <div style="font-size: 0.75rem;">Leva acciona palanca</div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: #EFEBE9; border-radius: 8px; font-size: 0.85rem;">
+                            <i class="fas fa-tools" style="color: #5D4037; margin-right: 0.5rem;"></i>
+                            <strong>Sin llave/bombín:</strong> Actuar sobre cerradura con destornillador plano si conocemos mecanismo interno.
+                        </div>
+                    </div>
+                    
+                    <!-- EL RESBALÓN -->
+                    <div class="compact-card" style="border-top-color: #A1887F; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #A1887F;">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="compact-title">💳 El Resbalón</div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0;">
+                            <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; text-align: center;">
+                                <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">
+                                    Estándar
+                                </div>
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔲</div>
+                                <div style="font-size: 0.85rem;">
+                                    <div>• Cara biselada hacia cerradero</div>
+                                    <div>• Permite cierre automático</div>
+                                    <div>• Cara plana impide apertura</div>
+                                </div>
+                            </div>
+                            
+                            <div style="padding: 1rem; background: #D7CCC8; border-radius: 8px; text-align: center;">
+                                <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">
+                                    Anti-tarjeta
+                                </div>
+                                <div style="display: flex; justify-content: center; align-items: center; padding: 0.4rem;">
+                                <img src="image accesos/Resbalón.png" alt="" style="width: 40px; ">
+                                </div>
+                                <div style="font-size: 0.85rem;">
+                                    <div>• Varias caras planas</div>
+                                    <div>• Dificulta/imposibilita mica</div>
+                                    <div>• Permite cierre normal</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #9E9E9E;">
-                                <i class="fas fa-sliders-h"></i>
+                    <!-- PICAPORTE CON CONDENA (PUERTA DE BAÑO) -->
+                    <div class="compact-card" style="border-top-color: #78909C; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #78909C;">
+                                <i class="fas fa-toilet"></i>
                             </div>
-                            <span>4.4. Funcionamiento de una Cerradura</span>
+                            <div class="compact-title">🚽 Picaporte con Condena (Puerta de Baño)</div>
                         </div>
                         
-                        <div class="visual-diagram">
-                            <div class="diagram-title">Proceso de Apertura</div>
-                            <div class="procedure-timeline">
+                        <div style="margin: 1rem 0; font-size: 0.85rem;">
+                            <div style="font-weight: 700; color: #78909C; margin-bottom: 0.5rem;">Intervención típica:</div>
+                            <div>Niño se mete en baño, acciona cierre y no puede abrir.</div>
+                        </div>
+                        
+                        <div class="procedure-timeline" style="grid-template-columns: repeat(4, 1fr); margin: 1rem 0;">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Retirar embellecedor</div>
+                                <div style="font-size: 0.75rem;">4 tornillos</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Buscar agujero</div>
+                                <div style="font-size: 0.75rem;">Acceso cuadrado 6mm</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Cajeado (si no hay)</div>
+                                <div style="font-size: 0.75rem;">47-72mm del cuadrado 8mm</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">4</div>
+                                <div class="step-title">Actuar cuadrado</div>
+                                <div style="font-size: 0.75rem;">Destornillador/llave columna</div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: #ECEFF1; border-radius: 8px; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle" style="color: #78909C; margin-right: 0.5rem;"></i>
+                            <strong>Seguridad:</strong> Baños antiguos sin sistema apertura desde fuera (moneda/destornillador).
+                        </div>
+                    </div>
+                    
+                    <!-- CERRADURAS DE GORJAS -->
+                    <div class="compact-card" style="border-top-color: #5D4037; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #5D4037;">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <div class="compact-title">🗝️ Cerraduras de Gorjas</div>
+                        </div>
+                        
+                            <!-- ELEMENTOS COMUNES DE CERRADURAS DE GORJAS -->
+                            <div style="margin: 1.5rem 0;">
+                                <div style="font-weight: 700; color: #6D4C41; margin-bottom: 1rem; font-size: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #BCAAA4;">
+                                    <i class="fas fa-cogs" style="margin-right: 0.5rem;"></i>
+                                    Elementos Internos Comunes
+                                </div>
+                                
+                            <div class="dos-columnas">
+                            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                                    <div style="padding: 1rem; background: #D7CCC8; border-radius: 8px; border-left: 4px solid #8D6E63; flex: 1 1 200px;">
+                                        <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Gorjas (Placas)</div>
+                                        <div style="font-size: 0.85rem;">Placas móviles con muescas a diferentes alturas</div>
+                                        <div style="font-size: 0.8rem; color: #4E342E; margin-top: 0.3rem;">
+                                            • Se levantan con dientes de llave<br>
+                                            • Número variable (4, 5, 6...)<br>
+                                            • Deben alinearse para liberar paso
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="padding: 1rem; background: #D7CCC8; border-radius: 8px; border-left: 4px solid #A1887F; flex: 1 1 200px;">
+                                        <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Pilar de paso</div>
+                                        <div style="font-size: 0.85rem;">Varilla que bloquea el carro cuando gorjas no están alineadas</div>
+                                        <div style="font-size: 0.8rem; color: #4E342E; margin-top: 0.3rem;">
+                                            • Se aloja entre las gorjas<br>
+                                            • Se libera al alinear gorjas<br>
+                                            • Permite desplazar carro
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="padding: 1rem; background: #D7CCC8; border-radius: 8px; border-left: 4px solid #BCAAA4; flex: 1 1 200px;">
+                                        <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Carro</div>
+                                        <div style="font-size: 0.85rem;">Mecanismo que desplaza la petaca o barra de cierre</div>
+                                        <div style="font-size: 0.8rem; color: #4E342E; margin-top: 0.3rem;">
+                                            • Se mueve cuando pilar de paso está libre<br>
+                                            • En Ezcurra: accionado por roldana<br>
+                                            • En Dierre: detrás del núcleo
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="padding: 1rem; background: #D7CCC8; border-radius: 8px; border-left: 4px solid #8D6E63; flex: 1 1 200px;">
+                                        <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Resortes</div>
+                                        <div style="font-size: 0.85rem;">Mantienen presión sobre gorjas y carro</div>
+                                        <div style="font-size: 0.8rem; color: #4E342E; margin-top: 0.3rem;">
+                                            • Devuelven gorjas a posición<br>
+                                            • Mantienen pilar de paso bloqueado<br>
+                                            • Garantizan retorno a seguridad
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: center; align-items: center; padding: 1rem;">
+                                <img src="image accesos/Gorjas.png" alt="" style="max-width: 50%; height: auto;">
+                                </div>
+                            </div>
+                            </div>
+                            
+                            <!-- ELEMENTOS ESPECÍFICOS POR MARCA -->
+                            <div style="margin: 1.5rem 0;">
+                                <div style="font-weight: 700; color: #6D4C41; margin-bottom: 1rem; font-size: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #BCAAA4;">
+                                    <i class="fas fa-industry" style="margin-right: 0.5rem;"></i>
+                                    Elementos Específicos por Marca
+                                </div>
+                                
+                                <!-- EZCURRA -->
+                                <div style="margin-bottom: 1.5rem;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.8rem; font-size: 0.95rem; background: #EFEBE9; padding: 0.5rem 1rem; border-radius: 6px;">
+                                        <i class="fas fa-star" style="color: #FF9800; margin-right: 0.5rem;"></i>
+                                        Ezcurra - Elementos distintivos
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+                                        <div style="padding: 1rem; background: #FFECB3; border-radius: 8px;">
+                                            <div style="font-weight: 700; color: #FF8F00; margin-bottom: 0.5rem; font-size: 0.9rem;">Roldana</div>
+                                            <div style="font-size: 0.85rem;">Pieza dorada que desplaza el carro</div>
+                                            <div style="font-size: 0.8rem; color: #EF6C00; margin-top: 0.3rem;">
+                                                • No actúa directamente la llave<br>
+                                                • Tiene rebajes que engranan con carro<br>
+                                                • Mayor suavidad en apertura
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="padding: 1rem; background: #FFECB3; border-radius: 8px;">
+                                            <div style="font-weight: 700; color: #FF8F00; margin-bottom: 0.5rem; font-size: 0.9rem;">Rebajes</div>
+                                            <div style="font-size: 0.85rem;">En roldana, encajan con dientes del carro</div>
+                                            <div style="font-size: 0.8rem; color: #EF6C00; margin-top: 0.3rem;">
+                                                • Transmiten movimiento de giro<br>
+                                                • Desplazan carro linealmente<br>
+                                                • Diseño específico Ezcurra
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- DIERRE -->
+                                <div>
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.8rem; font-size: 0.95rem; background: #EFEBE9; padding: 0.5rem 1rem; border-radius: 6px;">
+                                        <i class="fas fa-star" style="color: #1976D2; margin-right: 0.5rem;"></i>
+                                        Dierre - Elementos distintivos
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+                                        <div style="padding: 1rem; background: #E3F2FD; border-radius: 8px;">
+                                            <div style="font-weight: 700; color: #1976D2; margin-bottom: 0.5rem; font-size: 0.9rem;">Núcleo</div>
+                                            <div style="font-size: 0.85rem;">Reemplaza al pilar de paso tradicional</div>
+                                            <div style="font-size: 0.8rem; color: #1565C0; margin-top: 0.3rem;">
+                                                • Permite cambiar combinación<br>
+                                                • Puede ser virgen (llave obra)<br>
+                                                • O tallado (llave única)
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="padding: 1rem; background: #E3F2FD; border-radius: 8px;">
+                                            <div style="font-weight: 700; color: #1976D2; margin-bottom: 0.5rem; font-size: 0.9rem;">Pilar de paso secundario</div>
+                                            <div style="font-size: 0.85rem;">En la 6ª gorja (más cercana al carro)</div>
+                                            <div style="font-size: 0.8rem; color: #1565C0; margin-top: 0.3rem;">
+                                                • Evita desplazamiento accidental<br>
+                                                • Se aloja en parte inferior del carro<br>
+                                                • Bloquea durante cambio de núcleo
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="padding: 1rem; background: #E3F2FD; border-radius: 8px;">
+                                            <div style="font-weight: 700; color: #1976D2; margin-bottom: 0.5rem; font-size: 0.9rem;">Carro delantero</div>
+                                            <div style="font-size: 0.85rem;">Situado delante de las gorjas</div>
+                                            <div style="font-size: 0.8rem; color: #1565C0; margin-top: 0.3rem;">
+                                                • Las 6 gorjas delante del carro<br>
+                                                • Núcleo actúa directamente sobre él<br>
+                                                • Diseño único Dierre
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        <!-- Funcionamiento básico -->
+                        <div style="margin: 1rem 0;">
+                            <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                ⚙️ Funcionamiento básico (4x1: 4 gorjas + 1 desplazamiento)
+                            </div>
+                            <div class="procedure-timeline" style="grid-template-columns: repeat(4, 1fr); margin: 0;">
                                 <div class="timeline-step">
                                     <div class="step-number">1</div>
-                                    <div class="step-title">Llave echada</div>
-                                    <div style="font-size: 0.85rem;">Petaca desplazada totalmente a izquierda</div>
+                                    <div>Llave posición única</div>
                                 </div>
                                 <div class="timeline-step">
                                     <div class="step-number">2</div>
-                                    <div class="step-title">Girar llave</div>
-                                    <div style="font-size: 0.85rem;">Leva levanta salvaguarda y desplaza guarda</div>
+                                    <div>Dientes alinean gorjas</div>
                                 </div>
                                 <div class="timeline-step">
                                     <div class="step-number">3</div>
-                                    <div class="step-title">Segunda vuelta</div>
-                                    <div style="font-size: 0.85rem;">Palanca vinculación se desplaza</div>
+                                    <div>Libera pilar de paso</div>
                                 </div>
                                 <div class="timeline-step">
                                     <div class="step-number">4</div>
-                                    <div class="step-title">Retraer resbalón</div>
-                                    <div style="font-size: 0.85rem;">Leva levanta palanca que acciona mecanismo</div>
+                                    <div>Desplaza carro/petaca</div>
                                 </div>
                             </div>
-                        </div>
+                        </div>                        
                     </div>
-                    
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #3F51B5;">
-                                <i class="fas fa-credit-card"></i>
+
+                    <!-- PARTES DE LA LLAVE DE GORJAS - COMPLETO -->
+                    <div class="compact-card" style="border-top-color: #795548; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #795548;">
+                                <i class="fas fa-key"></i>
                             </div>
-                            <span>4.5. El Resbalón</span>
+                            <div class="compact-title">🔑 Partes de la Llave de Gorjas</div>
                         </div>
                         
-                        <div class="comparison-container">
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-square comparison-icon"></i>
-                                    Resbalones Estándar
-                                </div>
-                                <ul class="visual-list">
-                                    <li>Cara biselada orientada hacia cerradero</li>
-                                    <li>Permite retraerse hacia cerradura al cerrar</li>
-                                    <li>Cara plana impide apertura una vez cerrado</li>
-                                </ul>
+                        <!-- PARTES PRINCIPALES -->
+                        <div style="margin: 1.5rem 0;">
+                            <div style="font-weight: 700; color: #795548; margin-bottom: 1rem; font-size: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #D7CCC8;">
+                                <i class="fas fa-shapes" style="margin-right: 0.5rem;"></i>
+                                Partes Principales
                             </div>
                             
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-ban comparison-icon"></i>
-                                    Resbalones Anti-Tarjeta
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #8D6E63;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Maneral</div>
+                                    <div style="font-size: 0.85rem;">Parte por donde se sujeta y gira la llave</div>
+                                    <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
+                                        • Diseño ergonómico<br>
+                                        • Material: metal, plástico, goma<br>
+                                        • Puede tener anillo para llavero
+                                    </div>
                                 </div>
-                                <ul class="visual-list">
-                                    <li>Varias caras planas</li>
-                                    <li>Permiten cierre normal pero dificultan apertura con mica</li>
-                                    <li>Imposibilitan en algunos casos apertura con mica</li>
-                                </ul>
+                                
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #A1887F;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Vástago</div>
+                                    <div style="font-size: 0.85rem;">Une el maneral con las paletas</div>
+                                    <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
+                                        • Puertas: macizo<br>
+                                        • Paleta simple: hueco<br>
+                                        • Diámetro/longitud varía por fabricante
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #BCAAA4;">
+                                    <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Paleta</div>
+                                    <div style="font-size: 0.85rem;">Parte con combinación y dientes de acción</div>
+                                    <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
+                                        • Ancho/largo específico por modelo<br>
+                                        • Contiene combinación y dientes arrastre<br>
+                                        • Doble o simple
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        
+                        
+                        <!-- DENTADO Y TIPOS DE LLAVES -->
+                        <div style="margin: 1.5rem 0;">
+                            <div style="font-weight: 700; color: #795548; margin-bottom: 1rem; font-size: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #D7CCC8;">
+                                <i class="fas fa-teeth" style="margin-right: 0.5rem;"></i>
+                                Dentado y Tipos de Llaves
+                            </div>
+                            
+                            <!-- DENTADO -->
+                            <div style="margin-bottom: 1.5rem;">
+                                <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.8rem; font-size: 0.95rem;">Dentado</div>
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px;">
+                                    <div style="font-size: 0.85rem; margin-bottom: 0.5rem;">
+                                        <strong>Características:</strong>
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem;">
+                                        <div style="font-size: 0.8rem;">
+                                            <div style="font-weight: 700; color: #795548;">Simétrico</div>
+                                            <div>Diente 1 izquierda = Diente 7 derecha</div>
+                                        </div>
+                                        <div style="font-size: 0.8rem;">
+                                            <div style="font-weight: 700; color: #795548;">Dos tipos</div>
+                                            <div>• Combinación (diferente longitud)<br>• Arrastre (igual longitud)</div>
+                                        </div>
+                                        <div style="font-size: 0.8rem;">
+                                            <div style="font-weight: 700; color: #795548;">Grosor único</div>
+                                            <div>Diferencia entre fabricantes</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- TIPOS DE LLAVES -->
+                            <div>
+                                <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.8rem; font-size: 0.95rem;">Tipos de Llaves según Disposición</div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                    <div style="padding: 1rem; background: #FFECB3; border-radius: 8px; text-align: center;">
+                                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">3+3</div>
+                                        <div style="font-weight: 700; color: #FF8F00;">Llave 3+3</div>
+                                        <div style="font-size: 0.8rem; margin-top: 0.3rem;">
+                                            3 dientes combinación + 1 arrastre + 3 combinación (cada pala)
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="padding: 1rem; background: #C8E6C9; border-radius: 8px; text-align: center;">
+                                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">6+6</div>
+                                        <div style="font-weight: 700; color: #388E3C;">Llave 6+6</div>
+                                        <div style="font-size: 0.8rem; margin-top: 0.3rem;">
+                                            6 dientes combinación + 1 arrastre + 6 combinación (cada pala)
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="padding: 1rem; background: #E1BEE7; border-radius: 8px; text-align: center;">
+                                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">1</div>
+                                        <div style="font-weight: 700; color: #7B1FA2;">Paleta Simple</div>
+                                        <div style="font-size: 0.8rem; margin-top: 0.3rem;">
+                                            • 4-5 placas máximo<br>
+                                            • Vástago hueco<br>
+                                            • Último diente de arrastre
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
+                    
+
                 </div>
             </div>
             
