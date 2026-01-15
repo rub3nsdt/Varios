@@ -3078,8 +3078,8 @@
                                 Partes Principales
                             </div>
                             
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #8D6E63;">
+                            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #8D6E63; flex: 1 1 250px;">
                                     <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Maneral</div>
                                     <div style="font-size: 0.85rem;">Parte por donde se sujeta y gira la llave</div>
                                     <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
@@ -3089,7 +3089,7 @@
                                     </div>
                                 </div>
                                 
-                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #A1887F;">
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #A1887F;flex: 1 1 250px;">
                                     <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Vástago</div>
                                     <div style="font-size: 0.85rem;">Une el maneral con las paletas</div>
                                     <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
@@ -3099,7 +3099,7 @@
                                     </div>
                                 </div>
                                 
-                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #BCAAA4;">
+                                <div style="padding: 1rem; background: #EFEBE9; border-radius: 8px; border-left: 4px solid #BCAAA4;flex: 1 1 250px;">
                                     <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.5rem; font-size: 0.95rem;">Paleta</div>
                                     <div style="font-size: 0.85rem;">Parte con combinación y dientes de acción</div>
                                     <div style="font-size: 0.8rem; color: #795548; margin-top: 0.3rem;">
@@ -3146,8 +3146,8 @@
                             <!-- TIPOS DE LLAVES -->
                             <div>
                                 <div style="font-weight: 700; color: #5D4037; margin-bottom: 0.8rem; font-size: 0.95rem;">Tipos de Llaves según Disposición</div>
-                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                                    <div style="padding: 1rem; background: #FFECB3; border-radius: 8px; text-align: center;">
+                                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                                    <div style="padding: 1rem; background: #FFECB3; border-radius: 8px; text-align: center; flex: 1 1 250px;">
                                         <div style="font-size: 2rem; margin-bottom: 0.5rem;">3+3</div>
                                         <div style="font-weight: 700; color: #FF8F00;">Llave 3+3</div>
                                         <div style="font-size: 0.8rem; margin-top: 0.3rem;">
@@ -3155,7 +3155,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div style="padding: 1rem; background: #C8E6C9; border-radius: 8px; text-align: center;">
+                                    <div style="padding: 1rem; background: #C8E6C9; border-radius: 8px; text-align: center; flex: 1 1 250px;">
                                         <div style="font-size: 2rem; margin-bottom: 0.5rem;">6+6</div>
                                         <div style="font-weight: 700; color: #388E3C;">Llave 6+6</div>
                                         <div style="font-size: 0.8rem; margin-top: 0.3rem;">
@@ -3163,7 +3163,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div style="padding: 1rem; background: #E1BEE7; border-radius: 8px; text-align: center;">
+                                    <div style="padding: 1rem; background: #E1BEE7; border-radius: 8px; text-align: center; flex: 1 1 250px;">
                                         <div style="font-size: 2rem; margin-bottom: 0.5rem;">1</div>
                                         <div style="font-weight: 700; color: #7B1FA2;">Paleta Simple</div>
                                         <div style="font-size: 0.8rem; margin-top: 0.3rem;">
@@ -3182,23 +3182,24 @@
                 </div>
             </div>
             
-            <!-- TEMA 5: ESCUDOS PROTECTORES -->
+            <!-- TEMA 5: ESCUDOS PROTECTORES - VERSIÓN ULTRACOMPACTA -->
             <div class="horizontal-card" id="escudos">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-shield-alt"></i>
                 </div>
                 
-                <div class="card-header-top" style="background: var(--gradient-tools);">
+                <div class="card-header-top" style="background: linear-gradient(135deg, #607D8B, #90A4AE);">
                     <div class="card-title-container">
                         <div class="card-icon-large">
                             <i class="fas fa-shield-virus"></i>
                         </div>
                         <div>
                             <div class="card-title-top">🛡️ ESCUDOS PROTECTORES</div>
-                            <div class="card-subtitle-top">Tema 5 - Protección de cilindros frente a ataques</div>
+                            <div class="card-subtitle-top">Tema 5 - Protección de cilindros frente a ataques destructivos</div>
                             <div>
-                                <span class="category-tag tag-security">Protección</span>
-                                <span class="category-tag tag-locks">Cilindros</span>
+                                <span class="compact-chip" style="background: #ECEFF1; color: #607D8B;">5 Niveles</span>
+                                <span class="compact-chip" style="background: #E0F2F1; color: #00796B;">Acero/Tungsteno</span>
+                                <span class="compact-chip" style="background: #F3E5F5; color: #7B1FA2;">Tecnologías DISEC</span>
                             </div>
                         </div>
                     </div>
@@ -3206,142 +3207,451 @@
                 </div>
                 
                 <div class="card-content">
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #9E9E9E;">
+                    <!-- INTRODUCCIÓN -->
+                    <div class="compact-card" style="border-top-color: #607D8B; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #607D8B;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="compact-title">📌 ¿Qué son los Escudos Protectores?</div>
+                        </div>
+                        
+                        <div style="margin: 1rem 0; font-size: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div style="padding: 1rem; background: #ECEFF1; border-radius: 8px;">
+                                <div style="font-weight: 700; color: #455A64; margin-bottom: 0.5rem;">🛡️ Función Principal</div>
+                                <div>Proteger el cilindro frente a ataques destructivos</div>
+                            </div>
+                            <div style="padding: 1rem; background: #ECEFF1; border-radius: 8px;">
+                                <div style="font-weight: 700; color: #455A64; margin-bottom: 0.5rem;">🎨 Función Secundaria</div>
+                                <div>Cubrir agujero de instalación (estética)</div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: #E3F2FD; border-radius: 8px; font-size: 0.85rem;">
+                            <i class="fas fa-bolt" style="color: #1976D2; margin-right: 0.5rem;"></i>
+                            <strong>Ataques que previenen:</strong> Rotura, extracción, taladrado, fresado, apalancamiento.
+                        </div>
+                    </div>
+                    
+                    <!-- NIVELES DE PROTECCIÓN -->
+                    <div class="compact-card" style="border-top-color: #455A64; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #455A64;">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div class="compact-title">🛡️ 5 Niveles de Protección</div>
+                        </div>
+                        
+                        <!-- PROGRESIÓN DE SEGURIDAD -->
+                        <div style="margin: 1rem 0; position: relative;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; position: relative;">
+                                <!-- Línea de progreso -->
+                                <div style="position: absolute; top: 50%; left: 0; right: 0; height: 4px; background: linear-gradient(to right, #4CAF50, #FF9800, #F44336); z-index: 1;"></div>
+                                
+                                <!-- Puntos de nivel -->
+                                <div style="position: relative; z-index: 2; text-align: center; flex: 1;">
+                                    <div style="width: 40px; height: 40px; background: #9E9E9E; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; border: 4px solid white;">
+                                        1
+                                    </div>
+                                    <div style="font-size: 0.75rem; font-weight: 700; color: #757575;">Embellecedor</div>
+                                </div>
+                                
+                                <div style="position: relative; z-index: 2; text-align: center; flex: 1;">
+                                    <div style="width: 40px; height: 40px; background: #FF9800; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; border: 4px solid white;">
+                                        2
+                                    </div>
+                                    <div style="font-size: 0.75rem; font-weight: 700; color: #FF9800;">Baja</div>
+                                </div>
+                                
+                                <div style="position: relative; z-index: 2; text-align: center; flex: 1;">
+                                    <div style="width: 40px; height: 40px; background: #FF9800; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; border: 4px solid white;">
+                                        3
+                                    </div>
+                                    <div style="font-size: 0.75rem; font-weight: 700; color: #FF9800;">Media</div>
+                                </div>
+                                
+                                <div style="position: relative; z-index: 2; text-align: center; flex: 1;">
+                                    <div style="width: 40px; height: 40px; background: #F44336; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; border: 4px solid white;">
+                                        4
+                                    </div>
+                                    <div style="font-size: 0.75rem; font-weight: 700; color: #F44336;">Alta</div>
+                                </div>
+                                
+                                <div style="position: relative; z-index: 2; text-align: center; flex: 1;">
+                                    <div style="width: 40px; height: 40px; background: #D32F2F; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; border: 4px solid white;">
+                                        5
+                                    </div>
+                                    <div style="font-size: 0.75rem; font-weight: 700; color: #D32F2F;">Acorazado</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- LEYENDA DE PROTECCIONES -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.8rem; margin-top: 1.5rem;">
+                            <div style="text-align: center;">
+                                <div style="width: 12px; height: 12px; background: #4CAF50; border-radius: 50%; display: inline-block; margin-right: 0.3rem;"></div>
+                                <span style="font-size: 0.75rem; font-weight: 700;">Anti-rotura</span>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="width: 12px; height: 12px; background: #2196F3; border-radius: 50%; display: inline-block; margin-right: 0.3rem;"></div>
+                                <span style="font-size: 0.75rem; font-weight: 700;">Anti-extracción</span>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="width: 12px; height: 12px; background: #FF9800; border-radius: 50%; display: inline-block; margin-right: 0.3rem;"></div>
+                                <span style="font-size: 0.75rem; font-weight: 700;">Anti-taladro</span>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="width: 12px; height: 12px; background: #9C27B0; border-radius: 50%; display: inline-block; margin-right: 0.3rem;"></div>
+                                <span style="font-size: 0.75rem; font-weight: 700;">Anti-fresado</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.1. EMBELLECEDORES -->
+                    <div class="compact-card" style="border-top-color: #9E9E9E; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #9E9E9E;">
                                 <i class="fas fa-palette"></i>
                             </div>
-                            <span>5.1. Embellecedores</span>
+                            <div class="compact-title">5.1. Embellecedores</div>
                         </div>
                         
-                        <div class="info-box">
-                            <div class="box-icon" style="background: #9E9E9E;">
-                                <i class="fas fa-exclamation-circle"></i>
-                            </div>
-                            <div>
-                                <strong>Función meramente estética:</strong> Típico de puertas de trastero. No ofrece protección ante ningún tipo de ataque (rotura, extracción, taladrado o fresado).
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #FF9800;">
-                                <i class="fas fa-shield"></i>
-                            </div>
-                            <span>5.2. Escudos de Baja Seguridad</span>
-                        </div>
-                        
-                        <ul class="visual-list">
-                            <li>Solo protegen frente a <strong>rotura del cilindro con mordaza de presión</strong></li>
-                            <li>No protegen contra rotura con extractor de campana, extracción, taladrado o fresado</li>
-                            <li>Cuerpo medio hueco que sobresale de la puerta (no embutido)</li>
-                            <li>Instalación desde interior con dos tornillos que unen parte interior y exterior</li>
-                            <li>Se puede partir si se agarra bien con mordaza de presión</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #2196F3;">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <span>5.3. Escudos de Media Seguridad</span>
-                        </div>
-                        
-                        <div class="comparison-container">
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-industry comparison-icon"></i>
-                                    Escudos Ezcurra
-                                </div>
-                                <ul class="visual-list">
-                                    <li>Pieza negra de metal protege cuerpo del cilindro</li>
-                                    <li>Evita partir o taladrar el cilindro</li>
-                                    <li>Orificio con diámetro ligeramente inferior al rotor → evita extracción (no fresado)</li>
-                                    <li>Forma redondeada dificulta asiento del extractor de campana</li>
-                                    <li>Anclaje con dos tornillos pasantes</li>
-                                </ul>
+                        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem; margin: 1rem 0;">
+                            <div style="text-align: center; margin-top: 2rem;">
+                                <div style="font-size: 3rem; color: #9E9E9E;">🛡️</div>
+                                <div style="font-weight: 700; color: #757575; margin-top: 0.5rem;">Nivel 1</div>
                             </div>
                             
-                            <div class="comparison-card">
-                                <div class="comparison-title">
-                                    <i class="fas fa-cog comparison-icon"></i>
-                                    TESA E700 o Similar
+                            <div>
+                                <div style="font-size: 0.85rem; margin-bottom: 1rem;">
+                                    <div style="font-weight: 700; color: #757575; margin-bottom: 0.5rem;">Características:</div>
+                                    <ul style="padding-left: 1.2rem;">
+                                        <li>Típico de puertas de trastero</li>
+                                        <li>Plástico o chapa fina</li>
+                                        <li><strong>Función meramente estética</strong></li>
+                                    </ul>
                                 </div>
-                                <ul class="visual-list">
-                                    <li>Añade lenteja o giraloco que protege al rotor</li>
-                                    <li>Lenteja de 2-3mm → se elimina apalancando con palanqueta</li>
-                                    <li>Una vez retirada lenteja, se puede extraer rotor con extractor o fresarlo</li>
-                                    <li>Mejora en sistemas de anclaje y materiales</li>
-                                </ul>
+                                
+                                <div style="padding: 0.8rem; background: #F5F5F5; border-radius: 8px; font-size: 0.8rem;">
+                                    <div style="font-weight: 700; color: #F44336; margin-bottom: 0.3rem;">❌ NO protege frente a:</div>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+                                        <span style="background: #FFEBEE; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Rotura con mordaza</span>
+                                        <span style="background: #FFEBEE; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Extractor campana</span>
+                                        <span style="background: #FFEBEE; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Extracción rotor</span>
+                                        <span style="background: #FFEBEE; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Taladrado</span>
+                                        <span style="background: #FFEBEE; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Fresado</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #4CAF50;">
+                    <!-- 5.2. ESCUDOS DE BAJA SEGURIDAD -->
+                    <div class="compact-card" style="border-top-color: #FF9800; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #FF9800;">
+                                <i class="fas fa-shield"></i>
+                            </div>
+                            <div class="compact-title">5.2. Escudos de Baja Seguridad</div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem; margin: 1rem 0;">
+                            <div style="text-align: center;margin-top: 3rem;">
+                                <div style="font-size: 3rem; color: #FF9800;">🛡️</div>
+                                <div style="font-weight: 700; color: #FF9800; margin-top: 0.5rem;">Nivel 2</div>
+                            </div>
+                            
+                            <div>
+                                <div style="font-size: 0.85rem; margin-bottom: 1rem;">
+                                    <div style="font-weight: 700; color: #FF9800; margin-bottom: 0.5rem;">Características:</div>
+                                    <ul style="padding-left: 1.2rem;">
+                                        <li>Cuerpo medio hueco</li>
+                                        <li>Sobresale de la puerta (no embutido)</li>
+                                        <li>Instalación desde interior con 2 tornillos</li>
+                                        <li>Se puede partir si se agarra bien con mordaza</li>
+                                    </ul>
+                                </div>
+                                
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                    <div style="padding: 0.8rem; background: #FFF3E0; border-radius: 8px;">
+                                        <div style="font-weight: 700; color: #FF9800; margin-bottom: 0.3rem; font-size: 0.85rem;">✅ Protege:</div>
+                                        <div style="font-size: 0.8rem;">• Rotura con mordaza de presión</div>
+                                    </div>
+                                    
+                                    <div style="padding: 0.8rem; background: #FFEBEE; border-radius: 8px;">
+                                        <div style="font-weight: 700; color: #F44336; margin-bottom: 0.3rem; font-size: 0.85rem;">❌ NO protege:</div>
+                                        <div style="font-size: 0.8rem;">
+                                            • Rotura con extractor campana<br>
+                                            • Extracción, taladrado, fresado
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.3. ESCUDOS DE MEDIA SEGURIDAD -->
+                    <div class="compact-card" style="border-top-color: #2196F3; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #2196F3;">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="compact-title">5.3. Escudos de Media Seguridad</div>
+                        </div>
+                        
+                        <!-- EZCURRA -->
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="font-weight: 700; color: #2196F3; margin-bottom: 0.8rem; font-size: 0.95rem; background: #E3F2FD; padding: 0.5rem 1rem; border-radius: 6px;">
+                                <i class="fas fa-industry" style="margin-right: 0.5rem;"></i>
+                                Escudos Ezcurra
+                            </div>
+                            
+                            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                                <div style="padding: 1rem; background: #E3F2FD; border-radius: 8px; flex: 1 1 200px;">
+                                    <div style="font-weight: 700; color: #1976D2; margin-bottom: 0.5rem; font-size: 0.9rem;">Pieza negra de metal</div>
+                                    <div style="font-size: 0.85rem;">
+                                        • Protege cuerpo del cilindro<br>
+                                        • Evita partir o taladrar cilindro<br>
+                                        • Orificio con diámetro inferior al rotor
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #E3F2FD; border-radius: 8px;flex: 1 1 200px;">
+                                    <div style="font-weight: 700; color: #1976D2; margin-bottom: 0.5rem; font-size: 0.9rem;">Forma redondeada</div>
+                                    <div style="font-size: 0.85rem;">
+                                        • Dificulta asiento del extractor de campana<br>
+                                        • Puede partir el tornillo de extracción<br>
+                                        • Anclaje con 2 tornillos pasantes
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #E3F2FD; border-radius: 8px;flex: 1 1 200px;">
+                                    <div style="font-weight: 700; color: #1976D2; margin-bottom: 0.5rem; font-size: 0.9rem;">Protecciones</div>
+                                    <div style="font-size: 0.85rem;">
+                                        <span style="color: #4CAF50;">✅</span> Anti-rotura<br>
+                                        <span style="color: #4CAF50;">✅</span> Anti-taladro cuerpo<br>
+                                        <span style="color: #4CAF50;">✅</span> Anti-extracción rotor<br>
+                                        <span style="color: #F44336;">❌</span> Anti-fresado (limitado)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- TESA E700 o SIMILAR -->
+                        <div>
+                            <div style="font-weight: 700; color: #2196F3; margin-bottom: 0.8rem; font-size: 0.95rem; background: #E3F2FD; padding: 0.5rem 1rem; border-radius: 6px;">
+                                <i class="fas fa-cog" style="margin-right: 0.5rem;"></i>
+                                TESA E700 o Similar
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div style="padding: 1rem; background: #E3F2FD; border-radius: 8px;">
+                                    <div style="font-weight: 700; color: #1976D2; margin-bottom: 0.5rem; font-size: 0.9rem;">Lenteja/Giraloco</div>
+                                    <div style="font-size: 0.85rem;">
+                                        • Protege al rotor<br>
+                                        • Grosor: 2-3 mm<br>
+                                        • Se elimina apalancando
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #E3F2FD; border-radius: 8px;">
+                                    <div style="font-weight: 700; color: #1976D2; margin-bottom: 0.5rem; font-size: 0.9rem;">Anclaje mejorado</div>
+                                    <div style="font-size: 0.85rem;">
+                                        • Mejora en sistemas de anclaje<br>
+                                        • Materiales de mayor calidad<br>
+                                        • Más resistencia estructural
+                                    </div>
+                                </div>
+                                
+                                <div style="padding: 1rem; background: #E3F2FD; border-radius: 8px;">
+                                    <div style="font-weight: 700; color: #1976D2; margin-bottom: 0.5rem; font-size: 0.9rem;">Método apertura</div>
+                                    <div style="font-size: 0.85rem;">
+                                        1. Apalancar lenteja (palanqueta MAP)<br>
+                                        2. Extraer rotor (extractor campana)<br>
+                                        3. Fresar si necesario
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.4. ESCUDOS DE ALTA SEGURIDAD -->
+                    <div class="compact-card" style="border-top-color: #4CAF50; margin-bottom: 1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #4CAF50;">
                                 <i class="fas fa-shield-virus"></i>
                             </div>
-                            <span>5.4. Escudos de Alta Seguridad - TESA E800</span>
+                            <div class="compact-title">5.4. Escudos de Alta Seguridad - TESA E800</div>
                         </div>
                         
-                        <ul class="visual-list">
-                            <li><strong>Cuerpo:</strong> Acero macizo reforzado con incrustaciones de bolas de acero que impiden avance de broca</li>
-                            <li><strong>Contraplaca interior:</strong> Acero de <span class="highlight-number">4mm</span> espesor. Sujeción con cuatro tornillos de acero bonificado</li>
-                            <li><strong>Lenteja:</strong> Acero inoxidable macizo, grosor <span class="highlight-number">9-10mm</span>. Para eliminarla: cortar con radial o broca de corona</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #D32F2F;">
-                                <i class="fas fa-gem"></i>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 1rem 0;">
+                            <div style="padding: 1.5rem; background: #E8F5E9; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2rem; color: #4CAF50; margin-bottom: 0.5rem;">🛡️</div>
+                                <div style="font-weight: 700; color: #388E3C; margin-bottom: 0.5rem;">Cuerpo</div>
+                                <div style="font-size: 0.85rem;">
+                                    • Acero macizo reforzado<br>
+                                    • Incrustaciones bolas acero<br>
+                                    • Anti-taladro (frena broca)
+                                </div>
                             </div>
-                            <span>5.5. Escudos Acorazados - DISEC</span>
-                        </div>
-                        
-                        <div class="emphasis-box">
-                            <div style="display: flex; align-items: center; gap: 15px;">
-                                <i class="fas fa-shield-alt" style="font-size: 2rem; color: #D32F2F;"></i>
-                                <div>
-                                    <h4 style="margin-bottom: 0.5rem; color: #D32F2F;">Tecnologías DISEC - Grado 5 (único en mercado)</h4>
+                            
+                            <div style="padding: 1.5rem; background: #E8F5E9; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2rem; color: #4CAF50; margin-bottom: 0.5rem;">🛡️</div>
+                                <div style="font-weight: 700; color: #388E3C; margin-bottom: 0.5rem;">Contraplaca interior</div>
+                                <div style="font-size: 0.85rem;">
+                                    • Acero 4mm espesor<br>
+                                    • Sujeción: 4 tornillos acero bonificado<br>
+                                    • Refuerzo estructural total
+                                </div>
+                            </div>
+                            
+                            <div style="padding: 1.5rem; background: #E8F5E9; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2rem; color: #4CAF50; margin-bottom: 0.5rem;">🛡️</div>
+                                <div style="font-weight: 700; color: #388E3C; margin-bottom: 0.5rem;">Lenteja</div>
+                                <div style="font-size: 0.85rem;">
+                                    • Acero inoxidable macizo<br>
+                                    • Grosor: 9-10 mm<br>
+                                    • Eliminación: radial o broca corona
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="diagram-grid">
-                            <div class="diagram-item">
-                                <div class="diagram-icon"><i class="fas fa-gem"></i></div>
-                                <div><strong>Diamond</strong></div>
-                                <div>Inserciones acero diamantado anti-corte con radial</div>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #C8E6C9; border-radius: 8px;">
+                            <div style="font-weight: 700; color: #2E7D32; margin-bottom: 0.5rem; font-size: 0.9rem;">🎯 Características Técnicas TESA E800</div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; font-size: 0.85rem;">
+                                <div>
+                                    <div style="font-weight: 700;">Protección total</div>
+                                    <div>Anti-rotura, extracción, taladrado</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700;">Material premium</div>
+                                    <div>Aceros de alta resistencia</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700;">Lenteja reforzada</div>
+                                    <div>Requiere herramientas pesadas</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700;">Anclaje robusto</div>
+                                    <div>4 puntos de fijación</div>
+                                </div>
                             </div>
-                            <div class="diagram-item">
-                                <div class="diagram-icon"><i class="fas fa-screwdriver"></i></div>
-                                <div><strong>Tornillos Aeroflex</strong></div>
-                                <div>Rosca solo en parte final del vástago</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.5. ESCUDOS ACORAZADOS - DISEC -->
+                    <div class="compact-card" style="border-top-color: #D32F2F;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #D32F2F;">
+                                <i class="fas fa-gem"></i>
                             </div>
-                            <div class="diagram-item">
-                                <div class="diagram-icon"><i class="fas fa-circle"></i></div>
-                                <div><strong>Tungsteno</strong></div>
-                                <div>4 rodamientos carburo de tungsteno antifresado</div>
+                            <div class="compact-title">5.5. Escudos Acorazados - DISEC</div>
+                        </div>
+                        
+                        <div style="margin: 1rem 0; text-align: center;">
+                            <div style="display: flex; justify-content: center; align-items: center; padding: 1rem;">
+                                <img src="image accesos/CLS5.png" alt="" style="max-width: 250px; height: auto;">
                             </div>
-                            <div class="diagram-item">
-                                <div class="diagram-icon"><i class="fas fa-layer-group"></i></div>
-                                <div><strong>Manganeso</strong></div>
-                                <div>Lenteja anti-taladro gruesa con placa acero al manganeso</div>
+                            <div style="font-weight: 700; color: #D32F2F; font-size: 1.1rem;">CLS5 - Único Grado 5 del mercado</div>
+                            <div style="font-size: 0.85rem; color: #666; margin-top: 0.3rem;">Tecnologías que hacen prácticamente invulnerables los escudos</div>
+                        </div>
+                        
+                        <!-- TECNOLOGÍAS DISEC -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                            <div style="padding: 1rem; background: #FFEBEE; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.5rem; color: #D32F2F; margin-bottom: 0.5rem;">💎</div>
+                                <div style="font-weight: 700; color: #D32F2F; margin-bottom: 0.3rem; font-size: 0.9rem;">Diamond</div>
+                                <div style="font-size: 0.8rem;">Inserciones acero diamantado anti-corte con radial</div>
                             </div>
-                            <div class="diagram-item">
-                                <div class="diagram-icon"><i class="fas fa-archway"></i></div>
-                                <div><strong>Antisketting</strong></div>
-                                <div>Arco reforzado anti-deslizamiento unido a lenteja</div>
+                            
+                            <div style="padding: 1rem; background: #FFEBEE; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.5rem; color: #D32F2F; margin-bottom: 0.5rem;">🔩</div>
+                                <div style="font-weight: 700; color: #D32F2F; margin-bottom: 0.3rem; font-size: 0.9rem;">Tornillos Aeroflex</div>
+                                <div style="font-size: 0.8rem;">Rosca solo en parte final del vástago - Forman una sola pieza</div>
                             </div>
-                            <div class="diagram-item">
-                                <div class="diagram-icon"><i class="fas fa-dot-circle"></i></div>
-                                <div><strong>Esfera</strong></div>
-                                <div>Forma ovalada antipinzamiento y anti-corona</div>
+                            
+                            <div style="padding: 1rem; background: #FFEBEE; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.5rem; color: #D32F2F; margin-bottom: 0.5rem;">⚫</div>
+                                <div style="font-weight: 700; color: #D32F2F; margin-bottom: 0.3rem; font-size: 0.9rem;">Tungsteno</div>
+                                <div style="font-size: 0.8rem;">4 Rodamientos carburo de tungsteno antifresado</div>
                             </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                            <div style="padding: 1rem; background: #FFEBEE; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.5rem; color: #D32F2F; margin-bottom: 0.5rem;">🔗</div>
+                                <div style="font-weight: 700; color: #D32F2F; margin-bottom: 0.3rem; font-size: 0.9rem;">Manganeso</div>
+                                <div style="font-size: 0.8rem;">Lenteja anti-taladro gruesa con placa acero al manganeso</div>
+                            </div>
+                            
+                            <div style="padding: 1rem; background: #FFEBEE; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.5rem; color: #D32F2F; margin-bottom: 0.5rem;">🔄</div>
+                                <div style="font-weight: 700; color: #D32F2F; margin-bottom: 0.3rem; font-size: 0.9rem;">Antisketting</div>
+                                <div style="font-size: 0.8rem;">Arco reforzado anti-deslizamiento unido a lenteja</div>
+                            </div>
+                            
+                            <div style="padding: 1rem; background: #FFEBEE; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.5rem; color: #D32F2F; margin-bottom: 0.5rem;">⚪</div>
+                                <div style="font-weight: 700; color: #D32F2F; margin-bottom: 0.3rem; font-size: 0.9rem;">Esfera</div>
+                                <div style="font-size: 0.8rem;">Forma ovalada antipinzamiento y anti-corona</div>
+                            </div>
+                        </div>
+                        
+                        <!-- RESUMEN DISEC -->
+                        <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, #D32F2F, #F44336); border-radius: 8px; color: white;">
+                            <div style="font-weight: 700; margin-bottom: 0.5rem; font-size: 0.95rem;">🏅 Características Únicas DISEC CLS5</div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; font-size: 0.85rem;">
+                                <div>
+                                    <div style="font-weight: 700;">Único Grado 5</div>
+                                    <div style="opacity: 0.9;">Máxima certificación mercado</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700;">6 tecnologías</div>
+                                    <div style="opacity: 0.9;">Combinación protección</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700;">Materiales premium</div>
+                                    <div style="opacity: 0.9;">Aceros especiales</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700;">Diseño integrado</div>
+                                    <div style="opacity: 0.9;">Una sola pieza funcional</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- RESUMEN VISUAL -->
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, #607D8B, #455A64); border-radius: 10px; text-align: center; color: white;">
+                        <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 0.8rem; flex-wrap: wrap;">
+                            <div>
+                                <div style="font-size: 1.5rem;">🎨</div>
+                                <div style="font-size: 0.75rem; font-weight: 700;">EMBELLECEDOR</div>
+                                <div style="font-size: 0.7rem; opacity: 0.9;">Solo estética</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 1.5rem;">🛡️</div>
+                                <div style="font-size: 0.75rem; font-weight: 700;">BAJA</div>
+                                <div style="font-size: 0.7rem; opacity: 0.9;">Anti-rotura básica</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 1.5rem;">⚙️</div>
+                                <div style="font-size: 0.75rem; font-weight: 700;">MEDIA</div>
+                                <div style="font-size: 0.7rem; opacity: 0.9;">Ezcurra/TESA E700</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 1.5rem;">🔒</div>
+                                <div style="font-size: 0.75rem; font-weight: 700;">ALTA</div>
+                                <div style="font-size: 0.7rem; opacity: 0.9;">TESA E800</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 1.5rem;">💎</div>
+                                <div style="font-size: 0.75rem; font-weight: 700;">ACORAZADO</div>
+                                <div style="font-size: 0.7rem; opacity: 0.9;">DISC CLS5 Grado 5</div>
+                            </div>
+                        </div>
+                        <div style="font-size: 0.85rem; font-weight: 600; opacity: 0.9;">
+                            Evaluar nivel protección → Seleccionar método adecuado → Usar herramientas específicas
                         </div>
                     </div>
                 </div>
