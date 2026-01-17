@@ -2412,8 +2412,8 @@
                 </div>
             </section>
             
-            <!-- SECCIÓN 3: HIDRODINÁMICA -->
-            <div class="horizontal-card" id="hidrodinamica">
+            <!-- SECCIÓN 3: HIDRODINÁMICA - Versión COMPLETA -->
+            <section class="horizontal-card" id="hidrodinamica">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-wind"></i>
                 </div>
@@ -2430,297 +2430,647 @@
                                 <span class="category-tag tag-flow">Caudal</span>
                                 <span class="category-tag tag-energy">Bernoulli</span>
                                 <span class="category-tag tag-pressure">Venturi</span>
+                                <span class="category-tag tag-pump">Torricelli</span>
+                                <span class="category-tag tag-fluid">Régimen</span>
                             </div>
                         </div>
                     </div>
-                    <div class="topic-number-badge">Sección 3</div>
+                    <div class="topic-number-badge">SECCIÓN 3</div>
                 </div>
                 
                 <div class="card-content">
+                    <!-- Introducción a Hidrodinámica -->
+                    <div class="compact-section">
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-flow);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">¿Qué es la hidrodinámica?</div>
+                                <p class="compact-text">La <strong>hidrodinámica</strong> es la ciencia que estudia la dinámica de los líquidos. Para su estudio se toman en cuenta tres aproximaciones fundamentales:</p>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li>El fluido es un <strong>líquido incompresible</strong> (su densidad no varía con la presión)</li>
+                                    <li>La pérdida de energía debida a la viscosidad es <strong>despreciable</strong></li>
+                                    <li>El flujo de los líquidos es en <strong>régimen estable o estacionario</strong> (la velocidad en un punto es independiente del tiempo)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- 3.1. RÉGIMEN DE FLUIDO -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-flow);">
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-flow);">
                                 <i class="fas fa-stream"></i>
                             </div>
-                            <h3>3.1. RÉGIMEN DE FLUIDO</h3>
+                            <div>
+                                <h3 class="compact-title-text">3.1. RÉGIMEN DE FLUIDO: LAMINAR Y TURBULENTO</h3>
+                                <p class="compact-subtitle">Tipos de movimiento de los líquidos en las instalaciones</p>
+                            </div>
                         </div>
                         
-                        <div class="compact-grid">
-                            <div class="compact-card" style="border-top-color: var(--color-water);">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: var(--color-water);">
+                        <div class="compact-text">
+                            <p>En el interior de las instalaciones el movimiento de los líquidos se desarrolla de dos formas distintas, en función de si las partículas siguen trayectorias uniformes y paralelas (flujo laminar) o lo hacen de forma irregular y con trayectorias cruzadas (flujo turbulento).</p>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card" style="border-top-color: var(--color-water);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-water);">
                                         <i class="fas fa-layer-group"></i>
                                     </div>
-                                    <div class="compact-title">Laminar</div>
+                                    <h4 style="margin: 0; color: #333;">Régimen Laminar</h4>
                                 </div>
-                                <ul class="visual-list" style="margin-top: 0.5rem;">
-                                    <li>Baja velocidad</li>
-                                    <li>Trayectorias uniformes y paralelas</li>
-                                    <li>Predominan fuerzas de viscosidad</li>
-                                    <li><strong>N° Reynolds < 2000</strong></li>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Baja velocidad</strong> de circulación</li>
+                                    <li>Trayectorias <strong>uniforme y paralelas</strong></li>
+                                    <li><strong>Fuerzas de viscosidad</strong> predominan sobre fuerzas de inercia</li>
+                                    <li>Se deslizan unas sobre otras como láminas fluidas</li>
+                                    <li><strong>Número de Reynolds: R < 2000</strong></li>
                                 </ul>
                             </div>
                             
-                            <div class="compact-card" style="border-top-color: var(--color-pressure);">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: var(--color-pressure);">
+                            <div class="comparison-card" style="border-top-color: var(--color-pressure);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure);">
                                         <i class="fas fa-turbulence"></i>
                                     </div>
-                                    <div class="compact-title">Turbulento</div>
+                                    <h4 style="margin: 0; color: #333;">Régimen Turbulento</h4>
                                 </div>
-                                <ul class="visual-list" style="margin-top: 0.5rem;">
-                                    <li>Alta velocidad</li>
-                                    <li>Trayectorias irregulares con remolinos</li>
-                                    <li>Predominan fuerzas de inercia</li>
-                                    <li><strong>N° Reynolds > 4000</strong></li>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Alta velocidad</strong> de circulación</li>
+                                    <li>Trayectorias <strong>irregulares con remolinos</strong></li>
+                                    <li><strong>Fuerzas de inercia</strong> predominan sobre fuerzas de viscosidad</li>
+                                    <li>Aparecen por cambios bruscos de dirección o velocidad</li>
+                                    <li><strong>Número de Reynolds: R > 4000</strong></li>
                                 </ul>
                             </div>
                             
-                            <div class="compact-card" style="border-top-color: #FF9800;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #FF9800;">
+                            <div class="comparison-card" style="border-top-color: #FF9800;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #FF9800;">
                                         <i class="fas fa-exchange-alt"></i>
                                     </div>
-                                    <div class="compact-title">Transición</div>
+                                    <h4 style="margin: 0; color: #333;">Régimen de Transición</h4>
                                 </div>
                                 <div style="text-align: center; padding: 1rem;">
                                     <div class="highlight-number" style="font-size: 1.8rem;">2000 - 4000</div>
-                                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Número de Reynolds entre laminar y turbulento</p>
+                                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Número de Reynolds entre laminar y turbulento. El fluido se mueve en una mezcla de ambos regímenes.</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="formula">
+                        <div class="equation-container" style="margin-top: 1.5rem;">
+                            <div class="equation-label">Número de Reynolds (R):</div>
                             \[ R = \frac{\rho \cdot D \cdot v}{\eta} \]
-                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">
-                                ρ: Densidad • η: Viscosidad • D: Diámetro • v: Velocidad
+                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                ρ: Densidad del fluido | η: Viscosidad dinámica | D: Diámetro del conducto | v: Velocidad del fluido
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- 3.2. CAUDAL -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-flow-dark);">
-                                <i class="fas fa-faucet"></i>
+                        
+                        <div class="compact-info compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-flow);">
+                                <i class="fas fa-fire-extinguisher"></i>
                             </div>
-                            <h3>3.2. CAUDAL (Q)</h3>
-                        </div>
-                        <p>Cantidad de líquido que pasa por sección transversal de un conducto en unidad de tiempo.</p>
-                        
-                        <div class="formula">
-                            \[ Q = \frac{V}{t} \quad \text{[m³/s]} \]
-                        </div>
-                        
-                        <div class="formula">
-                            \[ Q = S \cdot v \]
-                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">
-                                S: Sección transversal • v: Velocidad
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Aplicación bomberil: Sistemas de distribución</div>
+                                <p class="compact-text">La mayoría de los sistemas de distribución de agua aplicados a bomberos funcionan en <strong>régimen turbulento</strong>. Esto se debe a las altas velocidades necesarias para alcanzar grandes caudales y alcances. El régimen turbulento implica mayores pérdidas de carga por fricción, lo que debe considerarse en el diseño de instalaciones.</p>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- 3.3. ECUACIÓN DE CONTINUIDAD -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #2196F3;">
-                                <i class="fas fa-arrows-alt-h"></i>
-                            </div>
-                            <h3>3.3. ECUACIÓN DE CONTINUIDAD</h3>
-                        </div>
-                        <p>"La cantidad de líquido que pasa por dos puntos de una canalización sin fuentes/sumideros es constante."</p>
                         
-                        <div class="formula">
-                            \[ Q = \text{cte.} = S_1 \cdot v_1 = S_2 \cdot v_2 = S_3 \cdot v_3 \]
-                        </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: #2196F3;">
+                        <div class="compact-tip compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-flow-light);">
                                 <i class="fas fa-lightbulb"></i>
                             </div>
-                            <div>
-                                <strong>Consecuencia:</strong> Si la sección disminuye, la velocidad aumenta (y viceversa).
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Factores que determinan el tipo de régimen</div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Velocidad del fluido:</strong> Mayor velocidad → más probable régimen turbulento</li>
+                                    <li><strong>Viscosidad del líquido:</strong> Mayor viscosidad → más probable régimen laminar</li>
+                                    <li><strong>Densidad del líquido:</strong> Mayor densidad → más probable régimen turbulento</li>
+                                    <li><strong>Diámetro del conducto:</strong> Mayor diámetro → más probable régimen turbulento</li>
+                                    <li><strong>Rugosidad de las paredes:</strong> Mayor rugosidad → más probable régimen turbulento</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- 3.4. ECUACIÓN DE BERNOULLI -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-energy);">
-                                <i class="fas fa-bolt"></i>
+
+                    <!-- 3.2. CAUDAL -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-flow-dark);">
+                                <i class="fas fa-faucet"></i>
                             </div>
-                            <h3>3.4. ECUACIÓN DE BERNOULLI</h3>
+                            <div>
+                                <h3 class="compact-title-text">3.2. CAUDAL (Q)</h3>
+                                <p class="compact-subtitle">Cantidad de líquido que pasa por la sección transversal de un conducto en la unidad de tiempo</p>
+                            </div>
                         </div>
-                        <p>En fluido ideal (sin viscosidad) en régimen estacionario, la energía total permanece constante.</p>
                         
-                        <div class="formula">
-                            \[ \frac{1}{2}\rho v_1^2 + \rho g h_1 + p_1 = \frac{1}{2}\rho v_2^2 + \rho g h_2 + p_2 \]
+                        <div class="equation-container">
+                            <div class="equation-label">Definición de caudal:</div>
+                            \[ Q = \frac{V}{t} \]
+                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                Q: Caudal | V: Volumen | t: Tiempo
+                            </div>
+                        </div>
+                        
+                        <div class="equation-container">
+                            <div class="equation-label">Caudal en función de velocidad y sección:</div>
+                            \[ Q = S \cdot v \]
+                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                S: Sección transversal del conducto | v: Velocidad del fluido
+                            </div>
+                        </div>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-flow);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-flow);">
+                                        <i class="fas fa-ruler-combined"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Unidad SI</h4>
+                                </div>
+                                <p class="compact-content-dense"><strong>m³/s</strong> (metro cúbico por segundo)</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-flow-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-flow-light);">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Unidades prácticas</h4>
+                                </div>
+                                <p class="compact-content-dense">l/min (litros por minuto), l/s (litros por segundo), m³/h</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-flow-dark);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-flow-dark);">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Conversiones comunes</h4>
+                                </div>
+                                <p class="compact-content-dense">1 m³/s = 1000 l/s = 60.000 l/min = 3.600 m³/h</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box" style="margin-top: 1rem;">
+                            <div class="compact-box-icon" style="background: var(--color-flow);">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Caudal en intervenciones bomberiles</div>
+                                <p class="compact-text">El caudal es una variable crítica en extinción de incendios. Determina la cantidad de agua que llega al fuego por unidad de tiempo. Caudales insuficientes no controlan el incendio, mientras que caudales excesivos pueden causar daños por agua o problemas de suministro. Las lanzas tienen selectores para regular el caudal según las necesidades.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-data-grid" style="margin-top: 1rem;">
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: var(--color-flow);">250-750 l/min</div>
+                                <div class="compact-data-label">Caudal típico lanza 70mm</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: var(--color-flow);">150-500 l/min</div>
+                                <div class="compact-data-label">Caudal típico lanza 45mm</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: var(--color-flow);">250-230 l/min</div>
+                                <div class="compact-data-label">Caudal típico lanza 25mm</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: var(--color-flow);">>1000 l/min</div>
+                                <div class="compact-data-label">Monitores y lanzas pesadas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.3. ECUACIÓN DE CONTINUIDAD -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: #2196F3;">
+                                <i class="fas fa-arrows-alt-h"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">3.3. ECUACIÓN DE CONTINUIDAD</h3>
+                                <p class="compact-subtitle">Principio de conservación de la masa en fluidos incompresibles</p>
+                            </div>
                         </div>
                         
                         <div class="law-box">
-                            <div class="law-title">🔋 Conservación de Energía</div>
-                            <div class="compact-grid" style="margin-top: 1rem;">
-                                <div class="compact-card" style="border-top-color: #FF9800;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #FF9800;">
-                                            <i class="fas fa-running"></i>
-                                        </div>
-                                        <div class="compact-title">Energía Cinética</div>
-                                    </div>
-                                    <div style="text-align: center; font-size: 0.9rem;">
-                                        \(\frac{1}{2} \rho v^2\)
-                                    </div>
-                                </div>
-                                
-                                <div class="compact-card" style="border-top-color: #4CAF50;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #4CAF50;">
-                                            <i class="fas fa-mountain"></i>
-                                        </div>
-                                        <div class="compact-title">Energía Potencial</div>
-                                    </div>
-                                    <div style="text-align: center; font-size: 0.9rem;">
-                                        \(\rho g h\)
-                                    </div>
-                                </div>
-                                
-                                <div class="compact-card" style="border-top-color: #D32F2F;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #D32F2F;">
-                                            <i class="fas fa-compress-arrows-alt"></i>
-                                        </div>
-                                        <div class="compact-title">Energía de Presión</div>
-                                    </div>
-                                    <div style="text-align: center; font-size: 0.9rem;">
-                                        \(p\)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 3.5. TEOREMA DE TORRICELLI -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #795548;">
-                                <i class="fas fa-faucet-drip"></i>
-                            </div>
-                            <h3>3.5. TEOREMA DE TORRICELLI</h3>
-                        </div>
-                        <p>Velocidad de salida de líquido por orificio en depósito a profundidad h.</p>
-                        
-                        <div class="formula">
-                            \[ v_{\text{salida}} = \sqrt{2 g h} \]
+                            <div class="law-title">📜 Enunciado del principio</div>
+                            <p>"La cantidad de líquido que pasa por dos puntos cualesquiera de una canalización entre los que no hay ni fuentes ni sumideros en la unidad de tiempo es constante."</p>
                         </div>
                         
-                        <div class="formula">
-                            \[ Q_{\text{teórico}} = S \cdot \sqrt{2 g h} \]
-                        </div>
-                        
-                        <div class="formula">
-                            \[ Q_{\text{real}} = K \cdot S \cdot \sqrt{2 g h} \quad (K = 0.9 - 0.98) \]
-                        </div>
-                        
-                        <div class="visual-table">
-                            <thead>
-                                <tr>
-                                    <th>Tipo de lanza</th>
-                                    <th>Diámetro teórico (mm)</th>
-                                    <th>Caudal normal (l/min)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Lanza 25</td>
-                                    <td><span class="highlight-number">5.5 - 12</span></td>
-                                    <td><span class="highlight-number">250 - 230</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Lanza 45</td>
-                                    <td><span class="highlight-number">9.75 - 17.75</span></td>
-                                    <td><span class="highlight-number">150 - 500</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Lanza 70</td>
-                                    <td><span class="highlight-number">13.75 - 21.75</span></td>
-                                    <td><span class="highlight-number">300 - 750</span></td>
-                                </tr>
-                            </tbody>
-                        </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: #795548;">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
-                            <div>
-                                <strong>Nota:</strong> Valores para h = <span class="highlight-number">70 m.c.a.</span> (7 kg/cm²) y K = <span class="highlight-number">0.9</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 3.6. EFECTO VENTURI -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #9C27B0;">
-                                <i class="fas fa-wind"></i>
-                            </div>
-                            <h3>3.6. EFECTO VENTURI</h3>
-                        </div>
-                        <p>En conducto cerrado, fluido disminuye presión al aumentar velocidad tras pasar por zona de menor sección.</p>
-                        
-                        <div class="principle-box">
-                            <div class="principle-title">🔧 Aplicaciones prácticas</div>
-                            <div class="compact-grid">
-                                <div class="compact-card" style="border-top-color: #9C27B0;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #9C27B0;">
-                                            <i class="fas fa-spray-can"></i>
-                                        </div>
-                                        <div class="compact-title">Pulverizadores</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="compact-card" style="border-top-color: #7B1FA2;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #7B1FA2;">
-                                            <i class="fas fa-flask"></i>
-                                        </div>
-                                        <div class="compact-title">Dosificadores</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="compact-card" style="border-top-color: #6A1B9A;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #6A1B9A;">
-                                            <i class="fas fa-tint"></i>
-                                        </div>
-                                        <div class="compact-title">Premezcladores</div>
-                                    </div>
-                                </div>
+                        <div class="equation-container">
+                            <div class="equation-label">Ecuación de continuidad:</div>
+                            \[ Q = \text{constante} = S_1 \cdot v_1 = S_2 \cdot v_2 = S_3 \cdot v_3 = \dots \]
+                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                Q: Caudal constante | S₁, S₂, S₃: Secciones | v₁, v₂, v₃: Velocidades respectivas
                             </div>
                         </div>
                         
-                        <div class="tip-box">
-                            <div class="box-icon" style="background: #9C27B0;">
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: #2196F3;">
                                 <i class="fas fa-lightbulb"></i>
                             </div>
-                            <div>
-                                <strong>Explicación:</strong> Por principio de Bernoulli, si velocidad ↑ (sección ↓), entonces presión ↓.
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Consecuencia fundamental</div>
+                                <p class="compact-text">Si la <strong>sección disminuye</strong>, la <strong>velocidad aumenta</strong> (y viceversa). Esto se debe a que el caudal debe mantenerse constante a lo largo de la conducción (si no hay fugas ni aportes).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid" style="margin-top: 1.5rem;">
+                            <div class="comparison-card" style="border-top-color: #2196F3;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #2196F3;">
+                                        <i class="fas fa-compress-arrows-alt"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Sección disminuye</h4>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">S ↓</div>
+                                    <div style="font-size: 0.9rem;">Para mantener Q constante:</div>
+                                    <div class="highlight-number" style="font-size: 1.5rem; margin-top: 0.5rem;">v ↑</div>
+                                </div>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: #1976D2;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #1976D2;">
+                                        <i class="fas fa-expand-arrows-alt"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Sección aumenta</h4>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">S ↑</div>
+                                    <div style="font-size: 0.9rem;">Para mantener Q constante:</div>
+                                    <div class="highlight-number" style="font-size: 1.5rem; margin-top: 0.5rem;">v ↓</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: #2196F3;">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Aplicación en lanzas y boquillas</div>
+                                <p class="compact-text">Las lanzas de incendios tienen diferentes diámetros de salida (boquillas). Al seleccionar una boquilla más pequeña, el agua sale a mayor velocidad (mayor alcance) pero con menor caudal. Al seleccionar una boquilla más grande, el agua sale con mayor caudal pero menor velocidad. Esto permite adaptar la intervención al tipo de incendio.</p>
                             </div>
                         </div>
                     </div>
-                    
+
+                    <!-- 3.4. ECUACIÓN DE BERNOULLI -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-energy);">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">3.4. ECUACIÓN DE BERNOULLI</h3>
+                                <p class="compact-subtitle">Conservación de la energía en fluidos ideales en régimen estacionario</p>
+                            </div>
+                        </div>
+                        
+                        <div class="law-box">
+                            <div class="law-title">📜 Principio de conservación de energía</div>
+                            <p>En un fluido ideal (sin viscosidad ni rozamiento) en régimen de circulación por un conducto cerrado, la energía que posee el fluido permanece constante a lo largo de su recorrido.</p>
+                        </div>
+                        
+                        <div class="equation-container">
+                            <div class="equation-label">Ecuación de Bernoulli:</div>
+                            \[ \frac{1}{2}\rho v_1^2 + \rho g h_1 + p_1 = \frac{1}{2}\rho v_2^2 + \rho g h_2 + p_2 \]
+                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                ρ: Densidad | v: Velocidad | g: Gravedad | h: Altura | p: Presión
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-energy);">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Interpretación física</div>
+                                <p class="compact-text">La ecuación de Bernoulli afirma que la suma de la energía cinética, la energía potencial y la energía de presión permanece constante en dos puntos cualesquiera de una canalización.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card" style="border-top-color: #FF9800;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #FF9800;">
+                                        <i class="fas fa-running"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Energía Cinética</h4>
+                                </div>
+                                <div style="text-align: center; font-size: 0.9rem;">
+                                    \[ \frac{1}{2} \rho v^2 \]
+                                </div>
+                                <p style="font-size: 0.85rem; margin-top: 0.5rem; text-align: center;">Energía debida al movimiento del fluido</p>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: #4CAF50;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #4CAF50;">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Energía Potencial</h4>
+                                </div>
+                                <div style="text-align: center; font-size: 0.9rem;">
+                                    \[ \rho g h \]
+                                </div>
+                                <p style="font-size: 0.85rem; margin-top: 0.5rem; text-align: center;">Energía debida a la altura del fluido</p>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: #D32F2F;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #D32F2F;">
+                                        <i class="fas fa-compress-arrows-alt"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Energía de Presión</h4>
+                                </div>
+                                <div style="text-align: center; font-size: 0.9rem;">
+                                    \[ p \]
+                                </div>
+                                <p style="font-size: 0.85rem; margin-top: 0.5rem; text-align: center;">Energía debida a la presión del fluido</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-energy);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Consecuencias prácticas de Bernoulli</div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li>En una canalización <strong>horizontal</strong> (h constante), si la velocidad aumenta (sección disminuye), la presión disminuye</li>
+                                    <li>En una canalización con <strong>sección constante</strong>, si hay un desnivel ascendente, la presión disminuye porque aumenta la energía potencial</li>
+                                    <li>El teorema de Torricelli y el efecto Venturi son aplicaciones directas de la ecuación de Bernoulli</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-energy);">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Aplicación bomberil: Diseño de instalaciones</div>
+                                <p class="compact-text">La ecuación de Bernoulli permite calcular presiones en diferentes puntos de una instalación, dimensionar diámetros de conducciones, y predecir comportamientos del agua en sistemas complejos. Es fundamental para el diseño eficiente de redes de incendios y sistemas de abastecimiento.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.5. TEOREMA DE TORRICELLI -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: #795548;">
+                                <i class="fas fa-faucet-drip"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">3.5. TEOREMA DE TORRICELLI</h3>
+                                <p class="compact-subtitle">Aplicación de Bernoulli para determinar velocidad de salida por orificios</p>
+                            </div>
+                        </div>
+                        
+                        <div class="law-box">
+                            <div class="law-title">📜 Enunciado del teorema</div>
+                            <p>La velocidad de salida de un líquido a través de un orificio practicado en un depósito a una profundidad determinada tiene una expresión igual a la velocidad que adquiere un cuerpo cuando cae libremente desde una altura equivalente a la superficie libre del líquido hasta la altura del orificio.</p>
+                        </div>
+                        
+                        <div class="equation-container">
+                            <div class="equation-label">Velocidad de salida (Torricelli):</div>
+                            \[ v_{\text{salida}} = \sqrt{2 \cdot g \cdot h} \]
+                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                g: Aceleración de la gravedad (9,81 m/s²) | h: Profundidad del orificio desde la superficie libre
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: #795548;">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Derivación de Bernoulli</div>
+                                <p class="compact-text">Considerando:</p>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Superficie del líquido:</strong> p = P<sub>atm</sub>, v = 0, z = h</li>
+                                    <li><strong>Orificio de salida:</strong> p = P<sub>atm</sub>, v = v<sub>salida</sub>, z = 0</li>
+                                </ul>
+                                <p style="margin-top: 0.5rem;">Aplicando Bernoulli y simplificando se obtiene: \(\frac{v_{\text{salida}}^2}{2g} = h\)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="equation-container">
+                            <div class="equation-label">Caudal teórico:</div>
+                            \[ Q_{\text{teórico}} = S \cdot v_{\text{salida}} = S \cdot \sqrt{2 \cdot g \cdot h} \]
+                        </div>
+                        
+                        <div class="equation-container">
+                            <div class="equation-label">Caudal real (con pérdidas):</div>
+                            \[ Q_{\text{real}} = K \cdot S \cdot \sqrt{2 \cdot g \cdot h} \]
+                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                K: Factor del surtidor (entre 0,9 y 0,98) | S: Sección del orificio
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid #795548; padding-left: 1rem;">
+                            📊 Caudales de lanzas comerciales (h = 70 m.c.a. = 7 kg/cm², K = 0,9)
+                        </h4>
+                        
+                        <div class="compact-table-container">
+                            <table class="property-table">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo de lanza</th>
+                                        <th>Diámetro teórico según posición (mm)</th>
+                                        <th>Caudal normal (l/min)</th>
+                                        <th>Observaciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Lanza 25</strong></td>
+                                        <td><span class="highlight-number">5,5 - 12</span></td>
+                                        <td><span class="highlight-number">250 - 230</span></td>
+                                        <td>Para incendios pequeños, interior</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Lanza 45</strong></td>
+                                        <td><span class="highlight-number">9,75 - 17,75</span></td>
+                                        <td><span class="highlight-number">150 - 500</span></td>
+                                        <td>Uso general, versátil</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Lanza 70</strong></td>
+                                        <td><span class="highlight-number">13,75 - 21,75</span></td>
+                                        <td><span class="highlight-number">300 - 750</span></td>
+                                        <td>Grandes caudales, incendios importantes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: #795548;">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Aplicación en cálculo de caudales</div>
+                                <p class="compact-text">El teorema de Torricelli permite calcular el caudal que proporcionará una lanza conocida su presión de entrada y su diámetro de salida. Esto es esencial para dimensionar sistemas de abastecimiento, bombas y conducciones, asegurando que se disponga del caudal necesario para controlar el incendio.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-data-grid" style="margin-top: 1rem;">
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: #795548;">0,9-0,98</div>
+                                <div class="compact-data-label">Factor K (pérdidas orificio)</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: #795548;">√(2gh)</div>
+                                <div class="compact-data-label">Velocidad caída libre</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: #795548;">h=70 m.c.a.</div>
+                                <div class="compact-data-label">Presión referencia lanzas</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: #795548;">Q = K·S·√(2gh)</div>
+                                <div class="compact-data-label">Fórmula práctica</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.6. EFECTO VENTURI -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: #9C27B0;">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">3.6. EFECTO VENTURI</h3>
+                                <p class="compact-subtitle">Disminución de presión al aumentar la velocidad en un estrechamiento</p>
+                            </div>
+                        </div>
+                        
+                        <div class="law-box">
+                            <div class="law-title">📜 Descripción del efecto</div>
+                            <p>Dentro de un conducto cerrado, un fluido en movimiento disminuye su presión al aumentar la velocidad tras pasar por una zona de menor sección. Si en este punto del conducto se introduce el extremo de otro, se produce una aspiración del fluido del otro conducto, que se mezclará con el que circula por el primero.</p>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: #9C27B0;">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Explicación por Bernoulli</div>
+                                <p class="compact-text">El efecto Venturi se explica por el principio de Bernoulli y el principio de continuidad de masa. Si el caudal es constante pero la sección disminuye, la velocidad debe aumentar. Por conservación de energía, si la energía cinética aumenta, la energía de presión debe disminuir.</p>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid #9C27B0; padding-left: 1rem;">
+                            🔧 Aplicaciones prácticas del efecto Venturi
+                        </h4>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: #9C27B0;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #9C27B0;">
+                                        <i class="fas fa-spray-can"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Pulverizadores</h4>
+                                </div>
+                                <p class="compact-content-dense">El aire a alta velocidad aspira el líquido y lo atomiza en finas gotas</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #7B1FA2;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #7B1FA2;">
+                                        <i class="fas fa-flask"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Dosificadores</h4>
+                                </div>
+                                <p class="compact-content-dense">Permiten mezclar aditivos en proporciones controladas</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #6A1B9A;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #6A1B9A;">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Premezcladores</h4>
+                                </div>
+                                <p class="compact-content-dense">Mezclan espumante con agua antes de llegar a la lanza</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #4A148C;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #4A148C;">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Carburadores</h4>
+                                </div>
+                                <p class="compact-content-dense">Mezclan aire y combustible en motores de combustión</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: #9C27B0;">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Aplicación bomberil: Sistemas de espuma</div>
+                                <p class="compact-text">Los sistemas de espuma utilizan el efecto Venturi para dosificar el concentrado de espuma en el agua. El agua a presión pasa por un estrechamiento donde aumenta su velocidad y disminuye su presión, aspirando el concentrado de un depósito. Esto permite obtener la mezcla correcta (3% o 6%) sin necesidad de bombas dosificadoras complejas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: #9C27B0;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Precaución: Cavitación por Venturi</div>
+                                <p class="compact-text">Si la disminución de presión en el estrechamiento es muy grande (por debajo de la presión de vapor del líquido), puede producirse cavitación. Esto daña las superficies y reduce la eficiencia del sistema. En diseño de sistemas, se deben evitar reducciones bruscas de sección que puedan causar este problema.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-data-grid" style="margin-top: 1rem;">
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: #9C27B0;">v ↑ → p ↓</div>
+                                <div class="compact-data-label">Relación fundamental</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: #9C27B0;">Q = constante</div>
+                                <div class="compact-data-label">Principio continuidad</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: #9C27B0;">3-6%</div>
+                                <div class="compact-data-label">Concentración espuma</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: #9C27B0;">P<sub>vapor</sub></div>
+                                <div class="compact-data-label">Límite inferior presión</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- 3.7. GOLPE DE ARIETE -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-pressure);">
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-pressure);">
                                 <i class="fas fa-hammer"></i>
                             </div>
-                            <h3>3.7. GOLPE DE ARIETE</h3>
+                            <div>
+                                <h3 class="compact-title-text">3.7. GOLPE DE ARIETE (Pulso de Zhukowski)</h3>
+                                <p class="compact-subtitle">Sobre-presión y depresión en tuberías al variar bruscamente el caudal</p>
+                            </div>
                         </div>
-                        <p>Sobre-presión y depresión en tubería al variar bruscamente el caudal.</p>
+                        
+                        <div class="law-box">
+                            <div class="law-title">⚠️ Fenómeno de gran importancia</div>
+                            <p>El golpe de ariete es un fenómeno de gran importancia, ya que en determinados casos la sobrepresión generada es de tal magnitud que llega incluso a romper los conductos de paso.</p>
+                        </div>
                         
                         <div class="procedure-timeline">
                             <div class="timeline-step">
@@ -2736,29 +3086,227 @@
                             <div class="timeline-step">
                                 <div class="step-number">3</div>
                                 <div class="step-title">Reflexión</div>
-                                <div style="font-size: 0.75rem;">Onda viaja en sentido contrario</div>
+                                <div style="font-size: 0.75rem;">Onda viaja en sentido contrario al encontrar obstáculo</div>
                             </div>
                             <div class="timeline-step">
                                 <div class="step-number">4</div>
                                 <div class="step-title">Depresión</div>
-                                <div style="font-size: 0.75rem;">Fluido puede vaporizarse (burbujas)</div>
+                                <div style="font-size: 0.75rem;">Fluido puede vaporizarse formando burbujas</div>
                             </div>
                         </div>
                         
-                        <div class="danger-box">
+                        <div class="compact-info compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-pressure);">
+                                <i class="fas fa-wave-square"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Mecanismo detallado</div>
+                                <p class="compact-text">Cuando se cierra bruscamente una válvula en el extremo de una tubería larga, las partículas de fluido que se han detenido son empujadas por las que vienen detrás. Esto crea una sobrepresión que viaja por la tubería a velocidad del sonido en el fluido, comprimiendo ligeramente el fluido y dilatando la tubería.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box" style="margin-top: 1.5rem;">
                             <div class="box-icon" style="background: var(--color-pressure);">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
                             <div>
                                 <strong>¡Peligro en bomberos!</strong> Incremento súbito de presión → aumento brusco de reacción en instalaciones.
                                 <div style="margin-top: 0.5rem; font-size: 0.9rem;">
-                                    <strong>Solución:</strong> Apertura/cierre <span class="highlight-number">lentos y controlados</span>.
+                                    <strong>Consecuencias:</strong>
+                                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                        <li>Rotura de mangueras, acoplamientos y lanzas</li>
+                                        <li>Daños en bombas y válvulas</li>
+                                        <li>Lesiones a bomberos por pérdida de control de lanzas</li>
+                                        <li>Fallo de sistemas de abastecimiento</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-flow);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Prevención y mitigación</div>
+                                <p class="compact-text">Se aconseja que las operaciones de apertura y cierre en las instalaciones se realicen de forma lenta y controlada. Es decir, se recomienda aumentar el tiempo de apertura y cierre, para que la variación de caudal no sea tan brusca y la instalación absorba progresivamente el esfuerzo.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid" style="margin-top: 1.5rem;">
+                            <div class="comparison-card" style="border-top-color: var(--color-pressure);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure);">
+                                        <i class="fas fa-turtle"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Cierre lento</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5; text-align: center;">
+                                    <strong>Variación gradual</strong> de caudal<br>
+                                    Presiones controladas<br>
+                                    Sin golpe de ariete
+                                </p>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: var(--color-pressure-dark);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure-dark);">
+                                        <i class="fas fa-rabbit"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Cierre brusco</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5; text-align: center;">
+                                    <strong>Variación súbita</strong> de caudal<br>
+                                    Sobre-presiones peligrosas<br>
+                                    Golpe de ariete destructivo
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-pressure);">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Dispositivos de protección</div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Válvulas de alivio:</strong> Liberan presión cuando supera un límite</li>
+                                    <li><strong>Chimeneas de equilibrio:</strong> Absorben variaciones de presión</li>
+                                    <li><strong>Volantes de inercia:</strong> En bombas, mantienen caudal gradualmente</li>
+                                    <li><strong>Válvulas antigolpe:</strong> Cierran progresivamente incluso con accionamiento rápido</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESUMEN HIDRODINÁMICA -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-pump);">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">🧠 RESUMEN DE HIDRODINÁMICA</h3>
+                                <p class="compact-subtitle">Conceptos clave para intervenciones bomberiles</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-flow);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-flow);">
+                                        <i class="fas fa-stream"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Régimen</h4>
+                                </div>
+                                <p class="compact-content-dense">Laminar (R<2000), Turbulento (R>4000), Transición (2000-4000)</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-flow-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-flow-light);">
+                                        <i class="fas fa-faucet"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Caudal (Q)</h4>
+                                </div>
+                                <p class="compact-content-dense">Q = V/t = S·v [m³/s, l/min]</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #2196F3;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #2196F3;">
+                                        <i class="fas fa-arrows-alt-h"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Continuidad</h4>
+                                </div>
+                                <p class="compact-content-dense">Q = constante = S₁·v₁ = S₂·v₂ (S ↓ → v ↑)</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-energy);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-energy);">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Bernoulli</h4>
+                                </div>
+                                <p class="compact-content-dense">½ρv² + ρgh + p = constante (conservación energía)</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #795548;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #795548;">
+                                        <i class="fas fa-faucet-drip"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Torricelli</h4>
+                                </div>
+                                <p class="compact-content-dense">v = √(2gh), Q = K·S·√(2gh) (K=0,9-0,98)</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #9C27B0;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #9C27B0;">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Venturi</h4>
+                                </div>
+                                <p class="compact-content-dense">S ↓ → v ↑ → p ↓ (dosificadores, premezcladores)</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pressure);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure);">
+                                        <i class="fas fa-hammer"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Golpe Ariete</h4>
+                                </div>
+                                <p class="compact-content-dense">Sobre-presión por cierre brusco → roturas</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pressure-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure-light);">
+                                        <i class="fas fa-turtle"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Prevención</h4>
+                                </div>
+                                <p class="compact-content-dense">Apertura/cierre lentos, válvulas alivio, chimeneas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-flow);">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Conocimiento aplicado en intervenciones</div>
+                                <p class="compact-text">La hidrodinámica permite calcular caudales necesarios, predecir comportamientos del agua, diseñar instalaciones eficientes, prevenir golpes de ariete, y utilizar correctamente sistemas de espuma. Cada intervención con agua implica aplicar estos principios para garantizar la seguridad, eficacia y protección de bomberos y víctimas.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #E8F5E9, #F3E5F5); border-radius: 12px; border: 2px solid var(--color-flow);">
+                            <h4 style="color: #2E7D32; margin-bottom: 1rem;">⚠️ DATOS CRÍTICOS PARA BOMBEROS</h4>
+                            <div class="compact-data-grid">
+                                <div class="compact-data-item">
+                                    <div class="compact-data-value" style="color: var(--color-flow);">R > 4000</div>
+                                    <div class="compact-data-label">Régimen turbulento (típico incendios)</div>
+                                </div>
+                                <div class="compact-data-item">
+                                    <div class="compact-data-value" style="color: var(--color-flow);">Q = S·v</div>
+                                    <div class="compact-data-label">Caudal = sección × velocidad</div>
+                                </div>
+                                <div class="compact-data-item">
+                                    <div class="compact-data-value" style="color: var(--color-flow);">v = √(2gh)</div>
+                                    <div class="compact-data-label">Velocidad salida (Torricelli)</div>
+                                </div>
+                                <div class="compact-data-item">
+                                    <div class="compact-data-value" style="color: var(--color-flow);">S ↓ → v ↑ → p ↓</div>
+                                    <div class="compact-data-label">Efecto Venturi (dosificación)</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             
             <!-- SECCIÓN 4: BOMBAS CENTRÍFUGAS -->
             <div class="horizontal-card" id="bombas">
