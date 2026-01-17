@@ -1025,6 +1025,12 @@
             font-size: 1rem;
         }
 
+        .columnas {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
         /* Lista compacta */
         .compact-list {
             list-style: none;
@@ -2234,12 +2240,17 @@
 
                         <div class="law-box" style="margin-top: 1.5rem;" >
                             <div class="law-title">📐 Implicaciones importantes de la ecuación fundamental</div>
-                            <ul class="visual-list">
-                                <li>La presión en el interior de un fluido en reposo <strong>aumenta con la profundidad</strong></li>
-                                <li>Todos los puntos situados a una misma profundidad tienen <strong>la misma presión</strong> (igualdad de nivel en vasos comunicantes)</li>
-                                <li>La presión solo depende de la profundidad, <strong>no depende de la forma del recipiente</strong></li>
-                                <li>En un fluido en reposo, la presión es <strong>perpendicular a la superficie</strong> sobre la que actúa. Si no fuera así, la resultante de las fuerzas no se anularía y el fluido estaría en movimiento</li>
-                            </ul>
+                            <div style="display: flex; flex-wrap: wrap;">
+                                <ul class="visual-list" style="flex: 1 1 calc(80%);">
+                                    <li>La presión en el interior de un fluido en reposo <strong>aumenta con la profundidad</strong></li>
+                                    <li>Todos los puntos situados a una misma profundidad tienen <strong>la misma presión</strong> (igualdad de nivel en vasos comunicantes)</li>
+                                    <li>La presión solo depende de la profundidad, <strong>no depende de la forma del recipiente</strong></li>
+                                    <li>En un fluido en reposo, la presión es <strong>perpendicular a la superficie</strong> sobre la que actúa. Si no fuera así, la resultante de las fuerzas no se anularía y el fluido estaría en movimiento</li>
+                                </ul>
+                                <div style="flex: 1 1 calc(20%); display: flex;">
+                                    <img src="image hidráulica/Fundamental.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>
+                            </div>    
                         </div>
                     </div>
 
@@ -2266,14 +2277,24 @@
                             <p>Consiste en dos cilindros de diferente sección comunicados entre sí, llenos de líquido (agua o aceite). Se ajustan dos émbolos de secciones diferentes en cada cilindro. Cuando se ejerce una fuerza F₁ sobre el émbolo de menor sección S₁, la presión p₁ se transmite íntegramente al resto del líquido.</p>
                             
                             <div class="comparison-grid">    
-                                <div class="equation-container" style="margin: 1rem 0;flex: 1 1 220px;">
-                                    <div class="equation-label">Igualdad de presiones:</div>
-                                    \[ p_1 = p_2 \Rightarrow \frac{F_1}{S_1} = \frac{F_2}{S_2} \]
+                                <div class="equation-container columnas" style="margin: 1rem 0;flex: 1 1 220px;">
+                                    <div style="flex: 1 1 calc(50%); margin: auto;">
+                                        <div class="equation-label">Igualdad de presiones:</div>
+                                        \[ p_1 = p_2 \Rightarrow \frac{F_1}{S_1} = \frac{F_2}{S_2} \]
+                                    </div>
+                                    <div style="flex: 1 1 calc(50%); display: flex;">
+                                    <img src="image hidráulica/Pascal 1.png" alt="" style="max-width: 40%; height: auto; margin: auto;">
+                                    </div>    
                                 </div>
                                 
-                                <div class="equation-container" style="flex: 1 1 220px;">
+                                <div class="equation-container columnas" style="margin: 1rem 0;flex: 1 1 220px;">
+                                    <div style="flex: 1 1 calc(50%); margin: auto;">
                                     <div class="equation-label">Fuerza resultante:</div>
                                     \[ F_1 = F_2 \left( \frac{S_1}{S_2} \right) \]
+                                    </div>
+                                    <div style="flex: 1 1 calc(50%); display: flex;">
+                                    <img src="image hidráulica/Pascal 2.png" alt="" style="max-width: 60%; height: auto; margin: auto;">
+                                    </div> 
                                 </div>
                             </div>
 
@@ -2359,14 +2380,20 @@
                             <p>"Un cuerpo sumergido total o parcialmente en un fluido en reposo recibe un empuje de abajo hacia arriba igual al peso del volumen del fluido que desaloja."</p>
                         </div>
                         
-                        <div class="equation-container">
-                            <div class="equation-label">Fórmula del empuje:</div>
-                            \[ E = \rho \cdot g \cdot V_{\text{desalojado}} \]
-                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
-                                E: Empuje | ρ: Densidad del fluido | g: Gravedad | V<sub>desalojado</sub>: Volumen sumergido
+                        <div class="columnas">
+                            <div class="equation-container" style="flex: 1 1 220px;">
+                                <div class="equation-label">Fórmula del empuje:</div>
+                                \[ E = \rho \cdot g \cdot V_{\text{desalojado}} \]
+                                <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                    E: Empuje | ρ: Densidad del fluido | g: Gravedad | V<sub>desalojado</sub>: Volumen sumergido
+                                </div>
+                            </div>
+
+                            <div style="flex: 1 1 220px; display: flex;">
+                                <img src="image hidráulica/Arquímedes.png" alt="" style="max-width: 150px; height: auto; margin: auto;">
                             </div>
                         </div>
-                        
+
                         <div class="compact-info compact-box">
                             <div class="compact-box-icon" style="background: #4CAF50;">
                                 <i class="fas fa-weight"></i>
@@ -2378,227 +2405,6 @@
                                     \[ P_A = \rho \cdot g \cdot h_A \]
                                     \[ P_B = \rho \cdot g \cdot h_B \]
                                     \[ \text{Empuje} = P_B - P_A = \rho \cdot g \cdot (h_B - h_A) \]
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="comparison-grid" style="margin-top: 1.5rem;">
-                            <div class="comparison-card" style="border-top-color: #4CAF50;">
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-                                    <div class="compact-icon-tiny" style="background: #4CAF50;">
-                                        <i class="fas fa-arrow-up"></i>
-                                    </div>
-                                    <h4 style="margin: 0; color: #333;">Flotación</h4>
-                                </div>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">
-                                    Si <strong>E > Peso</strong> → cuerpo flota<br>
-                                    Si <strong>E = Peso</strong> → equilibrio<br>
-                                    Si <strong>E < Peso</strong> → cuerpo se hunde
-                                </p>
-                            </div>
-                            
-                            <div class="comparison-card" style="border-top-color: #388E3C;">
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-                                    <div class="compact-icon-tiny" style="background: #388E3C;">
-                                        <i class="fas fa-percentage"></i>
-                                    </div>
-                                    <h4 style="margin: 0; color: #333;">Sumergido vs flotante</h4>
-                                </div>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">
-                                    Porcentaje sumergido = <br>
-                                    ρ<sub>cuerpo</sub> / ρ<sub>fluido</sub> × 100%
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid #4CAF50; padding-left: 1rem;">
-                            ⚓ Aplicaciones prácticas del principio de Arquímedes
-                        </h4>
-                        
-                        <div class="compact-grid-dense">
-                            <div class="compact-card-dense" style="border-top-color: #4CAF50;">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: #4CAF50;">
-                                        <i class="fas fa-ship"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Flotabilidad de barcos</h4>
-                                </div>
-                                <p class="compact-content-dense">Los barcos, aunque de metal denso, flotan porque desplazan un gran volumen de agua cuyo peso es mayor que el del barco</p>
-                            </div>
-                            
-                            <div class="compact-card-dense" style="border-top-color: #388E3C;">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: #388E3C;">
-                                        <i class="fas fa-life-ring"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Salvamento acuático</h4>
-                                </div>
-                                <p class="compact-content-dense">Chalecos salvavidas aumentan el volumen desplazado sin aumentar mucho el peso, proporcionando flotabilidad positiva</p>
-                            </div>
-                            
-                            <div class="compact-card-dense" style="border-top-color: #2E7D32;">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: #2E7D32;">
-                                        <i class="fas fa-thermometer-half"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Termómetros de líquido</h4>
-                                </div>
-                                <p class="compact-content-dense">El mercurio o alcohol se expanden con la temperatura, cambiando el volumen desplazado y haciendo subir/bajar la columna</p>
-                            </div>
-                            
-                            <div class="compact-card-dense" style="border-top-color: #1B5E20;">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: #1B5E20;">
-                                        <i class="fas fa-vial"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Densímetros</h4>
-                                </div>
-                                <p class="compact-content-dense">Miden densidad de líquidos por el nivel de flotación: mayor densidad = mayor flotación</p>
-                            </div>
-                        </div>
-                        
-                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
-                            <div class="compact-box-icon" style="background: #4CAF50;">
-                                <i class="fas fa-fire-extinguisher"></i>
-                            </div>
-                            <div class="compact-box-content">
-                                <div class="compact-box-title">Aplicación bomberil: Rescates en agua</div>
-                                <p class="compact-text">En rescates acuáticos, el principio de Arquímedes es fundamental. Los trajes de neopreno aumentan el volumen del rescatador sin aumentar proporcionalmente el peso, mejorando la flotabilidad. Las tablas de rescate y otros equipos flotantes están diseñados para maximizar el volumen desplazado y minimizar el peso.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="compact-warning compact-box" style="margin-top: 1rem;">
-                            <div class="compact-box-icon" style="background: #FF9800;">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div class="compact-box-content">
-                                <div class="compact-box-title">¡Precaución en intervenciones!</div>
-                                <p class="compact-text">En inundaciones, vehículos sumergidos experimentan empuje hacia arriba. Un coche de 1.500 kg desplaza aproximadamente 1,5 m³ de agua (1.500 kg de empuje). Si hay aire atrapado en el habitáculo, el empuje puede ser mayor, haciendo que el vehículo sea inestable durante las operaciones de rescate.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="compact-data-grid" style="margin-top: 1.5rem;">
-                            <div class="compact-data-item">
-                                <div class="compact-data-value" style="color: #4CAF50;">85%</div>
-                                <div class="compact-data-label">Hielo sumergido (ρ=0,85)</div>
-                            </div>
-                            <div class="compact-data-item">
-                                <div class="compact-data-value" style="color: #4CAF50;">50%</div>
-                                <div class="compact-data-label">Madera sumergida (ρ=0,5)</div>
-                            </div>
-                            <div class="compact-data-item">
-                                <div class="compact-data-value" style="color: #4CAF50;">20%</div>
-                                <div class="compact-data-label">Corcho sumergido (ρ=0,2)</div>
-                            </div>
-                            <div class="compact-data-item">
-                                <div class="compact-data-value" style="color: #4CAF50;">100%</div>
-                                <div class="compact-data-label">Acero sumergido (ρ=7,8)</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- RESUMEN HIDROSTÁTICA -->
-                    <div class="compact-section">
-                        <div class="compact-title-row">
-                            <div class="compact-icon-small" style="background: var(--color-pump);">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div>
-                                <h3 class="compact-title-text">🧠 RESUMEN DE HIDROSTÁTICA</h3>
-                                <p class="compact-subtitle">Conceptos clave para intervenciones bomberiles</p>
-                            </div>
-                        </div>
-                        
-                        <div class="compact-grid-dense">
-                            <div class="compact-card-dense" style="border-top-color: var(--color-pressure);">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: var(--color-pressure);">
-                                        <i class="fas fa-compress-arrows-alt"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Presión</h4>
-                                </div>
-                                <p class="compact-content-dense">Fuerza por unidad de superficie. p = F/S [Pa = N/m²]</p>
-                            </div>
-                            
-                            <div class="compact-card-dense" style="border-top-color: var(--color-pressure-light);">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: var(--color-pressure-light);">
-                                        <i class="fas fa-cloud"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">1 atm</h4>
-                                </div>
-                                <p class="compact-content-dense">= 1,033 kg/cm² = 10,33 m.c.a. = 760 mmHg</p>
-                            </div>
-                            
-                            <div class="compact-card-dense" style="border-top-color: var(--color-pressure-dark);">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: var(--color-pressure-dark);">
-                                        <i class="fas fa-ruler-vertical"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Ec. Hidrostática</h4>
-                                </div>
-                                <p class="compact-content-dense">P = P<sub>atm</sub> + ρ·g·h. Presión aumenta con profundidad</p>
-                            </div>
-                            
-                            <div class="compact-card-dense" style="border-top-color: #FF9800;">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: #FF9800;">
-                                        <i class="fas fa-exchange-alt"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Pascal</h4>
-                                </div>
-                                <p class="compact-content-dense">Presión se transmite igual en todas direcciones en fluido incompresible</p>
-                            </div>
-                            
-                            <div class="compact-card-dense" style="border-top-color: #4CAF50;">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: #4CAF50;">
-                                        <i class="fas fa-swimming-pool"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Arquímedes</h4>
-                                </div>
-                                <p class="compact-content-dense">Empuje = peso del fluido desalojado. E = ρ·g·V<sub>des</sub></p>
-                            </div>
-                            
-                            <div class="compact-card-dense" style="border-top-color: var(--color-energy);">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: var(--color-energy);">
-                                        <i class="fas fa-tachometer-alt"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Prensa hidráulica</h4>
-                                </div>
-                                <p class="compact-content-dense">F₁/S₁ = F₂/S₂. Permite multiplicar fuerzas (corte, separación)</p>
-                            </div>
-                        </div>
-                        
-                        <div class="compact-info compact-box" style="margin-top: 1.5rem;">
-                            <div class="compact-box-icon" style="background: var(--color-pressure);">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div class="compact-box-content">
-                                <div class="compact-box-title">Conocimiento aplicado en intervenciones</div>
-                                <p class="compact-text">La hidrostática permite calcular presiones en depósitos, diseñar sistemas hidráulicos de rescate, entender el comportamiento de vehículos sumergidos, y utilizar eficazmente equipos basados en el principio de Pascal. Cada intervención con agua o fluidos implica aplicar estos principios para garantizar la seguridad y eficacia.</p>
-                            </div>
-                        </div>
-                        
-                        <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #FFEBEE, #F3E5F5); border-radius: 12px; border: 2px solid var(--color-pressure);">
-                            <h4 style="color: #D32F2F; margin-bottom: 1rem;">⚠️ DATOS CRÍTICOS PARA BOMBEROS</h4>
-                            <div class="compact-data-grid">
-                                <div class="compact-data-item">
-                                    <div class="compact-data-value" style="color: var(--color-pressure);">1 kg/cm²</div>
-                                    <div class="compact-data-label">Presión cada 10 m profundidad agua</div>
-                                </div>
-                                <div class="compact-data-item">
-                                    <div class="compact-data-value" style="color: var(--color-pressure);">10,33 m</div>
-                                    <div class="compact-data-label">Altura columna agua = 1 atm</div>
-                                </div>
-                                <div class="compact-data-item">
-                                    <div class="compact-data-value" style="color: var(--color-pressure);">F₂ = F₁×(S₂/S₁)</div>
-                                    <div class="compact-data-label">Multiplicación prensa hidráulica</div>
-                                </div>
-                                <div class="compact-data-item">
-                                    <div class="compact-data-value" style="color: var(--color-pressure);">ρ·g·V</div>
-                                    <div class="compact-data-label">Empuje en rescates acuáticos</div>
                                 </div>
                             </div>
                         </div>
