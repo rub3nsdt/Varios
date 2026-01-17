@@ -907,6 +907,332 @@
         .fa-energy:before { content: "\f0e7"; }
         .fa-turbulence:before { content: "\f0b2"; }
         .fa-cavitation:before { content: "\f5c7"; }
+
+        /* ESTILOS COMPACTOS - PROPIEDADES DE FLUIDOS */
+        .compact-section {
+            margin-bottom: 1.8rem;
+            position: relative;
+        }
+
+        .compact-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .compact-title-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .compact-icon-small {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .compact-title-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #333;
+            margin: 0;
+        }
+
+        .compact-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        /* Grid compacto mejorado */
+        .compact-grid-dense {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        .compact-card-dense {
+            background: white;
+            border-radius: 8px;
+            padding: 0.9rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+            border-top: 3px solid;
+            transition: all 0.2s ease;
+            height: 100%;
+        }
+
+        .compact-card-dense:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+        }
+
+        .compact-card-header-dense {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .compact-icon-tiny {
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .compact-title-dense {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        .compact-content-dense {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* Lista compacta */
+        .compact-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.8rem 0;
+        }
+
+        .compact-list li {
+            padding: 0.5rem 0 0.5rem 1.8rem;
+            position: relative;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            border-left: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .compact-list li:hover {
+            border-left-color: var(--color-water);
+            background-color: rgba(0,0,0,0.02);
+        }
+
+        .compact-list li:before {
+            content: '';
+            position: absolute;
+            left: 0.8rem;
+            top: 0.9rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-water);
+        }
+
+        /* Cajas compactas */
+        .compact-box {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .compact-box-icon {
+            font-size: 1rem;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .compact-box-content {
+            flex: 1;
+        }
+
+        .compact-box-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+            color: #333;
+        }
+
+        /* Tipos específicos de cajas compactas */
+        .compact-info {
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            border-left: 4px solid var(--color-water);
+        }
+
+        .compact-tip {
+            background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+            border-left: 4px solid var(--color-flow);
+        }
+
+        .compact-warning {
+            background: linear-gradient(135deg, #FFF8E1, #FFECB3);
+            border-left: 4px solid var(--color-energy);
+        }
+
+        .compact-danger {
+            background: linear-gradient(135deg, #FFEBEE, #FFCDD2);
+            border-left: 4px solid var(--color-pressure);
+        }
+
+        /* Tabla compacta */
+        .compact-table-container {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .compact-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .compact-table th {
+            background: var(--gradient-water);
+            color: white;
+            padding: 0.6rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .compact-table td {
+            padding: 0.6rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .compact-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .compact-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Grid de datos */
+        .compact-data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 0.7rem;
+            margin: 1rem 0;
+        }
+
+        .compact-data-item {
+            background: #f8f9fa;
+            padding: 0.8rem;
+            border-radius: 6px;
+            text-align: center;
+            border-left: 3px solid var(--color-water);
+            transition: all 0.2s ease;
+        }
+
+        .compact-data-item:hover {
+            background: #f0f7ff;
+            transform: translateY(-2px);
+        }
+
+        .compact-data-value {
+            font-weight: 800;
+            color: var(--color-pressure);
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+        }
+
+        .compact-data-label {
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.2;
+        }
+
+        /* Fórmula compacta */
+        .compact-formula {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.8rem 0;
+            text-align: center;
+            border-left: 4px solid var(--color-pump);
+            font-family: 'Cambria Math', serif;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Para contenido de texto denso */
+        .compact-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0.8rem 0;
+        }
+
+        .compact-text strong {
+            color: #333;
+        }
+
+        /* Responsividad para versiones compactas */
+        @media (max-width: 768px) {
+            .compact-grid-dense {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 0.6rem;
+            }
+            
+            .compact-data-grid {
+                grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            }
+            
+            .compact-title-row {
+                gap: 10px;
+            }
+            
+            .compact-icon-small {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+            
+            .compact-title-text {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .compact-grid-dense {
+                grid-template-columns: 1fr;
+            }
+            
+            .compact-data-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
     </style>
 </head>
 <body>
@@ -955,4 +1281,2094 @@
     <!-- Navegación simplificada -->
     <div class="container">
         <div class="visual-nav">
-            <a href="#propiedades-fluid
+            <a href="#propiedades-fluidos" class="nav-item" style="background: linear-gradient(135deg, #E3F2FD, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-water);">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <span>Propiedades Fluidos</span>
+                <small>Sección 1</small>
+            </a>
+            
+            <a href="#hidrostatica" class="nav-item" style="background: linear-gradient(135deg, #FFEBEE, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-pressure);">
+                    <i class="fas fa-weight-hanging"></i>
+                </div>
+                <span>Hidrostática</span>
+                <small>Sección 2</small>
+            </a>
+            
+            <a href="#hidrodinamica" class="nav-item" style="background: linear-gradient(135deg, #E8F5E9, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-flow);">
+                    <i class="fas fa-wind"></i>
+                </div>
+                <span>Hidrodinámica</span>
+                <small>Sección 3</small>
+            </a>
+            
+            <a href="#bombas" class="nav-item" style="background: linear-gradient(135deg, #F3E5F5, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-pump);">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <span>Bombas Centrífugas</span>
+                <small>Sección 4</small>
+            </a>
+            
+            <a href="#instalaciones" class="nav-item" style="background: linear-gradient(135deg, #FFF3E0, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-energy);">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <span>Instalaciones</span>
+                <small>Sección 5</small>
+            </a>
+        </div>
+    </div>
+    
+    <main class="container">
+        <div class="horizontal-cards-container">
+            
+
+            <!-- Propiedades de los fluidos - Versión super compacta -->
+            <section id="propiedades-fluidos" class="horizontal-card">
+                <div class="card-header-top" style="background: var(--gradient-water);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large" style="background: var(--gradient-water);">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div>
+                            <h2 class="card-title-top">💧 PROPIEDADES DE LOS FLUIDOS</h2>
+                            <p class="card-subtitle-top">Fundamentos físicos esenciales para intervenciones bomberiles</p>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">TEMA 1</div>
+                </div>
+
+                <div class="card-content">
+                    <!-- Introducción -->
+                    <div class="compact-section">
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-water);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">¿Qué es la hidráulica?</div>
+                                <p class="compact-text">Rama de la mecánica que estudia las propiedades mecánicas de fluidos bajo distintas fuerzas y condiciones. Fundamental para el manejo eficiente de equipos de extinción.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.1 MASA -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-water);">
+                                <i class="fas fa-weight-hanging"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">1.1 MASA</h3>
+                                <p class="compact-subtitle">Cantidad de materia que posee un cuerpo</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-water);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-water);">
+                                        <i class="fas fa-balance-scale"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Unidad SI</h4>
+                                </div>
+                                <p class="compact-content-dense"><strong>Kilogramo (kg)</strong></p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-water-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-water-light);">
+                                        <i class="fas fa-ruler"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Característica</h4>
+                                </div>
+                                <p class="compact-content-dense">Magnitud escalar ≠ Peso (vectorial)</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-water-dark);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-water-dark);">
+                                        <i class="fas fa-arrows-alt-v"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Invariable</h4>
+                                </div>
+                                <p class="compact-content-dense">No depende de la gravedad</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.2 DENSIDAD -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-pressure);">
+                                <i class="fas fa-weight"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">1.2 DENSIDAD (ρ)</h3>
+                                <p class="compact-subtitle">Cantidad de masa por unidad de volumen</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-formula">
+                            \[ \rho = \frac{m}{V} \]
+                        </div>
+                        
+                        <div class="compact-tip compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-flow);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Valor de referencia para bomberos</div>
+                                <p class="compact-text">Densidad del agua a 4°C: <strong>1.000 kg/m³</strong>. Referencia para calcular densidades relativas.</p>
+                            </div>
+                        </div>
+                        
+                        <p class="compact-text"><strong>Unidades:</strong> kg/m³ (SI), g/cm³</p>
+                    </div>
+
+                    <!-- 1.3 PESO ESPECÍFICO -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-energy);">
+                                <i class="fas fa-compress-arrows-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">1.3 PESO ESPECÍFICO (γ)</h3>
+                                <p class="compact-subtitle">Relación entre peso y volumen</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-formula">
+                            \[ \gamma = \frac{P}{V} = \rho \cdot g \]
+                        </div>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-energy);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-energy);">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Agua</h4>
+                                </div>
+                                <p class="compact-content-dense">9.810 N/m³ ≈ <strong>1.000 kgf/m³</strong></p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-energy-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-energy-light);">
+                                        <i class="fas fa-ruler-combined"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Unidades</h4>
+                                </div>
+                                <p class="compact-content-dense">N/m³ (SI)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.4 DENSIDAD RELATIVA -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-flow);">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">1.4 DENSIDAD RELATIVA Y PESO ESPECÍFICO RELATIVO</h3>
+                                <p class="compact-subtitle">Valores adimensionales comparados con agua</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-formula">
+                            \[ \rho_{\text{rel}} = \frac{\rho_{\text{abs}}}{\rho_{\text{agua}}} \quad \gamma_{\text{rel}} = \frac{\gamma_{\text{abs}}}{\gamma_{\text{agua}}} \]
+                        </div>
+                        
+                        <div class="compact-table-container">
+                            <table class="compact-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sustancia</th>
+                                        <th>Densidad relativa</th>
+                                        <th>Implicación práctica</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Mercurio</strong></td>
+                                        <td><span style="color: var(--color-pressure); font-weight: 800;">13,6</span></td>
+                                        <td>Muy pesado, manómetros</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Hierro</strong></td>
+                                        <td>7,8</td>
+                                        <td>Material estructural</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Grava</strong></td>
+                                        <td>2,2</td>
+                                        <td>Áridos construcción</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Aceite</strong></td>
+                                        <td>0,8</td>
+                                        <td>Flota sobre agua</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Madera (pino)</strong></td>
+                                        <td>0,5</td>
+                                        <td>Flota fácilmente</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Hielo</strong></td>
+                                        <td>0,85</td>
+                                        <td>Flota en agua líquida</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 1.5 VISCOSIDAD -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-pump);">
+                                <i class="fas fa-viscosity"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">1.5 VISCOSIDAD (μ)</h3>
+                                <p class="compact-subtitle">Oposición a deformaciones tangenciales</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-warning compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-energy);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Concepto clave</div>
+                                <p class="compact-text">Solo se manifiesta en <strong>líquidos en movimiento</strong>. Fluido ideal: μ = 0 (simplificación).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pump);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pump);">
+                                        <i class="fas fa-layer-group"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Capa límite</h4>
+                                </div>
+                                <p class="compact-content-dense">Fluido en contacto con superficie tiene su misma velocidad</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pump-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pump-light);">
+                                        <i class="fas fa-thermometer-half"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Temperatura</h4>
+                                </div>
+                                <p class="compact-content-dense">Líquidos: μ ↓ con T ↑<br>Gases: μ ↑ con T ↑</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1rem;">
+                            <div class="compact-box-icon" style="background: var(--color-flow);">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Aplicación bomberil</div>
+                                <p class="compact-text">Agua a temperatura ambiente tiene baja viscosidad → fácil transporte. Líquidos viscosos (espumas) tienen mayores pérdidas de carga.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.6 PRESIÓN DE VAPOR -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-pressure);">
+                                <i class="fas fa-temperature-high"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">1.6 PRESIÓN DE VAPOR</h3>
+                                <p class="compact-subtitle">Presión de equilibrio líquido-vapor a temperatura dada</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-danger compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-pressure);">
+                                <i class="fas fa-radiation"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">¡PELIGRO DE CAVITACIÓN!</div>
+                                <p class="compact-text">Si P < P<sub>vapor</sub> → líquido hierve a T ambiente → burbujas destruyen bombas y tuberías.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-data-grid">
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">0°C</div>
+                                <div class="compact-data-label">0,006 kg/cm²</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">20°C</div>
+                                <div class="compact-data-label">0,023 kg/cm²</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">50°C</div>
+                                <div class="compact-data-label">0,125 kg/cm²</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">100°C</div>
+                                <div class="compact-data-label">1,033 kg/cm²</div>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-water);">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Punto de ebullición</div>
+                                <p class="compact-text">Líquido hierve cuando P<sub>vapor</sub> = P<sub>externa</sub>. Agua hierve a menor T en montaña (P<sub>atm</sub> ↓).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.7 TENSIÓN SUPERFICIAL -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-flow);">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">1.7 TENSIÓN SUPERFICIAL</h3>
+                                <p class="compact-subtitle">Energía para aumentar superficie líquida</p>
+                            </div>
+                        </div>
+                        
+                        <p class="compact-text">Manifestación de fuerzas intermoleculares. Agua tiene alta tensión por puentes de hidrógeno.</p>
+                        
+                        <ul class="compact-list">
+                            <li><strong>Gotas esféricas:</strong> Minimizan superficie/volumen</li>
+                            <li><strong>Capilaridad:</strong> Elevación en tubos estrechos</li>
+                            <li><strong>Insectos caminan sobre agua:</strong> Tensión soporta peso</li>
+                        </ul>
+                        
+                        <div class="compact-tip compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-flow);">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Agentes tensoactivos</div>
+                                <p class="compact-text">Detergentes y espumas <strong>reducen</strong> tensión superficial → mejor mojado en incendios.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESUMEN -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-pump);">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">📊 RESUMEN DE FÓRMULAS</h3>
+                                <p class="compact-subtitle">Propiedades de fluidos - Todo en una tabla</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-table-container">
+                            <table class="compact-table">
+                                <thead>
+                                    <tr>
+                                        <th>Propiedad</th>
+                                        <th>Símbolo</th>
+                                        <th>Fórmula</th>
+                                        <th>Unidad SI</th>
+                                        <th>Valor agua</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Densidad</strong></td>
+                                        <td>ρ</td>
+                                        <td>ρ = m/V</td>
+                                        <td>kg/m³</td>
+                                        <td>1.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Peso específico</strong></td>
+                                        <td>γ</td>
+                                        <td>γ = ρ·g</td>
+                                        <td>N/m³</td>
+                                        <td>9.810</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Densidad relativa</strong></td>
+                                        <td>ρ<sub>rel</sub></td>
+                                        <td>ρ<sub>abs</sub>/ρ<sub>agua</sub></td>
+                                        <td>-</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Presión vapor (20°C)</strong></td>
+                                        <td>P<sub>v</sub></td>
+                                        <td>-</td>
+                                        <td>kg/cm²</td>
+                                        <td>0,023</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Viscosidad agua (20°C)</strong></td>
+                                        <td>μ</td>
+                                        <td>-</td>
+                                        <td>Pa·s</td>
+                                        <td>0,001</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="compact-info compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-water);">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Conocimiento aplicado = Intervención segura</div>
+                                <p class="compact-text">Comprender estas propiedades permite predecir comportamiento del agua, evitar cavitación en bombas, y seleccionar agentes extintores efectivos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN 2: HIDROSTÁTICA -->
+            <div class="horizontal-card" id="hidrostatica">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-weight-hanging"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: var(--gradient-pressure);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">⚖️ HIDROSTÁTICA</div>
+                            <div class="card-subtitle-top">Estudio de fluidos en equilibrio: Presión, Pascal y Arquímedes</div>
+                            <div>
+                                <span class="category-tag tag-pressure">Presión</span>
+                                <span class="category-tag tag-energy">Pascal</span>
+                                <span class="category-tag tag-fluid">Arquímedes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 2</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- 2.1. PRESIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-pressure);">
+                                <i class="fas fa-compress-arrows-alt"></i>
+                            </div>
+                            <h3>2.1. PRESIÓN (p)</h3>
+                        </div>
+                        <p>Fuerza ejercida por unidad de superficie. Unidad SI: <strong>pascal (Pa)</strong> = 1 N/m².</p>
+                        
+                        <div class="formula">
+                            \[ p = \frac{F}{S} \]
+                        </div>
+                        
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: var(--color-pressure);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: var(--color-pressure);">
+                                        <i class="fas fa-cloud"></i>
+                                    </div>
+                                    <div class="compact-title">Presión Atmosférica</div>
+                                </div>
+                                <div style="text-align: center; padding: 0.5rem;">
+                                    <div class="highlight-number" style="font-size: 1.8rem;">1 atm</div>
+                                    <div>= <span class="highlight-number">1.033</span> kg/cm²</div>
+                                    <div>= <span class="highlight-number">10.33</span> m.c.a.</div>
+                                    <div>= <span class="highlight-number">760</span> mmHg</div>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: var(--color-water);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: var(--color-water);">
+                                        <i class="fas fa-ruler-vertical"></i>
+                                    </div>
+                                    <div class="compact-title">Presión en Fluidos</div>
+                                </div>
+                                <ul class="visual-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Absoluta:</strong> Referencia cero absoluto</li>
+                                    <li><strong>Relativa:</strong> Referencia presión atmosférica</li>
+                                    <li><strong>Estática:</strong> Independiente de velocidad</li>
+                                    <li><strong>Dinámica:</strong> Depende de velocidad</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2.2. ECUACIÓN FUNDAMENTAL DE LA HIDROSTÁTICA -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-pressure-dark);">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h3>2.2. ECUACIÓN FUNDAMENTAL</h3>
+                        </div>
+                        <p>Ecuación de equilibrio de una masa líquida.</p>
+                        
+                        <div class="formula">
+                            \[ p_a - p_b = \rho \cdot g \cdot (y_a - y_b) \]
+                        </div>
+                        
+                        <div class="formula">
+                            \[ p = p_{\text{atm}} + \rho \cdot g \cdot h \]
+                        </div>
+                        
+                        <div class="law-box">
+                            <div class="law-title">📐 Implicaciones importantes</div>
+                            <ul class="visual-list">
+                                <li>La presión aumenta con la <strong>profundidad</strong></li>
+                                <li>Puntos a misma profundidad = misma presión</li>
+                                <li>La presión solo depende de la profundidad (no de la forma del recipiente)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 2.3. PRINCIPIO DE PASCAL -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h3>2.3. PRINCIPIO DE PASCAL</h3>
+                        </div>
+                        <p>"La presión ejercida sobre un fluido incompresible en equilibrio se transmite con igual intensidad en todas direcciones y puntos."</p>
+                        
+                        <div class="principle-box">
+                            <div class="principle-title">🏗️ Prensa Hidráulica (Aplicación)</div>
+                            <p>Dos cilindros de diferente sección comunicados. Fuerza pequeña en émbolo pequeño → Fuerza grande en émbolo grande.</p>
+                            
+                            <div class="formula" style="margin: 1rem 0;">
+                                \[ p_1 = p_2 \Rightarrow \frac{F_1}{S_1} = \frac{F_2}{S_2} \]
+                            </div>
+                            
+                            <div class="formula">
+                                \[ F_1 = F_2 \left( \frac{S_1}{S_2} \right) \]
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div>
+                                <strong>Aplicación bomberos:</strong> Equipos de corte y separación utilizan este principio para multiplicar fuerzas.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2.4. PRINCIPIO DE ARQUÍMEDES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4CAF50;">
+                                <i class="fas fa-swimming-pool"></i>
+                            </div>
+                            <h3>2.4. PRINCIPIO DE ARQUÍMEDES</h3>
+                        </div>
+                        <p>"Cuerpo sumergido en fluido recibe empuje vertical igual al peso del volumen desalojado."</p>
+                        
+                        <div class="formula">
+                            \[ E = \rho \cdot g \cdot V_{\text{desalojado}} \]
+                        </div>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">⚓ Aplicaciones prácticas</div>
+                            <div class="diagram-grid">
+                                <div class="diagram-item">
+                                    <div class="diagram-icon">
+                                        <i class="fas fa-ship"></i>
+                                    </div>
+                                    <div>Flotabilidad barcos</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon">
+                                        <i class="fas fa-life-ring"></i>
+                                    </div>
+                                    <div>Salvamento acuático</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon">
+                                        <i class="fas fa-temperature-high"></i>
+                                    </div>
+                                    <div>Termómetros de líquido</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon">
+                                        <i class="fas fa-vial"></i>
+                                    </div>
+                                    <div>Densímetros</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECCIÓN 3: HIDRODINÁMICA -->
+            <div class="horizontal-card" id="hidrodinamica">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-wind"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: var(--gradient-flow);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-flow"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🌊 HIDRODINÁMICA</div>
+                            <div class="card-subtitle-top">Dinámica de líquidos: régimen, caudal, Bernoulli, Venturi y golpe de ariete</div>
+                            <div>
+                                <span class="category-tag tag-flow">Caudal</span>
+                                <span class="category-tag tag-energy">Bernoulli</span>
+                                <span class="category-tag tag-pressure">Venturi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 3</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- 3.1. RÉGIMEN DE FLUIDO -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-flow);">
+                                <i class="fas fa-stream"></i>
+                            </div>
+                            <h3>3.1. RÉGIMEN DE FLUIDO</h3>
+                        </div>
+                        
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: var(--color-water);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: var(--color-water);">
+                                        <i class="fas fa-layer-group"></i>
+                                    </div>
+                                    <div class="compact-title">Laminar</div>
+                                </div>
+                                <ul class="visual-list" style="margin-top: 0.5rem;">
+                                    <li>Baja velocidad</li>
+                                    <li>Trayectorias uniformes y paralelas</li>
+                                    <li>Predominan fuerzas de viscosidad</li>
+                                    <li><strong>N° Reynolds < 2000</strong></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: var(--color-pressure);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: var(--color-pressure);">
+                                        <i class="fas fa-turbulence"></i>
+                                    </div>
+                                    <div class="compact-title">Turbulento</div>
+                                </div>
+                                <ul class="visual-list" style="margin-top: 0.5rem;">
+                                    <li>Alta velocidad</li>
+                                    <li>Trayectorias irregulares con remolinos</li>
+                                    <li>Predominan fuerzas de inercia</li>
+                                    <li><strong>N° Reynolds > 4000</strong></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800;">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </div>
+                                    <div class="compact-title">Transición</div>
+                                </div>
+                                <div style="text-align: center; padding: 1rem;">
+                                    <div class="highlight-number" style="font-size: 1.8rem;">2000 - 4000</div>
+                                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Número de Reynolds entre laminar y turbulento</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="formula">
+                            \[ R = \frac{\rho \cdot D \cdot v}{\eta} \]
+                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">
+                                ρ: Densidad • η: Viscosidad • D: Diámetro • v: Velocidad
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3.2. CAUDAL -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-flow-dark);">
+                                <i class="fas fa-faucet"></i>
+                            </div>
+                            <h3>3.2. CAUDAL (Q)</h3>
+                        </div>
+                        <p>Cantidad de líquido que pasa por sección transversal de un conducto en unidad de tiempo.</p>
+                        
+                        <div class="formula">
+                            \[ Q = \frac{V}{t} \quad \text{[m³/s]} \]
+                        </div>
+                        
+                        <div class="formula">
+                            \[ Q = S \cdot v \]
+                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">
+                                S: Sección transversal • v: Velocidad
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3.3. ECUACIÓN DE CONTINUIDAD -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-arrows-alt-h"></i>
+                            </div>
+                            <h3>3.3. ECUACIÓN DE CONTINUIDAD</h3>
+                        </div>
+                        <p>"La cantidad de líquido que pasa por dos puntos de una canalización sin fuentes/sumideros es constante."</p>
+                        
+                        <div class="formula">
+                            \[ Q = \text{cte.} = S_1 \cdot v_1 = S_2 \cdot v_2 = S_3 \cdot v_3 \]
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <strong>Consecuencia:</strong> Si la sección disminuye, la velocidad aumenta (y viceversa).
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3.4. ECUACIÓN DE BERNOULLI -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-energy);">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3>3.4. ECUACIÓN DE BERNOULLI</h3>
+                        </div>
+                        <p>En fluido ideal (sin viscosidad) en régimen estacionario, la energía total permanece constante.</p>
+                        
+                        <div class="formula">
+                            \[ \frac{1}{2}\rho v_1^2 + \rho g h_1 + p_1 = \frac{1}{2}\rho v_2^2 + \rho g h_2 + p_2 \]
+                        </div>
+                        
+                        <div class="law-box">
+                            <div class="law-title">🔋 Conservación de Energía</div>
+                            <div class="compact-grid" style="margin-top: 1rem;">
+                                <div class="compact-card" style="border-top-color: #FF9800;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #FF9800;">
+                                            <i class="fas fa-running"></i>
+                                        </div>
+                                        <div class="compact-title">Energía Cinética</div>
+                                    </div>
+                                    <div style="text-align: center; font-size: 0.9rem;">
+                                        \(\frac{1}{2} \rho v^2\)
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #4CAF50;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #4CAF50;">
+                                            <i class="fas fa-mountain"></i>
+                                        </div>
+                                        <div class="compact-title">Energía Potencial</div>
+                                    </div>
+                                    <div style="text-align: center; font-size: 0.9rem;">
+                                        \(\rho g h\)
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #D32F2F;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #D32F2F;">
+                                            <i class="fas fa-compress-arrows-alt"></i>
+                                        </div>
+                                        <div class="compact-title">Energía de Presión</div>
+                                    </div>
+                                    <div style="text-align: center; font-size: 0.9rem;">
+                                        \(p\)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3.5. TEOREMA DE TORRICELLI -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #795548;">
+                                <i class="fas fa-faucet-drip"></i>
+                            </div>
+                            <h3>3.5. TEOREMA DE TORRICELLI</h3>
+                        </div>
+                        <p>Velocidad de salida de líquido por orificio en depósito a profundidad h.</p>
+                        
+                        <div class="formula">
+                            \[ v_{\text{salida}} = \sqrt{2 g h} \]
+                        </div>
+                        
+                        <div class="formula">
+                            \[ Q_{\text{teórico}} = S \cdot \sqrt{2 g h} \]
+                        </div>
+                        
+                        <div class="formula">
+                            \[ Q_{\text{real}} = K \cdot S \cdot \sqrt{2 g h} \quad (K = 0.9 - 0.98) \]
+                        </div>
+                        
+                        <div class="visual-table">
+                            <thead>
+                                <tr>
+                                    <th>Tipo de lanza</th>
+                                    <th>Diámetro teórico (mm)</th>
+                                    <th>Caudal normal (l/min)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lanza 25</td>
+                                    <td><span class="highlight-number">5.5 - 12</span></td>
+                                    <td><span class="highlight-number">250 - 230</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Lanza 45</td>
+                                    <td><span class="highlight-number">9.75 - 17.75</span></td>
+                                    <td><span class="highlight-number">150 - 500</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Lanza 70</td>
+                                    <td><span class="highlight-number">13.75 - 21.75</span></td>
+                                    <td><span class="highlight-number">300 - 750</span></td>
+                                </tr>
+                            </tbody>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #795548;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <strong>Nota:</strong> Valores para h = <span class="highlight-number">70 m.c.a.</span> (7 kg/cm²) y K = <span class="highlight-number">0.9</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3.6. EFECTO VENTURI -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #9C27B0;">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <h3>3.6. EFECTO VENTURI</h3>
+                        </div>
+                        <p>En conducto cerrado, fluido disminuye presión al aumentar velocidad tras pasar por zona de menor sección.</p>
+                        
+                        <div class="principle-box">
+                            <div class="principle-title">🔧 Aplicaciones prácticas</div>
+                            <div class="compact-grid">
+                                <div class="compact-card" style="border-top-color: #9C27B0;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #9C27B0;">
+                                            <i class="fas fa-spray-can"></i>
+                                        </div>
+                                        <div class="compact-title">Pulverizadores</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #7B1FA2;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #7B1FA2;">
+                                            <i class="fas fa-flask"></i>
+                                        </div>
+                                        <div class="compact-title">Dosificadores</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #6A1B9A;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #6A1B9A;">
+                                            <i class="fas fa-tint"></i>
+                                        </div>
+                                        <div class="compact-title">Premezcladores</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <div class="box-icon" style="background: #9C27B0;">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <strong>Explicación:</strong> Por principio de Bernoulli, si velocidad ↑ (sección ↓), entonces presión ↓.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3.7. GOLPE DE ARIETE -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-pressure);">
+                                <i class="fas fa-hammer"></i>
+                            </div>
+                            <h3>3.7. GOLPE DE ARIETE</h3>
+                        </div>
+                        <p>Sobre-presión y depresión en tubería al variar bruscamente el caudal.</p>
+                        
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Cierre brusco</div>
+                                <div style="font-size: 0.75rem;">Partículas detenidas empujadas por las siguientes</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Sobre-presión</div>
+                                <div style="font-size: 0.75rem;">Onda de presión comprime fluido y dilata tubería</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Reflexión</div>
+                                <div style="font-size: 0.75rem;">Onda viaja en sentido contrario</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">4</div>
+                                <div class="step-title">Depresión</div>
+                                <div style="font-size: 0.75rem;">Fluido puede vaporizarse (burbujas)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--color-pressure);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <strong>¡Peligro en bomberos!</strong> Incremento súbito de presión → aumento brusco de reacción en instalaciones.
+                                <div style="margin-top: 0.5rem; font-size: 0.9rem;">
+                                    <strong>Solución:</strong> Apertura/cierre <span class="highlight-number">lentos y controlados</span>.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECCIÓN 4: BOMBAS CENTRÍFUGAS -->
+            <div class="horizontal-card" id="bombas">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: var(--gradient-pump);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-pump"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">⚙️ BOMBAS CENTRÍFUGAS</div>
+                            <div class="card-subtitle-top">Curvas características, aspiración, cebado, cavitación y acoplamientos</div>
+                            <div>
+                                <span class="category-tag tag-pump">Curvas</span>
+                                <span class="category-tag tag-pressure">Cavitación</span>
+                                <span class="category-tag tag-flow">Acoplamiento</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 4</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- 4.1. CURVA CARACTERÍSTICA -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-pump);">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>4.1. CURVA CARACTERÍSTICA</h3>
+                        </div>
+                        <p>Representación de las particularidades de una bomba centrífuga.</p>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">📈 Variables representadas</div>
+                            <div class="diagram-grid">
+                                <div class="diagram-item">
+                                    <div class="diagram-icon">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div><strong>Variable independiente:</strong><br>Caudal (Q)</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                    <div><strong>Variable dependiente 1:</strong><br>Altura manométrica (Hm)</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <div><strong>Variable dependiente 2:</strong><br>Potencia consumida</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon">
+                                        <i class="fas fa-percentage"></i>
+                                    </div>
+                                    <div><strong>Variable dependiente 3:</strong><br>Rendimiento (η)</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="law-box">
+                            <div class="law-title">🎯 Punto óptimo de funcionamiento</div>
+                            <p>Punto donde el rendimiento energético (η) es máximo. Aquí se definen los valores nominales de la bomba.</p>
+                            
+                            <div class="compact-grid">
+                                <div class="compact-card" style="border-top-color: var(--color-pump);">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: var(--color-pump);">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="compact-title">Altura manométrica (Hm)</div>
+                                    </div>
+                                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Incremento de energía entre entrada y salida, expresado en presión.</p>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: var(--color-energy);">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: var(--color-energy);">
+                                            <i class="fas fa-bolt"></i>
+                                        </div>
+                                        <div class="compact-title">Potencia útil (Wout)</div>
+                                    </div>
+                                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Potencia transferida al fluido.</p>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: var(--color-flow);">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: var(--color-flow);">
+                                            <i class="fas fa-percentage"></i>
+                                        </div>
+                                        <div class="compact-title">Rendimiento (η)</div>
+                                    </div>
+                                    <div class="formula" style="margin: 0.5rem 0; font-size: 0.9rem;">
+                                        \[ \eta = \frac{W_{\text{out}}}{W_{\text{in}}} \]
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--color-pump);">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div>
+                                <strong>Bombas de bomberos:</strong> Tienen mando de aceleración para regular revoluciones (<span class="highlight-number">hasta 5000 rpm</span>), permitiendo regular ampliamente presión y caudal.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 4.2. ASPIRACIÓN EN BOMBAS -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-water);">
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+                            <h3>4.2. ASPIRACIÓN EN BOMBAS</h3>
+                        </div>
+                        <p>El líquido asciende por empuje de la presión atmosférica exterior, no por la aspiración.</p>
+                        
+                        <div class="visual-table">
+                            <thead>
+                                <tr>
+                                    <th>Altitud (m)</th>
+                                    <th>Presión atmosférica (m.c.a.)</th>
+                                    <th>Pérdida vs nivel mar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="highlight-number">0</span></td>
+                                    <td><span class="highlight-number">10.33</span></td>
+                                    <td>0%</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">500</span></td>
+                                    <td><span class="highlight-number">9.58</span></td>
+                                    <td>7.3%</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">1000</span></td>
+                                    <td><span class="highlight-number">9.11</span></td>
+                                    <td>11.8%</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">2000</span></td>
+                                    <td><span class="highlight-number">8.04</span></td>
+                                    <td>22.2%</td>
+                                </tr>
+                            </tbody>
+                        </div>
+                        
+                        <div class="visual-table" style="margin-top: 1.5rem;">
+                            <thead>
+                                <tr>
+                                    <th>Temperatura (°C)</th>
+                                    <th>Pérdida de aspiración (m.c.a.)</th>
+                                    <th>Notas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="highlight-number">10</span></td>
+                                    <td><span class="highlight-number">0.125</span></td>
+                                    <td>Agua fría</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">20</span></td>
+                                    <td><span class="highlight-number">0.236</span></td>
+                                    <td>Temperatura ambiente</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">40</span></td>
+                                    <td><span class="highlight-number">0.745</span></td>
+                                    <td>Agua caliente</td>
+                                </tr>
+                            </tbody>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--color-pressure);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <strong>Altura máxima teórica: <span class="highlight-number">10.33 m</span></strong>
+                                <div style="margin-top: 0.5rem;">
+                                    <strong>Imposible alcanzar por:</strong>
+                                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                        <li>Presión atmosférica < 1 atm</li>
+                                        <li>Presión de vapor del agua</li>
+                                        <li>Vacío no perfecto en manguerotes</li>
+                                        <li>Pérdidas de carga</li>
+                                    </ul>
+                                </div>
+                                <div style="margin-top: 0.5rem; font-weight: 700;">
+                                    Altura práctica: <span class="highlight-number">7-8 m</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 4.3. CEBADO DE BOMBA -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <h3>4.3. CEBADO DE BOMBA</h3>
+                        </div>
+                        <p>Operación esencial para inundar la bomba antes de su puesta en marcha.</p>
+                        
+                        <div class="principle-box">
+                            <div class="principle-title">🔄 Dispositivos de cebado</div>
+                            <div class="compact-grid">
+                                <div class="compact-card" style="border-top-color: #FF9800;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #FF9800;">
+                                            <i class="fas fa-wind"></i>
+                                        </div>
+                                        <div class="compact-title">Eyector de gases</div>
+                                    </div>
+                                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Usa efecto Venturi de gases de escape</p>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #2196F3;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #2196F3;">
+                                            <i class="fas fa-vacuum"></i>
+                                        </div>
+                                        <div class="compact-title">Depresor de vacío</div>
+                                    </div>
+                                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Bomba de vacío eléctrica</p>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #4CAF50;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #4CAF50;">
+                                            <i class="fas fa-recycle"></i>
+                                        </div>
+                                        <div class="compact-title">Anillo de agua</div>
+                                    </div>
+                                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Bomba volumétrica</p>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #9C27B0;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #9C27B0;">
+                                            <i class="fas fa-tint"></i>
+                                        </div>
+                                        <div class="compact-title">Autocebantes</div>
+                                    </div>
+                                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Depósito específico de agua</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div>
+                                <strong>¡Atención!</strong> Sin cebado, la bomba no funciona y puede sufrir averías al girar en vacío (sin lubricación/refrigeración).
+                                <div style="margin-top: 0.5rem;">
+                                    <strong>Cebado completado:</strong> Cuando agua entra en contacto con el rodete.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 4.4. CAVITACIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-pressure);">
+                                <i class="fas fa-cavitation"></i>
+                            </div>
+                            <h3>4.4. CAVITACIÓN</h3>
+                        </div>
+                        <p>Formación de vapor de agua por descenso local de presión bajo la presión de saturación, seguida de brusca condensación.</p>
+                        
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Caída de presión</div>
+                                <div style="font-size: 0.75rem;">Presión < presión de vapor</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Formación burbujas</div>
+                                <div style="font-size: 0.75rem;">Vaporización localizada</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Arrastre</div>
+                                <div style="font-size: 0.75rem;">Burbujas a zonas de mayor presión</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">4</div>
+                                <div class="step-title">Implosión</div>
+                                <div style="font-size: 0.75rem;">Condensación brusca → golpes</div>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--color-pressure);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <strong>Consecuencias graves:</strong>
+                                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                    <li>Presiones locales hasta <span class="highlight-number">1000 kg/cm²</span></li>
+                                    <li>Picaduras y corrosión mecánica</li>
+                                    <li>Deterioro de álabes del rodete</li>
+                                    <li>Ruidos y vibraciones ("como grava")</li>
+                                    <li>Degradación de rodamientos</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <div class="box-icon" style="background: var(--color-flow);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <strong>Prevención:</strong>
+                                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                    <li>Disminuir alturas de aspiración</li>
+                                    <li>Reducir caudales de trabajo</li>
+                                    <li>Aumentar sección de manguerotes</li>
+                                    <li>Altura geométrica máxima: <span class="highlight-number">8-8.5 m</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 4.5. ACOPLAMIENTO DE BOMBAS -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-pump-dark);">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h3>4.5. ACOPLAMIENTO DE BOMBAS</h3>
+                        </div>
+                        
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: var(--color-water);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: var(--color-water);">
+                                        <i class="fas fa-arrows-alt-h"></i>
+                                    </div>
+                                    <div class="compact-title">En Paralelo</div>
+                                </div>
+                                <div class="formula" style="margin: 0.5rem 0; font-size: 0.9rem;">
+                                    \[ H_m = H_{m1} = H_{m2} = \dots \]
+                                </div>
+                                <div class="formula" style="font-size: 0.9rem;">
+                                    \[ Q = Q_1 + Q_2 + \dots \]
+                                </div>
+                                <p style="font-size: 0.85rem; margin-top: 0.5rem;">
+                                    <strong>Resultado:</strong> Misma altura, mayor caudal.
+                                </p>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: var(--color-pressure);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: var(--color-pressure);">
+                                        <i class="fas fa-arrows-alt-v"></i>
+                                    </div>
+                                    <div class="compact-title">En Serie</div>
+                                </div>
+                                <div class="formula" style="margin: 0.5rem 0; font-size: 0.9rem;">
+                                    \[ H_m = H_{m1} + H_{m2} + \dots \]
+                                </div>
+                                <div class="formula" style="font-size: 0.9rem;">
+                                    \[ Q = Q_1 = Q_2 = \dots \]
+                                </div>
+                                <p style="font-size: 0.85rem; margin-top: 0.5rem;">
+                                    <strong>Resultado:</strong> Mismo caudal, mayor altura.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECCIÓN 5: INSTALACIONES HIDRÁULICAS -->
+            <div class="horizontal-card" id="instalaciones">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: var(--gradient-energy);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-fire-extinguisher"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🔥 INSTALACIONES HIDRÁULICAS</div>
+                            <div class="card-subtitle-top">Pérdidas de carga, punto de funcionamiento, alcance y reacción en lanza</div>
+                            <div>
+                                <span class="category-tag tag-energy">Pérdidas</span>
+                                <span class="category-tag tag-pressure">Alcance</span>
+                                <span class="category-tag tag-flow">Reacción</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 5</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- 5.1. PÉRDIDAS DE CARGA -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-energy);">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h3>5.1. PÉRDIDAS DE CARGA</h3>
+                        </div>
+                        <p>Pérdidas energéticas en fluido en movimiento por rozamientos, turbulencias, etc.</p>
+                        
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: var(--color-energy);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: var(--color-energy);">
+                                        <i class="fas fa-ruler-horizontal"></i>
+                                    </div>
+                                    <div class="compact-title">Continuas (Lineales)</div>
+                                </div>
+                                <ul class="visual-list" style="margin-top: 0.5rem;">
+                                    <li>Fricción en conductos regulares</li>
+                                    <li>A lo largo de toda la instalación</li>
+                                    <li>Mayor valor que las singulares</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800;">
+                                        <i class="fas fa-random"></i>
+                                    </div>
+                                    <div class="compact-title">Locales (Singulares)</div>
+                                </div>
+                                <ul class="visual-list" style="margin-top: 0.5rem;">
+                                    <li>Cambios de sección/dirección</li>
+                                    <li>Bifurcaciones, válvulas, lanzas</li>
+                                    <li>Menor valor que las continuas</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="law-box">
+                            <div class="law-title">📊 Factores que aumentan pérdidas de carga</div>
+                            <div class="compact-grid">
+                                <div class="compact-card" style="border-top-color: #2196F3;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #2196F3;">
+                                            <i class="fas fa-ruler"></i>
+                                        </div>
+                                        <div class="compact-title">Longitud</div>
+                                    </div>
+                                    <p style="text-align: center; font-size: 1.2rem; margin: 0.5rem 0;">↑ linealmente</p>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #4CAF50;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #4CAF50;">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                        </div>
+                                        <div class="compact-title">Velocidad/Caudal</div>
+                                    </div>
+                                    <p style="text-align: center; font-size: 1.2rem; margin: 0.5rem 0;">↑ con v² o Q²</p>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #FF9800;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #FF9800;">
+                                            <i class="fas fa-compress-arrows-alt"></i>
+                                        </div>
+                                        <div class="compact-title">Diámetro</div>
+                                    </div>
+                                    <p style="text-align: center; font-size: 1.2rem; margin: 0.5rem 0;">↓ con D⁵</p>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #9C27B0;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #9C27B0;">
+                                            <i class="fas fa-mountain"></i>
+                                        </div>
+                                        <div class="compact-title">Rugosidad/Viscosidad</div>
+                                    </div>
+                                    <p style="text-align: center; font-size: 1.2rem; margin: 0.5rem 0;">↑ con ambos</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="visual-table">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Caudal (l/min)</th>
+                                    <th colspan="3">Pérdidas de carga (bar) por diámetro</th>
+                                </tr>
+                                <tr>
+                                    <th>Ø25 mm</th>
+                                    <th>Ø45 mm</th>
+                                    <th>Ø70 mm</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="highlight-number">100</span></td>
+                                    <td><span class="highlight-number">2.5</span></td>
+                                    <td><span class="highlight-number">0.15</span></td>
+                                    <td><span class="highlight-number">0.03</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">200</span></td>
+                                    <td><span class="highlight-number">9.0</span></td>
+                                    <td><span class="highlight-number">0.37</span></td>
+                                    <td><span class="highlight-number">0.07</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">300</span></td>
+                                    <td><span class="highlight-number">20.0</span></td>
+                                    <td><span class="highlight-number">0.85</span></td>
+                                    <td><span class="highlight-number">0.15</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">400</span></td>
+                                    <td><span class="highlight-number">36.0</span></td>
+                                    <td><span class="highlight-number">1.75</span></td>
+                                    <td><span class="highlight-number">0.27</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">500</span></td>
+                                    <td><span class="highlight-number">55.0</span></td>
+                                    <td><span class="highlight-number">2.70</span></td>
+                                    <td><span class="highlight-number">0.42</span></td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.2. ECUACIÓN DE LÍNEA -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h3>5.2. ECUACIÓN DE LÍNEA</h3>
+                        </div>
+                        
+                        <div class="formula-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-equals"></i>
+                            </div>
+                            <div>
+                                <div class="formula" style="margin: 0;">
+                                    \[ P_B = P_L + H_G + P_C \]
+                                </div>
+                                <div style="margin-top: 1rem;">
+                                    <strong>Donde:</strong>
+                                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                        <li><strong>P<sub>B</sub>:</strong> Presión a salida de bomba [bar]</li>
+                                        <li><strong>P<sub>L</sub>:</strong> Presión en punta de lanza [bar]</li>
+                                        <li><strong>H<sub>G</sub>:</strong> Altura geométrica (desnivel bomba-lanza) [bar]</li>
+                                        <li><strong>P<sub>C</sub>:</strong> Pérdidas de carga totales [bar]</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <strong>Conversión altura-presión:</strong> 10 m.c.a. = 1 bar = 1 kg/cm²
+                                <div style="margin-top: 0.5rem;">
+                                    <strong>H<sub>G</sub> positivo:</strong> Bomba abajo, lanza arriba (+1 bar/10 m)
+                                    <br>
+                                    <strong>H<sub>G</sub> negativo:</strong> Bomba arriba, lanza abajo (-1 bar/10 m)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.3. PUNTO DE FUNCIONAMIENTO -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4CAF50;">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>5.3. PUNTO DE FUNCIONAMIENTO</h3>
+                        </div>
+                        <p>Intersección entre curva de la bomba y curva de la instalación.</p>
+                        
+                        <div class="principle-box">
+                            <div class="principle-title">⚖️ Condición de equilibrio</div>
+                            <p>En el punto de funcionamiento, la pérdida de carga en la instalación coincide con la presión aportada por la bomba:</p>
+                            <div class="formula" style="margin: 1rem 0;">
+                                \[ P_{\text{impulso}} + \Delta P_{\text{total}} = 0 \]
+                            </div>
+                        </div>
+                        
+                        <div class="procedure-timeline" style="grid-template-columns: repeat(3, 1fr);">
+                            <div class="timeline-step">
+                                <div class="step-number">A</div>
+                                <div class="step-title">Punto inicial</div>
+                                <div style="font-size: 0.75rem;">Bomba velocidad N: Presión H<sub>A</sub>, Caudal Q<sub>A</sub></div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">B</div>
+                                <div class="step-title">Acelerar bomba</div>
+                                <div style="font-size: 0.75rem;">↑ caudal sin cambiar lanza → ↑ presión lanza</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">C</div>
+                                <div class="step-title">Aumentar sección lanza</div>
+                                <div style="font-size: 0.75rem;">↑ caudal → ↓ presión trabajo</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.4. ALCANCE DE UNA INSTALACIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>5.4. ALCANCE DE UNA INSTALACIÓN</h3>
+                        </div>
+                        <p>Determinado experimentalmente por impacto del aire en dispersión del chorro.</p>
+                        
+                        <div class="visual-table">
+                            <thead>
+                                <tr>
+                                    <th>Tipo de lanza</th>
+                                    <th>Presión (kg/cm²)</th>
+                                    <th>Alcance (m)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3">25</td>
+                                    <td><span class="highlight-number">2</span></td>
+                                    <td><span class="highlight-number">9</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">4</span></td>
+                                    <td><span class="highlight-number">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">7</span></td>
+                                    <td><span class="highlight-number">17</span></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">45</td>
+                                    <td><span class="highlight-number">2</span></td>
+                                    <td><span class="highlight-number">8</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">4</span></td>
+                                    <td><span class="highlight-number">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">7</span></td>
+                                    <td><span class="highlight-number">20</span></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">70</td>
+                                    <td><span class="highlight-number">2</span></td>
+                                    <td><span class="highlight-number">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">4</span></td>
+                                    <td><span class="highlight-number">18</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="highlight-number">7</span></td>
+                                    <td><span class="highlight-number">25</span></td>
+                                </tr>
+                            </tbody>
+                        </div>
+                        
+                        <div class="law-box">
+                            <div class="law-title">🎯 Factores que determinan alcance máximo</div>
+                            <ul class="visual-list">
+                                <li><strong>Presión ↑</strong> → Velocidad salida ↑ → Alcance ↑</li>
+                                <li><strong>Diámetro lanza ↑</strong> (misma presión) → Alcance ↑</li>
+                                <li><strong>Efecto chorro + apertura máxima</strong> → Alcance máximo</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.5. REACCIÓN EN LANZA -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-pressure);">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <h3>5.5. REACCIÓN EN LANZA</h3>
+                        </div>
+                        <p>Empuje o retroceso sobre el portador por principio de acción-reacción.</p>
+                        
+                        <div class="formula">
+                            \[ E = 2 \cdot P \cdot S \]
+                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">
+                                E: Empuje [N] • P: Presión [Pa] • S: Superficie salida [m²]
+                            </div>
+                        </div>
+                        
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: var(--color-pressure);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: var(--color-pressure);">
+                                        <i class="fas fa-compress-arrows-alt"></i>
+                                    </div>
+                                    <div class="compact-title">Misma presión</div>
+                                </div>
+                                <p style="text-align: center; font-size: 1.1rem; margin: 0.5rem 0;">
+                                    Diámetro ↑ → Empuje ↑
+                                </p>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #D32F2F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #D32F2F;">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div class="compact-title">Mismo diámetro</div>
+                                </div>
+                                <p style="text-align: center; font-size: 1.1rem; margin: 0.5rem 0;">
+                                    Presión ↑ → Empuje ↑
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div>
+                                <strong>Consejo práctico:</strong> En tendidos en espera, poner lanza en <strong>posición cortina de protección</strong>.
+                                <div style="margin-top: 0.5rem;">
+                                    <strong>Resultado:</strong> Empuje inicial menor, menos daños, mayor protección.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <strong>Chorro cónico:</strong> A 180° el empuje se anula aproximadamente.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    
+    <!-- RESUMEN FINAL -->
+    <div class="container">
+        <div class="horizontal-card" style="background: linear-gradient(135deg, #E3F2FD, #F3E5F5); border: 2px solid #2196F3;">
+            <div class="card-content">
+                <div class="section-title" style="justify-content: center; border-bottom: none;">
+                    <div class="section-icon" style="background: #2196F3;">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h2 style="color: #1565C0;">🧠 CONVIENE RECORDAR - RESUMEN ESENCIAL</h2>
+                </div>
+                
+                <div class="compact-grid">
+                    <div class="compact-card" style="border-top-color: #2196F3;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #2196F3;">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <div class="compact-title">Hidráulica</div>
+                        </div>
+                        <p style="font-size: 0.9rem;">Ciencia que estudia propiedades mecánicas (estáticas y dinámicas) de fluidos.</p>
+                    </div>
+                    
+                    <div class="compact-card" style="border-top-color: #D32F2F;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #D32F2F;">
+                                <i class="fas fa-compress-arrows-alt"></i>
+                            </div>
+                            <div class="compact-title">Hidrostática</div>
+                        </div>
+                        <p style="font-size: 0.9rem;">Rama que estudia fluidos en estado de equilibrio.</p>
+                    </div>
+                    
+                    <div class="compact-card" style="border-top-color: #4CAF50;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #4CAF50;">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <div class="compact-title">Hidrodinámica</div>
+                        </div>
+                        <p style="font-size: 0.9rem;">Ciencia que estudia la dinámica de los líquidos.</p>
+                    </div>
+                    
+                    <div class="compact-card" style="border-top-color: #9C27B0;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #9C27B0;">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="compact-title">Bombas centrífugas</div>
+                        </div>
+                        <p style="font-size: 0.9rem;">Transforman energía mecánica en energía hidráulica.</p>
+                    </div>
+                    
+                    <div class="compact-card" style="border-top-color: #FF9800;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #FF9800;">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <div class="compact-title">Cebado</div>
+                        </div>
+                        <p style="font-size: 0.9rem;">Operación esencial para inundar bomba antes de puesta en marcha.</p>
+                    </div>
+                    
+                    <div class="compact-card" style="border-top-color: #795548;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #795548;">
+                                <i class="fas fa-cavitation"></i>
+                            </div>
+                            <div class="compact-title">Cavitación</div>
+                        </div>
+                        <p style="font-size: 0.9rem;">Formación de vapor por presión < presión de vapor, seguida de implosión.</p>
+                    </div>
+                    
+                    <div class="compact-card" style="border-top-color: #607D8B;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #607D8B;">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <div class="compact-title">Acoplamientos</div>
+                        </div>
+                        <p style="font-size: 0.9rem;">Paralelo: misma altura, mayor caudal. Serie: mismo caudal, mayor altura.</p>
+                    </div>
+                    
+                    <div class="compact-card" style="border-top-color: #00BCD4;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #00BCD4;">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <div class="compact-title">Pérdidas de carga</div>
+                        </div>
+                        <p style="font-size: 0.9rem;">Pérdidas energéticas por rozamientos y turbulencias en fluidos en movimiento.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem; padding: 1rem; background: rgba(33, 150, 243, 0.1); border-radius: 10px;">
+                    <h3 style="color: #1565C0;">📊 DATOS CLAVE EN ROJO (IMPORTANTES)</h3>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 1rem;">
+                        <div>
+                            <div class="highlight-number" style="font-size: 1.8rem;">10.33 m</div>
+                            <div>Altura máxima teórica aspiración</div>
+                        </div>
+                        <div>
+                            <div class="highlight-number" style="font-size: 1.8rem;">7-8 m</div>
+                            <div>Altura práctica aspiración</div>
+                        </div>
+                        <div>
+                            <div class="highlight-number" style="font-size: 1.8rem;">1.033 kg/cm²</div>
+                            <div>Presión atmosférica a nivel mar</div>
+                        </div>
+                        <div>
+                            <div class="highlight-number" style="font-size: 1.8rem;">1000 kg/cm²</div>
+                            <div>Presión local en cavitación</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Botones flotantes -->
+    <button class="floating-btn" id="scrollTopBtn" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <button class="floating-btn floating-btn-left" id="scrollNextBtn" title="Siguiente sección">
+        <i class="fas fa-arrow-down"></i>
+    </button>
+    
+    <!-- Footer -->
+    <footer class="visual-footer">
+        <div class="container">
+            <div class="footer-content">
+                <h2 style="color: #ffffff; margin-bottom: 1.5rem; font-size: 2rem;">💧 Hidráulica para Bomberos - Guía Visual</h2>
+                <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.9;">
+                    Resumen visual completo basado en el manual de hidráulica para bomberos. Todos los conceptos, fórmulas y datos esenciales.
+                </p>
+                
+                <div class="footer-icons">
+                    <div class="footer-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-pressure"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-flow"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-pump"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-fire-extinguisher"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2.5rem;">
+                    <p style="opacity: 0.8; font-size: 0.95rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-info-circle"></i> Esta guía tiene carácter informativo y educativo. Para aplicaciones prácticas, seguir protocolos y formación oficial.
+                    </p>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">
+                        © 2025 Guía Visual de Hidráulica para Bomberos - Basado en manual técnico - CC BY-NC-SA 4.0
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Botón para volver arriba
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Función para navegar a la siguiente sección
+        const scrollNextBtn = document.getElementById('scrollNextBtn');
+        
+        // Obtener todas las secciones con IDs de navegación
+        const sections = Array.from(document.querySelectorAll('.horizontal-card[id]'));
+        
+        // Ordenar las secciones por su posición en la página
+        sections.sort((a, b) => {
+            return a.offsetTop - b.offsetTop;
+        });
+        
+        // Función para encontrar la sección actual
+        function getCurrentSection() {
+            // Margen para considerar que una sección está "activa"
+            const margin = 150;
+            
+            for (let i = sections.length - 1; i >= 0; i--) {
+                if (window.scrollY + margin >= sections[i].offsetTop) {
+                    return i;
+                }
+            }
+            return 0;
+        }
+        
+        // Función para navegar a la siguiente sección
+        function goToNextSection() {
+            const currentIndex = getCurrentSection();
+            const nextIndex = currentIndex + 1;
+            
+            if (nextIndex < sections.length) {
+                const nextSection = sections[nextIndex];
+                window.scrollTo({
+                    top: nextSection.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+                
+                // Actualizar URL sin recargar la página
+                history.pushState(null, null, `#${nextSection.id}`);
+            } else {
+                // Si estamos en la última sección, ir al principio
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Evento para el botón de siguiente sección
+        scrollNextBtn.addEventListener('click', goToNextSection);
+        
+        // Mostrar/ocultar botón según la posición
+        window.addEventListener('scroll', () => {
+            const currentIndex = getCurrentSection();
+            
+            // Mostrar siempre el botón, pero cambiar el icono si estamos en la última sección
+            if (currentIndex === sections.length - 1) {
+                scrollNextBtn.innerHTML = '<i class="fas fa-home"></i>';
+                scrollNextBtn.title = "Volver al inicio";
+            } else {
+                scrollNextBtn.innerHTML = '<i class="fas fa-arrow-down"></i>';
+                scrollNextBtn.title = "Siguiente sección";
+            }
+            
+            // Ocultar botón cuando estamos cerca del final de la última sección
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                scrollNextBtn.style.opacity = '0.5';
+            } else {
+                scrollNextBtn.style.opacity = '1';
+            }
+        });
+        
+        // Navegación con teclado (tecla derecha o barra espaciadora)
+        document.addEventListener('keydown', (e) => {
+            // Tecla derecha o barra espaciadora (excepto cuando se está escribiendo en un campo)
+            if ((e.key === 'ArrowRight' || e.key === ' ') && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                
+                e.preventDefault(); // Evitar comportamiento por defecto del espacio
+                goToNextSection();
+            }
+            
+            // Tecla izquierda para ir a la sección anterior
+            if (e.key === 'ArrowLeft' && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                
+                e.preventDefault();
+                const currentIndex = getCurrentSection();
+                const prevIndex = currentIndex - 1;
+                
+                if (prevIndex >= 0) {
+                    const prevSection = sections[prevIndex];
+                    window.scrollTo({
+                        top: prevSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+        
+        // Inicializar: mostrar el botón después de cargar
+        window.addEventListener('load', () => {
+            scrollNextBtn.style.display = 'flex';
+            
+            // Resaltar números importantes en rojo
+            document.querySelectorAll('.highlight-number').forEach(element => {
+                element.style.color = '#D32F2F';
+                element.style.fontWeight = '800';
+            });
+            
+            // Inicializar MathJax
+            if (window.MathJax) {
+                MathJax.typeset();
+            }
+        });
+        
+        // Asegurar que MathJax se ejecute después de cargar contenido dinámico
+        function renderMath() {
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
+        }
+        
+        // Ejecutar renderizado inicial
+        setTimeout(renderMath, 500);
+    </script>
+</body>
+</html>
