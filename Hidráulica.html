@@ -955,20 +955,21 @@
 
         /* Grid compacto mejorado */
         .compact-grid-dense {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 0.8rem;
             margin: 1rem 0;
         }
 
         .compact-card-dense {
+            flex: 1 1 220px;
             background: white;
             border-radius: 8px;
             padding: 0.9rem;
             box-shadow: 0 3px 8px rgba(0,0,0,0.07);
             border-top: 3px solid;
             transition: all 0.2s ease;
-            height: 100%;
+            
         }
 
         .compact-card-dense:hover {
@@ -1232,6 +1233,94 @@
             }
         }
 
+        /* Añadir al final del CSS existente */
+
+        /* Estilos para imágenes representativas */
+        .fluid-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 1rem auto;
+            display: block;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Estilos para ecuaciones mejoradas */
+        .equation-container {
+            background: #f8f9fa;
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin: 1.2rem 0;
+            border-left: 5px solid var(--color-water);
+            font-family: 'Cambria Math', serif;
+            text-align: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+        }
+
+        .equation-label {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Estilos para tablas mejoradas */
+        .property-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .property-table th {
+            background: var(--gradient-water);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .property-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .property-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Estilos para comparaciones visuales */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .comparison-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
 
     </style>
 </head>
@@ -1327,7 +1416,7 @@
         <div class="horizontal-cards-container">
             
 
-            <!-- Propiedades de los fluidos - Versión super compacta -->
+            <!-- Propiedades de los fluidos - Versión COMPLETA y visual -->
             <section id="propiedades-fluidos" class="horizontal-card">
                 <div class="card-header-top" style="background: var(--gradient-water);">
                     <div class="card-title-container">
@@ -1337,9 +1426,15 @@
                         <div>
                             <h2 class="card-title-top">💧 PROPIEDADES DE LOS FLUIDOS</h2>
                             <p class="card-subtitle-top">Fundamentos físicos esenciales para intervenciones bomberiles</p>
+                            <div>
+                                <span class="category-tag tag-fluid">Masa</span>
+                                <span class="category-tag tag-pressure">Densidad</span>
+                                <span class="category-tag tag-energy">Viscosidad</span>
+                                <span class="category-tag tag-flow">Tensión</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="topic-number-badge">TEMA 1</div>
+                    <div class="topic-number-badge">SECCIÓN 1</div>
                 </div>
 
                 <div class="card-content">
@@ -1351,7 +1446,7 @@
                             </div>
                             <div class="compact-box-content">
                                 <div class="compact-box-title">¿Qué es la hidráulica?</div>
-                                <p class="compact-text">Rama de la mecánica que estudia las propiedades mecánicas de fluidos bajo distintas fuerzas y condiciones. Fundamental para el manejo eficiente de equipos de extinción.</p>
+                                <p class="compact-text">Dentro de la mecánica, la hidráulica es una rama que estudia las propiedades mecánicas de los fluidos en función de sus propiedades específicas y de las fuerzas y las condiciones a las que pueden estar sometidos.</p>
                             </div>
                         </div>
                     </div>
@@ -1374,9 +1469,9 @@
                                     <div class="compact-icon-tiny" style="background: var(--color-water);">
                                         <i class="fas fa-balance-scale"></i>
                                     </div>
-                                    <h4 class="compact-title-dense">Unidad SI</h4>
+                                    <h4 class="compact-title-dense">Definición</h4>
                                 </div>
-                                <p class="compact-content-dense"><strong>Kilogramo (kg)</strong></p>
+                                <p class="compact-content-dense">Magnitud física que indica la cantidad de materia de un cuerpo</p>
                             </div>
                             
                             <div class="compact-card-dense" style="border-top-color: var(--color-water-light);">
@@ -1384,9 +1479,9 @@
                                     <div class="compact-icon-tiny" style="background: var(--color-water-light);">
                                         <i class="fas fa-ruler"></i>
                                     </div>
-                                    <h4 class="compact-title-dense">Característica</h4>
+                                    <h4 class="compact-title-dense">Unidad SI</h4>
                                 </div>
-                                <p class="compact-content-dense">Magnitud escalar ≠ Peso (vectorial)</p>
+                                <p class="compact-content-dense"><strong>Kilogramo (kg)</strong></p>
                             </div>
                             
                             <div class="compact-card-dense" style="border-top-color: var(--color-water-dark);">
@@ -1394,9 +1489,19 @@
                                     <div class="compact-icon-tiny" style="background: var(--color-water-dark);">
                                         <i class="fas fa-arrows-alt-v"></i>
                                     </div>
-                                    <h4 class="compact-title-dense">Invariable</h4>
+                                    <h4 class="compact-title-dense">Característica clave</h4>
                                 </div>
-                                <p class="compact-content-dense">No depende de la gravedad</p>
+                                <p class="compact-content-dense">Magnitud escalar ≠ Peso (vectorial). No depende de la gravedad</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box" style="margin-top: 1rem;">
+                            <div class="compact-box-icon" style="background: var(--color-water);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Diferencia crucial</div>
+                                <p class="compact-text">La <strong>masa</strong> es una magnitud escalar (se representa con un número), mientras que el <strong>peso</strong> es una magnitud vectorial (se representa con un vector). La masa es invariable, el peso depende de la gravedad.</p>
                             </div>
                         </div>
                     </div>
@@ -1409,25 +1514,51 @@
                             </div>
                             <div>
                                 <h3 class="compact-title-text">1.2 DENSIDAD (ρ)</h3>
-                                <p class="compact-subtitle">Cantidad de masa por unidad de volumen</p>
+                                <p class="compact-subtitle">Cantidad de masa en un determinado volumen de una sustancia</p>
                             </div>
                         </div>
                         
-                        <div class="compact-formula">
-                            \[ \rho = \frac{m}{V} \]
+                        
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense">
+                                <div class="equation-label">Densidad media:</div>
+                                \[ \rho = \frac{m}{V} \]
+                                <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                    ρ: Densidad | m: Masa | V: Volumen
+                                </div>
+                            </div>
+
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pressure);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure);">
+                                        <i class="fas fa-ruler-combined"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Unidades SI</h4>
+                                </div>
+                                <p class="compact-content-dense" style="font-size: 1rem; text-align: center;"><strong>kg/m³</strong> (también g/cm³)</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pressure-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure-light);">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Agua (4°C, 1 atm)</h4>
+                                </div>
+                                <p class="compact-content-dense"><span class="highlight-number">1.000 kg/m³</span></p>
+                            </div>
                         </div>
                         
                         <div class="compact-tip compact-box">
                             <div class="compact-box-icon" style="background: var(--color-flow);">
-                                <i class="fas fa-lightbulb"></i>
+                                <i class="fas fa-fire-extinguisher"></i>
                             </div>
                             <div class="compact-box-content">
-                                <div class="compact-box-title">Valor de referencia para bomberos</div>
-                                <p class="compact-text">Densidad del agua a 4°C: <strong>1.000 kg/m³</strong>. Referencia para calcular densidades relativas.</p>
+                                <div class="compact-box-title">Aplicación bomberil</div>
+                                <p class="compact-text">La densidad del agua es la referencia para calcular densidades relativas de otros materiales. Conocer la densidad de un combustible ayuda a predecir su comportamiento en incendios (flotabilidad, propagación).</p>
                             </div>
                         </div>
-                        
-                        <p class="compact-text"><strong>Unidades:</strong> kg/m³ (SI), g/cm³</p>
                     </div>
 
                     <!-- 1.3 PESO ESPECÍFICO -->
@@ -1438,38 +1569,48 @@
                             </div>
                             <div>
                                 <h3 class="compact-title-text">1.3 PESO ESPECÍFICO (γ)</h3>
-                                <p class="compact-subtitle">Relación entre peso y volumen</p>
+                                <p class="compact-subtitle">Relación entre el peso de un cuerpo y el volumen que ocupa</p>
                             </div>
                         </div>
                         
-                        <div class="compact-formula">
+                        <div class="equation-container">
+                            <div class="equation-label">Peso específico:</div>
                             \[ \gamma = \frac{P}{V} = \rho \cdot g \]
+                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                γ: Peso específico | P: Peso | V: Volumen | ρ: Densidad | g: Gravedad (9.81 m/s²)
+                            </div>
                         </div>
                         
-                        <div class="compact-grid-dense">
-                            <div class="compact-card-dense" style="border-top-color: var(--color-energy);">
-                                <div class="compact-card-header-dense">
+                        <div class="comparison-grid">
+                            <div class="comparison-card" style="border-top-color: var(--color-energy);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
                                     <div class="compact-icon-tiny" style="background: var(--color-energy);">
                                         <i class="fas fa-tachometer-alt"></i>
                                     </div>
-                                    <h4 class="compact-title-dense">Agua</h4>
+                                    <h4 style="margin: 0; color: #333;">Agua</h4>
                                 </div>
-                                <p class="compact-content-dense">9.810 N/m³ ≈ <strong>1.000 kgf/m³</strong></p>
+                                <div style="text-align: center;">
+                                    <div class="highlight-number" style="font-size: 1.8rem;">9.810 N/m³</div>
+                                    <div style="margin-top: 0.5rem;">≈ <span class="highlight-number">1.000 kgf/m³</span></div>
+                                </div>
                             </div>
                             
-                            <div class="compact-card-dense" style="border-top-color: var(--color-energy-light);">
-                                <div class="compact-card-header-dense">
+                            <div class="comparison-card" style="border-top-color: var(--color-energy-light);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
                                     <div class="compact-icon-tiny" style="background: var(--color-energy-light);">
                                         <i class="fas fa-ruler-combined"></i>
                                     </div>
-                                    <h4 class="compact-title-dense">Unidades</h4>
+                                    <h4 style="margin: 0; color: #333;">Unidades</h4>
                                 </div>
-                                <p class="compact-content-dense">N/m³ (SI)</p>
+                                <div style="text-align: center; padding: 0.5rem;">
+                                    <div><strong>Sistema Internacional:</strong> N/m³</div>
+                                    <div style="margin-top: 0.5rem;"><strong>Técnico:</strong> kgf/m³</div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 1.4 DENSIDAD RELATIVA -->
+                    <!-- 1.4 DENSIDAD RELATIVA Y PESO ESPECÍFICO RELATIVO -->
                     <div class="compact-section">
                         <div class="compact-title-row">
                             <div class="compact-icon-small" style="background: var(--color-flow);">
@@ -1477,53 +1618,78 @@
                             </div>
                             <div>
                                 <h3 class="compact-title-text">1.4 DENSIDAD RELATIVA Y PESO ESPECÍFICO RELATIVO</h3>
-                                <p class="compact-subtitle">Valores adimensionales comparados con agua</p>
+                                <p class="compact-subtitle">Valores adimensionales comparados con el agua a 4°C y 1 atmósfera</p>
                             </div>
                         </div>
                         
-                        <div class="compact-formula">
+                        <div class="equation-container">
+                            <div class="equation-label">Fórmulas de referencia:</div>
                             \[ \rho_{\text{rel}} = \frac{\rho_{\text{abs}}}{\rho_{\text{agua}}} \quad \gamma_{\text{rel}} = \frac{\gamma_{\text{abs}}}{\gamma_{\text{agua}}} \]
+                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                ρ<sub>agua</sub> = 1.000 kg/m³ | γ<sub>agua</sub> = 9.810 N/m³
+                            </div>
                         </div>
                         
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-water);">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Sustancia patrón</div>
+                                <p class="compact-text">Como sustancia patrón se emplea el <strong>agua a 4°C y 1 atmósfera</strong>. Los valores relativos son adimensionales (sin unidades) y permiten comparar fácilmente diferentes materiales.</p>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid var(--color-flow); padding-left: 1rem;">
+                            📊 Tabla de densidades relativas
+                        </h4>
+                        
                         <div class="compact-table-container">
-                            <table class="compact-table">
+                            <table class="property-table">
                                 <thead>
                                     <tr>
                                         <th>Sustancia</th>
                                         <th>Densidad relativa</th>
-                                        <th>Implicación práctica</th>
+                                        <th>Comportamiento en agua</th>
+                                        <th>Aplicación práctica</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td><strong>Mercurio</strong></td>
                                         <td><span style="color: var(--color-pressure); font-weight: 800;">13,6</span></td>
-                                        <td>Muy pesado, manómetros</td>
+                                        <td>Se hunde rápidamente</td>
+                                        <td>Manómetros, termómetros</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Hierro</strong></td>
                                         <td>7,8</td>
-                                        <td>Material estructural</td>
+                                        <td>Se hunde</td>
+                                        <td>Estructuras, herramientas</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Grava</strong></td>
                                         <td>2,2</td>
-                                        <td>Áridos construcción</td>
+                                        <td>Se hunde</td>
+                                        <td>Áridos para construcción</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Hielo</strong></td>
+                                        <td>0,85</td>
+                                        <td>Flota (10-15% visible)</td>
+                                        <td>Fenómenos de congelación</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Aceite</strong></td>
                                         <td>0,8</td>
-                                        <td>Flota sobre agua</td>
+                                        <td>Flota (forma capa superficial)</td>
+                                        <td>Combustibles, lubricantes</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Madera (pino)</strong></td>
                                         <td>0,5</td>
                                         <td>Flota fácilmente</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Hielo</strong></td>
-                                        <td>0,85</td>
-                                        <td>Flota en agua líquida</td>
+                                        <td>Material de construcción</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1538,7 +1704,7 @@
                             </div>
                             <div>
                                 <h3 class="compact-title-text">1.5 VISCOSIDAD (μ)</h3>
-                                <p class="compact-subtitle">Oposición a deformaciones tangenciales</p>
+                                <p class="compact-subtitle">Propiedad que caracteriza la oposición a las deformaciones tangenciales</p>
                             </div>
                         </div>
                         
@@ -1547,40 +1713,53 @@
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
                             <div class="compact-box-content">
-                                <div class="compact-box-title">Concepto clave</div>
-                                <p class="compact-text">Solo se manifiesta en <strong>líquidos en movimiento</strong>. Fluido ideal: μ = 0 (simplificación).</p>
+                                <div class="compact-box-title">Concepto fundamental</div>
+                                <p class="compact-text">La <strong>viscosidad</strong> solo se manifiesta en <strong>líquidos en movimiento</strong>. Se define como la relación entre el esfuerzo cortante y el gradiente de velocidad. Un fluido ideal tiene viscosidad nula (μ = 0).</p>
                             </div>
                         </div>
                         
-                        <div class="compact-grid-dense">
-                            <div class="compact-card-dense" style="border-top-color: var(--color-pump);">
-                                <div class="compact-card-header-dense">
+                        <div class="comparison-grid">
+                            <div class="comparison-card" style="border-top-color: var(--color-pump);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
                                     <div class="compact-icon-tiny" style="background: var(--color-pump);">
                                         <i class="fas fa-layer-group"></i>
                                     </div>
-                                    <h4 class="compact-title-dense">Capa límite</h4>
+                                    <h4 style="margin: 0; color: #333;">Capa límite (Goldstein, 1939)</h4>
                                 </div>
-                                <p class="compact-content-dense">Fluido en contacto con superficie tiene su misma velocidad</p>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">"Un fluido que está en contacto con una frontera sólida tiene la misma velocidad que la frontera". Esto explica la resistencia que oponen los fluidos a los sólidos que quieren atravesarlos.</p>
                             </div>
                             
-                            <div class="compact-card-dense" style="border-top-color: var(--color-pump-light);">
-                                <div class="compact-card-header-dense">
+                            <div class="comparison-card" style="border-top-color: var(--color-pump-light);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
                                     <div class="compact-icon-tiny" style="background: var(--color-pump-light);">
                                         <i class="fas fa-thermometer-half"></i>
                                     </div>
-                                    <h4 class="compact-title-dense">Temperatura</h4>
+                                    <h4 style="margin: 0; color: #333;">Dependencia de temperatura</h4>
                                 </div>
-                                <p class="compact-content-dense">Líquidos: μ ↓ con T ↑<br>Gases: μ ↑ con T ↑</p>
+                                <div style="text-align: center; padding: 0.5rem;">
+                                    <div><strong>Líquidos:</strong> μ ↓ con T ↑</div>
+                                    <div style="margin-top: 0.8rem;"><strong>Gases:</strong> μ ↑ con T ↑</div>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="compact-tip compact-box" style="margin-top: 1rem;">
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
                             <div class="compact-box-icon" style="background: var(--color-flow);">
                                 <i class="fas fa-fire-extinguisher"></i>
                             </div>
                             <div class="compact-box-content">
-                                <div class="compact-box-title">Aplicación bomberil</div>
-                                <p class="compact-text">Agua a temperatura ambiente tiene baja viscosidad → fácil transporte. Líquidos viscosos (espumas) tienen mayores pérdidas de carga.</p>
+                                <div class="compact-box-title">Aplicación bomberil - Ley de Newton para la viscosidad</div>
+                                <p class="compact-text">La resistencia que opone un fluido a su deformación depende de su viscosidad y de la velocidad de deformación. Ejemplo: es fácil extraer lentamente una cuchara de miel, pero si se tira bruscamente, la resistencia aumenta. En incendios, líquidos viscosos (como espumas concentradas) tienen mayores pérdidas de carga en conducciones.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-water);">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">En la práctica</div>
+                                <p class="compact-text">Para cálculos en bomberos, se considera el agua a temperatura ambiente y las fórmulas de pérdidas de carga no tienen en cuenta cambios de viscosidad. Sin embargo, al usar espumas u otros agentes extintores, la viscosidad sí es relevante.</p>
                             </div>
                         </div>
                     </div>
@@ -1593,7 +1772,7 @@
                             </div>
                             <div>
                                 <h3 class="compact-title-text">1.6 PRESIÓN DE VAPOR</h3>
-                                <p class="compact-subtitle">Presión de equilibrio líquido-vapor a temperatura dada</p>
+                                <p class="compact-subtitle">Presión en la que la fase líquida y el vapor se encuentran en equilibrio dinámico</p>
                             </div>
                         </div>
                         
@@ -1602,37 +1781,135 @@
                                 <i class="fas fa-radiation"></i>
                             </div>
                             <div class="compact-box-content">
-                                <div class="compact-box-title">¡PELIGRO DE CAVITACIÓN!</div>
-                                <p class="compact-text">Si P < P<sub>vapor</sub> → líquido hierve a T ambiente → burbujas destruyen bombas y tuberías.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="compact-data-grid">
-                            <div class="compact-data-item">
-                                <div class="compact-data-value">0°C</div>
-                                <div class="compact-data-label">0,006 kg/cm²</div>
-                            </div>
-                            <div class="compact-data-item">
-                                <div class="compact-data-value">20°C</div>
-                                <div class="compact-data-label">0,023 kg/cm²</div>
-                            </div>
-                            <div class="compact-data-item">
-                                <div class="compact-data-value">50°C</div>
-                                <div class="compact-data-label">0,125 kg/cm²</div>
-                            </div>
-                            <div class="compact-data-item">
-                                <div class="compact-data-value">100°C</div>
-                                <div class="compact-data-label">1,033 kg/cm²</div>
+                                <div class="compact-box-title">¡PELIGRO DE CAVITACIÓN EN BOMBAS!</div>
+                                <p class="compact-text">Si la presión en un punto del sistema es <strong>inferior a la presión de vapor</strong>, el líquido comienza a vaporizarse (hierve a temperatura ambiente). Esto genera burbujas que, al implosionar, destruyen bombas y tuberías.</p>
                             </div>
                         </div>
                         
                         <div class="compact-info compact-box">
                             <div class="compact-box-icon" style="background: var(--color-water);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Equilibrio dinámico</div>
+                                <p class="compact-text">Cuando existe equilibrio, a las fases se las denomina <strong>líquido saturado</strong> y <strong>vapor saturado</strong>. La presión de vapor tiene una relación inversamente proporcional con las fuerzas de atracción molecular.</p>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid var(--color-pressure); padding-left: 1rem;">
+                            📈 Presión de vapor del agua (Tabla completa)
+                        </h4>
+                        
+                        <div class="compact-table-container">
+                            <table class="property-table">
+                                <thead>
+                                    <tr>
+                                        <th>Temperatura (°C)</th>
+                                        <th>Presión de vapor (kg/cm²)</th>
+                                        <th>Notas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="highlight-number">0</span></td>
+                                        <td><span class="highlight-number">0,006</span></td>
+                                        <td>Punto de congelación</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">10</span></td>
+                                        <td>0,012</td>
+                                        <td>Agua fría</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">15</span></td>
+                                        <td>0,0173</td>
+                                        <td>Referencia estándar</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">20</span></td>
+                                        <td><span class="highlight-number">0,023</span></td>
+                                        <td>Temperatura ambiente</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">30</span></td>
+                                        <td>0,043</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">40</span></td>
+                                        <td>0,075</td>
+                                        <td>Agua caliente</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">50</span></td>
+                                        <td>0,125</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">60</span></td>
+                                        <td>0,203</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">70</span></td>
+                                        <td>0,317</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">80</span></td>
+                                        <td>0,482</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">90</span></td>
+                                        <td>0,714</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">100</span></td>
+                                        <td><span class="highlight-number">1,033</span></td>
+                                        <td>Punto de ebullición a nivel del mar</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-flow);">
                                 <i class="fas fa-mountain"></i>
                             </div>
                             <div class="compact-box-content">
-                                <div class="compact-box-title">Punto de ebullición</div>
-                                <p class="compact-text">Líquido hierve cuando P<sub>vapor</sub> = P<sub>externa</sub>. Agua hierve a menor T en montaña (P<sub>atm</sub> ↓).</p>
+                                <div class="compact-box-title">Punto de ebullición y altitud</div>
+                                <p class="compact-text">Un líquido hierve cuando su presión de vapor es igual a la presión exterior. Por lo tanto, el punto de ebullición normal es la temperatura a la cual la presión de vapor es igual a la presión atmosférica. <strong>En montañas (menor presión atmosférica), el agua hierve a menor temperatura.</strong></p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-data-grid">
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">15°C</div>
+                                <div class="compact-data-label">0,0173 kgf/cm²</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">20°C</div>
+                                <div class="compact-data-label">0,023 kgf/cm²</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">100°C</div>
+                                <div class="compact-data-label">1,033 kgf/cm²</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">Aire 20°C</div>
+                                <div class="compact-data-label">23 mbar vapor agua</div>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-water);">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Dato curioso</div>
+                                <p class="compact-text">El aire al nivel del mar saturado con vapor de agua a 20°C tiene: <strong>23 mbar</strong> de agua, <strong>780 mbar</strong> de nitrógeno, <strong>210 mbar</strong> de oxígeno y <strong>9 mbar</strong> de argón.</p>
                             </div>
                         </div>
                     </div>
@@ -1645,87 +1922,153 @@
                             </div>
                             <div>
                                 <h3 class="compact-title-text">1.7 TENSIÓN SUPERFICIAL</h3>
-                                <p class="compact-subtitle">Energía para aumentar superficie líquida</p>
+                                <p class="compact-subtitle">Cantidad de energía necesaria para aumentar la superficie de un líquido por unidad de área</p>
                             </div>
                         </div>
                         
-                        <p class="compact-text">Manifestación de fuerzas intermoleculares. Agua tiene alta tensión por puentes de hidrógeno.</p>
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-water);">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Origen molecular</div>
+                                <p class="compact-text">En el interior del líquido, las moléculas experimentan fuerzas de atracción cuya resultante es nula. En la superficie libre (contacto con aire), las fuerzas aire-líquido son menores que las líquido-líquido, resultando en una fuerza neta dirigida hacia el interior. Esto crea una "piel" en la superficie.</p>
+                            </div>
+                        </div>
                         
-                        <ul class="compact-list">
-                            <li><strong>Gotas esféricas:</strong> Minimizan superficie/volumen</li>
-                            <li><strong>Capilaridad:</strong> Elevación en tubos estrechos</li>
-                            <li><strong>Insectos caminan sobre agua:</strong> Tensión soporta peso</li>
-                        </ul>
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-flow);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-flow);">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Gotas esféricas</h4>
+                                </div>
+                                <p class="compact-content-dense">La gota (esfera) es la forma que ofrece menos superficie libre para un mismo volumen (minimiza energía)</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-flow-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-flow-light);">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Capilaridad</h4>
+                                </div>
+                                <p class="compact-content-dense">Elevación o depresión del líquido en tubos estrechos debido a tensión superficial y adhesión</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-flow-dark);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-flow-dark);">
+                                        <i class="fas fa-bug"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Insectos acuáticos</h4>
+                                </div>
+                                <p class="compact-content-dense">Pueden caminar sobre agua porque la tensión superficial soporta su peso</p>
+                            </div>
+                        </div>
                         
-                        <div class="compact-tip compact-box">
+                        <div class="compact-tip compact-box" style="margin-top: 1rem;">
                             <div class="compact-box-icon" style="background: var(--color-flow);">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
                             <div class="compact-box-content">
-                                <div class="compact-box-title">Agentes tensoactivos</div>
-                                <p class="compact-text">Detergentes y espumas <strong>reducen</strong> tensión superficial → mejor mojado en incendios.</p>
+                                <div class="compact-box-title">Agentes tensoactivos en incendios</div>
+                                <p class="compact-text">Detergentes, espumas y otros aditivos <strong>reducen</strong> la tensión superficial del agua. Esto mejora el mojado de materiales, aumenta la penetración en combustibles sólidos y favorece la formación de espuma estable para sofocación.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-water);">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Agua: tensión superficial alta</div>
+                                <p class="compact-text">Debido a los <strong>puentes de hidrógeno</strong>, el agua tiene una tensión superficial relativamente alta (72,8 mN/m a 20°C). Esto explica por qué forma gotas bien definidas y por qué algunos insectos pueden desplazarse sobre su superficie.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- RESUMEN -->
+                    <!-- RESUMEN COMPLETO -->
                     <div class="compact-section">
                         <div class="compact-title-row">
                             <div class="compact-icon-small" style="background: var(--color-pump);">
                                 <i class="fas fa-calculator"></i>
                             </div>
                             <div>
-                                <h3 class="compact-title-text">📊 RESUMEN DE FÓRMULAS</h3>
-                                <p class="compact-subtitle">Propiedades de fluidos - Todo en una tabla</p>
+                                <h3 class="compact-title-text">📊 RESUMEN COMPLETO - PROPIEDADES DE LOS FLUIDOS</h3>
+                                <p class="compact-subtitle">Todas las propiedades en una tabla de consulta rápida</p>
                             </div>
                         </div>
                         
                         <div class="compact-table-container">
-                            <table class="compact-table">
+                            <table class="property-table">
                                 <thead>
                                     <tr>
                                         <th>Propiedad</th>
                                         <th>Símbolo</th>
-                                        <th>Fórmula</th>
+                                        <th>Definición</th>
+                                        <th>Fórmula principal</th>
                                         <th>Unidad SI</th>
-                                        <th>Valor agua</th>
+                                        <th>Valor agua (20°C)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td><strong>Masa</strong></td>
+                                        <td>m</td>
+                                        <td>Cantidad de materia</td>
+                                        <td>-</td>
+                                        <td>kg</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
                                         <td><strong>Densidad</strong></td>
                                         <td>ρ</td>
+                                        <td>Masa por unidad de volumen</td>
                                         <td>ρ = m/V</td>
                                         <td>kg/m³</td>
-                                        <td>1.000</td>
+                                        <td>998 kg/m³</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Peso específico</strong></td>
                                         <td>γ</td>
+                                        <td>Peso por unidad de volumen</td>
                                         <td>γ = ρ·g</td>
                                         <td>N/m³</td>
-                                        <td>9.810</td>
+                                        <td>9.790 N/m³</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Densidad relativa</strong></td>
                                         <td>ρ<sub>rel</sub></td>
-                                        <td>ρ<sub>abs</sub>/ρ<sub>agua</sub></td>
-                                        <td>-</td>
+                                        <td>Relativa al agua</td>
+                                        <td>ρ<sub>rel</sub> = ρ<sub>abs</sub>/ρ<sub>agua</sub></td>
+                                        <td>- (adimensional)</td>
                                         <td>1</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Presión vapor (20°C)</strong></td>
-                                        <td>P<sub>v</sub></td>
-                                        <td>-</td>
-                                        <td>kg/cm²</td>
-                                        <td>0,023</td>
+                                        <td><strong>Viscosidad dinámica</strong></td>
+                                        <td>μ</td>
+                                        <td>Oposición a deformaciones</td>
+                                        <td>τ = μ·(dv/dy)</td>
+                                        <td>Pa·s</td>
+                                        <td>0,001 Pa·s</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Viscosidad agua (20°C)</strong></td>
-                                        <td>μ</td>
+                                        <td><strong>Presión de vapor</strong></td>
+                                        <td>P<sub>v</sub></td>
+                                        <td>Presión equilibrio líquido-vapor</td>
                                         <td>-</td>
-                                        <td>Pa·s</td>
-                                        <td>0,001</td>
+                                        <td>Pa, kg/cm²</td>
+                                        <td>2,34 kPa</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Tensión superficial</strong></td>
+                                        <td>σ</td>
+                                        <td>Energía por aumentar superficie</td>
+                                        <td>-</td>
+                                        <td>N/m</td>
+                                        <td>0,0728 N/m</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1736,8 +2079,30 @@
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
                             <div class="compact-box-content">
-                                <div class="compact-box-title">Conocimiento aplicado = Intervención segura</div>
-                                <p class="compact-text">Comprender estas propiedades permite predecir comportamiento del agua, evitar cavitación en bombas, y seleccionar agentes extintores efectivos.</p>
+                                <div class="compact-box-title">Conocimiento aplicado = Intervención segura y eficaz</div>
+                                <p class="compact-text">Comprender estas propiedades permite: predecir el comportamiento del agua en distintas condiciones, evitar cavitación en bombas, seleccionar agentes extintores efectivos, calcular fuerzas en estructuras sumergidas, y optimizar el diseño de instalaciones hidráulicas. Cada propiedad tiene implicaciones directas en la seguridad y eficacia de las intervenciones bomberiles.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #E3F2FD, #F3E5F5); border-radius: 12px; border: 2px solid var(--color-water);">
+                            <h4 style="color: #1565C0; margin-bottom: 1rem;">🧠 DATOS CLAVE PARA BOMBEROS</h4>
+                            <div class="compact-data-grid">
+                                <div class="compact-data-item">
+                                    <div class="compact-data-value" style="color: var(--color-pressure);">1.000 kg/m³</div>
+                                    <div class="compact-data-label">Densidad agua (referencia)</div>
+                                </div>
+                                <div class="compact-data-item">
+                                    <div class="compact-data-value" style="color: var(--color-pressure);">0,023 kg/cm²</div>
+                                    <div class="compact-data-label">P. vapor agua (20°C)</div>
+                                </div>
+                                <div class="compact-data-item">
+                                    <div class="compact-data-value" style="color: var(--color-pressure);">13,6</div>
+                                    <div class="compact-data-label">Densidad relativa mercurio</div>
+                                </div>
+                                <div class="compact-data-item">
+                                    <div class="compact-data-value" style="color: var(--color-pressure);">0,8</div>
+                                    <div class="compact-data-label">Densidad relativa aceite</div>
+                                </div>
                             </div>
                         </div>
                     </div>
