@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hidráulica para Bomberos - Guía Visual Completa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
@@ -3132,8 +3133,8 @@
                 </div>
             </section>
             
-            <!-- SECCIÓN 4: BOMBAS CENTRÍFUGAS -->
-            <div class="horizontal-card" id="bombas">
+            <!-- SECCIÓN 4: BOMBAS CENTRÍFUGAS - Versión COMPLETA -->
+            <section class="horizontal-card" id="bombas">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-cogs"></i>
                 </div>
@@ -3148,171 +3149,197 @@
                             <div class="card-subtitle-top">Curvas características, aspiración, cebado, cavitación y acoplamientos</div>
                             <div>
                                 <span class="category-tag tag-pump">Curvas</span>
+                                <span class="category-tag tag-pressure">Aspiración</span>
+                                <span class="category-tag tag-flow">Cebado</span>
                                 <span class="category-tag tag-pressure">Cavitación</span>
-                                <span class="category-tag tag-flow">Acoplamiento</span>
+                                <span class="category-tag tag-energy">Acoplamiento</span>
                             </div>
                         </div>
                     </div>
-                    <div class="topic-number-badge">Sección 4</div>
+                    <div class="topic-number-badge">SECCIÓN 4</div>
                 </div>
                 
                 <div class="card-content">
-                    <!-- 4.1. CURVA CARACTERÍSTICA -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-pump);">
-                                <i class="fas fa-chart-line"></i>
+                    <!-- Introducción a Bombas Centrífugas -->
+                    <div class="compact-section">
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-pump);">
+                                <i class="fas fa-info-circle"></i>
                             </div>
-                            <h3>4.1. CURVA CARACTERÍSTICA</h3>
-                        </div>
-                        <p>Representación de las particularidades de una bomba centrífuga.</p>
-                        
-                        <div class="visual-diagram">
-                            <div class="diagram-title">📈 Variables representadas</div>
-                            <div class="diagram-grid">
-                                <div class="diagram-item">
-                                    <div class="diagram-icon">
-                                        <i class="fas fa-tachometer-alt"></i>
-                                    </div>
-                                    <div><strong>Variable independiente:</strong><br>Caudal (Q)</div>
-                                </div>
-                                <div class="diagram-item">
-                                    <div class="diagram-icon">
-                                        <i class="fas fa-mountain"></i>
-                                    </div>
-                                    <div><strong>Variable dependiente 1:</strong><br>Altura manométrica (Hm)</div>
-                                </div>
-                                <div class="diagram-item">
-                                    <div class="diagram-icon">
-                                        <i class="fas fa-bolt"></i>
-                                    </div>
-                                    <div><strong>Variable dependiente 2:</strong><br>Potencia consumida</div>
-                                </div>
-                                <div class="diagram-item">
-                                    <div class="diagram-icon">
-                                        <i class="fas fa-percentage"></i>
-                                    </div>
-                                    <div><strong>Variable dependiente 3:</strong><br>Rendimiento (η)</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="law-box">
-                            <div class="law-title">🎯 Punto óptimo de funcionamiento</div>
-                            <p>Punto donde el rendimiento energético (η) es máximo. Aquí se definen los valores nominales de la bomba.</p>
-                            
-                            <div class="compact-grid">
-                                <div class="compact-card" style="border-top-color: var(--color-pump);">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: var(--color-pump);">
-                                            <i class="fas fa-info-circle"></i>
-                                        </div>
-                                        <div class="compact-title">Altura manométrica (Hm)</div>
-                                    </div>
-                                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Incremento de energía entre entrada y salida, expresado en presión.</p>
-                                </div>
-                                
-                                <div class="compact-card" style="border-top-color: var(--color-energy);">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: var(--color-energy);">
-                                            <i class="fas fa-bolt"></i>
-                                        </div>
-                                        <div class="compact-title">Potencia útil (Wout)</div>
-                                    </div>
-                                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Potencia transferida al fluido.</p>
-                                </div>
-                                
-                                <div class="compact-card" style="border-top-color: var(--color-flow);">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: var(--color-flow);">
-                                            <i class="fas fa-percentage"></i>
-                                        </div>
-                                        <div class="compact-title">Rendimiento (η)</div>
-                                    </div>
-                                    <div class="formula" style="margin: 0.5rem 0; font-size: 0.9rem;">
-                                        \[ \eta = \frac{W_{\text{out}}}{W_{\text{in}}} \]
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: var(--color-pump);">
-                                <i class="fas fa-cogs"></i>
-                            </div>
-                            <div>
-                                <strong>Bombas de bomberos:</strong> Tienen mando de aceleración para regular revoluciones (<span class="highlight-number">hasta 5000 rpm</span>), permitiendo regular ampliamente presión y caudal.
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">¿Qué es una bomba centrífuga?</div>
+                                <p class="compact-text">Una <strong>bomba centrífuga</strong> transforma la energía mecánica que procede del motor de accionamiento en energía hidráulica. El resultado práctico es el aumento de la energía del fluido entre el punto de entrada (boca de tubería de aspiración) y el punto de salida (boca de tubería de impulsión), lo que permite disponer en punta de lanza de un chorro de caudal Q con una velocidad de salida V que fijará el alcance del chorro.</p>
                             </div>
                         </div>
                     </div>
-                    
+
+                    <!-- 4.1. CURVA CARACTERÍSTICA DE UNA BOMBA -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-pump);">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">4.1. CURVA CARACTERÍSTICA DE UNA BOMBA</h3>
+                                <p class="compact-subtitle">Representación gráfica de las particularidades de una bomba centrífuga</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-text">
+                            <p>Las particularidades de una bomba centrífuga se representan mediante las denominadas <strong>curvas características</strong>. En ellas se muestra el campo de trabajo y las principales particularidades de la bomba.</p>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card columnas" style="border-top-color: var(--color-pump);">
+                                <div class="colbox centrado">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                        <div class="compact-icon-tiny" style="background: var(--color-pump);">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                        </div>
+                                        <h4 style="margin: 0; color: #333;">Variable independiente</h4>
+                                    </div>
+                                    <div style="text-align: center; padding: 0.5rem; margin: auto;">
+                                        <div class="highlight-number" style="font-size: 1.6rem;">Caudal (Q)</div>
+                                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Representado en el eje de abscisas (X)</p>
+                                    </div>
+                                </div>
+
+                                <div class="colbox centrado">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                        <div class="compact-icon-tiny" style="background: var(--color-pump-light);">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <h4 style="margin: 0; color: #333;">Variables dependientes</h4>
+                                    </div>
+                                    <ul class="compact-list" style="margin: auto;">
+                                        <li><strong>Altura manométrica (Hm)</strong></li>
+                                        <li><strong>Potencia consumida (W)</strong></li>
+                                        <li><strong>Rendimiento (η)</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1 1 100px; display: flex;">
+                                <img src="image hidráulica/CCaracter.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>
+                        </div>
+                        
+                        <div class="law-box" style="margin-top: 1.5rem;">
+                            <div class="law-title">🎯 Punto óptimo de funcionamiento</div>
+                            <p>Aquel donde el <strong>rendimiento energético (η) es más elevado</strong>. Es en este punto óptimo donde se definen los valores nominales de la bomba (caudal nominal y presión nominal), indicados en la denominación de las características de la bomba.</p>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-pump);">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Obtención experimental de curvas</div>
+                                <p class="compact-text">El fabricante obtiene estas curvas mediante un estudio experimental. Para ello se coloca una válvula a la salida de la bomba y con ella se regula el caudal de paso. De esta forma se simula el incremento progresivo de la pérdida de carga aguas arriba hasta alcanzar la capacidad máxima de la bomba (caudal nulo). Para cada posición de la válvula se obtienen los valores de caudal, presión y potencia consumida y se trazan, punto a punto, las curvas características de la bomba.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid" style="margin-top: 1.5rem;">
+                            <div class="comparison-card" style="border-top-color: var(--color-pump);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pump);">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Altura manométrica (Hm)</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">
+                                    <strong>Incremento de energía</strong> entre entrada y salida, expresado en presión. Su valor es máximo para caudal nulo (válvulas cerradas) y disminuye cuando el caudal aumenta.
+                                </p>
+                                <div class="equation-container" style="margin: 0.8rem 0; padding: 0.8rem; font-size: 0.9rem;">
+                                    \[ Hm = \frac{P_{\text{salida}} - P_{\text{entrada}}}{\rho \cdot g} \]
+                                </div>
+                            </div>
+                            
+                            <div class="comparison-card centrado" style="border-top-color: var(--color-energy);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-energy);">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Potencia útil (W<sub>out</sub>)</h4>
+                                </div>
+                                <div class="tcentrado">
+                                <p style="font-size: 0.95rem; line-height: 1.5;">
+                                    <strong>Potencia transferida al fluido</strong>. Es la potencia hidráulica que la bomba comunica al agua.
+                                </p>
+                                <div class="equation-container" style="margin: 0.8rem 0; padding: 0.8rem; font-size: 0.9rem;">
+                                    \[ W_{\text{out}} = \rho \cdot g \cdot Q \cdot Hm \]
+                                </div>
+                                </div>
+                            </div>
+                            
+                            <div class="comparison-card centrado" style="border-top-color: var(--color-flow);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-flow);">
+                                        <i class="fas fa-percentage"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Rendimiento (η)</h4>
+                                </div>
+                                <div class="tcentrado">
+                                <p style="font-size: 0.95rem; line-height: 1.5;">
+                                    <strong>Eficiencia energética</strong> de la bomba. Relación entre potencia útil y potencia consumida.
+                                </p>
+                                <div class="equation-container" style="margin: 0.8rem 0; padding: 0.8rem; font-size: 0.9rem;">
+                                    \[ \eta = \frac{W_{\text{out}}}{W_{\text{in}}} \times 100\% \]
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-pump);">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Bombas de bomberos: regulación de revoluciones</div>
+                                <p class="compact-text">A diferencia de muchas bombas centrífugas convencionales (régimen de revoluciones fijo), las bombas centrífugas de bomberos disponen de un <strong>mando de aceleración</strong> que permite regular el número de revoluciones del motor (hasta 5000 rpm). Esto permite regular ampliamente presión y caudal (punto de funcionamiento). En estas bombas, en lugar de tres curvas características se obtienen tres familias distintas de curvas que se desplazan según las rpm.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-data-grid" style="margin-top: 1rem;">
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: var(--color-pump);">Hm ↓ con Q ↑</div>
+                                <div class="compact-data-label">Relación inversa</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: var(--color-pump);">Q = 0</div>
+                                <div class="compact-data-label">Hm máxima</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: var(--color-pump);">η máximo</div>
+                                <div class="compact-data-label">Punto óptimo</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: var(--color-pump);">≤ 5000 rpm</div>
+                                <div class="compact-data-label">Límite bombas bomberos</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- 4.2. ASPIRACIÓN EN BOMBAS -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-water);">
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-water);">
                                 <i class="fas fa-arrow-up"></i>
                             </div>
-                            <h3>4.2. ASPIRACIÓN EN BOMBAS</h3>
-                        </div>
-                        <p>El líquido asciende por empuje de la presión atmosférica exterior, no por la aspiración.</p>
-                        
-                        <div class="visual-table">
-                            <thead>
-                                <tr>
-                                    <th>Altitud (m)</th>
-                                    <th>Presión atmosférica (m.c.a.)</th>
-                                    <th>Pérdida vs nivel mar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><span class="highlight-number">0</span></td>
-                                    <td><span class="highlight-number">10.33</span></td>
-                                    <td>0%</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">500</span></td>
-                                    <td><span class="highlight-number">9.58</span></td>
-                                    <td>7.3%</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">1000</span></td>
-                                    <td><span class="highlight-number">9.11</span></td>
-                                    <td>11.8%</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">2000</span></td>
-                                    <td><span class="highlight-number">8.04</span></td>
-                                    <td>22.2%</td>
-                                </tr>
-                            </tbody>
+                            <div>
+                                <h3 class="compact-title-text">4.2. ASPIRACIÓN EN BOMBAS</h3>
+                                <p class="compact-subtitle">Límites y factores que afectan a la altura de aspiración</p>
+                            </div>
                         </div>
                         
-                        <div class="visual-table" style="margin-top: 1.5rem;">
-                            <thead>
-                                <tr>
-                                    <th>Temperatura (°C)</th>
-                                    <th>Pérdida de aspiración (m.c.a.)</th>
-                                    <th>Notas</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><span class="highlight-number">10</span></td>
-                                    <td><span class="highlight-number">0.125</span></td>
-                                    <td>Agua fría</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">20</span></td>
-                                    <td><span class="highlight-number">0.236</span></td>
-                                    <td>Temperatura ambiente</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">40</span></td>
-                                    <td><span class="highlight-number">0.745</span></td>
-                                    <td>Agua caliente</td>
-                                </tr>
-                            </tbody>
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-water);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Concepto fundamental</div>
+                                <p class="compact-text">Al aspirar por una conducción, el líquido asciende por ella y la intuición hace pensar que para aumentar la altura basta con aspirar más fuerte. Sin embargo dicha altura tiene un límite. La razón es que la columna no asciende realmente por la aspiración realizada, sino por el <strong>empuje de la presión atmosférica exterior</strong>. Es por lo tanto dicha presión la que determina la altura alcanzable.</p>
+                            </div>
                         </div>
                         
                         <div class="danger-box">
@@ -3320,208 +3347,447 @@
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
                             <div>
-                                <strong>Altura máxima teórica: <span class="highlight-number">10.33 m</span></strong>
+                                <strong>Altura máxima teórica de aspiración: <span class="highlight-number">10,33 metros</span></strong>
                                 <div style="margin-top: 0.5rem;">
                                     <strong>Imposible alcanzar por:</strong>
                                     <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                                        <li>Presión atmosférica < 1 atm</li>
-                                        <li>Presión de vapor del agua</li>
-                                        <li>Vacío no perfecto en manguerotes</li>
-                                        <li>Pérdidas de carga</li>
+                                        <li>Presión atmosférica < 1 atmósfera (condiciones climatológicas y altitud)</li>
+                                        <li>Presión de vapor del agua (mayor temperatura → menor altura aspiración)</li>
+                                        <li>Vacío logrado no es perfecto (presión residual en manguerotes)</li>
+                                        <li>Pérdidas de carga en manguerotes y alcachofa</li>
                                     </ul>
                                 </div>
                                 <div style="margin-top: 0.5rem; font-weight: 700;">
-                                    Altura práctica: <span class="highlight-number">7-8 m</span>
+                                    Altura práctica: <span class="highlight-number">7-8 metros</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        
+                        <div class="columnas">
+                            <div class="colbox">
+                                <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid var(--color-water); padding-left: 1rem;">
+                                    📊 Influencia de la altitud en la presión atmosférica
+                                </h4>
+                                <div style="flex: 1 1 100px; display: flex;">
+                                    <img src="image hidráulica/Patmos.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>
+                            </div>
+                            
+                            <div class="colbox centrado">
+                                <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid var(--color-water); padding-left: 1rem;">
+                                    📈 Influencia de la temperatura en la altura de aspiración
+                                </h4>
+                                <div style="flex: 1 1 100px; display: flex;">
+                                    <img src="image hidráulica/PAsp.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>
+                            </div>
+                        </div>
                     
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-water);">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Recomendaciones prácticas para intervenciones</div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li>En <strong>zonas de montaña</strong> (altitud > 1000 m), la altura práctica de aspiración puede reducirse a <strong>5-6 metros</strong></li>
+                                    <li>Con <strong>agua caliente</strong> (incendios industriales), la altura de aspiración se reduce significativamente</li>
+                                    <li>Usar <strong>manguerotes de mayor diámetro</strong> para reducir pérdidas de carga</li>
+                                    <li>Mantener <strong>estanqueidad perfecta</strong> en conexiones para evitar entrada de aire</li>
+                                    <li>Colocar la bomba lo más cerca posible del punto de toma de agua</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- 4.3. CEBADO DE BOMBA -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #FF9800;">
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: #FF9800;">
                                 <i class="fas fa-play-circle"></i>
                             </div>
-                            <h3>4.3. CEBADO DE BOMBA</h3>
-                        </div>
-                        <p>Operación esencial para inundar la bomba antes de su puesta en marcha.</p>
-                        
-                        <div class="principle-box">
-                            <div class="principle-title">🔄 Dispositivos de cebado</div>
-                            <div class="compact-grid">
-                                <div class="compact-card" style="border-top-color: #FF9800;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #FF9800;">
-                                            <i class="fas fa-wind"></i>
-                                        </div>
-                                        <div class="compact-title">Eyector de gases</div>
-                                    </div>
-                                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Usa efecto Venturi de gases de escape</p>
-                                </div>
-                                
-                                <div class="compact-card" style="border-top-color: #2196F3;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #2196F3;">
-                                            <i class="fas fa-vacuum"></i>
-                                        </div>
-                                        <div class="compact-title">Depresor de vacío</div>
-                                    </div>
-                                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Bomba de vacío eléctrica</p>
-                                </div>
-                                
-                                <div class="compact-card" style="border-top-color: #4CAF50;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #4CAF50;">
-                                            <i class="fas fa-recycle"></i>
-                                        </div>
-                                        <div class="compact-title">Anillo de agua</div>
-                                    </div>
-                                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Bomba volumétrica</p>
-                                </div>
-                                
-                                <div class="compact-card" style="border-top-color: #9C27B0;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #9C27B0;">
-                                            <i class="fas fa-tint"></i>
-                                        </div>
-                                        <div class="compact-title">Autocebantes</div>
-                                    </div>
-                                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Depósito específico de agua</p>
-                                </div>
+                            <div>
+                                <h3 class="compact-title-text">4.3. CEBADO DE BOMBA</h3>
+                                <p class="compact-subtitle">Operación esencial para inundar la bomba antes de su puesta en marcha</p>
                             </div>
                         </div>
                         
-                        <div class="warning-box">
-                            <div class="box-icon" style="background: #FF9800;">
+                        <div class="compact-warning compact-box">
+                            <div class="compact-box-icon" style="background: #FF9800;">
                                 <i class="fas fa-exclamation-circle"></i>
                             </div>
-                            <div>
-                                <strong>¡Atención!</strong> Sin cebado, la bomba no funciona y puede sufrir averías al girar en vacío (sin lubricación/refrigeración).
-                                <div style="margin-top: 0.5rem;">
-                                    <strong>Cebado completado:</strong> Cuando agua entra en contacto con el rodete.
-                                </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">¡Atención! Operación crítica</div>
+                                <p class="compact-text">Una bomba centrífuga proporciona una presión considerable en la tubería de impulsión, pero <strong>apenas es capaz de producir succión</strong> en la tubería de aspiración. Por ello es necesario que el líquido a bombear llegue previamente hasta la entrada y, además, inundar la bomba para que empiece a trabajar. Sin cebado, la bomba no funciona y puede sufrir averías al girar en vacío (sin lubricación/refrigeración del rodete).</p>
                             </div>
                         </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: #FF9800;">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Cebado completado</div>
+                                <p class="compact-text">El cebado se considera realizado una vez entran en contacto el agua y el rodete. Después el propio rodete se encarga de crear un vacío a su entrada (al desplazar el líquido contenido) y de atraer más agua. En ese momento el sistema de cebado debe ser desconectado.</p>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid #FF9800; padding-left: 1rem;">
+                            🔧 Dispositivos de cebado más comunes
+                        </h4>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: #FF9800;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #FF9800;">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Eyector de gases</h4>
+                                </div>
+                                <p class="compact-content-dense">Usa efecto Venturi de gases de escape del motor del vehículo. Simple y fiable.</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #2196F3;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #2196F3;">
+                                        <i class="fas fa-compress"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Depresor de vacío</h4>
+                                </div>
+                                <p class="compact-content-dense">Bomba de vacío específica accionada normalmente por motor eléctrico.</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #4CAF50;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #4CAF50;">
+                                        <i class="fas fa-recycle"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Anillo de agua</h4>
+                                </div>
+                                <p class="compact-content-dense">Bomba volumétrica que crea vacío mediante un anillo líquido.</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #9C27B0;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #9C27B0;">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Bombas autocebantes</h4>
+                                </div>
+                                <p class="compact-content-dense">Depósito de agua específico para llenar cuerpo de bomba y tubería de aspiración.</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #795548;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #795548;">
+                                        <i class="fas fa-pump"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Bomba de pistones</h4>
+                                </div>
+                                <p class="compact-content-dense">Sistema alternativo menos común pero efectivo.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: #FF9800;">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Excepción: cebado no necesario</div>
+                                <p class="compact-text">El cebado no es necesario cuando el nivel del agua a aspirar se encuentra <strong>por encima de la propia bomba</strong>. En este caso es el propio peso del fluido el que inunda la bomba (aspiración positiva). Esto ocurre cuando se toma agua de un depósito elevado o cuando la bomba está por debajo del nivel del agua.</p>
+                            </div>
+                        </div>
+                        
                     </div>
-                    
+
                     <!-- 4.4. CAVITACIÓN -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-pressure);">
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-pressure);">
                                 <i class="fas fa-cavitation"></i>
                             </div>
-                            <h3>4.4. CAVITACIÓN</h3>
+                            <div>
+                                <h3 class="compact-title-text">4.4. CAVITACIÓN</h3>
+                                <p class="compact-subtitle">Formación y colapso de burbujas de vapor que dañan la bomba</p>
+                            </div>
                         </div>
-                        <p>Formación de vapor de agua por descenso local de presión bajo la presión de saturación, seguida de brusca condensación.</p>
+                        
+                        <div class="law-box">
+                            <div class="law-title">⚠️ Fenómeno destructivo</div>
+                            <p>La <strong>cavitación</strong> consiste en la <strong>formación de vapor de agua</strong> provocado por el descenso local de la presión por debajo de la presión de saturación del líquido a la temperatura del líquido, y la brusca condensación subsiguiente. Supone la ebullición del líquido a temperatura ambiente, provocada por presiones muy bajas.</p>
+                        </div>
                         
                         <div class="procedure-timeline">
                             <div class="timeline-step">
                                 <div class="step-number">1</div>
                                 <div class="step-title">Caída de presión</div>
-                                <div style="font-size: 0.75rem;">Presión < presión de vapor</div>
+                                <div style="font-size: 0.75rem;">Partículas de agua disminuyen presión al aproximarse a la bomba</div>
                             </div>
                             <div class="timeline-step">
                                 <div class="step-number">2</div>
-                                <div class="step-title">Formación burbujas</div>
-                                <div style="font-size: 0.75rem;">Vaporización localizada</div>
+                                <div class="step-title">Vaporización</div>
+                                <div style="font-size: 0.75rem;">Si P < P<sub>vapor</sub> → formación burbujas vapor</div>
                             </div>
                             <div class="timeline-step">
                                 <div class="step-number">3</div>
                                 <div class="step-title">Arrastre</div>
-                                <div style="font-size: 0.75rem;">Burbujas a zonas de mayor presión</div>
+                                <div style="font-size: 0.75rem;">Burbujas arrastradas a zonas de mayor presión</div>
                             </div>
                             <div class="timeline-step">
                                 <div class="step-number">4</div>
                                 <div class="step-title">Implosión</div>
-                                <div style="font-size: 0.75rem;">Condensación brusca → golpes</div>
+                                <div style="font-size: 0.75rem;">Condensación brusca → golpes de alta presión</div>
                             </div>
                         </div>
                         
-                        <div class="danger-box">
-                            <div class="box-icon" style="background: var(--color-pressure);">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div>
-                                <strong>Consecuencias graves:</strong>
-                                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                                    <li>Presiones locales hasta <span class="highlight-number">1000 kg/cm²</span></li>
-                                    <li>Picaduras y corrosión mecánica</li>
-                                    <li>Deterioro de álabes del rodete</li>
-                                    <li>Ruidos y vibraciones ("como grava")</li>
-                                    <li>Degradación de rodamientos</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="tip-box">
-                            <div class="box-icon" style="background: var(--color-flow);">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <div>
-                                <strong>Prevención:</strong>
-                                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                                    <li>Disminuir alturas de aspiración</li>
-                                    <li>Reducir caudales de trabajo</li>
-                                    <li>Aumentar sección de manguerotes</li>
-                                    <li>Altura geométrica máxima: <span class="highlight-number">8-8.5 m</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 4.5. ACOPLAMIENTO DE BOMBAS -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-pump-dark);">
-                                <i class="fas fa-link"></i>
-                            </div>
-                            <h3>4.5. ACOPLAMIENTO DE BOMBAS</h3>
-                        </div>
-                        
-                        <div class="compact-grid">
-                            <div class="compact-card" style="border-top-color: var(--color-water);">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: var(--color-water);">
-                                        <i class="fas fa-arrows-alt-h"></i>
-                                    </div>
-                                    <div class="compact-title">En Paralelo</div>
+                        <div class="columnas">
+                            <div class="danger-box colbox" style="margin-top: 1.5rem;">
+                                <div class="box-icon" style="background: var(--color-pressure);">
+                                    <i class="fas fa-exclamation-triangle"></i>
                                 </div>
-                                <div class="formula" style="margin: 0.5rem 0; font-size: 0.9rem;">
-                                    \[ H_m = H_{m1} = H_{m2} = \dots \]
+                                <div>
+                                    <strong>Consecuencias graves de la cavitación:</strong>
+                                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                        <li>Presiones locales hasta <span class="highlight-number">1000 kg/cm²</span> (10.000 m.c.a.)</li>
+                                        <li>Picaduras y corrosión mecánica de álabes y carcasa</li>
+                                        <li>Deterioro acelerado del rodete (trabaja desequilibrado)</li>
+                                        <li>Degradación de rodamientos y sellos</li>
+                                        <li>Ruidos y vibraciones ("como grava" dentro de la bomba)</li>
+                                        <li>Reducción del rendimiento y caudal</li>
+                                    </ul>
                                 </div>
-                                <div class="formula" style="font-size: 0.9rem;">
-                                    \[ Q = Q_1 + Q_2 + \dots \]
-                                </div>
-                                <p style="font-size: 0.85rem; margin-top: 0.5rem;">
-                                    <strong>Resultado:</strong> Misma altura, mayor caudal.
-                                </p>
                             </div>
                             
-                            <div class="compact-card" style="border-top-color: var(--color-pressure);">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: var(--color-pressure);">
+                            <div class="compact-info compact-box colbox" style="margin-top: 1.5rem; align-self: center;">
+                                <div class="compact-box-icon" style="background: var(--color-pressure);">
+                                    <i class="fas fa-compress-arrows-alt"></i>
+                                </div>
+                                <div class="compact-box-content">
+                                    <div class="compact-box-title">Volumen cambiante</div>
+                                    <p class="compact-text">El agua al vaporizarse incrementa su volumen unas <strong>1700 veces</strong>. Al condensarse disminuye su volumen en la misma proporción, de forma que el agua se precipita en los espacios vacíos de las burbujas y golpea contra las superficies presentes (álabes).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid var(--color-pressure); padding-left: 1rem;">
+                            🎯 Puntos críticos donde se produce cavitación
+                        </h4>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pressure);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure);">
+                                        <i class="fas fa-inbox"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Entrada del rodete</h4>
+                                </div>
+                                <p class="compact-content-dense">En fase de aspiración, donde la presión es más baja</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pressure-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure-light);">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Extremos de álabes</h4>
+                                </div>
+                                <p class="compact-content-dense">Donde el agua adquiere mayor velocidad y menor presión</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pressure-dark);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure-dark);">
+                                        <i class="fas fa-history"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Zonas dañadas</h4>
+                                </div>
+                                <p class="compact-content-dense">Los puntos con corrosiones previas tienen más facilidad para cavitar</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-flow);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Prevención de la cavitación</div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Disminuir alturas de aspiración</strong> (colocar bomba cerca del agua)</li>
+                                    <li><strong>Reducir caudales de trabajo</strong> de la bomba cuando sea posible</li>
+                                    <li><strong>Aumentar sección de manguerotes</strong> de aspiración (menores pérdidas)</li>
+                                    <li><strong>Altura geométrica máxima:</strong> <span class="highlight-number">8-8,5 metros</span> (con margen de seguridad)</li>
+                                    <li>Usar <strong>agua más fría</strong> cuando sea posible (menor presión de vapor)</li>
+                                    <li><strong>Diseñar instalaciones</strong> con pérdidas de carga reducidas</li>
+                                </ul>
+                            </div>
+                        </div>                        
+                    </div>
+
+                    <!-- 4.5. ACOPLAMIENTO DE BOMBAS -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-pump-dark);">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">4.5. ACOPLAMIENTO DE BOMBAS</h3>
+                                <p class="compact-subtitle">Configuraciones en serie y en paralelo para diferentes necesidades</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-pump);">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Objetivo del acoplamiento</div>
+                                <p class="compact-text">Las bombas pueden acoplarse para aumentar el caudal total, la presión total, o ambas, según las necesidades de la instalación. Existen dos configuraciones básicas: <strong>en paralelo</strong> y <strong>en serie</strong>.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card" style="border-top-color: var(--color-water);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-water);">
+                                        <i class="fas fa-arrows-alt-h"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Acoplamiento en Paralelo</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">
+                                    Dos o más bombas están conectadas en paralelo cuando sus <strong>entradas y salidas están unidas entre sí</strong>.
+                                </p>
+                                <div class="equation-container" style="margin: 0.8rem 0; padding: 0.8rem; font-size: 0.9rem;">
+                                    \[ H_m = H_{m1} = H_{m2} = H_{m3} = \dots \]
+                                    \[ Q = Q_1 + Q_2 + Q_3 + \dots \]
+                                </div>
+                                <div style="background: #E3F2FD; padding: 0.8rem; border-radius: 6px; margin-top: 0.5rem;">
+                                    <strong>Resultado:</strong> Misma altura manométrica, mayor caudal total.
+                                </div>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: var(--color-pressure);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure);">
                                         <i class="fas fa-arrows-alt-v"></i>
                                     </div>
-                                    <div class="compact-title">En Serie</div>
+                                    <h4 style="margin: 0; color: #333;">Acoplamiento en Serie</h4>
                                 </div>
-                                <div class="formula" style="margin: 0.5rem 0; font-size: 0.9rem;">
-                                    \[ H_m = H_{m1} + H_{m2} + \dots \]
-                                </div>
-                                <div class="formula" style="font-size: 0.9rem;">
-                                    \[ Q = Q_1 = Q_2 = \dots \]
-                                </div>
-                                <p style="font-size: 0.85rem; margin-top: 0.5rem;">
-                                    <strong>Resultado:</strong> Mismo caudal, mayor altura.
+                                <p style="font-size: 0.95rem; line-height: 1.5;">
+                                    Las bombas están conectadas en serie cuando la <strong>salida de una se conecta a la entrada de la siguiente</strong>.
                                 </p>
+                                <div class="equation-container" style="margin: 0.8rem 0; padding: 0.8rem; font-size: 0.9rem;">
+                                    \[ H_m = H_{m1} + H_{m2} + H_{m3} + \dots \]
+                                    \[ Q = Q_1 = Q_2 = Q_3 = \dots \]
+                                </div>
+                                <div style="background: #FFEBEE; padding: 0.8rem; border-radius: 6px; margin-top: 0.5rem;">
+                                    <strong>Resultado:</strong> Mismo caudal, mayor altura manométrica total.
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- RESUMEN BOMBAS CENTRÍFUGAS -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-energy);">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">🧠 RESUMEN DE BOMBAS CENTRÍFUGAS</h3>
+                                <p class="compact-subtitle">Conceptos clave para intervenciones bomberiles</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pump);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pump);">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Curvas características</h4>
+                                </div>
+                                <p class="compact-content-dense">Hm, Potencia y η vs Q. Punto óptimo: η máximo</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-water);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-water);">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Aspiración</h4>
+                                </div>
+                                <p class="compact-content-dense">Teórica: 10,33 m. Práctica: 7-8 m. Depende altitud y temperatura</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #FF9800;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #FF9800;">
+                                        <i class="fas fa-play-circle"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Cebado</h4>
+                                </div>
+                                <p class="compact-content-dense">Inundar bomba antes de arranque. Eyector, depresor, anillo agua</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pressure);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure);">
+                                        <i class="fas fa-cavitation"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Cavitación</h4>
+                                </div>
+                                <p class="compact-content-dense">P < P<sub>vapor</sub> → burbujas → implosión. Evitar: H<sub>asp</sub> ≤ 8 m</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pump-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pump-light);">
+                                        <i class="fas fa-arrows-alt-h"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Paralelo</h4>
+                                </div>
+                                <p class="compact-content-dense">H igual, Q suma. Para grandes caudales</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pump-dark);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pump-dark);">
+                                        <i class="fas fa-arrows-alt-v"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Serie</h4>
+                                </div>
+                                <p class="compact-content-dense">Q igual, H suma. Para grandes alturas</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-energy);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-energy);">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Hm</h4>
+                                </div>
+                                <p class="compact-content-dense">Altura manométrica: incremento energía bomba→fluido</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-flow);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-flow);">
+                                        <i class="fas fa-percentage"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">η</h4>
+                                </div>
+                                <p class="compact-content-dense">Rendimiento: W<sub>out</sub>/W<sub>in</sub>. Punto óptimo: η máximo</p>
+                            </div>
+                        </div>
+                        
+
+                    </div>
                 </div>
-            </div>
+            </section>
             
-            <!-- SECCIÓN 5: INSTALACIONES HIDRÁULICAS -->
-            <div class="horizontal-card" id="instalaciones">
+            <!-- SECCIÓN 5: INSTALACIÓN HIDRÁULICA - Versión COMPLETA -->
+            <section class="horizontal-card" id="instalaciones">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-project-diagram"></i>
                 </div>
@@ -3532,212 +3798,421 @@
                             <i class="fas fa-fire-extinguisher"></i>
                         </div>
                         <div>
-                            <div class="card-title-top">🔥 INSTALACIONES HIDRÁULICAS</div>
-                            <div class="card-subtitle-top">Pérdidas de carga, punto de funcionamiento, alcance y reacción en lanza</div>
+                            <div class="card-title-top">🔥 INSTALACIÓN HIDRÁULICA</div>
+                            <div class="card-subtitle-top">Pérdidas de carga, curva de instalación, punto de funcionamiento, alcance y reacción en lanza</div>
                             <div>
-                                <span class="category-tag tag-energy">Pérdidas</span>
+                                <span class="category-tag tag-energy">Pérdidas de carga</span>
+                                <span class="category-tag tag-pressure">Curva instalación</span>
+                                <span class="category-tag tag-flow">Punto funcionamiento</span>
                                 <span class="category-tag tag-pressure">Alcance</span>
-                                <span class="category-tag tag-flow">Reacción</span>
+                                <span class="category-tag tag-flow">Reacción lanza</span>
                             </div>
                         </div>
                     </div>
-                    <div class="topic-number-badge">Sección 5</div>
+                    <div class="topic-number-badge">SECCIÓN 5</div>
                 </div>
                 
                 <div class="card-content">
-                    <!-- 5.1. PÉRDIDAS DE CARGA -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-energy);">
+                    <!-- Introducción a Instalación Hidráulica -->
+                    <div class="compact-section">
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-energy);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">¿Qué es una instalación hidráulica de extinción?</div>
+                                <p class="compact-text">El objeto de la instalación hidráulica de extinción es llevar un fluido agente extintor (agua o espumante) desde una fuente de suministro hasta el lugar donde se produce el incendio. Una instalación básica de partida está compuesta por una bomba, una manguera y una lanza. Es necesario lograr que por la lanza salga un caudal de fluido Q y velocidad V acorde con la carga del fuego para poder alcanzar el incendio desde una distancia prudencial y extinguirlo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5.1. PÉRDIDAS DE CARGA EN UNA INSTALACIÓN -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-energy);">
                                 <i class="fas fa-tachometer-alt"></i>
                             </div>
-                            <h3>5.1. PÉRDIDAS DE CARGA</h3>
-                        </div>
-                        <p>Pérdidas energéticas en fluido en movimiento por rozamientos, turbulencias, etc.</p>
-                        
-                        <div class="compact-grid">
-                            <div class="compact-card" style="border-top-color: var(--color-energy);">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: var(--color-energy);">
-                                        <i class="fas fa-ruler-horizontal"></i>
-                                    </div>
-                                    <div class="compact-title">Continuas (Lineales)</div>
-                                </div>
-                                <ul class="visual-list" style="margin-top: 0.5rem;">
-                                    <li>Fricción en conductos regulares</li>
-                                    <li>A lo largo de toda la instalación</li>
-                                    <li>Mayor valor que las singulares</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="compact-card" style="border-top-color: #FF9800;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #FF9800;">
-                                        <i class="fas fa-random"></i>
-                                    </div>
-                                    <div class="compact-title">Locales (Singulares)</div>
-                                </div>
-                                <ul class="visual-list" style="margin-top: 0.5rem;">
-                                    <li>Cambios de sección/dirección</li>
-                                    <li>Bifurcaciones, válvulas, lanzas</li>
-                                    <li>Menor valor que las continuas</li>
-                                </ul>
+                            <div>
+                                <h3 class="compact-title-text">5.1. PÉRDIDAS DE CARGA EN UNA INSTALACIÓN</h3>
+                                <p class="compact-subtitle">Pérdidas energéticas en fluidos en movimiento por rozamientos y turbulencias</p>
                             </div>
                         </div>
                         
                         <div class="law-box">
-                            <div class="law-title">📊 Factores que aumentan pérdidas de carga</div>
-                            <div class="compact-grid">
-                                <div class="compact-card" style="border-top-color: #2196F3;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #2196F3;">
-                                            <i class="fas fa-ruler"></i>
-                                        </div>
-                                        <div class="compact-title">Longitud</div>
+                            <div class="law-title">📜 Definición de pérdidas de carga</div>
+                            <p>El término <strong>pérdida de carga</strong> se refiere a las pérdidas energéticas que se producen en un fluido en movimiento como consecuencia de la presencia de fenómenos diversos que oponen resistencia a su desplazamiento (rozamientos, turbulencias, etc.).</p>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card" style="border-top-color: var(--color-energy);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-energy);">
+                                        <i class="fas fa-ruler-horizontal"></i>
                                     </div>
-                                    <p style="text-align: center; font-size: 1.2rem; margin: 0.5rem 0;">↑ linealmente</p>
+                                    <h4 style="margin: 0; color: #333;">Continuas (Lineales)</h4>
                                 </div>
-                                
-                                <div class="compact-card" style="border-top-color: #4CAF50;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #4CAF50;">
-                                            <i class="fas fa-tachometer-alt"></i>
-                                        </div>
-                                        <div class="compact-title">Velocidad/Caudal</div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li>Debidas a la <strong>fricción</strong> entre líneas de corriente y con paredes</li>
+                                    <li>A lo largo de <strong>conductos regulares</strong> (tramos rectos de manguera)</li>
+                                    <li>Su valor es <strong>mayor</strong> que el de las pérdidas singulares</li>
+                                    <li>Dependen de longitud, diámetro, rugosidad y velocidad</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: #FF9800;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #FF9800;">
+                                        <i class="fas fa-random"></i>
                                     </div>
-                                    <p style="text-align: center; font-size: 1.2rem; margin: 0.5rem 0;">↑ con v² o Q²</p>
+                                    <h4 style="margin: 0; color: #333;">Locales (Singulares)</h4>
                                 </div>
-                                
-                                <div class="compact-card" style="border-top-color: #FF9800;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #FF9800;">
-                                            <i class="fas fa-compress-arrows-alt"></i>
-                                        </div>
-                                        <div class="compact-title">Diámetro</div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li>Debidas a <strong>particularidades</strong> de la conducción</li>
+                                    <li>Cambios de <strong>sección o dirección</strong>, bifurcaciones, válvulas, lanzas</li>
+                                    <li>Su valor es, por lo general, <strong>menor</strong> que el de las continuas</li>
+                                    <li>Ejemplos: reducciones, codos, derivaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-energy);">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Comportamiento experimental</div>
+                                <p class="compact-text">Es complejo evaluar este tipo de pérdidas, por lo que habitualmente se recurre a tablas o gráficas de tipo experimental. La pérdida de carga se observa intuitivamente al comprobar cómo decae la presión de un líquido en movimiento a través de un conducto.</p>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid var(--color-energy); padding-left: 1rem;">
+                            📈 Factores que aumentan las pérdidas de carga
+                        </h4>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: #2196F3;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #2196F3;">
+                                        <i class="fas fa-ruler"></i>
                                     </div>
-                                    <p style="text-align: center; font-size: 1.2rem; margin: 0.5rem 0;">↓ con D⁵</p>
+                                    <h4 class="compact-title-dense">Longitud</h4>
                                 </div>
-                                
-                                <div class="compact-card" style="border-top-color: #9C27B0;">
-                                    <div class="compact-header">
-                                        <div class="compact-icon" style="background: #9C27B0;">
-                                            <i class="fas fa-mountain"></i>
-                                        </div>
-                                        <div class="compact-title">Rugosidad/Viscosidad</div>
+                                <p class="compact-content-dense">Aumenta de forma <strong>lineal</strong> con la longitud del conducto</p>
+                                <div style="text-align: center; margin-top: 0.5rem;">
+                                    <div class="highlight-number">ΔP ∝ L</div>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #4CAF50;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #4CAF50;">
+                                        <i class="fas fa-tachometer-alt"></i>
                                     </div>
-                                    <p style="text-align: center; font-size: 1.2rem; margin: 0.5rem 0;">↑ con ambos</p>
+                                    <h4 class="compact-title-dense">Velocidad/Caudal</h4>
+                                </div>
+                                <p class="compact-content-dense">Aumenta con el <strong>cuadrado</strong> de la velocidad o caudal</p>
+                                <div style="text-align: center; margin-top: 0.5rem;">
+                                    <div class="highlight-number">ΔP ∝ v² ∝ Q²</div>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #FF9800;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #FF9800;">
+                                        <i class="fas fa-compress-arrows-alt"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Diámetro</h4>
+                                </div>
+                                <p class="compact-content-dense">Disminuye con la <strong>quinta potencia</strong> del diámetro</p>
+                                <div style="text-align: center; margin-top: 0.5rem;">
+                                    <div class="highlight-number">ΔP ∝ 1/D⁵</div>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #9C27B0;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #9C27B0;">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Rugosidad/Viscosidad</h4>
+                                </div>
+                                <p class="compact-content-dense">Aumenta con <strong>ambos</strong> factores</p>
+                                <div style="text-align: center; margin-top: 0.5rem;">
+                                    <div class="highlight-number">ΔP ∝ rugosidad, viscosidad</div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="visual-table">
-                            <thead>
-                                <tr>
-                                    <th rowspan="2">Caudal (l/min)</th>
-                                    <th colspan="3">Pérdidas de carga (bar) por diámetro</th>
-                                </tr>
-                                <tr>
-                                    <th>Ø25 mm</th>
-                                    <th>Ø45 mm</th>
-                                    <th>Ø70 mm</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><span class="highlight-number">100</span></td>
-                                    <td><span class="highlight-number">2.5</span></td>
-                                    <td><span class="highlight-number">0.15</span></td>
-                                    <td><span class="highlight-number">0.03</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">200</span></td>
-                                    <td><span class="highlight-number">9.0</span></td>
-                                    <td><span class="highlight-number">0.37</span></td>
-                                    <td><span class="highlight-number">0.07</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">300</span></td>
-                                    <td><span class="highlight-number">20.0</span></td>
-                                    <td><span class="highlight-number">0.85</span></td>
-                                    <td><span class="highlight-number">0.15</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">400</span></td>
-                                    <td><span class="highlight-number">36.0</span></td>
-                                    <td><span class="highlight-number">1.75</span></td>
-                                    <td><span class="highlight-number">0.27</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">500</span></td>
-                                    <td><span class="highlight-number">55.0</span></td>
-                                    <td><span class="highlight-number">2.70</span></td>
-                                    <td><span class="highlight-number">0.42</span></td>
-                                </tr>
-                            </tbody>
+                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid var(--color-energy); padding-left: 1rem;">
+                            📊 Pérdidas de carga en mangueras (en bares)
+                        </h4>
+                        
+                        <div class="compact-table-container">
+                            <table class="property-table">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Caudal (l/min)</th>
+                                        <th colspan="3">Pérdidas de carga (bar) por diámetro</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Ø25 mm</th>
+                                        <th>Ø45 mm</th>
+                                        <th>Ø70 mm</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="highlight-number">100</span></td>
+                                        <td><span class="highlight-number">2,5</span></td>
+                                        <td>0,15</td>
+                                        <td>0,03</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">200</span></td>
+                                        <td><span class="highlight-number">9,0</span></td>
+                                        <td>0,37</td>
+                                        <td>0,07</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">300</span></td>
+                                        <td><span class="highlight-number">20,0</span></td>
+                                        <td>0,85</td>
+                                        <td>0,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">400</span></td>
+                                        <td><span class="highlight-number">36,0</span></td>
+                                        <td>1,75</td>
+                                        <td>0,27</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">500</span></td>
+                                        <td><span class="highlight-number">55,0</span></td>
+                                        <td>2,70</td>
+                                        <td>0,42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>700*</td>
+                                        <td>*</td>
+                                        <td>5,0</td>
+                                        <td>0,85</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1000*</td>
+                                        <td>*</td>
+                                        <td>10,0</td>
+                                        <td>1,75</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div style="font-size: 0.8rem; margin-top: 0.5rem; color: #666; text-align: center;">
+                                * Valores extremos donde manguera Ø25 no es adecuada
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-energy);">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Ejemplo práctico de pérdidas singulares</div>
+                                <p class="compact-text">Para un caudal de 235 l/min:</p>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Reducción 45/25:</strong> ΔP<sub>local</sub> = 0,17 kg/cm²</li>
+                                    <li><strong>Bifurcación 45/2 x 25</strong> (funcionamiento simultáneo de dos instalaciones): ΔP<sub>local</sub> = 0,031 kg/cm²</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-energy);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Consecuencias en intervenciones</div>
+                                <p class="compact-text">Las pérdidas de carga reducen la presión disponible en punta de lanza. Un cálculo incorrecto puede resultar en un chorro insuficiente para alcanzar el fuego o controlarlo. Es fundamental considerar las pérdidas al diseñar instalaciones largas o con múltiples derivaciones.</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- 5.2. ECUACIÓN DE LÍNEA -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #2196F3;">
-                                <i class="fas fa-calculator"></i>
-                            </div>
-                            <h3>5.2. ECUACIÓN DE LÍNEA</h3>
-                        </div>
-                        
-                        <div class="formula-box">
-                            <div class="box-icon" style="background: #2196F3;">
-                                <i class="fas fa-equals"></i>
+
+                    <!-- 5.2. CURVA DE UNA INSTALACIÓN -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: #2196F3;">
+                                <i class="fas fa-chart-line"></i>
                             </div>
                             <div>
-                                <div class="formula" style="margin: 0;">
-                                    \[ P_B = P_L + H_G + P_C \]
-                                </div>
-                                <div style="margin-top: 1rem;">
-                                    <strong>Donde:</strong>
-                                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                                        <li><strong>P<sub>B</sub>:</strong> Presión a salida de bomba [bar]</li>
-                                        <li><strong>P<sub>L</sub>:</strong> Presión en punta de lanza [bar]</li>
-                                        <li><strong>H<sub>G</sub>:</strong> Altura geométrica (desnivel bomba-lanza) [bar]</li>
-                                        <li><strong>P<sub>C</sub>:</strong> Pérdidas de carga totales [bar]</li>
-                                    </ul>
-                                </div>
+                                <h3 class="compact-title-text">5.2. CURVA DE UNA INSTALACIÓN</h3>
+                                <p class="compact-subtitle">Representación gráfica de las pérdidas de carga totales en función del caudal</p>
                             </div>
                         </div>
                         
-                        <div class="info-box">
-                            <div class="box-icon" style="background: #2196F3;">
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: #2196F3;">
                                 <i class="fas fa-info-circle"></i>
                             </div>
-                            <div>
-                                <strong>Conversión altura-presión:</strong> 10 m.c.a. = 1 bar = 1 kg/cm²
-                                <div style="margin-top: 0.5rem;">
-                                    <strong>H<sub>G</sub> positivo:</strong> Bomba abajo, lanza arriba (+1 bar/10 m)
-                                    <br>
-                                    <strong>H<sub>G</sub> negativo:</strong> Bomba arriba, lanza abajo (-1 bar/10 m)
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Definición de curva de instalación</div>
+                                <p class="compact-text">Se denomina <strong>curva característica de la instalación</strong> a la representación gráfica de las pérdidas de carga continuas y locales, en función del caudal de paso, que incorpora el efecto de pérdida/aumento de presión por la altura geométrica ganada/perdida. Habitualmente adopta una forma parabólica.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="equation-container">
+                            <div class="equation-label">Ecuación de línea (fundamental):</div>
+                            \[ P_B = P_L + H_G + P_C \]
+                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                P<sub>B</sub>: Presión salida bomba | P<sub>L</sub>: Presión punta lanza | H<sub>G</sub>: Altura geométrica | P<sub>C</sub>: Pérdidas carga totales
+                            </div>
+                        </div>
+                        
+                        <div class="equation-container">
+                            <div class="equation-label">Pérdida de carga total:</div>
+                            \[ \Delta P = H_g + \Delta P_{\text{continua}} + \Delta P_{\text{local}} \]
+                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                ΔP: Pérdida carga total | H<sub>g</sub>: Altura geométrica | ΔP<sub>continua</sub>: Pérdidas continuas | ΔP<sub>local</sub>: Pérdidas locales
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: #2196F3;">
+                                <i class="fas fa-ruler-vertical"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Altura geométrica (H<sub>G</sub>)</div>
+                                <p class="compact-text">Desnivel entre bomba y lanza. Puede ser <strong>positiva</strong> (bomba abajo, lanza arriba) o <strong>negativa</strong> (bomba arriba, lanza abajo).</p>
+                                <div class="compact-data-grid" style="margin-top: 0.5rem;">
+                                    <div class="compact-data-item">
+                                        <div class="compact-data-value" style="color: #2196F3;">+1 bar/10 m</div>
+                                        <div class="compact-data-label">Bomba abajo, lanza arriba</div>
+                                    </div>
+                                    <div class="compact-data-item">
+                                        <div class="compact-data-value" style="color: #2196F3;">-1 bar/10 m</div>
+                                        <div class="compact-data-label">Bomba arriba, lanza abajo</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="comparison-grid" style="margin-top: 1.5rem;">
+                            <div class="comparison-card" style="border-top-color: #2196F3;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #2196F3;">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Impulsión ascendente</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">
+                                    Bomba en cota <strong>inferior</strong>, lanza en cota <strong>superior</strong>. Además de las pérdidas, se debe añadir <strong>1 kg por cada 10 m</strong> de desnivel (10 m.c.a.).
+                                </p>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: #1976D2;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #1976D2;">
+                                        <i class="fas fa-arrow-down"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Impulsión descendente</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">
+                                    Bomba en cota <strong>superior</strong>, lanza en cota <strong>inferior</strong>. Además de las pérdidas, se debe considerar una <strong>pérdida de carga de -1 kg por cada 10 m</strong> verticales descendentes.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid #2196F3; padding-left: 1rem;">
+                            📈 Forma típica de la curva de instalación
+                        </h4>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Curva característica de la instalación</div>
+                            <div style="text-align: center; padding: 1rem;">
+                                <div style="display: inline-block; background: #f8f9fa; padding: 1rem; border-radius: 8px; border: 2px dashed #2196F3;">
+                                    <div style="font-weight: bold; color: #2196F3;">ΔP = H<sub>g</sub> + ΔP<sub>continua</sub> + ΔP<sub>local</sub></div>
+                                    <div style="margin-top: 0.5rem; font-size: 0.9rem;">
+                                        <div>ΔP: Pérdida de carga total</div>
+                                        <div>H<sub>g</sub>: Altura geométrica</div>
+                                        <div>Q: Caudal</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="font-size: 0.9rem; margin-top: 1rem; text-align: center;">
+                                La curva tiene forma parabólica (ΔP ∝ Q²) debido a que las pérdidas de carga aumentan con el cuadrado del caudal.
+                            </p>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: #2196F3;">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Aplicación práctica en incendios en altura</div>
+                                <p class="compact-text">En incendios en edificios altos, la altura geométrica es un factor crítico. Para una altura de 50 metros (15 pisos aproximadamente), se necesitan al menos 5 bar adicionales solo para vencer la altura, sin contar pérdidas en mangueras. Esto explica por qué en incendios en altura se utilizan bombas en serie y sistemas de columna seca.</p>
+                            </div>
+                        </div>
                     </div>
-                    
+
                     <!-- 5.3. PUNTO DE FUNCIONAMIENTO -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #4CAF50;">
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: #4CAF50;">
                                 <i class="fas fa-bullseye"></i>
                             </div>
-                            <h3>5.3. PUNTO DE FUNCIONAMIENTO</h3>
+                            <div>
+                                <h3 class="compact-title-text">5.3. PUNTO DE FUNCIONAMIENTO</h3>
+                                <p class="compact-subtitle">Intersección entre la curva de la bomba y la curva de la instalación</p>
+                            </div>
                         </div>
-                        <p>Intersección entre curva de la bomba y curva de la instalación.</p>
                         
-                        <div class="principle-box">
-                            <div class="principle-title">⚖️ Condición de equilibrio</div>
-                            <p>En el punto de funcionamiento, la pérdida de carga en la instalación coincide con la presión aportada por la bomba:</p>
-                            <div class="formula" style="margin: 1rem 0;">
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-crosshairs"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Definición del punto de funcionamiento</div>
+                                <p class="compact-text">Existe una relación directa entre el incremento de presión transferido al fluido y el caudal de tránsito (relación expresada a través de la curva característica P-Q) en el funcionamiento de una bomba. Para una instalación determinada se produce una pérdida de carga en función del caudal (curva de la instalación). Cuando se monta en serie una bomba-instalación, existe una interrelación regulada por una condición de equilibrio hidráulico en el <strong>punto de funcionamiento</strong> del sistema.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="law-box">
+                            <div class="law-title">⚖️ Condición de equilibrio</div>
+                            <p>En el punto de funcionamiento se verifica para el caudal impulsado que la pérdida de carga en la instalación (incluida la producida en el surtidor) coincide con la presión aportada por la bomba:</p>
+                            <div class="equation-container" style="margin: 1rem 0;">
                                 \[ P_{\text{impulso}} + \Delta P_{\text{total}} = 0 \]
                             </div>
                         </div>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Intersección bomba-instalación</div>
+                            <div style="text-align: center; padding: 1rem;">
+                                <div style="display: inline-block; background: #f8f9fa; padding: 1rem; border-radius: 8px; border: 2px dashed #4CAF50; max-width: 400px;">
+                                    <div style="display: flex; justify-content: center; align-items: flex-end; height: 150px; gap: 20px;">
+                                        <div style="text-align: center;">
+                                            <div style="background: #E3F2FD; padding: 0.5rem; border-radius: 4px; margin-bottom: 0.5rem;">
+                                                <strong>Curva bomba</strong>
+                                            </div>
+                                            <div style="width: 100px; height: 80px; border-left: 2px solid #2196F3; border-bottom: 2px solid #2196F3; position: relative;">
+                                                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-top: 2px solid #2196F3; border-right: 2px solid #2196F3; clip-path: polygon(0% 100%, 100% 0%, 100% 100%);"></div>
+                                            </div>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <div style="background: #E8F5E9; padding: 0.5rem; border-radius: 4px; margin-bottom: 0.5rem;">
+                                                <strong>Curva instalación</strong>
+                                            </div>
+                                            <div style="width: 100px; height: 80px; border-left: 2px solid #4CAF50; border-bottom: 2px solid #4CAF50; position: relative;">
+                                                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-top: 2px solid #4CAF50; border-right: 2px solid #4CAF50; clip-path: polygon(0% 0%, 100% 100%, 100% 100%, 0% 100%);"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: 1rem; font-weight: bold; color: #D32F2F;">
+                                        Punto A: Intersección = Punto de funcionamiento
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid #4CAF50; padding-left: 1rem;">
+                            🔄 Formas de modificar el punto de funcionamiento
+                        </h4>
                         
                         <div class="procedure-timeline" style="grid-template-columns: repeat(3, 1fr);">
                             <div class="timeline-step">
@@ -3756,145 +4231,617 @@
                                 <div style="font-size: 0.75rem;">↑ caudal → ↓ presión trabajo</div>
                             </div>
                         </div>
+                        
+                        <div class="comparison-grid" style="margin-top: 1.5rem;">
+                            <div class="comparison-card" style="border-top-color: #4CAF50;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #4CAF50;">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Variar revoluciones bomba</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">
+                                    <strong>Aumentar rpm:</strong> curva bomba se desplaza arriba → mayor presión y caudal<br>
+                                    <strong>Disminuir rpm:</strong> curva bomba se desplaza abajo → menor presión y caudal
+                                </p>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: #388E3C;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #388E3C;">
+                                        <i class="fas fa-expand-arrows-alt"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Variar apertura lanza</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">
+                                    <strong>Aumentar sección salida:</strong> curva instalación se modifica → mayor caudal, menor presión lanza<br>
+                                    <strong>Disminuir sección salida:</strong> menor caudal, mayor presión lanza
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Flexibilidad de bombas de bomberos</div>
+                                <p class="compact-text">En el caso de las bombas centrifugas de bomberos existen distintos puntos de funcionamiento según sea el régimen de revoluciones del motor (gran capacidad de regular el caudal de salida a voluntad sin más que actuar sobre el acelerador). Esto proporciona una gran flexibilidad para adaptarse a las necesidades de cada intervención.</p>
+                            </div>
+                        </div>
                     </div>
-                    
+
                     <!-- 5.4. ALCANCE DE UNA INSTALACIÓN -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #FF9800;">
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: #FF9800;">
                                 <i class="fas fa-bullseye"></i>
                             </div>
-                            <h3>5.4. ALCANCE DE UNA INSTALACIÓN</h3>
+                            <div>
+                                <h3 class="compact-title-text">5.4. ALCANCE DE UNA INSTALACIÓN</h3>
+                                <p class="compact-subtitle">Distancia máxima que alcanza el chorro de agua proyectado por una lanza</p>
+                            </div>
                         </div>
-                        <p>Determinado experimentalmente por impacto del aire en dispersión del chorro.</p>
                         
-                        <div class="visual-table">
-                            <thead>
-                                <tr>
-                                    <th>Tipo de lanza</th>
-                                    <th>Presión (kg/cm²)</th>
-                                    <th>Alcance (m)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td rowspan="3">25</td>
-                                    <td><span class="highlight-number">2</span></td>
-                                    <td><span class="highlight-number">9</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">4</span></td>
-                                    <td><span class="highlight-number">13</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">7</span></td>
-                                    <td><span class="highlight-number">17</span></td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="3">45</td>
-                                    <td><span class="highlight-number">2</span></td>
-                                    <td><span class="highlight-number">8</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">4</span></td>
-                                    <td><span class="highlight-number">13</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">7</span></td>
-                                    <td><span class="highlight-number">20</span></td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="3">70</td>
-                                    <td><span class="highlight-number">2</span></td>
-                                    <td><span class="highlight-number">13</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">4</span></td>
-                                    <td><span class="highlight-number">18</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="highlight-number">7</span></td>
-                                    <td><span class="highlight-number">25</span></td>
-                                </tr>
-                            </tbody>
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: #FF9800;">
+                                <i class="fas fa-ruler-combined"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Determinación experimental</div>
+                                <p class="compact-text">El alcance conseguido mediante la proyección de agua con la lanza de una instalación tiene una expresión matemática muy compleja debido al impacto relevante que tiene el aire en la dispersión del chorro. Para determinar estos valores habitualmente se recurre al uso de tablas calculadas de forma experimental.</p>
+                            </div>
                         </div>
                         
                         <div class="law-box">
-                            <div class="law-title">🎯 Factores que determinan alcance máximo</div>
+                            <div class="law-title">🎯 Factores que determinan el alcance máximo</div>
                             <ul class="visual-list">
                                 <li><strong>Presión ↑</strong> → Velocidad salida ↑ → Alcance ↑</li>
                                 <li><strong>Diámetro lanza ↑</strong> (misma presión) → Alcance ↑</li>
                                 <li><strong>Efecto chorro + apertura máxima</strong> → Alcance máximo</li>
+                                <li><strong>Viento en contra</strong> → Alcance ↓</li>
+                                <li><strong>Viento a favor</strong> → Alcance ↑</li>
+                                <li><strong>Chorro sólido</strong> → Mayor alcance que chorro pulverizado</li>
                             </ul>
                         </div>
+                        
+                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid #FF9800; padding-left: 1rem;">
+                            📊 Alcances (en metros) en función del diámetro y presión en punta de lanza
+                        </h4>
+                        
+                        <div class="compact-table-container">
+                            <table class="property-table">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo de lanza</th>
+                                        <th>Presión (kg/cm²)</th>
+                                        <th>Alcance (m)</th>
+                                        <th>Observaciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3"><strong>Lanza 25</strong></td>
+                                        <td><span class="highlight-number">2</span></td>
+                                        <td>9</td>
+                                        <td>Alcance reducido, interior edificios</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">4</span></td>
+                                        <td>13</td>
+                                        <td>Uso general</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">7</span></td>
+                                        <td>17</td>
+                                        <td>Máximo alcance para este diámetro</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="3"><strong>Lanza 45</strong></td>
+                                        <td><span class="highlight-number">2</span></td>
+                                        <td>8</td>
+                                        <td>Presión mínima práctica</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">4</span></td>
+                                        <td>13</td>
+                                        <td>Uso estándar</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">7</span></td>
+                                        <td>20</td>
+                                        <td>Óptimo para exteriores</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="3"><strong>Lanza 70</strong></td>
+                                        <td><span class="highlight-number">2</span></td>
+                                        <td>13</td>
+                                        <td>Caudal alto incluso a baja presión</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">4</span></td>
+                                        <td>18</td>
+                                        <td>Gran capacidad de extinción</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight-number">7</span></td>
+                                        <td>25</td>
+                                        <td>Máximo alcance, incendios importantes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: #FF9800;">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Estrategia de intervención según alcance</div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Incendios interiores:</strong> Lanzas 25-45, alcances 10-15 m, presión 4-5 bar</li>
+                                    <li><strong>Incendios exteriores pequeños:</strong> Lanza 45, alcance 15-20 m, presión 6-7 bar</li>
+                                    <li><strong>Incendios industriales/exteriores grandes:</strong> Lanza 70, alcance 20-25 m, presión 7 bar</li>
+                                    <li><strong>Defensa de fachadas/tejados:</strong> Usar alcance vertical (≈70% del horizontal)</li>
+                                    <li><strong>Viento fuerte:</strong> Aumentar presión 1-2 bar para compensar pérdida alcance</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: #FF9800;">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Cálculo aproximado de alcance</div>
+                                <p class="compact-text">Aunque el cálculo exacto es complejo, una aproximación útil para bomberos es:</p>
+                                <div class="equation-container" style="margin: 0.5rem 0; padding: 0.8rem; font-size: 0.9rem;">
+                                    \[ \text{Alcance (m)} \approx K \cdot \sqrt{P} \cdot D \]
+                                    <div style="margin-top: 0.5rem; font-size: 0.8rem;">
+                                        P: Presión punta lanza (bar) | D: Diámetro lanza (mm) | K: Constante experimental (≈0,5)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-data-grid" style="margin-top: 1rem;">
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: #FF9800;">25 m</div>
+                                <div class="compact-data-label">Máximo lanza 70 a 7 bar</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: #FF9800;">20 m</div>
+                                <div class="compact-data-label">Máximo lanza 45 a 7 bar</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: #FF9800;">17 m</div>
+                                <div class="compact-data-label">Máximo lanza 25 a 7 bar</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: #FF9800;">≈70%</div>
+                                <div class="compact-data-label">Alcance vertical vs horizontal</div>
+                            </div>
+                        </div>
                     </div>
-                    
+
                     <!-- 5.5. REACCIÓN EN LANZA -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-pressure);">
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-pressure);">
                                 <i class="fas fa-undo"></i>
                             </div>
-                            <h3>5.5. REACCIÓN EN LANZA</h3>
-                        </div>
-                        <p>Empuje o retroceso sobre el portador por principio de acción-reacción.</p>
-                        
-                        <div class="formula">
-                            \[ E = 2 \cdot P \cdot S \]
-                            <div style="font-size: 0.9rem; margin-top: 0.5rem;">
-                                E: Empuje [N] • P: Presión [Pa] • S: Superficie salida [m²]
+                            <div>
+                                <h3 class="compact-title-text">5.5. REACCIÓN EN LANZA</h3>
+                                <p class="compact-subtitle">Empuje o retroceso sobre el portador por principio de acción-reacción</p>
                             </div>
                         </div>
                         
-                        <div class="compact-grid">
-                            <div class="compact-card" style="border-top-color: var(--color-pressure);">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: var(--color-pressure);">
+                        <div class="law-box">
+                            <div class="law-title">⚡ Principio de acción-reacción (Newton)</div>
+                            <p>Debido al principio de acción y reacción toda instalación que lanza un caudal de agua a una determinada velocidad a través de una boquilla experimenta un empuje o retroceso sobre el portador. La lanza podría considerarse como un arma que dispara gotas de agua como proyectiles, y como tales producen un retroceso continuado.</p>
+                        </div>
+                        
+                        <div class="equation-container">
+                            <div class="equation-label">Fórmula del empuje en lanza:</div>
+                            \[ E = 2 \cdot P \cdot S \]
+                            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+                                E: Empuje [N] | P: Presión en punta de lanza [Pa] | S: Superficie de salida [m²]
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-pressure);">
+                                <i class="fas fa-compress-arrows-alt"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Relaciones fundamentales</div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li>Para un <strong>mismo diámetro</strong>, el empuje es mayor cuanto mayor sea la presión</li>
+                                    <li>Para una <strong>misma presión</strong>, mayor diámetro → mayor empuje</li>
+                                    <li>El empuje es <strong>proporcional al cuadrado del diámetro</strong> (S = π·D²/4)</li>
+                                    <li>Doblar la presión → doblar el empuje</li>
+                                    <li>Doblar el diámetro → cuadruplicar el empuje</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid" style="margin-top: 1.5rem;">
+                            <div class="comparison-card" style="border-top-color: var(--color-pressure);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure);">
                                         <i class="fas fa-compress-arrows-alt"></i>
                                     </div>
-                                    <div class="compact-title">Misma presión</div>
+                                    <h4 style="margin: 0; color: #333;">Misma presión</h4>
                                 </div>
-                                <p style="text-align: center; font-size: 1.1rem; margin: 0.5rem 0;">
-                                    Diámetro ↑ → Empuje ↑
-                                </p>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.2rem; margin-bottom: 0.5rem;">Diámetro ↑ → Empuje ↑</div>
+                                    <div class="equation-container" style="margin: 0.5rem 0; padding: 0.5rem; font-size: 0.8rem;">
+                                        \[ E \propto D^2 \]
+                                    </div>
+                                    <p style="font-size: 0.85rem;">Ej: Doble diámetro → 4× empuje</p>
+                                </div>
                             </div>
                             
-                            <div class="compact-card" style="border-top-color: #D32F2F;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #D32F2F;">
+                            <div class="comparison-card" style="border-top-color: #D32F2F;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #D32F2F;">
                                         <i class="fas fa-tachometer-alt"></i>
                                     </div>
-                                    <div class="compact-title">Mismo diámetro</div>
+                                    <h4 style="margin: 0; color: #333;">Mismo diámetro</h4>
                                 </div>
-                                <p style="text-align: center; font-size: 1.1rem; margin: 0.5rem 0;">
-                                    Presión ↑ → Empuje ↑
-                                </p>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.2rem; margin-bottom: 0.5rem;">Presión ↑ → Empuje ↑</div>
+                                    <div class="equation-container" style="margin: 0.5rem 0; padding: 0.5rem; font-size: 0.8rem;">
+                                        \[ E \propto P \]
+                                    </div>
+                                    <p style="font-size: 0.85rem;">Ej: Doble presión → doble empuje</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="warning-box">
+                        <div class="warning-box" style="margin-top: 1.5rem;">
                             <div class="box-icon" style="background: #FF9800;">
                                 <i class="fas fa-exclamation-circle"></i>
                             </div>
                             <div>
-                                <strong>Consejo práctico:</strong> En tendidos en espera, poner lanza en <strong>posición cortina de protección</strong>.
-                                <div style="margin-top: 0.5rem;">
-                                    <strong>Resultado:</strong> Empuje inicial menor, menos daños, mayor protección.
-                                </div>
+                                <strong>¡Consejo práctico para tendidos en espera!</strong>
+                                <p style="margin-top: 0.5rem;">Al realizar un tendido y dejarlo en espera, se debe tener la precaución de ponerlo en <strong>posición de cortina de protección</strong>. Esto logra:</p>
+                                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                    <li>Un <strong>empuje inicial menor</strong> al abrir</li>
+                                    <li><strong>Menos daños</strong> por golpe de ariete</li>
+                                    <li><strong>Mayor protección</strong> a la hora de trabajar</li>
+                                    <li><strong>Control más fácil</strong> para el portador</li>
+                                </ul>
                             </div>
                         </div>
                         
-                        <div class="tip-box">
-                            <div class="box-icon" style="background: #4CAF50;">
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: #4CAF50;">
                                 <i class="fas fa-lightbulb"></i>
                             </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Chorro cónico: reducción del empuje</div>
+                                <p class="compact-text">Si en lugar de un chorro sólido se produjera en forma cónica, el empuje disminuiría a medida que el cono fuese mayor, hasta quedar anulado aproximadamente a los <strong>180°</strong>. Las lanzas que permiten regular el tipo de chorro (sólido, pulverizado, cortina) aprovechan este principio para reducir el retroceso cuando se necesita.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-pressure);">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Técnicas de control de lanza</div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Posición corporal:</strong> Pies separados, rodillas flexionadas, espalda recta</li>
+                                    <li><strong>Agarre:</strong> Una mano en empuñadura, otra en manguera cerca de lanza</li>
+                                    <li><strong>Apertura progresiva:</strong> Abrir lentamente para evitar golpe inicial</li>
+                                    <li><strong>Anticipación:</strong> Prepararse para el retroceso antes de abrir</li>
+                                    <li><strong>Trabajo en equipo:</strong> Dos personas para lanzas grandes (>45 mm)</li>
+                                    <li><strong>Anclaje:</strong> Usar puntos de apoyo (esquina, vehículo) cuando sea posible</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-data-grid" style="margin-top: 1rem;">
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: var(--color-pressure);">E = 2·P·S</div>
+                                <div class="compact-data-label">Fórmula empuje</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: var(--color-pressure);">E ∝ D²</div>
+                                <div class="compact-data-label">Relación con diámetro</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: var(--color-pressure);">E ∝ P</div>
+                                <div class="compact-data-label">Relación con presión</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value" style="color: var(--color-pressure);">180°</div>
+                                <div class="compact-data-label">Cónico: empuje ≈ 0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5.6. MINIMIZACIÓN DEL GOLPE DE ARIETE -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: #795548;">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
                             <div>
-                                <strong>Chorro cónico:</strong> A 180° el empuje se anula aproximadamente.
+                                <h3 class="compact-title-text">5.6. MINIMIZACIÓN DEL GOLPE DE ARIETE</h3>
+                                <p class="compact-subtitle">Técnicas y dispositivos para reducir los efectos del pulso de Zhukowski</p>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: #795548;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <strong>¡Peligro en intervenciones bomberiles!</strong>
+                                <p style="margin-top: 0.5rem;">Desde el punto de vista de los bomberos, el golpe de ariete crea situaciones de peligro, ya que el incremento súbito de la presión se traduce en un incremento brusco de la reacción que experimenta una instalación que esté en ese momento en funcionamiento.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="law-box">
+                            <div class="law-title">🛡️ Recomendación fundamental</div>
+                            <p>Se aconseja que las operaciones de apertura y cierre en las instalaciones se realicen de forma <strong>lenta y controlada</strong>. Es decir, se recomienda aumentar el tiempo de apertura y cierre, para que la variación de caudal no sea tan brusca y la instalación absorba progresivamente el esfuerzo.</p>
+                        </div>
+                        
+                        <div class="comparison-grid" style="margin-top: 1.5rem;">
+                            <div class="comparison-card" style="border-top-color: #795548;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #795548;">
+                                        <i class="fas fa-turtle"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Apertura/cierre LENTO</h4>
+                                </div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Variación gradual</strong> del caudal</li>
+                                    <li><strong>Presiones controladas</strong></li>
+                                    <li><strong>Sin golpe de ariete</strong> significativo</li>
+                                    <li><strong>Menor desgaste</strong> de equipos</li>
+                                    <li><strong>Mayor seguridad</strong> para bomberos</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: #5D4037;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: #5D4037;">
+                                        <i class="fas fa-rabbit"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Apertura/cierre BRUSCO</h4>
+                                </div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Variación súbita</strong> del caudal</li>
+                                    <li><strong>Sobre-presiones peligrosas</strong></li>
+                                    <li><strong>Golpe de ariete destructivo</strong></li>
+                                    <li><strong>Daños a equipos</strong> (roturas)</li>
+                                    <li><strong>Riesgo de lesiones</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin: 1.5rem 0 1rem 0; color: #333; border-left: 4px solid #795548; padding-left: 1rem;">
+                            🛠️ Dispositivos de protección contra golpe de ariete
+                        </h4>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: #795548;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #795548;">
+                                        <i class="fas fa-faucet"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Válvulas de alivio</h4>
+                                </div>
+                                <p class="compact-content-dense">Liberan presión cuando supera un límite preestablecido</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #6D4C41;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #6D4C41;">
+                                        <i class="fas fa-tower"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Chimeneas de equilibrio</h4>
+                                </div>
+                                <p class="compact-content-dense">Columnas verticales que absorben variaciones de presión</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #5D4037;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #5D4037;">
+                                        <i class="fas fa-cog"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Volantes de inercia</h4>
+                                </div>
+                                <p class="compact-content-dense">En bombas, mantienen caudal gradualmente al parar</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #4E342E;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #4E342E;">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Válvulas antigolpe</h4>
+                                </div>
+                                <p class="compact-content-dense">Cierran progresivamente incluso con accionamiento rápido</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: #795548;">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Técnicas operativas para bomberos</div>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li><strong>Comunicación:</strong> Avisar antes de abrir/cerrar lanzas en instalaciones compartidas</li>
+                                    <li><strong>Apertura por etapas:</strong> Abrir al 25%, esperar 2-3 segundos, luego al 50%, etc.</li>
+                                    <li><strong>Presión gradual:</strong> Aumentar presión bomba progresivamente, no de golpe</li>
+                                    <li><strong>Válvulas de pie:</strong> Cerrar lentamente en aspiraciones desde depósitos</li>
+                                    <li><strong>Inspección previa:</strong> Verificar que todas las lanzas están cerradas antes de presurizar</li>
+                                    <li><strong>Formación:</strong> Entrenar a todo el personal en aperturas/cierre controlados</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: #795548;">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Tiempos recomendados de apertura/cierre</div>
+                                <div class="compact-data-grid" style="margin-top: 0.5rem;">
+                                    <div class="compact-data-item">
+                                        <div class="compact-data-value" style="color: #795548;">3-5 s</div>
+                                        <div class="compact-data-label">Lanzas pequeñas (25 mm)</div>
+                                    </div>
+                                    <div class="compact-data-item">
+                                        <div class="compact-data-value" style="color: #795548;">5-8 s</div>
+                                        <div class="compact-data-label">Lanzas medianas (45 mm)</div>
+                                    </div>
+                                    <div class="compact-data-item">
+                                        <div class="compact-data-value" style="color: #795548;">8-12 s</div>
+                                        <div class="compact-data-label">Lanzas grandes (70 mm)</div>
+                                    </div>
+                                    <div class="compact-data-item">
+                                        <div class="compact-data-value" style="color: #795548;">15+ s</div>
+                                        <div class="compact-data-label">Válvulas principales</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESUMEN INSTALACIÓN HIDRÁULICA -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-energy);">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">🧠 RESUMEN DE INSTALACIÓN HIDRÁULICA</h3>
+                                <p class="compact-subtitle">Conceptos clave para intervenciones bomberiles</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-energy);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-energy);">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Pérdidas carga</h4>
+                                </div>
+                                <p class="compact-content-dense">ΔP = H<sub>g</sub> + ΔP<sub>cont</sub> + ΔP<sub>loc</sub>. ΔP ∝ Q², ∝ L, ∝ 1/D⁵</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #2196F3;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #2196F3;">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Curva instalación</h4>
+                                </div>
+                                <p class="compact-content-dense">P<sub>B</sub> = P<sub>L</sub> + H<sub>G</sub> + P<sub>C</sub>. ±1 bar/10 m desnivel</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #4CAF50;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #4CAF50;">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Punto funcionamiento</h4>
+                                </div>
+                                <p class="compact-content-dense">Intersección curva bomba-curva instalación. P<sub>imp</sub> + ΔP<sub>tot</sub> = 0</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #FF9800;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #FF9800;">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Alcance</h4>
+                                </div>
+                                <p class="compact-content-dense">P ↑ → alcance ↑, D ↑ → alcance ↑. Máx: 25 m (lanza 70, 7 bar)</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-pressure);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-pressure);">
+                                        <i class="fas fa-undo"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Reacción lanza</h4>
+                                </div>
+                                <p class="compact-content-dense">E = 2·P·S. E ∝ P, E ∝ D². Cónico 180° → E ≈ 0</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: #795548;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: #795548;">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Minimizar golpe</h4>
+                                </div>
+                                <p class="compact-content-dense">Apertura/cierre lentos. Válvulas alivio, chimeneas, volantes</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-energy-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-energy-light);">
+                                        <i class="fas fa-ruler"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">H<sub>G</sub></h4>
+                                </div>
+                                <p class="compact-content-dense">Altura geométrica: ±1 bar cada 10 m desnivel bomba-lanza</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-flow);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-flow);">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Cortina protección</h4>
+                                </div>
+                                <p class="compact-content-dense">Posición inicial lanzas en espera: menor empuje, mayor seguridad</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-energy);">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Conocimiento aplicado en intervenciones</div>
+                                <p class="compact-text">El diseño y manejo correcto de instalaciones hidráulicas es fundamental para el éxito en intervenciones bomberiles. Comprender las pérdidas de carga permite dimensionar correctamente las instalaciones. Conocer el punto de funcionamiento optimiza el uso de bombas. Controlar la reacción en lanza previene accidentes. Minimizar el golpe de ariete protege equipos y personal. Cada incendio requiere adaptar la instalación a las condiciones específicas del siniestro.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #FFF3E0, #F3E5F5); border-radius: 12px; border: 2px solid var(--color-energy);">
+                            <h4 style="color: #EF6C00; margin-bottom: 1rem;">⚠️ DATOS CRÍTICOS PARA BOMBEROS</h4>
+                            <div class="compact-data-grid">
+                                <div class="compact-data-item">
+                                    <div class="compact-data-value" style="color: var(--color-energy);">P<sub>B</sub>=P<sub>L</sub>+H<sub>G</sub>+P<sub>C</sub></div>
+                                    <div class="compact-data-label">Ecuación línea fundamental</div>
+                                </div>
+                                <div class="compact-data-item">
+                                    <div class="compact-data-value" style="color: var(--color-energy);">±1 bar/10 m</div>
+                                    <div class="compact-data-label">Altura geométrica</div>
+                                </div>
+                                <div class="compact-data-item">
+                                    <div class="compact-data-value" style="color: var(--color-energy);">E = 2·P·S</div>
+                                    <div class="compact-data-label">Empuje lanza</div>
+                                </div>
+                                <div class="compact-data-item">
+                                    <div class="compact-data-value" style="color: var(--color-energy);">25 m</div>
+                                    <div class="compact-data-label">Alcance máximo lanza 70</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             
         </div>
     </main>

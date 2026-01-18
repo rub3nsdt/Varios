@@ -41,8 +41,17 @@
         }
         
         @media (max-width: 768px) {
-            html {
-                font-size: 70%;
+            body {
+                --escala: 0.6; /* Cambia este valor para ajustar el tamaño */
+                
+                transform: scale(var(--escala));
+                transform-origin: top left; /* <--- Esto quita el margen izquierdo */
+                
+                /* Compensación de ancho para que no quede hueco a la derecha */
+                width: calc(100% / var(--escala)); 
+                
+                /* Evita que aparezca scroll horizontal innecesario */
+                overflow-x: hidden;
             }
         }
 
