@@ -58,109 +58,549 @@
             padding: 0 20px;
         }
         
-        /* Header */
+        /* ==================== */
+        /* HEADER VISUAL MINIMALISTA */
+        /* ==================== */
+
         .hero-header {
-            background: var(--gradient-water);
+            background: linear-gradient(155deg, 
+                #0a1a3a 0%, 
+                #0d3b66 25%, 
+                #1565C0 50%, 
+                #1E88E5 75%, 
+                #42A5F5 100%);
             color: white;
-            padding: 2.5rem 0;
+            padding: 2.5rem 0 3rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
-            margin-bottom: 3rem;
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.3);
-        }
-        
-        .hero-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: cover;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .logo-container {
+            margin-bottom: 2.5rem;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.3);
+            min-height: 280px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
+            justify-content: center;
         }
-        
-        .logo-icon {
+
+        /* Sistema de tuberías animadas */
+        .hydraulic-pipes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .pipe {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .pipe-1 {
+            width: 120px;
+            height: 15px;
+            top: 20%;
+            left: 5%;
+            animation: pipeFlow 8s infinite linear;
+        }
+
+        .pipe-2 {
+            width: 15px;
+            height: 80px;
+            top: 20%;
+            left: calc(5% + 120px);
+            animation: pipeFlow 8s infinite linear reverse;
+        }
+
+        .pipe-3 {
+            width: 100px;
+            height: 15px;
+            top: 20%;
+            right: 10%;
+            animation: pipeFlow 10s infinite linear;
+        }
+
+        .pipe-4 {
+            width: 15px;
+            height: 60px;
+            bottom: 30%;
+            left: 15%;
+            animation: pipeFlow 12s infinite linear;
+        }
+
+        .pipe-connection {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .conn-1 { top: 18%; left: calc(5% + 113px); }
+        .conn-2 { top: 18%; right: calc(10% + 85px); }
+        .conn-3 { bottom: 27%; left: 12%; }
+
+        @keyframes pipeFlow {
+            0% { box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); }
+            50% { box-shadow: inset 0 0 10px rgba(33, 150, 243, 0.5); }
+            100% { box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); }
+        }
+
+        /* Gotas de agua cayendo */
+        .water-drops {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .drop {
+            position: absolute;
             background: rgba(255, 255, 255, 0.2);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: dropFall 4s infinite linear;
+        }
+
+        .drop-1 { width: 12px; height: 15px; left: 20%; top: -20px; animation-delay: 0s; }
+        .drop-2 { width: 8px; height: 10px; left: 30%; top: -20px; animation-delay: 0.7s; }
+        .drop-3 { width: 10px; height: 13px; left: 50%; top: -20px; animation-delay: 1.4s; }
+        .drop-4 { width: 9px; height: 12px; left: 65%; top: -20px; animation-delay: 2.1s; }
+        .drop-5 { width: 11px; height: 14px; left: 80%; top: -20px; animation-delay: 2.8s; }
+
+        .splash {
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            bottom: 20%;
+            opacity: 0;
+            animation: splashEffect 4s infinite;
+        }
+
+        .splash-1 { left: 20%; animation-delay: 1s; }
+        .splash-2 { left: 50%; animation-delay: 2.5s; }
+
+        @keyframes dropFall {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(300px) scale(0.5); opacity: 0; }
+        }
+
+        @keyframes splashEffect {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            10%, 20% { opacity: 0.5; transform: scale(1); }
+            30% { opacity: 0; transform: scale(1.2); }
+        }
+
+        /* Burbujas ascendentes */
+        .ascending-bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            bottom: -20px;
+            animation: bubbleRiseSimple 15s infinite linear;
+        }
+
+        .bubble-1 { width: 12px; height: 12px; left: 10%; animation-delay: 0s; }
+        .bubble-2 { width: 8px; height: 8px; left: 25%; animation-delay: 2s; }
+        .bubble-3 { width: 15px; height: 15px; left: 40%; animation-delay: 4s; }
+        .bubble-4 { width: 10px; height: 10px; left: 55%; animation-delay: 6s; }
+        .bubble-5 { width: 13px; height: 13px; left: 70%; animation-delay: 8s; }
+        .bubble-6 { width: 9px; height: 9px; left: 85%; animation-delay: 10s; }
+
+        @keyframes bubbleRiseSimple {
+            0% { transform: translateY(0) scale(1); opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-300px) scale(0.5); opacity: 0; }
+        }
+
+        /* Manómetro animado */
+        .pressure-gauge-animated {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
             width: 70px;
             height: 70px;
+        }
+
+        .gauge-dial {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            padding: 8px;
+            backdrop-filter: blur(3px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .dial-face {
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 59, 102, 0.8);
+            border-radius: 50%;
+            position: relative;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dial-markings {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-size: 7px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: bold;
+        }
+
+        .marking {
+            position: absolute;
+            transform-origin: center;
+        }
+
+        .m0 { top: 5px; left: 50%; transform: translateX(-50%); }
+        .m2 { top: 15px; right: 15px; }
+        .m4 { right: 5px; top: 50%; transform: translateY(-50%); }
+        .m6 { bottom: 15px; right: 15px; }
+        .m8 { bottom: 5px; left: 50%; transform: translateX(-50%); }
+        .m10 { bottom: 15px; left: 15px; }
+
+        .needle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40%;
+            height: 2px;
+            background: var(--color-pressure);
+            transform-origin: 0% 50%;
+            border-radius: 1px;
+            animation: needleSwing 5s infinite ease-in-out;
+            box-shadow: 0 0 5px rgba(211, 47, 47, 0.7);
+        }
+
+        .needle:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            right: 0;
+            width: 6px;
+            height: 6px;
+            background: var(--color-pressure);
+            border-radius: 50%;
+        }
+
+        .center-pin {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes needleSwing {
+            0%, 100% { transform: rotate(30deg); }
+            50% { transform: rotate(80deg); }
+        }
+
+        /* Válvula giratoria */
+        .rotating-valve {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 2;
+            width: 50px;
+            height: 50px;
+        }
+
+        .valve-body {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
+            backdrop-filter: blur(3px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
-        .logo-icon:hover {
-            transform: scale(1.1) rotate(10deg);
+
+        .valve-handle {
+            width: 60%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 3px;
+            position: relative;
+            animation: valveRotate 10s infinite linear;
         }
-        
-        .hero-header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            font-weight: 800;
+
+        .valve-handle:before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
         }
-        
-        .hero-header p {
-            font-size: 1.2rem;
+
+        @keyframes valveRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Contenido principal - solo texto */
+        .header-content-visual {
+            position: relative;
+            z-index: 3;
             max-width: 900px;
-            margin: 0 auto 1.5rem;
-            opacity: 0.95;
+            padding: 0 20px;
         }
-        
-        .stats-container {
+
+        /* Título principal */
+        .main-title-visual {
+            margin-bottom: 1rem;
+        }
+
+        .title-text {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
+            flex-direction: column;
+            gap: 0.2rem;
         }
-        
-        .stat-box {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 1rem 1.5rem;
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            min-width: 200px;
+
+        .title-word {
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            line-height: 1.1;
         }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
+
+        .title-1 {
             color: white;
-            margin-bottom: 0.3rem;
+            animation: titleGlow 4s infinite alternate;
         }
-        
-        .stat-number.red {
-            color: #FFEB3B;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+        .title-2 {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 2.2rem;
         }
-        
-        .stat-label {
-            font-size: 0.9rem;
+
+        .title-3 {
+            color: #FF9800;
+            text-shadow: 0 0 15px rgba(255, 152, 0, 0.5);
+            position: relative;
+        }
+
+        .title-3:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FF9800, transparent);
+            animation: fireLine 3s infinite;
+        }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); }
+            100% { text-shadow: 0 5px 20px rgba(33, 150, 243, 0.6); }
+        }
+
+        @keyframes fireLine {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Subtítulo */
+        .subtitle-visual {
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle-text {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
             opacity: 0.9;
+            line-height: 1.5;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Línea decorativa */
+        .title-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .line-part {
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            flex: 1;
+        }
+
+        .line-center {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .water-flow {
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: relative;
+            animation: waterPulse 2s infinite;
+        }
+
+        .water-flow:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: waterPulse 2s infinite reverse;
+        }
+
+        @keyframes waterPulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
+        /* Partículas de agua */
+        .water-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            animation: particleFloat 20s infinite linear;
+        }
+
+        .part-1 { width: 25px; height: 25px; top: 15%; left: 10%; animation-delay: 0s; }
+        .part-2 { width: 15px; height: 15px; top: 25%; left: 80%; animation-delay: 3s; }
+        .part-3 { width: 20px; height: 20px; top: 60%; left: 15%; animation-delay: 6s; }
+        .part-4 { width: 30px; height: 30px; top: 40%; left: 70%; animation-delay: 9s; }
+        .part-5 { width: 10px; height: 10px; top: 75%; left: 30%; animation-delay: 12s; }
+        .part-6 { width: 18px; height: 18px; top: 20%; left: 40%; animation-delay: 15s; }
+        .part-7 { width: 22px; height: 22px; top: 50%; left: 60%; animation-delay: 18s; }
+        .part-8 { width: 12px; height: 12px; top: 65%; left: 85%; animation-delay: 21s; }
+
+        @keyframes particleFloat {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -20px) rotate(90deg); }
+            50% { transform: translate(40px, 0) rotate(180deg); }
+            75% { transform: translate(20px, 20px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        /* Responsividad para header visual */
+        @media (max-width: 768px) {
+            .hero-header {
+                padding: 2rem 0 2.5rem 0;
+                min-height: 250px;
+            }
+            
+            .title-word {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+            
+            .title-2 {
+                font-size: 1.6rem;
+            }
+            
+            .subtitle-text {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            
+            .pressure-gauge-animated {
+                width: 60px;
+                height: 60px;
+                top: 15px;
+                right: 15px;
+            }
+            
+            .rotating-valve {
+                width: 40px;
+                height: 40px;
+                bottom: 15px;
+                left: 15px;
+            }
+            
+            .pipe-1, .pipe-3 {
+                display: none;
+            }
+            
+            .title-line {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-header {
+                padding: 1.5rem 0 2rem 0;
+            }
+            
+            .title-word {
+                font-size: 1.6rem;
+            }
+            
+            .title-2 {
+                font-size: 1.3rem;
+            }
+            
+            .subtitle-text {
+                font-size: 0.9rem;
+            }
+            
+            .pressure-gauge-animated,
+            .rotating-valve {
+                display: none;
+            }
+            
+            .title-line {
+                display: none;
+            }
         }
         
         /* Navegación */
@@ -1347,32 +1787,108 @@
                 grid-template-columns: 1fr;
             }
         }
+        
 
 
     </style>
 </head>
 <body>
     <!-- Header -->
+    <!-- Reemplaza TODO el código desde <header class="hero-header"> hasta </header> -->
     <header class="hero-header">
-        <div class="container header-content">
-            <div class="logo-container">
-                <div class="logo-icon" style="background: var(--gradient-water);">
-                    <i class="fas fa-water"></i>
-                </div>
-                <div class="logo-icon" style="background: var(--gradient-pressure);">
-                    <i class="fas fa-pressure"></i>
-                </div>
-                <div class="logo-icon" style="background: var(--gradient-flow);">
-                    <i class="fas fa-flow"></i>
-                </div>
-                <div class="logo-icon" style="background: var(--gradient-pump);">
-                    <i class="fas fa-pump"></i>
+        <!-- Sistema de tuberías animado -->
+        <div class="hydraulic-pipes">
+            <div class="pipe pipe-1"></div>
+            <div class="pipe pipe-2"></div>
+            <div class="pipe pipe-3"></div>
+            <div class="pipe pipe-4"></div>
+            <div class="pipe-connection conn-1"></div>
+            <div class="pipe-connection conn-2"></div>
+            <div class="pipe-connection conn-3"></div>
+        </div>
+        
+        <!-- Gotas de agua cayendo -->
+        <div class="water-drops">
+            <div class="drop drop-1"></div>
+            <div class="drop drop-2"></div>
+            <div class="drop drop-3"></div>
+            <div class="drop drop-4"></div>
+            <div class="drop drop-5"></div>
+            <div class="splash splash-1"></div>
+            <div class="splash splash-2"></div>
+        </div>
+        
+        <!-- Burbujas ascendentes -->
+        <div class="ascending-bubbles">
+            <div class="bubble bubble-1"></div>
+            <div class="bubble bubble-2"></div>
+            <div class="bubble bubble-3"></div>
+            <div class="bubble bubble-4"></div>
+            <div class="bubble bubble-5"></div>
+            <div class="bubble bubble-6"></div>
+        </div>
+        
+        <!-- Manómetro/Medidor de presión animado -->
+        <div class="pressure-gauge-animated">
+            <div class="gauge-dial">
+                <div class="dial-face">
+                    <div class="dial-markings">
+                        <span class="marking m0">0</span>
+                        <span class="marking m2">2</span>
+                        <span class="marking m4">4</span>
+                        <span class="marking m6">6</span>
+                        <span class="marking m8">8</span>
+                        <span class="marking m10">10</span>
+                    </div>
+                    <div class="needle"></div>
+                    <div class="center-pin"></div>
                 </div>
             </div>
+        </div>
+        
+        <!-- Válvula giratoria -->
+        <div class="rotating-valve">
+            <div class="valve-body">
+                <div class="valve-handle"></div>
+            </div>
+        </div>
+        
+        <!-- Contenido principal (solo texto) -->
+        <div class="container header-content-visual">
+            <!-- Título principal -->
+            <div class="main-title-visual">
+                <h1 class="title-text">
+                    <span class="title-word title-1">HIDRÁULICA</span>
+                    <span class="title-word title-2">PARA</span>
+                    <span class="title-word title-3">BOMBEROS</span>
+                </h1>
+            </div>
             
-            <h1>💧 HIDRÁULICA PARA BOMBEROS</h1>
-            <p>Guía visual completa sobre propiedades de fluidos, hidrostática, hidrodinámica y sistemas de bombeo</p>
+            <!-- Subtítulo -->
+            <div class="subtitle-visual">
+                <p class="subtitle-text">Guía visual completa sobre propiedades de fluidos, hidrostática, hidrodinámica y sistemas e instalaciones de bombeo</p>
+            </div>
             
+            <!-- Línea decorativa -->
+            <div class="title-line">
+                <div class="line-part line-left"></div>
+                <div class="line-center">
+                    <div class="water-flow"></div>
+                </div>
+                <div class="line-part line-right"></div>
+            </div>
+        </div>
+        
+        <!-- Efecto de partículas de agua -->
+        <div class="water-particles">
+            <div class="particle part-1"></div>
+            <div class="particle part-2"></div>
+            <div class="particle part-3"></div>
+            <div class="particle part-4"></div>
+            <div class="particle part-5"></div>
+            <div class="particle part-6"></div>
+            <div class="particle part-7"></div>
+            <div class="particle part-8"></div>
         </div>
     </header>
     
