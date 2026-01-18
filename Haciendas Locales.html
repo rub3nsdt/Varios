@@ -54,6 +54,17 @@
                 /* Evita que aparezca scroll horizontal innecesario */
                 overflow-x: hidden;
             }
+            /* Ajustamos los botones para compensar el encogimiento */
+            .floating-btn {
+                /* Si la escala es 0.4, multiplicamos la distancia por 2.5 (1 / 0.4) */
+                bottom: calc(25px / var(--escala)) !important; 
+                right: calc(25px / var(--escala)) !important;
+            }
+
+            .floating-btn-left {
+                left: calc(25px / var(--escala)) !important;
+                right: auto !important;
+            }
         }
 
         .container {
