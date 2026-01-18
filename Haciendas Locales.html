@@ -23,6 +23,7 @@
             --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
             --border-radius: 15px;
         }
+
         
         * {
             margin: 0;
@@ -39,6 +40,16 @@
             background-attachment: fixed;
         }
         
+        @media (max-width: 700px) {
+            body {
+            transform: scale(0.8);
+            /* Asegura que el escalado empiece desde arriba al centro */
+            transform-origin: top center; 
+            /* Evita que aparezcan barras de desplazamiento extrañas */
+            width: 125%; /* Compensas el 0.8 (1 / 0.8 = 1.25) */
+            }
+        }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
