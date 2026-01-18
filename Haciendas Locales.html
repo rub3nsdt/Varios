@@ -40,13 +40,9 @@
             background-attachment: fixed;
         }
         
-        @media (max-width: 700px) {
-            body {
-            transform: scale(0.8);
-            /* Asegura que el escalado empiece desde arriba al centro */
-            transform-origin: top center; 
-            /* Evita que aparezcan barras de desplazamiento extrañas */
-            width: 125%; /* Compensas el 0.8 (1 / 0.8 = 1.25) */
+        @media (max-width: 768px) {
+            html {
+                font-size: 70%;
             }
         }
 
@@ -736,49 +732,7 @@
             line-height: 1.2;
         }
 
-        /* Responsividad para compact examples */
-        @media (max-width: 768px) {
-            .compact-examples-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 0.6rem;
-            }
-            
-            .compact-example-item {
-                padding: 0.6rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .compact-examples-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .compact-title {
-                font-size: 0.85rem;
-            }
-            
-            .compact-desc {
-                font-size: 0.75rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .examples-grid.detailed {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .examples-grid.detailed {
-                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            }
-        }
-
-        @media (max-width: 576px) {
-            .examples-grid.detailed {
-                grid-template-columns: 1fr;
-            }
-        }
+        
 
         /* Estilo para listas de iconos dentro de las tarjetas de ejemplo */
         .example-list {
@@ -802,97 +756,7 @@
             font-weight: bold;
         }
         
-        /* Responsividad */
-        @media (max-width: 992px) {
-            .card-title-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .article-number-badge {
-                align-self: center;
-            }
-            
-            .procedure-timeline {
-                flex-direction: column;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-header p {
-                font-size: 1rem;
-            }
-            
-            .logo-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-            
-            .visual-nav {
-                padding: 1rem;
-                top: 10px;
-                gap: 10px;
-            }
-            
-            .nav-item {
-                min-width: 90px;
-                padding: 0.8rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .nav-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.5rem;
-            }
-            
-            .card-title-top {
-                font-size: 1.6rem;
-            }
-            
-            .card-content {
-                padding: 1.5rem;
-            }
-            
-            .card-header-top {
-                padding: 1.5rem 1.5rem 1.2rem;
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .floating-btn, .floating-btn-left {
-                width: 45px;
-                height: 45px;
-                font-size: 1.25rem;
-            }
-            
-            .floating-btn-left {
-                left: 15px;
-                bottom: 85px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-header h1 {
-                font-size: 1.5rem;
-            }
-            
-            .card-title-top {
-                font-size: 1.25rem;
-            }
-            
-            .section-title {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-        }
+
         
         /* Estilos para ejemplos de tasas */
         .examples-grid {
@@ -1005,39 +869,7 @@
             text-align: center;
         }
 
-        /* Responsividad */
-        @media (max-width: 768px) {
-            .compact-reasons-grid {
-                gap: 0.6rem;
-            }
-            
-            .compact-reason {
-                min-width: 90px;
-                padding: 0.6rem;
-            }
-            
-            .compact-reason i {
-                font-size: 1.2rem;
-            }
-            
-            .compact-reason span {
-                font-size: 0.8rem;
-            }
-        }
 
-        @media (max-width: 480px) {
-            .compact-reasons-grid {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .compact-reason {
-                flex-direction: row;
-                justify-content: flex-start;
-                min-width: auto;
-                gap: 1rem;
-            }
-        }
 
     </style>
 </head>
