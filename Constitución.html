@@ -40,6 +40,26 @@
             min-height: 100vh;
             background-attachment: fixed;
         }
+
+        @media (max-width: 630px) {
+            body {
+                --escala: 0.4; /* Cambia este valor para ajustar el tamaño */
+                
+                transform: scale(var(--escala));
+                transform-origin: top left; /* <--- Esto quita el margen izquierdo */
+                
+                /* Compensación de ancho para que no quede hueco a la derecha */
+                width: calc(100% / var(--escala)); 
+                height: calc(100vh / var(--escala));
+                
+                /* Evita que aparezca scroll horizontal innecesario */
+                overflow-x: hidden;
+            }
+
+            .floating-btn {
+                display: none !important;
+            }
+        }
         
         .container {
             max-width: 1400px;
@@ -270,6 +290,12 @@
             flex-direction: column;
         }
         
+
+        .centrado {
+            display: flex;
+            flex-direction: column;
+        }
+
         /* Elementos dentro del contenido */
         .highlight-number {
             color: #e74c3c;
@@ -771,13 +797,14 @@
 
         /* Para la sección de derechos fundamentales */
         .rights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 1.5rem;
             margin: 1.5rem 0;
         }
 
         .right-card {
+            flex: 1 1 250px;
             background: white;
             border-radius: 12px;
             padding: 1.5rem;
@@ -818,6 +845,148 @@
             font-size: 0.95rem;
             line-height: 1.5;
         }
+
+        /* Si no están ya en tu CSS, añade esto */
+
+        .two-columns-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+            align-items: flex-start;
+        }
+
+        .service-level-card {
+            flex: 1 1 450px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .service-level-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-level-header {
+            padding: 1.2rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .service-level-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .service-level-body {
+            padding: 1.2rem;
+        }
+
+        .services-mini-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .services-mini-grid > div {
+            background: rgba(255,255,255,0.7);
+            padding: 0.7rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Añadir al CSS existente */
+        .comparative-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .comparative-item {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .compact-competences-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .compact-competence-item {
+            flex: 1 1 430px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid;
+        }
+
+        .compact-competence-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        .compact-competence-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .compact-competence-content {
+            flex: 1;
+        }
+
+        .compact-competence-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .compact-competence-desc {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .compact-competences-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -999,8 +1168,8 @@
                         </div>
                         
                         <ul class="visual-list">
-                            <li>Su <strong>creación y ejercicio</strong> son libres dentro del respeto a la Constitución y a la ley</li>
-                            <li>Su <strong>estructura interna y funcionamiento</strong> deben ser democráticos</li>
+                            <li>Su <strong>creación y ejercicio son libres</strong> dentro del respeto a la Constitución y a la ley</li>
+                            <li>Su <strong>estructura interna y funcionamiento</strong> deben ser <strong>democráticos</strong></li>
                         </ul>
                     </div>
                     
@@ -1020,9 +1189,20 @@
                                 </div>
                                 <span>Sujeción a la Constitución</span>
                             </div>
-                            <p>Los ciudadanos y los poderes públicos están sujetos a la Constitución y al resto del ordenamiento jurídico.</p>
+                            <p>Los <strong>ciudadanos y los poderes públicos</strong> están sujetos a la Constitución y al resto del ordenamiento jurídico.</p>
                         </div>
                         
+
+                        <div class="principle-card" style="margin-top: 1.5rem;">
+                            <div class="principle-title">
+                                <div class="principle-icon" style="background: var(--gradient-secondary);">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <span>Promoción de condiciones para libertad e igualdad</span>
+                            </div>
+                            <p>Corresponde a los poderes públicos promover las condiciones para que la <strong>libertad y la igualdad</strong> del individuo y de los grupos en que se integra sean <strong>reales y efectivas</strong>; remover los obstáculos que impidan o dificulten su plenitud y facilitar la participación de todos los ciudadanos en la vida <strong>política, económica, cultural y social</strong>.</p>
+                        </div>
+
                         <div class="subsection">
                             <div class="subsection-title">
                                 <div class="subsection-icon">
@@ -1125,25 +1305,87 @@
                 </div>
                 
                 <div class="card-content">
-                    <!-- ARTÍCULO 10 -->
+                    <!-- ARTÍCULO 10 - VERSIÓN VISUAL -->
                     <div class="section">
                         <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-secondary);">
-                                <i class="fas fa-user-circle"></i>
+                            <div class="section-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                <i class="fas fa-star"></i>
                             </div>
-                            <span>Artículo 10: Fundamento del orden político y paz social</span>
+                            <span>Artículo 10: Fundamento del orden político</span>
                         </div>
                         
-                        <div class="key-point">
-                            <strong>Dignidad humana:</strong> La dignidad de la persona, los derechos inviolables que le son inherentes, el libre desarrollo de la personalidad, el respeto a la ley y a los derechos de los demás son fundamento del orden político y de la paz social.
-                        </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: var(--gradient-secondary);">
-                                <i class="fas fa-globe"></i>
+                        <div class="two-columns-grid" style="margin: 1rem 0;">
+                            <div class="service-level-card" style="border: 2px solid rgba(155, 89, 182, 0.2);">
+                                <div class="service-level-header" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                    <div class="service-level-icon">
+                                        <i class="fas fa-user-circle"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0; font-size: 1.1rem;">Principios Fundamentales</h4>
+                                    </div>
+                                </div>
+                                <div class="service-level-body">
+                                    <div class="services-mini-grid" style="grid-template-columns: 1fr;">
+                                        <div style="background: rgba(155, 89, 182, 0.1); border-left: 3px solid #9b59b6;">
+                                            <i class="fas fa-crown" style="color: #9b59b6;"></i>
+                                            <span><strong>Dignidad de la persona</strong></span>
+                                        </div>
+                                        <div style="background: rgba(155, 89, 182, 0.1); border-left: 3px solid #9b59b6;">
+                                            <i class="fas fa-shield-alt" style="color: #9b59b6;"></i>
+                                            <span><strong>Derechos inviolables inherentes</strong></span>
+                                        </div>
+                                        <div style="background: rgba(155, 89, 182, 0.1); border-left: 3px solid #9b59b6;">
+                                            <i class="fas fa-seedling" style="color: #9b59b6;"></i>
+                                            <span><strong>Libre desarrollo de la personalidad</strong></span>
+                                        </div>
+                                        <div style="background: rgba(155, 89, 182, 0.1); border-left: 3px solid #9b59b6;">
+                                            <i class="fas fa-gavel" style="color: #9b59b6;"></i>
+                                            <span><strong>Respeto a la ley</strong></span>
+                                        </div>
+                                        <div style="background: rgba(155, 89, 182, 0.1); border-left: 3px solid #9b59b6;">
+                                            <i class="fas fa-hands-helping" style="color: #9b59b6;"></i>
+                                            <span><strong>Respeto a derechos de los demás</strong></span>
+                                        </div>
+                                    </div>
+                                    <p style="margin-top: 1rem; text-align: center; font-weight: 600; color: #9b59b6; font-size: 0.9rem;">
+                                        ← Fundamentos del orden político y de la paz social
+                                    </p>
+                                </div>
                             </div>
-                            <div>
-                                <strong>Interpretación conforme a tratados internacionales:</strong> Las normas relativas a los derechos fundamentales se interpretarán de conformidad con la Declaración Universal de Derechos Humanos y los tratados internacionales ratificados por España.
+                            
+                            <div class="service-level-card" style="border: 2px solid rgba(52, 152, 219, 0.2); align-self: stretch;">
+                                <div class="service-level-header" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                                    <div class="service-level-icon">
+                                        <i class="fas fa-globe"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0; font-size: 1.1rem;">Interpretación Internacional</h4>
+                                    </div>
+                                </div>
+                                <div class="service-level-body">
+                                    <div style="text-align: center; padding: 1rem;">
+                                        <div style="font-size: 2.5rem; color: #3498db; margin-bottom: 0.5rem;">
+                                            <i class="fas fa-balance-scale"></i>
+                                        </div>
+                                        <h4 style="color: #333; margin-bottom: 0.5rem;">Conforme a tratados</h4>
+                                        <p style="font-size: 0.9rem; color: #555;">
+                                            Las normas sobre derechos fundamentales se interpretarán de conformidad con:
+                                        </p>
+                                    </div>
+                                    <div class="services-mini-grid" style="display: flex; flex-wrap: wrap;">
+                                        <div style="background: rgba(52, 152, 219, 0.1); border-left: 3px solid #3498db; flex: 1 1 150px;">
+                                            <i class="fas fa-file-contract" style="color: #3498db;"></i>
+                                            <span>Declaración Universal DDHH</span>
+                                        </div>
+                                        <div style="background: rgba(52, 152, 219, 0.1); border-left: 3px solid #3498db; flex: 1 1 150px;">
+                                            <i class="fas fa-handshake" style="color: #3498db;"></i>
+                                            <span>Tratados internacionales</span>
+                                        </div>
+                                    </div>
+                                    <p style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: #666;">
+                                        Ratificados por España
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1151,15 +1393,79 @@
                     <!-- ARTÍCULO 14 -->
                     <div class="section">
                         <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-success);">
+                            <div class="section-icon" style="background: linear-gradient(135deg, #27ae60, #219653);">
                                 <i class="fas fa-equals"></i>
                             </div>
                             <span>Artículo 14: Igualdad ante la ley</span>
                         </div>
                         
-                        <div class="emphasis-box">
-                            <i class="fas fa-scale-balanced" style="color: #FF9800; margin-right: 10px;"></i>
-                            <span>Los españoles son iguales ante la ley, sin que pueda prevalecer discriminación alguna por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social.</span>
+                        <div class="principle-card" style=" border-left: 6px solid var(--color-success); text-align: center; padding: 1.5rem;">
+                            <div style="margin-bottom: 1rem;">
+                                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: var(--gradient-success); color: white; border-radius: 50%; font-size: 1.5rem; margin-bottom: 0.5rem;">
+                                    <i class="fas fa-scale-balanced"></i>
+                                </div>
+                                <h3 style="color: var(--color-success); margin-bottom: 0.5rem;">Igualdad sin discriminación</h3>
+                                <p style="font-weight: 600; font-size: 1.1rem; color: #333; margin-bottom: 1rem;">
+                                    Los españoles son iguales ante la ley
+                                </p>
+                            </div>
+                            
+                            <div style="margin: 1.5rem 0;">
+                                <p style="font-size: 0.95rem; color: #666; margin-bottom: 1rem;">
+                                    <strong>Sin que pueda prevalecer discriminación alguna por razón de:</strong>
+                                </p>
+                                
+                                <div class="services-mini-grid" style="grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin: 1.5rem 0;">
+                                    <div style="background: rgba(39, 174, 96, 0.1); border-left: 3px solid #27ae60; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0.8rem 0.5rem;">
+                                        <div style="width: 35px; height: 35px; border-radius: 8px; background: var(--gradient-success); display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 0.5rem; font-size: 1rem;">
+                                            <i class="fas fa-baby"></i>
+                                        </div>
+                                        <span style="font-weight: 600; font-size: 0.9rem;">Nacimiento</span>
+                                    </div>
+                                    
+                                    <div style="background: rgba(39, 174, 96, 0.1); border-left: 3px solid #27ae60; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0.8rem 0.5rem;">
+                                        <div style="width: 35px; height: 35px; border-radius: 8px; background: var(--gradient-success); display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 0.5rem; font-size: 1rem;">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <span style="font-weight: 600; font-size: 0.9rem;">Raza</span>
+                                    </div>
+                                    
+                                    <div style="background: rgba(39, 174, 96, 0.1); border-left: 3px solid #27ae60; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0.8rem 0.5rem;">
+                                        <div style="width: 35px; height: 35px; border-radius: 8px; background: var(--gradient-success); display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 0.5rem; font-size: 1rem;">
+                                            <i class="fas fa-venus-mars"></i>
+                                        </div>
+                                        <span style="font-weight: 600; font-size: 0.9rem;">Sexo</span>
+                                    </div>
+                                    
+                                    <div style="background: rgba(39, 174, 96, 0.1); border-left: 3px solid #27ae60; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0.8rem 0.5rem;">
+                                        <div style="width: 35px; height: 35px; border-radius: 8px; background: var(--gradient-success); display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 0.5rem; font-size: 1rem;">
+                                            <i class="fas fa-church"></i>
+                                        </div>
+                                        <span style="font-weight: 600; font-size: 0.9rem;">Religión</span>
+                                    </div>
+                                    
+                                    <div style="background: rgba(39, 174, 96, 0.1); border-left: 3px solid #27ae60; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0.8rem 0.5rem;">
+                                        <div style="width: 35px; height: 35px; border-radius: 8px; background: var(--gradient-success); display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 0.5rem; font-size: 1rem;">
+                                            <i class="fas fa-comment"></i>
+                                        </div>
+                                        <span style="font-weight: 600; font-size: 0.9rem;">Opinión</span>
+                                    </div>
+                                    
+                                    <div style="background: rgba(39, 174, 96, 0.1); border-left: 3px solid #27ae60; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0.8rem 0.5rem;">
+                                        <div style="width: 35px; height: 35px; border-radius: 8px; background: var(--gradient-success); display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 0.5rem; font-size: 1rem;">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+                                        <span style="font-weight: 600; font-size: 0.8rem; line-height: 1.1;">Otra condición o circunstancia personal o social</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="background: rgba(255, 255, 255, 0.7); padding: 0.8rem; border-radius: 8px; margin-top: 1rem;">
+                                <p style="margin: 0; font-size: 0.85rem; color: #666; font-style: italic;">
+                                    <i class="fas fa-ban" style="color: #e74c3c; margin-right: 5px;"></i>
+                                    Ninguna de estas circunstancias puede ser motivo de discriminación ante la ley
+                                </p>
+                            </div>
                         </div>
                     </div>
                     
@@ -1298,70 +1604,106 @@
                                 <div>
                                     <strong>Sin censura previa:</strong> El ejercicio de estos derechos no puede restringirse mediante ningún tipo de censura previa.
                                     <div style="margin-top: 0.8rem; font-size: 0.95rem;">
-                                        <strong>Límites:</strong> Respeto a derechos reconocidos, especialmente honor, intimidad, propia imagen y protección de juventud e infancia.
+                                        <strong>Límites:</strong> Respeto a derechos reconocidos, especialmente <strong>honor, intimidad, propia imagen y protección de juventud e infancia</strong>.
+                                    </div>
+                                    <div style="margin-top: 0.8rem; font-size: 0.95rem;">
+                                        <strong>Secuestro:</strong> Sólo podrá acordarse el secuestro de publicaciones, grabaciones y otros medios de información en virtud de <strong>resolución judicial</strong>.
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- ARTÍCULO 24 -->
-                        <div class="subsection">
-                            <div class="subsection-title">
-                                <div class="subsection-icon" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
+                        <!-- ARTÍCULO 24 - VERSIÓN VISUAL COMPLETA -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
                                     <i class="fas fa-balance-scale"></i>
                                 </div>
                                 <span>Artículo 24: Derecho a la tutela judicial efectiva</span>
                             </div>
                             
-                            <div class="rights-grid">
-                                <div class="right-card" style="border-top-color: #2c3e50;">
-                                    <div class="right-header">
-                                        <div class="right-icon" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
+                            
+                                <!-- Columna 1: Apartado 1 -->
+                                <div class="service-level-card" style="border: 2px solid rgba(44, 62, 80, 0.2); align-self: stretch;display: flex; flex-direction: column">
+                                    <div class="service-level-header" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
+                                        <div class="service-level-icon">
                                             <i class="fas fa-gavel"></i>
                                         </div>
-                                        <div class="right-title">Tutela judicial efectiva</div>
-                                    </div>
-                                    <div class="right-content">
-                                        Sin que pueda producirse indefensión
-                                    </div>
-                                </div>
-                                
-                                <div class="right-card" style="border-top-color: #2c3e50;">
-                                    <div class="right-header">
-                                        <div class="right-icon" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
-                                            <i class="fas fa-user-tie"></i>
+                                        <div>
+                                            <h4 style="margin: 0; font-size: 1.1rem;">Tutela judicial efectiva</h4>
+                                           
                                         </div>
-                                        <div class="right-title">Defensa y asistencia letrado</div>
                                     </div>
-                                    <div class="right-content">
-                                        Derecho a ser defendido
-                                    </div>
-                                </div>
-                                
-                                <div class="right-card" style="border-top-color: #2c3e50;">
-                                    <div class="right-header">
-                                        <div class="right-icon" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
-                                            <i class="fas fa-info-circle"></i>
+                                    <div class="service-level-body" style="display: flex; margin: auto;">
+                                        <div style="text-align: center; padding: 1rem 0;">
+                                            <div style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 0.5rem;">
+                                                <i class="fas fa-shield-alt"></i>
+                                            </div>
+                                            <h4 style="color: #333; margin-bottom: 0.5rem;">Sin indefensión</h4>
+                                            <p style="font-size: 0.95rem; color: #555; line-height: 1.5;">
+                                                Todas las personas tienen derecho a obtener la tutela efectiva de los jueces y tribunales en el ejercicio de sus derechos e intereses legítimos, <strong>sin que, en ningún caso, pueda producirse indefensión</strong>.
+                                            </p>
                                         </div>
-                                        <div class="right-title">Información de acusación</div>
-                                    </div>
-                                    <div class="right-content">
-                                        Derecho a conocer los cargos
                                     </div>
                                 </div>
                                 
-                                <div class="right-card" style="border-top-color: #2c3e50;">
-                                    <div class="right-header">
-                                        <div class="right-icon" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
+                                <!-- Columna 2: Apartado 2 -->
+                                <div class="service-level-card" style="border: 2px solid rgba(52, 152, 219, 0.2);margin-top: 1.5rem;">
+                                    <div class="service-level-header" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                                        <div class="service-level-icon">
                                             <i class="fas fa-user-shield"></i>
                                         </div>
-                                        <div class="right-title">Presunción de inocencia</div>
+                                        <div>
+                                            <h4 style="margin: 0; font-size: 1.1rem;">Garantías procesales</h4>
+                                            
+                                        </div>
                                     </div>
-                                    <div class="right-content">
-                                        Hasta que se demuestre lo contrario
+                                    <div class="service-level-body">
+                                        <div class="services-mini-grid" style="grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin: 0;">
+                                            <div style="background: rgba(52, 152, 219, 0.1); border-left: 3px solid #3498db;">
+                                                <i class="fas fa-user-tie" style="color: #3498db;"></i>
+                                                <span><strong>Juez ordinario predeterminado</strong> por la ley</span>
+                                            </div>
+                                            <div style="background: rgba(52, 152, 219, 0.1); border-left: 3px solid #3498db;">
+                                                <i class="fas fa-gavel" style="color: #3498db;"></i>
+                                                <span><strong>Defensa y asistencia de letrado</strong></span>
+                                            </div>
+                                            <div style="background: rgba(52, 152, 219, 0.1); border-left: 3px solid #3498db;">
+                                                <i class="fas fa-info-circle" style="color: #3498db;"></i>
+                                                <span><strong>Información de la acusación</strong> formulada</span>
+                                            </div>
+                                            <div style="background: rgba(52, 152, 219, 0.1); border-left: 3px solid #3498db;">
+                                                <i class="fas fa-clock" style="color: #3498db;"></i>
+                                                <span><strong>Proceso público</strong> sin dilaciones indebidas</span>
+                                            </div>
+                                            <div style="background: rgba(52, 152, 219, 0.1); border-left: 3px solid #3498db;">
+                                                <i class="fas fa-search" style="color: #3498db;"></i>
+                                                <span><strong>Medios de prueba</strong> pertinentes para defensa</span>
+                                            </div>
+                                            <div style="background: rgba(52, 152, 219, 0.1); border-left: 3px solid #3498db;">
+                                                <i class="fas fa-ban" style="color: #3498db;"></i>
+                                                <span><strong>No declarar contra sí mismos</strong></span>
+                                            </div>
+                                            <div style="background: rgba(52, 152, 219, 0.1); border-left: 3px solid #3498db;">
+                                                <i class="fas fa-times-circle" style="color: #3498db;"></i>
+                                                <span><strong>No confesarse culpables</strong></span>
+                                            </div>
+                                            <div style="background: rgba(52, 152, 219, 0.1); border-left: 3px solid #3498db;">
+                                                <i class="fas fa-user-check" style="color: #3498db;"></i>
+                                                <span><strong>Presunción de inocencia</strong></span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="background: rgba(52, 152, 219, 0.05); padding: 0.8rem; border-radius: 6px; margin-top: 1rem; border-left: 3px solid #3498db;">
+                                            <p style="margin: 0; font-size: 0.85rem; color: #555;">
+                                                <i class="fas fa-exclamation-circle" style="color: #3498db; margin-right: 5px;"></i>
+                                                <strong>Excepción:</strong> La ley regulará los casos en que, por razón de <strong>parentesco</strong> o de <strong>secreto profesional</strong>, no se estará obligado a declarar sobre hechos presuntamente delictivos.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            
+                            
                         </div>
                         
                         <!-- ARTÍCULO 25 -->
@@ -1413,7 +1755,7 @@
                                     <i class="fas fa-exclamation-circle"></i>
                                 </div>
                                 <div>
-                                    <strong>Limitaciones:</strong> La ley podrá limitar el derecho de sindicación a las Fuerzas Armadas y regulará las peculiaridades para funcionarios públicos. El derecho a huelga incluirá garantías para servicios esenciales.
+                                    <strong>Limitaciones:</strong> La ley podrá limitar el derecho de sindicación a las Fuerzas Armadas y regulará las peculiaridades para funcionarios públicos. El derecho a huelga incluirá garantías para mantener servicios esenciales.
                                 </div>
                             </div>
                         </div>
@@ -1483,7 +1825,7 @@
                         
                         <div class="emphasis-box">
                             <i class="fas fa-layer-group" style="color: #FF9800; margin-right: 10px;"></i>
-                            <span>El Estado se organiza territorialmente en <span class="highlight-number">municipios</span>, en <span class="highlight-number">provincias</span> y en las <span class="highlight-number">Comunidades Autónomas</span> que se constituyan. Todas estas entidades gozan de autonomía para la gestión de sus respectivos intereses.</span>
+                            <span>El Estado se organiza territorialmente en <span class="highlight-number">municipios</span>, en <span class="highlight-number">provincias</span> y en las <span class="highlight-number">Comunidades Autónomas</span> que se constituyan. Todas estas entidades gozan de <strong>autonomía para la gestión de sus respectivos intereses</strong>.</span>
                         </div>
                     </div>
                     
@@ -1620,7 +1962,10 @@
                                 <div class="right-card" style="border-top-color: #27ae60;">
                                     <div class="right-header">
                                         <div class="right-icon" style="background: linear-gradient(135deg, #27ae60, #219653);">
-                                            <i class="fas fa-island-tropical"></i>
+                                            <span class="fa-layers fa-fw" style="font-size: 0.8em;">
+                                            <i class="fas fa-water" style="color: #ffffff; transform: translateY(20px);"></i>
+                                            <i class="fas fa-umbrella-beach" style="color: #ffffff; transform: scale(0.8) translateY(-28px);"></i>
+                                            </span>
                                         </div>
                                         <div class="right-title">Territorios insulares</div>
                                     </div>
@@ -1687,18 +2032,25 @@
                                     <div class="compact-desc">Con características históricas, culturales y económicas comunes</div>
                                 </div>
                                 
-                                <div class="compact-card" style="border-top-color: #16a085;">
+                                <div class="compact-card centrado" style="border-top-color: #16a085;">
+                                    <div style="margin: auto;">
                                     <div class="compact-icon" style="background: linear-gradient(135deg, #16a085, #138d75);">
-                                        <i class="fas fa-island-tropical"></i>
+                                        <span class="fa-layers fa-fw" style="font-size: 0.8em;">
+                                        <i class="fas fa-water" style="color: #ffffff; transform: translateY(15px);"></i>
+                                        <i class="fas fa-umbrella-beach" style="color: #ffffff; transform: scale(0.8) translateY(-20px);"></i>
+                                        </span>
                                     </div>
                                     <div class="compact-title">Territorios insulares</div>
                                 </div>
+                                </div>
                                 
-                                <div class="compact-card" style="border-top-color: #16a085;">
+                                <div class="compact-card centrado" style="border-top-color: #16a085;">
+                                    <div style="margin: auto;">
                                     <div class="compact-icon" style="background: linear-gradient(135deg, #16a085, #138d75);">
                                         <i class="fas fa-landmark"></i>
                                     </div>
                                     <div class="compact-title">Provincias con entidad regional histórica</div>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -1757,33 +2109,74 @@
                             <div class="section-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <span>CAPÍTULO I: De la Asamblea de Madrid</span>
+                            <span>CAPÍTULO I - Artículo 9: De la Asamblea de Madrid</span>
                         </div>
                         
-                        <!-- ARTÍCULO 9 -->
-                        <div class="subsection">
-                            <div class="subsection-title">
-                                <div class="subsection-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                            
+                        <div class="compact-competence-item" style="border-left-color: #3498db; grid-column: span 2; background: linear-gradient(135deg, #E3F2FD, #BBDEFB);">
+                            <div class="compact-competence-icon" style="background: linear-gradient(135deg, #3498db, #2980b9); width: 60px; height: 60px; font-size: 1.8rem;">
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <div class="compact-competence-content">
+                                <div class="compact-competence-title" style="font-size: 1.1rem; color: #2980b9;">Representa al pueblo de Madrid</div>
+                                <div class="compact-competence-desc" style="font-size: 0.95rem; color: #555;">
+                                    La Asamblea es el máximo órgano de representación política del pueblo madrileño.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="compact-competences-grid" style="margin-top: 1.5rem;">
+                            
+                            <!-- Potestad legislativa -->
+                            <div class="compact-competence-item" style="border-left-color: #2980b9;">
+                                <div class="compact-competence-icon" style="background: linear-gradient(135deg, #2980b9, #1c6ea4);">
                                     <i class="fas fa-gavel"></i>
                                 </div>
-                                <span>Artículo 9: La Asamblea de Madrid</span>
+                                <div class="compact-competence-content">
+                                    <div class="compact-competence-title">Potestad legislativa</div>
+                                    <div class="compact-competence-desc">
+                                        Ejerce la potestad legislativa de la Comunidad de Madrid
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="principle-card">
-                                <div class="principle-title">
-                                    <div class="principle-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
-                                        <i class="fas fa-user-friends"></i>
-                                    </div>
-                                    <span>Representación y funciones</span>
+                            <!-- Presupuesto -->
+                            <div class="compact-competence-item" style="border-left-color: #2980b9;">
+                                <div class="compact-competence-icon" style="background: linear-gradient(135deg, #2980b9, #1c6ea4);">
+                                    <i class="fas fa-calculator"></i>
                                 </div>
-                                
-                                <ul class="visual-list">
-                                    <li>Representa al <strong>pueblo de Madrid</strong></li>
-                                    <li>Ejerce la <strong>potestad legislativa</strong> de la Comunidad</li>
-                                    <li>Aprueba y controla el <strong>Presupuesto de la Comunidad</strong></li>
-                                    <li>Impulsa, orienta y controla la <strong>acción del Gobierno</strong></li>
-                                    <li>Ejerce las demás competencias que le atribuyen la Constitución, el Estatuto y el ordenamiento jurídico</li>
-                                </ul>
+                                <div class="compact-competence-content">
+                                    <div class="compact-competence-title">Aprobación presupuestos</div>
+                                    <div class="compact-competence-desc">
+                                        Aprueba y controla el Presupuesto de la Comunidad
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Control Gobierno -->
+                            <div class="compact-competence-item" style="border-left-color: #2980b9;">
+                                <div class="compact-competence-icon" style="background: linear-gradient(135deg, #2980b9, #1c6ea4);">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="compact-competence-content">
+                                    <div class="compact-competence-title">Control del Gobierno</div>
+                                    <div class="compact-competence-desc">
+                                        Impulsa, orienta y controla la acción del Gobierno
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Otras competencias -->
+                            <div class="compact-competence-item" style="border-left-color: #2980b9;">
+                                <div class="compact-competence-icon" style="background: linear-gradient(135deg, #2980b9, #1c6ea4);">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div class="compact-competence-content">
+                                    <div class="compact-competence-title">Otras competencias</div>
+                                    <div class="compact-competence-desc">
+                                        Ejerce las demás competencias atribuidas por Constitución, Estatuto y ordenamiento jurídico
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1794,68 +2187,76 @@
                             <div class="section-icon" style="background: linear-gradient(135deg, #27ae60, #219653);">
                                 <i class="fas fa-user-tie"></i>
                             </div>
-                            <span>CAPÍTULO III: Del Gobierno</span>
+                            <span>CAPÍTULO III - Artículo 22: Del Gobierno</span>
                         </div>
                         
                         <!-- ARTÍCULO 22 -->
-                        <div class="subsection">
-                            <div class="subsection-title">
-                                <div class="subsection-icon" style="background: linear-gradient(135deg, #27ae60, #219653);">
-                                    <i class="fas fa-cogs"></i>
-                                </div>
-                                <span>Artículo 22: El Gobierno de la Comunidad</span>
+                        <div class="compact-competence-item" style="border-left-color: #27ae60; grid-column: span 2; background: linear-gradient(135deg, #E8F5E9, #C8E6C9);">
+                            <div class="compact-competence-icon" style="background: linear-gradient(135deg, #27ae60, #219653); width: 60px; height: 60px; font-size: 1.8rem;">
+                                <i class="fas fa-cogs"></i>
                             </div>
-                            
-                            <div class="rights-grid">
-                                <div class="right-card" style="border-top-color: #27ae60;">
-                                    <div class="right-header">
-                                        <div class="right-icon" style="background: linear-gradient(135deg, #27ae60, #219653);">
-                                            <i class="fas fa-bullseye"></i>
-                                        </div>
-                                        <div class="right-title">Órgano colegiado</div>
-                                    </div>
-                                    <div class="right-content">
-                                        Dirige la política de la Comunidad de Madrid
-                                    </div>
-                                </div>
-                                
-                                <div class="right-card" style="border-top-color: #27ae60;">
-                                    <div class="right-header">
-                                        <div class="right-icon" style="background: linear-gradient(135deg, #27ae60, #219653);">
-                                            <i class="fas fa-tasks"></i>
-                                        </div>
-                                        <div class="right-title">Funciones ejecutivas y administrativas</div>
-                                    </div>
-                                    <div class="right-content">
-                                        Ejerce la potestad reglamentaria en materias no reservadas a la Asamblea
-                                    </div>
-                                </div>
-                                
-                                <div class="right-card" style="border-top-color: #27ae60;">
-                                    <div class="right-header">
-                                        <div class="right-icon" style="background: linear-gradient(135deg, #27ae60, #219653);">
-                                            <i class="fas fa-users"></i>
-                                        </div>
-                                        <div class="right-title">Composición</div>
-                                    </div>
-                                    <div class="right-content">
-                                        Presidente, Vicepresidente(s) y Consejeros
-                                    </div>
-                                </div>
-                                
-                                <div class="right-card" style="border-top-color: #27ae60;">
-                                    <div class="right-header">
-                                        <div class="right-icon" style="background: linear-gradient(135deg, #27ae60, #219653);">
-                                            <i class="fas fa-user-plus"></i>
-                                        </div>
-                                        <div class="right-title">Nombramiento</div>
-                                    </div>
-                                    <div class="right-content">
-                                        Miembros nombrados y cesados por el Presidente. No se necesita condición de Diputado para ser Vicepresidente o Consejero
-                                    </div>
+                            <div class="compact-competence-content">
+                                <div class="compact-competence-title" style="font-size: 1.1rem; color: #219653;">Órgano colegiado que dirige la política</div>
+                                <div class="compact-competence-desc" style="font-size: 0.95rem; color: #555;">
+                                    El Gobierno es el órgano colegiado que dirige la política de la Comunidad de Madrid
                                 </div>
                             </div>
                         </div>
+
+                        <div class="compact-competences-grid" style="margin-top: 1.5rem;">
+                                                        
+                            <!-- Funciones ejecutivas -->
+                            <div class="compact-competence-item" style="border-left-color: #219653;">
+                                <div class="compact-competence-icon" style="background: linear-gradient(135deg, #219653, #1a7c48);">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <div class="compact-competence-content">
+                                    <div class="compact-competence-title">Funciones ejecutivas</div>
+                                    <div class="compact-competence-desc">
+                                        Corresponde al Gobierno las funciones ejecutivas y administrativas
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Potestad reglamentaria -->
+                            <div class="compact-competence-item" style="border-left-color: #219653;">
+                                <div class="compact-competence-icon" style="background: linear-gradient(135deg, #219653, #1a7c48);">
+                                    <i class="fas fa-file-signature"></i>
+                                </div>
+                                <div class="compact-competence-content">
+                                    <div class="compact-competence-title">Potestad reglamentaria</div>
+                                    <div class="compact-competence-desc">
+                                        Ejerce la potestad reglamentaria en materias no reservadas a la Asamblea
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Composición -->
+                            <div class="compact-competence-item" style="border-left-color: #219653;">
+                                <div class="compact-competence-icon" style="background: linear-gradient(135deg, #219653, #1a7c48);">
+                                    <i class="fas fa-sitemap"></i>
+                                </div>
+                                <div class="compact-competence-content">
+                                    <div class="compact-competence-title">Composición</div>
+                                    <div class="compact-competence-desc">
+                                        Compuesto por: Presidente, Vicepresidente(s) y Consejeros
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Nombramiento -->
+                            <div class="compact-competence-item" style="border-left-color: #219653;">
+                                <div class="compact-competence-icon" style="background: linear-gradient(135deg, #219653, #1a7c48);">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="compact-competence-content">
+                                    <div class="compact-competence-title">Nombramiento</div>
+                                    <div class="compact-competence-desc">
+                                        Miembros nombrados y cesados por el Presidente. No se necesita condición de Diputado
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
                     </div>
                     
                     <!-- TÍTULO III: RÉGIMEN JURÍDICO -->
@@ -1879,7 +2280,7 @@
                             <ul class="visual-list">
                                 <li>Las competencias de la Comunidad de Madrid se entienden referidas a su <strong>territorio</strong></li>
                                 <li>Corresponde a la Asamblea de Madrid la <strong>potestad legislativa</strong> en los términos previstos en el Estatuto</li>
-                                <li>Corresponde al Consejo de Gobierno la <strong>potestad reglamentaria</strong> y la función ejecutiva</li>
+                                <li>Corresponde al Consejo de Gobierno la <strong>potestad reglamentaria y la función ejecutiva</strong></li>
                                 <li>Las competencias de ejecución llevan implícita la correspondiente <strong>potestad reglamentaria</strong> para organización interna de servicios</li>
                             </ul>
                         </div>
