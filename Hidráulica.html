@@ -51,6 +51,26 @@
             min-height: 100vh;
             background-attachment: fixed;
         }
+
+        @media (max-width: 630px) {
+            body {
+                --escala: 0.4; /* Cambia este valor para ajustar el tamaño */
+                
+                transform: scale(var(--escala));
+                transform-origin: top left; /* <--- Esto quita el margen izquierdo */
+                
+                /* Compensación de ancho para que no quede hueco a la derecha */
+                width: calc(100% / var(--escala)); 
+                height: calc(100vh / var(--escala));
+                
+                /* Evita que aparezca scroll horizontal innecesario */
+                overflow-x: hidden;
+            }
+
+            .floating-btn {
+                display: none !important;
+            }
+        }        
         
         .container {
             max-width: 1400px;
@@ -532,76 +552,7 @@
             100% { transform: translate(0, 0) rotate(360deg); }
         }
 
-        /* Responsividad para header visual */
-        @media (max-width: 768px) {
-            .hero-header {
-                padding: 2rem 0 2.5rem 0;
-                min-height: 250px;
-            }
-            
-            .title-word {
-                font-size: 2rem;
-                letter-spacing: 1px;
-            }
-            
-            .title-2 {
-                font-size: 1.6rem;
-            }
-            
-            .subtitle-text {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-            
-            .pressure-gauge-animated {
-                width: 60px;
-                height: 60px;
-                top: 15px;
-                right: 15px;
-            }
-            
-            .rotating-valve {
-                width: 40px;
-                height: 40px;
-                bottom: 15px;
-                left: 15px;
-            }
-            
-            .pipe-1, .pipe-3 {
-                display: none;
-            }
-            
-            .title-line {
-                max-width: 300px;
-            }
-        }
 
-        @media (max-width: 480px) {
-            .hero-header {
-                padding: 1.5rem 0 2rem 0;
-            }
-            
-            .title-word {
-                font-size: 1.6rem;
-            }
-            
-            .title-2 {
-                font-size: 1.3rem;
-            }
-            
-            .subtitle-text {
-                font-size: 0.9rem;
-            }
-            
-            .pressure-gauge-animated,
-            .rotating-valve {
-                display: none;
-            }
-            
-            .title-line {
-                display: none;
-            }
-        }
         
         /* Navegación */
         .visual-nav {
@@ -1135,118 +1086,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
         
-        /* Responsividad */
-        @media (max-width: 700px) {
-            .card-title-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .topic-number-badge {
-                align-self: center;
-            }
-            
-            .procedure-timeline {
-                flex-direction: column;
-            }
-            
-            .diagram-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-header p {
-                font-size: 1rem;
-            }
-            
-            .logo-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-            
-            .stat-box {
-                min-width: 150px;
-                padding: 0.8rem 1rem;
-            }
-            
-            .stat-number {
-                font-size: 1.5rem;
-            }
-            
-            .visual-nav {
-                padding: 1rem;
-                top: 10px;
-                gap: 10px;
-            }
-            
-            .nav-item {
-                min-width: 90px;
-                padding: 0.8rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .nav-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.5rem;
-            }
-            
-            .card-title-top {
-                font-size: 1.6rem;
-            }
-            
-            .card-content {
-                padding: 1.5rem;
-            }
-            
-            .card-header-top {
-                padding: 1.5rem 1.5rem 1.2rem;
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .floating-btn, .floating-btn-left {
-                width: 45px;
-                height: 45px;
-                font-size: 1.25rem;
-            }
-            
-            .floating-btn-left {
-                left: 15px;
-                bottom: 85px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-header h1 {
-                font-size: 1.5rem;
-            }
-            
-            .card-title-top {
-                font-size: 1.25rem;
-            }
-            
-            .section-title {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .stats-container {
-                gap: 1rem;
-            }
-            
-            .stat-box {
-                min-width: 120px;
-            }
-        }
+
         
         /* Tarjetas compactas */
         .compact-grid {
@@ -1663,41 +1503,7 @@
             color: #333;
         }
 
-        /* Responsividad para versiones compactas */
-        @media (max-width: 768px) {
-            .compact-grid-dense {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                gap: 0.6rem;
-            }
-            
-            .compact-data-grid {
-                grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-            }
-            
-            .compact-title-row {
-                gap: 10px;
-            }
-            
-            .compact-icon-small {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-            }
-            
-            .compact-title-text {
-                font-size: 1.1rem;
-            }
-        }
 
-        @media (max-width: 480px) {
-            .compact-grid-dense {
-                grid-template-columns: 1fr;
-            }
-            
-            .compact-data-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
 
         /* Añadir al final del CSS existente */
 
@@ -1782,11 +1588,7 @@
             border-top: 4px solid;
         }
 
-        @media (max-width: 768px) {
-            .comparison-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+
         
 
 
