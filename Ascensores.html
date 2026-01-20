@@ -1,0 +1,2477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascensores: Rescate y Seguridad - Guía Visual Completa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --color-elevator: #2C3E50;
+            --color-elevator-light: #3498DB;
+            --color-elevator-dark: #1A252F;
+            --color-safety: #E74C3C;
+            --color-safety-light: #F1948A;
+            --color-safety-dark: #C0392B;
+            --color-mechanical: #F39C12;
+            --color-mechanical-light: #F8C471;
+            --color-mechanical-dark: #D68910;
+            --color-rescue: #27AE60;
+            --color-rescue-light: #58D68D;
+            --color-rescue-dark: #229954;
+            --color-hydraulic: #8E44AD;
+            --color-hydraulic-light: #BB8FCE;
+            --color-hydraulic-dark: #7D3C98;
+            --color-text: #333333;
+            --color-light: #f8f9fa;
+            --color-dark: #212121;
+            --gradient-elevator: linear-gradient(135deg, #2C3E50 0%, #3498DB 100%);
+            --gradient-safety: linear-gradient(135deg, #E74C3C 0%, #F1948A 100%);
+            --gradient-mechanical: linear-gradient(135deg, #F39C12 0%, #F8C471 100%);
+            --gradient-rescue: linear-gradient(135deg, #27AE60 0%, #58D68D 100%);
+            --gradient-hydraulic: linear-gradient(135deg, #8E44AD 0%, #BB8FCE 100%);
+            --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+        }
+
+        html {
+            font-size: 17px;
+        }
+        
+        body {
+            font-size: 1rem;
+            background: linear-gradient(45deg, #ecf0f1 0%, #f5f7fa 100%);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 630px) {
+            body {
+                --escala: 0.4;
+                
+                transform: scale(var(--escala));
+                transform-origin: top left;
+                width: calc(100% / var(--escala));
+                height: calc(100vh / var(--escala));
+                overflow-x: hidden;
+            }
+
+            .floating-btn {
+                display: none !important;
+            }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER VISUAL */
+        .hero-header {
+            background: linear-gradient(155deg, 
+                #1A252F 0%, 
+                #2C3E50 25%, 
+                #3498DB 50%, 
+                #2980B9 75%, 
+                #5DADE2 100%);
+            color: white;
+            padding: 2.5rem 0 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Animación de cables de ascensor */
+        .elevator-cables {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .cable {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            width: 3px;
+            border-radius: 2px;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+        }
+
+        .cable-1 {
+            height: 150px;
+            top: 15%;
+            left: 15%;
+            animation: cableMove 8s infinite ease-in-out;
+        }
+
+        .cable-2 {
+            height: 120px;
+            top: 25%;
+            right: 20%;
+            animation: cableMove 10s infinite ease-in-out reverse;
+        }
+
+        .cable-3 {
+            height: 180px;
+            bottom: 20%;
+            left: 30%;
+            animation: cableMove 12s infinite ease-in-out;
+        }
+
+        .pulley {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .pulley-1 { top: 12%; left: 14%; }
+        .pulley-2 { top: 22%; right: 19%; }
+        .pulley-3 { bottom: 17%; left: 29%; }
+
+        @keyframes cableMove {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        /* Animación de cabina */
+        .elevator-cabin {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .cabin {
+            position: absolute;
+            width: 60px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 5px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: cabinMove 15s infinite ease-in-out;
+        }
+
+        .cabin-door {
+            position: absolute;
+            width: 20px;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.2);
+            top: 10px;
+            left: 20px;
+            border-radius: 2px;
+        }
+
+        @keyframes cabinMove {
+            0% { top: 20%; left: 40%; }
+            33% { top: 40%; left: 60%; }
+            66% { top: 60%; left: 30%; }
+            100% { top: 20%; left: 40%; }
+        }
+
+        /* Contenido del header */
+        .header-content-visual {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .main-title-visual {
+            margin-bottom: 1rem;
+        }
+
+        .title-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .title-word {
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            line-height: 1.1;
+        }
+
+        .title-1 {
+            color: white;
+            animation: titleGlow 4s infinite alternate;
+            margin-top: 2rem;
+        }
+
+        .title-2 {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 2.2rem;
+        }
+
+        .title-3 {
+            color: #F39C12;
+            text-shadow: 0 0 15px rgba(243, 156, 18, 0.5);
+            position: relative;
+        }
+
+        .title-3:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #F39C12, transparent);
+            animation: fireLine 3s infinite;
+        }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); }
+            100% { text-shadow: 0 5px 20px rgba(52, 152, 219, 0.6); }
+        }
+
+        @keyframes fireLine {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .subtitle-visual {
+            margin-bottom: 1.5rem;
+            margin-top: 5rem;
+        }
+
+        .subtitle-text {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.5;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .title-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .line-part {
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            flex: 1;
+        }
+
+        .line-center {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .elevator-icon {
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            position: relative;
+            animation: elevatorPulse 2s infinite;
+        }
+
+        .elevator-icon:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            animation: elevatorPulse 2s infinite reverse;
+        }
+
+        @keyframes elevatorPulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
+        /* Navegación */
+        .visual-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 2.5rem auto;
+            padding: 1.2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            max-width: 1400px;
+            position: sticky;
+            top: 15px;
+            z-index: 99;
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 100px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            font-size: 0.9rem;
+        }
+        
+        .nav-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .nav-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        /* Sistema de tarjetas */
+        .horizontal-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .horizontal-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .horizontal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        /* Encabezado de tarjeta */
+        .card-header-top {
+            padding: 2rem 2rem 1.5rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .card-title-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card-icon-large {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-title-top {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-subtitle-top {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 12px;
+        }
+        
+        .topic-number-badge {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Elementos dentro del contenido */
+        .highlight-number {
+            color: var(--color-safety);
+            font-weight: 800;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            color: #333;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .visual-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .visual-list li {
+            padding: 0.5rem 0;
+            padding-left: 3rem;
+            position: relative;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .visual-list li:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+            padding-left: 3.2rem;
+            border-left-color: var(--color-elevator-light);
+        }
+        
+        .visual-list li:before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--color-elevator-light);
+        }
+        
+        /* Cajas especiales */
+        .info-box, .tip-box, .warning-box, .danger-box, .procedure-box {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-box::before, .tip-box::before, .warning-box::before, .danger-box::before, .procedure-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #EBF5FB, #D6EAF8);
+            border-left: 6px solid var(--color-elevator-light);
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #E8F6F3, #D1F2EB);
+            border-left: 6px solid var(--color-rescue);
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #FEF9E7, #FCF3CF);
+            border-left: 6px solid var(--color-mechanical);
+        }
+        
+        .danger-box {
+            background: linear-gradient(135deg, #FDEDEC, #FADBD8);
+            border-left: 6px solid var(--color-safety);
+        }
+        
+        .procedure-box {
+            background: linear-gradient(135deg, #F4ECF7, #EBDEF0);
+            border-left: 6px solid var(--color-hydraulic);
+        }
+        
+        .box-icon {
+            font-size: 1.3rem;
+            min-width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        /* Diagramas y elementos visuales */
+        .visual-diagram {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px dashed #ddd;
+            text-align: center;
+        }
+        
+        .diagram-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+        
+        .diagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .diagram-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .diagram-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .diagram-icon {
+            font-size: 2rem;
+            color: var(--color-elevator);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        .visual-footer {
+            background: linear-gradient(135deg, var(--color-dark), #424242);
+            color: white;
+            padding: 3.5rem 0;
+            text-align: center;
+            margin-top: 5rem;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .visual-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 0L0 0 892.25 114.72 1200 0z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        /* Botones flotantes */
+        .floating-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: var(--gradient-elevator);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1) rotate(15deg);
+        }
+        
+        .floating-btn-left {
+            left: 25px;
+            right: auto;
+            background: var(--gradient-safety);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        .floating-btn-left:hover {
+            transform: scale(1.1) rotate(-15deg);
+        }
+        
+        /* Etiquetas de categoría */
+        .category-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        
+        .tag-electric { background: #E3F2FD; color: #1565C0; }
+        .tag-hydraulic { background: #F3E5F5; color: #7B1FA2; }
+        .tag-safety { background: #FFEBEE; color: #D32F2F; }
+        .tag-rescue { background: #E8F5E9; color: #2E7D32; }
+        .tag-mechanical { background: #FFF3E0; color: #EF6C00; }
+        
+        /* Iconos decorativos flotantes */
+        .floating-icon {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        /* Estilo para subtítulos dentro de las secciones */
+        .section h4 {
+            margin: 1.5rem 0 1rem 0;
+            color: #333;
+            font-size: 1.2rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid var(--color-elevator);
+            padding-left: 1rem;
+        }
+        
+        /* Timeline horizontal */
+        .procedure-timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            justify-content: space-between;
+        }
+        
+        .timeline-step {
+            flex: 1;
+            min-width: 150px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            border-top: 4px solid var(--color-elevator-light);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: var(--color-elevator-light);
+            color: white;
+            border-radius: 50%;
+            line-height: 32px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .step-title {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+            color: var(--color-dark);
+        }
+        
+        /* Tablas */
+        .visual-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .visual-table th {
+            background: var(--gradient-elevator);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .visual-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .visual-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .visual-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        /* COMPACT STYLES */
+        .compact-section {
+            margin-bottom: 1.8rem;
+            position: relative;
+        }
+
+        .compact-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .compact-title-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .compact-icon-small {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .compact-title-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #333;
+            margin: 0;
+        }
+
+        .compact-subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        .compact-text {
+            font-size: 0.98rem;
+
+        }
+
+        .compact-grid-dense {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        .centrado {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tcentrado {
+            margin: auto;
+        }
+
+        .compact-card-dense {
+            flex: 1 1 220px;
+            background: white;
+            border-radius: 8px;
+            padding: 0.9rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+            border-top: 3px solid;
+            transition: all 0.2s ease;
+        }
+
+        .compact-card-dense:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+        }
+
+        .compact-card-header-dense {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .compact-icon-tiny {
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .compact-title-dense {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        .compact-content-dense {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .centrado .compact-content-dense {
+            margin: auto;
+            font-size: 1rem;
+        }
+
+        .columnas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .colbox {
+            flex: 1 1 220px;
+        }
+
+        .compact-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.8rem 0;
+        }
+
+        .compact-list li {
+            padding: 0.5rem 0 0.5rem 1.8rem;
+            position: relative;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            border-left: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .compact-list li:hover {
+            border-left-color: var(--color-elevator-light);
+            background-color: rgba(0,0,0,0.02);
+        }
+
+        .compact-list li:before {
+            content: '';
+            position: absolute;
+            left: 0.8rem;
+            top: 0.9rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-elevator-light);
+        }
+
+        /* Compact boxes */
+        .compact-box {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .compact-box-icon {
+            font-size: 1rem;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .compact-box-content {
+            flex: 1;
+        }
+
+        .compact-box-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+            color: #333;
+        }
+
+        /* Tipos específicos de cajas compactas */
+        .compact-info {
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            border-left: 4px solid var(--color-elevator-light);
+        }
+
+        .compact-tip {
+            background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+            border-left: 4px solid var(--color-rescue);
+        }
+
+        .compact-warning {
+            background: linear-gradient(135deg, #FFF8E1, #FFECB3);
+            border-left: 4px solid var(--color-mechanical);
+        }
+
+        .compact-danger {
+            background: linear-gradient(135deg, #FFEBEE, #FFCDD2);
+            border-left: 4px solid var(--color-safety);
+        }
+
+        .comparison-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .comparison-card {
+            flex: 1 1 220px;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid;
+        }
+
+        /* Data Grid */
+        .compact-data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 0.7rem;
+            margin: 1rem 0;
+        }
+
+        .compact-data-item {
+            background: #f8f9fa;
+            padding: 0.8rem;
+            border-radius: 6px;
+            text-align: center;
+            border-left: 3px solid var(--color-elevator-light);
+            transition: all 0.2s ease;
+        }
+
+        .compact-data-item:hover {
+            background: #f0f7ff;
+            transform: translateY(-2px);
+        }
+
+        .compact-data-value {
+            font-weight: 800;
+            color: var(--color-safety);
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+        }
+
+        .compact-data-label {
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.2;
+        }
+
+        /* Estilo para imágenes representativas */
+        .elevator-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 1rem auto;
+            display: block;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Leyes y principios */
+        .law-box {
+            background: linear-gradient(135deg, #E1F5FE, #B3E5FC);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border-left: 6px solid #0288D1;
+            position: relative;
+        }
+
+        .law-title {
+            font-weight: 800;
+            color: #01579B;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .principle-box {
+            background: linear-gradient(135deg, #F3E5F5, #E1BEE7);
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #7B1FA2;
+        }
+
+        .principle-title {
+            font-weight: 700;
+            color: #7B1FA2;
+            margin-bottom: 0.5rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="hero-header">
+        <!-- Sistema de cables de ascensor animado -->
+        <div class="elevator-cables">
+            <div class="cable cable-1"></div>
+            <div class="cable cable-2"></div>
+            <div class="cable cable-3"></div>
+            <div class="pulley pulley-1"></div>
+            <div class="pulley pulley-2"></div>
+            <div class="pulley pulley-3"></div>
+        </div>
+        
+        <!-- Animación de cabina -->
+        <div class="elevator-cabin">
+            <div class="cabin">
+                <div class="cabin-door"></div>
+            </div>
+        </div>
+        
+        <!-- Contenido principal -->
+        <div class="container header-content-visual">
+            <!-- Título principal -->
+            <div class="main-title-visual">
+                <h1 class="title-text">
+                    <span class="title-word title-1">ASCENSORES</span>
+                    <span class="title-word title-3">Y RESCATE</span>
+                </h1>
+            </div>
+            
+            <!-- Subtítulo -->
+            <div class="subtitle-visual">
+                <p class="subtitle-text">Guía visual completa sobre tipos de ascensores, sistemas de seguridad, técnicas de rescate y procedimientos de intervención</p>
+            </div>
+            
+            <!-- Línea decorativa -->
+            <div class="title-line">
+                <div class="line-part line-left"></div>
+                <div class="line-center">
+                    <div class="elevator-icon"></div>
+                </div>
+                <div class="line-part line-right"></div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navegación -->
+    <div class="container">
+        <div class="visual-nav">
+            <a href="#introduccion" class="nav-item" style="background: linear-gradient(135deg, #EBF5FB, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-elevator);">
+                    <i class="fas fa-elevator"></i>
+                </div>
+                <span>Introducción</span>
+                <small>Sección 1</small>
+            </a>
+            
+            <a href="#tipos-ascensores" class="nav-item" style="background: linear-gradient(135deg, #FEF9E7, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-mechanical);">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <span>Tipos de Ascensores</span>
+                <small>Sección 2</small>
+            </a>
+            
+            <a href="#partes-comunes" class="nav-item" style="background: linear-gradient(135deg, #E8F6F3, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-rescue);">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <span>Partes Comunes</span>
+                <small>Sección 3</small>
+            </a>
+            
+            <a href="#tecnicas-rescate" class="nav-item" style="background: linear-gradient(135deg, #FDEDEC, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-safety);">
+                    <i class="fas fa-first-aid"></i>
+                </div>
+                <span>Técnicas de Rescate</span>
+                <small>Sección 4</small>
+            </a>
+            
+            <a href="#procedimiento" class="nav-item" style="background: linear-gradient(135deg, #F4ECF7, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-hydraulic);">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <span>Procedimiento</span>
+                <small>Sección 5</small>
+            </a>
+        </div>
+    </div>
+    
+    <main class="container">
+        <div class="horizontal-cards-container">
+            
+            <!-- SECCIÓN 1: INTRODUCCIÓN Y NORMATIVA -->
+            <section id="introduccion" class="horizontal-card">
+                <div class="card-header-top" style="background: var(--gradient-elevator);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large" style="background: var(--gradient-elevator);">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div>
+                            <h2 class="card-title-top">📋 INTRODUCCIÓN Y NORMATIVA</h2>
+                            <p class="card-subtitle-top">Sistema seguro de movilidad vertical y normativa europea aplicable</p>
+                            <div>
+                                <span class="category-tag tag-safety">Seguridad</span>
+                                <span class="category-tag tag-rescue">Rescate</span>
+                                <span class="category-tag tag-electric">Normativa</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">SECCIÓN 1</div>
+                </div>
+
+                <div class="card-content">
+                    <!-- 1.1 Definición y normativa -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-elevator);">
+                                <i class="fas fa-elevator"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">1.1 DEFINICIÓN Y NORMATIVA</h3>
+                                <p class="compact-subtitle">Sistema seguro para mover personas o bienes entre diferentes niveles</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-elevator);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">¿Qué es un ascensor?</div>
+                                <p class="compact-text">Sistema de movilidad vertical formado por partes mecánicas, eléctricas y electrónicas que funcionan conjuntamente. Dispone de una cabina que se desplaza a lo largo de unas guías con una inclinación que nunca supera los <span class="highlight-number">15 grados</span> sobre la horizontal.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-warning compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-safety);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">¡PRECAUCIÓN CON LLAVES DE EMERGENCIA!</div>
+                                <p class="compact-text">La mayoría de accidentes están relacionados con caídas por el hueco durante la manipulación de puertas con llaves de emergencia. Por ello, <strong>está prohibido</strong> que estas llaves estén al alcance de cualquier persona sin responsabilidad sobre el ascensor.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card" style="border-top-color: var(--color-elevator);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-elevator);">
+                                        <i class="fas fa-user-shield"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Responsables del rescate</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Ascensorista</li>
+                                    <li>Personas responsables (propietario, portero, vigilante con formación)</li>
+                                    <li>Bomberos debidamente instruidos</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: var(--color-elevator-light); align-self: center;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-elevator-light);">
+                                        <i class="fas fa-file-contract"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Obligaciones del fabricante</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">Al entregar el ascensor, debe proporcionar explicación detallada sobre medidas de rescate para casos de personas atrapadas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-rescue);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Respuesta proporcional</div>
+                                <p class="compact-text">La respuesta al rescate debe ser proporcional a la situación y siempre seguir las instrucciones del fabricante (suelen estar en el cuarto de máquinas). Generalmente, moviendo la cabina y usando la llave de emergencia es posible abordar diferentes situaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN 2: TIPOS DE ASCENSORES -->
+            <section id="tipos-ascensores" class="horizontal-card">
+                <div class="card-header-top" style="background: var(--gradient-mechanical);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large" style="background: var(--gradient-mechanical);">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div>
+                            <h2 class="card-title-top">⚙️ TIPOS DE ASCENSORES</h2>
+                            <p class="card-subtitle-top">Clasificación por sistema de funcionamiento, uso y otros sistemas</p>
+                            <div>
+                                <span class="category-tag tag-electric">Eléctricos</span>
+                                <span class="category-tag tag-hydraulic">Hidráulicos</span>
+                                <span class="category-tag tag-safety">Emergencia</span>
+                                <span class="category-tag tag-mechanical">Mecánicos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">SECCIÓN 2</div>
+                </div>
+
+                <div class="card-content">
+                    <!-- 2.1 Por sistema de funcionamiento -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-mechanical);">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">2.1 POR SISTEMA DE FUNCIONAMIENTO</h3>
+                                <p class="compact-subtitle">Clasificación según su mecanismo de tracción</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card" style="border-top-color: var(--color-mechanical);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Ascensores Eléctricos o de Adherencia</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">Alimentados por corriente eléctrica. Sistema de tracción basado en adherencia mediante cables de acero o cintas planas que pasan por polea motriz.</p>
+                                <div class="compact-data-grid" style="margin-top: 1rem;">
+                                    <div class="compact-data-item">
+                                        <div class="compact-data-value">Con engranajes</div>
+                                        <div class="compact-data-label">Velocidad: <span class="highlight-number">0,1-1,75 m/s</span></div>
+                                    </div>
+                                    <div class="compact-data-item">
+                                        <div class="compact-data-value">Sin engranajes</div>
+                                        <div class="compact-data-label">Velocidad: <span class="highlight-number">2-10 m/s</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: var(--color-hydraulic);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Ascensores Hidráulicos</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">Funcionan por acción de bomba que impulsa fluido a presión hacia pistón. Movimiento se transfiere a la cabina.</p>
+                                <div class="compact-data-item" style="margin-top: 1rem;">
+                                    <div class="compact-data-value">Velocidad baja</div>
+                                    <div class="compact-data-label"><span class="highlight-number">0,1-1,75 m/s</span></div>
+                                </div>
+                                <div style="margin-top: 0.8rem; font-size: 0.85rem;">
+                                    <strong>Tipos:</strong> Impulsión directa 1:1, Impulsión lateral, Impulsión diferencial 2:1, Doble impulsión
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.2 Por uso -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-safety);">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">2.2 POR USO</h3>
+                                <p class="compact-subtitle">Clasificación según su aplicación específica</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-safety);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-safety);">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Ascensor de bomberos</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Obligatorio en edificios > <span class="highlight-number">28 m</span> altura evacuación</li>
+                                    <li>Capacidad mínima: <span class="highlight-number">630 kg</span></li>
+                                    <li>Superficie cabina mínima: <span class="highlight-number">1,40 m²</span></li>
+                                    <li>Autonomía: <span class="highlight-number">1 hora</span> a plena carga</li>
+                                    <li>Velocidad suficiente para recorrido en <span class="highlight-number">≤ 1 minuto</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-elevator-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-elevator-light);">
+                                        <i class="fas fa-wheelchair"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Para minusválidos</h4>
+                                </div>
+                                <p class="compact-content-dense">Especialmente diseñados con características especiales en luz, dimensiones, parada a nivel, situación del sistema de control, etc.</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-mechanical);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Industrial y montacargas</h4>
+                                </div>
+                                <p class="compact-content-dense">Utilizados en actividad industrial. Soportan grandes cargas durante un número elevado de horas.</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-hydraulic);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Para unifamiliares</h4>
+                                </div>
+                                <p class="compact-content-dense">Instalados en viviendas privadas, sin diferencias con ascensor convencional.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-elevator);">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Señalización importante</div>
+                                <p class="compact-text">Aquellos ascensores que NO puedan ser utilizados para evacuación deben disponer de señalización de <strong>"No utilizar en caso de incendio"</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.3 Otros sistemas -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-mechanical-dark);">
+                                <i class="fas fa-walking"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">2.3 OTROS SISTEMAS</h3>
+                                <p class="compact-subtitle">Sistemas complementarios de movilidad vertical</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card" style="border-top-color: var(--color-mechanical-dark);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical-dark);">
+                                        <i class="fas fa-stairs"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Escaleras mecánicas</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">Conjunto de escalones enlazados entre sí a modo de cadena sin fin. Dotadas de sistemas de arranque, cambio de sentido y dispositivos de seguridad con parada automática en emergencia.</p>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: var(--color-mechanical);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                        <i class="fas fa-conveyor-belt"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Andenes móviles</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">Aplican misma tecnología que escaleras mecánicas. Su piso tiene placas móviles dispuestas como banda continua. Para movimientos en horizontal o entreplantas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN 3: PARTES COMUNES DE UN ASCENSOR -->
+            <section id="partes-comunes" class="horizontal-card">
+                <div class="card-header-top" style="background: var(--gradient-rescue);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large" style="background: var(--gradient-rescue);">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div>
+                            <h2 class="card-title-top">🔩 PARTES COMUNES DE UN ASCENSOR</h2>
+                            <p class="card-subtitle-top">Componentes esenciales y elementos relacionados con emergencias</p>
+                            <div>
+                                <span class="category-tag tag-mechanical">Mecánicas</span>
+                                <span class="category-tag tag-electric">Eléctricas</span>
+                                <span class="category-tag tag-safety">Emergencia</span>
+                                <span class="category-tag tag-rescue">Rescate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">SECCIÓN 3</div>
+                </div>
+
+                <div class="card-content">
+                    <!-- 3.1 Partes principales -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-rescue);">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">3.1 PARTES PRINCIPALES</h3>
+                                <p class="compact-subtitle">Estructura básica de cualquier instalación de ascensor</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-rescue);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-rescue);">
+                                        <i class="fas fa-cog"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Cuarto de máquinas</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Ubicación mecanismo de tracción</li>
+                                    <li>Puede estar en parte superior/inferior del recinto</li>
+                                    <li>Algunos modelos modernos no tienen cuarto de máquinas</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-elevator);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-elevator);">
+                                        <i class="fas fa-box-open"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Recinto o hueco</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Espacio por el que se desplaza ascensor y contrapeso</li>
+                                    <li>Incluye cabina, puertas de acceso, guías, contrapeso</li>
+                                    <li>Profundidad del foso: mínimo <span class="highlight-number">0,5 m</span> libre bajo cabina</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-mechanical);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                        <i class="fas fa-layer-group"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Foso</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Parte inferior del recinto bajo última parada</li>
+                                    <li>Suelo liso y sensiblemente a nivel</li>
+                                    <li>Debe impermeabilizarse si está bajo nivel calle</li>
+                                    <li>Incluye amortiguadores para frenar descenso</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.2 Elementos del cuarto de máquinas -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-mechanical);">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">3.2 ELEMENTOS DEL CUARTO DE MÁQUINAS</h3>
+                                <p class="compact-subtitle">Componentes mecánicos y eléctricos esenciales</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-data-grid">
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">Motor-reductor</div>
+                                <div class="compact-data-label">Motor acoplado a reductor de velocidad</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">Polea motriz</div>
+                                <div class="compact-data-label">Realiza adherencia con cables de acero</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">Volante</div>
+                                <div class="compact-data-label">Para operación normal y rescate sin corriente</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">Freno</div>
+                                <div class="compact-data-label">Frena ascensor en subida y bajada</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">Limitador de velocidad</div>
+                                <div class="compact-data-label">Detiene cabina si supera velocidad máxima</div>
+                            </div>
+                            <div class="compact-data-item">
+                                <div class="compact-data-value">Cuadro de maniobras</div>
+                                <div class="compact-data-label">Componentes eléctricos/electrónicos</div>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-warning compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-safety);">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">¡PRECAUCIÓN ELÉCTRICA!</div>
+                                <p class="compact-text">El cuadro de maniobras tiene tensiones de <span class="highlight-number">230-400 V</span>. No entrar en contacto sin el debido aislamiento. Conocer ubicación cuadros de distribución para cortar corriente.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.3 Elementos relacionados con emergencia -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-safety);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">3.3 ELEMENTOS RELACIONADOS CON EMERGENCIA</h3>
+                                <p class="compact-subtitle">Dispositivos y sistemas para situaciones de rescate</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-safety);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-safety);">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Instrucciones de rescate</h4>
+                                </div>
+                                <p class="compact-content-dense">Obligatorias en cuarto de máquinas o cuadro de maniobras para efectuar rescate de forma segura.</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-safety-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-safety-light);">
+                                        <i class="fas fa-fire-extinguisher"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Pulsador de bomberos</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Al romper cristal se acciona microrruptor</li>
+                                    <li>Si sube: se detiene en piso siguiente</li>
+                                    <li>Si baja: continúa hasta planta principal</li>
+                                    <li>Obedece solo llamadas interiores</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-rescue);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-rescue);">
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Caja de llaves emergencia</h4>
+                                </div>
+                                <p class="compact-content-dense">Contiene llaves de sala de máquinas o puerta de planta. Debe estar restringida a personal autorizado.</p>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-elevator-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-elevator-light);">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Alumbrado emergencia</h4>
+                                </div>
+                                <p class="compact-content-dense">Obligatorio en cabina. Funciona con problemas en ascensor. Diferencial y magnetotérmico independientes del alumbrado.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-elevator);">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Tele-alarma / Servicio 24 horas</div>
+                                <p class="compact-text">En España desde 1999, es obligatorio que los ascensores dispongan de comunicación en cabina con el exterior para emergencias.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN 4: TÉCNICAS DE RESCATE -->
+            <section id="tecnicas-rescate" class="horizontal-card">
+                <div class="card-header-top" style="background: var(--gradient-safety);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large" style="background: var(--gradient-safety);">
+                            <i class="fas fa-first-aid"></i>
+                        </div>
+                        <div>
+                            <h2 class="card-title-top">🚨 TÉCNICAS DE RESCATE EN ASCENSORES</h2>
+                            <p class="card-subtitle-top">Protocolos según tipo de ascensor y situación</p>
+                            <div>
+                                <span class="category-tag tag-rescue">Procedimientos</span>
+                                <span class="category-tag tag-electric">Electromecánicos</span>
+                                <span class="category-tag tag-hydraulic">Hidráulicos</span>
+                                <span class="category-tag tag-safety">Seguridad</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">SECCIÓN 4</div>
+                </div>
+
+                <div class="card-content">
+                    <!-- 4.1 Normativa y medidas de seguridad -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-safety);">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">4.1 NORMATIVA Y MEDIDAS DE SEGURIDAD</h3>
+                                <p class="compact-subtitle">Normativa EN 81-28:2003 y protocolos básicos</p>
+                            </div>
+                        </div>
+                        
+                        <div class="law-box">
+                            <div class="law-title">📜 Normativa Europea EN 81-28:2003</div>
+                            <p>Las empresas de mantenimiento deben garantizar servicio técnico para averías. Plazo de respuesta: <span class="highlight-number">24 horas</span> para averías normales, <span class="highlight-number">inmediato</span> para personas atrapadas o accidentes.</p>
+                        </div>
+                        
+                        <div class="compact-danger compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-safety);">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">MEDIDAS DE SEGURIDAD EN TODA INTERVENCIÓN</div>
+                                <ol class="compact-list" style="counter-reset: item; padding-left: 0;">
+                                    <li style="padding-left: 2rem; position: relative;">Cortar suministro eléctrico durante maniobras en cuarto de máquinas, recinto o foso</li>
+                                    <li style="padding-left: 2rem; position: relative;">Bloquear interruptor o limitar acceso al cuadro general</li>
+                                    <li style="padding-left: 2rem; position: relative;">Comprobar situación de cabina desde planta más baja</li>
+                                    <li style="padding-left: 2rem; position: relative;">Asegurar cierre de todas las puertas antes de desplazar cabina</li>
+                                    <li style="padding-left: 2rem; position: relative;">Comunicar permanentemente con equipo de bomberos</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.2 Tipos de rescate -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-rescue);">
+                                <i class="fas fa-life-ring"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">4.2 TIPOS DE RESCATE</h3>
+                                <p class="compact-subtitle">Protocolos según situación y tipo de ascensor</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card" style="border-top-color: var(--color-rescue);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-rescue);">
+                                        <i class="fas fa-play-circle"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Rescate con funcionamiento normal</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">Técnica más segura. Poner en marcha ascensor y llevarlo a punto que permita rescate.</p>
+                                <div class="procedure-timeline" style="margin-top: 1rem;">
+                                    <div class="timeline-step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-title">Asegurar cierre puertas</div>
+                                    </div>
+                                    <div class="timeline-step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-title">Confirmar con pasajeros</div>
+                                    </div>
+                                    <div class="timeline-step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-title">Rearmar interruptor</div>
+                                    </div>
+                                    <div class="timeline-step">
+                                        <div class="step-number">4</div>
+                                        <div class="step-title">Accionar pulsador</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: var(--color-elevator);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-elevator);">
+                                        <i class="fas fa-ban"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Rescate sin movimiento cabina</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">Corte suministro eléctrico. Rescate condicionado por espacio libre entre planta y cabina.</p>
+                                <div style="margin-top: 1rem; font-size: 0.9rem;">
+                                    <strong>Distancias clave:</strong><br>
+                                    • > <span class="highlight-number">80 cm</span>: rescate en piso superior<br>
+                                    • < <span class="highlight-number">30 cm</span>: rescate en piso inferior
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid" style="margin-top: 1.5rem;">
+                            <div class="comparison-card" style="border-top-color: var(--color-mechanical);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                        <i class="fas fa-car-battery"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Rescate con sistema eléctrico emergencia</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">Solo en ascensores electromecánicos sin cuarto de máquinas con sistema eléctrico de emergencia.</p>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li>Localizar cuadro de accionamiento</li>
+                                    <li>Leer instrucciones específicas</li>
+                                    <li>Mover cabina hasta punto de rescate</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: var(--color-hydraulic);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
+                                        <i class="fas fa-hand-paper"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Rescate sin corriente eléctrica</h4>
+                                </div>
+                                <p style="font-size: 0.95rem; line-height: 1.5;">Último recurso cuando otras técnicas fallan. Verificar estado máquina de tracción antes de proceder.</p>
+                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                    <li>Cortar y comprobar ausencia eléctrica</li>
+                                    <li>Localizar zona para accionar maquinaria</li>
+                                    <li>Mover cabina con volante manual</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.3 Desenclave de puertas de piso -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-mechanical);">
+                                <i class="fas fa-door-open"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">4.3 DESENCLAVE DE PUERTAS DE PISO</h3>
+                                <p class="compact-subtitle">Técnica usada en la mayoría de rescates</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-mechanical);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Uso frecuente</div>
+                                <p class="compact-text">Permite apertura de puertas de piso cuando mecanismo de seguridad de cierre está accionado. Necesaria en la mayor parte de los rescates para que ocupantes salgan del ascensor.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-danger compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-safety);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">MEDIDAS DE SEGURIDAD PARA DESENCLAVE</div>
+                                <ul class="compact-list">
+                                    <li><strong>NO</strong> realizarla con ascensor en movimiento</li>
+                                    <li><strong>NO</strong> realizar con suministro eléctrico</li>
+                                    <li>Tomar precauciones para evitar caídas al hueco</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="procedure-box">
+                            <div class="box-icon" style="background: var(--color-hydraulic);">
+                                <i class="fas fa-door-closed"></i>
+                            </div>
+                            <div>
+                                <strong>Pasos para desenclave:</strong>
+                                <ol class="compact-list" style="counter-reset: item; padding-left: 0; margin-top: 0.5rem;">
+                                    <li style="padding-left: 2rem; position: relative;">Cortar y comprobar ausencia eléctrica</li>
+                                    <li style="padding-left: 2rem; position: relative;">Introducir llave, accionar y abrir puerta</li>
+                                    <li style="padding-left: 2rem; position: relative;">Tras desenclavar: cerrar puerta, quitar llave</li>
+                                    <li style="padding-left: 2rem; position: relative;">Comprobar que puerta está enclavada</li>
+                                    <li style="padding-left: 2rem; position: relative;">Comprobar funcionamiento instalación</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN 5: PROCEDIMIENTO TÁCTICO Y CAUSAS DE INTERVENCIÓN -->
+            <section id="procedimiento" class="horizontal-card">
+                <div class="card-header-top" style="background: var(--gradient-hydraulic);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large" style="background: var(--gradient-hydraulic);">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div>
+                            <h2 class="card-title-top">📊 PROCEDIMIENTO TÁCTICO Y CAUSAS DE INTERVENCIÓN</h2>
+                            <p class="card-subtitle-top">Causas principales y protocolo de actuación en emergencias</p>
+                            <div>
+                                <span class="category-tag tag-safety">Incidentes</span>
+                                <span class="category-tag tag-rescue">Protocolo</span>
+                                <span class="category-tag tag-mechanical">Problemas</span>
+                                <span class="category-tag tag-electric">Evaluación</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">SECCIÓN 5</div>
+                </div>
+
+                <div class="card-content">
+                    <!-- 5.1 Causas principales de intervención -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-hydraulic);">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">5.1 CAUSAS PRINCIPALES DE INTERVENCIÓN</h3>
+                                <p class="compact-subtitle">Situaciones más comunes que requieren rescate</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-hydraulic);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
+                                        <i class="fas fa-ruler-vertical"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Paradas de cabina fuera de nivel</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Funcionamiento normal pero parado</li>
+                                    <li>Dos escenarios: a nivel o entre pisos</li>
+                                    <li>Comprobar cables de tracción y acuñamiento</li>
+                                    <li>Precauciones para evitar caídas al hueco</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-safety);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-safety);">
+                                        <i class="fas fa-person-booth"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Persona o mercancías atrapadas</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Atrapamiento entre puerta y cabina</li>
+                                    <li>Entre pisadera de cabina y piso/pared</li>
+                                    <li>Averiguar causas y tiempo transcurrido</li>
+                                    <li>Desplazar parte inferior con cojines neumáticos</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-safety-dark);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-safety-dark);">
+                                        <i class="fas fa-falling"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Caídas por hueco del ascensor</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Frecuente en edificios nueva construcción</li>
+                                    <li>Fallos en faldón o mantenimiento</li>
+                                    <li>Aplicar máximas medidas de seguridad</li>
+                                    <li>Desconexión eléctrica obligatoria</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-elevator-light);">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-elevator-light);">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Inundaciones</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Corte de corriente antes de trabajar</li>
+                                    <li>Evitar riesgo de electrocución</li>
+                                    <li>Emplear bombas para desalojar agua</li>
+                                    <li>Precaución: dispositivos de mando podrían tener tensión</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-warning compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-mechanical);">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">ASCENSOR ACUÑADO</div>
+                                <p class="compact-text">Cuando limitador de velocidad detiene cabina. Si está a nivel: rescate sin movimiento. Si no:</p>
+                                <ol class="compact-list" style="counter-reset: item; padding-left: 0;">
+                                    <li style="padding-left: 2rem; position: relative;">Abrir puerta piso superior y verificar tensión cables</li>
+                                    <li style="padding-left: 2rem; position: relative;">Abrir freno y mover volante para subir cabina</li>
+                                    <li style="padding-left: 2rem; position: relative;">Intentar bajar cabina con volante</li>
+                                    <li style="padding-left: 2rem; position: relative;">Contactar con profesional si cables patinan</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5.2 Uso del ascensor como medio de evacuación en incendio -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-safety);">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">5.2 USO DEL ASCENSOR EN INCENDIOS</h3>
+                                <p class="compact-subtitle">Cuándo está indicado y cuándo desaconsejado</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-warning compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-safety);">
+                                <i class="fas fa-ban"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">NORMA GENERAL: PROHIBIDO</div>
+                                <p class="compact-text">Como norma general se prohíbe el uso de ascensores en caso de incendio. Sin embargo, existen excepciones que requieren valoración específica.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card" style="border-top-color: var(--color-rescue);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-rescue);">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">CASOS INDICADOS</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Incendio localizado lejos de zona ascensores</li>
+                                    <li>Para evacuar personas impedidas o mayores</li>
+                                    <li>Evitar embotellamientos y pánico en escaleras</li>
+                                    <li>Facilitar labor de bomberos</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: var(--color-safety);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-safety);">
+                                        <i class="fas fa-times-circle"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">CASOS DESACONSEJADOS</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Temperatura > <span class="highlight-number">400°C</span> en cuarto máquinas con aparatos eléctricos</li>
+                                    <li>Temperatura > <span class="highlight-number">700°C</span> en puertas piso o cuartos sin eléctricos</li>
+                                    <li>Si el ascensor recibe agua</li>
+                                    <li>En estos casos: inhabilitar inmediatamente</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5.3 Procedimiento táctico -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-elevator);">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">5.3 PROCEDIMIENTO TÁCTICO</h3>
+                                <p class="compact-subtitle">Pasos esenciales antes de intervención</p>
+                            </div>
+                        </div>
+                        
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Comunicación</div>
+                                <div style="font-size: 0.85rem; color: #666;">Con persona atrapada o herida</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Valoración</div>
+                                <div style="font-size: 0.85rem; color: #666;">De la situación</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Identificación</div>
+                                <div style="font-size: 0.85rem; color: #666;">De posibles riesgos</div>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-grid" style="margin-top: 1.5rem;">
+                            <div class="comparison-card" style="border-top-color: var(--color-elevator);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-elevator);">
+                                        <i class="fas fa-user-injured"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Comunicación con persona atrapada</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Número de personas</li>
+                                    <li>Estado físico y psicológico</li>
+                                    <li>Identificarse y tranquilizar</li>
+                                    <li>Instrucciones: puerta cerrada, no tocar botones</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: var(--color-mechanical);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Valoración de la situación</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Tipo de ascensor</li>
+                                    <li>Situación de cabina</li>
+                                    <li>Tipo de rescate necesario</li>
+                                    <li>Verificar estado puertas y tensado cables</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: var(--color-safety);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-safety);">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <h4 style="margin: 0; color: #333;">Identificación del riesgo</h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Riesgo eléctrico</li>
+                                    <li>Caídas</li>
+                                    <li>Atrapamiento</li>
+                                    <li>Preservar seguridad equipo y personas</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-rescue);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Validación continua durante intervención</div>
+                                <ul class="compact-list">
+                                    <li>Determinar estado personas heridas/atrapadas</li>
+                                    <li>Asegurar que puertas permanecen cerradas</li>
+                                    <li>Conocer posición cabina en cada momento</li>
+                                    <li>Conocer estado y ubicación para desplazar con seguridad</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- RESUMEN VISUAL DE TIPOLOGÍAS -->
+                    <div class="compact-section">
+                        <div class="compact-title-row">
+                            <div class="compact-icon-small" style="background: var(--color-elevator-dark);">
+                                <i class="fas fa-th-large"></i>
+                            </div>
+                            <div>
+                                <h3 class="compact-title-text">📋 RESUMEN DE TIPOLOGÍAS DE ASCENSORES</h3>
+                                <p class="compact-subtitle">Clasificación visual rápida para identificación</p>
+                            </div>
+                        </div>
+                        
+                        <div class="visual-table">
+                            <thead>
+                                <tr>
+                                    <th>Tipo</th>
+                                    <th>Características</th>
+                                    <th>Velocidad</th>
+                                    <th>Uso principal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Eléctrico con engranajes</strong></td>
+                                    <td>Motor eléctrico con grupo reductor</td>
+                                    <td><span class="highlight-number">0,1-1,75 m/s</span></td>
+                                    <td>Montacargas industriales, vehículos, pasajeros</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Eléctrico sin engranajes</strong></td>
+                                    <td>Motor conectado directamente a polea</td>
+                                    <td><span class="highlight-number">2-10 m/s</span></td>
+                                    <td>Edificios de gran altura</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hidráulico</strong></td>
+                                    <td>Bomba que impulsa fluido a pistón</td>
+                                    <td><span class="highlight-number">0,1-1,75 m/s</span></td>
+                                    <td>Control ruido, problemas espacio</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bomberos</strong></td>
+                                    <td>Características especiales normativa</td>
+                                    <td>Recorrido ≤ 1 minuto</td>
+                                    <td>Evacuación edificios > 28 m</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Panorámico</strong></td>
+                                    <td>Hueco no participa en protección incendios</td>
+                                    <td>Variable</td>
+                                    <td>Edificios con vistas</td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+    
+    
+    <!-- Botones flotantes -->
+    <button class="floating-btn" id="scrollTopBtn" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <button class="floating-btn floating-btn-left" id="scrollNextBtn" title="Siguiente sección">
+        <i class="fas fa-arrow-down"></i>
+    </button>
+    
+    <!-- Footer -->
+    <footer class="visual-footer">
+        <div class="container">
+            <div class="footer-content">
+                <h2 style="color: #ffffff; margin-bottom: 1.5rem; font-size: 2rem;">🛗 Ascensores: Rescate y Seguridad - Guía Visual</h2>
+                <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.9;">
+                    Resumen visual completo basado en el manual "Aperturas Forzadas y Rescate en Ascensores". Todos los conceptos, procedimientos y datos esenciales para intervenciones.
+                </p>
+                
+                <div class="footer-icons">
+                    <div class="footer-icon">
+                        <i class="fas fa-elevator"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-first-aid"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-fire-extinguisher"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2.5rem;">
+                    <p style="opacity: 0.8; font-size: 0.95rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-info-circle"></i> Esta guía tiene carácter informativo y educativo. Para aplicaciones prácticas, seguir protocolos oficiales y formación específica.
+                    </p>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">
+                        © 2025 Guía Visual de Ascensores: Rescate y Seguridad - Basado en manual técnico - CC BY-NC-SA 4.0
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Botón para volver arriba
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Función para navegar a la siguiente sección
+        const scrollNextBtn = document.getElementById('scrollNextBtn');
+        
+        // Obtener todas las secciones con IDs de navegación
+        const sections = Array.from(document.querySelectorAll('.horizontal-card[id]'));
+        
+        // Ordenar las secciones por su posición en la página
+        sections.sort((a, b) => {
+            return a.offsetTop - b.offsetTop;
+        });
+        
+        // Función para encontrar la sección actual
+        function getCurrentSection() {
+            // Margen para considerar que una sección está "activa"
+            const margin = 150;
+            
+            for (let i = sections.length - 1; i >= 0; i--) {
+                if (window.scrollY + margin >= sections[i].offsetTop) {
+                    return i;
+                }
+            }
+            return 0;
+        }
+        
+        // Función para navegar a la siguiente sección
+        function goToNextSection() {
+            const currentIndex = getCurrentSection();
+            const nextIndex = currentIndex + 1;
+            
+            if (nextIndex < sections.length) {
+                const nextSection = sections[nextIndex];
+                window.scrollTo({
+                    top: nextSection.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+                
+                // Actualizar URL sin recargar la página
+                history.pushState(null, null, `#${nextSection.id}`);
+            } else {
+                // Si estamos en la última sección, ir al principio
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Evento para el botón de siguiente sección
+        scrollNextBtn.addEventListener('click', goToNextSection);
+        
+        // Mostrar/ocultar botón según la posición
+        window.addEventListener('scroll', () => {
+            const currentIndex = getCurrentSection();
+            
+            // Mostrar siempre el botón, pero cambiar el icono si estamos en la última sección
+            if (currentIndex === sections.length - 1) {
+                scrollNextBtn.innerHTML = '<i class="fas fa-home"></i>';
+                scrollNextBtn.title = "Volver al inicio";
+            } else {
+                scrollNextBtn.innerHTML = '<i class="fas fa-arrow-down"></i>';
+                scrollNextBtn.title = "Siguiente sección";
+            }
+            
+            // Ocultar botón cuando estamos cerca del final de la última sección
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                scrollNextBtn.style.opacity = '0.5';
+            } else {
+                scrollNextBtn.style.opacity = '1';
+            }
+        });
+        
+        // Navegación con teclado (tecla derecha o barra espaciadora)
+        document.addEventListener('keydown', (e) => {
+            // Tecla derecha o barra espaciadora (excepto cuando se está escribiendo en un campo)
+            if ((e.key === 'ArrowRight' || e.key === ' ') && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                
+                e.preventDefault(); // Evitar comportamiento por defecto del espacio
+                goToNextSection();
+            }
+            
+            // Tecla izquierda para ir a la sección anterior
+            if (e.key === 'ArrowLeft' && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                
+                e.preventDefault();
+                const currentIndex = getCurrentSection();
+                const prevIndex = currentIndex - 1;
+                
+                if (prevIndex >= 0) {
+                    const prevSection = sections[prevIndex];
+                    window.scrollTo({
+                        top: prevSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+        
+        // Inicializar: mostrar el botón después de cargar
+        window.addEventListener('load', () => {
+            scrollNextBtn.style.display = 'flex';
+            
+            // Resaltar números importantes en rojo
+            document.querySelectorAll('.highlight-number').forEach(element => {
+                element.style.color = '#E74C3C';
+                element.style.fontWeight = '800';
+            });
+            
+            // Inicializar MathJax
+            if (window.MathJax) {
+                MathJax.typeset();
+            }
+        });
+        
+        // Asegurar que MathJax se ejecute después de cargar contenido dinámico
+        function renderMath() {
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
+        }
+        
+        // Ejecutar renderizado inicial
+        setTimeout(renderMath, 500);
+    </script>
+</body>
+</html>
