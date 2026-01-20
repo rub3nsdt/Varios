@@ -2132,17 +2132,6 @@
             });
         });
     </script>
-   <script>
-    window.onload = function() {
-        if(window.location.hash) {
-            var hash = window.location.hash; // obtiene "#municipios"
-            // Pequeño retraso para asegurar que el renderizado terminó
-            setTimeout(function(){
-                window.location.hash = ''; // Limpia el hash
-                window.location.hash = hash; // Lo vuelve a poner para forzar el salto
-            }, 600);
-        }
-    }
-    </script>
+
 </body>
 </html>
