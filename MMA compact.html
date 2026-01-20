@@ -406,35 +406,25 @@
             opacity: 0.9;
         }
 
-        @media (max-width: 768px) {
-            .compact-grid {
-                grid-template-columns: 1fr;
+        @media (max-width: 630px) {
+            body {
+                --escala: 0.4; /* Cambia este valor para ajustar el tamaño */
+                
+                transform: scale(var(--escala));
+                transform-origin: top left; /* <--- Esto quita el margen izquierdo */
+                
+                /* Compensación de ancho para que no quede hueco a la derecha */
+                width: calc(100% / var(--escala)); 
+                height: calc(100vh / var(--escala));
+                
+                /* Evita que aparezca scroll horizontal innecesario */
+                overflow-x: hidden;
             }
-            
-            .container {
-                padding: 20px;
-            }
-            
-            .legend {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 10px;
-            }
-            
-            .legend-item {
-                min-width: unset;
-                justify-content: center;
-            }
-            
-            h2 {
-                font-size: 1.8em;
-            }
-            
-            .mma-value {
-                font-size: 1.6em;
+
+            .floating-btn {
+                display: none !important;
             }
         }
-
         /* Animación de carga */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
