@@ -2132,26 +2132,17 @@
             });
         });
     </script>
-    <script>
-    (function () {
-    function goToSection() {
-        const params = new URLSearchParams(window.location.search);
-        const targetId = params.get("goto");
-        if (!targetId) return;
-
-        const el = document.getElementById(targetId);
-        if (el) {
-        el.scrollIntoView({ behavior: "instant", block: "start" });
+   <script>
+    window.onload = function() {
+        if(window.location.hash) {
+            var hash = window.location.hash; // obtiene "#municipios"
+            // Pequeño retraso para asegurar que el renderizado terminó
+            setTimeout(function(){
+                window.location.hash = ''; // Limpia el hash
+                window.location.hash = hash; // Lo vuelve a poner para forzar el salto
+            }, 300);
         }
     }
-
-    // Espera a que el DOM esté listo
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", goToSection);
-    } else {
-        goToSection();
-    }
-    })();
     </script>
 </body>
 </html>
