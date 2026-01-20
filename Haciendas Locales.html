@@ -2132,5 +2132,26 @@
             });
         });
     </script>
+    <script>
+    (function () {
+    function goToSection() {
+        const params = new URLSearchParams(window.location.search);
+        const targetId = params.get("goto");
+        if (!targetId) return;
+
+        const el = document.getElementById(targetId);
+        if (el) {
+        el.scrollIntoView({ behavior: "instant", block: "start" });
+        }
+    }
+
+    // Espera a que el DOM esté listo
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", goToSection);
+    } else {
+        goToSection();
+    }
+    })();
+    </script>
 </body>
 </html>
