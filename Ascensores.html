@@ -83,11 +83,11 @@
         /* HEADER VISUAL */
         .hero-header {
             background: linear-gradient(155deg, 
-                #1A252F 0%, 
-                #2C3E50 25%, 
-                #3498DB 50%, 
-                #2980B9 75%, 
-                #5DADE2 100%);
+                #252525 0%, 
+                #424446 25%, 
+                #505558 50%, 
+                #a1a8ad 75%, 
+                #c2ced4 100%);
             color: white;
             padding: 2.5rem 0 3rem 0;
             text-align: center;
@@ -912,7 +912,7 @@
         }
 
         .compact-card-dense {
-            flex: 1 1 220px;
+            flex: 1 1 300px;
             background: white;
             border-radius: 8px;
             padding: 0.9rem;
@@ -920,6 +920,28 @@
             border-top: 3px solid;
             transition: all 0.2s ease;
         }
+
+        .compact-card-dense-1 {
+            flex: 1 1 300px;
+            background: white;
+            border-radius: 8px;
+            padding: 0.9rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+            border-top: 3px solid;
+            transition: all 0.2s ease;
+        }
+
+        @media (max-width: 1400px) {
+            .compact-card-dense-1 {
+                flex: 1 1 400px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .compact-card-dense-1 {
+                flex: 1 1 300px;
+            }
+        }        
 
         .compact-card-dense:hover {
             transform: translateY(-2px);
@@ -1082,13 +1104,14 @@
 
         /* Data Grid */
         .compact-data-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 0.7rem;
             margin: 1rem 0;
         }
 
         .compact-data-item {
+            flex: 1 1 140px;
             background: #f8f9fa;
             padding: 0.8rem;
             border-radius: 6px;
@@ -1163,6 +1186,212 @@
             color: #7B1FA2;
             margin-bottom: 0.5rem;
         }
+
+        /* Contenedor responsive para tablas */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin: 1.5rem 0;
+        }
+
+        .table-responsive table {
+            margin-bottom: 0;
+        }
+
+        /* Ajustes específicos para la tabla de comparación */
+        .table-responsive .visual-table {
+            min-width: 800px;
+            width: 100%;
+        }
+
+        .table-responsive .visual-table th,
+        .table-responsive .visual-table td {
+            white-space: nowrap;
+            padding: 1rem 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .table-responsive .visual-table th:first-child,
+        .table-responsive .visual-table td:first-child {
+            padding-left: 1.2rem;
+        }
+
+        .table-responsive .visual-table th:last-child,
+        .table-responsive .visual-table td:last-child {
+            padding-right: 1.2rem;
+        }
+
+        /* Mejoras para visualización en móviles */
+        @media (max-width: 1300px) {
+            .table-responsive {
+                margin: 1rem -1rem;
+                width: calc(100% + 2rem);
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .table-responsive .visual-table {
+                min-width: 700px;
+            }
+            
+            .table-responsive .visual-table th,
+            .table-responsive .visual-table td {
+                padding: 0.8rem 0.6rem;
+                font-size: 0.8rem;
+            }
+            
+        }
+
+        @media (max-width: 900px) {
+            .table-responsive {
+                margin: 1rem -1rem;
+                width: calc(100% + 2rem);
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .table-responsive .visual-table {
+                min-width: 700px;
+            }
+            
+            .table-responsive .visual-table th,
+            .table-responsive .visual-table td {
+                padding: 0.8rem 0.6rem;
+                font-size: 0.7rem;
+            }
+            
+        }  
+
+        @media (max-width: 630px) {
+            .table-responsive {
+                margin: 1rem -1rem;
+                width: calc(100% + 2rem);
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .table-responsive .visual-table {
+                min-width: 700px;
+            }
+            
+            .table-responsive .visual-table th,
+            .table-responsive .visual-table td {
+                padding: 0.8rem 0.6rem;
+                font-size: 0.8rem;
+            }
+            
+        }    
+
+        /* Asegurar que los números en rojo se vean bien en tablas */
+        .visual-table .highlight-number {
+            color: var(--color-safety) !important;
+            font-weight: 800;
+        }
+
+        /* 1. Variables de color eléctrico que faltan */
+        :root {
+            --color-electric: #9C27B0;
+            --color-electric-light: #BA68C8;
+            --color-electric-dark: #7B1FA2;
+            --gradient-electric: linear-gradient(135deg, #9C27B0 0%, #BA68C8 100%);
+        }
+
+        /* 2. Estilo para la etiqueta eléctrica */
+        .tag-electric { 
+            background: #F3E5F5; 
+            color: #7B1FA2; 
+        }
+
+        /* 3. ESTILOS ESPECÍFICOS PARA LA SECCIÓN DE TIPOS DE PUERTAS */
+        /* Contenedor principal de tipos de puertas */
+        .compact-card-dense .compact-content-dense .tipos-puertas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        /* Cada item de tipo de puerta */
+        .tipo-puerta-item {
+            flex: 1 1 300px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.2rem;
+            border-left: 4px solid var(--color-elevator);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .tipo-puerta-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            border-left-color: var(--color-elevator-light);
+        }
+
+        /* Título dentro del item de puerta */
+        .tipo-puerta-titulo {
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #333;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tipo-puerta-titulo i {
+            color: var(--color-elevator);
+            font-size: 0.9rem;
+        }
+
+        /* Descripción dentro del item de puerta */
+        .tipo-puerta-descripcion {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        /* Diagrama dentro del item de puerta */
+        .tipo-puerta-diagrama {
+            background: white;
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin-top: 0.8rem;
+            border: 1px dashed #ddd;
+        }
+
+        .tipo-puerta-diagrama-titulo {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 0.3rem;
+        }
+
+        /* 4. Estilos para iconos eléctricos */
+        .compact-icon-tiny[style*="var(--color-electric)"] {
+            background: var(--color-electric) !important;
+        }
+
+        /* 5. Responsive para tipos de puertas */
+        @media (max-width: 768px) {
+            .compact-card-dense .compact-content-dense .tipos-puertas-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .tipo-puerta-item {
+                padding: 1rem;
+            }
+        }
+        
+
+
 
     </style>
 </head>
@@ -1361,12 +1590,13 @@
                         </div>
                         <div>
                             <h2 class="card-title-top">⚙️ TIPOS DE ASCENSORES</h2>
-                            <p class="card-subtitle-top">Clasificación por sistema de funcionamiento, uso y otros sistemas</p>
+                            <p class="card-subtitle-top">Clasificación completa por sistema de funcionamiento, uso y otros sistemas</p>
                             <div>
                                 <span class="category-tag tag-electric">Eléctricos</span>
                                 <span class="category-tag tag-hydraulic">Hidráulicos</span>
                                 <span class="category-tag tag-safety">Emergencia</span>
                                 <span class="category-tag tag-mechanical">Mecánicos</span>
+                                <span class="category-tag tag-rescue">Especiales</span>
                             </div>
                         </div>
                     </div>
@@ -1382,45 +1612,189 @@
                             </div>
                             <div>
                                 <h3 class="compact-title-text">2.1 POR SISTEMA DE FUNCIONAMIENTO</h3>
-                                <p class="compact-subtitle">Clasificación según su mecanismo de tracción</p>
+                                <p class="compact-subtitle">Clasificación según su mecanismo de tracción y fuente de energía</p>
                             </div>
                         </div>
                         
-                        <div class="comparison-grid">
+                        <div class="compact-info compact-box">
+                            <div class="compact-box-icon" style="background: var(--color-mechanical);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Sistemas de funcionamiento básicos</div>
+                                <p class="compact-text">Los ascensores se clasifican principalmente en dos tipos según su sistema de funcionamiento: <strong>eléctricos (o de adherencia)</strong> e <strong>hidráulicos</strong>. Cada tipo tiene sus características específicas y aplicaciones.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 2.1.1 Ascensores eléctricos -->
+                        <div class="columnas" style="margin-top: 1.5rem;">
+                            <div class="colbox">
+                                <div class="compact-card-dense" style="border-top-color: var(--color-mechanical); height: 100%;">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                            <i class="fas fa-bolt"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">ASCENSORES ELÉCTRICOS O DE ADHERENCIA</h4>
+                                    </div>
+                                    <div class="compact-content-dense">
+                                        <p>Alimentados por corriente eléctrica. Sistema de tracción basado en adherencia mediante cables de acero (actualmente cintas planas) anclados en la parte alta de la cabina que pasan por la polea motriz y terminan anclados en la parte superior del contrapeso.</p>
+                                        <div class="compact-data-item" style="margin-top: 0.8rem;">
+                                            <div class="compact-data-value">Principio de funcionamiento</div>
+                                            <div class="compact-data-label">Adherencia de cables contra garganta de polea motriz</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Subtipos de ascensores eléctricos -->
+                        <div class="comparison-grid" style="margin-top: 1.5rem;">
                             <div class="comparison-card" style="border-top-color: var(--color-mechanical);">
                                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
                                     <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
-                                        <i class="fas fa-bolt"></i>
+                                        <i class="fas fa-gears"></i>
                                     </div>
-                                    <h4 style="margin: 0; color: #333;">Ascensores Eléctricos o de Adherencia</h4>
+                                    <h4 style="margin: 0; color: #333;">Ascensores con engranajes<br><small>(con grupo reductor)</small></h4>
                                 </div>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">Alimentados por corriente eléctrica. Sistema de tracción basado en adherencia mediante cables de acero o cintas planas que pasan por polea motriz.</p>
-                                <div class="compact-data-grid" style="margin-top: 1rem;">
-                                    <div class="compact-data-item">
-                                        <div class="compact-data-value">Con engranajes</div>
-                                        <div class="compact-data-label">Velocidad: <span class="highlight-number">0,1-1,75 m/s</span></div>
+                                <ul class="compact-list">
+                                    <li>Motor eléctrico de poca potencia</li>
+                                    <li>Acciona engranaje reductor de tornillo sin fin y rueda dentada</li>
+                                    <li>La rueda dentada mueve la polea motriz</li>
+                                    <li>Velocidad de cabina: <span class="highlight-number">0,1 - 1,75 m/s</span></li>
+                                </ul>
+                                <div class="compact-data-item" style="margin-top: 1rem;">
+                                    <div class="compact-data-value">Aplicaciones</div>
+                                    <div class="compact-data-label">Montacargas industriales, elevación de vehículos, transporte de pasajeros</div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: var(--color-mechanical-dark);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical-dark);">
+                                        <i class="fas fa-cog"></i>
                                     </div>
-                                    <div class="compact-data-item">
-                                        <div class="compact-data-value">Sin engranajes</div>
-                                        <div class="compact-data-label">Velocidad: <span class="highlight-number">2-10 m/s</span></div>
+                                    <h4 style="margin: 0; color: #333;">Ascensores sin engranajes<br><small>(sin grupo reductor)</small></h4>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Motor conectado directamente al eje de polea ranurada de gran diámetro</li>
+                                    <li>Mayor eficiencia y menor mantenimiento</li>
+                                    <li>Velocidad de cabina: <span class="highlight-number">2 - 10 m/s</span></li>
+                                    <li>Mayor suavidad en el arranque y parada</li>
+                                </ul>
+                                <div class="compact-data-item" style="margin-top: 1rem;">
+                                    <div class="compact-data-value">Aplicaciones</div>
+                                    <div class="compact-data-label">Transporte de pasajeros en edificios de gran altura</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 2.1.2 Ascensores hidráulicos -->
+                        <div class="compact-section" style="margin-top: 2rem;">
+                            <div class="compact-title-row">
+                                <div class="compact-icon-small" style="background: var(--color-hydraulic); width: 42px; height: 42px;">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin: 0; color: #333; font-size: 1.2rem;">2.1.2 ASCENSORES HIDRÁULICOS</h4>
+                                    <p class="compact-subtitle">Funcionamiento por acción de bomba que impulsa fluido a presión</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-hydraulic); margin-top: 1rem;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
+                                        <i class="fas fa-oil-can"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Principio de funcionamiento</h4>
+                                </div>
+                                <div class="compact-content-dense">
+                                    <p>Una bomba impulsa fluido a presión hacia el pistón. El movimiento del pistón se transfiere a la cabina, desplazándola de forma ascendente y descendente.</p>
+                                    <div class="compact-data-grid" style="margin-top: 0.8rem;">
+                                        <div class="compact-data-item">
+                                            <div class="compact-data-value">Velocidad</div>
+                                            <div class="compact-data-label"><span class="highlight-number">0,1 - 1,75 m/s</span> (baja)</div>
+                                        </div>
+                                        <div class="compact-data-item">
+                                            <div class="compact-data-value">Aplicaciones</div>
+                                            <div class="compact-data-label">Control de ruido, problemas de espacio</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="comparison-card" style="border-top-color: var(--color-hydraulic);">
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-                                    <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
-                                        <i class="fas fa-tint"></i>
+                            <!-- Tipos de ascensores hidráulicos -->
+                            <h4 style="margin: 1.5rem 0 1rem 0; color: #333; font-size: 1.1rem; padding-left: 0.5rem; border-left: 4px solid var(--color-hydraulic); padding-left: 1rem;">
+                                Tipos de ascensores hidráulicos
+                            </h4>
+                            
+                            <div class="compact-grid-dense">
+                                <div class="compact-card-dense-1" style="border-top-color: var(--color-hydraulic);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
+                                            <i class="fas fa-arrows-alt-v"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Impulsión directa 1:1</h4>
                                     </div>
-                                    <h4 style="margin: 0; color: #333;">Ascensores Hidráulicos</h4>
+                                    <ul class="compact-list">
+                                        <li>Por cada cm de recorrido del pistón, la cabina se desplaza <span class="highlight-number">1 cm</span></li>
+                                        <li>Requiere foso profundo para colocar el pistón</li>
+                                        <li>Relación de movimiento 1:1</li>
+                                    </ul>
+                                    <div style="display: flex;">
+                                        <img src="image ascensores/directa.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>
                                 </div>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">Funcionan por acción de bomba que impulsa fluido a presión hacia pistón. Movimiento se transfiere a la cabina.</p>
-                                <div class="compact-data-item" style="margin-top: 1rem;">
-                                    <div class="compact-data-value">Velocidad baja</div>
-                                    <div class="compact-data-label"><span class="highlight-number">0,1-1,75 m/s</span></div>
+                                
+                                <div class="compact-card-dense-1" style="border-top-color: var(--color-hydraulic);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
+                                            <i class="fas fa-arrows-alt-h"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Impulsión directa lateral</h4>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>Pistón conecta con cabina en parte superior</li>
+                                        <li>Cilindro ubicado en fondo del foso</li>
+                                        <li>Para cargas moderadas y pequeños recorridos</li>
+                                    </ul>
+                                    <div style="display: flex;">
+                                        <img src="image ascensores/laterald.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>
                                 </div>
-                                <div style="margin-top: 0.8rem; font-size: 0.85rem;">
-                                    <strong>Tipos:</strong> Impulsión directa 1:1, Impulsión lateral, Impulsión diferencial 2:1, Doble impulsión
+                                
+                                <div class="compact-card-dense-1" style="border-top-color: var(--color-hydraulic);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
+                                            <i class="fas fa-expand-alt"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Impulsión diferencial 2:1</h4>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>Por cada cm que recorre el pistón, la cabina se desplaza <span class="highlight-number">2 cm</span></li>
+                                        <li>Polea y sistema de cables duplican recorrido</li>
+                                        <li>No requiere foso profundo (pistón en lateral del hueco)</li>
+                                    </ul>
+                                    <div style="display: flex;">
+                                        <img src="image ascensores/indirecta.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card-dense-1" style="border-top-color: var(--color-hydraulic-dark);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-hydraulic-dark);">
+                                            <i class="fas fa-layer-group"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Doble impulsión<br><small>directa e indirecta lateral</small></h4>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>Montacargas para grandes cargas</li>
+                                        <li>Recorridos cortos</li>
+                                        <li>Sistema combinado</li>
+                                    </ul>
+                                    <div style="display: flex;">
+                                        <img src="image ascensores/Doble.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1434,65 +1808,139 @@
                             </div>
                             <div>
                                 <h3 class="compact-title-text">2.2 POR USO</h3>
-                                <p class="compact-subtitle">Clasificación según su aplicación específica</p>
+                                <p class="compact-subtitle">Clasificación según aplicación específica y normativa especial</p>
                             </div>
                         </div>
                         
-                        <div class="compact-grid-dense">
-                            <div class="compact-card-dense" style="border-top-color: var(--color-safety);">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: var(--color-safety);">
-                                        <i class="fas fa-fire"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Ascensor de bomberos</h4>
+                        <!-- Ascensor de bomberos -->
+                        <div class="compact-card-dense" style="border-top-color: var(--color-safety); margin-bottom: 1.5rem;">
+                            <div class="compact-card-header-dense">
+                                <div class="compact-icon-tiny" style="background: var(--color-safety);">
+                                    <i class="fas fa-fire"></i>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Obligatorio en edificios > <span class="highlight-number">28 m</span> altura evacuación</li>
-                                    <li>Capacidad mínima: <span class="highlight-number">630 kg</span></li>
-                                    <li>Superficie cabina mínima: <span class="highlight-number">1,40 m²</span></li>
-                                    <li>Autonomía: <span class="highlight-number">1 hora</span> a plena carga</li>
-                                    <li>Velocidad suficiente para recorrido en <span class="highlight-number">≤ 1 minuto</span></li>
-                                </ul>
+                                <h4 class="compact-title-dense">Ascensor de emergencia o uso exclusivo de bomberos</h4>
                             </div>
-                            
-                            <div class="compact-card-dense" style="border-top-color: var(--color-elevator-light);">
+                            <div class="compact-content-dense">
+                                <p><strong>Obligatorio en edificios con altura de evacuación > <span class="highlight-number">28 m</span></strong> (<span class="highlight-number">15 m</span> en uso hospitalario y de tratamiento intensivo).</p>
+                                
+                                <div class="compact-warning compact-box" style="margin: 1rem 0; padding: 1rem;">
+                                    <div class="compact-box-icon" style="background: var(--color-safety); width: 32px; height: 32px;">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div>
+                                        <div class="compact-box-title">Características mínimas según normativa</div>
+                                        <ul class="compact-list" style="margin-top: 0.5rem;">
+                                            <li>Capacidad de carga mínima: <span class="highlight-number">630 kg</span></li>
+                                            <li>Superficie de cabina mínima: <span class="highlight-number">1,40 m²</span></li>
+                                            <li>Ancho de paso mínimo: <span class="highlight-number">0,80 m</span></li>
+                                            <li>Dos fuentes independientes de alimentación eléctrica</li>
+                                            <li>Autonomía: <span class="highlight-number">1 hora</span> a plena carga (segunda fuente)</li>
+                                            <li>Velocidad suficiente para recorrido en ≤ <span class="highlight-number">1 minuto</span></li>
+                                            <li>Acceso a todos los niveles en volúmenes compartimentados</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="columnas " style="margin-top: 1rem; gap: 1rem;">
+                                    <div class="colbox">
+                                        <div class="compact-info compact-box" style="margin: 0; padding: 0.8rem;">
+                                            <div class="compact-box-icon" style="background: var(--color-elevator); width: 28px; height: 28px; font-size: 0.9rem;">
+                                                <i class="fas fa-building"></i>
+                                            </div>
+                                            <div>
+                                                <div class="compact-box-title">Recinto del ascensor</div>
+                                                <p style="font-size: 0.85rem; margin: 0;">Debe ser sector de incendio independiente (excepto recinto de maquinaria).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="colbox" style="display: flex;">
+                                        <div class="compact-info compact-box" style="margin: 0; padding: 0.8rem; align-self: stretch; flex: 1;">
+                                            <div class="compact-box-icon" style="background: var(--color-elevator); width: 28px; height: 28px; font-size: 0.9rem;">
+                                                <i class="fas fa-sign"></i>
+                                            </div>
+                                            <div>
+                                                <div class="compact-box-title">Señalización</div>
+                                                <p style="font-size: 0.85rem; margin: 0;">Ascensores no evacuación: <strong>"No utilizar en caso de incendio"</strong>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Otros tipos por uso -->
+                        <div class="compact-grid-dense">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-elevator-light); min-width: 350px;">
                                 <div class="compact-card-header-dense">
                                     <div class="compact-icon-tiny" style="background: var(--color-elevator-light);">
-                                        <i class="fas fa-wheelchair"></i>
+                                        <i class="fas fa-binoculars"></i>
                                     </div>
-                                    <h4 class="compact-title-dense">Para minusválidos</h4>
+                                    <h4 class="compact-title-dense">Ascensor panorámico</h4>
                                 </div>
-                                <p class="compact-content-dense">Especialmente diseñados con características especiales en luz, dimensiones, parada a nivel, situación del sistema de control, etc.</p>
+                                <div class="compact-content-dense">
+                                    <p>Funcionamiento similar a convencionales, pero el hueco no participa en protección contra incendios.</p>
+                                </div>
                             </div>
                             
-                            <div class="compact-card-dense" style="border-top-color: var(--color-mechanical);">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-mechanical); min-width: 350px;">
                                 <div class="compact-card-header-dense">
                                     <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
-                                        <i class="fas fa-industry"></i>
+                                        <i class="fas fa-layer-group"></i>
                                     </div>
-                                    <h4 class="compact-title-dense">Industrial y montacargas</h4>
+                                    <h4 class="compact-title-dense">Doble cabina</h4>
                                 </div>
-                                <p class="compact-content-dense">Utilizados en actividad industrial. Soportan grandes cargas durante un número elevado de horas.</p>
+                                <div class="compact-content-dense">
+                                    <p>Sistema con dos cabinas superpuestas: inferior para pisos impares, superior para pares. Se instala en grandes edificios y minas (hasta 3 pisos en minas).</p>
+                                </div>
                             </div>
                             
-                            <div class="compact-card-dense" style="border-top-color: var(--color-hydraulic);">
+                            <div class="compact-card-dense" style="border-top-color: var(--color-mechanical-dark); min-width: 350px;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical-dark);">
+                                        <i class="fas fa-angle-double-right"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Ascensor inclinado</h4>
+                                </div>
+                                <div class="compact-content-dense">
+                                    <p>Diseñado para acceso a lugares de difícil comunicación. Similar a convencionales pero con inclinación respecto a la vertical.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-hydraulic); min-width: 350px;">
                                 <div class="compact-card-header-dense">
                                     <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
                                         <i class="fas fa-home"></i>
                                     </div>
                                     <h4 class="compact-title-dense">Para unifamiliares</h4>
                                 </div>
-                                <p class="compact-content-dense">Instalados en viviendas privadas, sin diferencias con ascensor convencional.</p>
+                                <div class="compact-content-dense">
+                                    <p>Instalados en viviendas privadas, sin diferencias con ascensor convencional.</p>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="compact-info compact-box" style="margin-top: 1.5rem;">
-                            <div class="compact-box-icon" style="background: var(--color-elevator);">
-                                <i class="fas fa-exclamation-circle"></i>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-rescue); min-width: 350px;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-rescue);">
+                                        <i class="fas fa-wheelchair"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Para minusválidos</h4>
+                                </div>
+                                <div class="compact-content-dense">
+                                    <p>Especialmente diseñados con características en luz, dimensiones, parada a nivel, situación del sistema de control, etc.</p>
+                                </div>
                             </div>
-                            <div class="compact-box-content">
-                                <div class="compact-box-title">Señalización importante</div>
-                                <p class="compact-text">Aquellos ascensores que NO puedan ser utilizados para evacuación deben disponer de señalización de <strong>"No utilizar en caso de incendio"</strong>.</p>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-mechanical); min-width: 350px;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Industrial y montacargas</h4>
+                                </div>
+                                <div class="compact-content-dense">
+                                    <p>Utilizados en actividad industrial. Soportan grandes cargas durante un número elevado de horas.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1515,226 +1963,719 @@
                                     <div class="compact-icon-tiny" style="background: var(--color-mechanical-dark);">
                                         <i class="fas fa-stairs"></i>
                                     </div>
-                                    <h4 style="margin: 0; color: #333;">Escaleras mecánicas</h4>
+                                    <h4 style="margin: 0; color: #333;">Escaleras móviles o mecánicas</h4>
                                 </div>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">Conjunto de escalones enlazados entre sí a modo de cadena sin fin. Dotadas de sistemas de arranque, cambio de sentido y dispositivos de seguridad con parada automática en emergencia.</p>
+                                <ul class="compact-list">
+                                    <li>Conjunto de escalones enlazados como cadena sin fin</li>
+                                    <li>Movimiento mediante mecanismo tractor con freno electromagnético</li>
+                                    <li>Sistemas de arranque y cambio de sentido</li>
+                                    <li>Dispositivos de seguridad con parada automática en emergencia</li>
+                                    <li>Utilizadas para movimientos entre plantas</li>
+                                </ul>
                             </div>
                             
                             <div class="comparison-card" style="border-top-color: var(--color-mechanical);">
                                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
                                     <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
-                                        <i class="fas fa-conveyor-belt"></i>
+                                        <span class="fa-layers fa-fw" style="font-size: 1.2em;">
+                                        <i class="fas fa-person-walking-luggage" style="transform: translate(0px, 10px);"></i>
+                                        
+                                        <i class="fas fa-arrow-right-long" 
+                                            style="color: var(--color-accent); transform: translate(0px, -6px) scale(0.8, 0.5);">
+                                        </i>
+                                        </span>
                                     </div>
                                     <h4 style="margin: 0; color: #333;">Andenes móviles</h4>
                                 </div>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">Aplican misma tecnología que escaleras mecánicas. Su piso tiene placas móviles dispuestas como banda continua. Para movimientos en horizontal o entreplantas.</p>
+                                <ul class="compact-list">
+                                    <li>Aplican misma tecnología que escaleras mecánicas</li>
+                                    <li>Piso con placas móviles como banda continua</li>
+                                    <li>Utilizados para movimientos en horizontal o entreplantas</li>
+                                    <li>Mayor capacidad de transporte que escaleras mecánicas</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            
-            <!-- SECCIÓN 3: PARTES COMUNES DE UN ASCENSOR -->
-            <section id="partes-comunes" class="horizontal-card">
-                <div class="card-header-top" style="background: var(--gradient-rescue);">
-                    <div class="card-title-container">
-                        <div class="card-icon-large" style="background: var(--gradient-rescue);">
-                            <i class="fas fa-cube"></i>
-                        </div>
-                        <div>
-                            <h2 class="card-title-top">🔩 PARTES COMUNES DE UN ASCENSOR</h2>
-                            <p class="card-subtitle-top">Componentes esenciales y elementos relacionados con emergencias</p>
-                            <div>
-                                <span class="category-tag tag-mechanical">Mecánicas</span>
-                                <span class="category-tag tag-electric">Eléctricas</span>
-                                <span class="category-tag tag-safety">Emergencia</span>
-                                <span class="category-tag tag-rescue">Rescate</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="topic-number-badge">SECCIÓN 3</div>
-                </div>
-
-                <div class="card-content">
-                    <!-- 3.1 Partes principales -->
+                    
+                    <!-- Resumen comparativo -->
                     <div class="compact-section">
                         <div class="compact-title-row">
-                            <div class="compact-icon-small" style="background: var(--color-rescue);">
-                                <i class="fas fa-cogs"></i>
+                            <div class="compact-icon-small" style="background: var(--color-elevator-dark);">
+                                <i class="fas fa-table"></i>
                             </div>
                             <div>
-                                <h3 class="compact-title-text">3.1 PARTES PRINCIPALES</h3>
-                                <p class="compact-subtitle">Estructura básica de cualquier instalación de ascensor</p>
+                                <h3 class="compact-title-text">📊 RESUMEN COMPARATIVO</h3>
+                                <p class="compact-subtitle">Características principales de cada tipo de ascensor</p>
                             </div>
                         </div>
                         
-                        <div class="compact-grid-dense">
-                            <div class="compact-card-dense" style="border-top-color: var(--color-rescue);">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: var(--color-rescue);">
-                                        <i class="fas fa-cog"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Cuarto de máquinas</h4>
+                        <div class="table-responsive" style="margin: 1.5rem 0;">
+                            <table class="visual-table" style="min-width: 800px;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20%;">Tipo</th>
+                                        <th style="width: 35%;">Características</th>
+                                        <th style="width: 20%;">Velocidad</th>
+                                        <th style="width: 25%;">Uso principal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Eléctrico con engranajes</strong></td>
+                                        <td>Motor con grupo reductor de tornillo sin fin</td>
+                                        <td><span class="highlight-number">0,1-1,75 m/s</span></td>
+                                        <td>Montacargas, vehículos, pasajeros</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Eléctrico sin engranajes</strong></td>
+                                        <td>Motor directo a polea, mayor eficiencia</td>
+                                        <td><span class="highlight-number">2-10 m/s</span></td>
+                                        <td>Edificios de gran altura</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Hidráulico directo 1:1</strong></td>
+                                        <td>Pistón-cabina relación 1:1, foso profundo</td>
+                                        <td><span class="highlight-number">0,1-1,75 m/s</span></td>
+                                        <td>Control ruido, espacios limitados</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Hidráulico diferencial 2:1</strong></td>
+                                        <td>Pistón-cabina relación 1:2, ahorro espacio</td>
+                                        <td><span class="highlight-number">0,1-1,75 m/s</span></td>
+                                        <td>Espacios con foso limitado</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Bomberos</strong></td>
+                                        <td>Normativa específica, dos alimentaciones</td>
+                                        <td>Recorrido ≤ <span class="highlight-number">1 min</span></td>
+                                        <td>Edificios > <span class="highlight-number">28 m</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Panorámico</strong></td>
+                                        <td>Hueco no participa en protección incendios</td>
+                                        <td>Variable</td>
+                                        <td>Edificios con vistas</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Doble cabina</strong></td>
+                                        <td>Dos cabinas superpuestas, aprovecha espacio</td>
+                                        <td>Variable</td>
+                                        <td>Grandes edificios, minas</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="compact-tip compact-box" style="margin-top: 1.5rem;">
+                            <div class="compact-box-icon" style="background: var(--color-rescue);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="compact-box-content">
+                                <div class="compact-box-title">Identificación rápida</div>
+                                <p class="compact-text">Para intervenciones de emergencia, identificar correctamente el tipo de ascensor es crucial para seleccionar la técnica de rescate adecuada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>            
+
+                <!-- SECCIÓN 3: PARTES COMUNES DE UN ASCENSOR -->
+                <section id="partes-comunes" class="horizontal-card">
+                    <div class="card-header-top" style="background: var(--gradient-rescue);">
+                        <div class="card-title-container">
+                            <div class="card-icon-large" style="background: var(--gradient-rescue);">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div>
+                                <h2 class="card-title-top">🔩 PARTES COMUNES DE UN ASCENSOR</h2>
+                                <p class="card-subtitle-top">Componentes esenciales, elementos de emergencia y sistemas de seguridad</p>
+                                <div>
+                                    <span class="category-tag tag-mechanical">Mecánicas</span>
+                                    <span class="category-tag tag-electric">Eléctricas</span>
+                                    <span class="category-tag tag-safety">Emergencia</span>
+                                    <span class="category-tag tag-rescue">Rescate</span>
+                                    <span class="category-tag tag-hydraulic">Hidráulicas</span>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Ubicación mecanismo de tracción</li>
-                                    <li>Puede estar en parte superior/inferior del recinto</li>
-                                    <li>Algunos modelos modernos no tienen cuarto de máquinas</li>
-                                </ul>
+                            </div>
+                        </div>
+                        <div class="topic-number-badge">SECCIÓN 3</div>
+                    </div>
+
+                    <div class="card-content">
+                        <!-- 3.1 Estructura básica -->
+                        <div class="compact-section">
+                            <div class="compact-title-row">
+                                <div class="compact-icon-small" style="background: var(--color-rescue);">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div>
+                                    <h3 class="compact-title-text">3.1 ESTRUCTURA BÁSICA</h3>
+                                    <p class="compact-subtitle">Componentes fundamentales de cualquier instalación de ascensor</p>
+                                </div>
                             </div>
                             
-                            <div class="compact-card-dense" style="border-top-color: var(--color-elevator);">
+                            <div class="compact-info compact-box">
+                                <div class="compact-box-icon" style="background: var(--color-rescue);">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="compact-box-content">
+                                    <div class="compact-box-title">Tres partes principales</div>
+                                    <p class="compact-text">Todo ascensor cuenta con tres elementos estructurales básicos: <strong>cuarto de máquinas</strong>, <strong>recinto o hueco</strong> y <strong>foso</strong>. Cada uno cumple funciones específicas y contiene componentes esenciales.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3.2 Cuarto de máquinas -->
+                        <div class="compact-section">
+                            <div class="compact-title-row">
+                                <div class="compact-icon-small" style="background: var(--color-mechanical);">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div>
+                                    <h3 class="compact-title-text">3.2 CUARTO DE MÁQUINAS</h3>
+                                    <p class="compact-subtitle">Ubicación del mecanismo de tracción y sistemas de control</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-mechanical); margin-bottom: 1.5rem;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                        <i class="fas fa-cog"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Función principal</h4>
+                                </div>
+                                <div class="compact-content-dense">
+                                    <p>Lugar donde se ubica el mecanismo de tracción (grupo tractor, grupo hidráulico o tambor de arrollamiento). Su ubicación varía según el tipo de ascensor.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Ubicaciones del cuarto de máquinas -->
+                            <div class="comparison-grid">
+                                <div class="comparison-card" style="border-top-color: var(--color-mechanical);">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                        <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                            <i class="fas fa-arrow-up"></i>
+                                        </div>
+                                        <h4 style="margin: 0; color: #333;">Parte superior del recinto</h4>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>Ubicación más cómoda para el operario</li>
+                                        <li>Ascensores con máquina tractor para adherencia</li>
+                                        <li>Facilita mantenimiento y operaciones</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="comparison-card" style="border-top-color: var(--color-mechanical-dark);">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                        <div class="compact-icon-tiny" style="background: var(--color-mechanical-dark);">
+                                            <i class="fas fa-arrow-down"></i>
+                                        </div>
+                                        <h4 style="margin: 0; color: #333;">Parte inferior del recinto</h4>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>Supone carga para estructura superior del edificio</li>
+                                        <li>Requiere diseño estructural específico</li>
+                                        <li>Menos común que ubicación superior</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="comparison-card" style="border-top-color: var(--color-hydraulic);">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                                        <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
+                                            <i class="fas fa-compress-alt"></i>
+                                        </div>
+                                        <h4 style="margin: 0; color: #333;">Recinto contiguo al recinto</h4>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>Ascensores hidráulicos con cuarto de máquinas</li>
+                                        <li>Espacio separado pero adyacente al hueco</li>
+                                        <li>Facilita acceso para mantenimiento</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Ascensores sin cuarto de máquinas -->
+                            <div class="compact-card-dense" style="border-top-color: var(--color-elevator); margin-top: 1.5rem;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-elevator);">
+                                        <i class="fas fa-times-circle"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Modelos SIN cuarto de máquinas</h4>
+                                </div>
+                                <div class="compact-content-dense">
+                                    <p>Los modelos más actuales no disponen de cuarto de máquinas. El mecanismo tractor se ubica en:</p>
+                                    
+                                    <div class="columnas" style="margin-top: 1rem; gap: 1rem;">
+                                        <div class="colbox">
+                                            <div class="compact-card-dense" style="border-top-color: var(--color-electric); background: #f8f9fa; margin: 0;">
+                                                <div class="compact-card-header-dense">
+                                                    <div class="compact-icon-tiny" style="background: var(--color-electric);">
+                                                        <i class="fas fa-bolt"></i>
+                                                    </div>
+                                                    <h4 class="compact-title-dense" style="font-size: 0.9rem;">Ascensores eléctricos</h4>
+                                                </div>
+                                                <p style="font-size: 0.85rem; margin: 0.5rem 0 0 0;">Maquinaria y sistema de maniobra en parte <strong>superior</strong> del hueco del foso (última planta).</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="colbox" style="display: flex;">
+                                            <div class="compact-card-dense" style="border-top-color: var(--color-hydraulic); background: #f8f9fa; margin: 0; align-self: stretch;">
+                                                <div class="compact-card-header-dense">
+                                                    <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
+                                                        <i class="fas fa-tint"></i>
+                                                    </div>
+                                                    <h4 class="compact-title-dense" style="font-size: 0.9rem;">Ascensores hidráulicos</h4>
+                                                </div>
+                                                <p style="font-size: 0.85rem; margin: 0.5rem 0 0 0;">Maquinaria y sistemas de maniobra en parte <strong>inferior</strong> del hueco del foso.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3.3 Partes del cuarto de máquinas -->
+                        <div class="compact-section">
+                            <div class="compact-title-row">
+                                <div class="compact-icon-small" style="background: var(--color-mechanical-dark);">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div>
+                                    <h3 class="compact-title-text">3.3 PARTES DEL CUARTO DE MÁQUINAS</h3>
+                                    <p class="compact-subtitle">Componentes mecánicos y eléctricos esenciales</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-data-grid" style=" gap: 1rem; margin: 1.5rem 0;">
+                                <div class="compact-card-dense" style="border-top-color: var(--color-mechanical); margin: 0; padding: 1rem; min-width: 00px;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem;">
+                                        <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                            <i class="fas fa-motorcycle"></i>
+                                        </div>
+                                        <h4 style="margin: 0; color: #333; font-size: 0.95rem;">Motor-reductor</h4>
+                                    </div>
+                                    <p style="font-size: 0.85rem; line-height: 1.4; margin: 0;">Grupos tractores formados por motor acoplado a reductor de velocidad. Motores de corriente alterna (una o dos velocidades) con variadores de frecuencia.</p>
+                                </div>
+                                
+                                <div class="compact-card-dense" style="border-top-color: var(--color-mechanical); margin: 0; padding: 1rem;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem;">
+                                        <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                            <i class="fas fa-circle-notch"></i>
+                                        </div>
+                                        <h4 style="margin: 0; color: #333; font-size: 0.95rem;">Polea motriz</h4>
+                                    </div>
+                                    <p style="font-size: 0.85rem; line-height: 1.4; margin: 0;">Realiza la adherencia junto a los cables de acero. Hace que los cables se cifen a la garganta de la polea sin deslizamiento.</p>
+
+                                </div>
+                                
+                                <div class="compact-card-dense" style="border-top-color: var(--color-mechanical); margin: 0; padding: 1rem;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem;">
+                                        <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                            <i class="fas fa-compass"></i>
+                                        </div>
+                                        <h4 style="margin: 0; color: #333; font-size: 0.95rem;">Volante</h4>
+                                    </div>
+                                    <p style="font-size: 0.85rem; line-height: 1.4; margin: 0;">Responsable de operación normal de ascenso/descenso. Se utiliza para subir y bajar la cabina durante rescate sin corriente eléctrica.</p>
+                                </div>
+                                
+                                <div class="compact-card-dense" style="border-top-color: var(--color-safety); margin: 0; padding: 1rem;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem;">
+                                        <div class="compact-icon-tiny" style="background: var(--color-safety);">
+                                            <i class="fas fa-stop-circle"></i>
+                                        </div>
+                                        <h4 style="margin: 0; color: #333; font-size: 0.95rem;">Freno</h4>
+                                    </div>
+                                    <p style="font-size: 0.85rem; line-height: 1.4; margin: 0;">Situado en el eje motor, frena ascensor en subida/bajada. En reposo, zapatas bloqueadas. Se desbloquean por electroimán cuando ascensor se mueve.</p>
+                                </div>
+                                
+                                <div class="compact-card-dense" style="border-top-color: var(--color-safety); margin: 0; padding: 1rem;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem;">
+                                        <div class="compact-icon-tiny" style="background: var(--color-safety);">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                        </div>
+                                        <h4 style="margin: 0; color: #333; font-size: 0.95rem;">Limitador de velocidad</h4>
+                                    </div>
+                                    <p style="font-size: 0.85rem; line-height: 1.4; margin: 0;">Instalado en eléctricos e hidráulicos. Detiene cabina mediante paracaídas o acuñamiento si supera velocidad máxima. Incorpora contacto eléctrico que detiene motor.</p>
+                                </div>
+                                
+                                <div class="compact-card-dense" style="border-top-color: var(--color-electric); margin: 0; padding: 1rem;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem;">
+                                        <div class="compact-icon-tiny" style="background: var(--color-electric);">
+                                            <i class="fas fa-sliders-h"></i>
+                                        </div>
+                                        <h4 style="margin: 0; color: #333; font-size: 0.95rem;">Cuadro de maniobras</h4>
+                                    </div>
+                                    <p style="font-size: 0.85rem; line-height: 1.4; margin: 0;">Componentes eléctricos/electrónicos (relés, contadores, cableado). Tensiones de <span class="highlight-number">230-400 V</span>. ¡No entrar en contacto sin aislamiento!</p>
+                                </div>
+                                
+                                <div class="compact-card-dense" style="border-top-color: var(--color-electric); margin: 0; padding: 1rem;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem;">
+                                        <div class="compact-icon-tiny" style="background: var(--color-electric);">
+                                            <i class="fas fa-bolt"></i>
+                                        </div>
+                                        <h4 style="margin: 0; color: #333; font-size: 0.95rem;">Cuadros distribución corriente</h4>
+                                    </div>
+                                    <p style="font-size: 0.85rem; line-height: 1.4; margin: 0;">Elementos de protección frente a cortocircuitos y derivaciones. Es importante conocer ubicación para cortar corriente.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-warning compact-box" style="margin-top: 1.5rem;">
+                                <div class="compact-box-icon" style="background: var(--color-safety);">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div class="compact-box-content">
+                                    <div class="compact-box-title">¡PRECAUCIÓN ELÉCTRICA!</div>
+                                    <p class="compact-text">El cuadro de maniobras tiene tensiones de <span class="highlight-number">230-400 V</span>. No entrar en contacto sin el debido aislamiento. Conocer ubicación cuadros de distribución para cortar corriente.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3.4 Recinto o hueco -->
+                        <div class="compact-section">
+                            <div class="compact-title-row">
+                                <div class="compact-icon-small" style="background: var(--color-elevator);">
+                                    <i class="fas fa-arrows-alt-v"></i>
+                                </div>
+                                <div>
+                                    <h3 class="compact-title-text">3.4 RECINTO O HUECO</h3>
+                                    <p class="compact-subtitle">Espacio por el que se desplazan ascensor y contrapeso</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card-dense" style="border-top-color: var(--color-elevator); margin-bottom: 1.5rem;">
                                 <div class="compact-card-header-dense">
                                     <div class="compact-icon-tiny" style="background: var(--color-elevator);">
                                         <i class="fas fa-box-open"></i>
                                     </div>
-                                    <h4 class="compact-title-dense">Recinto o hueco</h4>
+                                    <h4 class="compact-title-dense">Elementos del recinto</h4>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Espacio por el que se desplaza ascensor y contrapeso</li>
-                                    <li>Incluye cabina, puertas de acceso, guías, contrapeso</li>
-                                    <li>Profundidad del foso: mínimo <span class="highlight-number">0,5 m</span> libre bajo cabina</li>
-                                </ul>
+                                <div class="compact-content-dense">
+                                    <p>Espacio por el que se desplaza el ascensor y el contrapeso. Incluye los siguientes componentes:</p>
+                                    
+                                    <div class="compact-data-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-top: 1rem;">
+                                        <div class="compact-data-item">
+                                            <div class="compact-data-value">Cabina</div>
+                                            <div class="compact-data-label">Recinto para transporte de pasajeros</div>
+                                        </div>
+                                        <div class="compact-data-item">
+                                            <div class="compact-data-value">Puertas de acceso</div>
+                                            <div class="compact-data-label">De planta y de cabina</div>
+                                        </div>
+                                        <div class="compact-data-item">
+                                            <div class="compact-data-value">Guías de cabina</div>
+                                            <div class="compact-data-label">Dirigen recorrido (perfiles en T)</div>
+                                        </div>
+                                        <div class="compact-data-item">
+                                            <div class="compact-data-value">Contrapeso</div>
+                                            <div class="compact-data-label">Reduce potencia del motor</div>
+                                        </div>
+                                        <div class="compact-data-item">
+                                            <div class="compact-data-value">Cables de tracción</div>
+                                            <div class="compact-data-label">Unen cabina con contrapeso</div>
+                                        </div>
+                                        <div class="compact-data-item">
+                                            <div class="compact-data-value">Cordones de maniobras</div>
+                                            <div class="compact-data-label">Cables eléctricos para maniobras</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="compact-card-dense" style="border-top-color: var(--color-mechanical);">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
-                                        <i class="fas fa-layer-group"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Foso</h4>
-                                </div>
-                                <ul class="compact-list">
-                                    <li>Parte inferior del recinto bajo última parada</li>
-                                    <li>Suelo liso y sensiblemente a nivel</li>
-                                    <li>Debe impermeabilizarse si está bajo nivel calle</li>
-                                    <li>Incluye amortiguadores para frenar descenso</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 3.2 Elementos del cuarto de máquinas -->
-                    <div class="compact-section">
-                        <div class="compact-title-row">
-                            <div class="compact-icon-small" style="background: var(--color-mechanical);">
-                                <i class="fas fa-tools"></i>
-                            </div>
-                            <div>
-                                <h3 class="compact-title-text">3.2 ELEMENTOS DEL CUARTO DE MÁQUINAS</h3>
-                                <p class="compact-subtitle">Componentes mecánicos y eléctricos esenciales</p>
-                            </div>
-                        </div>
-                        
-                        <div class="compact-data-grid">
-                            <div class="compact-data-item">
-                                <div class="compact-data-value">Motor-reductor</div>
-                                <div class="compact-data-label">Motor acoplado a reductor de velocidad</div>
-                            </div>
-                            <div class="compact-data-item">
-                                <div class="compact-data-value">Polea motriz</div>
-                                <div class="compact-data-label">Realiza adherencia con cables de acero</div>
-                            </div>
-                            <div class="compact-data-item">
-                                <div class="compact-data-value">Volante</div>
-                                <div class="compact-data-label">Para operación normal y rescate sin corriente</div>
-                            </div>
-                            <div class="compact-data-item">
-                                <div class="compact-data-value">Freno</div>
-                                <div class="compact-data-label">Frena ascensor en subida y bajada</div>
-                            </div>
-                            <div class="compact-data-item">
-                                <div class="compact-data-value">Limitador de velocidad</div>
-                                <div class="compact-data-label">Detiene cabina si supera velocidad máxima</div>
-                            </div>
-                            <div class="compact-data-item">
-                                <div class="compact-data-value">Cuadro de maniobras</div>
-                                <div class="compact-data-label">Componentes eléctricos/electrónicos</div>
-                            </div>
-                        </div>
-                        
-                        <div class="compact-warning compact-box" style="margin-top: 1.5rem;">
-                            <div class="compact-box-icon" style="background: var(--color-safety);">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <div class="compact-box-content">
-                                <div class="compact-box-title">¡PRECAUCIÓN ELÉCTRICA!</div>
-                                <p class="compact-text">El cuadro de maniobras tiene tensiones de <span class="highlight-number">230-400 V</span>. No entrar en contacto sin el debido aislamiento. Conocer ubicación cuadros de distribución para cortar corriente.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 3.3 Elementos relacionados con emergencia -->
-                    <div class="compact-section">
-                        <div class="compact-title-row">
-                            <div class="compact-icon-small" style="background: var(--color-safety);">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div>
-                                <h3 class="compact-title-text">3.3 ELEMENTOS RELACIONADOS CON EMERGENCIA</h3>
-                                <p class="compact-subtitle">Dispositivos y sistemas para situaciones de rescate</p>
-                            </div>
-                        </div>
-                        
-                        <div class="compact-grid-dense">
-                            <div class="compact-card-dense" style="border-top-color: var(--color-safety);">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: var(--color-safety);">
-                                        <i class="fas fa-file-alt"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Instrucciones de rescate</h4>
-                                </div>
-                                <p class="compact-content-dense">Obligatorias en cuarto de máquinas o cuadro de maniobras para efectuar rescate de forma segura.</p>
-                            </div>
-                            
-                            <div class="compact-card-dense" style="border-top-color: var(--color-safety-light);">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: var(--color-safety-light);">
-                                        <i class="fas fa-fire-extinguisher"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Pulsador de bomberos</h4>
-                                </div>
-                                <ul class="compact-list">
-                                    <li>Al romper cristal se acciona microrruptor</li>
-                                    <li>Si sube: se detiene en piso siguiente</li>
-                                    <li>Si baja: continúa hasta planta principal</li>
-                                    <li>Obedece solo llamadas interiores</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="compact-card-dense" style="border-top-color: var(--color-rescue);">
-                                <div class="compact-card-header-dense">
-                                    <div class="compact-icon-tiny" style="background: var(--color-rescue);">
-                                        <i class="fas fa-key"></i>
-                                    </div>
-                                    <h4 class="compact-title-dense">Caja de llaves emergencia</h4>
-                                </div>
-                                <p class="compact-content-dense">Contiene llaves de sala de máquinas o puerta de planta. Debe estar restringida a personal autorizado.</p>
-                            </div>
-                            
-                            <div class="compact-card-dense" style="border-top-color: var(--color-elevator-light);">
+                            <!-- Tipos de puertas -->
+                            <div class="compact-card-dense" style="border-top-color: var(--color-elevator-light); margin-bottom: 1.5rem;">
                                 <div class="compact-card-header-dense">
                                     <div class="compact-icon-tiny" style="background: var(--color-elevator-light);">
-                                        <i class="fas fa-lightbulb"></i>
+                                        <i class="fas fa-door-closed"></i>
                                     </div>
-                                    <h4 class="compact-title-dense">Alumbrado emergencia</h4>
+                                    <h4 class="compact-title-dense">Tipos de puertas de acceso</h4>
                                 </div>
-                                <p class="compact-content-dense">Obligatorio en cabina. Funciona con problemas en ascensor. Diferencial y magnetotérmico independientes del alumbrado.</p>
+                                <div class="compact-content-dense">
+                                    <div style="display: flex; flex-wrap: wrap; gap: 1.2rem;">
+                                        <!-- Tipo 1 -->
+                                        <div class="tipo-puerta-item centrado">
+                                            <div class="tipo-puerta-titulo">
+                                                <i class="fas fa-door-open"></i>
+                                                <span>1. Batientes en piso y cabina</span>
+                                            </div>
+                                            <div style="display: flex; margin: auto;">
+                                                <img src="image ascensores/P1.png" alt="" style="max-width: 80%; height: auto; margin: auto;">
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Tipo 2 -->
+                                        <div class="tipo-puerta-item centrado">
+                                            <div class="tipo-puerta-titulo">
+                                                <i class="fas fa-door-closed"></i>
+                                                <span>2. Batientes en piso y libriillo en cabina</span>
+                                            </div>
+                                            <div style="display: flex; margin: auto;">
+                                                <img src="image ascensores/P2.png" alt="" style="max-width: 80%; height: auto; margin: auto;">
+                                            </div>                                            
+                                        </div>
+                                        
+                                        <!-- Tipo 3 -->
+                                        <div class="tipo-puerta-item centrado">
+                                            <div class="tipo-puerta-titulo">
+                                                <i class="fas fa-expand-alt"></i>
+                                                <span>3. Batiente en pisos y telescópica automática en cabina</span>
+                                            </div>
+                                            <div style="display: flex; margin: auto;">
+                                                <img src="image ascensores/P3.png" alt="" style="max-width: 80%; height: auto; margin: auto;">
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Tipo 4 -->
+                                        <div class="tipo-puerta-item centrado">
+                                            <div class="tipo-puerta-titulo">
+                                                <i class="fas fa-compress-alt"></i>
+                                                <span>4. Telescópicas automáticas en pisos y cabina</span>
+                                            </div>
+                                            <div style="display: flex; margin: auto;">
+                                                <img src="image ascensores/P4.png" alt="" style="max-width: 80%; height: auto; margin: auto;">
+                                            </div>                                            
+                                        </div>
+                                        
+                                        <!-- Tipo 5 -->
+                                        <div class="tipo-puerta-item centrado">
+                                            <div class="tipo-puerta-titulo">
+                                                <i class="fas fa-arrows-alt-h"></i>
+                                                <span>5. Apertura central automática en pisos y cabina</span>
+                                            </div>
+                                            <div style="display: flex; margin: auto;">
+                                                <img src="image ascensores/P5.png" alt="" style="max-width: 80%; height: auto; margin: auto;">
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Tipo 6 -->
+                                        <div class="tipo-puerta-item centrado">
+                                            <div class="tipo-puerta-titulo">
+                                                <i class="fas fa-expand-arrows-alt"></i>
+                                                <span>6. Apertura central telescópica automática en pisos y cabina</span>
+                                            </div>
+                                            <div style="display: flex; margin: auto;">
+                                                <img src="image ascensores/P6.png" alt="" style="max-width: 80%; height: auto; margin: auto;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Elementos específicos del recinto -->
+                            <div class="compact-grid-dense">
+                                <div class="compact-card-dense" style="border-top-color: var(--color-mechanical);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                            <i class="fas fa-layer-group"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Guías de cabina</h4>
+                                    </div>
+                                    <div class="compact-content-dense">
+                                        <p>Dirigen el recorrido del ascensor y del contrapeso. Generalmente perfiles laminados en forma de T.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card-dense" style="border-top-color: var(--color-mechanical);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                            <i class="fas fa-balance-scale"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Contrapeso</h4>
+                                    </div>
+                                    <div class="compact-content-dense">
+                                        <p>Utilizado en ascensores eléctricos e hidráulicos. Reduce potencia que necesita el motor. Peso calculado: peso cabina + <span class="highlight-number">45%</span> del mismo.</p>
+                                        <p style="font-size: 0.85rem; margin-top: 0.5rem; font-style: italic;">Importante: durante rescate, conocer número de personas en cabina afecta tendencia a subir/bajar.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card-dense" style="border-top-color: var(--color-mechanical);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                            <i class="fas fa-link"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Cables de tracción</h4>
+                                    </div>
+                                    <div class="compact-content-dense">
+                                        <p>Unen cabina con contrapeso, pasando por la polea. En maniobras de rescate, confirmar visualmente su tensión. Cable sin tensión indica posible problema.</p>
+
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card-dense" style="border-top-color: var(--color-electric);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-electric);">
+                                            <i class="fas fa-plug"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Cordones de maniobras</h4>
+                                    </div>
+                                    <div class="compact-content-dense">
+                                        <p>Cables de corriente eléctrica o señales para realizar maniobras (apertura puertas, iluminación, etc.).</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="compact-info compact-box" style="margin-top: 1.5rem;">
-                            <div class="compact-box-icon" style="background: var(--color-elevator);">
-                                <i class="fas fa-phone-alt"></i>
+
+                        <!-- 3.5 Foso -->
+                        <div class="compact-section">
+                            <div class="compact-title-row">
+                                <div class="compact-icon-small" style="background: var(--color-mechanical);">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <div>
+                                    <h3 class="compact-title-text">3.5 FOSO</h3>
+                                    <p class="compact-subtitle">Parte inferior del recinto bajo la última parada</p>
+                                </div>
                             </div>
-                            <div class="compact-box-content">
-                                <div class="compact-box-title">Tele-alarma / Servicio 24 horas</div>
-                                <p class="compact-text">En España desde 1999, es obligatorio que los ascensores dispongan de comunicación en cabina con el exterior para emergencias.</p>
+                            
+                            <div class="columnas" style="margin-top: 1rem; gap: 1.5rem;">
+                                <div class="colbox">
+                                    <div class="compact-card-dense" style="border-top-color: var(--color-mechanical); height: 100%;">
+                                        <div class="compact-card-header-dense">
+                                            <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                                <i class="fas fa-ruler-vertical"></i>
+                                            </div>
+                                            <h4 class="compact-title-dense">Características del foso</h4>
+                                        </div>
+                                        <ul class="compact-list">
+                                            <li>Parte inferior del recinto bajo nivel última parada</li>
+                                            <li>Suelo liso y sensiblemente a nivel</li>
+                                            <li>Nivel inferior suele estar bajo nivel de calle</li>
+                                            <li>Debe impermeabilizarse para evitar filtraciones</li>
+                                            <li>Profundidad suficiente para que cuando cabina comprima totalmente amortiguadores, quede libre al menos <span class="highlight-number">0,5 m</span> de altura</li>
+                                            <li>Espacio mínimo para que quepa persona bajo cabina</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <!-- Amortiguadores -->
+                            <div class="compact-card-dense" style="border-top-color: var(--color-safety); margin-top: 1.5rem;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-safety);">
+                                        <i class="fas fa-compress-arrows-alt"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">Amortiguadores</h4>
+                                </div>
+                                <div class="compact-content-dense">
+                                    <p>Sistema que permite frenar descenso de cabina en caso de fallo de mecanismos de parada automática o en finales de carrera. Disminuye efecto de caída libre.</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3.6 Elementos relacionados con emergencia -->
+                        <div class="compact-section">
+                            <div class="compact-title-row">
+                                <div class="compact-icon-small" style="background: var(--color-safety);">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div>
+                                    <h3 class="compact-title-text">3.6 ELEMENTOS RELACIONADOS CON EMERGENCIA</h3>
+                                    <p class="compact-subtitle">Dispositivos y sistemas para situaciones de rescate y seguridad</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-grid-dense">
+                                <div class="compact-card-dense" style="border-top-color: var(--color-safety-light);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-safety-light);">
+                                            <i class="fas fa-fire-extinguisher"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Pulsador de bomberos</h4>
+                                    </div>
+                                    <div class="compact-content-dense">
+                                        <p>Normalmente en ascensores de emergencia. Funcionamiento:</p>
+                                        <ul class="compact-list" style="margin-top: 0.5rem;">
+                                            <li>Al romper cristal se acciona microrruptor</li>
+                                            <li>Si sube: se detiene en piso siguiente, no abre puertas</li>
+                                            <li>Si baja: continúa hasta planta principal</li>
+                                            <li>Al alcanzar piso del pulsador, queda con puerta abierta</li>
+                                            <li>Solo obedece llamadas interiores (una en una)</li>
+                                            <li>Anula llamadas exteriores</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="compact-card-dense" style="border-top-color: var(--color-elevator-light);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-elevator-light);">
+                                            <i class="fas fa-lightbulb"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Alumbrado emergencia</h4>
+                                    </div>
+                                    <div class="compact-content-dense">
+                                        <p><strong>Obligatorio en cabina</strong>. Entra en funcionamiento con problemas en ascensor. Diferencial y magnetotérmico independientes del alumbrado.</p>
+                                        <ul class="compact-list" style="margin-top: 0.5rem;">
+                                            <li>Si se desconecta automático de fuerza, sigue funcionando alumbrado</li>
+                                            <li>Problema con automático de alumbrado: entra en funcionamiento alumbrado emergencia</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="compact-grid-dense">
+                                <div class="compact-card-dense" style="border-top-color: var(--color-safety);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-safety);">
+                                            <i class="fas fa-file-alt"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Instrucciones de rescate</h4>
+                                    </div>
+                                    <div class="compact-content-dense">
+                                        <p><strong>Obligatorias</strong> en cuarto de máquinas o cuadro de maniobras. Proporcionan procedimiento seguro para efectuar rescate.</p>
+                                    </div>
+                                </div>
+                                  
+                                <div class="compact-card-dense" style="border-top-color: var(--color-rescue);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-rescue);">
+                                            <i class="fas fa-key"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Caja de llaves emergencia</h4>
+                                    </div>
+                                    <div class="compact-content-dense">
+                                        <p>Contiene llaves de sala de máquinas o puertas de planta. Debe estar restringida a personal autorizado.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card-dense" style="border-top-color: var(--color-electric);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-electric);">
+                                            <i class="fas fa-power-off"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Mecanismos de seguridad</h4>
+                                    </div>
+                                    <div class="compact-content-dense">
+                                        <p>Para interrumpir funcionamiento sin acceso a cuarto de máquinas: acceder a cuarto de contadores del edificio y desconectar fusibles del contador que van al ascensor.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card-dense" style="border-top-color: var(--color-safety-dark);">
+                                    <div class="compact-card-header-dense">
+                                        <div class="compact-icon-tiny" style="background: var(--color-safety-dark);">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <h4 class="compact-title-dense">Faldones de cabina</h4>
+                                    </div>
+                                    <div class="compact-content-dense">
+                                        <p>Elemento de seguridad. Algunos modelos tienen faldón retráctil que debe desplegarse en rescate. Cartel: "Precaución faldón con dimensiones reducidas. Asegúrese de que el faldón esté completamente extendido antes de sacar a los pasajeros de cabina."</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="compact-info compact-box" style="margin-top: 1.5rem;">
+                                <div class="compact-box-icon" style="background: var(--color-elevator);">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="compact-box-content">
+                                    <div class="compact-box-title">Tele-alarma / Servicio 24 horas</div>
+                                    <p class="compact-text">En España desde 1999, es obligatorio que los ascensores dispongan de comunicación en cabina con el exterior para emergencias. Sistema de tele-asistencia que conecta con servicio de mantenimiento.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
             
             <!-- SECCIÓN 4: TÉCNICAS DE RESCATE -->
             <section id="tecnicas-rescate" class="horizontal-card">
