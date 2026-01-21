@@ -6396,32 +6396,16 @@
         });
     </script>
     <script>
-    function forzarScroll() {
-        // 1. Miramos si hay un #hash en la URL (ej: #municipios)
+    window.onload = function() {
         if(window.location.hash) {
-            // 2. Quitamos la almohadilla para obtener el ID limpio
-            var id = window.location.hash.substring(1);
-            var elemento = document.getElementById(id);
-            
-            // 3. Si el elemento existe, forzamos el scroll hacia él
-            if(elemento) {
-                elemento.scrollIntoView({block: "start", behavior: "auto"});
-            }
+            var hash = window.location.hash; // obtiene "#municipios"
+            // Pequeño retraso para asegurar que el renderizado terminó
+            setTimeout(function(){
+                window.location.hash = ''; // Limpia el hash
+                window.location.hash = hash; // Lo vuelve a poner para forzar el salto
+            }, 600);
         }
     }
-
-    // ESTRATEGIA DE INTENTOS MÚLTIPLES
-    // Intentamos hacer scroll en 3 momentos diferentes por si la carga es lenta:
-
-    // Intento 1: Inmediatamente al cargar recursos básicos
-    window.addEventListener('DOMContentLoaded', forzarScroll);
-
-    // Intento 2: Cuando todo (imágenes, estilos) haya cargado completamente
-    window.addEventListener('load', function() {
-        forzarScroll();
-        // Intento 3: Una "red de seguridad" medio segundo después por si Anki se retrasa
-        setTimeout(forzarScroll, 500);
-    });
     </script>
 </body>
 </html>
