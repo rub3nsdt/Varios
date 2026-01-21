@@ -995,6 +995,7 @@
         }
 
         .colbox {
+            display: flex;
             flex: 1 1 220px;
         }
 
@@ -1031,6 +1032,7 @@
 
         /* Compact boxes */
         .compact-box {
+            flex: 1;
             padding: 1rem;
             border-radius: 8px;
             margin: 1rem 0;
@@ -1203,13 +1205,11 @@
 
         /* Ajustes específicos para la tabla de comparación */
         .table-responsive .visual-table {
-            min-width: 800px;
             width: 100%;
         }
 
         .table-responsive .visual-table th,
         .table-responsive .visual-table td {
-            white-space: nowrap;
             padding: 1rem 0.8rem;
             font-size: 0.9rem;
         }
@@ -1225,18 +1225,7 @@
         }
 
         /* Mejoras para visualización en móviles */
-        @media (max-width: 1300px) {
-            .table-responsive {
-                margin: 1rem -1rem;
-                width: calc(100% + 2rem);
-                border-radius: 0;
-                box-shadow: none;
-            }
-            
-            .table-responsive .visual-table {
-                min-width: 700px;
-            }
-            
+        @media (max-width: 1300px) {            
             .table-responsive .visual-table th,
             .table-responsive .visual-table td {
                 padding: 0.8rem 0.6rem;
@@ -1246,17 +1235,6 @@
         }
 
         @media (max-width: 900px) {
-            .table-responsive {
-                margin: 1rem -1rem;
-                width: calc(100% + 2rem);
-                border-radius: 0;
-                box-shadow: none;
-            }
-            
-            .table-responsive .visual-table {
-                min-width: 700px;
-            }
-            
             .table-responsive .visual-table th,
             .table-responsive .visual-table td {
                 padding: 0.8rem 0.6rem;
@@ -1265,18 +1243,7 @@
             
         }  
 
-        @media (max-width: 630px) {
-            .table-responsive {
-                margin: 1rem -1rem;
-                width: calc(100% + 2rem);
-                border-radius: 0;
-                box-shadow: none;
-            }
-            
-            .table-responsive .visual-table {
-                min-width: 700px;
-            }
-            
+        @media (max-width: 630px) {            
             .table-responsive .visual-table th,
             .table-responsive .visual-table td {
                 padding: 0.8rem 0.6rem;
@@ -2010,7 +1977,7 @@
                         </div>
                         
                         <div class="table-responsive" style="margin: 1.5rem 0;">
-                            <table class="visual-table" style="min-width: 800px;">
+                            <table class="visual-table">
                                 <thead>
                                     <tr>
                                         <th style="width: 20%;">Tipo</th>
@@ -2677,206 +2644,474 @@
                     </div>
                 </section>
             
-            <!-- SECCIÓN 4: TÉCNICAS DE RESCATE -->
-            <section id="tecnicas-rescate" class="horizontal-card">
-                <div class="card-header-top" style="background: var(--gradient-safety);">
-                    <div class="card-title-container">
-                        <div class="card-icon-large" style="background: var(--gradient-safety);">
-                            <i class="fas fa-first-aid"></i>
-                        </div>
-                        <div>
-                            <h2 class="card-title-top">🚨 TÉCNICAS DE RESCATE EN ASCENSORES</h2>
-                            <p class="card-subtitle-top">Protocolos según tipo de ascensor y situación</p>
-                            <div>
-                                <span class="category-tag tag-rescue">Procedimientos</span>
-                                <span class="category-tag tag-electric">Electromecánicos</span>
-                                <span class="category-tag tag-hydraulic">Hidráulicos</span>
-                                <span class="category-tag tag-safety">Seguridad</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="topic-number-badge">SECCIÓN 4</div>
-                </div>
-
-                <div class="card-content">
-                    <!-- 4.1 Normativa y medidas de seguridad -->
-                    <div class="compact-section">
-                        <div class="compact-title-row">
-                            <div class="compact-icon-small" style="background: var(--color-safety);">
-                                <i class="fas fa-clipboard-check"></i>
+                <!-- SECCIÓN 4: TÉCNICAS DE RESCATE -->
+                <section id="tecnicas-rescate" class="horizontal-card">
+                    <div class="card-header-top" style="background: var(--gradient-safety);">
+                        <div class="card-title-container">
+                            <div class="card-icon-large" style="background: var(--gradient-safety);">
+                                <i class="fas fa-first-aid"></i>
                             </div>
                             <div>
-                                <h3 class="compact-title-text">4.1 NORMATIVA Y MEDIDAS DE SEGURIDAD</h3>
-                                <p class="compact-subtitle">Normativa EN 81-28:2003 y protocolos básicos</p>
+                                <h2 class="card-title-top">🚨 TÉCNICAS DE RESCATE EN ASCENSORES</h2>
+                                <p class="card-subtitle-top">Protocolos según tipo de ascensor y situación de emergencia</p>
+                                <div>
+                                    <span class="category-tag tag-rescue">Procedimientos</span>
+                                    <span class="category-tag tag-electric">Electromecánicos</span>
+                                    <span class="category-tag tag-hydraulic">Hidráulicos</span>
+                                    <span class="category-tag tag-safety">Seguridad</span>
+                                    <span class="category-tag tag-mechanical">Mecánicos</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="law-box">
-                            <div class="law-title">📜 Normativa Europea EN 81-28:2003</div>
-                            <p>Las empresas de mantenimiento deben garantizar servicio técnico para averías. Plazo de respuesta: <span class="highlight-number">24 horas</span> para averías normales, <span class="highlight-number">inmediato</span> para personas atrapadas o accidentes.</p>
-                        </div>
-                        
-                        <div class="compact-danger compact-box">
-                            <div class="compact-box-icon" style="background: var(--color-safety);">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="compact-box-content">
-                                <div class="compact-box-title">MEDIDAS DE SEGURIDAD EN TODA INTERVENCIÓN</div>
-                                <ol class="compact-list" style="counter-reset: item; padding-left: 0;">
-                                    <li style="padding-left: 2rem; position: relative;">Cortar suministro eléctrico durante maniobras en cuarto de máquinas, recinto o foso</li>
-                                    <li style="padding-left: 2rem; position: relative;">Bloquear interruptor o limitar acceso al cuadro general</li>
-                                    <li style="padding-left: 2rem; position: relative;">Comprobar situación de cabina desde planta más baja</li>
-                                    <li style="padding-left: 2rem; position: relative;">Asegurar cierre de todas las puertas antes de desplazar cabina</li>
-                                    <li style="padding-left: 2rem; position: relative;">Comunicar permanentemente con equipo de bomberos</li>
-                                </ol>
-                            </div>
-                        </div>
+                        <div class="topic-number-badge">SECCIÓN 4</div>
                     </div>
 
-                    <!-- 4.2 Tipos de rescate -->
-                    <div class="compact-section">
-                        <div class="compact-title-row">
-                            <div class="compact-icon-small" style="background: var(--color-rescue);">
-                                <i class="fas fa-life-ring"></i>
+                    <div class="card-content">
+                        <!-- 4.1 Introducción y normativa -->
+                        <div class="compact-section">
+                            <div class="compact-title-row">
+                                <div class="compact-icon-small" style="background: var(--color-safety);">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div>
+                                    <h3 class="compact-title-text">4.1 INTRODUCCIÓN Y NORMATIVA</h3>
+                                    <p class="compact-subtitle">Normativa europea aplicable y principios básicos de rescate</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="compact-title-text">4.2 TIPOS DE RESCATE</h3>
-                                <p class="compact-subtitle">Protocolos según situación y tipo de ascensor</p>
+                            
+                            <div class="law-box">
+                                <div class="law-title">📜 Normativa Europea EN 81-28:2003</div>
+                                <p>Las empresas de mantenimiento deben garantizar servicio técnico para averías. Plazo de respuesta: <span class="highlight-number">24 horas</span> para averías normales, <span class="highlight-number">inmediato</span> para personas atrapadas o accidentes.</p>
+                            </div>
+                            
+                            <div class="compact-info compact-box">
+                                <div class="compact-box-icon" style="background: var(--color-elevator);">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="compact-box-content">
+                                    <div class="compact-box-title">Principios básicos de intervención</div>
+                                    <p class="compact-text">Las técnicas de rescate dependen primero del tipo de ascensor (electromecánico o hidráulico). Tras valoración inicial, se aplica la técnica recomendada siguiendo las indicaciones de rescate de la empresa responsable del mantenimiento.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-danger compact-box">
+                                <div class="compact-box-icon" style="background: var(--color-safety);">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="compact-box-content">
+                                    <div class="compact-box-title">MEDIDAS DE SEGURIDAD EN TODA INTERVENCIÓN</div>
+                                    <ol class="compact-list" style="counter-reset: item; padding-left: 0;">
+                                        <li style="padding-left: 2rem; position: relative;">Cortar suministro eléctrico durante maniobras en cuarto de máquinas, recinto o foso</li>
+                                        <li style="padding-left: 2rem; position: relative;">Bloquear interruptor o limitar acceso al cuadro general</li>
+                                        <li style="padding-left: 2rem; position: relative;">Comprobar situación de cabina desde planta más baja</li>
+                                        <li style="padding-left: 2rem; position: relative;">Asegurar cierre de todas las puertas antes de desplazar cabina</li>
+                                        <li style="padding-left: 2rem; position: relative;">Comunicar permanentemente con equipo de bomberos</li>
+                                    </ol>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="comparison-grid">
-                            <div class="comparison-card" style="border-top-color: var(--color-rescue);">
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+
+                        <!-- 4.3 Tipos de rescate -->
+                        <div class="compact-section">
+                            <div class="compact-title-row">
+                                <div class="compact-icon-small" style="background: var(--color-rescue);">
+                                    <i class="fas fa-life-ring"></i>
+                                </div>
+                                <div>
+                                    <h3 class="compact-title-text">4.3 TIPOS DE RESCATE DETALLADOS</h3>
+                                    <p class="compact-subtitle">Protocolos específicos según situación y tipo de ascensor</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 4.3.1 Rescate con funcionamiento normal -->
+                            <div class="compact-card-dense" style="border-top-color: var(--color-rescue); margin-bottom: 1.5rem;">
+                                <div class="compact-card-header-dense">
                                     <div class="compact-icon-tiny" style="background: var(--color-rescue);">
                                         <i class="fas fa-play-circle"></i>
                                     </div>
-                                    <h4 style="margin: 0; color: #333;">Rescate con funcionamiento normal</h4>
+                                    <h4 class="compact-title-dense">4.3.1 Rescate con funcionamiento normal</h4>
                                 </div>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">Técnica más segura. Poner en marcha ascensor y llevarlo a punto que permita rescate.</p>
-                                <div class="procedure-timeline" style="margin-top: 1rem;">
-                                    <div class="timeline-step">
-                                        <div class="step-number">1</div>
-                                        <div class="step-title">Asegurar cierre puertas</div>
+                                <div class="compact-content-dense">
+                                    <p><strong>Técnica más segura.</strong> Permite poner en marcha ascensor y llevarlo a punto que permita rescate. Evita riesgos adicionales.</p>
+                                    
+                                    <div class="procedure-timeline" style="margin: 1rem 0;">
+                                        <div class="timeline-step">
+                                            <div class="step-number">1</div>
+                                            <div class="step-title">Asegurar cierre puertas</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Todas las puertas del ascensor</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">2</div>
+                                            <div class="step-title">Confirmar con pasajeros</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Cierre puertas interiores</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">3</div>
+                                            <div class="step-title">Rearmar interruptor</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Automático general o diferencial</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">4</div>
+                                            <div class="step-title">Accionar pulsador</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Para funcionamiento normal</div>
+                                        </div>
                                     </div>
-                                    <div class="timeline-step">
-                                        <div class="step-number">2</div>
-                                        <div class="step-title">Confirmar con pasajeros</div>
-                                    </div>
-                                    <div class="timeline-step">
-                                        <div class="step-number">3</div>
-                                        <div class="step-title">Rearmar interruptor</div>
-                                    </div>
-                                    <div class="timeline-step">
-                                        <div class="step-number">4</div>
-                                        <div class="step-title">Accionar pulsador</div>
+                                    
+                                    <div class="compact-warning compact-box" style="margin-top: 1rem; padding: 0.8rem;">
+                                        <div class="compact-box-icon" style="background: var(--color-safety); width: 28px; height: 28px; font-size: 0.9rem;">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                        </div>
+                                        <div>
+                                            <div class="compact-box-title">Condiciones para aplicar</div>
+                                            <p style="font-size: 0.9rem; margin: 0;">Solo si el ascensor responde a los controles y no hay indicios de fallos eléctricos o mecánicos graves.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="comparison-card" style="border-top-color: var(--color-elevator);">
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                            <!-- 4.3.2 Rescate sin movimiento de cabina -->
+                            <div class="compact-card-dense" style="border-top-color: var(--color-elevator); margin-bottom: 1.5rem;">
+                                <div class="compact-card-header-dense">
                                     <div class="compact-icon-tiny" style="background: var(--color-elevator);">
                                         <i class="fas fa-ban"></i>
                                     </div>
-                                    <h4 style="margin: 0; color: #333;">Rescate sin movimiento cabina</h4>
+                                    <h4 class="compact-title-dense">4.3.2 Rescate sin movimiento de cabina</h4>
                                 </div>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">Corte suministro eléctrico. Rescate condicionado por espacio libre entre planta y cabina.</p>
-                                <div style="margin-top: 1rem; font-size: 0.9rem;">
-                                    <strong>Distancias clave:</strong><br>
-                                    • > <span class="highlight-number">80 cm</span>: rescate en piso superior<br>
-                                    • < <span class="highlight-number">30 cm</span>: rescate en piso inferior
+                                <div class="compact-content-dense">
+                                    <p><strong>Método seguro</strong> que permite rescatar personas realizando corte del suministro eléctrico. Requiere generalmente uso de escalera.</p>
+                                    
+                                    <div class="procedure-timeline" style="margin: 1rem 0;">
+                                        <div class="timeline-step">
+                                            <div class="step-number">1</div>
+                                            <div class="step-title">Cortar electricidad</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Y comprobar ausencia</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">2</div>
+                                            <div class="step-title">Establecer vía rescate</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Según espacio libre</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">3</div>
+                                            <div class="step-title">Desenclavar puerta</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Con llave de emergencia</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">4</div>
+                                            <div class="step-title">Permitir salida</div>
+                                            <div style="font-size: 0.8rem; color: #666;">De personas atrapadas</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="columnas" style="margin-top: 1rem; gap: 1rem;">
+                                        <div class="colbox">
+                                            <div class="compact-info compact-box" style="margin: 0; padding: 0.8rem; background: #e3f2fd;">
+                                                <div class="compact-box-icon" style="background: var(--color-elevator); width: 28px; height: 28px; font-size: 0.9rem;">
+                                                    <i class="fas fa-arrow-up"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="compact-box-title">Distancia > <span class="highlight-number">80 cm</span></div>
+                                                    <p style="font-size: 0.85rem; margin: 0;">Rescate se realiza en piso superior</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="colbox">
+                                            <div class="compact-info compact-box" style="margin: 0; padding: 0.8rem; background: #e8f5e9;">
+                                                <div class="compact-box-icon" style="background: var(--color-rescue); width: 28px; height: 28px; font-size: 0.9rem;">
+                                                    <i class="fas fa-arrow-down"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="compact-box-title">Distancia < <span class="highlight-number">30 cm</span></div>
+                                                    <p style="font-size: 0.85rem; margin: 0;">Rescate se realiza hacia piso inferior</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; margin: auto; margin-top: 15px;">
+                                        <img src="image ascensores/Rescate.png" alt="" style="max-width: 350px; height: auto; margin: auto;">
+                                    </div>                                    
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="comparison-grid" style="margin-top: 1.5rem;">
-                            <div class="comparison-card" style="border-top-color: var(--color-mechanical);">
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                            
+                            <!-- 4.3.3 Rescate con sistema eléctrico de emergencia -->
+                            <div class="compact-card-dense" style="border-top-color: var(--color-mechanical); margin-bottom: 1.5rem;">
+                                <div class="compact-card-header-dense">
                                     <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
                                         <i class="fas fa-car-battery"></i>
                                     </div>
-                                    <h4 style="margin: 0; color: #333;">Rescate con sistema eléctrico emergencia</h4>
+                                    <h4 class="compact-title-dense">4.3.3 Rescate con sistema eléctrico de emergencia</h4>
                                 </div>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">Solo en ascensores electromecánicos sin cuarto de máquinas con sistema eléctrico de emergencia.</p>
-                                <ul class="compact-list" style="margin-top: 0.5rem;">
-                                    <li>Localizar cuadro de accionamiento</li>
-                                    <li>Leer instrucciones específicas</li>
-                                    <li>Mover cabina hasta punto de rescate</li>
-                                </ul>
+                                <div class="compact-content-dense">
+                                    <p><strong>Solo en ascensores electromecánicos sin cuarto de máquinas</strong> equipados con sistema eléctrico de emergencia (alimentación auxiliar de red o baterías).</p>
+                                    
+                                    <div class="procedure-timeline" style="margin: 1rem 0;">
+                                        <div class="timeline-step">
+                                            <div class="step-number">1</div>
+                                            <div class="step-title">Asegurar cierre puertas</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">2</div>
+                                            <div class="step-title">Confirmar con ocupantes</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">3</div>
+                                            <div class="step-title">Localizar cuadro</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Accionamiento sistema emergencia</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">4</div>
+                                            <div class="step-title">Leer instrucciones</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">5</div>
+                                            <div class="step-title">Mover cabina</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Hasta punto de rescate</div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="compact-tip compact-box" style="margin-top: 1rem; padding: 0.8rem;">
+                                        <div class="compact-box-icon" style="background: var(--color-rescue); width: 28px; height: 28px; font-size: 0.9rem;">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div>
+                                            <div class="compact-box-title">Sistemas de indicación</div>
+                                            <p style="font-size: 0.9rem; margin: 0;">Los fabricantes incorporan sistemas visuales o acústicos para determinar si el ascensor está en planta.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="comparison-card" style="border-top-color: var(--color-hydraulic);">
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                            <!-- 4.3.4 Rescate sin corriente eléctrica en ascensores electromecánicos -->
+                            <div class="compact-card-dense" style="border-top-color: var(--color-hydraulic); margin-bottom: 1.5rem;">
+                                <div class="compact-card-header-dense">
                                     <div class="compact-icon-tiny" style="background: var(--color-hydraulic);">
                                         <i class="fas fa-hand-paper"></i>
                                     </div>
-                                    <h4 style="margin: 0; color: #333;">Rescate sin corriente eléctrica</h4>
+                                    <h4 class="compact-title-dense">4.3.4 Rescate sin corriente eléctrica en ascensores electromecánicos</h4>
                                 </div>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">Último recurso cuando otras técnicas fallan. Verificar estado máquina de tracción antes de proceder.</p>
-                                <ul class="compact-list" style="margin-top: 0.5rem;">
-                                    <li>Cortar y comprobar ausencia eléctrica</li>
-                                    <li>Localizar zona para accionar maquinaria</li>
-                                    <li>Mover cabina con volante manual</li>
-                                </ul>
+                                <div class="compact-content-dense">
+                                    <p><strong>Último recurso</strong> cuando otras técnicas han sido descartadas. Permite mover cabina manualmente para rescatar personas atrapadas.</p>
+                                    
+                                    <div class="compact-warning compact-box" style="margin: 1rem 0; padding: 0.8rem;">
+                                        <div class="compact-box-icon" style="background: var(--color-safety); width: 28px; height: 28px; font-size: 0.9rem;">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                        <div>
+                                            <div class="compact-box-title">Verificación previa obligatoria</div>
+                                            <p style="font-size: 0.9rem; margin: 0;">Antes de proceder, verificar correcto estado de máquina de tracción (polea, cables, volante, etc.).</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="procedure-timeline" style="margin: 1rem 0;">
+                                        <div class="timeline-step">
+                                            <div class="step-number">1</div>
+                                            <div class="step-title">Cortar electricidad</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Y desconcertar interruptor</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">2</div>
+                                            <div class="step-title">Asegurar cierre</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Todas las puertas</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">3</div>
+                                            <div class="step-title">Confirmar con ocupantes</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">4</div>
+                                            <div class="step-title">Localizar zona</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Para accionar maquinaria</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">5</div>
+                                            <div class="step-title">Leer instrucciones</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="columnas" style="margin-top: 1rem; gap: 1rem;">
+                                        <div class="colbox">
+                                            <div class="compact-card-dense" style="background: #f8f9fa; margin: 0; padding: 0.8rem;">
+                                                <div style="font-weight: 700; margin-bottom: 0.5rem; color: #333; font-size: 0.9rem;">Pasos 6-10</div>
+                                                <ul class="compact-list" style="margin: 0;">
+                                                    <li>Elegir sentido giro volante</li>
+                                                    <li>Montar volante si necesario</li>
+                                                    <li>Accionar palanca liberar freno</li>
+                                                    <li>Observar dirección rotación</li>
+                                                    <li>Mover cabina en pequeños tramos</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="colbox" style="display: flex;">
+                                            <div class="compact-card-dense" style="background: #f8f9fa; margin: 0; padding: 0.8rem;">
+                                                <div style="font-weight: 700; margin-bottom: 0.5rem; color: #333; font-size: 0.9rem;">Pasos 11-14</div>
+                                                <ul class="compact-list" style="margin: 0;">
+                                                    <li>Soltar freno y verificar posición</li>
+                                                    <li>Desenclavar puerta</li>
+                                                    <li>Permitir salida ocupantes</li>
+                                                    <li>Asegurar puertas cerradas y desconectado</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                            
+                            <!-- 4.3.5 Rescate sin corriente eléctrica en ascensores hidráulicos -->
+                            <div class="compact-card-dense" style="border-top-color: var(--color-hydraulic-dark); margin-bottom: 1.5rem;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-hydraulic-dark);">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">4.3.5 Rescate sin corriente eléctrica en ascensores hidráulicos</h4>
+                                </div>
+                                <div class="compact-content-dense">
+                                    <p>Permite mover manualmente cabina para rescatar personas. Cuarto de máquinas normalmente adosado en planta baja o por debajo.</p>
+                                    
+                                    <div class="procedure-timeline" style="margin: 1rem 0;">
+                                        <div class="timeline-step">
+                                            <div class="step-number">1</div>
+                                            <div class="step-title">Cortar electricidad</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Y comprobar ausencia</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">2</div>
+                                            <div class="step-title">Asegurar cierre</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Todas las puertas</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">3</div>
+                                            <div class="step-title">Confirmar con ocupantes</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">4</div>
+                                            <div class="step-title">Localizar zona</div>
+                                            <div style="font-size: 0.8rem; color: #666;">Accionamiento maquinaria</div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-number">5</div>
+                                            <div class="step-title">Leer instrucciones</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="columnas" style="margin-top: 1rem; gap: 1rem;">
+                                        <div class="colbox">
+                                            <div class="compact-card-dense" style="background: #f8f9fa; margin: 0; padding: 0.8rem;">
+                                                <div style="font-weight: 700; margin-bottom: 0.5rem; color: #333; font-size: 0.9rem;">Para descenso</div>
+                                                <ul class="compact-list" style="margin: 0;">
+                                                    <li>Accionar botón/tirador rojo</li>
+                                                    <li>Permitir descenso cabina</li>
+                                                    <li>Hasta posición de rescate</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="colbox">
+                                            <div class="compact-card-dense" style="background: #f8f9fa; margin: 0; padding: 0.8rem;">
+                                                <div style="font-weight: 700; margin-bottom: 0.5rem; color: #333; font-size: 0.9rem;">Para ascenso</div>
+                                                <ul class="compact-list" style="margin: 0;">
+                                                    <li>Localizar palanca accionamiento</li>
+                                                    <li>Accionar sistema hidráulico</li>
+                                                    <li>Subir cabina para desenclave</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; margin: auto; margin-top: 15px;">
+                                            <img src="image ascensores/Maquin.png" alt="" style="max-width: 250px; height: auto; margin: auto;">
+                                        </div>                                        
+                                    </div>
+                                    
 
-                    <!-- 4.3 Desenclave de puertas de piso -->
-                    <div class="compact-section">
-                        <div class="compact-title-row">
-                            <div class="compact-icon-small" style="background: var(--color-mechanical);">
-                                <i class="fas fa-door-open"></i>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="compact-title-text">4.3 DESENCLAVE DE PUERTAS DE PISO</h3>
-                                <p class="compact-subtitle">Técnica usada en la mayoría de rescates</p>
+                            
+                            <!-- 4.3.6 Desenclave de puertas de piso -->
+                            <div class="compact-card-dense" style="border-top-color: var(--color-mechanical); margin-bottom: 1.5rem;">
+                                <div class="compact-card-header-dense">
+                                    <div class="compact-icon-tiny" style="background: var(--color-mechanical);">
+                                        <i class="fas fa-door-open"></i>
+                                    </div>
+                                    <h4 class="compact-title-dense">4.3.6 Desenclave de puertas de piso</h4>
+                                </div>
+                                <div class="compact-content-dense">
+                                    <p><strong>Técnica usada en la mayoría de rescates.</strong> Permite apertura de puertas de piso cuando mecanismo de seguridad de cierre está accionado.</p>
+                                    
+                                    <div class="compact-info compact-box" style="margin: 1rem 0; padding: 0.8rem;">
+                                        <div class="compact-box-icon" style="background: var(--color-mechanical); width: 28px; height: 28px; font-size: 0.9rem;">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div>
+                                            <div class="compact-box-title">Uso frecuente</div>
+                                            <p style="font-size: 0.9rem; margin: 0;">Necesaria en la mayor parte de los rescates para que ocupantes salgan del ascensor.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="columnas">
+                                        <div class="compact-danger compact-box colbox" style="margin: 1rem 0; padding: 0.8rem; align-self: center;">
+                                            <div class="compact-box-icon" style="background: var(--color-safety); width: 28px; height: 28px; font-size: 0.9rem;">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </div>
+                                            <div>
+                                                <div class="compact-box-title">MEDIDAS DE SEGURIDAD PARA DESENCLAVE</div>
+                                                <ul class="compact-list" style="margin-top: 0.5rem;">
+                                                    <li><strong>NO</strong> realizarla con ascensor en movimiento</li>
+                                                    <li><strong>NO</strong> realizar con suministro eléctrico</li>
+                                                    <li>Tomar precauciones para evitar caídas al hueco</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="procedure-box colbox" style="margin: 1rem 0; padding: 1rem;">
+                                            <div class="box-icon" style="background: var(--color-hydraulic);">
+                                                <i class="fas fa-door-closed"></i>
+                                            </div>
+                                            <div>
+                                                <div style="font-weight: 700; margin-bottom: 0.8rem; color: #333; font-size: 1rem;">Pasos para desenclave:</div>
+                                                <ol class="compact-list" style="counter-reset: item; padding-left: 0; margin-top: 0.5rem;">
+                                                    <li style="padding-left: 2rem; position: relative;">Cortar y comprobar ausencia eléctrica</li>
+                                                    <li style="padding-left: 2rem; position: relative;">Introducir llave, accionar y abrir puerta de planta y de cabina</li>
+                                                    <li style="padding-left: 2rem; position: relative;">En algunos modelos: si cabina no a nivel, desenclavar desde puerta superior</li>
+                                                    <li style="padding-left: 2rem; position: relative;">Tras desenclavar: cerrar puerta, quitar llave</li>
+                                                    <li style="padding-left: 2rem; position: relative;">Comprobar que puerta está enclavada</li>
+                                                    <li style="padding-left: 2rem; position: relative;">Comprobar funcionamiento instalación</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="compact-info compact-box">
-                            <div class="compact-box-icon" style="background: var(--color-mechanical);">
-                                <i class="fas fa-info-circle"></i>
+
+                        <!-- 4.4 Tabla de tipologías de ascensores para rescate -->
+                        <div class="compact-section">
+                            <div class="compact-title-row">
+                                <div class="compact-icon-small" style="background: var(--color-elevator-dark);">
+                                    <i class="fas fa-table"></i>
+                                </div>
+                                <div>
+                                    <h3 class="compact-title-text">4.4 TIPOLOGÍAS PARA RESCATE</h3>
+                                    <p class="compact-subtitle">Clasificación según características relevantes para intervención</p>
+                                </div>
                             </div>
-                            <div class="compact-box-content">
-                                <div class="compact-box-title">Uso frecuente</div>
-                                <p class="compact-text">Permite apertura de puertas de piso cuando mecanismo de seguridad de cierre está accionado. Necesaria en la mayor parte de los rescates para que ocupantes salgan del ascensor.</p>
+                            
+                            <div class="compact-info compact-box">
+                                <div class="compact-box-icon" style="background: var(--color-elevator);">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="compact-box-content">
+                                    <div class="compact-box-title">Importancia de la identificación</div>
+                                    <p class="compact-text">Identificar correctamente el tipo de ascensor es crucial para seleccionar la técnica de rescate adecuada y localizar los elementos necesarios para la intervención.</p>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="compact-danger compact-box">
-                            <div class="compact-box-icon" style="background: var(--color-safety);">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div class="compact-box-content">
-                                <div class="compact-box-title">MEDIDAS DE SEGURIDAD PARA DESENCLAVE</div>
-                                <ul class="compact-list">
-                                    <li><strong>NO</strong> realizarla con ascensor en movimiento</li>
-                                    <li><strong>NO</strong> realizar con suministro eléctrico</li>
-                                    <li>Tomar precauciones para evitar caídas al hueco</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="procedure-box">
-                            <div class="box-icon" style="background: var(--color-hydraulic);">
-                                <i class="fas fa-door-closed"></i>
-                            </div>
-                            <div>
-                                <strong>Pasos para desenclave:</strong>
-                                <ol class="compact-list" style="counter-reset: item; padding-left: 0; margin-top: 0.5rem;">
-                                    <li style="padding-left: 2rem; position: relative;">Cortar y comprobar ausencia eléctrica</li>
-                                    <li style="padding-left: 2rem; position: relative;">Introducir llave, accionar y abrir puerta</li>
-                                    <li style="padding-left: 2rem; position: relative;">Tras desenclavar: cerrar puerta, quitar llave</li>
-                                    <li style="padding-left: 2rem; position: relative;">Comprobar que puerta está enclavada</li>
-                                    <li style="padding-left: 2rem; position: relative;">Comprobar funcionamiento instalación</li>
-                                </ol>
+                            
+                            <div style="display: flex;">
+                                <img src="image ascensores/Tipologia.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
             
             <!-- SECCIÓN 5: PROCEDIMIENTO TÁCTICO Y CAUSAS DE INTERVENCIÓN -->
             <section id="procedimiento" class="horizontal-card">
