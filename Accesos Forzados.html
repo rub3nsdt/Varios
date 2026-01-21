@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=740px, initial-scale=0.45">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accesos Forzados - Guía Visual del Cuerpo de Bomberos de Madrid</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -49,6 +49,26 @@
             min-height: 100vh;
             background-attachment: fixed;
         }
+
+        @media (max-width: 630px) {
+            body {
+                --escala: 0.4; /* Cambia este valor para ajustar el tamaño */
+                
+                transform: scale(var(--escala));
+                transform-origin: top left; /* <--- Esto quita el margen izquierdo */
+                
+                /* Compensación de ancho para que no quede hueco a la derecha */
+                width: calc(100% / var(--escala)); 
+                height: calc(100vh / var(--escala));
+                
+                /* Evita que aparezca scroll horizontal innecesario */
+                overflow-x: hidden;
+            }
+
+            .floating-btn {
+                display: none !important;
+            }
+        }        
         
         .container {
             max-width: 1400px;
@@ -679,118 +699,6 @@
             background-color: #f1f1f1;
         }
         
-        /* Responsividad */
-        @media (max-width: 700px) {
-            .card-title-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .topic-number-badge {
-                align-self: center;
-            }
-            
-            .procedure-timeline {
-                flex-direction: column;
-            }
-            
-            .diagram-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-header p {
-                font-size: 1rem;
-            }
-            
-            .logo-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-            
-            .stat-box {
-                min-width: 150px;
-                padding: 0.8rem 1rem;
-            }
-            
-            .stat-number {
-                font-size: 1.5rem;
-            }
-            
-            .visual-nav {
-                padding: 1rem;
-                top: 10px;
-                gap: 10px;
-            }
-            
-            .nav-item {
-                min-width: 90px;
-                padding: 0.8rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .nav-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.5rem;
-            }
-            
-            .card-title-top {
-                font-size: 1.6rem;
-            }
-            
-            .card-content {
-                padding: 1.5rem;
-            }
-            
-            .card-header-top {
-                padding: 1.5rem 1.5rem 1.2rem;
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .floating-btn, .floating-btn-left {
-                width: 45px;
-                height: 45px;
-                font-size: 1.25rem;
-            }
-            
-            .floating-btn-left {
-                left: 15px;
-                bottom: 85px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-header h1 {
-                font-size: 1.5rem;
-            }
-            
-            .card-title-top {
-                font-size: 1.25rem;
-            }
-            
-            .section-title {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .stats-container {
-                gap: 1rem;
-            }
-            
-            .stat-box {
-                min-width: 120px;
-            }
-        }
         
         /* Estilos para listas anidadas */
         .nested-list {
@@ -1043,11 +951,7 @@
             margin: 1.5rem 0;
         }
 
-        @media (max-width: 700px) {
-            .compact-grid-dos {
-                grid-template-columns: 1fr;
-            }
-        }
+
 
         .compact-card {
             /* Quitamos el flex shorthand y lo separamos para tener control */
@@ -1840,89 +1744,6 @@
             50% { opacity: 0.5; }
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .forced-entry-header {
-                padding: 2rem 0 1.5rem 0;
-            }
-            
-            .logo-badge {
-                width: 140px;
-                height: 140px;
-                border-width: 6px;
-            }
-            
-            .logo-core {
-                font-size: 3.5rem;
-            }
-            
-            .aperture-elements {
-                width: 240px;
-                height: 240px;
-            }
-            
-            .aperture-element {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-            
-            .main-entry-title {
-                font-size: 2.4rem;
-                padding: 0 20px;
-            }
-            
-            .main-entry-title::before,
-            .main-entry-title::after {
-                font-size: 2rem;
-            }
-            
-            .entry-subtitle {
-                font-size: 1rem;
-                padding: 12px 20px;
-            }
-            
-            .specialization-tag {
-                padding: 8px 15px;
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-entry-title {
-                font-size: 1.8rem;
-                letter-spacing: 1px;
-            }
-            
-            .logo-badge {
-                width: 120px;
-                height: 120px;
-            }
-            
-            .logo-core {
-                font-size: 3rem;
-            }
-            
-            .aperture-elements {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .aperture-element {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-            
-            .specialization-tags {
-                gap: 10px;
-            }
-            
-            .specialization-tag {
-                padding: 6px 12px;
-                font-size: 0.7rem;
-            }
-        }
 
     </style>
 </head>
@@ -6573,6 +6394,34 @@
                 li.innerHTML = updatedText;
             });
         });
+    </script>
+    <script>
+    function forzarScroll() {
+        // 1. Miramos si hay un #hash en la URL (ej: #municipios)
+        if(window.location.hash) {
+            // 2. Quitamos la almohadilla para obtener el ID limpio
+            var id = window.location.hash.substring(1);
+            var elemento = document.getElementById(id);
+            
+            // 3. Si el elemento existe, forzamos el scroll hacia él
+            if(elemento) {
+                elemento.scrollIntoView({block: "start", behavior: "auto"});
+            }
+        }
+    }
+
+    // ESTRATEGIA DE INTENTOS MÚLTIPLES
+    // Intentamos hacer scroll en 3 momentos diferentes por si la carga es lenta:
+
+    // Intento 1: Inmediatamente al cargar recursos básicos
+    window.addEventListener('DOMContentLoaded', forzarScroll);
+
+    // Intento 2: Cuando todo (imágenes, estilos) haya cargado completamente
+    window.addEventListener('load', function() {
+        forzarScroll();
+        // Intento 3: Una "red de seguridad" medio segundo después por si Anki se retrasa
+        setTimeout(forzarScroll, 500);
+    });
     </script>
 </body>
 </html>
