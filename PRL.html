@@ -1,0 +1,2684 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=740px, initial-scale=0.45">
+    <title>Ley de Prevención de Riesgos Laborales - Guía Visual</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #1a5276;
+            --color-secondary: #2e86c1;
+            --color-accent: #e74c3c;
+            --color-success: #27ae60;
+            --color-warning: #f39c12;
+            --color-danger: #c0392b;
+            --color-info: #2980b9;
+            --color-dark: #2c3e50;
+            --color-light: #ecf0f1;
+            --gradient-primary: linear-gradient(135deg, #1a5276 0%, #2e86c1 100%);
+            --gradient-secondary: linear-gradient(135deg, #2e86c1 0%, #1a5276 100%);
+            --gradient-accent: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            --gradient-success: linear-gradient(135deg, #27ae60 0%, #219653 100%);
+            --gradient-warning: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            --gradient-danger: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+            --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
+            --border-radius: 15px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(45deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .hero-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .logo-icon {
+            background: rgba(255, 255, 255, 0.2);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-icon:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+        
+        .hero-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            font-weight: 800;
+        }
+        
+        .hero-header p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.95;
+        }
+        
+        .law-reference {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            margin: 0 0.5rem;
+        }
+        
+        /* Navegación */
+        .visual-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 2.5rem auto;
+            padding: 1.2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            max-width: 1400px;
+            position: sticky;
+            top: 15px;
+            z-index: 99;
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 100px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            font-size: 0.9rem;
+        }
+        
+        .nav-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .nav-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        /* Sistema de tarjetas */
+        .horizontal-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .horizontal-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .horizontal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        /* Encabezado de tarjeta */
+        .card-header-top {
+            padding: 2rem 2rem 1.5rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .card-title-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card-icon-large {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-title-top {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-subtitle-top {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 12px;
+        }
+        
+        .article-number-badge {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Elementos dentro del contenido */
+        .highlight-number {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            color: #333;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .visual-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .visual-list li {
+            padding: 0.9rem 0;
+            padding-left: 3rem;
+            position: relative;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .visual-list li:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+            padding-left: 3.2rem;
+            border-left-color: var(--color-accent);
+        }
+        
+        .visual-list li:before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 1.4rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--color-accent);
+        }
+        
+        /* Cajas especiales */
+        .info-box, .tip-box, .warning-box, .danger-box {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-box::before, .tip-box::before, .warning-box::before, .danger-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            border-left: 6px solid var(--color-info);
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #E0F7FA, #B2EBF2);
+            border-left: 6px solid #00BCD4;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #FFF8E1, #FFECB3);
+            border-left: 6px solid var(--color-warning);
+        }
+        
+        .danger-box {
+            background: linear-gradient(135deg, #FFEBEE, #FFCDD2);
+            border-left: 6px solid var(--color-accent);
+        }
+        
+        .box-icon {
+            font-size: 1.3rem;
+            min-width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        /* Footer */
+        .visual-footer {
+            background: linear-gradient(135deg, #2d3436, #636e72);
+            color: white;
+            padding: 3.5rem 0;
+            text-align: center;
+            margin-top: 5rem;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .visual-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 0L0 0 892.25 114.72 1200 0z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* Botones flotantes */
+        .floating-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1) rotate(15deg);
+        }
+        
+        .floating-btn-left {
+            left: 25px;
+            right: auto;
+            background: var(--gradient-secondary);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        .floating-btn-left:hover {
+            transform: scale(1.1) rotate(-15deg);
+        }
+        
+        /* Timeline horizontal */
+        .procedure-timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            justify-content: space-between;
+        }
+        
+        .timeline-step {
+            flex: 1;
+            min-width: 150px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            border-top: 4px solid var(--color-secondary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: var(--color-secondary);
+            color: white;
+            border-radius: 50%;
+            line-height: 32px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .step-title {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+            color: var(--color-dark);
+        }
+        
+        /* Para destacar especialmente algunos elementos */
+        .emphasis-box {
+            background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+            border-left: 6px solid #FF9800;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .emphasis-box::before {
+            content: '⚡';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            opacity: 0.1;
+        }
+
+        /* Estilo para iconos en pasos de línea de tiempo */
+        .step-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .card-title-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .article-number-badge {
+                align-self: center;
+            }
+            
+            .procedure-timeline {
+                flex-direction: column;
+            }
+            
+            .hero-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-header p {
+                font-size: 1rem;
+            }
+            
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .visual-nav {
+                padding: 1rem;
+                top: 10px;
+                gap: 10px;
+            }
+            
+            .nav-item {
+                min-width: 90px;
+                padding: 0.8rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .nav-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
+            }
+            
+            .card-title-top {
+                font-size: 1.6rem;
+            }
+            
+            .card-content {
+                padding: 1.5rem;
+            }
+            
+            .card-header-top {
+                padding: 1.5rem 1.5rem 1.2rem;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .floating-btn, .floating-btn-left {
+                width: 45px;
+                height: 45px;
+                font-size: 1.25rem;
+            }
+            
+            .floating-btn-left {
+                left: 15px;
+                bottom: 85px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .card-title-top {
+                font-size: 1.25rem;
+            }
+            
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .law-reference {
+                display: block;
+                margin: 0.5rem auto;
+                max-width: 90%;
+            }
+        }
+        
+        /* Estilos para subsecciones anidadas */
+        .subsection {
+            margin-left: 0;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .subsection-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subsection-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: var(--gradient-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        /* Para destacar puntos importantes */
+        .key-point {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 4px solid var(--color-secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+
+        .key-point strong {
+            color: var(--color-secondary);
+        }
+
+        /* Para listas dentro de listas */
+        .visual-list .nested-list {
+            list-style: none;
+            padding-left: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .visual-list .nested-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .visual-list .nested-list li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-secondary);
+            font-weight: bold;
+            background: none;
+            width: auto;
+            height: auto;
+            top: 0.5rem;
+        }
+
+        /* Para tablas de datos */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .data-table th {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            background: white;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover td {
+            background-color: #f8f9fa;
+        }
+
+        /* Para los elementos simplificados */
+        .simplified-data-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem;
+            justify-content: center;
+        }
+
+        .data-item {
+            flex: 1 1 300px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 3px solid var(--color-secondary);
+            font-size: 0.9rem;
+        }
+
+        .data-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 6px;
+            background: var(--gradient-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        /* Para bloques más pequeños */
+        .compact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem;
+        }
+
+        .compact-card {
+            flex: 1 1 250px;
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--color-secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .compact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+        }
+
+        .compact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 0 auto 0.8rem;
+            font-size: 1rem;
+        }
+
+        .compact-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            color: #333;
+        }
+
+        .compact-desc {
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.3;
+        }
+
+        /* Colores para diferentes tipos de elementos */
+        .data-item.obligatorio {
+            border-left-color: #e74c3c !important;
+        }
+
+        .data-item.obligatorio .data-icon {
+            background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
+        }
+
+        .data-item.derecho {
+            border-left-color: #27ae60 !important;
+        }
+
+        .data-item.derecho .data-icon {
+            background: linear-gradient(135deg, #27ae60, #219653) !important;
+        }
+
+        /* Indicador visual para tipo de elemento */
+        .element-type {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 2rem;
+            vertical-align: middle;
+        }
+
+        .element-type.obligatorio {
+            background: rgba(231, 76, 60, 0.15);
+            color: #e74c3c;
+        }
+
+        .element-type.derecho {
+            background: rgba(39, 174, 96, 0.15);
+            color: #27ae60;
+        }
+
+        /* Para la cuadrícula de principios */
+        .principios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .principio-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--color-info);
+            transition: transform 0.3s ease;
+        }
+
+        .principio-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        .principio-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--gradient-info);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .principio-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .principio-desc {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Estilos para artículos con letras */
+        .articulo-list {
+            counter-reset: articulo-counter;
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5rem 0;
+        }
+
+        .articulo-item {
+            counter-increment: articulo-counter;
+            margin-bottom: 1.2rem;
+            padding: 1.2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--color-primary);
+            position: relative;
+            padding-left: 3.5rem;
+        }
+
+        .articulo-item:before {
+            content: counter(articulo-counter, lower-alpha) ")";
+            position: absolute;
+            left: 1.2rem;
+            top: 1.2rem;
+            width: 30px;
+            height: 30px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .articulo-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .articulo-desc {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Para sublistas dentro de artículos */
+        .articulo-sublist {
+            list-style: none;
+            padding-left: 1.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .articulo-sublist li {
+            position: relative;
+            padding: 0.3rem 0;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .articulo-sublist li:before {
+            content: '•';
+            position: absolute;
+            left: -1rem;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        /* Para requisitos numéricos */
+        .numeric-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* Para limitaciones */
+        .limitation-box {
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            border-left: 4px solid var(--color-info);
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .limitation-title {
+            font-weight: 600;
+            color: var(--color-info);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Para artículos con múltiples apartados */
+        .article-content {
+            margin: 1.5rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Para destacar elementos especiales */
+        .special-note {
+            background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+            border-left: 4px solid #FF9800;
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin: 1.2rem 0;
+            font-size: 0.95rem;
+        }
+
+        /* Tabla para delegados de prevención */
+        .delegados-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .delegados-table th {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .delegados-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            background: white;
+            text-align: center;
+        }
+
+        .delegados-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .delegados-table tr:hover td {
+            background-color: #f8f9fa;
+        }
+
+        .delegados-table .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Gradientes adicionales */
+        .gradient-info {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .gradient-danger {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .gradient-warning {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+        }
+
+        .gradient-success {
+            background: linear-gradient(135deg, #27ae60, #219653);
+        }
+
+        /* Añade esto al final del CSS, justo antes de los media queries */
+
+        /* Gradiente para información */
+        .gradient-info {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        /* Gradiente para peligro */
+        .gradient-danger {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        /* Gradiente para advertencia */
+        .gradient-warning {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+        }
+
+        /* Gradiente para éxito */
+        .gradient-success {
+            background: linear-gradient(135deg, #27ae60, #219653);
+        }
+
+        /* Gradiente primario */
+        .gradient-primary {
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+        }
+
+        /* Gradiente secundario */
+        .gradient-secondary {
+            background: linear-gradient(135deg, #2e86c1, #1a5276);
+        }
+
+        /* Gradiente de acento */
+        .gradient-accent {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        /* Estilo para iconos con gradiente de información */
+        .principio-icon.gradient-info {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        /* Estilo para elementos de datos con gradiente de información */
+        .data-item .data-icon.gradient-info {
+            background: linear-gradient(135deg, #3498db, #2980b9) !important;
+        }
+
+        /* Estilos específicos para la sección de principios */
+        .principio-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--gradient-info); /* Esto usará la variable si está definida */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* Si la variable --gradient-info no está definida en :root, añádela también */
+        :root {
+            /* ... tus otras variables ... */
+            --gradient-info: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        /* Estilos para botones con gradientes específicos */
+        .btn-gradient-info {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .btn-gradient-danger {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .btn-gradient-success {
+            background: linear-gradient(135deg, #27ae60, #219653);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        /* Estilos para badges con gradientes */
+        .badge-gradient-info {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .badge-gradient-warning {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .badge-gradient-danger {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Estilos para tarjetas con gradientes en el borde superior */
+        .card-gradient-info {
+            border-top: 4px solid #3498db;
+        }
+
+        .card-gradient-warning {
+            border-top: 4px solid #f39c12;
+        }
+
+        .card-gradient-danger {
+            border-top: 4px solid #e74c3c;
+        }
+
+        .card-gradient-success {
+            border-top: 4px solid #27ae60;
+        }
+
+        /* Estilos para fondos con gradientes sutiles */
+        .bg-gradient-info-subtle {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+        }
+
+        .bg-gradient-warning-subtle {
+            background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(230, 126, 34, 0.1));
+        }
+
+        .bg-gradient-danger-subtle {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1));
+        }
+
+        .bg-gradient-success-subtle {
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.1), rgba(33, 150, 83, 0.1));
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="hero-header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <div class="logo-icon" style="background: var(--gradient-primary);">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="logo-icon" style="background: var(--gradient-success);">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div class="logo-icon" style="background: var(--gradient-warning);">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="logo-icon" style="background: var(--gradient-info);">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+            </div>
+            
+            <h1>🛡️ LEY DE PREVENCIÓN DE RIESGOS LABORALES</h1>
+            <p>Guía visual completa de la Ley 31/1995, de 8 de noviembre</p>
+            <div>
+                <span class="law-reference">
+                    <i class="fas fa-file-alt"></i> Ley 31/1995, de 8 de noviembre - BOE núm. 269
+                </span>
+                <span class="law-reference">
+                    <i class="fas fa-balance-scale"></i> Prevención de riesgos profesionales
+                </span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navegación -->
+    <div class="container">
+        <div class="visual-nav">
+            <a href="#disposiciones" class="nav-item" style="background: linear-gradient(135deg, #E8F4FF, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-primary);">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <span>Disposiciones generales</span>
+                <small>Art. 1-4</small>
+            </a>
+            
+            <a href="#derechos" class="nav-item" style="background: linear-gradient(135deg, #E3F2FD, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-success);">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <span>Derechos y obligaciones</span>
+                <small>Art. 14-22, 29</small>
+            </a>
+            
+            <a href="#servicios" class="nav-item" style="background: linear-gradient(135deg, #E8F5E9, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-info);">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <span>Servicios de prevención</span>
+                <small>Art. 30-32 bis</small>
+            </a>
+
+            <a href="#participacion" class="nav-item" style="background: linear-gradient(135deg, #FFF3E0, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-warning);">
+                    <i class="fas fa-users"></i>
+                </div>
+                <span>Consulta y participación</span>
+                <small>Art. 33-39</small>
+            </a>
+            
+            <a href="#inspeccion" class="nav-item" style="background: linear-gradient(135deg, #FFEBEE, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-danger);">
+                    <i class="fas fa-search"></i>
+                </div>
+                <span>Inspección y control</span>
+                <small>Art. 9</small>
+            </a>
+            
+            <a href="#fabricantes" class="nav-item" style="background: linear-gradient(135deg, #F3E5F5, #FFFFFF);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <span>Fabricantes</span>
+                <small>Art. 41</small>
+            </a>
+        </div>
+    </div>
+    
+    <main class="container">
+        <div class="horizontal-cards-container">
+            
+            <!-- DISPOSICIONES GENERALES -->
+            <div class="horizontal-card" id="disposiciones">
+                <div class="card-header-top" style="background: var(--gradient-primary);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">📚 DISPOSICIONES GENERALES</div>
+                            <div class="card-subtitle-top">Artículos 1-4 - Objeto, ámbito de aplicación y definiciones</div>
+                        </div>
+                    </div>
+                    <div class="article-number-badge">Art. 1-4 LPRL</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- ARTÍCULO 1 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-primary);">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <span>Artículo 1: Normativa sobre prevención de riesgos laborales</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Definición legal:</strong> La normativa sobre prevención de riesgos laborales está constituida por la presente Ley, sus disposiciones de desarrollo o complementarias y cuantas otras normas, legales o convencionales, contengan prescripciones relativas a la adopción de medidas preventivas en el ámbito laboral o susceptibles de producirlas en dicho ámbito.
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 2 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-secondary);">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <span>Artículo 2: Objeto y carácter de la norma</span>
+                        </div>
+                        
+                        <ul class="visual-list">
+                            <li><strong>Objeto:</strong> Promover la seguridad y la salud de los trabajadores mediante la aplicación de medidas y el desarrollo de las actividades necesarias para la prevención de riesgos derivados del trabajo</li>
+                            <li><strong>Principios generales:</strong> Establece los principios relativos a la prevención de riesgos profesionales para la protección de la seguridad y salud</li>
+                            <li><strong>Carácter:</strong> Las disposiciones de carácter laboral contenidas en esta Ley tienen el carácter de <span class="highlight-number">Derecho necesario mínimo indisponible</span>, pudiendo ser mejoradas y desarrolladas en los convenios colectivos</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- ARTÍCULO 3 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-success);">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <span>Artículo 3: Ámbito de aplicación</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Aplicación general:</strong> Esta Ley y sus normas de desarrollo serán de aplicación tanto en el ámbito de las relaciones laborales reguladas en el Estatuto de los Trabajadores, como en el de las relaciones de carácter administrativo o estatutario del personal al servicio de las Administraciones Públicas.
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-ban"></i>
+                                </div>
+                                <span>Exclusiones del ámbito de aplicación</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li><strong>Policía, seguridad y resguardo aduanero</strong></li>
+                                <li><strong>Servicios operativos de protección civil y peritaje forense</strong> en los casos de grave riesgo, catástrofe y calamidad pública</li>
+                                <li><strong>Fuerzas Armadas y actividades militares de la Guardia Civil</strong></li>
+                            </ul>
+                            
+                            <div class="info-box">
+                                <div class="box-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Nota:</strong> Esta Ley inspirará la normativa específica que se dicte para regular la protección de la seguridad y la salud de los trabajadores que prestan sus servicios en las indicadas actividades.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 4 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-accent);">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <span>Artículo 4: Definiciones</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Definiciones clave:</strong> A efectos de la presente Ley y de las normas que la desarrollen.
+                        </div>
+                        
+                        <div class="principios-grid">
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="principio-title">Prevención</div>
+                                <div class="principio-desc">Conjunto de actividades o medidas adoptadas o previstas en todas las fases de actividad de la empresa con el fin de evitar o disminuir los riesgos derivados del trabajo.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="principio-title">Riesgo laboral</div>
+                                <div class="principio-desc">Posibilidad de que un trabajador sufra un determinado daño derivado del trabajo.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-user-injured"></i>
+                                </div>
+                                <div class="principio-title">Daños derivados del trabajo</div>
+                                <div class="principio-desc">Enfermedades, patologías o lesiones sufridas con motivo u ocasión del trabajo.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-skull-crossbones"></i>
+                                </div>
+                                <div class="principio-title">Riesgo laboral grave e inminente</div>
+                                <div class="principio-desc">Aquel que resulte probable racionalmente que se materialice en un futuro inmediato y pueda suponer un daño grave para la salud de los trabajadores.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="principio-title">Equipo de trabajo</div>
+                                <div class="principio-desc">Cualquier máquina, aparato, instrumento o instalación utilizada en el trabajo.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-hard-hat"></i>
+                                </div>
+                                <div class="principio-title">Equipo de protección individual</div>
+                                <div class="principio-desc">Cualquier equipo destinado a ser llevado o sujetado por el trabajador para que le proteja de uno o varios riesgos que puedan amenazar su seguridad o su salud en el trabajo.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- DERECHOS Y OBLIGACIONES -->
+            <div class="horizontal-card" id="derechos">
+                <div class="card-header-top" style="background: var(--gradient-success);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">⚖️ DERECHOS Y OBLIGACIONES</div>
+                            <div class="card-subtitle-top">Artículos 14-22 y 29 - Derecho a la protección y obligaciones de trabajadores y empresarios</div>
+                        </div>
+                    </div>
+                    <div class="article-number-badge">Art. 14-22, 29</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- ARTÍCULO 14 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-success);">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <span>Artículo 14: Derecho a la protección frente a los riesgos laborales</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Derecho fundamental:</strong> Los trabajadores tienen derecho a una protección eficaz en materia de seguridad y salud en el trabajo.
+                        </div>
+                        
+                        <div class="simplified-data-grid">
+                            <div class="data-item derecho">
+                                <div class="data-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <span><strong>Derecho a la información</strong> sobre riesgos y medidas preventivas</span>
+                            </div>
+                            
+                            <div class="data-item derecho">
+                                <div class="data-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <span><strong>Derecho a consulta y participación</strong> en decisiones preventivas</span>
+                            </div>
+                            
+                            <div class="data-item derecho">
+                                <div class="data-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <span><strong>Derecho a formación</strong> en materia preventiva</span>
+                            </div>
+                            
+                            <div class="data-item derecho">
+                                <div class="data-icon">
+                                    <i class="fas fa-ban"></i>
+                                </div>
+                                <span><strong>Derecho a paralizar la actividad</strong> en caso de riesgo grave e inminente</span>
+                            </div>
+                            
+                            <div class="data-item derecho">
+                                <div class="data-icon">
+                                    <i class="fas fa-stethoscope"></i>
+                                </div>
+                                <span><strong>Derecho a vigilancia</strong> de su estado de salud</span>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--gradient-danger);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: #c0392b;">Obligación empresarial fundamental</h4>
+                                <p>El empresario deberá garantizar la seguridad y la salud de los trabajadores a su servicio en todos los aspectos relacionados con el trabajo. <span class="highlight-number">El coste de las medidas relativas a la seguridad y la salud en el trabajo no deberá recaer en modo alguno sobre los trabajadores</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 15 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-primary);">
+                                <i class="fas fa-list-ol"></i>
+                            </div>
+                            <span>Artículo 15: Principios de la acción preventiva</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Jerarquía de principios:</strong> El empresario aplicará las medidas con arreglo a los siguientes principios generales.
+                        </div>
+                        
+                        <div class="principios-grid">
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-ban"></i>
+                                </div>
+                                <div class="principio-title">Evitar los riesgos</div>
+                                <div class="principio-desc">Primer principio: eliminar los riesgos en origen.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="principio-title">Evaluar riesgos inevitables</div>
+                                <div class="principio-desc">Valorar los riesgos que no se puedan evitar.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="principio-title">Combatir riesgos en origen</div>
+                                <div class="principio-desc">Atacar las causas de los riesgos, no sus consecuencias.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <div class="principio-title">Adaptar el trabajo a la persona</div>
+                                <div class="principio-desc">Concepción de puestos de trabajo adecuados a las personas.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="principio-title">Tener en cuenta evolución técnica</div>
+                                <div class="principio-desc">Incorporar avances tecnológicos que mejoren la seguridad.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="principio-title">Sustituir lo peligroso</div>
+                                <div class="principio-desc">Reemplazar lo peligroso por lo que entrañe poco o ningún peligro.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="principio-title">Planificar la prevención</div>
+                                <div class="principio-desc">Buscar un conjunto coherente que integre técnica, organización y condiciones de trabajo.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="principio-title">Protección colectiva ante individual</div>
+                                <div class="principio-desc">Anteponer la protección colectiva a la protección individual.</div>
+                            </div>
+                            
+                            <div class="principio-item">
+                                <div class="principio-icon">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                </div>
+                                <div class="principio-title">Dar instrucciones adecuadas</div>
+                                <div class="principio-desc">Proporcionar a los trabajadores las instrucciones necesarias.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 16 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-secondary);">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <span>Artículo 16: Plan de prevención de riesgos laborales, evaluación de riesgos y planificación</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Integración en la gestión:</strong> La prevención de riesgos laborales deberá integrarse en el sistema general de gestión de la empresa.
+                        </div>
+                        
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Evaluación inicial</div>
+                                <div style="font-size: 0.85rem;">De los riesgos para seguridad y salud</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Planificación</div>
+                                <div style="font-size: 0.85rem;">Actividades preventivas necesarias</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Implantación</div>
+                                <div style="font-size: 0.85rem;">Del plan de prevención</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">4</div>
+                                <div class="step-title">Seguimiento</div>
+                                <div style="font-size: 0.85rem;">Y mejora continua</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-info);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <p><strong>Actualización obligatoria:</strong> La evaluación será actualizada cuando cambien las condiciones de trabajo y, en todo caso, se someterá a consideración y se revisará, si fuera necesario, con ocasión de los daños para la salud que se hayan producido.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: var(--gradient-warning);">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: #d35400;">Forma simplificada para pequeñas empresas</h4>
+                                <p>Las empresas, en atención al número de trabajadores y a la naturaleza y peligrosidad de las actividades realizadas, podrán realizar el plan de prevención de riesgos laborales, la evaluación de riesgos y la planificación de la actividad preventiva de forma simplificada, siempre que ello no suponga una reducción del nivel de protección de la seguridad y salud de los trabajadores.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 17 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-warning);">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <span>Artículo 17: Equipos de trabajo y medios de protección</span>
+                        </div>
+                        
+                        <ul class="visual-list">
+                            <li>El empresario adoptará las medidas necesarias para que los equipos de trabajo sean <strong>adecuados para el trabajo</strong> que deba realizarse</li>
+                            <li>Cuando la utilización de un equipo presente un riesgo específico, su uso quedará reservado a los <strong>encargados específicamente</strong> de dicha utilización</li>
+                            <li>El empresario proporcionará <strong>equipos de protección individual</strong> adecuados cuando sean necesarios</li>
+                            <li>Los EPI se usarán cuando los riesgos no se puedan evitar o limitar suficientemente por medios de <span class="highlight-number">protección colectiva</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- ARTÍCULO 18 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-info);">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <span>Artículo 18: Información, consulta y participación de los trabajadores</span>
+                        </div>
+                        
+                        <div class="compact-grid">
+                            <div class="compact-card">
+                                <div class="compact-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="compact-title">Información</div>
+                                <div class="compact-desc">Sobre riesgos, medidas preventivas y actuaciones en emergencias</div>
+                            </div>
+                            
+                            <div class="compact-card">
+                                <div class="compact-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="compact-title">Consulta</div>
+                                <div class="compact-desc">En todas las cuestiones que afecten a seguridad y salud</div>
+                            </div>
+                            
+                            <div class="compact-card">
+                                <div class="compact-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="compact-title">Participación</div>
+                                <div class="compact-desc">A través de representantes y órganos especializados</div>
+                            </div>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Información específica:</strong> Deberá informarse directamente a cada trabajador de los riesgos específicos que afecten a su puesto de trabajo o función y de las medidas de protección y prevención aplicables a dichos riesgos.
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 19 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-success);">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <span>Artículo 19: Formación de los trabajadores</span>
+                        </div>
+                        
+                        <ul class="visual-list">
+                            <li>Formación <strong>teórica y práctica, suficiente y adecuada</strong> en materia preventiva</li>
+                            <li>En el momento de la contratación, <span class="highlight-number">cualquiera que sea la modalidad o duración</span> de ésta</li>
+                            <li>Cuando se produzcan <strong>cambios en las funciones</strong> que desempeñe</li>
+                            <li>Cuando se introduzcan <strong>nuevas tecnologías o cambios</strong> en los equipos de trabajo</li>
+                            <li>Formación <strong>centrada específicamente en el puesto de trabajo</strong> o función</li>
+                            <li>Adaptada a la <strong>evolución de los riesgos</strong> y repetida periódicamente</li>
+                        </ul>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--gradient-danger);">
+                                <i class="fas fa-euro-sign"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: #c0392b;">Coste de la formación</h4>
+                                <p>La formación se impartirá, siempre que sea posible, dentro de la jornada de trabajo. <span class="highlight-number">Su coste no recaerá en ningún caso sobre los trabajadores</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 21 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-danger);">
+                                <i class="fas fa-skull-crossbones"></i>
+                            </div>
+                            <span>Artículo 21: Riesgo grave e inminente</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Definición:</strong> Riesgo que resulte probable racionalmente que se materialice en un futuro inmediato y pueda suponer un daño grave para la salud.
+                        </div>
+                        
+                        <div class="simplified-data-grid">
+                            <div class="data-item obligatorio">
+                                <div class="data-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <span><strong>Informar inmediatamente</strong> a todos los trabajadores afectados</span>
+                            </div>
+                            
+                            <div class="data-item obligatorio">
+                                <div class="data-icon">
+                                    <i class="fas fa-ban"></i>
+                                </div>
+                                <span><strong>Adoptar medidas</strong> para que trabajadores puedan interrumpir actividad y abandonar lugar de trabajo</span>
+                            </div>
+                            
+                            <div class="data-item derecho">
+                                <div class="data-icon">
+                                    <i class="fas fa-walking"></i>
+                                </div>
+                                <span><strong>Derecho del trabajador</strong> a interrumpir actividad y abandonar lugar de trabajo si considera riesgo grave</span>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: var(--gradient-warning);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: #d35400;">Paralización de actividad por representantes</h4>
+                                <p>Cuando el empresario no adopte las medidas necesarias, los representantes legales de los trabajadores podrán acordar, por mayoría de sus miembros, la <span class="highlight-number">paralización de la actividad</span> de los trabajadores afectados por dicho riesgo. Tal acuerdo será comunicado de inmediato a la empresa y a la autoridad laboral.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 22 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-info);">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <span>Artículo 22: Vigilancia de la salud</span>
+                        </div>
+                        
+                        <ul class="visual-list">
+                            <li>El empresario garantizará a los trabajadores la <strong>vigilancia periódica</strong> de su estado de salud</li>
+                            <li>Esta vigilancia sólo podrá llevarse a cabo cuando el trabajador <span class="highlight-number">preste su consentimiento</span></li>
+                            <li>Excepciones al carácter voluntario (previo informe de representantes):
+                                <ul class="nested-list">
+                                    <li>Para evaluar efectos de condiciones de trabajo sobre salud</li>
+                                    <li>Para verificar si estado de salud puede constituir peligro</li>
+                                    <li>Cuando así esté establecido en disposición legal</li>
+                                </ul>
+                            </li>
+                            <li>Respeto al <strong>derecho a la intimidad y dignidad</strong> del trabajador</li>
+                            <li>Confidencialidad de toda información relacionada con su estado de salud</li>
+                            <li>Los datos no podrán ser usados con <span class="highlight-number">fines discriminatorios</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- ARTÍCULO 29 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-primary);">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <span>Artículo 29: Obligaciones de los trabajadores en materia de prevención de riesgos</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Corresponsabilidad:</strong> Cada trabajador debe velar, según sus posibilidades, por su propia seguridad y salud y por la de aquellas otras personas a las que pueda afectar su actividad profesional.
+                        </div>
+                        
+                        <div class="articulo-list">
+                            <div class="articulo-item">
+                                <div class="articulo-title">Usar adecuadamente</div>
+                                <div class="articulo-desc">Máquinas, aparatos, herramientas, sustancias peligrosas, equipos de transporte y cualesquiera otros medios con los que desarrollen su actividad.</div>
+                            </div>
+                            
+                            <div class="articulo-item">
+                                <div class="articulo-title">Utilizar correctamente medios y equipos de protección</div>
+                                <div class="articulo-desc">Facilitados por el empresario, de acuerdo con las instrucciones recibidas.</div>
+                            </div>
+                            
+                            <div class="articulo-item">
+                                <div class="articulo-title">No poner fuera de funcionamiento dispositivos de seguridad</div>
+                                <div class="articulo-desc">Existentes o que se instalen en los medios relacionados con su actividad.</div>
+                            </div>
+                            
+                            <div class="articulo-item">
+                                <div class="articulo-title">Informar inmediatamente</div>
+                                <div class="articulo-desc">A su superior jerárquico directo, y a los trabajadores designados para actividades de protección, acerca de cualquier situación que entrañe riesgo.</div>
+                            </div>
+                            
+                            <div class="articulo-item">
+                                <div class="articulo-title">Contribuir al cumplimiento</div>
+                                <div class="articulo-desc">De las obligaciones establecidas por la autoridad competente.</div>
+                            </div>
+                            
+                            <div class="articulo-item">
+                                <div class="articulo-title">Cooperar con el empresario</div>
+                                <div class="articulo-desc">Para que éste pueda garantizar unas condiciones de trabajo seguras.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--gradient-danger);">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: #c0392b;">Consecuencias del incumplimiento</h4>
+                                <p>El incumplimiento por los trabajadores de las obligaciones en materia de prevención de riesgos tendrá la consideración de <span class="highlight-number">incumplimiento laboral</span> a los efectos previstos en el artículo 58.1 del Estatuto de los Trabajadores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SERVICIOS DE PREVENCIÓN -->
+            <div class="horizontal-card" id="servicios">
+                <div class="card-header-top" style="background: var(--gradient-info);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🏥 SERVICIOS DE PREVENCIÓN</div>
+                            <div class="card-subtitle-top">Artículos 30-32 bis - Organización de la actividad preventiva en la empresa</div>
+                        </div>
+                    </div>
+                    <div class="article-number-badge">Art. 30-32 bis</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- ARTÍCULO 30 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-info);">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <span>Artículo 30: Protección y prevención de riesgos profesionales</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Modalidades de organización:</strong> El empresario designará uno o varios trabajadores para ocuparse de dicha actividad, constituirá un servicio de prevención o concertará dicho servicio con una entidad especializada ajena a la empresa.
+                        </div>
+                        
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="step-title">Designación trabajadores</div>
+                                <div style="font-size: 0.85rem;">Con capacidad, tiempo y medios necesarios</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: var(--gradient-success);">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="step-title">Servicio prevención propio</div>
+                                <div style="font-size: 0.85rem;">Constituido por la empresa</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="step-title">Servicio prevención ajeno</div>
+                                <div style="font-size: 0.85rem;">Concertado con entidad especializada</div>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <span>Empresario como prevencionista</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li>En empresas de <span class="highlight-number">hasta 10 trabajadores</span>, el empresario podrá asumir personalmente las funciones de prevención</li>
+                                <li>Requisitos:
+                                    <ul class="nested-list">
+                                        <li>Desarrollar de forma habitual su actividad en el centro de trabajo</li>
+                                        <li>Tener la capacidad necesaria en función de los riesgos</li>
+                                    </ul>
+                                </li>
+                                <li>En empresas de <span class="highlight-number">hasta 25 trabajadores</span> y con un único centro de trabajo, también podrá asumirlas si cumple los requisitos</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: var(--gradient-warning);">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: #d35400;">Protección de los trabajadores designados</h4>
+                                <p>Los trabajadores designados no podrán sufrir ningún perjuicio derivado de sus actividades de protección y prevención de los riesgos profesionales en la empresa. Gozarán de garantías similares a las de los representantes de los trabajadores.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 31 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-secondary);">
+                                <i class="fas fa-clinic-medical"></i>
+                            </div>
+                            <span>Artículo 31: Servicios de prevención</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Definición:</strong> Conjunto de medios humanos y materiales necesarios para realizar las actividades preventivas a fin de garantizar la adecuada protección de la seguridad y la salud de los trabajadores.
+                        </div>
+                        
+                        <div class="simplified-data-grid">
+                            <div class="data-item">
+                                <div class="data-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <span><strong>Diseño e implantación</strong> del plan de prevención</span>
+                            </div>
+                            
+                            <div class="data-item">
+                                <div class="data-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <span><strong>Evaluación de factores</strong> de riesgo</span>
+                            </div>
+                            
+                            <div class="data-item">
+                                <div class="data-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <span><strong>Planificación</strong> de la actividad preventiva</span>
+                            </div>
+                            
+                            <div class="data-item">
+                                <div class="data-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <span><strong>Información y formación</strong> de trabajadores</span>
+                            </div>
+                            
+                            <div class="data-item">
+                                <div class="data-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-first-aid"></i>
+                                </div>
+                                <span><strong>Primeros auxilios</strong> y planes de emergencia</span>
+                            </div>
+                            
+                            <div class="data-item">
+                                <div class="data-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-stethoscope"></i>
+                                </div>
+                                <span><strong>Vigilancia de la salud</strong> de los trabajadores</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-info);">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: var(--color-info);">Acreditación de entidades especializadas</h4>
+                                <p>Para poder actuar como servicios de prevención, las entidades especializadas deberán ser objeto de una <strong>acreditación por la autoridad laboral</strong>, que será única y con validez en todo el territorio español, mediante la comprobación de que reúnen los requisitos que se establezcan reglamentariamente.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 32 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-danger);">
+                                <i class="fas fa-ban"></i>
+                            </div>
+                            <span>Artículo 32: Prohibición de participación en actividades mercantiles de prevención</span>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--gradient-danger);">
+                                <i class="fas fa-handshake-slash"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: #c0392b;">Restricción a Mutuas Colaboradoras</h4>
+                                <p>Las Mutuas Colaboradoras con la Seguridad Social <span class="highlight-number">NO podrán desarrollar las funciones correspondientes a los servicios de prevención ajenos</span>, ni participar con cargo a su patrimonio histórico en el capital social de una sociedad mercantil en cuyo objeto figure la actividad de prevención.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 32 bis -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-warning);">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <span>Artículo 32 bis: Presencia de los recursos preventivos</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Casos en que es obligatoria la presencia de recursos preventivos:</strong>
+                        </div>
+                        
+                        <ul class="visual-list">
+                            <li>Cuando los riesgos puedan verse <strong>agravados o modificados</strong> en el desarrollo del proceso</li>
+                            <li>Cuando se realicen actividades o procesos considerados como <span class="highlight-number">peligrosos o con riesgos especiales</span></li>
+                            <li>Cuando la necesidad sea <strong>requerida por la Inspección de Trabajo</strong> y Seguridad Social</li>
+                        </ul>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <span>Recursos preventivos posibles</span>
+                            </div>
+                            
+                            <div class="compact-grid">
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-user-tag"></i>
+                                    </div>
+                                    <div class="compact-title">Trabajadores designados</div>
+                                    <div class="compact-desc">De la empresa</div>
+                                </div>
+                                
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-user-friends"></i>
+                                    </div>
+                                    <div class="compact-title">Miembros del servicio</div>
+                                    <div class="compact-desc">De prevención propio</div>
+                                </div>
+                                
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <div class="compact-title">Miembros de servicios</div>
+                                    <div class="compact-desc">De prevención ajenos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CONSULTA Y PARTICIPACIÓN -->
+            <div class="horizontal-card" id="participacion">
+                <div class="card-header-top" style="background: var(--gradient-warning);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🤝 CONSULTA Y PARTICIPACIÓN DE LOS TRABAJADORES</div>
+                            <div class="card-subtitle-top">Artículos 12 y 33-39 - Derechos de participación y representación</div>
+                        </div>
+                    </div>
+                    <div class="article-number-badge">Art. 12, 33-39</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- ARTÍCULO 12 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-warning);">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <span>Artículo 12: Participación de empresarios y trabajadores</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Principio básico:</strong> La participación de empresarios y trabajadores, a través de las organizaciones empresariales y sindicales más representativas, en la planificación, programación, organización y control de la gestión relacionada con la mejora de las condiciones de trabajo y la protección de la seguridad y salud de los trabajadores en el trabajo.
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 33 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-primary);">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <span>Artículo 33: Consulta de los trabajadores</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Consultas obligatorias:</strong> El empresario deberá consultar a los trabajadores, con la debida antelación, la adopción de decisiones relativas a:
+                        </div>
+                        
+                        <ul class="visual-list">
+                            <li><strong>Planificación y organización del trabajo</strong> e introducción de nuevas tecnologías</li>
+                            <li><strong>Organización y desarrollo</strong> de actividades de protección de la salud</li>
+                            <li><strong>Designación de trabajadores</strong> encargados de medidas de emergencia</li>
+                            <li><strong>Procedimientos de información y documentación</strong></li>
+                            <li><strong>Proyecto y organización</strong> de la formación en materia preventiva</li>
+                            <li><strong>Cualquier otra acción</strong> que pueda tener efectos sustanciales sobre seguridad y salud</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- ARTÍCULO 34 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-success);">
+                                <i class="fas fa-vote-yea"></i>
+                            </div>
+                            <span>Artículo 34: Derechos de participación y representación</span>
+                        </div>
+                        
+                        <ul class="visual-list">
+                            <li>Los trabajadores tienen derecho a <strong>participar en la empresa</strong> en las cuestiones relacionadas con la prevención de riesgos</li>
+                            <li>En empresas o centros con <span class="highlight-number">6 o más trabajadores</span>, la participación se canaliza a través de representantes</li>
+                            <li>Los Comités de Empresa, Delegados de Personal y representantes sindicales ejercen la <strong>defensa de los intereses</strong> de los trabajadores</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- ARTÍCULO 35 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-info);">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <span>Artículo 35: Delegados de Prevención</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Definición:</strong> Los Delegados de Prevención son los representantes de los trabajadores con funciones específicas en materia de prevención de riesgos en el trabajo.
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <span>Número de Delegados de Prevención según plantilla</span>
+                            </div>
+                            
+                            <table class="delegados-table">
+                                <thead>
+                                    <tr>
+                                        <th>Trabajadores en la empresa</th>
+                                        <th>Nº de Delegados de Prevención</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Hasta 30 trabajadores</td>
+                                        <td>El Delegado de Personal</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31 a 49 trabajadores</td>
+                                        <td>1 Delegado de Prevención</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight">50 a 100 trabajadores</span></td>
+                                        <td><span class="highlight">2 Delegados de Prevención</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight">101 a 500 trabajadores</span></td>
+                                        <td><span class="highlight">3 Delegados de Prevención</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight">501 a 1.000 trabajadores</span></td>
+                                        <td><span class="highlight">4 Delegados de Prevención</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight">1.001 a 2.000 trabajadores</span></td>
+                                        <td><span class="highlight">5 Delegados de Prevención</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight">2.001 a 3.000 trabajadores</span></td>
+                                        <td><span class="highlight">6 Delegados de Prevención</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight">3.001 a 4.000 trabajadores</span></td>
+                                        <td><span class="highlight">7 Delegados de Prevención</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="highlight">4.001 en adelante</span></td>
+                                        <td><span class="highlight">8 Delegados de Prevención</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 36 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-secondary);">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <span>Artículo 36: Competencias y facultades de los Delegados de Prevención</span>
+                        </div>
+                        
+                        <div class="simplified-data-grid">
+                            <div class="data-item">
+                                <div class="data-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <span><strong>Colaborar con la dirección</strong> en la mejora de la acción preventiva</span>
+                            </div>
+                            
+                            <div class="data-item">
+                                <div class="data-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <span><strong>Promover cooperación</strong> de trabajadores en ejecución de normativa</span>
+                            </div>
+                            
+                            <div class="data-item">
+                                <div class="data-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
+                                <span><strong>Ser consultados</strong> por el empresario previamente a decisiones</span>
+                            </div>
+                            
+                            <div class="data-item">
+                                <div class="data-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <span><strong>Vigilar y controlar</strong> cumplimiento de normativa de prevención</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-info);">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: var(--color-info);">Plazo para emitir informes</h4>
+                                <p>Los informes que deban emitir los Delegados de Prevención deberán elaborarse en un plazo de <span class="highlight-number">15 días</span>, o en el tiempo imprescindible cuando se trate de adoptar medidas dirigidas a prevenir riesgos inminentes. Transcurrido el plazo sin haberse emitido el informe, el empresario podrá poner en práctica su decisión.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 38 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-success);">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <span>Artículo 38: Comité de Seguridad y Salud</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Definición:</strong> El Comité de Seguridad y Salud es el órgano paritario y colegiado de participación destinado a la consulta regular y periódica de las actuaciones de la empresa en materia de prevención de riesgos.
+                        </div>
+                        
+                        <ul class="visual-list">
+                            <li>Se constituirá en todas las empresas o centros de trabajo que cuenten con <span class="highlight-number">50 o más trabajadores</span></li>
+                            <li>Formado por los <strong>Delegados de Prevención</strong> y por el <strong>empresario y/o sus representantes</strong> en número igual</li>
+                            <li>Se reúne <span class="highlight-number">trimestralmente</span> y siempre que lo solicite alguna de las representaciones</li>
+                            <li>Participan con voz pero sin voto: Delegados Sindicales y responsables técnicos de prevención</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- ARTÍCULO 39 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-primary);">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <span>Artículo 39: Competencias y facultades del Comité de Seguridad y Salud</span>
+                        </div>
+                        
+                        <div class="compact-grid">
+                            <div class="compact-card">
+                                <div class="compact-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="compact-title">Participar</div>
+                                <div class="compact-desc">En elaboración, puesta en práctica y evaluación de planes y programas</div>
+                            </div>
+                            
+                            <div class="compact-card">
+                                <div class="compact-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="compact-title">Promover iniciativas</div>
+                                <div class="compact-desc">Sobre métodos y procedimientos para efectiva prevención</div>
+                            </div>
+                            
+                            <div class="compact-card">
+                                <div class="compact-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="compact-title">Conocer situación</div>
+                                <div class="compact-desc">Relativa a prevención de riesgos en el centro de trabajo</div>
+                            </div>
+                            
+                            <div class="compact-card">
+                                <div class="compact-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="compact-title">Conocer documentos</div>
+                                <div class="compact-desc">Relativos a condiciones de trabajo necesarios para sus funciones</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- INSPECCIÓN Y CONTROL -->
+            <div class="horizontal-card" id="inspeccion">
+                <div class="card-header-top" style="background: var(--gradient-danger);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🔍 INSPECCIÓN DE TRABAJO Y SEGURIDAD SOCIAL</div>
+                            <div class="card-subtitle-top">Artículo 9 - Vigilancia y control de la normativa preventiva</div>
+                        </div>
+                    </div>
+                    <div class="article-number-badge">Art. 9 LPRL</div>
+                </div>
+                
+                <div class="card-content">
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-danger);">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <span>Artículo 9: Inspección de Trabajo y Seguridad Social</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Función principal:</strong> Corresponde a la Inspección de Trabajo y Seguridad Social la función de la vigilancia y control de la normativa sobre prevención de riesgos laborales.
+                        </div>
+                        
+                        <div class="simplified-data-grid">
+                            <div class="data-item obligatorio">
+                                <div class="data-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <span><strong>Vigilar cumplimiento</strong> de normativa sobre prevención</span>
+                            </div>
+                            
+                            <div class="data-item">
+                                <div class="data-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <span><strong>Asesorar e informar</strong> a empresas y trabajadores</span>
+                            </div>
+                            
+                            <div class="data-item">
+                                <div class="data-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <span><strong>Elaborar informes</strong> para Juzgados de lo Social</span>
+                            </div>
+                            
+                            <div class="data-item obligatorio">
+                                <div class="data-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <span><strong>Informar sobre accidentes</strong> mortales, muy graves o graves</span>
+                            </div>
+                            
+                            <div class="data-item">
+                                <div class="data-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <span><strong>Comprobar cumplimiento</strong> de obligaciones de servicios de prevención</span>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--gradient-danger);">
+                                <i class="fas fa-ban"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: #c0392b;">Facultad de paralización inmediata</h4>
+                                <p>La Inspección de Trabajo y Seguridad Social puede <span class="highlight-number">ordenar la paralización inmediata de trabajos</span> cuando, a juicio del inspector, se advierta la existencia de riesgo grave e inminente para la seguridad o salud de los trabajadores.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <span>Colaboración entre Administraciones</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li>Las Administraciones General del Estado y de las comunidades autónomas adoptarán medidas para garantizar la <strong>colaboración pericial y asesoramiento técnico</strong> necesario</li>
+                                <li>En el ámbito de la Administración General del Estado, el asesoramiento será prestado por el <span class="highlight-number">Instituto Nacional de Seguridad e Higiene en el Trabajo</span></li>
+                                <li>Se elaborarán y coordinarán <strong>planes de actuación</strong> para contribuir al desarrollo de actuaciones preventivas en empresas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OBLIGACIONES DE FABRICANTES -->
+            <div class="horizontal-card" id="fabricantes">
+                <div class="card-header-top" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🏭 OBLIGACIONES DE FABRICANTES, IMPORTADORES Y SUMINISTRADORES</div>
+                            <div class="card-subtitle-top">Artículo 41 - Responsabilidades en la seguridad de equipos y productos</div>
+                        </div>
+                    </div>
+                    <div class="article-number-badge">Art. 41 LPRL</div>
+                </div>
+                
+                <div class="card-content">
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <span>Artículo 41: Obligaciones de los fabricantes, importadores y suministradores</span>
+                        </div>
+                        
+                        <div class="key-point">
+                            <strong>Responsabilidad en origen:</strong> Los fabricantes, importadores y suministradores deben asegurar que sus productos no constituyan una fuente de peligro para el trabajador.
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <span>Maquinaria, equipos y útiles de trabajo</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li>Deben asegurar que no constituyan una fuente de peligro</li>
+                                <li>Siempre que sean <strong>instalados y utilizados en las condiciones, forma y para los fines recomendados</strong></li>
+                                <li>Deben suministrar información sobre <span class="highlight-number">forma correcta de utilización</span>, medidas preventivas y riesgos</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <span>Productos y sustancias químicas</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li>Obligación de <strong>envasar y etiquetar</strong> de forma que se permita su conservación y manipulación en condiciones de seguridad</li>
+                                <li>Debe identificarse claramente su <span class="highlight-number">contenido y los riesgos</span> para la seguridad o salud</li>
+                                <li>Información sobre riesgos tanto en <strong>uso normal como en manipulación inadecuada</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                                    <i class="fas fa-hard-hat"></i>
+                                </div>
+                                <span>Elementos para la protección de trabajadores</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li>Deben asegurar la <strong>efectividad</strong> de los elementos de protección</li>
+                                <li>Siempre que sean <span class="highlight-number">instalados y usados en las condiciones y forma recomendada</span></li>
+                                <li>Información sobre: <strong>tipo de riesgo, nivel de protección, forma correcta de uso y mantenimiento</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--gradient-danger);">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; color: #c0392b;">Obligación de información en cadena</h4>
+                                <p>Los fabricantes, importadores y suministradores deberán <strong>proporcionar a los empresarios</strong> la información necesaria para que la utilización y manipulación de maquinaria, equipos, productos, materias primas y útiles de trabajo se produzca sin riesgos. A su vez, <strong>los empresarios recabarán esta información</strong> y deberán garantizar que sea facilitada a los trabajadores en términos comprensibles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Botones flotantes -->
+    <button class="floating-btn" id="scrollTopBtn" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <button class="floating-btn floating-btn-left" id="printBtn" title="Imprimir guía">
+        <i class="fas fa-print"></i>
+    </button>
+    
+    <!-- Footer -->
+    <footer class="visual-footer">
+        <div class="container">
+            <div class="footer-content">
+                <h2 style="color: #ffffff; margin-bottom: 1.5rem; font-size: 2rem;">🛡️ Ley de Prevención de Riesgos Laborales</h2>
+                <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.9;">
+                    Guía visual completa basada en la Ley 31/1995, de 8 de noviembre, de Prevención de Riesgos Laborales
+                </p>
+                
+                <div style="margin-top: 2.5rem;">
+                    <p style="opacity: 0.8; font-size: 0.95rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-info-circle"></i> Esta guía visual tiene carácter informativo y no sustituye la consulta del texto legal completo del BOE núm. 269, de 10 de noviembre de 1995.
+                    </p>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">
+                        © 2023 Guía Visual LPRL - Basado en Ley 31/1995 de Prevención de Riesgos Laborales
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Botón para volver arriba
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Botón para imprimir
+        const printBtn = document.getElementById('printBtn');
+        printBtn.addEventListener('click', () => {
+            window.print();
+        });
+        
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 100;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Asegurar que los enlaces hash funcionen correctamente al cargar la página
+        window.onload = function() {
+            if(window.location.hash) {
+                var hash = window.location.hash;
+                setTimeout(function(){
+                    window.location.hash = '';
+                    window.location.hash = hash;
+                }, 600);
+            }
+        }
+    </script>
+</body>
+</html>
