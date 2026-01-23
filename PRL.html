@@ -866,13 +866,14 @@
 
         /* Para la cuadrícula de principios */
         .principios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 1rem;
             margin: 1.5rem 0;
         }
 
         .principio-item {
+            flex: 1 1 280px;
             background: white;
             border-radius: 10px;
             padding: 1.2rem;
@@ -1249,6 +1250,838 @@
             background: linear-gradient(135deg, rgba(39, 174, 96, 0.1), rgba(33, 150, 83, 0.1));
         }
 
+        /* Añadir al CSS existente */
+
+        /* Estilo para elementos destacados dentro de listas de artículos */
+        .articulo-item .key-point {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 3px solid var(--color-secondary);
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* Mejora para subtítulos dentro de artículos */
+        .articulo-item .special-note {
+            background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+            border-left: 3px solid #FF9800;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* Para destacar números dentro del texto */
+        .highlight-number {
+            color: #e74c3c !important;
+            font-weight: 700 !important;
+            background-color: rgba(231, 76, 60, 0.1);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+        /* Ajuste para cajas de información más compactas */
+        .info-box p {
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box ul.visual-list {
+            margin-top: 0.5rem;
+        }
+
+        /* Mejora para cuadrícula de datos simplificada */
+        .simplified-data-grid .data-item {
+            flex: 1 1 280px;
+        }
+
+        /* Para listas dentro de artículos */
+        .articulo-sublist {
+            list-style: none;
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .articulo-sublist li {
+            position: relative;
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .articulo-sublist li:before {
+            content: '•';
+            position: absolute;
+            left: -1rem;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        /* Estilos específicos para el bloque de Inspección y Participación */
+
+        /* Para iconos con gradiente morado */
+        .nav-icon[style*="#9C27B0"], 
+        .card-header-top[style*="#9C27B0"],
+        .section-icon[style*="#9C27B0"],
+        .subsection-icon[style*="#9C27B0"] {
+            background: linear-gradient(135deg, #9C27B0, #7B1FA2) !important;
+        }
+
+        /* ESTILOS PARA LA VERSIÓN VISUAL MEJORADA */
+
+/* Caja de resumen visual */
+.visual-summary-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+}
+
+/* Grid de funciones */
+.funciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.funcion-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: flex;
+    gap: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-left: 4px solid #3498db;
+    transition: transform 0.3s ease;
+}
+
+.funcion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.funcion-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.funcion-content {
+    flex: 1;
+}
+
+.funcion-title {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.funcion-desc {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.funcion-highlight {
+    background: rgba(52, 152, 219, 0.1);
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.funcion-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+}
+
+.funcion-list li {
+    padding: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.funcion-list li i {
+    width: 16px;
+    color: #f39c12;
+}
+
+/* Visual de colaboración */
+.colaboracion-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.colaboracion-item {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.colaboracion-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 auto 1rem;
+}
+
+.colaboracion-arrow {
+    font-size: 2rem;
+    color: #3498db;
+}
+
+.colaboracion-content h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.colaboracion-content p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Grupos objetivo */
+.target-groups {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.target-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    flex: 1;
+    min-width: 200px;
+}
+
+.target-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Procedimiento timeline mejorado */
+.procedimiento-timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.procedimiento-step {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    position: relative;
+}
+
+.step-visual {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.step-number {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: #e74c3c;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.step-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #9C27B0, #7B1FA2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 auto;
+}
+
+.procedimiento-arrow {
+    font-size: 1.5rem;
+    color: #9C27B0;
+}
+
+.step-content h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1rem;
+}
+
+.step-content p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.legal-note {
+    background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 1.5rem;
+    border-left: 4px solid #3498db;
+}
+
+.legal-note i {
+    font-size: 1.5rem;
+    color: #3498db;
+}
+
+.legal-note p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Principio de participación visual */
+.principio-impacto {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 1.5rem 0;
+    border-left: 5px solid #2ecc71;
+}
+
+.principio-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.principio-icon-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.2rem;
+}
+
+.principio-header h3 {
+    margin: 0;
+    color: #27ae60;
+    font-size: 1.8rem;
+}
+
+.principio-subtitle {
+    color: #555;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.participantes-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.participante {
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+}
+
+.participante-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 auto 1rem;
+}
+
+.participante-plus {
+    font-size: 2rem;
+    color: #2ecc71;
+    text-align: center;
+}
+
+.participante-plus p {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: #555;
+}
+
+.participante-info h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.participante-info p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.participacion-areas {
+    margin-top: 2rem;
+}
+
+.participacion-areas h4 {
+    color: #333;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.area {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.area:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.area-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.area span {
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Objetivos de participación */
+.objetivos-participacion {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.objetivo-card {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-top: 5px solid #2ecc71;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.objetivo-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.objetivo-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.objetivo-header h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.objetivo-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Responsabilidad box */
+.responsabilidad-box {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 1.5rem 0;
+    border-left: 5px solid #3498db;
+}
+
+.responsabilidad-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.responsabilidad-content h4 {
+    margin: 0 0 0.5rem 0;
+    color: #2980b9;
+}
+
+.responsabilidad-content p {
+    margin: 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Relación con artículos */
+.relacion-articulos {
+    margin: 2rem 0;
+}
+
+.relacion-articulos h4 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.articulos-relacionados {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.articulo-rel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.articulo-rel:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(41, 128, 185, 0.05));
+}
+
+.articulo-rel-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #9C27B0, #7B1FA2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.articulo-rel-info {
+    flex: 1;
+    margin-left: 1rem;
+}
+
+.articulo-rel-info strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: #333;
+}
+
+.articulo-rel-info span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.articulo-rel i.fa-arrow-right {
+    color: #9C27B0;
+}
+
+/* Sistema dual visual */
+.sistema-dual {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.pilar {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.pilar-header {
+    padding: 1.5rem;
+    text-align: center;
+    color: white;
+}
+
+.pilar-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.pilar-header h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+}
+
+.pilar-subtitle {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.pilar-content {
+    background: white;
+    padding: 1.5rem;
+}
+
+.pilar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.pilar-item:last-child {
+    border-bottom: none;
+}
+
+.pilar-item i {
+    font-size: 1.2rem;
+}
+
+.pilar-item span {
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.pilar-plus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #9C27B0;
+}
+
+.pilar-plus i {
+    font-size: 2.5rem;
+}
+
+.pilar-plus p {
+    margin-top: 0.5rem;
+    color: #555;
+    font-weight: 600;
+}
+
+/* Conclusión */
+.conclusion-box {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 2rem;
+    border-left: 5px solid #2ecc71;
+}
+
+.conclusion-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.conclusion-content h4 {
+    margin: 0 0 0.5rem 0;
+    color: #27ae60;
+}
+
+.conclusion-content p {
+    margin: 0;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .funciones-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .colaboracion-visual {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .colaboracion-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .procedimiento-timeline {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .procedimiento-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .participantes-visual {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .participante-plus {
+        transform: rotate(90deg);
+    }
+    
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .objetivos-participacion {
+        flex-direction: column;
+    }
+    
+    .sistema-dual {
+        flex-direction: column;
+    }
+    
+    .pilar-plus {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    
+    .pilar-plus i {
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .funcion-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .responsabilidad-box,
+    .conclusion-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .articulo-rel {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .articulo-rel-info {
+        margin-left: 0;
+    }
+}
+
+
+
     </style>
 </head>
 <body>
@@ -1293,6 +2126,15 @@
                 <span>Disposiciones generales</span>
                 <small>Art. 1-4</small>
             </a>
+
+            <!-- Navegación actualizada - Añadir después del enlace de "Servicios de prevención" -->
+            <a href="#inspeccion-participacion" class="nav-item" style="background: linear-gradient(135deg, #FFEBEE, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-danger);">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+                <span>Inspección y participación</span>
+                <small>Art. 9, 12</small>
+            </a>
             
             <a href="#derechos" class="nav-item" style="background: linear-gradient(135deg, #E3F2FD, #FFFFFF);">
                 <div class="nav-icon" style="background: var(--gradient-success);">
@@ -1318,13 +2160,6 @@
                 <small>Art. 33-39</small>
             </a>
             
-            <a href="#inspeccion" class="nav-item" style="background: linear-gradient(135deg, #FFEBEE, #FFFFFF);">
-                <div class="nav-icon" style="background: var(--gradient-danger);">
-                    <i class="fas fa-search"></i>
-                </div>
-                <span>Inspección y control</span>
-                <small>Art. 9</small>
-            </a>
             
             <a href="#fabricantes" class="nav-item" style="background: linear-gradient(135deg, #F3E5F5, #FFFFFF);">
                 <div class="nav-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
@@ -1339,7 +2174,7 @@
     <main class="container">
         <div class="horizontal-cards-container">
             
-            <!-- DISPOSICIONES GENERALES -->
+            <!-- DISPOSICIONES GENERALES - COMPLETA -->
             <div class="horizontal-card" id="disposiciones">
                 <div class="card-header-top" style="background: var(--gradient-primary);">
                     <div class="card-title-container">
@@ -1364,8 +2199,18 @@
                             <span>Artículo 1: Normativa sobre prevención de riesgos laborales</span>
                         </div>
                         
-                        <div class="key-point">
-                            <strong>Definición legal:</strong> La normativa sobre prevención de riesgos laborales está constituida por la presente Ley, sus disposiciones de desarrollo o complementarias y cuantas otras normas, legales o convencionales, contengan prescripciones relativas a la adopción de medidas preventivas en el ámbito laboral o susceptibles de producirlas en dicho ámbito.
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-primary);">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            <div>
+                                <p><strong>Definición legal:</strong> La normativa sobre prevención de riesgos laborales está constituida por:</p>
+                                <ul class="visual-list">
+                                    <li><strong>La presente Ley</strong> (Ley 31/1995)</li>
+                                    <li><strong>Sus disposiciones de desarrollo o complementarias</strong></li>
+                                    <li><strong>Cuantas otras normas</strong>, legales o convencionales, contengan prescripciones relativas a la adopción de medidas preventivas en el ámbito laboral o susceptibles de producirlas en dicho ámbito</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     
@@ -1378,11 +2223,89 @@
                             <span>Artículo 2: Objeto y carácter de la norma</span>
                         </div>
                         
-                        <ul class="visual-list">
-                            <li><strong>Objeto:</strong> Promover la seguridad y la salud de los trabajadores mediante la aplicación de medidas y el desarrollo de las actividades necesarias para la prevención de riesgos derivados del trabajo</li>
-                            <li><strong>Principios generales:</strong> Establece los principios relativos a la prevención de riesgos profesionales para la protección de la seguridad y salud</li>
-                            <li><strong>Carácter:</strong> Las disposiciones de carácter laboral contenidas en esta Ley tienen el carácter de <span class="highlight-number">Derecho necesario mínimo indisponible</span>, pudiendo ser mejoradas y desarrolladas en los convenios colectivos</li>
-                        </ul>
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-success);">
+                                    <i class="fas fa-crosshairs"></i>
+                                </div>
+                                <span>Objeto principal (Artículo 2.1)</span>
+                            </div>
+                            
+                            <div class="key-point">
+                                <strong>Promover la seguridad y la salud</strong> de los trabajadores mediante:
+                                <ul class="visual-list">
+                                    <li>Aplicación de medidas preventivas</li>
+                                    <li>Desarrollo de actividades necesarias para la prevención de riesgos derivados del trabajo</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="emphasis-box">
+                                <div class="subsection-title">
+                                    <div class="subsection-icon" style="background: var(--gradient-accent);">
+                                        <i class="fas fa-balance-scale"></i>
+                                    </div>
+                                    <span>Principios generales establecidos</span>
+                                </div>
+                                <div class="simplified-data-grid">
+                                    <div class="data-item">
+                                        <div class="data-icon" style="background: var(--gradient-primary);">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <span>Protección de seguridad y salud</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <div class="data-icon" style="background: var(--gradient-primary);">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                        <span>Eliminación o disminución de riesgos</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <div class="data-icon" style="background: var(--gradient-primary);">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <span>Información y consulta</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <div class="data-icon" style="background: var(--gradient-primary);">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <span>Participación equilibrada</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <div class="data-icon" style="background: var(--gradient-primary);">
+                                            <i class="fas fa-graduation-cap"></i>
+                                        </div>
+                                        <span>Formación preventiva</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-danger);">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <span>Carácter de la norma (Artículo 2.2)</span>
+                            </div>
+                            
+                            <div class="danger-box">
+                                <div class="box-icon" style="background: var(--gradient-danger);">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-top: 0; color: #c0392b;">Carácter de Derecho necesario mínimo indisponible</h4>
+                                    <p>Las disposiciones de carácter laboral contenidas en esta Ley y en sus normas reglamentarias:</p>
+                                    <ul class="visual-list">
+                                        <li>Tendrán en todo caso el carácter de <span class="highlight-number">Derecho necesario mínimo indisponible</span></li>
+                                        <li>Podrán ser <strong>mejoradas y desarrolladas en los convenios colectivos</strong></li>
+                                    </ul>
+                                    <p style="margin-top: 1rem; font-style: italic; font-size: 0.9rem;">
+                                        <i class="fas fa-lightbulb"></i> Esto significa que establece un nivel mínimo de protección que no puede reducirse, pero sí mejorarse mediante negociación colectiva.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- ARTÍCULO 3 -->
@@ -1394,8 +2317,41 @@
                             <span>Artículo 3: Ámbito de aplicación</span>
                         </div>
                         
-                        <div class="key-point">
-                            <strong>Aplicación general:</strong> Esta Ley y sus normas de desarrollo serán de aplicación tanto en el ámbito de las relaciones laborales reguladas en el Estatuto de los Trabajadores, como en el de las relaciones de carácter administrativo o estatutario del personal al servicio de las Administraciones Públicas.
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <span>Aplicación general (Artículo 3.1)</span>
+                            </div>
+                            
+                            
+                            <div class="simplified-data-grid">
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <span>Relaciones laborales reguladas en el Estatuto de los Trabajadores</span>
+                                </div>
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <span>Relaciones de carácter administrativo o estatutario del personal al servicio de las Administraciones Públicas</span>
+                                </div>
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <span>Trabajadores autónomos (derechos y obligaciones que puedan derivarse)</span>
+                                </div>
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <span>Sociedades cooperativas (con socios cuya actividad sea prestación de trabajo personal)</span>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="subsection">
@@ -1403,21 +2359,69 @@
                                 <div class="subsection-icon" style="background: var(--gradient-warning);">
                                     <i class="fas fa-ban"></i>
                                 </div>
-                                <span>Exclusiones del ámbito de aplicación</span>
+                                <span>Exclusiones del ámbito de aplicación (Artículo 3.2)</span>
                             </div>
                             
-                            <ul class="visual-list">
-                                <li><strong>Policía, seguridad y resguardo aduanero</strong></li>
-                                <li><strong>Servicios operativos de protección civil y peritaje forense</strong> en los casos de grave riesgo, catástrofe y calamidad pública</li>
-                                <li><strong>Fuerzas Armadas y actividades militares de la Guardia Civil</strong></li>
-                            </ul>
                             
-                            <div class="info-box">
+                            <div class="principios-grid">
+                                <div class="principio-item">
+                                    <div class="principio-icon" style="background: var(--gradient-warning);">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="principio-title">Policía, seguridad y resguardo aduanero</div>
+                                    <div class="principio-desc">Funciones públicas de seguridad</div>
+                                </div>
+                                
+                                <div class="principio-item">
+                                    <div class="principio-icon" style="background: var(--gradient-warning);">
+                                        <i class="fas fa-ambulance"></i>
+                                    </div>
+                                    <div class="principio-title">Servicios operativos de protección civil y peritaje forense</div>
+                                    <div class="principio-desc">En casos de grave riesgo, catástrofe y calamidad pública</div>
+                                </div>
+                                
+                                <div class="principio-item">
+                                    <div class="principio-icon" style="background: var(--gradient-warning);">
+                                        <i class="fas fa-fighter-jet"></i>
+                                    </div>
+                                    <div class="principio-title">Fuerzas Armadas</div>
+                                    <div class="principio-desc">Y actividades militares de la Guardia Civil</div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box" style="margin-top: 1.5rem;">
                                 <div class="box-icon" style="background: var(--gradient-info);">
-                                    <i class="fas fa-info-circle"></i>
+                                    <i class="fas fa-lightbulb"></i>
                                 </div>
                                 <div>
-                                    <p><strong>Nota:</strong> Esta Ley inspirará la normativa específica que se dicte para regular la protección de la seguridad y la salud de los trabajadores que prestan sus servicios en las indicadas actividades.</p>
+                                    <p><strong>Importante:</strong> Esta Ley inspirará la normativa específica que se dicte para regular la protección de la seguridad y la salud de los trabajadores que prestan sus servicios en las indicadas actividades.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <span>Particularidades específicas (Artículo 3.3)</span>
+                            </div>
+                            
+                            <div class="compact-grid">
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fa-brands fa-fort-awesome"></i>
+                                    </div>
+                                    <div class="compact-title">Centros y establecimientos militares</div>
+                                    <div class="compact-desc">Será de aplicación con las particularidades previstas en su normativa específica</div>
+                                </div>
+                                
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <div class="compact-title">Establecimientos penitenciarios</div>
+                                    <div class="compact-desc">Se adaptarán aquellas actividades cuyas características justifiquen regulación especial</div>
                                 </div>
                             </div>
                         </div>
@@ -1432,57 +2436,584 @@
                             <span>Artículo 4: Definiciones</span>
                         </div>
                         
-                        <div class="key-point">
-                            <strong>Definiciones clave:</strong> A efectos de la presente Ley y de las normas que la desarrollen.
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-accent);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <p><strong>A efectos de la presente Ley y de las normas que la desarrollen:</strong></p>
+                            </div>
                         </div>
                         
-                        <div class="principios-grid">
-                            <div class="principio-item">
-                                <div class="principio-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <div class="principio-title">Prevención</div>
-                                <div class="principio-desc">Conjunto de actividades o medidas adoptadas o previstas en todas las fases de actividad de la empresa con el fin de evitar o disminuir los riesgos derivados del trabajo.</div>
+                        <div class="articulo-list">
+                            <div class="articulo-item">
+                                <div class="articulo-title">Prevención</div>
+                                <div class="articulo-desc">Conjunto de actividades o medidas adoptadas o previstas en todas las fases de actividad de la empresa con el fin de evitar o disminuir los riesgos derivados del trabajo.</div>
                             </div>
                             
-                            <div class="principio-item">
-                                <div class="principio-icon">
-                                    <i class="fas fa-exclamation-triangle"></i>
+                            <div class="articulo-item">
+                                <div class="articulo-title">Riesgo laboral</div>
+                                <div class="articulo-desc">
+                                    Posibilidad de que un trabajador sufra un determinado daño derivado del trabajo. 
+                                    <div class="key-point" style="margin-top: 0.5rem;">
+                                        <strong>Para calificar la gravedad:</strong> Se valorarán conjuntamente la probabilidad de que se produzca el daño y la severidad del mismo.
+                                    </div>
                                 </div>
-                                <div class="principio-title">Riesgo laboral</div>
-                                <div class="principio-desc">Posibilidad de que un trabajador sufra un determinado daño derivado del trabajo.</div>
                             </div>
                             
-                            <div class="principio-item">
-                                <div class="principio-icon">
-                                    <i class="fas fa-user-injured"></i>
-                                </div>
-                                <div class="principio-title">Daños derivados del trabajo</div>
-                                <div class="principio-desc">Enfermedades, patologías o lesiones sufridas con motivo u ocasión del trabajo.</div>
+                            <div class="articulo-item">
+                                <div class="articulo-title">Daños derivados del trabajo</div>
+                                <div class="articulo-desc">Enfermedades, patologías o lesiones sufridas con motivo u ocasión del trabajo.</div>
                             </div>
                             
-                            <div class="principio-item">
-                                <div class="principio-icon">
-                                    <i class="fas fa-skull-crossbones"></i>
+                            <div class="articulo-item">
+                                <div class="articulo-title">Riesgo laboral grave e inminente</div>
+                                <div class="articulo-desc">
+                                    Aquel que resulte probable racionalmente que se materialice en un futuro inmediato y pueda suponer un daño grave para la salud de los trabajadores.
+                                    <div class="special-note" style="margin-top: 0.5rem;">
+                                        <strong>Casos especiales:</strong> En exposición a agentes susceptibles de causar daños graves a la salud, se considerará riesgo grave e inminente cuando sea probable racionalmente que se materialice en un futuro inmediato una exposición de la que puedan derivarse daños graves, aunque éstos no se manifiesten de forma inmediata.
+                                    </div>
                                 </div>
-                                <div class="principio-title">Riesgo laboral grave e inminente</div>
-                                <div class="principio-desc">Aquel que resulte probable racionalmente que se materialice en un futuro inmediato y pueda suponer un daño grave para la salud de los trabajadores.</div>
                             </div>
                             
-                            <div class="principio-item">
-                                <div class="principio-icon">
-                                    <i class="fas fa-tools"></i>
-                                </div>
-                                <div class="principio-title">Equipo de trabajo</div>
-                                <div class="principio-desc">Cualquier máquina, aparato, instrumento o instalación utilizada en el trabajo.</div>
+                            <div class="articulo-item">
+                                <div class="articulo-title">Procesos, actividades, operaciones, equipos o productos "potencialmente peligrosos"</div>
+                                <div class="articulo-desc">Aquellos que, en ausencia de medidas preventivas específicas, originen riesgos para la seguridad y la salud de los trabajadores que los desarrollan o utilizan.</div>
                             </div>
                             
-                            <div class="principio-item">
-                                <div class="principio-icon">
-                                    <i class="fas fa-hard-hat"></i>
+                            <div class="articulo-item">
+                                <div class="articulo-title">Equipo de trabajo</div>
+                                <div class="articulo-desc">Cualquier máquina, aparato, instrumento o instalación utilizada en el trabajo.</div>
+                            </div>
+                            
+                            <div class="articulo-item">
+                                <div class="articulo-title">Condición de trabajo</div>
+                                <div class="articulo-desc">
+                                    Cualquier característica del mismo que pueda tener una influencia significativa en la generación de riesgos para la seguridad y la salud del trabajador.
+                                    <div class="articulo-sublist">
+                                        <li>Características generales de locales, instalaciones, equipos, productos y útiles</li>
+                                        <li>Naturaleza de agentes físicos, químicos y biológicos presentes</li>
+                                        <li>Procedimientos para utilización de agentes que influyan en generación de riesgos</li>
+                                        <li>Todas aquellas otras características del trabajo, incluidas las relativas a su organización y ordenación</li>
+                                    </div>
                                 </div>
-                                <div class="principio-title">Equipo de protección individual</div>
-                                <div class="principio-desc">Cualquier equipo destinado a ser llevado o sujetado por el trabajador para que le proteja de uno o varios riesgos que puedan amenazar su seguridad o su salud en el trabajo.</div>
+                            </div>
+                            
+                            <div class="articulo-item">
+                                <div class="articulo-title">Equipo de protección individual (EPI)</div>
+                                <div class="articulo-desc">Cualquier equipo destinado a ser llevado o sujetado por el trabajador para que le proteja de uno o varios riesgos que puedan amenazar su seguridad o su salud en el trabajo, así como cualquier complemento o accesorio destinado a tal fin.</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOQUE: INSPECCIÓN Y PARTICIPACIÓN - VERSIÓN MEJORADA -->
+            <div class="horizontal-card" id="inspeccion-participacion">
+                <div class="card-header-top" style="background: linear-gradient(135deg, #9C27B0, #7B1FA2);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🔍 INSPECCIÓN Y PARTICIPACIÓN</div>
+                            <div class="card-subtitle-top">Artículos 9 y 12 - Control administrativo y participación social</div>
+                        </div>
+                    </div>
+                    <div class="article-number-badge">Art. 9, 12 LPRL</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- ARTÍCULO 9 - VERSIÓN VISUAL MEJORADA -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: linear-gradient(135deg, #9C27B0, #7B1FA2);">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <span>Artículo 9: Inspección de Trabajo y Seguridad Social</span>
+                        </div>
+                        
+                        <!-- FUNCIÓN PRINCIPAL - VISUAL -->
+                        <div class="visual-summary-box" style="background: linear-gradient(135deg, rgba(156, 39, 176, 0.1), rgba(123, 31, 162, 0.1)); border-left: 5px solid #9C27B0;">
+                            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
+                                <div style="background: linear-gradient(135deg, #9C27B0, #7B1FA2); width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h3 style="margin: 0; color: #7B1FA2;">Función principal de la Inspección</h3>
+                            </div>
+                            <p style="font-size: 1.1rem; margin: 0;"><strong>Vigilancia y control</strong> de la normativa sobre prevención de riesgos laborales</p>
+                        </div>
+                        
+                        <!-- FUNCIONES ESPECÍFICAS CON ICONOS -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: linear-gradient(135deg, #9C27B0, #7B1FA2);">
+                                    <i class="fas fa-list-check"></i>
+                                </div>
+                                <span>6 Funciones específicas de la Inspección</span>
+                            </div>
+                            
+                            <div class="funciones-grid">
+                                <div class="funcion-card">
+                                    <div class="funcion-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                                        <i class="fas fa-binoculars"></i>
+                                    </div>
+                                    <div class="funcion-content">
+                                        <div class="funcion-title">Vigilancia del cumplimiento</div>
+                                        <div class="funcion-desc">
+                                            <strong>Supervisa</strong> toda la normativa preventiva y normas jurídico-técnicas relacionadas
+                                            <div class="funcion-highlight" style="background: rgba(52, 152, 219, 0.1);">
+                                                <i class="fas fa-exclamation-circle" style="color: #3498db;"></i>
+                                                <span>Puede <strong>proponer sanciones</strong> por infracciones</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="funcion-card">
+                                    <div class="funcion-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <div class="funcion-content">
+                                        <div class="funcion-title">Asesoramiento e información</div>
+                                        <div class="funcion-desc">
+                                            <strong>Orienta y guía</strong> a empresas y trabajadores sobre cómo cumplir efectivamente las disposiciones
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="funcion-card">
+                                    <div class="funcion-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                                        <i class="fas fa-file-medical"></i>
+                                    </div>
+                                    <div class="funcion-content">
+                                        <div class="funcion-title">Elaboración de informes judiciales</div>
+                                        <div class="funcion-desc">
+                                            <strong>Prepara informes técnicos</strong> para los Juzgados de lo Social en casos de accidentes laborales y enfermedades profesionales
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="funcion-card">
+                                    <div class="funcion-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="funcion-content">
+                                        <div class="funcion-title">Información a autoridades</div>
+                                        <div class="funcion-desc">
+                                            <strong>Comunica a la autoridad laboral</strong> sobre:
+                                            <ul class="funcion-list">
+                                                <li><i class="fas fa-skull-crossbones"></i> Accidentes <strong>mortales, muy graves o graves</strong></li>
+                                                <li><i class="fas fa-user-injured"></i> Enfermedades profesionales de especial gravedad</li>
+                                                <li><i class="fas fa-flag"></i> Cualquier caso que requiera informe especial</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="funcion-card">
+                                    <div class="funcion-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                        <i class="fas fa-check-double"></i>
+                                    </div>
+                                    <div class="funcion-content">
+                                        <div class="funcion-title">Control de servicios de prevención</div>
+                                        <div class="funcion-desc">
+                                            <strong>Verifica y promueve</strong> el cumplimiento de las obligaciones de los servicios de prevención
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="funcion-card">
+                                    <div class="funcion-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                                        <i class="fas fa-ban"></i>
+                                    </div>
+                                    <div class="funcion-content">
+                                        <div class="funcion-title">Paralización inmediata de trabajos</div>
+                                        <div class="funcion-desc">
+                                            <div class="funcion-highlight" style="background: rgba(231, 76, 60, 0.15); border-left: 3px solid #e74c3c;">
+                                                <i class="fas fa-hand-paper" style="color: #e74c3c;"></i>
+                                                <span><strong>Poder excepcional:</strong> Puede ordenar la <strong>paralización inmediata</strong> cuando exista <strong>riesgo grave e inminente</strong></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- COLABORACIÓN ENTRE ADMINISTRACIONES -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <span>Colaboración entre Administraciones</span>
+                            </div>
+                            
+                            <div class="colaboracion-visual">
+                                <div class="colaboracion-item">
+                                    <div class="colaboracion-icon">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <div class="colaboracion-content">
+                                        <h4>Administración General del Estado</h4>
+                                        <p>Proporciona asesoramiento a través del <strong>Instituto Nacional de Seguridad e Higiene en el Trabajo</strong></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="colaboracion-arrow">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                
+                                <div class="colaboracion-item">
+                                    <div class="colaboracion-icon">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                    </div>
+                                    <div class="colaboracion-content">
+                                        <h4>Comunidades Autónomas</h4>
+                                        <p>Adoptan medidas en sus respectivos <strong>ámbitos competenciales</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box" style="margin-top: 1.5rem;">
+                                <div class="box-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-top: 0; color: var(--color-info);">Planes de actuación coordinados</h4>
+                                    <p>Se elaboran planes para ayudar especialmente a:</p>
+                                    <div class="target-groups">
+                                        <div class="target-group">
+                                            <div class="target-icon" style="background: #3498db;">
+                                                <i class="fas fa-store-alt"></i>
+                                            </div>
+                                            <span><strong>PYMES</strong> (pequeñas y medianas empresas)</span>
+                                        </div>
+                                        <div class="target-group">
+                                            <div class="target-icon" style="background: #e74c3c;">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </div>
+                                            <span>Sectores de <strong>alto riesgo</strong> o siniestralidad</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- PROCEDIMIENTO DE ACTUACIÓN - VISUAL -->
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <span>Procedimiento de actuación inspectora</span>
+                            </div>
+                            
+                            <div class="procedimiento-timeline">
+                                <div class="procedimiento-step">
+                                    <div class="step-visual">
+                                        <div class="step-number">1</div>
+                                        <div class="step-icon">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                    </div>
+                                    <div class="step-content">
+                                        <h4>Actuación comprobatoria</h4>
+                                        <p>Funcionarios técnicos verifican condiciones de <strong>seguridad y salud</strong></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="procedimiento-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                                
+                                <div class="procedimiento-step">
+                                    <div class="step-visual">
+                                        <div class="step-number">2</div>
+                                        <div class="step-icon">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                        </div>
+                                    </div>
+                                    <div class="step-content">
+                                        <h4>Detección de infracción</h4>
+                                        <p>Se identifica <strong>incumplimiento</strong> de normativa preventiva</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="procedimiento-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                                
+                                <div class="procedimiento-step">
+                                    <div class="step-visual">
+                                        <div class="step-number">3</div>
+                                        <div class="step-icon">
+                                            <i class="fas fa-file-signature"></i>
+                                        </div>
+                                    </div>
+                                    <div class="step-content">
+                                        <h4>Remisión de informe</h4>
+                                        <p>Se envía a la Inspección con <strong>hechos comprobados</strong></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="procedimiento-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                                
+                                <div class="procedimiento-step">
+                                    <div class="step-visual">
+                                        <div class="step-number">4</div>
+                                        <div class="step-icon">
+                                            <i class="fas fa-gavel"></i>
+                                        </div>
+                                    </div>
+                                    <div class="step-content">
+                                        <h4>Acta de infracción</h4>
+                                        <p>Si procede, se levanta <strong>acta sancionadora</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="legal-note">
+                                <i class="fas fa-scale-balanced"></i>
+                                <p><strong>Presunción de certeza:</strong> Los hechos comprobados en los informes tienen <strong>validez probatoria</strong> (Ley 42/1997)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ARTÍCULO 12 - VERSIÓN VISUAL MEJORADA -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-success);">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <span>Artículo 12: Participación de empresarios y trabajadores</span>
+                        </div>
+                        
+                        <!-- PRINCIPIO BÁSICO - VISUAL IMPACTO -->
+                        <div class="principio-impacto">
+                            <div class="principio-header">
+                                <div class="principio-icon-large">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <h3>Principio básico de la política de prevención</h3>
+                                    <p class="principio-subtitle">Participación conjunta en la gestión preventiva</p>
+                                </div>
+                            </div>
+                            
+                            <div class="participantes-visual">
+                                <div class="participante">
+                                    <div class="participante-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <div class="participante-info">
+                                        <h4>Empresarios</h4>
+                                        <p>A través de <strong>organizaciones empresariales</strong></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="participante-plus">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                
+                                <div class="participante">
+                                    <div class="participante-icon" style="background: var(--gradient-warning);">
+                                        <i class="fas fa-hard-hat"></i>
+                                    </div>
+                                    <div class="participante-info">
+                                        <h4>Trabajadores</h4>
+                                        <p>A través de <strong>organizaciones sindicales</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="participacion-areas">
+                                <h4><i class="fas fa-bullseye"></i> Áreas de participación conjunta:</h4>
+                                <div class="areas-grid">
+                                    <div class="area">
+                                        <div class="area-icon">
+                                            <i class="fas fa-project-diagram"></i>
+                                        </div>
+                                        <span><strong>Planificación</strong> preventiva</span>
+                                    </div>
+                                    <div class="area">
+                                        <div class="area-icon">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </div>
+                                        <span><strong>Programación</strong> de actividades</span>
+                                    </div>
+                                    <div class="area">
+                                        <div class="area-icon">
+                                            <i class="fas fa-sitemap"></i>
+                                        </div>
+                                        <span><strong>Organización</strong> de la gestión</span>
+                                    </div>
+                                    <div class="area">
+                                        <div class="area-icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <span><strong>Control</strong> y seguimiento</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- OBJETIVOS DE LA PARTICIPACIÓN -->
+                        <div class="objetivos-participacion">
+                            <div class="objetivo-card" style="border-color: #2ecc71;">
+                                <div class="objetivo-header">
+                                    <div class="objetivo-icon" style="background: #2ecc71;">
+                                        <i class="fas fa-tools"></i>
+                                    </div>
+                                    <h4>Mejora de condiciones</h4>
+                                </div>
+                                <p>Optimización continua de las <strong>condiciones de trabajo</strong></p>
+                            </div>
+                            
+                            <div class="objetivo-card" style="border-color: #3498db;">
+                                <div class="objetivo-header">
+                                    <div class="objetivo-icon" style="background: #3498db;">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h4>Protección seguridad y salud</h4>
+                                </div>
+                                <p>Garantizar la <strong>protección efectiva</strong> de los trabajadores</p>
+                            </div>
+                        </div>
+                        
+                        <!-- RESPONSABILIDAD DE DESARROLLO -->
+                        <div class="responsabilidad-box">
+                            <div class="responsabilidad-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="responsabilidad-content">
+                                <h4>Desarrollo por las Administraciones públicas</h4>
+                                <p>Las <strong>Administraciones competentes</strong> deben desarrollar este principio en los distintos <strong>niveles territoriales</strong></p>
+                            </div>
+                        </div>
+                        
+                        <!-- RELACIÓN CON OTROS ARTÍCULOS - VISUAL -->
+                        <div class="relacion-articulos">
+                            <h4><i class="fas fa-link"></i> Este principio se desarrolla en:</h4>
+                            <div class="articulos-relacionados">
+                                <a href="#participacion" class="articulo-rel">
+                                    <div class="articulo-rel-icon">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <div class="articulo-rel-info">
+                                        <strong>Artículo 33</strong>
+                                        <span>Consulta de trabajadores</span>
+                                    </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                                <a href="#participacion" class="articulo-rel">
+                                    <div class="articulo-rel-icon">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <div class="articulo-rel-info">
+                                        <strong>Artículo 35</strong>
+                                        <span>Delegados de Prevención</span>
+                                    </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                                <a href="#participacion" class="articulo-rel">
+                                    <div class="articulo-rel-icon">
+                                        <i class="fas fa-landmark"></i>
+                                    </div>
+                                    <div class="articulo-rel-info">
+                                        <strong>Artículo 38</strong>
+                                        <span>Comité de Seguridad y Salud</span>
+                                    </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- RESUMEN COMPARATIVO VISUAL -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--gradient-primary);">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <span>Sistema dual de prevención</span>
+                        </div>
+                        
+                        <div class="sistema-dual">
+                            <div class="pilar">
+                                <div class="pilar-header" style="background: linear-gradient(135deg, #9C27B0, #7B1FA2);">
+                                    <div class="pilar-icon">
+                                        <i class="fas fa-gavel"></i>
+                                    </div>
+                                    <h3>INSPECCIÓN</h3>
+                                    <p class="pilar-subtitle">Control externo</p>
+                                </div>
+                                <div class="pilar-content">
+                                    <div class="pilar-item">
+                                        <i class="fas fa-check-circle" style="color: #9C27B0;"></i>
+                                        <span><strong>Vigilancia</strong> administrativa</span>
+                                    </div>
+                                    <div class="pilar-item">
+                                        <i class="fas fa-check-circle" style="color: #9C27B0;"></i>
+                                        <span><strong>Potestad sancionadora</strong></span>
+                                    </div>
+                                    <div class="pilar-item">
+                                        <i class="fas fa-check-circle" style="color: #9C27B0;"></i>
+                                        <span><strong>Asesoramiento técnico</strong></span>
+                                    </div>
+                                    <div class="pilar-item">
+                                        <i class="fas fa-check-circle" style="color: #9C27B0;"></i>
+                                        <span><strong>Paralización</strong> de actividades peligrosas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="pilar-plus">
+                                <i class="fas fa-plus"></i>
+                                <p>Complementariedad</p>
+                            </div>
+                            
+                            <div class="pilar">
+                                <div class="pilar-header" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                                    <div class="pilar-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h3>PARTICIPACIÓN</h3>
+                                    <p class="pilar-subtitle">Implicación interna</p>
+                                </div>
+                                <div class="pilar-content">
+                                    <div class="pilar-item">
+                                        <i class="fas fa-check-circle" style="color: #2ecc71;"></i>
+                                        <span><strong>Corresponsabilidad</strong> preventiva</span>
+                                    </div>
+                                    <div class="pilar-item">
+                                        <i class="fas fa-check-circle" style="color: #2ecc71;"></i>
+                                        <span><strong>Cooperación</strong> empresarios-trabajadores</span>
+                                    </div>
+                                    <div class="pilar-item">
+                                        <i class="fas fa-check-circle" style="color: #2ecc71;"></i>
+                                        <span><strong>Consulta</strong> en decisiones</span>
+                                    </div>
+                                    <div class="pilar-item">
+                                        <i class="fas fa-check-circle" style="color: #2ecc71;"></i>
+                                        <span><strong>Control</strong> desde dentro</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="conclusion-box">
+                            <div class="conclusion-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="conclusion-content">
+                                <h4>Prevención integral y efectiva</h4>
+                                <p>La combinación de <strong>control externo (Inspección)</strong> y <strong>participación interna (empresarios y trabajadores)</strong> garantiza un <strong>sistema de prevención robusto, equilibrado y eficaz</strong>.</p>
                             </div>
                         </div>
                     </div>
