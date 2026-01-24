@@ -40,6 +40,26 @@
             min-height: 100vh;
             background-attachment: fixed;
         }
+
+        @media (max-width: 630px) {
+            body {
+                --escala: 0.4; /* Cambia este valor para ajustar el tamaño */
+                
+                transform: scale(var(--escala));
+                transform-origin: top left; /* <--- Esto quita el margen izquierdo */
+                
+                /* Compensación de ancho para que no quede hueco a la derecha */
+                width: calc(100% / var(--escala)); 
+                height: calc(100vh / var(--escala));
+                
+                /* Evita que aparezca scroll horizontal innecesario */
+                overflow-x: hidden;
+            }
+
+            .floating-btn {
+                display: none !important;
+            }
+        }
         
         .container {
             max-width: 1400px;
@@ -545,103 +565,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         
-        /* Responsividad */
-        @media (max-width: 768px) {
-            .card-title-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .article-number-badge {
-                align-self: center;
-            }
-            
-            .procedure-timeline {
-                flex-direction: column;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-header p {
-                font-size: 1rem;
-            }
-            
-            .logo-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-            
-            .visual-nav {
-                padding: 1rem;
-                top: 10px;
-                gap: 10px;
-            }
-            
-            .nav-item {
-                min-width: 90px;
-                padding: 0.8rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .nav-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.5rem;
-            }
-            
-            .card-title-top {
-                font-size: 1.6rem;
-            }
-            
-            .card-content {
-                padding: 1.5rem;
-            }
-            
-            .card-header-top {
-                padding: 1.5rem 1.5rem 1.2rem;
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .floating-btn, .floating-btn-left {
-                width: 45px;
-                height: 45px;
-                font-size: 1.25rem;
-            }
-            
-            .floating-btn-left {
-                left: 15px;
-                bottom: 85px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-header h1 {
-                font-size: 1.5rem;
-            }
-            
-            .card-title-top {
-                font-size: 1.25rem;
-            }
-            
-            .section-title {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .law-reference {
-                display: block;
-                margin: 0.5rem auto;
-                max-width: 90%;
-            }
-        }
+
         
         /* Grid para competencias */
         .competences-grid {
