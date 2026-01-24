@@ -4325,5 +4325,22 @@
         });
         
     </script>
+        <script>
+    (function () {
+    function go() {
+        if (!location.hash) return;
+        const id = location.hash.slice(1);
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView();
+    }
+
+    // 3 intentos, espaciados (WebView-friendly)
+    window.addEventListener("load", () => {
+        go();
+        setTimeout(go, 500);
+        setTimeout(go, 1800);
+    });
+    })();
+    </script>
 </body>
 </html>
