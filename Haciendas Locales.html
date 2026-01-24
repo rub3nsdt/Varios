@@ -2137,27 +2137,31 @@
     </script>
     <script>
     (function () {
-    function scrollToHash() {
-        if (!location.hash) return;
+    if (!location.hash) return;
 
-        const id = location.hash.slice(1);
-        const target = document.getElementById(id);
-        if (!target) return;
+    const id = location.hash.slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    let lastY = -1;
+    let attempts = 0;
+
+    function tryScroll() {
+        const y = target.getBoundingClientRect().top;
 
         target.scrollIntoView({ block: "start" });
+
+        // si la posición ya no cambia, paramos
+        if (Math.abs(y - lastY) < 1 || attempts > 20) return;
+
+        lastY = y;
+        attempts++;
+        requestAnimationFrame(tryScroll);
     }
 
-    // 1️⃣ intento inmediato
-    scrollToHash();
-
-    // 2️⃣ cuando el DOM esté listo
-    document.addEventListener("DOMContentLoaded", scrollToHash);
-
-    // 3️⃣ cuando TODO haya cargado (CSS, fuentes, etc.)
-    window.addEventListener("load", scrollToHash);
-
-    // 4️⃣ último intento por si WebView va lento
-    setTimeout(scrollToHash, 300);
+    window.addEventListener("load", () => {
+        requestAnimationFrame(tryScroll);
+    });
     })();
     </script>
 
