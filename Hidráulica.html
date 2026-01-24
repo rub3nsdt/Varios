@@ -4688,7 +4688,7 @@
             });
         });
         
-        // Navegación suave CORREGIDA para móviles con scale
+// Navegación suave CORREGIDA para móviles con scale
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -4699,10 +4699,22 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     const scale = getScaleFactor();
-                    // Ajustamos la posición según el factor de escala
-                    const offset = targetElement.offsetTop * scale;
+                    
+                    // CORRECCIÓN: Calcular la posición absoluta sumando los offsets de los padres
+                    // Esto arregla el bug cuando el elemento está dentro de un contenedor con position: relative
+                    let currentElement = targetElement;
+                    let absoluteTop = 0;
+                    
+                    while (currentElement) {
+                        absoluteTop += currentElement.offsetTop;
+                        currentElement = currentElement.offsetParent;
+                    }
+                    
+                    // Ajustamos la posición según el factor de escala y restamos el margen
+                    const offset = absoluteTop * scale;
+                    
                     window.scrollTo({
-                        top: offset - (100 * scale), // También ajustamos el margen
+                        top: offset - (100 * scale), 
                         behavior: 'smooth'
                     });
                 }
