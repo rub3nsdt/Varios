@@ -6240,6 +6240,17 @@
     </footer>
     
     <script>
+        // Función para obtener el factor de escala actual
+        function getScaleFactor() {
+            if (window.innerWidth <= 630) {
+                // Obtenemos el valor de --escala del CSS
+                const bodyStyles = window.getComputedStyle(document.body);
+                const scaleValue = bodyStyles.getPropertyValue('--escala');
+                return scaleValue ? parseFloat(scaleValue) : 1;
+            }
+            return 1;
+        }
+
         // Botón para volver arriba
         const scrollTopBtn = document.getElementById('scrollTopBtn');
         
@@ -6258,7 +6269,7 @@
             });
         });
         
-        // Navegación suave
+        // Navegación suave CORREGIDA para móviles con scale
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -6268,15 +6279,18 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    const scale = getScaleFactor();
+                    // Ajustamos la posición según el factor de escala
+                    const offset = targetElement.offsetTop * scale;
                     window.scrollTo({
-                        top: targetElement.offsetTop - 100,
+                        top: offset - (100 * scale), // También ajustamos el margen
                         behavior: 'smooth'
                     });
                 }
             });
         });
         
-        // Función para navegar a la siguiente sección
+        // Función para navegar a la siguiente sección - CORREGIDA
         const scrollNextBtn = document.getElementById('scrollNextBtn');
         
         // Obtener todas las secciones con IDs de navegación
@@ -6287,28 +6301,29 @@
             return a.offsetTop - b.offsetTop;
         });
         
-        // Función para encontrar la sección actual
+        // Función para encontrar la sección actual - CORREGIDA
         function getCurrentSection() {
-            // Margen para considerar que una sección está "activa"
-            const margin = 150;
+            const scale = getScaleFactor();
+            const margin = 150 * scale;
             
             for (let i = sections.length - 1; i >= 0; i--) {
-                if (window.scrollY + margin >= sections[i].offsetTop) {
+                if (window.scrollY + margin >= sections[i].offsetTop * scale) {
                     return i;
                 }
             }
             return 0;
         }
         
-        // Función para navegar a la siguiente sección
+        // Función para navegar a la siguiente sección - CORREGIDA
         function goToNextSection() {
             const currentIndex = getCurrentSection();
             const nextIndex = currentIndex + 1;
             
             if (nextIndex < sections.length) {
                 const nextSection = sections[nextIndex];
+                const scale = getScaleFactor();
                 window.scrollTo({
-                    top: nextSection.offsetTop - 100,
+                    top: nextSection.offsetTop * scale - (100 * scale),
                     behavior: 'smooth'
                 });
                 
@@ -6347,7 +6362,7 @@
             }
         });
         
-        // Navegación con teclado (tecla derecha o barra espaciadora)
+        // Navegación con teclado (tecla derecha o barra espaciadora) - CORREGIDA
         document.addEventListener('keydown', (e) => {
             // Tecla derecha o barra espaciadora (excepto cuando se está escribiendo en un campo)
             if ((e.key === 'ArrowRight' || e.key === ' ') && 
@@ -6367,8 +6382,9 @@
                 
                 if (prevIndex >= 0) {
                     const prevSection = sections[prevIndex];
+                    const scale = getScaleFactor();
                     window.scrollTo({
-                        top: prevSection.offsetTop - 100,
+                        top: prevSection.offsetTop * scale - (100 * scale),
                         behavior: 'smooth'
                     });
                 }
@@ -6379,21 +6395,21 @@
         window.addEventListener('load', () => {
             scrollNextBtn.style.display = 'flex';
             
-            // Resaltar números importantes en rojo
-            document.querySelectorAll('.highlight-number').forEach(element => {
-                element.style.color = '#D32F2F';
-                element.style.fontWeight = '800';
-            });
-            
-            // Añadir color rojo a números importantes en listas
-            document.querySelectorAll('.visual-list li').forEach(li => {
-                const text = li.innerHTML;
-                // Buscar patrones de números importantes
-                const updatedText = text.replace(/(\d+)(?=\s*(días|meses|años|mm|cm|metros|veces|intervenciones|aperturas|rescates|distritos|clase|bisagras|cierres|tornillos|placas|gorjas|pernos|vueltas|filas|barras))/gi, 
-                    '<span class="highlight-number" style="color:#D32F2F;font-weight:800;">$1</span>');
-                li.innerHTML = updatedText;
-            });
+            // Si hay un hash en la URL, navegar a esa sección (corregido para móviles)
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const targetElement = document.querySelector(window.location.hash);
+                    if (targetElement) {
+                        const scale = getScaleFactor();
+                        window.scrollTo({
+                            top: targetElement.offsetTop * scale - (100 * scale),
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100);
+            }
         });
+        
     </script>
     <script>
     window.onload = function() {

@@ -4099,6 +4099,17 @@
     </footer>
     
     <script>
+        // Función para obtener el factor de escala actual
+        function getScaleFactor() {
+            if (window.innerWidth <= 630) {
+                // Obtenemos el valor de --escala del CSS
+                const bodyStyles = window.getComputedStyle(document.body);
+                const scaleValue = bodyStyles.getPropertyValue('--escala');
+                return scaleValue ? parseFloat(scaleValue) : 1;
+            }
+            return 1;
+        }
+
         // Botón para volver arriba
         const scrollTopBtn = document.getElementById('scrollTopBtn');
         
@@ -4117,7 +4128,7 @@
             });
         });
         
-        // Navegación suave
+        // Navegación suave CORREGIDA para móviles con scale
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -4127,19 +4138,136 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Calculamos la posición relativa al viewport y le sumamos el scroll actual
-                    const headerOffset = 100;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
+                    const scale = getScaleFactor();
+                    // Ajustamos la posición según el factor de escala
+                    const offset = targetElement.offsetTop * scale;
                     window.scrollTo({
-                        top: offsetPosition,
+                        top: offset - (100 * scale), // También ajustamos el margen
                         behavior: 'smooth'
                     });
                 }
             });
         });
         
+        // Función para navegar a la siguiente sección - CORREGIDA
+        const scrollNextBtn = document.getElementById('scrollNextBtn');
+        
+        // Obtener todas las secciones con IDs de navegación
+        const sections = Array.from(document.querySelectorAll('.horizontal-card[id]'));
+        
+        // Ordenar las secciones por su posición en la página
+        sections.sort((a, b) => {
+            return a.offsetTop - b.offsetTop;
+        });
+        
+        // Función para encontrar la sección actual - CORREGIDA
+        function getCurrentSection() {
+            const scale = getScaleFactor();
+            const margin = 150 * scale;
+            
+            for (let i = sections.length - 1; i >= 0; i--) {
+                if (window.scrollY + margin >= sections[i].offsetTop * scale) {
+                    return i;
+                }
+            }
+            return 0;
+        }
+        
+        // Función para navegar a la siguiente sección - CORREGIDA
+        function goToNextSection() {
+            const currentIndex = getCurrentSection();
+            const nextIndex = currentIndex + 1;
+            
+            if (nextIndex < sections.length) {
+                const nextSection = sections[nextIndex];
+                const scale = getScaleFactor();
+                window.scrollTo({
+                    top: nextSection.offsetTop * scale - (100 * scale),
+                    behavior: 'smooth'
+                });
+                
+                // Actualizar URL sin recargar la página
+                history.pushState(null, null, `#${nextSection.id}`);
+            } else {
+                // Si estamos en la última sección, ir al principio
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Evento para el botón de siguiente sección
+        scrollNextBtn.addEventListener('click', goToNextSection);
+        
+        // Mostrar/ocultar botón según la posición
+        window.addEventListener('scroll', () => {
+            const currentIndex = getCurrentSection();
+            
+            // Mostrar siempre el botón, pero cambiar el icono si estamos en la última sección
+            if (currentIndex === sections.length - 1) {
+                scrollNextBtn.innerHTML = '<i class="fas fa-home"></i>';
+                scrollNextBtn.title = "Volver al inicio";
+            } else {
+                scrollNextBtn.innerHTML = '<i class="fas fa-arrow-down"></i>';
+                scrollNextBtn.title = "Siguiente sección";
+            }
+            
+            // Ocultar botón cuando estamos cerca del final de la última sección
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                scrollNextBtn.style.opacity = '0.5';
+            } else {
+                scrollNextBtn.style.opacity = '1';
+            }
+        });
+        
+        // Navegación con teclado (tecla derecha o barra espaciadora) - CORREGIDA
+        document.addEventListener('keydown', (e) => {
+            // Tecla derecha o barra espaciadora (excepto cuando se está escribiendo en un campo)
+            if ((e.key === 'ArrowRight' || e.key === ' ') && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                
+                e.preventDefault(); // Evitar comportamiento por defecto del espacio
+                goToNextSection();
+            }
+            
+            // Tecla izquierda para ir a la sección anterior
+            if (e.key === 'ArrowLeft' && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                
+                e.preventDefault();
+                const currentIndex = getCurrentSection();
+                const prevIndex = currentIndex - 1;
+                
+                if (prevIndex >= 0) {
+                    const prevSection = sections[prevIndex];
+                    const scale = getScaleFactor();
+                    window.scrollTo({
+                        top: prevSection.offsetTop * scale - (100 * scale),
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+        
+        // Inicializar: mostrar el botón después de cargar
+        window.addEventListener('load', () => {
+            scrollNextBtn.style.display = 'flex';
+            
+            // Si hay un hash en la URL, navegar a esa sección (corregido para móviles)
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const targetElement = document.querySelector(window.location.hash);
+                    if (targetElement) {
+                        const scale = getScaleFactor();
+                        window.scrollTo({
+                            top: targetElement.offsetTop * scale - (100 * scale),
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100);
+            }
+        });
         
     </script>
     <script>
