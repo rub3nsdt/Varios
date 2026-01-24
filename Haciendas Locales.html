@@ -964,8 +964,8 @@
         <div class="horizontal-cards-container">
             
             <!-- RECURSOS DE LAS HACIENDAS LOCALES -->
-            <a id="recursos-haciendas"></a>
-            <div class="horizontal-card">
+            
+            <div class="horizontal-card" id="recursos-haciendas">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-coins"></i>
                 </div>
@@ -1074,8 +1074,7 @@
             </div>
             
             <!-- TASAS -->
-            <a id="tasas"></a>
-            <div class="horizontal-card">
+            <div class="horizontal-card" id="tasas">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-file-invoice"></i>
                 </div>
@@ -1616,8 +1615,7 @@
             </div>
             
             <!-- CONTRIBUCIONES ESPECIALES -->
-            <a id="contribuciones"></a>
-            <div class="horizontal-card">
+            <div class="horizontal-card" id="contribuciones">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-hard-hat"></i>
                 </div>
@@ -1716,8 +1714,7 @@
             </div>
             
             <!-- PRECIOS PÚBLICOS -->
-            <a id="precios-publicos"></a>
-            <div class="horizontal-card">
+            <div class="horizontal-card" id="precios-publicos">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-tags"></i>
                 </div>
@@ -1808,8 +1805,7 @@
             </div>
             
             <!-- RECURSOS DE LOS MUNICIPIOS -->
-            <a id="municipios"></a>
-            <div class="horizontal-card">
+            <div class="horizontal-card" id="municipios">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-city"></i>
                 </div>
@@ -2012,7 +2008,7 @@
             });
         });
         
-// Navegación suave CORREGIDA para móviles con scale
+        // Navegación suave CORREGIDA para móviles con scale
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -2145,7 +2141,26 @@
                 }
             }
         });
-          
+        
+        // Inicializar: mostrar el botón después de cargar
+        window.addEventListener('load', () => {
+            scrollNextBtn.style.display = 'flex';
+            
+            // Si hay un hash en la URL, navegar a esa sección (corregido para móviles)
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const targetElement = document.querySelector(window.location.hash);
+                    if (targetElement) {
+                        const scale = getScaleFactor();
+                        window.scrollTo({
+                            top: targetElement.offsetTop * scale - (100 * scale),
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100);
+            }
+        });
+        
     </script>
     <script>
     (function () {
@@ -2159,8 +2174,8 @@
     // 3 intentos, espaciados (WebView-friendly)
     window.addEventListener("load", () => {
         go();
-        setTimeout(go, 500);
-        setTimeout(go, 1800);
+        setTimeout(go, 800);
+        setTimeout(go, 2300);
     });
     })();
     </script>

@@ -41,6 +41,26 @@
             min-height: 100vh;
             background-attachment: fixed;
         }
+
+        @media (max-width: 630px) {
+            body {
+                --escala: 0.4; /* Cambia este valor para ajustar el tamaño */
+                
+                transform: scale(var(--escala));
+                transform-origin: top left; /* <--- Esto quita el margen izquierdo */
+                
+                /* Compensación de ancho para que no quede hueco a la derecha */
+                width: calc(100% / var(--escala)); 
+                height: calc(100vh / var(--escala));
+                
+                /* Evita que aparezca scroll horizontal innecesario */
+                overflow-x: hidden;
+            }
+
+            .floating-btn {
+                display: none !important;
+            }
+        }
         
         .container {
             max-width: 1400px;
@@ -544,101 +564,6 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         
-        /* Responsividad */
-        @media (max-width: 768px) {
-            .card-title-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .article-number-badge {
-                align-self: center;
-            }
-            
-            .procedure-timeline {
-                flex-direction: column;
-            }
-            
-            .hero-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-header p {
-                font-size: 1rem;
-            }
-            
-            .logo-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-            
-            .visual-nav {
-                padding: 1rem;
-                top: 10px;
-                gap: 10px;
-            }
-            
-            .nav-item {
-                min-width: 90px;
-                padding: 0.8rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .nav-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.5rem;
-            }
-            
-            .card-title-top {
-                font-size: 1.6rem;
-            }
-            
-            .card-content {
-                padding: 1.5rem;
-            }
-            
-            .card-header-top {
-                padding: 1.5rem 1.5rem 1.2rem;
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .floating-btn, .floating-btn-left {
-                width: 45px;
-                height: 45px;
-                font-size: 1.25rem;
-            }
-            
-            .floating-btn-left {
-                left: 15px;
-                bottom: 85px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-header h1 {
-                font-size: 1.5rem;
-            }
-            
-            .card-title-top {
-                font-size: 1.25rem;
-            }
-            
-            .section-title {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .law-reference {
-                display: block;
-                margin: 0.5rem auto;
-                max-width: 90%;
-            }
-        }
         
         /* Estilos para subsecciones anidadas */
         .subsection {
@@ -1272,15 +1197,6 @@
             font-size: 0.95rem;
         }
 
-        /* Para destacar números dentro del texto */
-        .highlight-number {
-            color: #e74c3c !important;
-            font-weight: 700 !important;
-            background-color: rgba(231, 76, 60, 0.1);
-            padding: 0.1rem 0.3rem;
-            border-radius: 3px;
-            display: inline-block;
-        }
 
         /* Ajuste para cajas de información más compactas */
         .info-box p {
@@ -1340,13 +1256,14 @@
 
         /* Grid de funciones */
         .funciones-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 1.2rem;
             margin: 1.5rem 0;
         }
 
         .funcion-card {
+            flex: 1 1 420px;
             background: white;
             border-radius: 12px;
             padding: 1.2rem;
@@ -1587,6 +1504,7 @@
             content: '•';
             position: absolute;
             left: -1rem;
+            top: 0.25rem;
             color: var(--color-secondary);
             font-weight: bold;
         }
@@ -1720,7 +1638,47 @@
             line-height: 1.3;
         }
 
+        /* Estilos para la tabla de delegados de prevención */
+        .delegados-table {
+            width: 100%;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
 
+        .delegados-table table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .delegados-table th {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .delegados-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            background: white;
+        }
+
+        .delegados-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .delegados-table tr:hover td {
+            background-color: #f8f9fa;
+        }
+
+        .delegados-table .highlight-number {
+            color: #e74c3c !important;
+            font-weight: 700 !important;
+        }        
 
 
 
@@ -3018,7 +2976,7 @@
                             
                             <div class="key-point" style="margin-top: 1.5rem;">
                                 <i class="fas fa-user"></i>
-                                <span><strong>Información directa e individual:</strong> Deberá informarse directamente a cada trabajador de los riesgos específicos de su puesto y las medidas de protección aplicables.</span>
+                                <span><strong>Información directa e individual:</strong> En las empresas que cuenten con representantes de los trabajadores, la información se facilitará  a través de dichos representantes. Deberá informarse directamente a cada trabajador de los riesgos específicos de su puesto y las medidas de protección aplicables.</span>
                             </div>
                         </div>
                         
@@ -3342,37 +3300,68 @@
                                 <span>Obligaciones específicas (Artículo 29.2)</span>
                             </div>
                             
-                            <div class="articulo-list">
-                                <div class="articulo-item">
-                                    <div class="articulo-title">Usar adecuadamente</div>
-                                    <div class="articulo-desc">Máquinas, aparatos, herramientas, sustancias peligrosas, equipos de transporte y cualesquiera otros medios con los que desarrollen su actividad</div>
+                        <!-- ARTÍCULO 29.2 - ESTILO COMPACTO SIMILAR AL 15.1 -->
+                        <div class="principios-compact-grid">
+                            <div class="principio-compact">
+                                <div class="principio-compact-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-tools"></i>
                                 </div>
-                                
-                                <div class="articulo-item">
-                                    <div class="articulo-title">Utilizar correctamente medios y equipos de protección</div>
-                                    <div class="articulo-desc">Facilitados por el empresario, de acuerdo con las instrucciones recibidas</div>
-                                </div>
-                                
-                                <div class="articulo-item">
-                                    <div class="articulo-title">No poner fuera de funcionamiento dispositivos de seguridad</div>
-                                    <div class="articulo-desc">Existentes o que se instalen en los medios relacionados con su actividad o lugares de trabajo</div>
-                                </div>
-                                
-                                <div class="articulo-item">
-                                    <div class="articulo-title">Informar inmediatamente</div>
-                                    <div class="articulo-desc">A su superior jerárquico directo, trabajadores designados o servicio de prevención, acerca de cualquier situación que entrañe riesgo</div>
-                                </div>
-                                
-                                <div class="articulo-item">
-                                    <div class="articulo-title">Contribuir al cumplimiento</div>
-                                    <div class="articulo-desc">De las obligaciones establecidas por la autoridad competente</div>
-                                </div>
-                                
-                                <div class="articulo-item">
-                                    <div class="articulo-title">Cooperar con el empresario</div>
-                                    <div class="articulo-desc">Para que éste pueda garantizar unas condiciones de trabajo seguras</div>
+                                <div class="principio-compact-content">
+                                    <div class="principio-compact-title">Usar adecuadamente equipos y herramientas</div>
+                                    <div class="principio-compact-desc">Máquinas, aparatos, sustancias peligrosas, equipos de transporte y cualquier medio con el que desarrollen su actividad</div>
                                 </div>
                             </div>
+                            
+                            <div class="principio-compact">
+                                <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-hard-hat"></i>
+                                </div>
+                                <div class="principio-compact-content">
+                                    <div class="principio-compact-title">Utilizar correctamente medios de protección</div>
+                                    <div class="principio-compact-desc">Equipos de protección facilitados por el empresario, según instrucciones recibidas</div>
+                                </div>
+                            </div>
+                            
+                            <div class="principio-compact">
+                                <div class="principio-compact-icon" style="background: var(--gradient-danger);">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="principio-compact-content">
+                                    <div class="principio-compact-title">No desactivar dispositivos de seguridad</div>
+                                    <div class="principio-compact-desc">No poner fuera de funcionamiento y utilizar correctamente dispositivos de seguridad existentes o instalados</div>
+                                </div>
+                            </div>
+                            
+                            <div class="principio-compact">
+                                <div class="principio-compact-icon" style="background: var(--gradient-accent);">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="principio-compact-content">
+                                    <div class="principio-compact-title">Informar inmediatamente sobre riesgos</div>
+                                    <div class="principio-compact-desc">A superior jerárquico, trabajadores designados o servicio de prevención sobre situaciones de riesgo</div>
+                                </div>
+                            </div>
+                            
+                            <div class="principio-compact">
+                                <div class="principio-compact-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <div class="principio-compact-content">
+                                    <div class="principio-compact-title">Contribuir al cumplimiento normativo</div>
+                                    <div class="principio-compact-desc">De las obligaciones establecidas por la autoridad competente para proteger seguridad y salud</div>
+                                </div>
+                            </div>
+                            
+                            <div class="principio-compact">
+                                <div class="principio-compact-icon" style="background: var(--gradient-success);">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <div class="principio-compact-content">
+                                    <div class="principio-compact-title">Cooperar con el empresario</div>
+                                    <div class="principio-compact-desc">Para garantizar condiciones de trabajo seguras y sin riesgos para la seguridad y salud</div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                         
                         <div class="danger-box">
@@ -3389,7 +3378,7 @@
                 </div>
             </div>
             
-            <!-- SERVICIOS DE PREVENCIÓN -->
+            <!-- SERVICIOS DE PREVENCIÓN - COMPLETO Y VISUAL -->
             <div class="horizontal-card" id="servicios">
                 <div class="card-header-top" style="background: var(--gradient-info);">
                     <div class="card-title-container">
@@ -3414,61 +3403,171 @@
                             <span>Artículo 30: Protección y prevención de riesgos profesionales</span>
                         </div>
                         
-                        <div class="key-point">
-                            <strong>Modalidades de organización:</strong> El empresario designará uno o varios trabajadores para ocuparse de dicha actividad, constituirá un servicio de prevención o concertará dicho servicio con una entidad especializada ajena a la empresa.
-                        </div>
-                        
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: var(--gradient-info);">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <div class="step-title">Designación trabajadores</div>
-                                <div style="font-size: 0.85rem;">Con capacidad, tiempo y medios necesarios</div>
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-info);">
+                                <i class="fas fa-sitemap"></i>
                             </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: var(--gradient-success);">
-                                    <i class="fas fa-building"></i>
-                                </div>
-                                <div class="step-title">Servicio prevención propio</div>
-                                <div style="font-size: 0.85rem;">Constituido por la empresa</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-icon" style="background: var(--gradient-warning);">
-                                    <i class="fas fa-handshake"></i>
-                                </div>
-                                <div class="step-title">Servicio prevención ajeno</div>
-                                <div style="font-size: 0.85rem;">Concertado con entidad especializada</div>
+                            <div>
+                                <p><strong>Modalidades de organización de la prevención:</strong> El empresario designará uno o varios trabajadores para ocuparse de dicha actividad, constituirá un servicio de prevención o concertará dicho servicio con una entidad especializada ajena a la empresa.</p>
                             </div>
                         </div>
                         
                         <div class="subsection">
                             <div class="subsection-title">
                                 <div class="subsection-icon" style="background: var(--gradient-warning);">
-                                    <i class="fas fa-user-check"></i>
+                                    <i class="fas fa-users"></i>
                                 </div>
-                                <span>Empresario como prevencionista</span>
+                                <span>Trabajadores designados (Artículo 30.2)</span>
                             </div>
                             
-                            <ul class="visual-list">
-                                <li>En empresas de <span class="highlight-number">hasta 10 trabajadores</span>, el empresario podrá asumir personalmente las funciones de prevención</li>
-                                <li>Requisitos:
-                                    <ul class="nested-list">
-                                        <li>Desarrollar de forma habitual su actividad en el centro de trabajo</li>
-                                        <li>Tener la capacidad necesaria en función de los riesgos</li>
-                                    </ul>
-                                </li>
-                                <li>En empresas de <span class="highlight-number">hasta 25 trabajadores</span> y con un único centro de trabajo, también podrá asumirlas si cumple los requisitos</li>
-                            </ul>
+                            <div class="simplified-data-grid">
+                                <div class="data-item obligatorio">
+                                    <div class="data-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <span><strong>Capacidad necesaria</strong> para las funciones preventivas</span>
+                                </div>
+                                
+                                <div class="data-item obligatorio">
+                                    <div class="data-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <span><strong>Tiempo suficiente</strong> dedicado a la prevención</span>
+                                </div>
+                                
+                                <div class="data-item obligatorio">
+                                    <div class="data-icon">
+                                        <i class="fas fa-tools"></i>
+                                    </div>
+                                    <span><strong>Medios precisos</strong> para desarrollar su labor</span>
+                                </div>
+                                
+                                <div class="data-item obligatorio">
+                                    <div class="data-icon">
+                                        <i class="fas fa-user-friends"></i>
+                                    </div>
+                                    <span><strong>Número suficiente</strong> según tamaño y riesgos de la empresa</span>
+                                </div>
+                            </div>
+                            
+                            <div class="key-point" style="margin-top: 1.5rem; background: rgba(243, 156, 18, 0.1); border-left-color: var(--color-warning);">
+                                <i class="fas fa-hands-helping"></i>
+                                <span>Los trabajadores designados <strong>colaborarán entre sí</strong> y, en su caso, con los servicios de prevención.</span>
+                            </div>
                         </div>
                         
-                        <div class="warning-box">
-                            <div class="box-icon" style="background: var(--gradient-warning);">
-                                <i class="fas fa-shield-alt"></i>
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-folder-open"></i>
+                                </div>
+                                <span>Acceso a información (Artículo 30.3)</span>
                             </div>
-                            <div>
-                                <h4 style="margin-top: 0; color: #d35400;">Protección de los trabajadores designados</h4>
-                                <p>Los trabajadores designados no podrán sufrir ningún perjuicio derivado de sus actividades de protección y prevención de los riesgos profesionales en la empresa. Gozarán de garantías similares a las de los representantes de los trabajadores.</p>
+                            
+                            <div class="info-box">
+                                <div class="box-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div>
+                                    <p>El empresario deberá facilitar a los trabajadores designados el <strong>acceso a la información y documentación</strong> a que se refieren los artículos 18 y 23 de la presente Ley.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-success);">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <span>Protección de los trabajadores designados (Artículo 30.4)</span>
+                            </div>
+                            
+                            <div class="warning-box">
+                                <div class="box-icon" style="background: var(--gradient-success);">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-top: 0; color: #27ae60;">Garantías laborales especiales</h4>
+                                    <ul class="visual-list">
+                                        <li>No podrán sufrir <strong>ningún perjuicio</strong> derivado de sus actividades de protección y prevención</li>
+                                        <li>Gozarán de las mismas <strong>garantías que los representantes de los trabajadores</strong> (artículos 68 a), b), c) y 56.4 del Estatuto de los Trabajadores)</li>
+                                        <li>Esta protección alcanza también a los trabajadores del <strong>servicio de prevención propio</strong></li>
+                                        <li>Deben guardar <strong>sigilo profesional</strong> sobre la información empresarial a la que accedan</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-secondary);">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <span>Empresario como prevencionista (Artículo 30.5)</span>
+                            </div>
+                            
+                            <div class="compact-grid">
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-secondary);">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <div class="compact-title"><span class="highlight-number"> Hasta 10 trabajadores</span></div>
+                                    <div class="compact-desc" style="font-size: 0.9rem;">Empresario puede asumir funciones si: trabaja habitualmente en el centro y tiene capacidad necesaria</div>
+                                </div>
+                                
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-secondary);">
+                                        <i class="fas fa-expand-alt"></i>
+                                    </div>
+                                    <div class="compact-title"><span class="highlight-number">Hasta 25 trabajadores</span></div>
+                                    <div class="compact-desc" style="font-size: 0.9rem;">Misma posibilidad si empresa tiene único centro de trabajo y cumple requisitos</div>
+                                </div>
+                            </div>
+                            
+                            <div class="key-point" style="margin-top: 1.5rem;">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span>La capacidad necesaria se determinará en función de los <strong>riesgos a que estén expuestos los trabajadores y la peligrosidad de las actividades</strong>.</span>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-danger);">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <span>Control externo (Artículo 30.6)</span>
+                            </div>
+                            
+                            <div class="danger-box">
+                                <div class="box-icon" style="background: var(--gradient-danger);">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-top: 0; color: #c0392b;">Auditoría o evaluación externa obligatoria</h4>
+                                    <p>El empresario que no haya concertado el Servicio de Prevención con una entidad especializada ajena deberá someter su sistema de prevención al <strong>control de una auditoría o evaluación externa</strong>, en los términos que reglamentariamente se determinen.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                                <span>Autorización para auditorías (Artículo 30.7)</span>
+                            </div>
+                            
+                            <div class="info-box">
+                                <div class="box-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-passport"></i>
+                                </div>
+                                <div>
+                                    <ul class="visual-list">
+                                        <li>Las entidades que pretendan desarrollar auditorías necesitan <strong>autorización única de la autoridad laboral</strong></li>
+                                        <li>La autorización tiene <strong>validez en todo el territorio español</strong></li>
+                                        <li><strong>Silencio administrativo negativo:</strong> Vencido el plazo máximo sin resolución, se entiende desestimada la solicitud</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -3482,61 +3581,239 @@
                             <span>Artículo 31: Servicios de prevención</span>
                         </div>
                         
-                        <div class="key-point">
-                            <strong>Definición:</strong> Conjunto de medios humanos y materiales necesarios para realizar las actividades preventivas a fin de garantizar la adecuada protección de la seguridad y la salud de los trabajadores.
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                                <span>Constitución de servicios de prevención (Artículo 31.1)</span>
+                            </div>
+                            
+                            <div class="info-box">
+                                <div class="box-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div>
+                                    <p>Si la designación de trabajadores es insuficiente por tamaño de la empresa, riesgos o peligrosidad, el empresario deberá recurrir a <strong>uno o varios servicios de prevención propios o ajenos</strong>.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="simplified-data-grid">
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <span><strong>Servicios propios</strong>: Constituidos por la empresa</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <span><strong>Servicios ajenos</strong>: Concertados con entidad especializada</span>
+                                </div>
+                            </div>
+                            
+                            <div class="key-point" style="margin-top: 1.5rem;">
+                                <i class="fas fa-university"></i>
+                                <span>En las Administraciones públicas se tendrá en cuenta su <strong>estructura organizativa y la existencia de ámbitos sectoriales y descentralizados</strong>.</span>
+                            </div>
                         </div>
                         
-                        <div class="simplified-data-grid">
-                            <div class="data-item">
-                                <div class="data-icon" style="background: var(--gradient-info);">
-                                    <i class="fas fa-project-diagram"></i>
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-cogs"></i>
                                 </div>
-                                <span><strong>Diseño e implantación</strong> del plan de prevención</span>
+                                <span>Definición y funciones (Artículos 31.2-31.3)</span>
                             </div>
                             
-                            <div class="data-item">
-                                <div class="data-icon" style="background: var(--gradient-info);">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <span><strong>Evaluación de factores</strong> de riesgo</span>
-                            </div>
-                            
-                            <div class="data-item">
-                                <div class="data-icon" style="background: var(--gradient-info);">
+                            <div class="info-box">
+                                <div class="box-icon" style="background: var(--gradient-primary);">
                                     <i class="fas fa-tasks"></i>
                                 </div>
-                                <span><strong>Planificación</strong> de la actividad preventiva</span>
+                                <div>
+                                    <p><strong>Servicio de prevención:</strong> Conjunto de medios humanos y materiales necesarios para realizar las actividades preventivas, asesorando y asistiendo al empresario, trabajadores, sus representantes y órganos de representación especializados.</p>
+                                </div>
                             </div>
                             
-                            <div class="data-item">
-                                <div class="data-icon" style="background: var(--gradient-info);">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <span><strong>Información y formación</strong> de trabajadores</span>
+                            <div class="key-point" style="background: rgba(52, 152, 219, 0.1); border-left-color: var(--color-info); margin: 1.5rem 0;">
+                                <i class="fas fa-info-circle"></i>
+                                <span>El empresario debe facilitar al servicio de prevención el <strong>acceso a la información y documentación</strong> necesaria (artículo 30.3).</span>
                             </div>
                             
-                            <div class="data-item">
-                                <div class="data-icon" style="background: var(--gradient-info);">
-                                    <i class="fas fa-first-aid"></i>
+                            <div class="principios-compact-grid">
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-project-diagram"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Diseño e implantación</div>
+                                        <div class="principio-compact-desc">Plan de prevención de riesgos laborales</div>
+                                    </div>
                                 </div>
-                                <span><strong>Primeros auxilios</strong> y planes de emergencia</span>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Evaluación de factores de riesgo</div>
+                                        <div class="principio-compact-desc">Según artículo 16 de esta Ley</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Planificación actividad preventiva</div>
+                                        <div class="principio-compact-desc">Determinación de prioridades y vigilancia de eficacia</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Información y formación</div>
+                                        <div class="principio-compact-desc">De trabajadores según artículos 18 y 19</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-first-aid"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Primeros auxilios y emergencias</div>
+                                        <div class="principio-compact-desc">Planes de emergencia</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-stethoscope"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Vigilancia de la salud</div>
+                                        <div class="principio-compact-desc">De trabajadores en relación con riesgos laborales</div>
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="data-item">
-                                <div class="data-icon" style="background: var(--gradient-info);">
-                                    <i class="fas fa-stethoscope"></i>
+                            <div class="warning-box" style="margin-top: 1.5rem;">
+                                <div class="box-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-exclamation-triangle"></i>
                                 </div>
-                                <span><strong>Vigilancia de la salud</strong> de los trabajadores</span>
+                                <div>
+                                    <p><strong>Servicios ajenos exclusivos:</strong> Si la empresa no lleva a cabo actividades preventivas con recursos propios, la asunción de estas funciones solo podrá hacerse por un <strong>servicio de prevención ajeno</strong>.</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="info-box">
-                            <div class="box-icon" style="background: var(--gradient-info);">
-                                <i class="fas fa-certificate"></i>
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-success);">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <span>Características del servicio (Artículo 31.4)</span>
                             </div>
-                            <div>
-                                <h4 style="margin-top: 0; color: var(--color-info);">Acreditación de entidades especializadas</h4>
-                                <p>Para poder actuar como servicios de prevención, las entidades especializadas deberán ser objeto de una <strong>acreditación por la autoridad laboral</strong>, que será única y con validez en todo el territorio español, mediante la comprobación de que reúnen los requisitos que se establezcan reglamentariamente.</p>
+                            
+                            <div class="simplified-data-grid">
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-success);">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <span><strong>Carácter interdisciplinario</strong> del servicio</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-success);">
+                                        <i class="fas fa-tools"></i>
+                                    </div>
+                                    <span><strong>Medios apropiados</strong> para cumplir funciones</span>
+                                </div>
+                            </div>
+                            
+                            <ul class="visual-list" style="margin-top: 1.5rem;">
+                                <li><strong>Formación, especialidad, capacitación, dedicación y número</strong> de componentes suficientes y adecuados</li>
+                                <li><strong>Recursos técnicos</strong> apropiados para las actividades preventivas</li>
+                            </ul>
+                            <div class="principios-compact-grid">
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Tamaño de la empresa</div>
+                                        <div class="principio-compact-desc">Número de trabajadores y dimensiones de la organización</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-warning);">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Tipos de riesgo</div>
+                                        <div class="principio-compact-desc">Naturaleza y variedad de riesgos presentes en la actividad</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-danger);">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Distribución de riesgos</div>
+                                        <div class="principio-compact-desc">Localización y dispersión de riesgos en la empresa</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-danger);">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <span>Acreditación de entidades (Artículo 31.5)</span>
+                            </div>
+                            
+                            <div class="danger-box">
+                                <div class="box-icon" style="background: var(--gradient-danger);">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-top: 0; color: #c0392b;">Requisitos para servicios de prevención ajenos</h4>
+                                    <ul class="visual-list">
+                                        <li><strong>Acreditación única por autoridad laboral</strong> con validez en todo el territorio español</li>
+                                        <li>Comprobación de requisitos reglamentarios</li>
+                                        <li><strong>Aprobación de autoridad sanitaria</strong> para aspectos sanitarios</li>
+                                        <li><strong>Póliza de seguro</strong> que cubra responsabilidad (sin constituir límite de responsabilidad)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-hourglass-end"></i>
+                                </div>
+                                <span>Plazos de acreditación (Artículo 31.6)</span>
+                            </div>
+                            
+                            <div class="warning-box">
+                                <div class="box-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Silencio administrativo negativo:</strong> Vencido el plazo máximo del procedimiento de acreditación sin notificación de resolución, se entenderá <strong>desestimada la solicitud</strong>, para garantizar adecuada protección de trabajadores.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -3555,8 +3832,12 @@
                                 <i class="fas fa-handshake-slash"></i>
                             </div>
                             <div>
-                                <h4 style="margin-top: 0; color: #c0392b;">Restricción a Mutuas Colaboradoras</h4>
-                                <p>Las Mutuas Colaboradoras con la Seguridad Social <span class="highlight-number">NO podrán desarrollar las funciones correspondientes a los servicios de prevención ajenos</span>, ni participar con cargo a su patrimonio histórico en el capital social de una sociedad mercantil en cuyo objeto figure la actividad de prevención.</p>
+                                <h4 style="margin-top: 0; color: #c0392b;">Restricción a Mutuas Colaboradoras con la Seguridad Social</h4>
+                                <ul class="visual-list">
+                                    <li><strong>NO pueden desarrollar funciones</strong> correspondientes a servicios de prevención ajenos</li>
+                                    <li><strong>NO pueden participar con cargo a su patrimonio histórico</strong> en capital social de sociedades mercantiles cuya actividad sea la prevención</li>
+                                </ul>
+                                <p style="margin-top: 1rem; font-style: italic;"><i class="fas fa-info-circle"></i> Esta prohibición busca garantizar la independencia de los servicios de prevención.</p>
                             </div>
                         </div>
                     </div>
@@ -3570,22 +3851,53 @@
                             <span>Artículo 32 bis: Presencia de los recursos preventivos</span>
                         </div>
                         
-                        <div class="key-point">
-                            <strong>Casos en que es obligatoria la presencia de recursos preventivos:</strong>
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-accent);">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <span>Casos de presencia obligatoria (Artículo 32 bis.1)</span>
+                            </div>
+                            
+                            <div class="principios-compact-grid">
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-accent);">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Riesgos agravados o modificados</div>
+                                        <div class="principio-compact-desc">Por concurrencia de operaciones diversas que requieran control de métodos de trabajo</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-accent);">
+                                        <i class="fas fa-radiation"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Actividades peligrosas</div>
+                                        <div class="principio-compact-desc">Procesos considerados peligrosos o con riesgos especiales reglamentariamente</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-accent);">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Requerimiento de la Inspección</div>
+                                        <div class="principio-compact-desc">Cuando las condiciones detectadas así lo exijan</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <ul class="visual-list">
-                            <li>Cuando los riesgos puedan verse <strong>agravados o modificados</strong> en el desarrollo del proceso</li>
-                            <li>Cuando se realicen actividades o procesos considerados como <span class="highlight-number">peligrosos o con riesgos especiales</span></li>
-                            <li>Cuando la necesidad sea <strong>requerida por la Inspección de Trabajo</strong> y Seguridad Social</li>
-                        </ul>
                         
                         <div class="subsection">
                             <div class="subsection-title">
                                 <div class="subsection-icon" style="background: var(--gradient-info);">
                                     <i class="fas fa-users"></i>
                                 </div>
-                                <span>Recursos preventivos posibles</span>
+                                <span>Recursos preventivos posibles (Artículo 32 bis.2)</span>
                             </div>
                             
                             <div class="compact-grid">
@@ -3594,31 +3906,98 @@
                                         <i class="fas fa-user-tag"></i>
                                     </div>
                                     <div class="compact-title">Trabajadores designados</div>
-                                    <div class="compact-desc">De la empresa</div>
+                                    <div class="compact-desc">Uno o varios trabajadores designados de la empresa</div>
                                 </div>
                                 
                                 <div class="compact-card">
                                     <div class="compact-icon" style="background: var(--gradient-info);">
                                         <i class="fas fa-user-friends"></i>
                                     </div>
-                                    <div class="compact-title">Miembros del servicio</div>
-                                    <div class="compact-desc">De prevención propio</div>
+                                    <div class="compact-title">Servicio prevención propio</div>
+                                    <div class="compact-desc">Uno o varios miembros del servicio de prevención propio</div>
                                 </div>
                                 
                                 <div class="compact-card">
                                     <div class="compact-icon" style="background: var(--gradient-info);">
                                         <i class="fas fa-handshake"></i>
                                     </div>
-                                    <div class="compact-title">Miembros de servicios</div>
-                                    <div class="compact-desc">De prevención ajenos</div>
+                                    <div class="compact-title">Servicios prevención ajenos</div>
+                                    <div class="compact-desc">Uno o varios miembros de servicios de prevención ajenos concertados</div>
                                 </div>
+                            </div>
+                            
+                            <div class="key-point" style="margin-top: 1.5rem;">
+                                <i class="fas fa-hands-helping"></i>
+                                <span>Cuando la presencia sea realizada por diferentes recursos preventivos, éstos deberán <strong>colaborar entre sí</strong>.</span>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-success);">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <span>Requisitos de los recursos preventivos (Artículo 32 bis.3)</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li><strong>Capacidad suficiente</strong> para las funciones asignadas</li>
+                                <li><strong>Medios necesarios</strong> para realizar su labor</li>
+                                <li><strong>Número suficiente</strong> para vigilar el cumplimiento de actividades preventivas</li>
+                                <li><strong>Permanencia en centro de trabajo</strong> durante el tiempo que dure la situación que determine su presencia</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <span>Designación expresa de trabajadores (Artículo 32 bis.4)</span>
+                            </div>
+                            
+                            <div class="info-box">
+                                <div class="box-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-user-cog"></i>
+                                </div>
+                                <div>
+                                    <p>El empresario puede asignar la presencia de forma expresa a <strong>trabajadores que no formen parte del servicio de prevención ni sean trabajadores designados</strong>, si cumplen estos requisitos:</p>
+                                    
+                                    <div class="simplified-data-grid" style="margin: 1rem 0;">
+                                        <div class="data-item">
+                                            <div class="data-icon" style="background: var(--gradient-primary);">
+                                                <i class="fas fa-brain"></i>
+                                            </div>
+                                            <span><strong>Conocimientos necesarios</strong> en actividades o procesos</span>
+                                        </div>
+                                        
+                                        <div class="data-item">
+                                            <div class="data-icon" style="background: var(--gradient-primary);">
+                                                <i class="fas fa-award"></i>
+                                            </div>
+                                            <span><strong>Cualificación y experiencia</strong> adecuadas</span>
+                                        </div>
+                                        
+                                        <div class="data-item">
+                                            <div class="data-icon" style="background: var(--gradient-primary);">
+                                                <i class="fas fa-graduation-cap"></i>
+                                            </div>
+                                            <span><strong>Formación preventiva</strong> de nivel básico como mínimo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="key-point" style="margin-top: 1.5rem;">
+                                <i class="fas fa-hands-helping"></i>
+                                <span>Estos trabajadores deberán mantener la <strong>necesaria colaboración con los recursos preventivos</strong> del empresario.</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- CONSULTA Y PARTICIPACIÓN -->
+            <!-- CONSULTA Y PARTICIPACIÓN DE LOS TRABAJADORES -->
             <div class="horizontal-card" id="participacion">
                 <div class="card-header-top" style="background: var(--gradient-warning);">
                     <div class="card-title-container">
@@ -3627,48 +4006,97 @@
                         </div>
                         <div>
                             <div class="card-title-top">🤝 CONSULTA Y PARTICIPACIÓN DE LOS TRABAJADORES</div>
-                            <div class="card-subtitle-top">Artículos 12 y 33-39 - Derechos de participación y representación</div>
+                            <div class="card-subtitle-top">Artículos 33-39 - Derechos de participación y representación</div>
                         </div>
                     </div>
-                    <div class="article-number-badge">Art. 12, 33-39</div>
+                    <div class="article-number-badge">Art. 33-39</div>
                 </div>
                 
                 <div class="card-content">
-                    <!-- ARTÍCULO 12 -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-warning);">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <span>Artículo 12: Participación de empresarios y trabajadores</span>
-                        </div>
-                        
-                        <div class="key-point">
-                            <strong>Principio básico:</strong> La participación de empresarios y trabajadores, a través de las organizaciones empresariales y sindicales más representativas, en la planificación, programación, organización y control de la gestión relacionada con la mejora de las condiciones de trabajo y la protección de la seguridad y salud de los trabajadores en el trabajo.
-                        </div>
-                    </div>
-                    
                     <!-- ARTÍCULO 33 -->
                     <div class="section">
                         <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-primary);">
+                            <div class="section-icon" style="background: var(--gradient-warning);">
                                 <i class="fas fa-comments"></i>
                             </div>
                             <span>Artículo 33: Consulta de los trabajadores</span>
                         </div>
                         
-                        <div class="key-point">
-                            <strong>Consultas obligatorias:</strong> El empresario deberá consultar a los trabajadores, con la debida antelación, la adopción de decisiones relativas a:
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-warning);">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div>
+                                <p><strong>Consulta previa obligatoria:</strong> El empresario deberá consultar a los trabajadores, con la debida antelación, la adopción de decisiones relativas a las siguientes materias:</p>
+                            </div>
                         </div>
                         
-                        <ul class="visual-list">
-                            <li><strong>Planificación y organización del trabajo</strong> e introducción de nuevas tecnologías</li>
-                            <li><strong>Organización y desarrollo</strong> de actividades de protección de la salud</li>
-                            <li><strong>Designación de trabajadores</strong> encargados de medidas de emergencia</li>
-                            <li><strong>Procedimientos de información y documentación</strong></li>
-                            <li><strong>Proyecto y organización</strong> de la formación en materia preventiva</li>
-                            <li><strong>Cualquier otra acción</strong> que pueda tener efectos sustanciales sobre seguridad y salud</li>
-                        </ul>
+                        <div class="principios-compact-grid">
+                            <div class="principio-compact">
+                                <div class="principio-compact-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="principio-compact-content">
+                                    <div class="principio-compact-title">Planificación y organización del trabajo</div>
+                                    <div class="principio-compact-desc">Incluyendo introducción de nuevas tecnologías y sus consecuencias para seguridad y salud</div>
+                                </div>
+                            </div>
+                            
+                            <div class="principio-compact">
+                                <div class="principio-compact-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="principio-compact-content">
+                                    <div class="principio-compact-title">Organización de actividades preventivas</div>
+                                    <div class="principio-compact-desc">Incluida designación de trabajadores encargados o recurso a servicio de prevención externo</div>
+                                </div>
+                            </div>
+                            
+                            <div class="principio-compact">
+                                <div class="principio-compact-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-ambulance"></i>
+                                </div>
+                                <div class="principio-compact-content">
+                                    <div class="principio-compact-title">Designación para emergencias</div>
+                                    <div class="principio-compact-desc">De trabajadores encargados de las medidas de emergencia</div>
+                                </div>
+                            </div>
+                            
+                            <div class="principio-compact">
+                                <div class="principio-compact-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="principio-compact-content">
+                                    <div class="principio-compact-title">Procedimientos de información</div>
+                                    <div class="principio-compact-desc">Según artículos 18.1 y 23.1 de la Ley</div>
+                                </div>
+                            </div>
+                            
+                            <div class="principio-compact">
+                                <div class="principio-compact-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="principio-compact-content">
+                                    <div class="principio-compact-title">Proyecto y organización de formación</div>
+                                    <div class="principio-compact-desc">En materia preventiva</div>
+                                </div>
+                            </div>
+                            
+                            <div class="principio-compact">
+                                <div class="principio-compact-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div class="principio-compact-content">
+                                    <div class="principio-compact-title">Cualquier otra acción relevante</div>
+                                    <div class="principio-compact-desc">Que pueda tener efectos sustanciales sobre seguridad y salud</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="key-point" style="margin-top: 1.5rem;">
+                            <i class="fas fa-user-tie"></i>
+                            <span>En empresas con representantes de los trabajadores, las consultas se llevarán a cabo <strong>a través de dichos representantes</strong> (Artículo 33.2).</span>
+                        </div>
                     </div>
                     
                     <!-- ARTÍCULO 34 -->
@@ -3680,11 +4108,145 @@
                             <span>Artículo 34: Derechos de participación y representación</span>
                         </div>
                         
-                        <ul class="visual-list">
-                            <li>Los trabajadores tienen derecho a <strong>participar en la empresa</strong> en las cuestiones relacionadas con la prevención de riesgos</li>
-                            <li>En empresas o centros con <span class="highlight-number">6 o más trabajadores</span>, la participación se canaliza a través de representantes</li>
-                            <li>Los Comités de Empresa, Delegados de Personal y representantes sindicales ejercen la <strong>defensa de los intereses</strong> de los trabajadores</li>
-                        </ul>
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-success);">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <div>
+                                <p><strong>Derecho a participar:</strong> Los trabajadores tienen derecho a participar en la empresa en las cuestiones relacionadas con la prevención de riesgos en el trabajo.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <span>Representación de los trabajadores (Artículo 34.2)</span>
+                            </div>
+                            
+                            <div class="simplified-data-grid">
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-landmark"></i>
+                                    </div>
+                                    <span><strong>Comités de Empresa</strong>: Órganos colegiados de representación</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <span><strong>Delegados de Personal</strong>: Representantes individuales</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-flag"></i>
+                                    </div>
+                                    <span><strong>Representantes sindicales</strong>: Según Ley Orgánica de Libertad Sindical</span>
+                                </div>
+                            </div>
+                            
+                            <div class="key-point" style="margin-top: 1.5rem;">
+                                <i class="fas fa-gavel"></i>
+                                <span>Estos representantes ejercen las <strong>competencias establecidas en sus normas respectivas</strong> en materia de información, consulta, negociación, vigilancia, control y ejercicio de acciones.</span>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <span>Artículo 34.3: Ámbito de las Administraciones públicas</span>
+                            </div>
+                            
+                            <div class="key-point" style="margin-bottom: 1.5rem;">
+                                <p>El derecho de participación se ejercerá en las Administraciones públicas con <strong>adaptaciones específicas</strong> que tengan en cuenta:</p>
+                            </div>
+                            
+                            <div class="principios-compact-grid">
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-sitemap"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Diversidad y complejidad organizativa</div>
+                                        <div class="principio-compact-desc">Actividades diversas, estructura compleja y peculiaridades de representación colectiva</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Ámbitos sectoriales y descentralizados</div>
+                                        <div class="principio-compact-desc">Según número de efectivos y centros de trabajo</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box" style="margin-top: 1.5rem;">
+                                <div class="box-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-top: 0; color: var(--color-info);">Criterios para la adaptación en la Administración General del Estado</h4>
+                                    <p>El Gobierno debe garantizar que la adaptación respete:</p>
+                                </div>
+                            </div>
+                            
+                            <div class="principios-compact-grid">
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-success);">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Competencias de Delegados y Comités</div>
+                                        <div class="principio-compact-desc">No afectar a las competencias, facultades y garantías de Delegados de Prevención y Comités de Seguridad y Salud</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-cogs"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Ámbito específico de participación</div>
+                                        <div class="principio-compact-desc">Establecer el ámbito adecuado para la participación preventiva, generalmente los órganos de representación del personal</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Coordinación entre órganos</div>
+                                        <div class="principio-compact-desc">Garantizar actuación coordinada cuando existan diferentes órganos de representación</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-warning);">
+                                        <i class="fas fa-clinic-medical"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Constitución de Comités</div>
+                                        <div class="principio-compact-desc">Generalmente un único Comité de Seguridad y Salud, pero podrán constituirse más según actividad y riesgos</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="legal-note" style="margin-top: 1.5rem;">
+                                <i class="fas fa-gavel"></i>
+                                <div>
+                                    <p><strong>Base legal:</strong> Adaptación conforme a la Ley 7/1990, sobre negociación colectiva y participación en la determinación de las condiciones de trabajo de los empleados públicos.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- ARTÍCULO 35 -->
@@ -3696,64 +4258,118 @@
                             <span>Artículo 35: Delegados de Prevención</span>
                         </div>
                         
-                        <div class="key-point">
-                            <strong>Definición:</strong> Los Delegados de Prevención son los representantes de los trabajadores con funciones específicas en materia de prevención de riesgos en el trabajo.
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-info);">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div>
+                                <p><strong>Definición:</strong> Los Delegados de Prevención son los <strong>representantes de los trabajadores con funciones específicas en materia de prevención de riesgos</strong> en el trabajo.</p>
+                            </div>
                         </div>
                         
                         <div class="subsection">
                             <div class="subsection-title">
-                                <div class="subsection-icon" style="background: var(--gradient-info);">
+                                <div class="subsection-icon" style="background: var(--gradient-primary);">
                                     <i class="fas fa-calculator"></i>
                                 </div>
-                                <span>Número de Delegados de Prevención según plantilla</span>
+                                <span>Número de Delegados de Prevención (Artículo 35.2)</span>
                             </div>
                             
-                            <table class="delegados-table">
-                                <thead>
-                                    <tr>
-                                        <th>Trabajadores en la empresa</th>
-                                        <th>Nº de Delegados de Prevención</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Hasta 30 trabajadores</td>
-                                        <td>El Delegado de Personal</td>
-                                    </tr>
-                                    <tr>
-                                        <td>31 a 49 trabajadores</td>
-                                        <td>1 Delegado de Prevención</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="highlight">50 a 100 trabajadores</span></td>
-                                        <td><span class="highlight">2 Delegados de Prevención</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="highlight">101 a 500 trabajadores</span></td>
-                                        <td><span class="highlight">3 Delegados de Prevención</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="highlight">501 a 1.000 trabajadores</span></td>
-                                        <td><span class="highlight">4 Delegados de Prevención</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="highlight">1.001 a 2.000 trabajadores</span></td>
-                                        <td><span class="highlight">5 Delegados de Prevención</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="highlight">2.001 a 3.000 trabajadores</span></td>
-                                        <td><span class="highlight">6 Delegados de Prevención</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="highlight">3.001 a 4.000 trabajadores</span></td>
-                                        <td><span class="highlight">7 Delegados de Prevención</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="highlight">4.001 en adelante</span></td>
-                                        <td><span class="highlight">8 Delegados de Prevención</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="delegados-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Trabajadores en la empresa</th>
+                                            <th>Nº de Delegados de Prevención</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Hasta 30 trabajadores</td>
+                                            <td>El Delegado de Personal</td>
+                                        </tr>
+                                        <tr>
+                                            <td>31 a 49 trabajadores</td>
+                                            <td>1 Delegado de Prevención</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="highlight-number">50 a 100 trabajadores</span></td>
+                                            <td><span class="highlight-number">2 Delegados de Prevención</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="highlight-number">101 a 500 trabajadores</span></td>
+                                            <td><span class="highlight-number">3 Delegados de Prevención</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="highlight-number">501 a 1.000 trabajadores</span></td>
+                                            <td><span class="highlight-number">4 Delegados de Prevención</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="highlight-number">1.001 a 2.000 trabajadores</span></td>
+                                            <td><span class="highlight-number">5 Delegados de Prevención</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="highlight-number">2.001 a 3.000 trabajadores</span></td>
+                                            <td><span class="highlight-number">6 Delegados de Prevención</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="highlight-number">3.001 a 4.000 trabajadores</span></td>
+                                            <td><span class="highlight-number">7 Delegados de Prevención</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="highlight-number">4.001 en adelante</span></td>
+                                            <td><span class="highlight-number">8 Delegados de Prevención</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <span>Criterios de cómputo (Artículo 35.3)</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li><strong>Contratos de duración determinada superior a un año:</strong> Se computan como trabajadores fijos de plantilla</li>
+                                <li><strong>Contratos de hasta un año:</strong> Se computan según días trabajados en el año anterior a la designación</li>
+                                <li><strong>Cada 200 días trabajados o fracción:</strong> Se computa como un trabajador más</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-success);">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <span>Otras formas de designación (Artículo 35.4)</span>
+                            </div>
+                            
+                            <div class="simplified-data-grid">
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-success);">
+                                        <i class="fas fa-file-contract"></i>
+                                    </div>
+                                    <span><strong>Convenios colectivos</strong> pueden establecer otros sistemas de designación</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-success);">
+                                        <i class="fas fa-sitemap"></i>
+                                    </div>
+                                    <span>Se pueden crear <strong>órganos específicos</strong> para ejercer competencias de Delegados</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-success);">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <span>En <strong>Administraciones públicas</strong> se pueden establecer sistemas específicos</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -3766,43 +4382,157 @@
                             <span>Artículo 36: Competencias y facultades de los Delegados de Prevención</span>
                         </div>
                         
-                        <div class="simplified-data-grid">
-                            <div class="data-item">
-                                <div class="data-icon" style="background: var(--gradient-info);">
-                                    <i class="fas fa-hands-helping"></i>
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-clipboard-check"></i>
                                 </div>
-                                <span><strong>Colaborar con la dirección</strong> en la mejora de la acción preventiva</span>
+                                <span>Competencias (Artículo 36.1)</span>
                             </div>
                             
-                            <div class="data-item">
-                                <div class="data-icon" style="background: var(--gradient-info);">
-                                    <i class="fas fa-users"></i>
+                            <div class="principios-compact-grid">
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-hands-helping"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Colaborar con la dirección</div>
+                                        <div class="principio-compact-desc">En la mejora de la acción preventiva</div>
+                                    </div>
                                 </div>
-                                <span><strong>Promover cooperación</strong> de trabajadores en ejecución de normativa</span>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Promover cooperación</div>
+                                        <div class="principio-compact-desc">De trabajadores en ejecución de normativa preventiva</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-comment-dots"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Ser consultados previamente</div>
+                                        <div class="principio-compact-desc">Sobre decisiones del artículo 33</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Vigilar y controlar</div>
+                                        <div class="principio-compact-desc">Cumplimiento de normativa de prevención</div>
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="data-item">
-                                <div class="data-icon" style="background: var(--gradient-info);">
-                                    <i class="fas fa-comment-dots"></i>
-                                </div>
-                                <span><strong>Ser consultados</strong> por el empresario previamente a decisiones</span>
-                            </div>
-                            
-                            <div class="data-item">
-                                <div class="data-icon" style="background: var(--gradient-info);">
-                                    <i class="fas fa-eye"></i>
-                                </div>
-                                <span><strong>Vigilar y controlar</strong> cumplimiento de normativa de prevención</span>
+                            <div class="key-point" style="margin-top: 1.5rem;">
+                                <i class="fas fa-landmark"></i>
+                                <span>En empresas sin Comité de Seguridad y Salud, los Delegados de Prevención ejercerán <strong>las competencias atribuidas al Comité</strong>.</span>
                             </div>
                         </div>
                         
-                        <div class="info-box">
-                            <div class="box-icon" style="background: var(--gradient-info);">
-                                <i class="fas fa-clock"></i>
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <span>Facultades (Artículo 36.2)</span>
                             </div>
-                            <div>
-                                <h4 style="margin-top: 0; color: var(--color-info);">Plazo para emitir informes</h4>
-                                <p>Los informes que deban emitir los Delegados de Prevención deberán elaborarse en un plazo de <span class="highlight-number">15 días</span>, o en el tiempo imprescindible cuando se trate de adoptar medidas dirigidas a prevenir riesgos inminentes. Transcurrido el plazo sin haberse emitido el informe, el empresario podrá poner en práctica su decisión.</p>
+                            
+                            <div class="simplified-data-grid">
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <span><strong>Acompañar a técnicos e inspectores</strong> en evaluaciones y visitas</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <span><strong>Acceso a información y documentación</strong> necesaria para sus funciones</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <span><strong>Ser informados sobre daños en salud</strong> de trabajadores</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <span><strong>Recibir informaciones</strong> de actividades de protección y prevención</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-door-open"></i>
+                                    </div>
+                                    <span><strong>Realizar visitas a lugares de trabajo</strong> para vigilancia y control</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <span><strong>Recabar adopción de medidas</strong> y efectuar propuestas preventivas</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-primary);">
+                                        <i class="fas fa-hand-paper"></i>
+                                    </div>
+                                    <span><strong>Proponer paralización de actividades</strong> según artículo 21.3</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <span>Plazos para informes (Artículo 36.3)</span>
+                            </div>
+                            
+                            <div class="warning-box">
+                                <div class="box-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-hourglass-half"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-top: 0; color: #d35400;">Plazo de 15 días para emitir informes</h4>
+                                    <p>Los informes que deban emitir los Delegados de Prevención deberán elaborarse en un plazo de <span class="highlight-number">15 días</span>, o en el tiempo imprescindible para riesgos inminentes.</p>
+                                    <p style="margin-top: 0.5rem;"><strong>Transcurrido el plazo sin emitir informe:</strong> El empresario podrá poner en práctica su decisión.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-danger);">
+                                    <i class="fas fa-comment-alt"></i>
+                                </div>
+                                <span>Decisión negativa del empresario (Artículo 36.4)</span>
+                            </div>
+                            
+                            <div class="danger-box">
+                                <div class="box-icon" style="background: var(--gradient-danger);">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <div>
+                                    <p>La decisión negativa del empresario a la adopción de medidas propuestas por el Delegado de Prevención <strong>deberá ser motivada</strong>.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -3816,16 +4546,90 @@
                             <span>Artículo 38: Comité de Seguridad y Salud</span>
                         </div>
                         
-                        <div class="key-point">
-                            <strong>Definición:</strong> El Comité de Seguridad y Salud es el órgano paritario y colegiado de participación destinado a la consulta regular y periódica de las actuaciones de la empresa en materia de prevención de riesgos.
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--gradient-success);">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <p><strong>Definición:</strong> El Comité de Seguridad y Salud es el <strong>órgano paritario y colegiado de participación</strong> destinado a la consulta regular y periódica de las actuaciones de la empresa en materia de prevención de riesgos.</p>
+                            </div>
                         </div>
                         
-                        <ul class="visual-list">
-                            <li>Se constituirá en todas las empresas o centros de trabajo que cuenten con <span class="highlight-number">50 o más trabajadores</span></li>
-                            <li>Formado por los <strong>Delegados de Prevención</strong> y por el <strong>empresario y/o sus representantes</strong> en número igual</li>
-                            <li>Se reúne <span class="highlight-number">trimestralmente</span> y siempre que lo solicite alguna de las representaciones</li>
-                            <li>Participan con voz pero sin voto: Delegados Sindicales y responsables técnicos de prevención</li>
-                        </ul>
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-primary);">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <span>Constitución (Artículo 38.2)</span>
+                            </div>
+                            
+                            <div class="simplified-data-grid">
+                                <div class="data-item obligatorio">
+                                    <div class="data-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <span><strong>Empresas con <span class="highlight-number"> 50 o más</span> trabajadores</strong> deben constituir Comité</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <span><strong>Composición paritaria:</strong> Delegados de Prevención vs Empresario/representantes</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <span>Participantes en reuniones (Artículo 38.2)</span>
+                            </div>
+                            
+                            <ul class="visual-list">
+                                <li><strong>Delegados Sindicales:</strong> Con voz pero sin voto</li>
+                                <li><strong>Responsables técnicos de prevención:</strong> No incluidos en la composición, con voz pero sin voto</li>
+                                <li><strong>Trabajadores con cualificación especial:</strong> Para cuestiones concretas, con voz pero sin voto</li>
+                                <li><strong>Técnicos en prevención ajenos:</strong> Si lo solicita alguna representación, con voz pero sin voto</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <span>Funcionamiento (Artículo 38.3)</span>
+                            </div>
+                            
+                            <div class="compact-grid">
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-warning);">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="compact-title">Reunión trimestral</div>
+                                    <div class="compact-desc">Y siempre que lo solicite alguna representación</div>
+                                </div>
+                                
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-warning);">
+                                        <i class="fas fa-file-signature"></i>
+                                    </div>
+                                    <div class="compact-title">Normas de funcionamiento propias</div>
+                                    <div class="compact-desc">Adoptadas por el propio Comité</div>
+                                </div>
+                                
+                                <div class="compact-card">
+                                    <div class="compact-icon" style="background: var(--gradient-warning);">
+                                        <i class="fas fa-sitemap"></i>
+                                    </div>
+                                    <div class="compact-title">Comité Intercentros</div>
+                                    <div class="compact-desc">Para empresas con varios centros con Comité</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- ARTÍCULO 39 -->
@@ -3837,115 +4641,73 @@
                             <span>Artículo 39: Competencias y facultades del Comité de Seguridad y Salud</span>
                         </div>
                         
-                        <div class="compact-grid">
-                            <div class="compact-card">
-                                <div class="compact-icon" style="background: var(--gradient-primary);">
-                                    <i class="fas fa-project-diagram"></i>
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-tasks"></i>
                                 </div>
-                                <div class="compact-title">Participar</div>
-                                <div class="compact-desc">En elaboración, puesta en práctica y evaluación de planes y programas</div>
+                                <span>Competencias (Artículo 39.1)</span>
                             </div>
                             
-                            <div class="compact-card">
-                                <div class="compact-icon" style="background: var(--gradient-primary);">
-                                    <i class="fas fa-lightbulb"></i>
+                            <div class="principios-compact-grid">
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-project-diagram"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Participar en planes y programas</div>
+                                        <div class="principio-compact-desc">En elaboración, puesta en práctica y evaluación</div>
+                                    </div>
                                 </div>
-                                <div class="compact-title">Promover iniciativas</div>
-                                <div class="compact-desc">Sobre métodos y procedimientos para efectiva prevención</div>
-                            </div>
-                            
-                            <div class="compact-card">
-                                <div class="compact-icon" style="background: var(--gradient-primary);">
-                                    <i class="fas fa-eye"></i>
+                                
+                                <div class="principio-compact">
+                                    <div class="principio-compact-icon" style="background: var(--gradient-info);">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <div class="principio-compact-content">
+                                        <div class="principio-compact-title">Promover iniciativas</div>
+                                        <div class="principio-compact-desc">Sobre métodos y procedimientos para prevención efectiva</div>
+                                    </div>
                                 </div>
-                                <div class="compact-title">Conocer situación</div>
-                                <div class="compact-desc">Relativa a prevención de riesgos en el centro de trabajo</div>
-                            </div>
-                            
-                            <div class="compact-card">
-                                <div class="compact-icon" style="background: var(--gradient-primary);">
-                                    <i class="fas fa-file-alt"></i>
-                                </div>
-                                <div class="compact-title">Conocer documentos</div>
-                                <div class="compact-desc">Relativos a condiciones de trabajo necesarios para sus funciones</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- INSPECCIÓN Y CONTROL -->
-            <div class="horizontal-card" id="inspeccion">
-                <div class="card-header-top" style="background: var(--gradient-danger);">
-                    <div class="card-title-container">
-                        <div class="card-icon-large">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <div>
-                            <div class="card-title-top">🔍 INSPECCIÓN DE TRABAJO Y SEGURIDAD SOCIAL</div>
-                            <div class="card-subtitle-top">Artículo 9 - Vigilancia y control de la normativa preventiva</div>
-                        </div>
-                    </div>
-                    <div class="article-number-badge">Art. 9 LPRL</div>
-                </div>
-                
-                <div class="card-content">
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--gradient-danger);">
-                                <i class="fas fa-gavel"></i>
-                            </div>
-                            <span>Artículo 9: Inspección de Trabajo y Seguridad Social</span>
-                        </div>
-                        
-                        <div class="key-point">
-                            <strong>Función principal:</strong> Corresponde a la Inspección de Trabajo y Seguridad Social la función de la vigilancia y control de la normativa sobre prevención de riesgos laborales.
-                        </div>
-                        
-                        <div class="simplified-data-grid">
-                            <div class="data-item obligatorio">
-                                <div class="data-icon">
-                                    <i class="fas fa-eye"></i>
-                                </div>
-                                <span><strong>Vigilar cumplimiento</strong> de normativa sobre prevención</span>
-                            </div>
-                            
-                            <div class="data-item">
-                                <div class="data-icon">
-                                    <i class="fas fa-comments"></i>
-                                </div>
-                                <span><strong>Asesorar e informar</strong> a empresas y trabajadores</span>
-                            </div>
-                            
-                            <div class="data-item">
-                                <div class="data-icon">
-                                    <i class="fas fa-file-alt"></i>
-                                </div>
-                                <span><strong>Elaborar informes</strong> para Juzgados de lo Social</span>
-                            </div>
-                            
-                            <div class="data-item obligatorio">
-                                <div class="data-icon">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                </div>
-                                <span><strong>Informar sobre accidentes</strong> mortales, muy graves o graves</span>
-                            </div>
-                            
-                            <div class="data-item">
-                                <div class="data-icon">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <span><strong>Comprobar cumplimiento</strong> de obligaciones de servicios de prevención</span>
                             </div>
                         </div>
                         
-                        <div class="danger-box">
-                            <div class="box-icon" style="background: var(--gradient-danger);">
-                                <i class="fas fa-ban"></i>
+                        <div class="subsection">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: var(--gradient-success);">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <span>Facultades (Artículo 39.2)</span>
                             </div>
-                            <div>
-                                <h4 style="margin-top: 0; color: #c0392b;">Facultad de paralización inmediata</h4>
-                                <p>La Inspección de Trabajo y Seguridad Social puede <span class="highlight-number">ordenar la paralización inmediata de trabajos</span> cuando, a juicio del inspector, se advierta la existencia de riesgo grave e inminente para la seguridad o salud de los trabajadores.</p>
+                            
+                            <div class="simplified-data-grid">
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-success);">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <span><strong>Conocer situación de prevención</strong> en el centro de trabajo</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-success);">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <span><strong>Conocer documentos e informes</strong> relativos a condiciones de trabajo</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-success);">
+                                        <i class="fas fa-user-injured"></i>
+                                    </div>
+                                    <span><strong>Conocer y analizar daños</strong> en salud o integridad física</span>
+                                </div>
+                                
+                                <div class="data-item">
+                                    <div class="data-icon" style="background: var(--gradient-success);">
+                                        <i class="fas fa-clipboard-list"></i>
+                                    </div>
+                                    <span><strong>Conocer e informar memoria</strong> y programación anual de servicios</span>
+                                </div>
                             </div>
                         </div>
                         
@@ -3954,18 +4716,27 @@
                                 <div class="subsection-icon" style="background: var(--gradient-warning);">
                                     <i class="fas fa-hands-helping"></i>
                                 </div>
-                                <span>Colaboración entre Administraciones</span>
+                                <span>Colaboración entre empresas (Artículo 39.3)</span>
                             </div>
                             
-                            <ul class="visual-list">
-                                <li>Las Administraciones General del Estado y de las comunidades autónomas adoptarán medidas para garantizar la <strong>colaboración pericial y asesoramiento técnico</strong> necesario</li>
-                                <li>En el ámbito de la Administración General del Estado, el asesoramiento será prestado por el <span class="highlight-number">Instituto Nacional de Seguridad e Higiene en el Trabajo</span></li>
-                                <li>Se elaborarán y coordinarán <strong>planes de actuación</strong> para contribuir al desarrollo de actuaciones preventivas en empresas</li>
-                            </ul>
+                            <div class="info-box">
+                                <div class="box-icon" style="background: var(--gradient-warning);">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div>
+                                    <p>Para actividades simultáneas en un mismo centro de trabajo, se podrá acordar:</p>
+                                    <ul class="visual-list">
+                                        <li><strong>Reuniones conjuntas</strong> de Comités de Seguridad y Salud</li>
+                                        <li>O, en su defecto, de <strong>Delegados de Prevención y empresarios</strong> de empresas sin Comité</li>
+                                        <li><strong>Otras medidas de actuación coordinada</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
             
             <!-- OBLIGACIONES DE FABRICANTES -->
             <div class="horizontal-card" id="fabricantes">
@@ -4060,8 +4831,8 @@
         <i class="fas fa-arrow-up"></i>
     </button>
     
-    <button class="floating-btn floating-btn-left" id="printBtn" title="Imprimir guía">
-        <i class="fas fa-print"></i>
+    <button class="floating-btn floating-btn-left" id="scrollNextBtn" title="Siguiente sección">
+        <i class="fas fa-arrow-down"></i>
     </button>
     
     <!-- Footer -->
@@ -4249,24 +5020,6 @@
             }
         });
         
-        // Inicializar: mostrar el botón después de cargar
-        window.addEventListener('load', () => {
-            scrollNextBtn.style.display = 'flex';
-            
-            // Si hay un hash en la URL, navegar a esa sección (corregido para móviles)
-            if (window.location.hash) {
-                setTimeout(() => {
-                    const targetElement = document.querySelector(window.location.hash);
-                    if (targetElement) {
-                        const scale = getScaleFactor();
-                        window.scrollTo({
-                            top: targetElement.offsetTop * scale - (100 * scale),
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 100);
-            }
-        });
         
     </script>
         <script>
@@ -4281,8 +5034,8 @@
     // 3 intentos, espaciados (WebView-friendly)
     window.addEventListener("load", () => {
         go();
-        setTimeout(go, 500);
-        setTimeout(go, 1800);
+        setTimeout(go, 800);
+        setTimeout(go, 2300);
     });
     })();
     </script>
