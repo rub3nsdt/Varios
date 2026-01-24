@@ -2129,37 +2129,9 @@
             }
         });
         
-        // Inicializar: mostrar el botón después de cargar
-        window.addEventListener('load', () => {
-            scrollNextBtn.style.display = 'flex';
-            
-            // Si hay un hash en la URL, navegar a esa sección (corregido para móviles)
-            if (window.location.hash) {
-                setTimeout(() => {
-                    const targetElement = document.querySelector(window.location.hash);
-                    if (targetElement) {
-                        const scale = getScaleFactor();
-                        window.scrollTo({
-                            top: targetElement.offsetTop * scale - (100 * scale),
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 100);
-            }
-        });
+
         
     </script>
-    <script>
-    window.onload = function() {
-        if(window.location.hash) {
-            var hash = window.location.hash; // obtiene "#municipios"
-            // Pequeño retraso para asegurar que el renderizado terminó
-            setTimeout(function(){
-                window.location.hash = ''; // Limpia el hash
-                window.location.hash = hash; // Lo vuelve a poner para forzar el salto
-            }, 1000);
-        }
-    }
-    </script>
+
 </body>
 </html>
