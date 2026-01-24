@@ -4186,24 +4186,6 @@
             }
         });
         
-        // Inicializar: mostrar el botón después de cargar
-        window.addEventListener('load', () => {
-            scrollNextBtn.style.display = 'flex';
-            
-            // Si hay un hash en la URL, navegar a esa sección (corregido para móviles)
-            if (window.location.hash) {
-                setTimeout(() => {
-                    const targetElement = document.querySelector(window.location.hash);
-                    if (targetElement) {
-                        const scale = getScaleFactor();
-                        window.scrollTo({
-                            top: targetElement.offsetTop * scale - (100 * scale),
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 100);
-            }
-        });
         
     </script>
     <script>
