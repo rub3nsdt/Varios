@@ -2137,30 +2137,18 @@
     </script>
     <script>
     (function () {
-    if (!location.hash) return;
-
-    const id = location.hash.slice(1);
-    const target = document.getElementById(id);
-    if (!target) return;
-
-    let lastY = -1;
-    let attempts = 0;
-
-    function tryScroll() {
-        const y = target.getBoundingClientRect().top;
-
-        target.scrollIntoView({ block: "start" });
-
-        // si la posición ya no cambia, paramos
-        if (Math.abs(y - lastY) < 1 || attempts > 20) return;
-
-        lastY = y;
-        attempts++;
-        requestAnimationFrame(tryScroll);
+    function go() {
+        if (!location.hash) return;
+        const id = location.hash.slice(1);
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView();
     }
 
+    // 3 intentos, espaciados (WebView-friendly)
     window.addEventListener("load", () => {
-        requestAnimationFrame(tryScroll);
+        go();
+        setTimeout(go, 500);
+        setTimeout(go, 1800);
     });
     })();
     </script>
