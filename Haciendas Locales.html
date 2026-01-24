@@ -2133,9 +2133,32 @@
                 }
             }
         });
-        
+          
+    </script>
+    <script>
+    (function () {
+    function scrollToHash() {
+        if (!location.hash) return;
 
-        
+        const id = location.hash.slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+
+        target.scrollIntoView({ block: "start" });
+    }
+
+    // 1️⃣ intento inmediato
+    scrollToHash();
+
+    // 2️⃣ cuando el DOM esté listo
+    document.addEventListener("DOMContentLoaded", scrollToHash);
+
+    // 3️⃣ cuando TODO haya cargado (CSS, fuentes, etc.)
+    window.addEventListener("load", scrollToHash);
+
+    // 4️⃣ último intento por si WebView va lento
+    setTimeout(scrollToHash, 300);
+    })();
     </script>
 
 </body>
