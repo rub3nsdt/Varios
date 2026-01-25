@@ -627,13 +627,14 @@
         }
         
         .stats-compact {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 1rem;
             margin: 1.5rem 0;
         }
         
         .stat-compact {
+            flex: 1 1 200px;
             background: white;
             border-radius: 10px;
             padding: 1rem;
@@ -643,7 +644,7 @@
         }
         
         .stat-compact .stat-number {
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             font-weight: 900;
             line-height: 1;
             margin-bottom: 0.3rem;
@@ -1009,8 +1010,8 @@
     <main class="container">
         <div class="horizontal-cards-container">
             
-            <!-- TEMA 1: EQUIPO DE OXICORTE CON CHEMTANE -->
-            <div class="horizontal-card" id="oxicorte">
+            <!-- TEMA 1: EQUIPO DE OXICORTE CON CHEMTANE - VERSIÓN COMPLETA -->
+            <section class="horizontal-card" id="oxicorte">
                 <div class="floating-info" style="top: 20px; right: 30px;">
                     <i class="fas fa-fire"></i>
                 </div>
@@ -1027,6 +1028,7 @@
                                 <span class="category-chip" style="background: #FFEBEE; color: #D32F2F;">Temperatura: <span class="highlight-number">3.300°C</span></span>
                                 <span class="category-chip" style="background: #E3F2FD; color: #1976D2;">Presión O₂: <span class="highlight-number">2-5 bar</span></span>
                                 <span class="category-chip" style="background: #FFF3E0; color: #FF8F00;">Espesor máx: <span class="highlight-number">60 mm</span></span>
+                                <span class="category-chip" style="background: #E8F5E9; color: #388E3C;">Chemtane: <span class="highlight-number">99% propano</span></span>
                             </div>
                         </div>
                     </div>
@@ -1034,7 +1036,7 @@
                 </div>
                 
                 <div class="card-content">
-                    <!-- Introducción -->
+                    <!-- 1.1. INTRODUCCIÓN -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-fire);">
@@ -1042,19 +1044,28 @@
                             </div>
                             <h3>1.1. INTRODUCCIÓN</h3>
                         </div>
-                        <p>El oxicorte es un proceso de corte térmico en el que un gas combustible (Chemtane, 99% propano) y un comburente (oxígeno) se mezclan para generar una llama de gran temperatura capaz de cortar metales oxidables.</p>
+                        <p>El oxicorte es un proceso de corte térmico en el que un gas combustible y un comburente (oxígeno) se mezclan para generar una llama de gran temperatura capaz de cortar fácilmente metales oxidables en poco tiempo.</p>
                         
                         <div class="info-box">
                             <div class="box-icon" style="background: var(--color-fire);">
                                 <i class="fas fa-temperature-high"></i>
                             </div>
                             <div>
-                                <strong>Temperatura de llama:</strong> Aproximadamente <span class="highlight-number">3.300 °C</span>, más alta que con acetileno. Permite perforación más rápida y cortes más pulidos.
+                                <strong>Gas combustible:</strong> Chemtane (99% propano), sustituye al acetileno usado anteriormente. Proporciona llama de mayor temperatura (<span class="highlight-number">3.300°C</span>), más larga, potente y de precalentamiento más rápido.
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--color-rescue);">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div>
+                                <strong>Proceso:</strong> El chorro de oxígeno puro provoca una reacción fuertemente exotérmica que oxida el metal a gran velocidad. Permite perforación más rápida y cortes más pulidos, sin bordes y con mínimas rebabas.
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Componentes -->
+                    <!-- 1.2. COMPONENTES -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-fire-light);">
@@ -1072,9 +1083,10 @@
                                     <div class="compact-title">Regulador</div>
                                 </div>
                                 <ul class="compact-list">
-                                    <li>Reduce presión de salida del gas</li>
-                                    <li>Botella O₂: <span class="highlight-number">200 bar</span> → <span class="highlight-number">2-5 bar</span></li>
-                                    <li>Botella Chemtane: <span class="highlight-number">6-8 bar</span> → <span class="highlight-number">0,5 bar</span></li>
+                                    <li>Reduce presión de salida del gas del recipiente</li>
+                                    <li><strong>Botella O₂:</strong> <span class="highlight-number">200 bar</span> → <span class="highlight-number">2-5 bar</span> (trabajo)</li>
+                                    <li><strong>Botella Chemtane:</strong> <span class="highlight-number">6-8 bar</span> → <span class="highlight-number">0,5 bar</span> (trabajo)</li>
+                                    <li>Ubicado a la salida de las botellas</li>
                                 </ul>
                             </div>
                             
@@ -1086,10 +1098,11 @@
                                     <div class="compact-title">Soplete de corte manual</div>
                                 </div>
                                 <ul class="compact-list">
-                                    <li>Mezcla gases y dirige la llama</li>
-                                    <li>Boquillas para propano/Chemtane</li>
-                                    <li>Números 0-5 según espesor</li>
-                                    <li>Nº2 (15-25 mm) en vehículos</li>
+                                    <li>Mezcla gases y dirige la llama de corte</li>
+                                    <li>Boquillas para propano/Chemtane (números 0-5 según espesor)</li>
+                                    <li><strong>Nº2:</strong> Para espesores <span class="highlight-number">15-25 mm</span> (vehículos comunes)</li>
+                                    <li><strong>Nº5:</strong> Para espesores mayores (vehículos especiales)</li>
+                                    <li>Controla válvulas de oxígeno (azul) y Chemtane (rojo)</li>
                                 </ul>
                             </div>
                             
@@ -1101,16 +1114,38 @@
                                     <div class="compact-title">Válvula antirretroceso</div>
                                 </div>
                                 <ul class="compact-list">
-                                    <li>Dispositivo de seguridad</li>
-                                    <li>Solo paso de gas en sentido salida</li>
-                                    <li>Impide retroceso llama a botellas</li>
-                                    <li>Instalar cada <span class="highlight-number">10 m</span> si se alargan liras</li>
+                                    <li>Dispositivo de seguridad en conducciones y soplete</li>
+                                    <li>Solo permite paso de gas en sentido salida</li>
+                                    <li>Impide retroceso llama hacia botellas en caso de fallo</li>
+                                    <li>Si se alargan liras, interponer cada <span class="highlight-number">10 m</span></li>
                                 </ul>
                             </div>
+                            
+                            <div class="compact-card" style="border-top-color: var(--color-metal); align-self: flex-start;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: var(--color-metal);">
+                                        <span class="fa-layers fa-fw" style="font-size: 1.5em;">
+                                        <i class="fas fa-database" style=" transform: scale(0.5, 0.9) translateY(-2px);"></i>
+                                        </span>
+                                    </div>
+                                    <div class="compact-title">Liras</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Conducciones flexibles de botellas a soplete</li>
+                                    <li>Longitud equipo portátil: <span class="highlight-number">5 metros</span></li>
+                                    <li>Pueden acoplarse varias para mayor alcance</li>
+                                    <li>Lira de transporte de Chemtane <span style="color: orange;"> (naranja)</span></li>
+                                    <li>Lira de transporte de Oxígeno <span style="color: aqua;"> (azul)</span></li>
+                                </ul>
+                            </div>
+
+                            <div style="display: flex; flex: 1 1 280px;">
+                                <img src="image corte/Chemtane.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                               
                         </div>
                     </div>
                     
-                    <!-- Consideraciones -->
+                    <!-- 1.3. CONSIDERACIONES -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-tools);">
@@ -1124,11 +1159,26 @@
                                 <i class="fas fa-radiation-alt"></i>
                             </div>
                             <div>
-                                <strong>Riesgos principales:</strong> Térmicos, respiratorios y de radiación luminica. 
-                                <br>Especial cuidado con materiales galvanizados: producen vapores de óxido de zinc (humo verde-amarillento) que pueden causar intoxicación.
+                                <strong>Riesgos principales:</strong> Térmicos, respiratorios y de radiación luminosa.
+                                <br><strong>Protección ocular:</strong> Gafas con vidrios inactínicos nivel <span class="highlight-number">5+</span> para radiación visible.
+                                <br><strong>Protección respiratoria:</strong> Lugares ventilados o EPI si sobreexposición.
                             </div>
                         </div>
                         
+                        <!-- Material galvanizado -->
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div>
+                                <strong>PELIGRO: Material galvanizado</strong><br>
+                                Durante la fusión, el zinc entra en combustión produciendo vapores de óxido de zinc (humo verde-amarillento).<br>
+                                <strong>Síntomas intoxicación:</strong> Dolor cabeza, náuseas, escalofríos, vómitos, sudor frío.<br>
+                                <strong>Recomendación:</strong> Desbastar previamente con amoladora para retirar galvanizado del área de corte.
+                            </div>
+                        </div>
+                        
+                        <!-- Qué podemos cortar -->
                         <div class="compact-grid">
                             <div class="compact-card" style="border-top-color: #D32F2F;">
                                 <div class="compact-header">
@@ -1138,10 +1188,10 @@
                                     <div class="compact-title">¿Qué podemos cortar?</div>
                                 </div>
                                 <ul class="compact-list">
-                                    <li><strong>Apto:</strong> Metales oxidables (hierro, aceros al carbono)</li>
-                                    <li><strong>Espesor máx:</strong> <span class="highlight-number">60 mm</span></li>
-                                    <li><strong>No apto:</strong> Latón, aluminio, cobre (fusionan antes)</li>
-                                    <li><strong>Imposible:</strong> Hierro fundido (p.f. <span class="highlight-number">5.500°C</span>)</li>
+                                    <li><strong class="highlight-number">Apto:</strong> Metales oxidables (hierro, aceros al carbono)</li>
+                                    <li><strong class="highlight-number">Espesor máx:</strong> <span class="highlight-number">60 mm</span> (0,3-6 cm según material)</li>
+                                    <li><strong class="highlight-number">No apto:</strong> Latón, aluminio, cobre (fusionan antes de oxidarse)</li>
+                                    <li><strong class="highlight-number">Imposible:</strong> Hierro fundido (p.f. <span class="highlight-number">5.500°C</span> > llama Chemtane)</li>
                                 </ul>
                             </div>
                             
@@ -1156,6 +1206,7 @@
                                     <li>Facilidad y rapidez de uso</li>
                                     <li>Equipo portátil</li>
                                     <li>Uso en casi cualquier lugar</li>
+                                    <li>Llama de alta temperatura (<span class="highlight-number">3.300°C</span>)</li>
                                 </ul>
                             </div>
                             
@@ -1168,14 +1219,25 @@
                                 </div>
                                 <ul class="compact-list">
                                     <li>Solo corta metales oxidables</li>
-                                    <li>Requiere más experiencia que plasma</li>
-                                    <li>Limitación por punto de fusión</li>
+                                    <li>Requiere más experiencia que otros métodos (plasma)</li>
+                                    <li>Limitación por punto de fusión de materiales</li>
+                                    <li>Riesgo con materiales galvanizados</li>
                                 </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Galvanizado aplicaciones -->
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #607D8B;">
+                                <i class="fas fa-city"></i>
+                            </div>
+                            <div>
+                                <strong>Galvanizado en Madrid:</strong> Común en mobiliario urbano (bancos, marquesinas, señalización), obras civiles (estructuras, puentes, escaleras) e infraestructuras de transporte (trenes, catenarias, vallas).
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Equipo de protección -->
+                    <!-- 1.4. EQUIPO DE PROTECCIÓN -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-security);">
@@ -1184,52 +1246,58 @@
                             <h3>1.4. EQUIPO DE PROTECCIÓN</h3>
                         </div>
                         
-                        <div class="compact-grid">
-                            <div class="compact-card" style="border-top-color: #D32F2F;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #D32F2F;">
-                                        <i class="fas fa-hard-hat"></i>
+                        <div class="columnas">
+                            <div class="compact-grid" style="flex: 1 1 280px; justify-content: center; max-width: 600px; min-width: 300px;">
+                                <div class="compact-card" style="border-top-color: #D32F2F; max-width: 400px;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #D32F2F;">
+                                            <i class="fas fa-hard-hat"></i>
+                                        </div>
+                                        <div class="compact-title">Protección Cabeza/Ojos</div>
                                     </div>
-                                    <div class="compact-title">Protección Cabeza</div>
+                                    <ul class="compact-list">
+                                        <li>Casco ligero de seguridad</li>
+                                        <li>Gafas protección ocular</li>
+                                        <li>Vidrios inactínicos nivel <span class="highlight-number">5+</span></li>
+                                    </ul>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Casco ligero</li>
-                                    <li>Gafas protección ocular</li>
-                                    <li>Vidrios inactinicos nivel <span class="highlight-number">5+</span></li>
-                                </ul>
-                            </div>
-                            
-                            <div class="compact-card" style="border-top-color: #FF9800;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #FF9800;">
-                                        <i class="fas fa-hands"></i>
+                                
+                                <div class="compact-card" style="border-top-color: #FF9800; max-width: 400px;min-width: 300px;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #FF9800;">
+                                            <i class="fas fa-hands"></i>
+                                        </div>
+                                        <div class="compact-title">Protección Manos/Cuerpo</div>
                                     </div>
-                                    <div class="compact-title">Protección Manos/Cuerpo</div>
+                                    <ul class="compact-list">
+                                        <li>Guantes/manoplas contra agresiones térmicas</li>
+                                        <li>Mandil de protección</li>
+                                        <li>Botas de protección</li>
+                                    </ul>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Guantes/manoplas térmicas</li>
-                                    <li>Mandil de protección</li>
-                                    <li>Botas de protección</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="compact-card" style="border-top-color: #4CAF50;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #4CAF50;">
-                                        <i class="fas fa-lungs"></i>
+                                
+                                <div class="compact-card" style="border-top-color: #4CAF50; max-width: 400px;min-width: 300px;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #4CAF50;">
+                                            <i class="fas fa-lungs"></i>
+                                        </div>
+                                        <div class="compact-title">Protección Respiratoria</div>
                                     </div>
-                                    <div class="compact-title">Protección Respiratoria</div>
+                                    <ul class="compact-list">
+                                        <li>Trabajar en lugares bien ventilados</li>
+                                        <li>EPI respiratorio si sobreexposición a vapores</li>
+                                        <li>Especial cuidado con materiales galvanizados</li>
+                                    </ul>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Lugares bien ventilados</li>
-                                    <li>Protección si sobreexposición</li>
-                                    <li>Especial cuidado con galvanizados</li>
-                                </ul>
                             </div>
+
+                            <div style="display: flex; flex: 1 1 280px;">
+                                <img src="image corte/EPIChem.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>  
                         </div>
                     </div>
                     
-                    <!-- Procesos -->
+                    <!-- PROCESOS OPERATIVOS -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-rescue);">
@@ -1238,6 +1306,7 @@
                             <h3>PROCESOS OPERATIVOS</h3>
                         </div>
                         
+                        <!-- 1.5. Calibración y Encendido -->
                         <div class="compact-grid">
                             <div class="compact-card" style="border-top-color: #2196F3;">
                                 <div class="compact-header">
@@ -1246,6 +1315,7 @@
                                     </div>
                                     <div class="compact-title">1.5. Calibración y Encendido</div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">1</div>
                                     <div class="step-content">
@@ -1253,29 +1323,49 @@
                                         <div>Verificar válvulas cerradas (botellas, soplete, reguladores)</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">2</div>
                                     <div class="step-content">
                                         <div class="step-title">Abrir botellas</div>
-                                        <div>Abrir válvulas de O₂ y Chemtane</div>
+                                        <div>Abrir válvulas de O₂ y Chemtane completamente</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">3</div>
                                     <div class="step-content">
-                                        <div class="step-title">Regular presión</div>
-                                        <div>O₂: <span class="highlight-number">2-5 bar</span> | Chemtane: <span class="highlight-number">0,5 bar</span></div>
+                                        <div class="step-title">Regular presiones</div>
+                                        <div>O₂: <span class="highlight-number">2-5 bar</span> según espesor<br>Chemtane: <span class="highlight-number">0,5 bar</span> (aproximadamente)</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">4</div>
                                     <div class="step-content">
                                         <div class="step-title">Encendido</div>
-                                        <div>Abrir válvula Chemtane → encender → abrir O₂ lentamente → regular dardo</div>
+                                        <div>
+                                            <ol style="padding-left: 1.5rem; margin-top: 0.5rem;">
+                                                <li>Abrir válvula Chemtane (rojo) ~¾ vuelta</li>
+                                                <li>Encender con chisquero, regular llama estable</li>
+                                                <li>Abrir lentamente válvula O₂ (azul) hasta llama calentamiento</li>
+                                                <li>Regular dardo hasta punto estequiométrico</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tip-box" style="margin-top: 1rem;">
+                                    <div class="box-icon" style="background: #4CAF50;">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Precaución:</strong> No cerrar válvula Chemtane mientras se abre la de O₂ (los guantes dificultan precisión).
                                     </div>
                                 </div>
                             </div>
                             
+                            <!-- 1.6. Proceso de Corte -->
                             <div class="compact-card" style="border-top-color: #FF9800;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #FF9800;">
@@ -1283,25 +1373,53 @@
                                     </div>
                                     <div class="compact-title">1.6. Proceso de Corte</div>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Calentar pieza hasta color rojo cereza</li>
-                                    <li>Abrir chorro O₂ lentamente</li>
-                                    <li>Inclinar soplete <span class="highlight-number">45°</span> en dirección corte</li>
-                                    <li>Ajustar angulación según espesor</li>
-                                    <li>Distancia dardo-pieza: <span class="highlight-number">2-5 mm</span></li>
-                                    <li>Velocidad constante (inversa al espesor)</li>
-                                </ul>
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Valorar idoneidad</div>
+                                        <div>Material oxidable, espesor <span class="highlight-number">0,3-60 mm</span></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Calentar pieza</div>
+                                        <div>Hasta color rojo cereza (punto fusión)</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Iniciar corte</div>
+                                        <div>Abrir lentamente chorro O₂, inclinar soplete <span class="highlight-number">45°</span> dirección corte</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Avanzar</div>
+                                        <div>Velocidad constante (inversa al espesor), distancia dardo-pieza: <span class="highlight-number">2-5 mm</span></div>
+                                    </div>
+                                </div>
+                                
                                 <div class="tip-box" style="margin-top: 1rem;">
                                     <div class="box-icon" style="background: #FF9800;">
                                         <i class="fas fa-ruler-combined"></i>
                                     </div>
                                     <div>
-                                        <strong>Angulación según espesor:</strong> 
-                                        <br>Hasta <span class="highlight-number">6 mm</span>: 45° | Mayor espesor: más perpendicular
+                                        <strong>Angulación según espesor:</strong><br>
+                                        • Hasta <span class="highlight-number">6 mm</span>: 45°<br>
+                                        • Mayor espesor: más perpendicular<br>
+                                        • Minimiza escoria resoldada y proyecciones
                                     </div>
                                 </div>
                             </div>
                             
+                            <!-- 1.7. Apagado del Equipo -->
                             <div class="compact-card" style="border-top-color: #9C27B0;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #9C27B0;">
@@ -1309,42 +1427,73 @@
                                     </div>
                                     <div class="compact-title">1.7. Apagado del Equipo</div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">1</div>
                                     <div class="step-content">
-                                        <div class="step-title">Cerrar O₂ soplete</div>
-                                        <div>Válvula azul</div>
+                                        <div class="step-title">Cerrar O₂ y Chemtane soplete</div>
+                                        <div>Válvula azul y roja respectivamente</div>
                                     </div>
                                 </div>
+
                                 <div class="procedure-step">
                                     <div class="step-number">2</div>
                                     <div class="step-content">
-                                        <div class="step-title">Purgar gases</div>
-                                        <div>Abrir y cerrar válvulas Chemtane y O₂ en soplete</div>
+                                        <div class="step-title">Cerrar botellas</div>
+                                        <div>Válvulas de Chemtane y O₂ en botellas</div>
                                     </div>
-                                </div>
+                                </div>                                
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">3</div>
                                     <div class="step-content">
-                                        <div class="step-title">Cerrar botellas</div>
-                                        <div>Cerrar válvulas Chemtane y O₂</div>
+                                        <div class="step-title">Purgar Chemtane</div>
+                                        <div>Abrir válvula Chemtane (rojo) en soplete</div>
                                     </div>
                                 </div>
+                                
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">4</div>
                                     <div class="step-content">
+                                        <div class="step-title">Purgar O₂</div>
+                                        <div>Abrir válvula O₂ (azul) en soplete</div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">
                                         <div class="step-title">Cerrar reguladores</div>
-                                        <div>Ruedas de reguladores sueltas</div>
+                                        <div>Ruedas de reguladores sueltas (baja presión)</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Cerrar válvulas soplete</div>
+                                        <div>Ambas válvulas completamente cerradas</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tip-box" style="margin-top: 1rem;">
+                                    <div class="box-icon" style="background: #9C27B0;">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Equipo listo:</strong> Tras este procedimiento, el equipo está listo para nuevo uso o almacenamiento.
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             
-            <!-- TEMA 2: LANZA TÉRMICA -->
-            <div class="horizontal-card" id="lanza-termica">
+            <!-- TEMA 2: LANZA TÉRMICA - VERSIÓN COMPLETA -->
+            <section class="horizontal-card" id="lanza-termica">
                 <div class="floating-info" style="top: 20px; right: 30px;">
                     <i class="fas fa-burn"></i>
                 </div>
@@ -1361,6 +1510,7 @@
                                 <span class="category-chip" style="background: #FFF3E0; color: #FF8F00;">Temperatura: <span class="highlight-number">4.000-5.000°C</span></span>
                                 <span class="category-chip" style="background: #E3F2FD; color: #1976D2;">Penetración: <span class="highlight-number">25 mm acero/5s</span></span>
                                 <span class="category-chip" style="background: #FFEBEE; color: #D32F2F;">Uso sumergido: Sí</span>
+                                <span class="category-chip" style="background: #E8F5E9; color: #388E3C;">Electrodo ultratérmico</span>
                             </div>
                         </div>
                     </div>
@@ -1368,7 +1518,7 @@
                 </div>
                 
                 <div class="card-content">
-                    <!-- Introducción -->
+                    <!-- 2.1. INTRODUCCIÓN -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-tools);">
@@ -1376,12 +1526,21 @@
                             </div>
                             <h3>2.1. INTRODUCCIÓN</h3>
                         </div>
-                        <p>También conocida como lanza de oxígeno o lanza de fusión. Tubo de hierro relleno de varillas de hierro enriquecido con magnesio por el que circula oxígeno, creando una reacción exotérmica.</p>
+                        <p>La lanza térmica, también conocida como lanza de oxígeno o lanza de fusión, es una herramienta con una gran capacidad de perforación y desbastado mediante la fusión de los materiales sobre los que se quiere actuar. Se usa principalmente en demoliciones y cerratería.</p>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--color-tools);">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div>
+                                <strong>Composición:</strong> Tubo de hierro relleno de un haz de varillas de hierro enriquecido con magnesio por el que haremos circular oxígeno para crear una reacción exotérmica.
+                            </div>
+                        </div>
                         
                         <div class="stats-compact">
                             <div class="stat-compact" style="border-top-color: #FF9800;">
                                 <div class="stat-number" style="color: #FF9800;">4.000-5.000°C</div>
-                                <div class="stat-label">Temperatura punta</div>
+                                <div class="stat-label">Temperatura en la punta</div>
                             </div>
                             <div class="stat-compact" style="border-top-color: #2196F3;">
                                 <div class="stat-number" style="color: #2196F3;">25 mm</div>
@@ -1389,30 +1548,128 @@
                             </div>
                             <div class="stat-compact" style="border-top-color: #4CAF50;">
                                 <div class="stat-number" style="color: #4CAF50;">250 mm</div>
-                                <div class="stat-label">Hormigón en 2,5 min</div>
+                                <div class="stat-label">Hormigón en 2,5 minutos</div>
+                            </div>
+                            <div class="stat-compact" style="border-top-color: #607D8B;">
+                                <div class="stat-number" style="color: #607D8B;">Sumergible</div>
+                                <div class="stat-label">Agua dulce/salada</div>
                             </div>
                         </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: var(--color-tools);">
-                                <i class="fas fa-water"></i>
-                            </div>
-                            <div>
-                                <strong>Uso sumergido:</strong> Puede usarse tanto en agua dulce como salada gracias a las altas temperaturas que alcanza.
-                            </div>
-                        </div>
+
                     </div>
                     
-                    <!-- Consideraciones -->
+                    <!-- 2.2. COMPONENTES -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-tools-light);">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>2.2. COMPONENTES</h3>
+                        </div>
+                        
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: var(--color-tools);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: var(--color-tools);">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div class="compact-title">Electrodo ultratérmico</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Tubo de hierro con varillas de hierro enriquecidas con magnesio</li>
+                                    <li><strong>Diámetros:</strong> 1/4" o 3/8"</li>
+                                    <li><strong>Longitudes:</strong> 50 cm (1/4") o 90 cm (3/8")</li>
+                                    <li>Varilla consumible que se va gastando durante el uso</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: var(--color-tools-light);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: var(--color-tools-light);">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div class="compact-title">Regulador de presión</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Regula presión de oxígeno desde la botella</li>
+                                    <li>Rango trabajo: <span class="highlight-number">0,5-6 bar</span></li>
+                                    <li>Conecta a botella de oxígeno</li>
+                                    <li>Adaptador necesario: <span class="highlight-number">¼" a ¾"</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: var(--color-tools-dark);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: var(--color-tools-dark);">
+                                        <i class="fas fa-plug"></i>
+                                    </div>
+                                    <div class="compact-title">Sistema de encendido</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Antorcha con palanca de oxígeno</li>
+                                    <li>Cebador para ignición (chisporroteo)</li>
+                                    <li>Conexiones a batería de arranque</li>
+                                    <li>Cable antorcha: polo negativo (-)</li>
+                                    <li>Pinza cebador: polo positivo (+)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #607D8B;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #607D8B;">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
+                                    <div class="compact-title">Sistema de oxígeno</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Botella de oxígeno industrial</li>
+                                    <li>Lira de oxígeno flexible</li>
+                                    <li>Manómetro de alta presión</li>
+                                    <li>Consumo elevado durante operación</li>
+                                </ul>
+                            </div>
+
+                            <div style="display: flex; flex: 1 1 280px;">
+                                <img src="image corte/Lanza.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                             
+                        </div>
+                    </div>
+                    
+                    <!-- 2.3. CONSIDERACIONES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-tools);">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
                             <h3>2.3. CONSIDERACIONES</h3>
                         </div>
                         
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-radiation"></i>
+                            </div>
+                            <div>
+                                <strong>Riesgos importantes:</strong> Emite proyecciones a muy altas temperaturas y gases tóxicos durante la combustión. Proceso más lento que otras herramientas y consume gran cantidad de oxígeno.
+                            </div>
+                        </div>
+                        
+                        <!-- ¿Qué podemos cortar? -->
                         <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: #4CAF50;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4CAF50;">
+                                        <i class="fas fa-cut"></i>
+                                    </div>
+                                    <div class="compact-title">¿Qué podemos cortar?</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li><strong class="highlight-number">Prácticamente cualquier material</strong></li>
+                                    <li>Corta, perfora o desbasta por fusión</li>
+                                    <li>Elección según ventajas/inconvenientes en cada situación</li>
+                                    <li>Ideal para materiales muy resistentes o compuestos</li>
+                                </ul>
+                            </div>
+                            
                             <div class="compact-card" style="border-top-color: #4CAF50;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #4CAF50;">
@@ -1421,10 +1678,11 @@
                                     <div class="compact-title">Ventajas</div>
                                 </div>
                                 <ul class="compact-list">
-                                    <li>Corta/funde con misma varilla</li>
+                                    <li>Corta y funde con misma varilla</li>
                                     <li>Silencioso (sin vibraciones)</li>
-                                    <li>Sin efectos mecánicos</li>
+                                    <li>Sin efectos mecánicos sobre estructura</li>
                                     <li>Corta prácticamente cualquier material</li>
+                                    <li>Uso sumergido posible</li>
                                 </ul>
                             </div>
                             
@@ -1439,22 +1697,14 @@
                                     <li>Proceso montaje/uso más lento</li>
                                     <li>Gran consumo de oxígeno</li>
                                     <li>Emite proyecciones a altas temperaturas</li>
-                                    <li>Emite gases tóxicos</li>
+                                    <li>Emite gases tóxicos durante combustión</li>
+                                    <li>Varilla se consume progresivamente</li>
                                 </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="tip-box">
-                            <div class="box-icon" style="background: #4CAF50;">
-                                <i class="fas fa-cut"></i>
-                            </div>
-                            <div>
-                                <strong>¿Qué podemos cortar?</strong> Prácticamente cualquier material fundiéndolo. La elección depende de ventajas/inconvenientes en cada situación.
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Equipo de protección -->
+                    <!-- 2.4. EQUIPO DE PROTECCIÓN -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-security);">
@@ -1472,24 +1722,118 @@
                             </div>
                         </div>
                         
-                        <div class="compact-card" style="border-top-color: #FF9800; margin: 1.5rem 0;">
-                            <div class="compact-header">
-                                <div class="compact-icon" style="background: #FF9800;">
-                                    <i class="fas fa-shield-alt"></i>
+                        <div class="columnas">
+                            <div class="compact-grid" style="flex: 1 1 280px;">
+                                <div class="compact-card" style="border-top-color: #FF9800;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #FF9800;">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <div class="compact-title">Requisitos del traje aluminizado</div>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>No arder durante la exposición</li>
+                                        <li>No formación de agujeros por proyecciones</li>
+                                        <li>No desprendimiento de restos inflamados o fundidos</li>
+                                        <li>Resistir proyecciones de metal fundido</li>
+                                        <li>Al menos <span class="highlight-number">15 gotas</span> de metal fundido para elevar 40°C su temperatura</li>
+                                    </ul>
                                 </div>
-                                <div class="compact-title">Requisitos del traje aluminizado</div>
+                                
+                                <div class="compact-card" style="border-top-color: #D32F2F;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #D32F2F;">
+                                            <i class="fas fa-user-shield"></i>
+                                        </div>
+                                        <div class="compact-title">EPI Completo</div>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>Traje aluminizado certificado</li>
+                                        <li>Guantes de soldador de alta temperatura</li>
+                                        <li>Casco ligero con protección facial</li>
+                                        <li>Calzado de seguridad resistente a metales fundidos</li>
+                                        <li>Protección respiratoria en espacios confinados</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #2196F3;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #2196F3;">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                        </div>
+                                        <div class="compact-title">Precauciones post-uso</div>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>Nunca tocar electrodo usado con mano desnuda</li>
+                                        <li>No tocar material base o zona trabajo hasta enfriar</li>
+                                        <li>Usar siempre guantes de soldador para manipulación</li>
+                                        <li>Esperar enfriamiento completo antes de almacenar</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <ul class="compact-list">
-                                <li>No arder</li>
-                                <li>No formación de agujeros</li>
-                                <li>No desprendimiento restos inflamados/fundidos</li>
-                                <li>Resistir proyecciones de metal fundido</li>
-                                <li>Al menos <span class="highlight-number">15 gotas</span> de metal fundido para elevar 40°C su temperatura</li>
-                            </ul>
-                        </div>
+
+                            <div style="display: flex; flex: 1 1 280px;">
+                                <img src="image corte/Alumizado.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>  
+                        </div>                               
                     </div>
                     
-                    <!-- Procedimientos de trabajo -->
+                    <!-- TABLA DE PRESIONES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #607D8B;">
+                                <i class="fas fa-table"></i>
+                            </div>
+                            <h3>TABLA DE PRESIONES - SEGÚN APLICACIÓN</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #607D8B;">
+                                <i class="fas fa-compress-arrows-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Presiones de oxígeno recomendadas:</strong> Variable según trabajo a realizar, generalmente entre <span class="highlight-number">0,5 y 6 bar</span>. Consultar tabla específica para cada aplicación.
+                            </div>
+                        </div>
+
+                        <div class="centrado">
+                        <div class="visual-table" style="margin: auto;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>APLICACIÓN</th>
+                                        <th>PRESIÓN OXÍGENO</th>
+                                        <th>OBSERVACIONES</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Perforación ligera</strong></td>
+                                        <td><span class="highlight-number">0,5-2 bar</span></td>
+                                        <td>Materiales delgados, inicio de perforación</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Corte estándar</strong></td>
+                                        <td><span class="highlight-number">2-4 bar</span></td>
+                                        <td>Corte de aceros, separación de materiales</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Perforación profunda</strong></td>
+                                        <td><span class="highlight-number">4-6 bar</span></td>
+                                        <td>Materiales gruesos, hormigón, penetración máxima</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Escarnado/desbaste</strong></td>
+                                        <td><span class="highlight-number">1-3 bar</span></td>
+                                        <td>Retirada de material por capas</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <!-- PROCEDIMIENTOS DE TRABAJO -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-rescue);">
@@ -1498,170 +1842,356 @@
                             <h3>PROCEDIMIENTOS DE TRABAJO</h3>
                         </div>
                         
+                        <!-- 2.5. IGNICIÓN -->
                         <div class="compact-grid">
                             <div class="compact-card" style="border-top-color: #2196F3;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #2196F3;">
                                         <i class="fas fa-power-off"></i>
                                     </div>
-                                    <div class="compact-title">2.5. Ignición</div>
+                                    <div class="compact-title">2.5. Procedimiento de Ignición</div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">1</div>
                                     <div class="step-content">
                                         <div class="step-title">Conectar regulador</div>
-                                        <div>Regulador presión a botella O₂ (llave cerrada)</div>
+                                        <div>Regulador presión a botella O₂ (llave regulación cerrada/suelta)</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">2</div>
                                     <div class="step-content">
-                                        <div class="step-title">Conectar cables</div>
-                                        <div>Antorcha a polo negativo batería</div>
+                                        <div class="step-title">Conectar cable antorcha</div>
+                                        <div>Cable antorcha al polo negativo (-) batería arranque</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">3</div>
                                     <div class="step-content">
                                         <div class="step-title">Abrir botella O₂</div>
-                                        <div>Comprobar cantidad en manómetro alta presión</div>
+                                        <div>Abrir válvula botella, comprobar cantidad en manómetro alta presión</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">4</div>
                                     <div class="step-content">
                                         <div class="step-title">Conectar lira O₂</div>
-                                        <div>Con adaptador <span class="highlight-number">¼" a ¾"</span></div>
+                                        <div>Conectar lira O₂ al regulador con adaptador <span class="highlight-number">¼" a ¾"</span></div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">5</div>
                                     <div class="step-content">
                                         <div class="step-title">Conectar cebador</div>
-                                        <div>Pinza cebador a polo positivo batería</div>
+                                        <div>Pinza cebador al polo positivo (+) batería arranque</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">6</div>
                                     <div class="step-content">
                                         <div class="step-title">Regular presión O₂</div>
-                                        <div>Según trabajo (ver tabla presiones)</div>
+                                        <div>Abrir llave regulación hasta presión deseada (ver tabla)</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">7</div>
                                     <div class="step-content">
-                                        <div class="step-title">Encender</div>
-                                        <div>Apretar palanca O₂, acercar cebador a electrodo 45º</div>
+                                        <div class="step-title">Encender lanza</div>
+                                        <div>Apretar palanca O₂ ligeramente, acercar cebador a electrodo en 45º</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">8</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Mantener ignición</div>
+                                        <div>Mantener ligera presión palanca O₂ para ignición perfecta</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tip-box" style="margin-top: 1rem;">
+                                    <div class="box-icon" style="background: #4CAF50;">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Mejor resultado:</strong> Aplicar llama de soplete sobre varilla para ignición más efectiva que solo con cebador.
                                     </div>
                                 </div>
                             </div>
                             
+                            <!-- 2.6. APAGADO -->
                             <div class="compact-card" style="border-top-color: #9C27B0;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #9C27B0;">
                                         <i class="fas fa-power-off"></i>
                                     </div>
-                                    <div class="compact-title">2.6. Apagado</div>
+                                    <div class="compact-title">2.6. Procedimiento de Apagado</div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">1</div>
                                     <div class="step-content">
                                         <div class="step-title">Cerrar botella O₂</div>
-                                        <div>Válvula de la botella</div>
+                                        <div>Cerrar válvula principal botella de oxígeno</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">2</div>
                                     <div class="step-content">
                                         <div class="step-title">Purgar manguera</div>
-                                        <div>Pulsar palanca O₂ de antorcha</div>
+                                        <div>Pulsar palanca O₂ de antorcha para eliminar presión en manguera</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">3</div>
                                     <div class="step-content">
                                         <div class="step-title">Liberar presión regulador</div>
-                                        <div></div>
+                                        <div>Liberar presión del regulador de oxígeno</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">4</div>
                                     <div class="step-content">
                                         <div class="step-title">Desconectar lira O₂</div>
-                                        <div>Del regulador</div>
+                                        <div>Desconectar lira de oxígeno del regulador</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">5</div>
                                     <div class="step-content">
                                         <div class="step-title">Desconectar regulador</div>
-                                        <div>De la botella O₂</div>
+                                        <div>Desconectar regulador de la botella de oxígeno</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">6</div>
                                     <div class="step-content">
                                         <div class="step-title">Desconectar cables</div>
-                                        <div>Antorcha y cebador de batería</div>
+                                        <div>Desconectar cables de antorcha y cebador de la batería</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="warning-box" style="margin-top: 1rem;">
+                                    <div class="box-icon" style="background: #FF9800;">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Precaución:</strong> El electrodo continuará quemándose mientras se le suministre oxígeno. Asegurarse de cerrar completamente el flujo.
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Técnicas de trabajo -->
-                        <div class="compact-grid" style="margin-top: 1.5rem;">
-                            <div class="compact-card" style="border-top-color: #FF9800;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #FF9800;">
-                                        <i class="fas fa-bullseye"></i>
-                                    </div>
-                                    <div class="compact-title">Perforación</div>
+                        <!-- TÉCNICAS DE TRABAJO -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #607D8B;">
+                                    <i class="fas fa-tools"></i>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Electrodo 90° contra material</li>
-                                    <li>Perforación ~<span class="highlight-number">6 mm</span> profundidad</li>
-                                    <li>Insertar punta en depresión</li>
-                                    <li>Aumentar flujo O₂ para penetración</li>
-                                    <li>Mover electrodo arriba/abajo</li>
-                                </ul>
+                                <h3>TÉCNICAS DE TRABAJO</h3>
                             </div>
                             
-                            <div class="compact-card" style="border-top-color: #2196F3;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #2196F3;">
-                                        <i class="fas fa-cut"></i>
+                            <div class="compact-grid">
+                                <div class="compact-card" style="border-top-color: #FF9800;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #FF9800;">
+                                            <i class="fas fa-bullseye"></i>
+                                        </div>
+                                        <div class="compact-title">PERFORACIÓN</div>
+                                        <div class="compact-subtitle" style="font-size: 0.8rem; color: #666; font-weight: normal;">Atravesar material total/parcialmente</div>
                                     </div>
-                                    <div class="compact-title">Corte</div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Posición electrodo</div>
+                                            <div>Electrodo 90° contra material base</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Perforación inicial</div>
+                                            <div>Fusionar material ~<span class="highlight-number">6 mm</span> profundidad</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Insertar punta</div>
+                                            <div>Insertar punta electrodo en depresión creada</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">4</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Aumentar penetración</div>
+                                            <div>Incrementar flujo O₂ pulsando palanca</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">5</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Mover electrodo</div>
+                                            <div>Mover ligeramente arriba/abajo para expulsar material fundido</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">6</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Finalizar</div>
+                                            <div>Sacar electrodo del agujero antes de aflojar palanca O₂</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Electrodo 45°-90° contra material</li>
-                                    <li>Aumentar flujo O₂</li>
-                                    <li>Mantener punta en corte</li>
-                                    <li>Penetrar en dirección corte</li>
-                                    <li>Asegurar material fundido soplado</li>
-                                </ul>
+                                
+                                <div class="compact-card" style="border-top-color: #2196F3;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #2196F3;">
+                                            <i class="fas fa-cut"></i>
+                                        </div>
+                                        <div class="compact-title">CORTE</div>
+                                        <div class="compact-subtitle" style="font-size: 0.8rem; color: #666; font-weight: normal;">Separación de material</div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Posición electrodo</div>
+                                            <div>Electrodo 45°-90° contra material base</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Aumentar flujo O₂</div>
+                                            <div>Presionar palanca antorcha para aumentar flujo</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Mantener punta en corte</div>
+                                            <div>Mantener punta electrodo en línea de corte</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">4</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Penetrar dirección corte</div>
+                                            <div>Penetrar con electrodo en dirección del corte</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">5</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Asegurar expulsión</div>
+                                            <div>Asegurar material fundido es soplado a través del corte</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">6</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Completar corte</div>
+                                            <div>Verificar no queden zonas mal cortadas</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #4CAF50;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #4CAF50;">
+                                            <i class="fas fa-layer-group"></i>
+                                        </div>
+                                        <div class="compact-title">ESCARNADO</div>
+                                        <div class="compact-subtitle" style="font-size: 0.8rem; color: #666; font-weight: normal;">Retirada de material por capas</div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Posición electrodo</div>
+                                            <div>Electrodo inclinado sobre pieza, punta apoyada</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Aumentar flujo O₂</div>
+                                            <div>Pulsar palanca antorcha para aumentar flujo</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Fusión material</div>
+                                            <div>Material funde en <span class="highlight-number">1-2 segundos</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">4</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Empujar electrodo</div>
+                                            <div>Con palanca O₂ completamente pulsada, empujar en dirección escarnado</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">5</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Alejar punta</div>
+                                            <div>Cuando escarnado completado, alejar punta del material</div>
+                                        </div>
+                                    </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">6</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Apagar antorcha</div>
+                                            <div>Aflojar pulsación palanca O₂ para apagar</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- RESUMEN VEHÍCULOS -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: var(--color-metal);">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <h3>DISPONIBILIDAD EN VEHÍCULOS</h3>
                             </div>
                             
-                            <div class="compact-card" style="border-top-color: #4CAF50;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #4CAF50;">
-                                        <i class="fas fa-layer-group"></i>
-                                    </div>
-                                    <div class="compact-title">Escarnado</div>
+                            <div class="info-box">
+                                <div class="box-icon" style="background: #607D8B;">
+                                    <i class="fas fa-warehouse"></i>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Electrodo inclinado sobre pieza</li>
-                                    <li>Punta apoyada en material</li>
-                                    <li>Aumentar flujo O₂</li>
-                                    <li>Material funde en <span class="highlight-number">1-2 s</span></li>
-                                    <li>Empujar electrodo en dirección escarnado</li>
-                                </ul>
+                                <div>
+                                    <strong>Vehículos Cuerpo de Bomberos de Madrid:</strong> SALVAMENTO Y DESESCOMBRO, CONTENEDOR DE SALVAMENTO Y DESESCOMBRO
+                                </div>
+                            </div>
+                            
+                            <div class="tip-box">
+                                <div class="box-icon" style="background: #4CAF50;">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div>
+                                    <strong>Elección de herramienta:</strong> La lanza térmica es ideal cuando se necesita cortar materiales muy diversos o en condiciones especiales (sumergida), y cuando no se dispone de energía eléctrica para plasma.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             
             <!-- TEMA 3: EQUIPO DE CORTE POR PLASMA -->
             <div class="horizontal-card" id="plasma">
