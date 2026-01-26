@@ -920,6 +920,66 @@
             font-size: 0.9rem;
             margin: 0.2rem;
         }
+
+        /* Estilos para elementos compactos dentro de compact-cards */
+        .pressure-range {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            padding: 0.8rem;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid;
+        }
+
+        .pressure-title {
+            font-weight: 700;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .pressure-value {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #D32F2F;
+        }
+
+        .application-list {
+            font-size: 0.85rem;
+            color: #666;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .application-list div {
+            margin: 0.2rem 0;
+        }
+
+        /* Para tablas con cabeceras múltiples */
+        .visual-table table th[colspan] {
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* Para mejorar la legibilidad de las tablas */
+        .visual-table table {
+            font-size: 0.9rem;
+        }
+
+        .visual-table table td {
+            padding: 0.1rem 0.2rem;
+        }
+
+        /* Para secciones dentro de card-content */
+        .card-content section.section {
+            margin-bottom: 2.5rem;
+        }
+
+        .card-content section.section:last-child {
+            margin-bottom: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -1411,7 +1471,7 @@
                                     </div>
                                     <div>
                                         <strong>Angulación según espesor:</strong><br>
-                                        • Hasta <span class="highlight-number">6 mm</span>: 45°<br>
+                                        • Hasta <span class="highlight-number">6 mm: 45°</span><br>
                                         • Mayor espesor: más perpendicular<br>
                                         • Minimiza escoria resoldada y proyecciones
                                     </div>
@@ -1576,8 +1636,8 @@
                                 </div>
                                 <ul class="compact-list">
                                     <li>Tubo de hierro con varillas de hierro enriquecidas con magnesio</li>
-                                    <li><strong>Diámetros:</strong> 1/4" o 3/8"</li>
-                                    <li><strong>Longitudes:</strong> 50 cm (1/4") o 90 cm (3/8")</li>
+                                    <li><strong>Diámetros:</strong> <span class="highlight-number">1/4" o 3/8"</span></li>
+                                    <li><strong>Longitudes:</strong><span class="highlight-number"> 50 cm (1/4") o 90 cm (3/8")</span></li>
                                     <li>Varilla consumible que se va gastando durante el uso</li>
                                 </ul>
                             </div>
@@ -1735,7 +1795,7 @@
                                         <li>No formación de agujeros por proyecciones</li>
                                         <li>No desprendimiento de restos inflamados o fundidos</li>
                                         <li>Resistir proyecciones de metal fundido</li>
-                                        <li>Al menos <span class="highlight-number">15 gotas</span> de metal fundido para elevar 40°C su temperatura</li>
+                                        <li>Al menos <span class="highlight-number">15 gotas</span> de metal fundido para elevar <span class="highlight-number">40°C</span> su temperatura</li>
                                     </ul>
                                 </div>
                                 
@@ -1777,59 +1837,101 @@
                         </div>                               
                     </div>
                     
-                    <!-- TABLA DE PRESIONES -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #607D8B;">
-                                <i class="fas fa-table"></i>
+                    <!-- 2.5.1. ELECTRODO ULTRATÉRMICO - ELECCIÓN DE VARILLA -->
+                    <div class="compact-card" style="border-top-color: #607D8B; margin: 1rem 0; flex: 1 1">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #607D8B;">
+                                <i class="fas fa-ruler-vertical"></i>
                             </div>
-                            <h3>TABLA DE PRESIONES - SEGÚN APLICACIÓN</h3>
+                            <div class="compact-title">2.5.1. Electrodo Ultratérmico - Elección de Varilla</div>
                         </div>
                         
-                        <div class="info-box">
-                            <div class="box-icon" style="background: #607D8B;">
-                                <i class="fas fa-compress-arrows-alt"></i>
-                            </div>
-                            <div>
-                                <strong>Presiones de oxígeno recomendadas:</strong> Variable según trabajo a realizar, generalmente entre <span class="highlight-number">0,5 y 6 bar</span>. Consultar tabla específica para cada aplicación.
-                            </div>
-                        </div>
-
-                        <div class="centrado">
-                        <div class="visual-table " style="margin: auto;">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>APLICACIÓN</th>
-                                        <th>PRESIÓN OXÍGENO</th>
-                                        <th>OBSERVACIONES</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Perforación ligera</strong></td>
-                                        <td><span class="highlight-number">0,5-2 bar</span></td>
-                                        <td>Materiales delgados, inicio de perforación</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Corte estándar</strong></td>
-                                        <td><span class="highlight-number">2-4 bar</span></td>
-                                        <td>Corte de aceros, separación de materiales</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Perforación profunda</strong></td>
-                                        <td><span class="highlight-number">4-6 bar</span></td>
-                                        <td>Materiales gruesos, hormigón, penetración máxima</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Escarnado/desbaste</strong></td>
-                                        <td><span class="highlight-number">1-3 bar</span></td>
-                                        <td>Retirada de material por capas</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div style="display: flex;">
+                            <img src="image corte/Varilla.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
                         </div>
                     </div>
+
+                    <!-- 2.5.2. TABLA DE PRESIONES - SEGÚN APLICACIÓN REQUERIDA -->
+                    <div class="compact-card" style="border-top-color: #2196F3; margin: 1rem 0; flex: 1 1;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background: #2196F3;">
+                                <i class="fas fa-compress-arrows-alt"></i>
+                            </div>
+                            <div class="compact-title">2.5.2. Tabla de Presiones - Según Aplicación</div>
+                        </div>
+                        
+
+                        
+                        <!-- Tabla de presiones -->
+                        <div style="margin: 1rem 0;">
+                            <!-- 0,5 - 1,5 bar -->
+                            <div style="margin-bottom: 1.2rem; padding: 0.8rem; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #4CAF50;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                    <div style="font-weight: 700; color: #333;">Perforación de láminas duras</div>
+                                    <div style="font-size: 1.1rem; font-weight: 800; color: #D32F2F;"><span class="highlight-number">0,5 - 1,5 bar</span></div>
+                                </div>
+                            </div>
+                            
+                            <!-- 1,5 - 2,0 bar -->
+                            <div style="margin-bottom: 1.2rem; padding: 0.8rem; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #2196F3;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="font-weight: 700; color: #333;">Corte de piezas finas hasta 6,5 mm</div>
+                                    <div style="font-size: 1.1rem; font-weight: 800; color: #D32F2F;"><span class="highlight-number">1,5 - 2,0 bar</span></div>
+                                </div>
+                                    <div style="margin: 0.2rem 0;font-weight: 700; color: #333;margin-top: 0">Perforación de pequeños pernos</div>
+                            </div>
+                            
+                            <!-- 2,0 - 3,0 bar -->
+                            <div style="margin-bottom: 1.2rem; padding: 0.8rem; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #FF9800;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="font-weight: 700; color: #333;">Escarnado de precisión</div>
+                                    <div style="font-size: 1.1rem; font-weight: 800; color: #D32F2F;"><span class="highlight-number">2,0 - 3,0 bar</span></div>
+                                </div>
+
+                                    <div style="margin: 0.2rem 0;font-weight: 700; color: #333;margin-top: 0">Fundir hormigón y roca</div>
+                                    <div style="margin: 0.2rem 0;font-weight: 700; color: #333;">Perforación de espárragos hasta 100 mm</div>
+                                    <div style="margin: 0.2rem 0;font-weight: 700; color: #333;">Corte de hierro/acero hasta 12 mm</div>                                
+
+                            </div>
+                            
+                            <!-- 3,0 - 3,5 bar -->
+                            <div style="margin-bottom: 1.2rem; padding: 0.8rem; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #D32F2F;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="font-weight: 700; color: #333;">Escarnado</div>
+                                    <div style="font-size: 1.1rem; font-weight: 800; color: #D32F2F;"><span class="highlight-number">3,0 - 3,5 bar</span></div>
+                                </div>
+                                    <div style="margin: 0.2rem 0;font-weight: 700; color: #333; margin-top: 0;">Eliminación de soldaduras</div>
+                                    <div style="margin: 0.2rem 0;font-weight: 700; color: #333;">Fundir hormigón y rocas</div>
+                                    <div style="margin: 0.2rem 0;font-weight: 700; color: #333;">Perforación de espárragos más de 100 mm</div>
+                                    <div style="margin: 0.2rem 0;font-weight: 700; color: #333;">Corte de materiales no ferrosos hasta 25 mm</div>
+                                    <div style="margin: 0.2rem 0;font-weight: 700; color: #333;">Corte de acero dulce de 12 a 25 mm</div>
+
+
+                            </div>
+                            
+                            <!-- 3,5 - 4,0 bar -->
+                            <div style="margin-bottom: 1.2rem; padding: 0.8rem; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #9C27B0;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="font-weight: 700; color: #333;">Corte de materiales ferrosos de hasta 50 mm de espesor</div>
+                                    <div style="font-size: 1.1rem; font-weight: 800; color: #D32F2F;"><span class="highlight-number">3,5 - 4,0 bar</span></div>
+                                </div>
+                                    <div style="margin: 0.2rem 0;font-weight: 700; color: #333;margin-top: 0">Corte de acero dulce hasta 50 mm</div>                                
+                            </div>
+                            
+                            <!-- 4,0 - 6,0 bar -->
+                            <div style="padding: 0.8rem; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #607D8B;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="font-weight: 700; color: #333;">Corte de todos los metales de más de 50 mm de
+espesor</div>
+                                    <div style="font-size: 1.1rem; font-weight: 800; color: #D32F2F;"><span class="highlight-number">4,0 - 6,0 bar</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 1rem; font-size: 0.85rem; color: #666; padding: 0.8rem; background: #fff8e1; border-radius: 6px; border-left: 4px solid #FF9800;">
+                            <i class="fas fa-exclamation-triangle" style="color: #FF9800; margin-right: 0.5rem;"></i>
+                            <strong>Nota:</strong> Ajustar presión según respuesta del material, experiencia del operador y condiciones específicas de trabajo.
+                        </div>
                     </div>
                     
                     <!-- PROCEDIMIENTOS DE TRABAJO -->
@@ -1858,39 +1960,39 @@
                                         <div>Regulador presión a botella O₂ (llave regulación cerrada/suelta)</div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="procedure-step">
                                     <div class="step-number">2</div>
-                                    <div class="step-content">
-                                        <div class="step-title">Conectar cable antorcha</div>
-                                        <div>Cable antorcha al polo negativo (-) batería arranque</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="procedure-step">
-                                    <div class="step-number">3</div>
-                                    <div class="step-content">
-                                        <div class="step-title">Abrir botella O₂</div>
-                                        <div>Abrir válvula botella, comprobar cantidad en manómetro alta presión</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="procedure-step">
-                                    <div class="step-number">4</div>
                                     <div class="step-content">
                                         <div class="step-title">Conectar lira O₂</div>
                                         <div>Conectar lira O₂ al regulador con adaptador <span class="highlight-number">¼" a ¾"</span></div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="procedure-step">
-                                    <div class="step-number">5</div>
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Conectar cable antorcha</div>
+                                        <div>Cable antorcha al polo negativo (-) batería arranque</div>
+                                    </div>
+                                </div>
+
+                                <div class="procedure-step">
+                                    <div class="step-number">4</div>
                                     <div class="step-content">
                                         <div class="step-title">Conectar cebador</div>
                                         <div>Pinza cebador al polo positivo (+) batería arranque</div>
                                     </div>
                                 </div>
-                                
+                                                                
+                                <div class="procedure-step">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Abrir botella O₂</div>
+                                        <div>Abrir válvula botella, comprobar cantidad en manómetro alta presión</div>
+                                    </div>
+                                </div>
+                                                                                                
                                 <div class="procedure-step">
                                     <div class="step-number">6</div>
                                     <div class="step-content">
@@ -1903,7 +2005,7 @@
                                     <div class="step-number">7</div>
                                     <div class="step-content">
                                         <div class="step-title">Encender lanza</div>
-                                        <div>Apretar palanca O₂ ligeramente, acercar cebador a electrodo en 45º</div>
+                                        <div>Apretar palanca O₂ ligeramente, acercar cebador a electrodo en <span class="highlight-number">45º</span></div>
                                     </div>
                                 </div>
                                 
@@ -2015,7 +2117,7 @@
                                         <div class="step-number">1</div>
                                         <div class="step-content">
                                             <div class="step-title">Posición electrodo</div>
-                                            <div>Electrodo 90° contra material base</div>
+                                            <div>Electrodo <span class="highlight-number">90°</span> contra material base</div>
                                         </div>
                                     </div>
                                     <div class="procedure-step">
@@ -2053,6 +2155,16 @@
                                             <div>Sacar electrodo del agujero antes de aflojar palanca O₂</div>
                                         </div>
                                     </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">7</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Nunca tocar con la mano desnuda electrodo</div>
+                                            <div> Usar siempre guantes de soldador</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <img src="image corte/Perforacion.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>                                                                        
                                 </div>
                                 
                                 <div class="compact-card" style="border-top-color: #2196F3;">
@@ -2067,7 +2179,7 @@
                                         <div class="step-number">1</div>
                                         <div class="step-content">
                                             <div class="step-title">Posición electrodo</div>
-                                            <div>Electrodo 45°-90° contra material base</div>
+                                            <div>Electrodo <span class="highlight-number">45°-90°</span> contra material base</div>
                                         </div>
                                     </div>
                                     <div class="procedure-step">
@@ -2105,6 +2217,16 @@
                                             <div>Verificar no queden zonas mal cortadas</div>
                                         </div>
                                     </div>
+                                    <div class="procedure-step">
+                                        <div class="step-number">7</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Nunca tocar con la mano desnuda electrodo</div>
+                                            <div> Usar siempre guantes de soldador</div>
+                                        </div>
+                                    </div>  
+                                    <div style="display: flex;">
+                                        <img src="image corte/Corte.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>                                                                       
                                 </div>
                                 
                                 <div class="compact-card" style="border-top-color: #4CAF50;">
@@ -2157,34 +2279,16 @@
                                             <div>Aflojar pulsación palanca O₂ para apagar</div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- RESUMEN VEHÍCULOS -->
-                        <div class="section">
-                            <div class="section-title">
-                                <div class="section-icon" style="background: var(--color-metal);">
-                                    <i class="fas fa-truck"></i>
-                                </div>
-                                <h3>DISPONIBILIDAD EN VEHÍCULOS</h3>
-                            </div>
-                            
-                            <div class="info-box">
-                                <div class="box-icon" style="background: #607D8B;">
-                                    <i class="fas fa-warehouse"></i>
-                                </div>
-                                <div>
-                                    <strong>Vehículos Cuerpo de Bomberos de Madrid:</strong> SALVAMENTO Y DESESCOMBRO, CONTENEDOR DE SALVAMENTO Y DESESCOMBRO
-                                </div>
-                            </div>
-                            
-                            <div class="tip-box">
-                                <div class="box-icon" style="background: #4CAF50;">
-                                    <i class="fas fa-lightbulb"></i>
-                                </div>
-                                <div>
-                                    <strong>Elección de herramienta:</strong> La lanza térmica es ideal cuando se necesita cortar materiales muy diversos o en condiciones especiales (sumergida), y cuando no se dispone de energía eléctrica para plasma.
+                                    <div class="procedure-step">
+                                        <div class="step-number">7</div>
+                                        <div class="step-content">
+                                            <div class="step-title">Nunca tocar con la mano desnuda electrodo</div>
+                                            <div> Usar siempre guantes de soldador</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <img src="image corte/Escarnado.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>                                                                         
                                 </div>
                             </div>
                         </div>
@@ -2192,8 +2296,8 @@
                 </div>
             </section>
             
-            <!-- TEMA 3: EQUIPO DE CORTE POR PLASMA -->
-            <div class="horizontal-card" id="plasma">
+            <!-- TEMA 3: EQUIPO DE CORTE POR PLASMA - VERSIÓN COMPLETA -->
+            <section class="horizontal-card" id="plasma">
                 <div class="floating-info" style="top: 20px; right: 30px;">
                     <i class="fas fa-atom"></i>
                 </div>
@@ -2210,6 +2314,7 @@
                                 <span class="category-chip" style="background: #F3E5F5; color: #9C27B0;">Temperatura: <span class="highlight-number">15.000-20.000°C</span></span>
                                 <span class="category-chip" style="background: #E3F2FD; color: #1976D2;">Aire: <span class="highlight-number">6-8 bar</span></span>
                                 <span class="category-chip" style="background: #FFEBEE; color: #D32F2F;">Espesor máx: <span class="highlight-number">35 mm</span></span>
+                                <span class="category-chip" style="background: #FFF3E0; color: #FF8F00;">Voltaje: <span class="highlight-number">400 V</span></span>
                             </div>
                         </div>
                     </div>
@@ -2217,7 +2322,7 @@
                 </div>
                 
                 <div class="card-content">
-                    <!-- Introducción -->
+                    <!-- 3.1. INTRODUCCIÓN -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-plasma);">
@@ -2225,14 +2330,33 @@
                             </div>
                             <h3>3.1. INTRODUCCIÓN</h3>
                         </div>
-                        <p>El plasma es un estado de la materia (gas ionizado) obtenido arrancando electrones de los átomos por agitación térmica. El chorro de plasma corta por fusión instantánea con evaporación parcial de materia.</p>
+                        <p>El plasma en física es un estado de la materia que, de manera simplificada, se puede considerar un gas ionizado. Se obtiene arrancando los electrones de los átomos de una sustancia por agitación térmica, lo que la convierte en una sustancia altamente conductora de la electricidad.</p>
                         
                         <div class="info-box">
                             <div class="box-icon" style="background: var(--color-plasma);">
                                 <i class="fas fa-temperature-high"></i>
                             </div>
                             <div>
-                                <strong>Temperatura de trabajo:</strong> <span class="highlight-number">15.000 a 20.000 °C</span>. Esta temperatura unida a la energía cinética del gas de salida funde y barre material, proyectándolo fuera de la zona de fusión.
+                                <strong>Proceso de corte:</strong> El chorro de plasma es un proceso de corte de piezas metálicas por fusión instantánea, con evaporación parcial de materia mediante la acción de un dardo de plasma, generado a partir de gas y electricidad.
+                            </div>
+                        </div>
+                        
+                        <div class="stats-compact">
+                            <div class="stat-compact" style="border-top-color: #9C27B0;">
+                                <div class="stat-number" style="color: #9C27B0;">15.000-20.000°C</div>
+                                <div class="stat-label">Temperatura de trabajo</div>
+                            </div>
+                            <div class="stat-compact" style="border-top-color: #2196F3;">
+                                <div class="stat-number" style="color: #2196F3;">6-8 bar</div>
+                                <div class="stat-label">Presión aire comprimido</div>
+                            </div>
+                            <div class="stat-compact" style="border-top-color: #4CAF50;">
+                                <div class="stat-number" style="color: #4CAF50;">400 V</div>
+                                <div class="stat-label">Tensión eléctrica requerida</div>
+                            </div>
+                            <div class="stat-compact" style="border-top-color: #FF9800;">
+                                <div class="stat-number" style="color: #FF9800;">30-35 mm</div>
+                                <div class="stat-label">Espesor máximo corte</div>
                             </div>
                         </div>
                         
@@ -2241,21 +2365,69 @@
                                 <i class="fas fa-bolt"></i>
                             </div>
                             <div>
-                                <strong>Ventaja térmica:</strong> El efecto térmico está muy localizado, evitando calentamiento de bordes que podrían producir efectos de resoldo.
+                                <strong>Ventaja térmica:</strong> El efecto térmico está muy localizado como consecuencia de la rapidez de la operación, evitando el calentamiento de los bordes de la zona de corte que podrían producir efectos de resoldo.
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #607D8B;">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <div>
+                                <strong>Gas plasmágeno:</strong> Puede estar formado por una mezcla de gases comprimidos (hidrógeno, argón, nitrógeno, etc.) aunque en nuestros equipos será solo aire comprimido saliendo por una tobera refrigerada.
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Consideraciones -->
+                    <!-- 3.2. COMPONENTES -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-plasma-light);">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>3.2. COMPONENTES</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #9C27B0;">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <div>
+                                <strong>Panel de control - EQUIPO DE CORTE POWERCOUP 100:</strong> Interface principal del equipo con reguladores, indicadores LED y controles de operación.
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex;">
+                            <img src="image corte/Plasma.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                        </div>   
+                    </div>
+                    
+                    <!-- 3.3. CONSIDERACIONES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-plasma);">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
                             <h3>3.3. CONSIDERACIONES</h3>
                         </div>
                         
                         <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: #9C27B0;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #9C27B0;">
+                                        <i class="fas fa-cut"></i>
+                                    </div>
+                                    <div class="compact-title">¿Qué podemos cortar?</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li><strong class="highlight-number">Elementos metálicos conductores</strong></li>
+                                    <li>Espesor hasta <span class="highlight-number">30-35 mm</span></li>
+                                    <li>Necesita contacto directo con partes metálicas</li>
+                                    <li>Eliminar revestimientos plásticos antes del corte</li>
+                                    <li>No apto para materiales no conductores</li>
+                                </ul>
+                            </div>
+                            
                             <div class="compact-card" style="border-top-color: #4CAF50;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #4CAF50;">
@@ -2266,7 +2438,9 @@
                                 <ul class="compact-list">
                                     <li>Facilidad y rapidez de uso</li>
                                     <li>Corta cualquier metal conductor</li>
-                                    <li>Efecto térmico localizado</li>
+                                    <li>Efecto térmico muy localizado</li>
+                                    <li>Corte preciso con mínima zona afectada</li>
+                                    <li>Menos experiencia requerida que oxicorte</li>
                                 </ul>
                             </div>
                             
@@ -2278,30 +2452,26 @@
                                     <div class="compact-title">Inconvenientes</div>
                                 </div>
                                 <ul class="compact-list">
-                                    <li>Necesita fuente <span class="highlight-number">400 V</span></li>
+                                    <li>Necesita fuente eléctrica de <span class="highlight-number">400 V</span></li>
                                     <li>Solo elementos metálicos conductores</li>
                                     <li>Eliminar revestimientos plásticos previamente</li>
+                                    <li>Equipo menos portátil que oxicorte</li>
+                                    <li>Requiere aire comprimido de calidad</li>
                                 </ul>
                             </div>
-                            
-                            <div class="compact-card" style="border-top-color: #9C27B0;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #9C27B0;">
-                                        <i class="fas fa-cut"></i>
-                                    </div>
-                                    <div class="compact-title">¿Qué podemos cortar?</div>
-                                </div>
-                                <ul class="compact-list">
-                                    <li>Elementos metálicos conductores</li>
-                                    <li>Espesor hasta <span class="highlight-number">30-35 mm</span></li>
-                                    <li>Necesita contacto directo con partes metálicas</li>
-                                    <li>Eliminar revestimientos plásticos antes</li>
-                                </ul>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div>
+                                <strong>Importante:</strong> Dado que el proceso necesita que se genere un arco eléctrico entre la pieza a cortar y la antorcha, es necesario el contacto directo con partes metálicas. Los revestimientos plásticos que protegen algunos metales deberán ser eliminados previamente al corte.
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Equipo de protección -->
+                    <!-- 3.4. EQUIPO DE PROTECCIÓN -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-security);">
@@ -2319,71 +2489,98 @@
                             </div>
                         </div>
                         
-                        <div class="compact-card" style="border-top-color: #9C27B0; margin: 1.5rem 0;">
-                            <div class="compact-header">
-                                <div class="compact-icon" style="background: #9C27B0;">
-                                    <i class="fas fa-user-shield"></i>
+                        <div class="columnas">
+                            <div class="compact-grid" style="flex: 1 1 280px; justify-content: center; max-width: 600px; min-width: 300px;">
+                                <div class="compact-card" style="border-top-color: #D32F2F; max-width: 450px; min-width: 300px;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #D32F2F;">
+                                            <i class="fas fa-user-shield"></i>
+                                        </div>
+                                        <div class="compact-title">Protección obligatoria</div>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>Careta para soldar o casco 3M</li>
+                                        <li>Guantes de soldador</li>
+                                        <li>Mandil de protección</li>
+                                        <li>Vidrios para careta y gafas de soldar</li>
+                                        <li>Calzado de seguridad</li>
+                                        <li>Casco ligero de seguridad</li>
+                                    </ul>
                                 </div>
-                                <div class="compact-title">Elementos de protección personal</div>
+                                
+                                <div class="compact-card" style="border-top-color: #9C27B0; max-width: 450px; min-width: 300px;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #9C27B0;">
+                                            <i class="fas fa-lungs"></i>
+                                        </div>
+                                        <div class="compact-title">Protección respiratoria</div>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>En actuaciones prolongadas usar protección</li>
+                                        <li>Casco 3M con sistema de filtrado de aire y partículas</li>
+                                        <li>Espacios poco ventilados requieren EPI respiratorio</li>
+                                        <li><em>Nota: equipo de filtrado, no respiración autónoma</em></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <ul class="compact-list">
-                                <li>Careta para soldar o casco 3M</li>
-                                <li>Guantes de soldador</li>
-                                <li>Mandil de protección</li>
-                                <li>Vidrios para careta y gafas de soldar</li>
-                                <li>Calzado de seguridad</li>
-                                <li>Casco ligero de seguridad</li>
-                            </ul>
+
+                            <div style="display: flex; flex: 1 1 280px;">
+                                <img src="image corte/EPIPlasma.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                             
                         </div>
-                        
+
                         <div class="info-box">
                             <div class="box-icon" style="background: #2196F3;">
-                                <i class="fas fa-lungs"></i>
+                                <i class="fas fa-hard-hat"></i>
                             </div>
                             <div>
-                                <strong>Protección respiratoria:</strong> En actuaciones prolongadas o lugares poco ventilados, usar casco 3M con sistema de filtrado de aire y partículas (equipo de filtrado, no respiración autónoma).
+                                <strong>Casco 3M características:</strong> Gran área de visión, con 3 tonos claros y cinco tonos oscuros (5,8,9-13). La sobrepresión generada impide que penetren impurezas del exterior.
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Procesos -->
+                    <!-- 3.5. ENCENDIDO Y CALIBRACIÓN -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-rescue);">
-                                <i class="fas fa-play-circle"></i>
+                                <i class="fas fa-power-off"></i>
                             </div>
-                            <h3>PROCESOS OPERATIVOS</h3>
+                            <h3>3.5. ENCENDIDO Y APAGADO</h3>
                         </div>
                         
-                        <div class="compact-grid">
+                        <div class="compact-grid" style="margin-bottom: 0;">
                             <div class="compact-card" style="border-top-color: #2196F3;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #2196F3;">
-                                        <i class="fas fa-power-off"></i>
+                                        <i class="fas fa-play-circle"></i>
                                     </div>
-                                    <div class="compact-title">3.5. Encendido y Calibración</div>
+                                    <div class="compact-title">Procedimiento de encendido</div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">1</div>
                                     <div class="step-content">
-                                        <div class="step-title">Conectar cable masa</div>
-                                        <div>A toma hembra normalizada (girar ¼ vuelta)</div>
+                                        <div class="step-title">Conectar cable de masa</div>
+                                        <div>A la toma hembra normalizada del equipo (girar ¼ vuelta)</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">2</div>
                                     <div class="step-content">
                                         <div class="step-title">Conectar antorcha</div>
-                                        <div>Antorcha manual con cable coaxial (euroconector)</div>
+                                        <div>Antorcha manual con cable coaxial al equipo (euroconector, roscar)</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">3</div>
                                     <div class="step-content">
                                         <div class="step-title">Conectar regulador aire</div>
-                                        <div>A botella de aire comprimido</div>
+                                        <div>Regulador a la botella de aire comprimido</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">4</div>
                                     <div class="step-content">
@@ -2391,147 +2588,389 @@
                                         <div>Toma Cetac de <span class="highlight-number">400 V</span></div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">5</div>
                                     <div class="step-content">
                                         <div class="step-title">Encender equipo</div>
-                                        <div></div>
+                                        <div>Interruptor general de encendido</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">6</div>
                                     <div class="step-content">
                                         <div class="step-title">Abrir botella aire</div>
-                                        <div>Comprobar etapa baja regulador cerrada</div>
+                                        <div>Comprobar que etapa baja del regulador está cerrada (mariposa suelta)</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">7</div>
                                     <div class="step-content">
                                         <div class="step-title">Regular presión aire</div>
-                                        <div><span class="highlight-number">6-8 bar</span> en salida etapa baja</div>
+                                        <div><span class="highlight-number">6-8 bar</span> en salida etapa baja del regulador</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">8</div>
                                     <div class="step-content">
                                         <div class="step-title">Regular potencia corte</div>
-                                        <div>Según tabla de rangos de intensidades</div>
+                                        <div>Según tabla de rangos de intensidades (ver tabla adjunta)</div>
                                     </div>
                                 </div>
+                                
                                 <div class="procedure-step">
                                     <div class="step-number">9</div>
                                     <div class="step-content">
                                         <div class="step-title">Conectar pinza masa</div>
-                                        <div>A la pieza a cortar</div>
+                                        <div>A la pieza a cortar (contacto directo con metal)</div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="compact-card" style="border-top-color: #9C27B0;">
+
+                            <div class="compact-card" style="border-top-color: #D32F2F;">
                                 <div class="compact-header">
-                                    <div class="compact-icon" style="background: #9C27B0;">
-                                        <i class="fas fa-cut"></i>
+                                    <div class="compact-icon" style="background: #D32F2F;">
+                                        <i class="fas fa-stop-circle"></i>
                                     </div>
-                                    <div class="compact-title">3.6. Proceso de Corte</div>
+                                    <div class="compact-title">Procedimiento de apagado</div>
+                                </div>
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Cerrar botella aire</div>
+                                        <div>Proceder al cierre de la botella de aire comprimido</div>
+                                    </div>
+                                </div>
+
+                                <div class="procedure-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Purgar aire residual</div>
+                                        <div>Pulsar la antorcha de corte hasta que los manómetros marquen <span class="highlight-number">0 bar</span></div>
+                                    </div>
+                                </div>  
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Cerrar regulador baja</div>
+                                        <div>Cerrar el regulador de baja incorporado en el equipo (rueda del regulador suelta)</div>
+                                    </div>
+                                </div>                                
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Apagar equipo</div>
+                                        <div>Apagar el equipo en su interruptor general</div>
+                                    </div>
+                                </div>
+
+                                <div class="procedure-step">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Desconectar tensión</div>
+                                        <div>Desconectar el equipo de la tensión eléctrica (base Cetac de <span class="highlight-number">400 V</span>)</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Desconectar cable coaxial</div>
+                                        <div>Desconectar el cable coaxial con euroconector</div>
+                                    </div>
+                                </div>   
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">7</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Desconectar cable masa</div>
+                                        <div>Desconectar el cable de masa de la pieza</div>
+                                    </div>
+                                </div>                                
+                                
+                                <div class="procedure-step">
+                                    <div class="step-number">8</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Desconectar lira aire</div>
+                                        <div>Desconexión de la lira de alimentación de aire comprimido (enchufe rápido parte trasera)</div>
+                                    </div>
+                                </div>                                                                                        
+                                                                                                
+                                <div class="procedure-step">
+                                    <div class="step-number">9</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Guardar equipo</div>
+                                        <div>Guardado del equipo en su lugar correspondiente</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="danger-box" style="margin-top: 0; margin-bottom: 2rem;">
+                                <div class="box-icon" style="background: #D32F2F;">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div>
+                                    <strong>¡ATENCIÓN!</strong> Al purgar el aire residual, prestar atención a la dirección del chorro de gas plasmágeno en el momento de la apertura de la antorcha para evitar accidentes.
+                                </div>
+                            </div>                                                        
+                        </div>
+
+                        <!-- 3.5.1. TABLA DE REGULACIÓN - INTENSIDADES DE CORTE -->
+                        <div class="compact-card" style="border-top-color: #9C27B0; margin-bottom: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #9C27B0;">
+                                    <i class="fas fa-table"></i>
+                                </div>
+                                <div class="compact-title">3.5.1. Tabla de Regulación - Intensidades de Corte</div>
+                            </div>
+                            
+                            <div class="visual-table" style="justify-self: center;">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2" style="background: linear-gradient(135deg, #607D8B, #90A4AE);">ACERO</th>
+                                            <th colspan="2" style="background: linear-gradient(135deg, #9C27B0, #BA68C8);">ACERO INOXIDABLE</th>
+                                            <th colspan="2" style="background: linear-gradient(135deg, #FF9800, #FFB74D);">ALUMINIO</th>                                            
+                                        </tr>
+                                        <tr>
+                                            <th>Espesor (mm)</th>
+                                            <th>Corriente (A)</th>
+                                            <th>Espesor (mm)</th>
+                                            <th>Corriente (A)</th>
+                                            <th>Espesor (mm)</th>
+                                            <th>Corriente (A)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1,0</td>
+                                            <td><span class="highlight-number">10</span></td>
+                                            <td>0,6</td>
+                                            <td><span class="highlight-number">10</span></td>
+                                            <td>0,6</td>
+                                            <td><span class="highlight-number">10</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1,5</td>
+                                            <td><span class="highlight-number">12</span></td>
+                                            <td>1,5</td>
+                                            <td><span class="highlight-number">12</span></td>
+                                            <td>1,0</td>
+                                            <td><span class="highlight-number">12</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2,5</td>
+                                            <td><span class="highlight-number">15</span></td>
+                                            <td>2,5</td>
+                                            <td><span class="highlight-number">15</span></td>
+                                            <td>1,5</td>
+                                            <td><span class="highlight-number">15</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4,0</td>
+                                            <td><span class="highlight-number">20</span></td>
+                                            <td>4,0</td>
+                                            <td><span class="highlight-number">20</span></td>
+                                            <td>2,0</td>
+                                            <td><span class="highlight-number">20</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6,0</td>
+                                            <td><span class="highlight-number">25</span></td>
+                                            <td>6,0</td>
+                                            <td><span class="highlight-number">25</span></td>
+                                            <td>2,5</td>
+                                            <td><span class="highlight-number">25</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>8,0</td>
+                                            <td><span class="highlight-number">30</span></td>
+                                            <td>8,0</td>
+                                            <td><span class="highlight-number">30</span></td>
+                                            <td>5,0</td>
+                                            <td><span class="highlight-number">30</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10,0</td>
+                                            <td><span class="highlight-number">35</span></td>
+                                            <td>10,0</td>
+                                            <td><span class="highlight-number">35</span></td>
+                                            <td>7,0</td>
+                                            <td><span class="highlight-number">35</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>12,0</td>
+                                            <td><span class="highlight-number">40</span></td>
+                                            <td>11,0</td>
+                                            <td><span class="highlight-number">40</span></td>
+                                            <td>10,0</td>
+                                            <td><span class="highlight-number">40</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>16,0</td>
+                                            <td><span class="highlight-number">50</span></td>
+                                            <td>16,0</td>
+                                            <td><span class="highlight-number">50</span></td>
+                                            <td>14,0</td>
+                                            <td><span class="highlight-number">50</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>21,0</td>
+                                            <td><span class="highlight-number">60</span></td>
+                                            <td>20,0</td>
+                                            <td><span class="highlight-number">60</span></td>
+                                            <td>18,0</td>
+                                            <td><span class="highlight-number">60</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>25,0</td>
+                                            <td><span class="highlight-number">70</span></td>
+                                            <td>24,0</td>
+                                            <td><span class="highlight-number">70</span></td>
+                                            <td>22,0</td>
+                                            <td><span class="highlight-number">70</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>29,0</td>
+                                            <td><span class="highlight-number">80</span></td>
+                                            <td>27,0</td>
+                                            <td><span class="highlight-number">80</span></td>
+                                            <td>24,0</td>
+                                            <td><span class="highlight-number">80</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>32,0</td>
+                                            <td><span class="highlight-number">90</span></td>
+                                            <td>31,0</td>
+                                            <td><span class="highlight-number">90</span></td>
+                                            <td>27,0</td>
+                                            <td><span class="highlight-number">90</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>35,0</td>
+                                            <td><span class="highlight-number">100</span></td>
+                                            <td>33,0</td>
+                                            <td><span class="highlight-number">100</span></td>
+                                            <td>30,0</td>
+                                            <td><span class="highlight-number">100</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div style="margin-top: 1rem; font-size: 0.85rem; color: #666; padding: 0.8rem; background: #f0f7ff; border-radius: 6px; border-left: 4px solid #2196F3;">
+                                <i class="fas fa-info-circle" style="color: #2196F3;"></i> Las luces LED de detección de presión se iluminarán en el color correspondiente a su rango de presión, que corresponderá con un tono verde cuando el equipo esté en uso.
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <strong>Precaución:</strong> Al abrir la botella de aire comprimido, comprobar que la etapa de baja del regulador se encuentra cerrada (mariposa suelta) para evitar golpes de ariete por sobrepresión.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3.6. PROCESO DE CORTE -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-rescue-light);">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <h3>3.6. PROCESO DE CORTE</h3>
+                        </div>
+                        
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: #2196F3;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #2196F3;">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <div class="compact-title">Inicio en borde de pieza</div>
                                 </div>
                                 <div class="procedure-step">
                                     <div class="step-number">1</div>
                                     <div class="step-content">
                                         <div class="step-title">Aproximar antorcha</div>
-                                        <div>Hacer contacto con distanciador</div>
+                                        <div>Hacer contacto con el distanciador sobre la pieza</div>
                                     </div>
                                 </div>
                                 <div class="procedure-step">
                                     <div class="step-number">2</div>
                                     <div class="step-content">
-                                        <div class="step-title">Posición inicio borde</div>
-                                        <div>Antorcha a <span class="highlight-number">90°</span> respecto a pieza</div>
+                                        <div class="step-title">Posición antorcha</div>
+                                        <div>Colocar antorcha a <span class="highlight-number">90°</span> respecto a la pieza</div>
                                     </div>
                                 </div>
                                 <div class="procedure-step">
                                     <div class="step-number">3</div>
                                     <div class="step-content">
-                                        <div class="step-title">Pulsar gatillo</div>
-                                        <div>Para iniciar corte. Para parar, pulsar de nuevo</div>
+                                        <div class="step-title">Iniciar corte</div>
+                                        <div>Pulsar el gatillo para iniciar el proceso de corte</div>
                                     </div>
                                 </div>
-                                <div class="procedure-step">
-                                    <div class="step-number">4</div>
-                                    <div class="step-content">
-                                        <div class="step-title">Posición inicio interior</div>
-                                        <div>Antorcha <span class="highlight-number">30°-45°</span>, luego girar a <span class="highlight-number">90°</span></div>
-                                    </div>
-                                </div>
+                                <div style="display: flex;">
+                                    <img src="image corte/Borde.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
                             </div>
                             
-                            <div class="compact-card" style="border-top-color: #D32F2F;">
+                            <div class="compact-card" style="border-top-color: #9C27B0;">
                                 <div class="compact-header">
-                                    <div class="compact-icon" style="background: #D32F2F;">
-                                        <i class="fas fa-power-off"></i>
+                                    <div class="compact-icon" style="background: #9C27B0;">
+                                        <i class="fas fa-dot-circle"></i>
                                     </div>
-                                    <div class="compact-title">3.7. Apagado y Restablecimiento</div>
+                                    <div class="compact-title">Inicio en interior de pieza</div>
                                 </div>
                                 <div class="procedure-step">
                                     <div class="step-number">1</div>
                                     <div class="step-content">
-                                        <div class="step-title">Cerrar botella aire</div>
-                                        <div>Botella de aire comprimido</div>
-                                    </div>
-                                </div>
-                                <div class="procedure-step">
-                                    <div class="step-number">2</div>
-                                    <div class="step-content">
-                                        <div class="step-title">Apagar equipo</div>
-                                        <div>Interruptor general</div>
+                                        <div class="step-title">Inclinación inicial</div>
+                                        <div>Inclinar antorcha entre <span class="highlight-number">30° y 45°</span></div>
                                     </div>
                                 </div>
                                 <div class="procedure-step">
                                     <div class="step-number">3</div>
                                     <div class="step-content">
-                                        <div class="step-title">Desconectar lira aire</div>
-                                        <div>Enchufe rápido parte trasera equipo</div>
+                                        <div class="step-title">Girar a posición vertical</div>
+                                        <div>Una vez iniciado el corte, girar antorcha hasta <span class="highlight-number">90°</span></div>
                                     </div>
                                 </div>
-                                <div class="procedure-step">
-                                    <div class="step-number">4</div>
-                                    <div class="step-content">
-                                        <div class="step-title">Purgar aire residual</div>
-                                        <div>Pulsar antorcha hasta manómetros marquen 0 bar</div>
+                                <div class="tip-box" style="margin-top: 1rem;">
+                                    <div class="box-icon" style="background: #4CAF50;">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Técnica de seguridad:</strong> Con esta técnica evitamos retrocesos de baño de fusión que podrían dañar la antorcha y al operador.
                                     </div>
                                 </div>
-                                <div class="procedure-step">
-                                    <div class="step-number">5</div>
-                                    <div class="step-content">
-                                        <div class="step-title">Desconectar tensión</div>
-                                        <div>Base Cetac <span class="highlight-number">400 V</span></div>
-                                    </div>
-                                </div>
-                                <div class="procedure-step">
-                                    <div class="step-number">6</div>
-                                    <div class="step-content">
-                                        <div class="step-title">Guardar equipo</div>
-                                        <div>En su lugar correspondiente</div>
-                                    </div>
-                                </div>
+                                <div style="display: flex;">
+                                    <img src="image corte/Interior.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
                             </div>
                         </div>
                         
-                        <!-- Tabla de regulación -->
-                        <div class="warning-box" style="margin-top: 1.5rem;">
-                            <div class="box-icon" style="background: #FF9800;">
-                                <i class="fas fa-table"></i>
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #607D8B;">
+                                <i class="fas fa-hand-point-up"></i>
                             </div>
                             <div>
-                                <strong>Tabla de regulación - Intensidades de corte:</strong> Consultar tabla específica para ajustar corriente según espesor y tipo de material (acero, acero inoxidable).
+                                <strong>Control durante el corte:</strong> En caso de parar el corte, el paso de aire comprimido seguirá abierto. Para cortarlo completamente, hay que pulsar de nuevo el gatillo.
                             </div>
                         </div>
                     </div>
+                    
                 </div>
-            </div>
+            </section>
             
-            <!-- TEMA 4: EQUIPO DE SOLDADURA AL ARCO VOLTAICO -->
-            <div class="horizontal-card" id="soldadura">
+            <!-- TEMA 4: EQUIPO DE SOLDADURA AL ARCO VOLTAICO - VERSIÓN COMPLETA -->
+            <section class="horizontal-card" id="soldadura">
                 <div class="floating-info" style="top: 20px; right: 30px;">
                     <i class="fas fa-bolt"></i>
                 </div>
@@ -2548,6 +2987,7 @@
                                 <span class="category-chip" style="background: #E3F2FD; color: #1976D2;">Temperatura: <span class="highlight-number">4.000°C</span></span>
                                 <span class="category-chip" style="background: #FFF3E0; color: #FF8F00;">Electrodo E-6013</span>
                                 <span class="category-chip" style="background: #FFEBEE; color: #D32F2F;">Riesgos múltiples</span>
+                                <span class="category-chip" style="background: #E8F5E9; color: #388E3C;">Polaridad directa/inversa</span>
                             </div>
                         </div>
                     </div>
@@ -2555,7 +2995,7 @@
                 </div>
                 
                 <div class="card-content">
-                    <!-- Introducción -->
+                    <!-- 4.1. INTRODUCCIÓN -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-rescue);">
@@ -2563,88 +3003,93 @@
                             </div>
                             <h3>4.1. INTRODUCCIÓN</h3>
                         </div>
-                        <p>Proceso termoeléctrico para unir piezas metálicas mediante fusión del metal, generando un arco eléctrico entre las piezas a unir y un electrodo.</p>
+                        <p>La soldadura eléctrica es un proceso termoeléctrico para unir piezas metálicas mediante la fusión del metal. Esto se consigue generando un arco eléctrico entre las piezas a unir y una varilla conectada a la corriente llamada electrodo.</p>
                         
                         <div class="info-box">
                             <div class="box-icon" style="background: var(--color-rescue);">
                                 <i class="fas fa-temperature-high"></i>
                             </div>
                             <div>
-                                <strong>Temperatura de arco:</strong> Aproximadamente <span class="highlight-number">4.000 °C</span> en la zona de unión. Funde el metal y crea enlaces metálicos sólidos al enfriarse.
+                                <strong>Arco eléctrico:</strong> Flujo continuo de electrones que produce luz y calor. En la zona de unión alcanza una temperatura aproximada de <span class="highlight-number">4.000°C</span>, lo que funde el metal y crea enlaces metálicos sólidos al enfriarse.
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #607D8B;">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div>
+                                <strong>Proceso de soldadura:</strong> El calor funde una zona localizada del material base y la punta del electrodo, formando pequeños glóbulos metálicos cubiertos de escoria líquida, los cuales son transferidos al metal base por fuerzas electromagnéticas.
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Equipo de protección -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-security);">
-                                <i class="fas fa-vest"></i>
+                    <div class="columnas">
+                        <!-- 4.2. COMPONENTES -->
+                        <div class="section" style="flex: 1 1 calc(49%);">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: var(--color-rescue-light);">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h3>4.2. COMPONENTES</h3>
                             </div>
-                            <h3>4.3. EQUIPO DE PROTECCIÓN</h3>
+                            
+                            
+                            <div style="display: flex;">
+                                <img src="image corte/Soldadura.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div> 
                         </div>
                         
+                        <!-- 4.3. EQUIPO DE PROTECCIÓN -->
+                        <div class="section" style="flex: 1 1 calc(49%);">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: var(--color-security);">
+                                    <i class="fas fa-vest"></i>
+                                </div>
+                                <h3>4.3. EQUIPO DE PROTECCIÓN</h3>
+                            </div>
+
+                            <div style="display: flex;">
+                                <img src="image corte/EPISold.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div> 
+                        </div>
+                    </div>
+
                         <div class="danger-box">
                             <div class="box-icon" style="background: var(--color-fire);">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
                             <div>
-                                <strong>Riesgos principales:</strong> Choque eléctrico, sobreexposición a humos/gases, radiación de arco eléctrico, incendio, explosión, quemaduras. Todas las personas cercanas deben usar protección adecuada.
+                                <strong>Riesgos principales:</strong> Choque eléctrico, sobreexposición a humos/gases, radiación de arco eléctrico, incendio, explosión, quemaduras. <strong>Todas las personas cercanas</strong> deben usar protección adecuada.
                             </div>
-                        </div>
+                        </div>  
                         
-                        <div class="compact-grid">
-                            <div class="compact-card" style="border-top-color: #D32F2F;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #D32F2F;">
-                                        <i class="fas fa-user-shield"></i>
-                                    </div>
-                                    <div class="compact-title">Protección obligatoria</div>
-                                </div>
-                                <ul class="compact-list">
-                                    <li>Careta/casco de soldar</li>
-                                    <li>Guantes de soldador</li>
-                                    <li>Mandil de protección</li>
-                                    <li>Vidrios para careta/gafas</li>
-                                    <li>Calzado de seguridad</li>
-                                    <li>Casco ligero de seguridad</li>
-                                </ul>
+                        <div class="warning-box" style="margin-top: 0; margin-bottom: 3rem;">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-circle"></i>
                             </div>
-                            
-                            <div class="compact-card" style="border-top-color: #2196F3;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #2196F3;">
-                                        <i class="fas fa-users"></i>
-                                    </div>
-                                    <div class="compact-title">Personas protegidas</div>
-                                </div>
-                                <ul class="compact-list">
-                                    <li>Interviniente principal</li>
-                                    <li>Asistente</li>
-                                    <li>Cualquier persona cercana</li>
-                                    <li>Protección contra radiación arco</li>
-                                    <li>Protección contra proyecciones</li>
-                                </ul>
+                            <div>
+                                <strong>Zona de trabajo:</strong> Delimitar área de soldadura, retirar materiales inflamables, disponer de extintor cercano, señalizar adecuadamente.
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Montaje y equipo -->
+                        </div>                        
+
+                    <!-- 4.4. MONTAJE -->
                     <div class="section">
                         <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-rescue-light);">
-                                <i class="fas fa-cogs"></i>
+                            <div class="section-icon" style="background: var(--color-rescue);">
+                                <i class="fas fa-tools"></i>
                             </div>
-                            <h3>4.4. MONTAJE Y 4.5. EQUIPO</h3>
+                            <h3>4.4. MONTAJE</h3>
                         </div>
                         
                         <div class="compact-card" style="border-top-color: #2196F3; margin-bottom: 1.5rem;">
                             <div class="compact-header">
                                 <div class="compact-icon" style="background: #2196F3;">
-                                    <i class="fas fa-tools"></i>
+                                    <i class="fas fa-cogs"></i>
                                 </div>
-                                <div class="compact-title">Montaje del equipo</div>
+                                <div class="compact-title">Procedimiento de montaje</div>
                             </div>
+                            
                             <div class="procedure-step">
                                 <div class="step-number">1</div>
                                 <div class="step-content">
@@ -2652,64 +3097,91 @@
                                     <div>Posición horizontal, alejado de zonas húmedas/pulverulentas</div>
                                 </div>
                             </div>
+                            
                             <div class="procedure-step">
                                 <div class="step-number">2</div>
                                 <div class="step-content">
                                     <div class="step-title">Conectar pinza masa</div>
-                                    <div>Polo negativo equipo → pieza a soldar (polaridad inversa)</div>
+                                    <div>Conector pinza masa al polo negativo (-) equipo → pieza a soldar (polaridad inversa inicial)</div>
                                 </div>
                             </div>
+                            
                             <div class="procedure-step">
-                                    <div class="step-number">3</div>
+                                <div class="step-number">3</div>
                                 <div class="step-content">
                                     <div class="step-title">Encender equipo</div>
-                                    <div></div>
+                                    <div>Interruptor general de encendido</div>
                                 </div>
                             </div>
+                            
                             <div class="procedure-step">
                                 <div class="step-number">4</div>
                                 <div class="step-content">
-                                    <div class="step-title">Conectar pinza electrodo</div>
-                                    <div>Polo positivo equipo</div>
+                                    <div class="step-title">Conectar porta-electrodo</div>
+                                    <div>Conector porta-electrodo al polo positivo (+) equipo</div>
                                 </div>
                             </div>
+                            
                             <div class="procedure-step">
                                 <div class="step-number">5</div>
                                 <div class="step-content">
                                     <div class="step-title">Conectar a corriente</div>
-                                    <div></div>
+                                    <div>Toma de corriente eléctrica adecuada</div>
                                 </div>
                             </div>
+                            
                             <div class="procedure-step">
                                 <div class="step-number">6</div>
                                 <div class="step-content">
                                     <div class="step-title">Regular intensidad</div>
-                                    <div>Según trabajo y material</div>
+                                    <div>Según trabajo, material y diámetro electrodo</div>
                                 </div>
                             </div>
+                            
                             <div class="procedure-step">
                                 <div class="step-number">7</div>
                                 <div class="step-content">
-                                    <div class="step-title">Cebar electrodo</div>
-                                    <div>Y comenzar proceso soldadura</div>
+                                    <div class="step-title">Preparación pieza</div>
+                                    <div>Limpiar superficie (sin grasa, pintura, óxido)</div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- 4.5. EQUIPO DE SOLDADURA -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-rescue-light);">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3>4.5. EQUIPO DE SOLDADURA</h3>
+                        </div>
                         
-                        <!-- Polaridad -->
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <strong>Proceso básico:</strong> El circuito se cierra momentáneamente tocando con la punta del electrodo la pieza de trabajo y retirándolo inmediatamente después a una altura preestablecida, formándose de esta manera un arco eléctrico.
+                            </div>
+                        </div>
+                        
+                        <!-- 4.5.1. CORRIENTE Y POLARIDAD -->
                         <div class="compact-grid">
                             <div class="compact-card" style="border-top-color: #4CAF50;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #4CAF50;">
                                         <i class="fas fa-exchange-alt"></i>
                                     </div>
-                                    <div class="compact-title">Polaridad Directa/Normal</div>
+                                    <div class="compact-title">4.5.1. Polaridad Directa/Normal</div>
                                 </div>
                                 <ul class="compact-list">
-                                    <li>Porta-electrodo: polo negativo (-)</li>
-                                    <li>Cable masa: polo positivo (+)</li>
-                                    <li><strong>Aplica más energía a pieza</strong></li>
-                                    <li>Para cordones penetración en materiales espesos</li>
+                                    <li><strong>Porta-electrodo:</strong> polo negativo (-)</li>
+                                    <li><strong>Cable masa:</strong> polo positivo (+)</li>
+                                    <li><strong class="highlight-number">Aplica más energía a la pieza</strong></li>
+                                    <li>Para cordones de penetración en materiales espesos</li>
+                                    <li>Mayor velocidad de deposición</li>
+                                    <li>Recomendado para aceros al carbono</li>
                                 </ul>
                             </div>
                             
@@ -2718,36 +3190,76 @@
                                     <div class="compact-icon" style="background: #FF9800;">
                                         <i class="fas fa-exchange-alt"></i>
                                     </div>
-                                    <div class="compact-title">Polaridad Inversa</div>
+                                    <div class="compact-title">4.5.1. Polaridad Inversa</div>
                                 </div>
                                 <ul class="compact-list">
-                                    <li>Porta-electrodo: polo positivo (+)</li>
-                                    <li>Cable masa: polo negativo (-)</li>
-                                    <li><strong>Concentra energía en electrodo</strong></li>
-                                    <li>Baño soldadura ancho y poco profundo</li>
+                                    <li><strong>Porta-electrodo:</strong> polo positivo (+)</li>
+                                    <li><strong>Cable masa:</strong> polo negativo (-)</li>
+                                    <li><strong class="highlight-number">Concentra energía en el electrodo</strong></li>
+                                    <li>Baño de soldadura ancho y poco profundo</li>
                                     <li>Para espesores reducidos (chapas finas)</li>
+                                    <li>Evita quemaduras o agujeros en material delgado</li>
+                                    <li>Recomendado para acero inoxidable y aluminio</li>
                                 </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- 4.5.2. LOS ELECTRODOS METÁLICOS -->
+                        <div class="compact-card" style="border-top-color: #607D8B; margin-top: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #607D8B;">
+                                    <i class="fas fa-ruler-vertical"></i>
+                                </div>
+                                <div class="compact-title">4.5.2. Los Electrodos Metálicos</div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1rem 0;">
+                                <div>
+                                    <div style="font-weight: 700; color: #333; margin-bottom: 0.5rem;">Núcleo metálico</div>
+                                    <ul style="font-size: 0.9rem; padding-left: 1.2rem;">
+                                        <li>Varilla metálica con composición química definida</li>
+                                        <li>Elementos: hierro, carbono, manganeso, silicio, etc.</li>
+                                        <li>Proporciona propiedades a la junta soldada</li>
+                                        <li>Material de aporte transferido en forma de gotas</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <div style="font-weight: 700; color: #333; margin-bottom: 0.5rem;">Revestimiento químico</div>
+                                    <ul style="font-size: 0.9rem; padding-left: 1.2rem;">
+                                        <li><strong>Función eléctrica:</strong> Facilita encendido y mantiene arco</li>
+                                        <li><strong>Función metalúrgica:</strong> Protege de gases, forma escoria</li>
+                                        <li><strong>Función mecánica:</strong> Dirige fuerza del arco y gotas</li>
+                                        <li>Composición definida para cada tipo de electrodo</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         
                         <!-- Electrodo E-6013 -->
                         <div class="info-box" style="margin-top: 1.5rem;">
-                            <div class="box-icon" style="background: #2196F3;">
+                            <div class="box-icon" style="background: #D32F2F;">
                                 <i class="fas fa-bolt"></i>
                             </div>
                             <div>
                                 <strong>Electrodo E-6013:</strong> Es el disponible en el Servicio de Bomberos del Ayuntamiento de Madrid. Numeración según AWS (American Welding Society): E-6013, E-7010, E-8010, etc.
+                                <br><br>
+                                <strong>Designación AWS E-6013:</strong>
+                                <br>• <strong>E</strong> = Electrodo
+                                <br>• <strong>60</strong> = Resistencia mínima a la tracción (60.000 psi)
+                                <br>• <strong>1</strong> = Posiciones de soldadura (todas)
+                                <br>• <strong>3</strong> = Tipo de revestimiento y corriente recomendada
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Técnicas y posiciones -->
+                    <!-- 4.6. POSICIONES DE LA SOLDADURA -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-tools);">
                                 <i class="fas fa-ruler-combined"></i>
                             </div>
-                            <h3>4.6. POSICIONES DE SOLDADURA</h3>
+                            <h3>4.6. POSICIONES DE LA SOLDADURA</h3>
                         </div>
                         
                         <div class="compact-grid">
@@ -2760,8 +3272,10 @@
                                 </div>
                                 <ul class="compact-list">
                                     <li>Pieza en superficie horizontal</li>
-                                    <li>Material adicional del electrodo</li>
-                                    <li>Deposita material de aporte en ese sentido</li>
+                                    <li>Material adicional del electrodo se deposita por gravedad</li>
+                                    <li>Electrodo dirigido a la pieza</li>
+                                    <li>Más fácil, menor habilidad requerida</li>
+                                    <li>Cordones más uniformes y de mejor calidad</li>
                                 </ul>
                             </div>
                             
@@ -2773,9 +3287,11 @@
                                     <div class="compact-title">Posición Vertical (3G)</div>
                                 </div>
                                 <ul class="compact-list">
-                                    <li>Zona a soldar en posición vertical</li>
+                                    <li>Arista o eje zona a soldar en posición vertical</li>
                                     <li>Electrodo aproximadamente horizontal</li>
                                     <li>Perpendicular al eje de soldadura</li>
+                                    <li>Mayor dificultad, requiere más habilidad</li>
+                                    <li>Control preciso de velocidad y ángulo</li>
                                 </ul>
                             </div>
                             
@@ -2787,8 +3303,11 @@
                                     <div class="compact-title">Posición Horizontal/Cornisa (2G)</div>
                                 </div>
                                 <ul class="compact-list">
-                                    <li>Cara pieza en horizontal sobre plano vertical</li>
-                                    <li>Eje soldadura horizontal</li>
+                                    <li>Cara de la pieza en horizontal sobre plano vertical</li>
+                                    <li>Eje de soldadura horizontal</li>
+                                    <li>Retención del metal fundido contra gravedad</li>
+                                    <li>Dificultad media, técnica especial requerida</li>
+                                    <li>Movimiento controlado para evitar caída de material</li>
                                 </ul>
                             </div>
                             
@@ -2801,21 +3320,94 @@
                                 </div>
                                 <ul class="compact-list">
                                     <li>Pieza colocada a altura superior a cabeza</li>
-                                    <li>Soldadura por parte inferior</li>
+                                    <li>Soldadura por parte inferior de la pieza</li>
                                     <li>Electrodo apuntando verticalmente arriba</li>
                                     <li>Inversa a posición plana</li>
+                                    <li>Máxima dificultad, mucha experiencia requerida</li>
+                                    <li>Mayor riesgo de proyecciones y quemaduras</li>
                                 </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box" style="margin-top: 1rem;">
+                            <div class="box-icon" style="background: #607D8B;">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <strong>Técnica general:</strong> La pieza a soldar debe estar limpia. Regular intensidad según diámetro del electrodo, grosor de la pieza y posición. Mantener arco estable con longitud de ~2/3 del diámetro del electrodo.
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Factores importantes -->
+                    <!-- 4.7. BAÑO DE FUSIÓN Y MOVIMIENTO DEL ELECTRODO -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-fire);">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h3>4.7. BAÑO DE FUSIÓN Y MOVIMIENTO DEL ELECTRODO</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <strong>Baño de fusión:</strong> Acción calorífica producida por el arco voltaico que fusiona el material base con el material de aportación del electrodo. Provoca la soldadura de las piezas una vez solidificado.
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
+                            <div>
+                                <div style="font-weight: 700; color: #333; margin-bottom: 0.8rem; padding-bottom: 0.3rem; border-bottom: 2px solid #f0f0f0;">
+                                    <i class="fas fa-play-circle" style="color: #2196F3; margin-right: 0.5rem;"></i>
+                                    Principio del proceso
+                                </div>
+                                <div class="procedure-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Cebado del arco</div>
+                                        <div>Contacto breve electrodo-pieza, luego retirar a distancia estable</div>
+                                    </div>
+                                </div>
+                                <div class="procedure-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Establecimiento del arco</div>
+                                        <div>Longitud de arco, ángulo de avance, ángulo de trabajo, velocidad</div>
+                                    </div>
+                                </div>
+                                <div class="procedure-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <div class="step-title">Proceso de soldado</div>
+                                        <div>Velocidad homogénea, mantener distancia electrodo-pieza constante</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div style="font-weight: 700; color: #333; margin-bottom: 0.8rem; padding-bottom: 0.3rem; border-bottom: 2px solid #f0f0f0;">
+                                    <i class="fas fa-ruler-combined" style="color: #4CAF50; margin-right: 0.5rem;"></i>
+                                    Ángulos de trabajo
+                                </div>
+                                <div class="tip-box" style="margin-bottom: 0.8rem; padding: 0.8rem;">
+                                    <strong>Ángulo vertical:</strong> 90° desde centro a laterales para cordón simétrico. Variación causa cordón asimétrico.
+                                </div>
+                                <div class="tip-box" style="padding: 0.8rem;">
+                                    <strong>Ángulo horizontal (avance):</strong> 70°-80° máximo. Mayor ángulo: escoria adelantada, cordón irregular. Menor ángulo: cordón estrecho/delgado.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 4.8. OTROS FACTORES -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-fire);">
                                 <i class="fas fa-sliders-h"></i>
                             </div>
-                            <h3>4.8. FACTORES IMPORTANTES</h3>
+                            <h3>4.8. OTROS FACTORES</h3>
                         </div>
                         
                         <div class="compact-grid">
@@ -2824,13 +3416,22 @@
                                     <div class="compact-icon" style="background: #2196F3;">
                                         <i class="fas fa-bolt"></i>
                                     </div>
-                                    <div class="compact-title">Amperaje</div>
+                                    <div class="compact-title">4.8.1. Amperaje</div>
                                 </div>
-                                <ul class="compact-list">
-                                    <li><strong>Baja intensidad:</strong> Material no suelda, bolas que no agarran</li>
-                                    <li><strong>Elevado:</strong> Muchas proyecciones, cordón demasiado plano</li>
-                                    <li><strong>Correcto:</strong> Cordón compacto y homogéneo</li>
-                                </ul>
+                                <div style="padding: 0.5rem 0;">
+                                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem; padding: 0.5rem; background: #FFEBEE; border-radius: 6px;">
+                                        <div style="width: 12px; height: 12px; background: #D32F2F; border-radius: 50%; margin-right: 0.5rem;"></div>
+                                        <div><strong>Baja intensidad:</strong> Material no suelda, bolas que no agarran, arco poco intenso</div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem; padding: 0.5rem; background: #FFF3E0; border-radius: 6px;">
+                                        <div style="width: 12px; height: 12px; background: #FF9800; border-radius: 50%; margin-right: 0.5rem;"></div>
+                                        <div><strong>Elevada intensidad:</strong> Muchas proyecciones, haz intenso, cordón demasiado plano</div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; padding: 0.5rem; background: #E8F5E9; border-radius: 6px;">
+                                        <div style="width: 12px; height: 12px; background: #4CAF50; border-radius: 50%; margin-right: 0.5rem;"></div>
+                                        <div><strong>Correcta:</strong> Cordón compacto y homogéneo, altura y anchura proporcionadas</div>
+                                    </div>
+                                </div>
                             </div>
                             
                             <div class="compact-card" style="border-top-color: #4CAF50;">
@@ -2838,18 +3439,36 @@
                                     <div class="compact-icon" style="background: #4CAF50;">
                                         <i class="fas fa-ruler"></i>
                                     </div>
-                                    <div class="compact-title">Longitud de Arco</div>
+                                    <div class="compact-title">4.8.2. Longitud de Arco</div>
                                 </div>
-                                <ul class="compact-list">
-                                    <li><strong>Larga:</strong> Haz intenso, proyecciones, cordón plano/irregular</li>
-                                    <li><strong>Corta:</strong> Escoria adelanta, ahoga baño, cordón irregular</li>
-                                    <li><strong>Adecuada:</strong> ~<span class="highlight-number">2/3 diámetro electrodo</span></li>
-                                </ul>
+                                <div style="padding: 0.5rem 0;">
+                                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem; padding: 0.5rem; background: #FFEBEE; border-radius: 6px;">
+                                        <div style="width: 12px; height: 12px; background: #D32F2F; border-radius: 50%; margin-right: 0.5rem;"></div>
+                                        <div><strong>Larga:</strong> Haz intenso, proyecciones, cordón plano/irregular</div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem; padding: 0.5rem; background: #FFF3E0; border-radius: 6px;">
+                                        <div style="width: 12px; height: 12px; background: #FF9800; border-radius: 50%; margin-right: 0.5rem;"></div>
+                                        <div><strong>Corta:</strong> Escoria adelanta, ahoga baño, cordón irregular</div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; padding: 0.5rem; background: #E8F5E9; border-radius: 6px;">
+                                        <div style="width: 12px; height: 12px; background: #4CAF50; border-radius: 50%; margin-right: 0.5rem;"></div>
+                                        <div><strong>Adecuada:</strong> ~<span class="highlight-number">2/3 diámetro electrodo</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box" style="margin-top: 1rem;">
+                            <div class="box-icon" style="background: #607D8B;">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div>
+                                <strong>Relación intensidad-penetración:</strong> Penetración directamente relacionada con intensidad. Insuficiente: pieza no calienta suficiente. Excesiva: cráteres grandes, riesgo quemar/perforar pieza.
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Tipos de uniones -->
+                    <!-- 4.9. TIPOS DE UNIONES -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-metal);">
@@ -2867,8 +3486,9 @@
                                     <div class="compact-title">Unión Tipo T</div>
                                 </div>
                                 <ul class="compact-list">
-                                    <li>Con/sin preparación bordes</li>
                                     <li>Plancha vertical con borde base elaborado</li>
+                                    <li>Con/sin preparación bordes (una o dos caras)</li>
+                                    <li>Ampliamente usada en soldadura por arco</li>
                                 </ul>
                             </div>
                             
@@ -2882,6 +3502,7 @@
                                 <ul class="compact-list">
                                     <li>Puntos desde centro a extremos</li>
                                     <li>Primer punto → siguiente derecha → siguiente izquierda</li>
+                                    <li>Alternar para minimizar distorsión térmica</li>
                                 </ul>
                             </div>
                             
@@ -2895,6 +3516,35 @@
                                 <ul class="compact-list">
                                     <li>Inglete de uniones</li>
                                     <li>Espacio inferior <span class="highlight-number">2-3 mm</span> para penetración cordón</li>
+                                    <li>Preparación de bordes necesaria</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #263238;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #263238;">
+                                        <i class="fas fa-layer-group"></i>
+                                    </div>
+                                    <div class="compact-title">Unión Solapada</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Unir dos partes que se superponen</li>
+                                    <li>No necesitan misma longitud</li>
+                                    <li>Soldadura en borde exterior</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #546E7A;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #546E7A;">
+                                        <i class="fas fa-border-style"></i>
+                                    </div>
+                                    <div class="compact-title">Unión de Bordes</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Unión para que piezas queden a misma distancia</li>
+                                    <li>Realizada únicamente por los bordes</li>
+                                    <li>Para espesores delgados</li>
                                 </ul>
                             </div>
                         </div>
@@ -2904,12 +3554,123 @@
                                 <i class="fas fa-arrow-right"></i>
                             </div>
                             <div>
-                                <strong>Dirección de soldadura:</strong> Desde temperatura más fría (comienzo cordón) a más caliente/reciente (final cordón).
+                                <strong>Dirección de soldadura:</strong> Desde temperatura más fría (comienzo cordón) a más caliente/reciente (final cordón). Esto minimiza defectos y garantiza penetración uniforme.
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Apagado -->
+                    <!-- 4.10. TÉCNICAS DE MOVIMIENTO Y TIPOS DE CORDONES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-metal-light);">
+                                <i class="fas fa-draw-polygon"></i>
+                            </div>
+                            <h3>4.10. TÉCNICAS DE MOVIMIENTO Y TIPOS DE CORDONES</h3>
+                        </div>
+                        
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: #2196F3;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #2196F3;">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                    <div class="compact-title">En línea (1)</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Movimiento recto y uniforme</li>
+                                    <li>Para cordones estrechos</li>
+                                    <li>Poca penetración</li>
+                                    <li>Velocidad constante</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #4CAF50;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4CAF50;">
+                                        <i class="fas fa-circle-notch"></i>
+                                    </div>
+                                    <div class="compact-title">Circular (2)</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Movimiento circular continuo</li>
+                                    <li>Buena penetración</li>
+                                    <li>Cordones anchos</li>
+                                    <li>Para relleno de juntas</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800;">
+                                        <i class="fas fa-wave-square"></i>
+                                    </div>
+                                    <div class="compact-title">Zigzag (3)</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Movimiento lateral alternativo</li>
+                                    <li>Buena distribución de calor</li>
+                                    <li>Para cordones anchos</li>
+                                    <li>Evita sobrecalentamiento local</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #9C27B0;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #9C27B0;">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="compact-title">Creciente (4)</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Movimiento semicircular hacia adelante</li>
+                                    <li>Buena penetración y apariencia</li>
+                                    <li>Control preciso del baño de fusión</li>
+                                    <li>Para posiciones difíciles</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #607D8B;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #607D8B;">
+                                        <i class="fas fa-square"></i>
+                                    </div>
+                                    <div class="compact-title">Rectangular (5)</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Movimiento en forma de rectángulo</li>
+                                    <li>Para relleno de grandes espacios</li>
+                                    <li>Distribución uniforme de material</li>
+                                    <li>Control de temperatura</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #D32F2F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #D32F2F;">
+                                        <i class="fas fa-j"></i>
+                                    </div>
+                                    <div class="compact-title">Jota (6)</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Movimiento en forma de "J"</li>
+                                    <li>Para esquinas y bordes</li>
+                                    <li>Buena penetración en ángulos</li>
+                                    <li>Control preciso en posiciones difíciles</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box" style="margin-top: 1rem;">
+                            <div class="box-icon" style="background: #607D8B;">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <div>
+                                <strong>Selección de técnica:</strong> Depende del tipo de junta, posición de soldadura, espesor del material, tipo de electrodo y experiencia del soldador. Cada técnica produce cordones con características diferentes de penetración, anchura y apariencia.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 4.11. APAGADO DEL GRUPO -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-fire);">
@@ -2921,42 +3682,109 @@
                         <div class="compact-card" style="border-top-color: #D32F2F;">
                             <div class="compact-header">
                                 <div class="compact-icon" style="background: #D32F2F;">
-                                    <i class="fas fa-power-off"></i>
+                                    <i class="fas fa-stop-circle"></i>
                                 </div>
                                 <div class="compact-title">Secuencia de apagado</div>
                             </div>
+                            
                             <div class="procedure-step">
                                 <div class="step-number">1</div>
                                 <div class="step-content">
                                     <div class="step-title">Desconexión equipo</div>
-                                    <div>Interruptor apagado/encendido</div>
+                                    <div>Interruptor de apagado/encendido del equipo</div>
                                 </div>
                             </div>
+                            
                             <div class="procedure-step">
                                 <div class="step-number">2</div>
                                 <div class="step-content">
                                     <div class="step-title">Desconexión corriente</div>
-                                    <div>Toma de corriente eléctrica</div>
+                                    <div>Desconectar de la toma de corriente eléctrica</div>
                                 </div>
                             </div>
+                            
                             <div class="procedure-step">
                                 <div class="step-number">3</div>
                                 <div class="step-content">
-                                    <div class="step-title">Desconectar pinzas</div>
-                                    <div>Pinza electrodo y pinza masa</div>
+                                    <div class="step-title">Desconectar porta-electrodo</div>
+                                    <div>Desconectar pinza del porta-electrodo</div>
                                 </div>
                             </div>
+                            
                             <div class="procedure-step">
                                 <div class="step-number">4</div>
                                 <div class="step-content">
-                                    <div class="step-title">Recoger equipo</div>
-                                    <div>Guardado en su lugar</div>
+                                    <div class="step-title">Desconectar pinza masa</div>
+                                    <div>Desconectar pinza de masa de la pieza</div>
                                 </div>
+                            </div>
+                            
+                            <div class="procedure-step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <div class="step-title">Recoger equipo</div>
+                                    <div>Guardado en su lugar correspondiente</div>
+                                </div>
+                            </div>
+                            
+                            <div class="procedure-step">
+                                <div class="step-number">6</div>
+                                <div class="step-content">
+                                    <div class="step-title">Limpiar zona trabajo</div>
+                                    <div>Retirar escoria, electrodos usados, asegurar seguridad</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box" style="margin-top: 1rem;">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <strong>Post-proceso:</strong> Esperar a que la pieza se enfríe antes de manipular. La escoria se desprende fácilmente una vez fría. Verificar calidad de la soldadura visualmente.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- RESUMEN TÉCNICO -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-metal);">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3>RESUMEN TÉCNICO</h3>
+                        </div>
+                        
+                        <div class="stats-compact">
+                            <div class="stat-compact" style="border-top-color: #2196F3;">
+                                <div class="stat-number" style="color: #2196F3;">4.000°C</div>
+                                <div class="stat-label">Temperatura arco</div>
+                            </div>
+                            <div class="stat-compact" style="border-top-color: #4CAF50;">
+                                <div class="stat-number" style="color: #4CAF50;">E-6013</div>
+                                <div class="stat-label">Electrodo estándar</div>
+                            </div>
+                            <div class="stat-compact" style="border-top-color: #FF9800;">
+                                <div class="stat-number" style="color: #FF9800;">2/3 Ø</div>
+                                <div class="stat-label">Longitud arco ideal</div>
+                            </div>
+                            <div class="stat-compact" style="border-top-color: #9C27B0;">
+                                <div class="stat-number" style="color: #9C27B0;">6 técnicas</div>
+                                <div class="stat-label">Movimiento electrodo</div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box" style="margin-top: 1rem;">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <strong>Recomendación:</strong> La soldadura por arco es versátil pero requiere formación y práctica. Dominar los fundamentos (amperaje, longitud de arco, ángulos, técnicas) es esencial para obtener soldaduras seguras y de calidad en intervenciones de bomberos.
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             
             <!-- TEMA 5: COMPARATIVA ENTRE HERRAMIENTAS -->
             <div class="horizontal-card" id="comparativa">
