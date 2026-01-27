@@ -552,7 +552,38 @@
             position: relative;
             overflow: hidden;
         }
-        
+
+        .compact-card-uniones {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 300px;
+            max-width: 420px;
+            background: white;
+            border-radius: 12px;
+            padding: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;            
+        }
+
+        .compact-card-mov {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 250px;
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            align-self: start;
+                        
+        }        
+
         .compact-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.12);
@@ -566,6 +597,12 @@
             padding-bottom: 0.8rem;
             border-bottom: 1px solid #f0f0f0;
         }
+
+        .compact-header-2 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }        
         
         .compact-icon {
             width: 45px;
@@ -3450,8 +3487,8 @@ espesor</div>
                             </div>
                         </div>
                         
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
-                            <div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; margin-bottom: 0;">
+                            <div style="display: flex; flex-direction: column;">
                                 <div style="font-weight: 700; color: #333; margin-bottom: 0.8rem; padding-bottom: 0.3rem; border-bottom: 2px solid #f0f0f0;">
                                     <i class="fas fa-play-circle" style="color: #2196F3; margin-right: 0.5rem;"></i>
                                     Principio del proceso
@@ -3487,15 +3524,21 @@ espesor</div>
                                 <div class="tip-box" style="margin-bottom: 0.8rem; padding: 0.8rem;">
                                     <strong>Ángulo vertical:</strong> 90° desde centro a laterales para cordón simétrico. Variación causa cordón asimétrico.
                                 </div>
+                                <div style="display: flex;">
+                                    <img src="image corte/Trabajo.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                 
                                 <div class="tip-box" style="padding: 0.8rem;">
                                     <strong>Ángulo horizontal (avance):</strong> 70°-80° máximo. Mayor ángulo: escoria adelantada, cordón irregular. Menor ángulo: cordón estrecho/delgado.
                                 </div>
+                                <div style="display: flex; margin-bottom: 0;">
+                                    <img src="image corte/Avance.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                 
                             </div>
                         </div>
                     </div>
                     
                     <!-- 4.8. OTROS FACTORES -->
-                    <div class="section">
+                    <div class="section" style="margin-top: 0;">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-fire);">
                                 <i class="fas fa-sliders-h"></i>
@@ -3570,8 +3613,8 @@ espesor</div>
                             <h3>4.9. TIPOS DE UNIONES</h3>
                         </div>
                         
-                        <div class="compact-grid">
-                            <div class="compact-card" style="border-top-color: #607D8B;">
+                        <div class="compact-grid" style="justify-content: center; max-width: 95%; justify-self: center;">
+                            <div class="compact-card-uniones" style="border-top-color: #607D8B;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #607D8B;">
                                         <i class="fas fa-t"></i>
@@ -3583,9 +3626,12 @@ espesor</div>
                                     <li>Con/sin preparación bordes (una o dos caras)</li>
                                     <li>Ampliamente usada en soldadura por arco</li>
                                 </ul>
+                                <div style="display: flex;">
+                                    <img src="image corte/T.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
                             </div>
                             
-                            <div class="compact-card" style="border-top-color: #455A64;">
+                            <div class="compact-card-uniones" style="border-top-color: #455A64;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #455A64;">
                                         <i class="fas fa-circle"></i>
@@ -3596,10 +3642,13 @@ espesor</div>
                                     <li>Puntos desde centro a extremos</li>
                                     <li>Primer punto → siguiente derecha → siguiente izquierda</li>
                                     <li>Alternar para minimizar distorsión térmica</li>
+                                <div style="display: flex;">
+                                    <img src="image corte/Puntos.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                    
                                 </ul>
                             </div>
                             
-                            <div class="compact-card" style="border-top-color: #37474F;">
+                            <div class="compact-card-uniones" style="border-top-color: #37474F;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #37474F;">
                                         <i class="fas fa-angle-double-right"></i>
@@ -3611,9 +3660,12 @@ espesor</div>
                                     <li>Espacio inferior <span class="highlight-number">2-3 mm</span> para penetración cordón</li>
                                     <li>Preparación de bordes necesaria</li>
                                 </ul>
+                                <div style="display: flex;">
+                                    <img src="image corte/Bisel.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
                             </div>
                             
-                            <div class="compact-card" style="border-top-color: #263238;">
+                            <div class="compact-card-uniones" style="border-top-color: #263238;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #263238;">
                                         <i class="fas fa-layer-group"></i>
@@ -3625,9 +3677,12 @@ espesor</div>
                                     <li>No necesitan misma longitud</li>
                                     <li>Soldadura en borde exterior</li>
                                 </ul>
+                                <div style="display: flex;">
+                                    <img src="image corte/Solap.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
                             </div>
                             
-                            <div class="compact-card" style="border-top-color: #546E7A;">
+                            <div class="compact-card-uniones" style="border-top-color: #546E7A;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #546E7A;">
                                         <i class="fas fa-border-style"></i>
@@ -3639,6 +3694,9 @@ espesor</div>
                                     <li>Realizada únicamente por los bordes</li>
                                     <li>Para espesores delgados</li>
                                 </ul>
+                                <div style="display: flex;">
+                                    <img src="image corte/Bordes.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
                             </div>
                         </div>
                         
@@ -3661,98 +3719,68 @@ espesor</div>
                             <h3>4.10. TÉCNICAS DE MOVIMIENTO Y TIPOS DE CORDONES</h3>
                         </div>
                         
-                        <div class="compact-grid">
-                            <div class="compact-card" style="border-top-color: #2196F3;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #2196F3;">
-                                        <i class="fas fa-minus"></i>
+                        <div class="columnas">
+                            <div class="compact-grid" style="flex: 1 1; ">
+                                <div class="compact-card-mov" style="border-top-color: #2196F3;">
+                                    <div class="compact-header-2">
+                                        <div class="compact-icon" style="background: #2196F3;">
+                                            <i class="fas fa-minus"></i>
+                                        </div>
+                                        <div class="compact-title">En línea (1)</div>
                                     </div>
-                                    <div class="compact-title">En línea (1)</div>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Movimiento recto y uniforme</li>
-                                    <li>Para cordones estrechos</li>
-                                    <li>Poca penetración</li>
-                                    <li>Velocidad constante</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="compact-card" style="border-top-color: #4CAF50;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #4CAF50;">
-                                        <i class="fas fa-circle-notch"></i>
+                                
+                                <div class="compact-card-mov" style="border-top-color: #4CAF50;">
+                                    <div class="compact-header-2">
+                                        <div class="compact-icon" style="background: #4CAF50;">
+                                            <i class="fas fa-circle-notch"></i>
+                                        </div>
+                                        <div class="compact-title">Circular (2)</div>
                                     </div>
-                                    <div class="compact-title">Circular (2)</div>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Movimiento circular continuo</li>
-                                    <li>Buena penetración</li>
-                                    <li>Cordones anchos</li>
-                                    <li>Para relleno de juntas</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="compact-card" style="border-top-color: #FF9800;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #FF9800;">
-                                        <i class="fas fa-wave-square"></i>
+                                
+                                <div class="compact-card-mov" style="border-top-color: #FF9800;">
+                                    <div class="compact-header-2">
+                                        <div class="compact-icon" style="background: #FF9800;">
+                                            <i class="fas fa-wave-square"></i>
+                                        </div>
+                                        <div class="compact-title">Zigzag (3)</div>
                                     </div>
-                                    <div class="compact-title">Zigzag (3)</div>
                                 </div>
-                                <ul class="compact-list">
-                                    <li>Movimiento lateral alternativo</li>
-                                    <li>Buena distribución de calor</li>
-                                    <li>Para cordones anchos</li>
-                                    <li>Evita sobrecalentamiento local</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="compact-card" style="border-top-color: #9C27B0;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #9C27B0;">
-                                        <i class="fas fa-chart-line"></i>
-                                    </div>
-                                    <div class="compact-title">Creciente (4)</div>
-                                </div>
-                                <ul class="compact-list">
-                                    <li>Movimiento semicircular hacia adelante</li>
-                                    <li>Buena penetración y apariencia</li>
-                                    <li>Control preciso del baño de fusión</li>
-                                    <li>Para posiciones difíciles</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="compact-card" style="border-top-color: #607D8B;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #607D8B;">
-                                        <i class="fas fa-square"></i>
-                                    </div>
-                                    <div class="compact-title">Rectangular (5)</div>
-                                </div>
-                                <ul class="compact-list">
-                                    <li>Movimiento en forma de rectángulo</li>
-                                    <li>Para relleno de grandes espacios</li>
-                                    <li>Distribución uniforme de material</li>
-                                    <li>Control de temperatura</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="compact-card" style="border-top-color: #D32F2F;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #D32F2F;">
-                                        <i class="fas fa-j"></i>
-                                    </div>
-                                    <div class="compact-title">Jota (6)</div>
-                                </div>
-                                <ul class="compact-list">
-                                    <li>Movimiento en forma de "J"</li>
-                                    <li>Para esquinas y bordes</li>
-                                    <li>Buena penetración en ángulos</li>
-                                    <li>Control preciso en posiciones difíciles</li>
-                                </ul>
-                            </div>
-                        </div>
                         
+                                <div class="compact-card-mov" style="border-top-color: #9C27B0;">
+                                    <div class="compact-header-2">
+                                        <div class="compact-icon" style="background: #9C27B0;">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="compact-title">Creciente (4)</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card-mov" style="border-top-color: #607D8B;">
+                                    <div class="compact-header-2">
+                                        <div class="compact-icon" style="background: #607D8B;">
+                                            <i class="fas fa-square"></i>
+                                        </div>
+                                        <div class="compact-title">Rectangular (5)</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card-mov" style="border-top-color: #D32F2F;">
+                                    <div class="compact-header-2">
+                                        <div class="compact-icon" style="background: #D32F2F;">
+                                            <i class="fas fa-j"></i>
+                                        </div>
+                                        <div class="compact-title">Jota (6)</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex: 1 1">
+                                <img src="image corte/Movimiento.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                            
+                        </div>
+
                         <div class="info-box" style="margin-top: 1rem;">
                             <div class="box-icon" style="background: #607D8B;">
                                 <i class="fas fa-paint-brush"></i>
@@ -3762,50 +3790,11 @@ espesor</div>
                             </div>
                         </div>
                     </div>
-                    
-                    
-                    <!-- RESUMEN TÉCNICO -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-metal);">
-                                <i class="fas fa-chart-bar"></i>
-                            </div>
-                            <h3>RESUMEN TÉCNICO</h3>
-                        </div>
-                        
-                        <div class="stats-compact">
-                            <div class="stat-compact" style="border-top-color: #2196F3;">
-                                <div class="stat-number" style="color: #2196F3;">4.000°C</div>
-                                <div class="stat-label">Temperatura arco</div>
-                            </div>
-                            <div class="stat-compact" style="border-top-color: #4CAF50;">
-                                <div class="stat-number" style="color: #4CAF50;">E-6013</div>
-                                <div class="stat-label">Electrodo estándar</div>
-                            </div>
-                            <div class="stat-compact" style="border-top-color: #FF9800;">
-                                <div class="stat-number" style="color: #FF9800;">2/3 Ø</div>
-                                <div class="stat-label">Longitud arco ideal</div>
-                            </div>
-                            <div class="stat-compact" style="border-top-color: #9C27B0;">
-                                <div class="stat-number" style="color: #9C27B0;">6 técnicas</div>
-                                <div class="stat-label">Movimiento electrodo</div>
-                            </div>
-                        </div>
-                        
-                        <div class="tip-box" style="margin-top: 1rem;">
-                            <div class="box-icon" style="background: #4CAF50;">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <div>
-                                <strong>Recomendación:</strong> La soldadura por arco es versátil pero requiere formación y práctica. Dominar los fundamentos (amperaje, longitud de arco, ángulos, técnicas) es esencial para obtener soldaduras seguras y de calidad en intervenciones de bomberos.
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
             
             <!-- TEMA 5: COMPARATIVA ENTRE HERRAMIENTAS -->
-            <div class="horizontal-card" id="comparativa">
+            <section class="horizontal-card" id="comparativa">
                 <div class="floating-info" style="top: 20px; right: 30px;">
                     <i class="fas fa-balance-scale"></i>
                 </div>
@@ -3913,37 +3902,9 @@ espesor</div>
                                 </tr>
                             </tbody>
                         </table>
-                        
-                        <div class="stats-compact" style="margin-top: 2.5rem;">
-                            <div class="stat-compact" style="border-top-color: #D32F2F;">
-                                <div class="stat-number" style="color: #D32F2F;">3.300°C</div>
-                                <div class="stat-label">Oxicorte Chemtane</div>
-                            </div>
-                            <div class="stat-compact" style="border-top-color: #FF9800;">
-                                <div class="stat-number" style="color: #FF9800;">4.500°C</div>
-                                <div class="stat-label">Lanza Térmica</div>
-                            </div>
-                            <div class="stat-compact" style="border-top-color: #9C27B0;">
-                                <div class="stat-number" style="color: #9C27B0;">17.500°C</div>
-                                <div class="stat-label">Plasma</div>
-                            </div>
-                            <div class="stat-compact" style="border-top-color: #2196F3;">
-                                <div class="stat-number" style="color: #2196F3;">4.000°C</div>
-                                <div class="stat-label">Soldadura Arco</div>
-                            </div>
-                        </div>
-                        
-                        <div class="tip-box" style="margin-top: 1.5rem;">
-                            <div class="box-icon" style="background: #4CAF50;">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <div>
-                                <strong>Elección de herramienta:</strong> Depende del material a cortar, espesor, disponibilidad de energía eléctrica, necesidad de portabilidad y experiencia del operador.
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
             
         </div>
     </main>
