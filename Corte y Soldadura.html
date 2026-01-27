@@ -933,6 +933,7 @@
             border: 1px solid #eee;
             text-align: center;
             vertical-align: top;
+            
         }
         
         .comparison-table tr:nth-child(even) {
@@ -1017,44 +1018,380 @@
             margin-bottom: 0;
         }
 
+        /* Header visual con tema de corte térmico */
+        .hero-header {
+            background: linear-gradient(155deg, 
+                #1a0000 0%, 
+                #4a0000 25%, 
+                #8b0000 50%, 
+                #ff4500 75%, 
+                #ff8c00 100%);
+            color: white;
+            padding: 2.5rem 0 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.4);
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Animación de chispas */
+        .spark-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .spark {
+            position: absolute;
+            background: rgba(255, 215, 0, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+        }
+
+        .spark-1 {
+            width: 5px;
+            height: 5px;
+            top: 15%;
+            left: 20%;
+            animation: sparkMove1 4s infinite linear;
+        }
+
+        .spark-2 {
+            width: 3px;
+            height: 3px;
+            top: 30%;
+            right: 15%;
+            animation: sparkMove2 5s infinite linear;
+        }
+
+        .spark-3 {
+            width: 4px;
+            height: 4px;
+            bottom: 25%;
+            left: 25%;
+            animation: sparkMove3 6s infinite linear;
+        }
+
+        .spark-4 {
+            width: 3px;
+            height: 3px;
+            top: 40%;
+            left: 40%;
+            animation: sparkMove4 3.5s infinite linear;
+        }
+
+        .spark-5 {
+            width: 6px;
+            height: 6px;
+            bottom: 15%;
+            right: 30%;
+            animation: sparkMove5 4.5s infinite linear;
+        }
+
+        @keyframes sparkMove1 {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-150px) translateX(100px); opacity: 0; }
+        }
+
+        @keyframes sparkMove2 {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            15% { opacity: 1; }
+            85% { opacity: 1; }
+            100% { transform: translateY(-120px) translateX(-80px); opacity: 0; }
+        }
+
+        @keyframes sparkMove3 {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(-180px) translateX(60px); opacity: 0; }
+        }
+
+        @keyframes sparkMove4 {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(-40px); opacity: 0; }
+        }
+
+        @keyframes sparkMove5 {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { transform: translateY(-200px) translateX(120px); opacity: 0; }
+        }
+
+        /* Animación de llamas */
+        .flame {
+            position: absolute;
+            background: rgba(255, 69, 0, 0.7);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+        }
+
+        .flame-1 {
+            width: 20px;
+            height: 40px;
+            bottom: 10%;
+            left: 20%;
+            animation: flamePulse1 2s infinite alternate ease-in-out;
+        }
+
+        .flame-2 {
+            width: 15px;
+            height: 30px;
+            bottom: 15%;
+            right: 25%;
+            animation: flamePulse2 2.5s infinite alternate ease-in-out;
+        }
+
+        .flame-3 {
+            width: 25px;
+            height: 50px;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: flamePulse3 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes flamePulse1 {
+            0% { transform: scaleY(1); opacity: 0.6; }
+            100% { transform: scaleY(1.5); opacity: 1; }
+        }
+
+        @keyframes flamePulse2 {
+            0% { transform: scaleY(1); opacity: 0.5; }
+            100% { transform: scaleY(1.8); opacity: 0.9; }
+        }
+
+        @keyframes flamePulse3 {
+            0% { transform: translateX(-50%) scaleY(1); opacity: 0.7; }
+            100% { transform: translateX(-50%) scaleY(1.6); opacity: 1; }
+        }
+
+        /* Contenido del header */
+        .header-content-visual {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .main-title-visual {
+            margin-bottom: 1rem;
+        }
+
+        .title-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .title-word {
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            line-height: 1.1;
+        }
+
+        .title-1 {
+            color: white;
+            animation: titleGlow 4s infinite alternate;
+            margin-top: 1rem;
+        }
+
+        .title-3 {
+            color: #FFD700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            position: relative;
+        }
+
+        .title-3:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FFD700, transparent);
+            animation: fireLine 3s infinite;
+        }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); }
+            100% { text-shadow: 0 5px 20px rgba(255, 69, 0, 0.7); }
+        }
+
+        @keyframes fireLine {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .subtitle-visual {
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .subtitle-text {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.5;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .title-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .line-part {
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            flex: 1;
+        }
+
+        .line-center {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .welding-icon {
+            width: 25px;
+            height: 25px;
+            background: rgba(255, 215, 0, 0.9);
+            border-radius: 50%;
+            position: relative;
+            animation: weldingPulse 2s infinite;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        .welding-icon:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 35px;
+            height: 35px;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            border-radius: 50%;
+            animation: weldingPulse 2s infinite reverse;
+        }
+
+        .welding-icon:after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 69, 0, 0.8);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes weldingPulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
+        /* Estadísticas del header */
+        .header-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .header-stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header-stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #FFD700;
+            margin-bottom: 0.3rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }        
+
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Reemplaza la sección <header class="hero-header"> actual por esta: -->
     <header class="hero-header">
-        <div class="container header-content">
-            <div class="logo-container">
-                <div class="logo-icon" style="background: var(--gradient-fire);">
-                    <i class="fas fa-fire"></i>
-                </div>
-                <div class="logo-icon" style="background: var(--gradient-rescue);">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <div class="logo-icon" style="background: var(--gradient-plasma);">
-                    <i class="fas fa-atom"></i>
-                </div>
-                <div class="logo-icon" style="background: var(--gradient-tools);">
-                    <i class="fas fa-tools"></i>
-                </div>
+        <!-- Sistema de chispas y llamas animadas -->
+        <div class="spark-container">
+            <div class="spark spark-1"></div>
+            <div class="spark spark-2"></div>
+            <div class="spark spark-3"></div>
+            <div class="spark spark-4"></div>
+            <div class="spark spark-5"></div>
+            <div class="flame flame-1"></div>
+            <div class="flame flame-2"></div>
+            <div class="flame flame-3"></div>
+        </div>
+        
+        <!-- Contenido principal -->
+        <div class="container header-content-visual">
+            <!-- Título principal -->
+            <div class="main-title-visual">
+                <h1 class="title-text">
+                    <span class="title-word title-1">CORTE TÉRMICO</span>
+                    <span class="title-word title-3">Y SOLDADURA</span>
+                </h1>
             </div>
             
-            <h1>🔥 EQUIPOS DE CORTE TÉRMICO Y SOLDADURA</h1>
-            <p>Guía visual completa para operaciones del Cuerpo de Bomberos de Madrid</p>
-            
-            <div class="stats-container">
-                <div class="stat-box">
-                    <div class="stat-number red">3.300°C</div>
-                    <div class="stat-label">Temperatura oxicorte</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number red">20.000°C</div>
-                    <div class="stat-label">Temperatura plasma</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number red">4.000°C</div>
-                    <div class="stat-label">Temperatura lanza térmica</div>
-                </div>
+            <!-- Subtítulo -->
+            <div class="subtitle-visual">
+                <p class="subtitle-text">Guía visual completa sobre equipos de corte térmico, soldadura al arco y técnicas de intervención del Cuerpo de Bomberos de Madrid</p>
             </div>
+            
+            <!-- Línea decorativa -->
+            <div class="title-line">
+                <div class="line-part line-left"></div>
+                <div class="line-center">
+                    <div class="welding-icon"></div>
+                </div>
+                <div class="line-part line-right"></div>
+            </div>
+            
         </div>
     </header>
     
