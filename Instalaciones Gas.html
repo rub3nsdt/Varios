@@ -392,7 +392,7 @@
         .info-box, .tip-box, .warning-box, .danger-box, .legal-box {
             padding: 1.5rem;
             border-radius: 12px;
-            margin: 1.5rem 0;
+            margin: 1rem 0;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -449,11 +449,10 @@
         
         /* Diagramas y elementos visuales */
         .visual-diagram {
-            background: #f8f9fa;
             border-radius: 10px;
             padding: 1.5rem;
             margin: 1.5rem 0;
-            border: 2px dashed #ddd;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
             text-align: center;
         }
         
@@ -464,19 +463,24 @@
         }
         
         .diagram-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 1.5rem;
             margin-top: 1rem;
         }
         
         .diagram-item {
+            flex: 1 1 150px;
             background: white;
             border-radius: 8px;
             padding: 1rem;
             box-shadow: 0 4px 8px rgba(0,0,0,0.08);
             text-align: center;
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
         }
         
         .diagram-item:hover {
@@ -609,12 +613,9 @@
         
         /* Estilo para subtítulos dentro de las secciones */
         .section h4 {
-            margin: 1.5rem 0 1rem 0;
+            margin: 0 0 0.4rem 0;
             color: #333;
-            font-size: 1.2rem;
-            padding-left: 0.5rem;
-            border-left: 4px solid var(--color-fire);
-            padding-left: 1rem;
+            font-size: 1.2rem;  
         }
         
         /* Timeline horizontal */
@@ -868,13 +869,14 @@
         
         /* Comparación de tipos */
         .comparison-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 1.5rem;
             margin: 1.5rem 0;
         }
         
         .comparison-card {
+            flex: 1 1 280px;
             background: white;
             border-radius: 10px;
             padding: 1.5rem;
@@ -905,11 +907,12 @@
         .data-number {
             color: #D32F2F;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.03rem;
         }
         
         /* Tarjetas compactas para información */
         .compact-card {
+            flex: 1 1 280px;
             background: white;
             border-radius: 12px;
             padding: 1.2rem;
@@ -983,8 +986,8 @@
         
         /* Grid para información */
         .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 1.5rem;
             margin: 1.5rem 0;
         }
@@ -999,6 +1002,23 @@
             margin-right: 0.3rem;
             margin-bottom: 0.3rem;
         }
+
+        .columnas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .colbox {
+            display: flex;
+            flex: 1 1 220px;
+        }
+        
+        .centrado {
+            display: flex;
+            flex-direction: column;
+        }   
+
     </style>
 </head>
 <body>
@@ -1020,7 +1040,7 @@
                 </div>
             </div>
             
-            <h1>🔥INSTALACIONES DE GAS NATURAL</h1>
+            <h1>🔥INSTALACIONES DE GAS</h1>
             <p>Guía visual completa sobre propiedades físicas, límites de inflamabilidad y riesgos térmicos en instalaciones de gas</p>
             
             <div class="stats-container">
@@ -1043,19 +1063,19 @@
     <!-- Navegación simplificada -->
     <div class="container">
         <div class="visual-nav">
-            <a href="#propiedades-fisicas" class="nav-item" style="background: linear-gradient(135deg, #FFEBEE, #FFFFFF);">
+            <a href="#introduccion-gas" class="nav-item" style="background: linear-gradient(135deg, #FFEBEE, #FFFFFF);">
                 <div class="nav-icon" style="background: var(--gradient-fire);">
-                    <i class="fas fa-thermometer-half"></i>
+                    <i class="fas fa-gas-pump"></i>
                 </div>
-                <span>Propiedades Físicas</span>
+                <span>Introducción GN</span>
                 <small>Sección 1</small>
             </a>
             
-            <a href="#limites-inflamabilidad" class="nav-item" style="background: linear-gradient(135deg, #E3F2FD, #FFFFFF);">
+            <a href="#distribucion-gas" class="nav-item" style="background: linear-gradient(135deg, #E3F2FD, #FFFFFF);">
                 <div class="nav-icon" style="background: var(--gradient-gas);">
-                    <i class="fas fa-fire-extinguisher"></i>
+                    <i class="fas fa-project-diagram"></i>
                 </div>
-                <span>Límites Inflamabilidad</span>
+                <span>Distribución Gas</span>
                 <small>Sección 2</small>
             </a>
             
@@ -1088,8 +1108,8 @@
     <main class="container">
         <div class="horizontal-cards-container">
             
-            <!-- SECCIÓN 1: PROPIEDADES FÍSICAS -->
-            <div class="horizontal-card" id="propiedades-fisicas">
+            <!-- SECCIÓN 1: INTRODUCCIÓN AL GAS NATURAL -->
+            <div class="horizontal-card" id="introduccion-gas">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-atom"></i>
                 </div>
@@ -1097,15 +1117,16 @@
                 <div class="card-header-top" style="background: var(--gradient-fire);">
                     <div class="card-title-container">
                         <div class="card-icon-large">
-                            <i class="fas fa-thermometer-half"></i>
+                            <i class="fas fa-gas-pump"></i>
                         </div>
                         <div>
-                            <div class="card-title-top">🔥 PROPIEDADES FÍSICAS DE LOS GASES COMBUSTIBLES</div>
-                            <div class="card-subtitle-top">Puntos de inflamabilidad, autoignición y comportamiento térmico</div>
+                            <div class="card-title-top">🔥 GAS NATURAL: INTRODUCCIÓN</div>
+                            <div class="card-subtitle-top">Características, propiedades físicas, efectos en el organismo y transporte</div>
                             <div>
-                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Temperatura Crítica</span>
-                                <span class="compact-chip" style="background: #E3F2FD; color: #1976D2;">Presión</span>
-                                <span class="compact-chip" style="background: #FFF3E0; color: #FF8F00;">Concentración</span>
+                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Características</span>
+                                <span class="compact-chip" style="background: #E3F2FD; color: #1976D2;">Densidad</span>
+                                <span class="compact-chip" style="background: #FFF3E0; color: #FF8F00;">Wobbe</span>
+                                <span class="compact-chip" style="background: #E8F5E9; color: #2E7D32;">Propiedades</span>
                             </div>
                         </div>
                     </div>
@@ -1113,48 +1134,52 @@
                 </div>
                 
                 <div class="card-content">
-                    <!-- 1.1. PUNTO DE INFLAMABILIDAD -->
+                    <!-- 1.1. CARACTERÍSTICAS DEL GAS NATURAL -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: #D32F2F;">
                                 <i class="fas fa-fire"></i>
                             </div>
-                            <h3>1.1. PUNTO DE INFLAMABILIDAD</h3>
+                            <h3>1.1. CARACTERÍSTICAS DEL GAS NATURAL</h3>
                         </div>
                         
-                        <div class="info-box">
-                            <div class="box-icon" style="background: #D32F2F;">
-                                <i class="fas fa-info-circle"></i>
+                        <div class="columnas">
+                            <div class="info-box" style="flex: 1 1 calc(70%); align-self: center;">
+                                <div class="box-icon" style="background: #D32F2F;">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div>
+                                    <p>El Gas Natural es un combustible formado por un conjunto de hidrocarburos livianos cuyo principal componente es el <strong>metano (CH₄)</strong>, ocupando aproximadamente el <span class="data-number">80%</span> del volumen total. El <span class="data-number">20%</span> restante lo forman etano, propano, butano, pentano, dióxido de carbono, nitrógeno y otros hidrocarburos más pesados en proporciones variables.</p>
+                                </div>
                             </div>
-                            <div>
-                                <h4>Definición</h4>
-                                <p>Es el conjunto de condiciones de <strong>temperatura, presión y concentración de gases</strong> en que una sustancia puede producir una cantidad de vapores suficiente para que al mezclarse con el aire pueda inflamarse si se le aplica una fuente de calor.</p>
-                            </div>
+
+                            <div style="display: flex; flex: 1 1 calc(19%);">
+                                <img src="image gas/GN.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                            
                         </div>
-                        
                         <div class="compact-card" style="border-top-color: #D32F2F; margin-bottom: 1.5rem;">
                             <div class="compact-header">
                                 <div class="compact-icon" style="background: #D32F2F;">
-                                    <i class="fas fa-temperature-high"></i>
+                                    <i class="fas fa-bolt"></i>
                                 </div>
-                                <div class="compact-title">Condiciones Críticas para Inflamación</div>
+                                <div class="compact-title">Propiedades Clave del Gas Natural</div>
                             </div>
                             <ul class="compact-list">
-                                <li><strong>Temperatura mínima:</strong> Varía según el tipo de gas</li>
-                                <li><strong>Presión adecuada:</strong> Condiciones atmosféricas normales o específicas</li>
-                                <li><strong>Concentración vapor-aire:</strong> Proporción precisa para combustión</li>
-                                <li><strong>Fuente de ignición:</strong> Chispa, llama o superficie caliente</li>
+                                <li><strong>Origen:</strong> Descomposición de materia orgánica sometida a altas temperaturas y presiones durante miles de años</li>
+                                <li><strong>Energía:</strong> Alta energía liberada por combustión, importante fuente de energía fósil</li>
+                                <li><strong>Extracción:</strong> Se extrae de bolsas subterráneas a presión en yacimientos petrolíferos (gas asociado) o exclusivos de gas (gas no asociado)</li>
+                                <li><strong>Procesamiento:</strong> Las fracciones más pesadas (propano, butano, pentano) se extraen para Gases Licuados del Petróleo (GLP)</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <!-- 1.2. PUNTO DE AUTOIGNICIÓN -->
+                    <!-- 1.2. EFECTOS DEL GAS NATURAL SOBRE EL ORGANISMO -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: #FF9800;">
-                                <i class="fas fa-burn"></i>
+                                <i class="fas fa-lungs"></i>
                             </div>
-                            <h3>1.2. PUNTO DE AUTOIGNICIÓN</h3>
+                            <h3>1.2. EFECTOS DEL GAS NATURAL SOBRE EL ORGANISMO</h3>
                         </div>
                         
                         <div class="warning-box">
@@ -1162,142 +1187,8 @@
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
                             <div>
-                                <h4>Definición</h4>
-                                <p>Es el conjunto de condiciones de <strong>temperatura, presión y concentración</strong> tal que la sustancia combustible es capaz de inflamarse y mantener la combustión <strong>sin necesidad de una fuente externa</strong> de ignición.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="info-grid">
-                            <div class="compact-card" style="border-top-color: #FF9800;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
-                                        <i class="fas fa-temperature-high"></i>
-                                    </div>
-                                    <div class="compact-title">Temperatura Crítica</div>
-                                </div>
-                                <div style="font-size: 0.9rem;">
-                                    <p>La temperatura de autoignición del gas natural es de aproximadamente <span class="data-number">540°C</span>.</p>
-                                    <p>Para los GLP (propano/butano) varía entre <span class="data-number">450-510°C</span>.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="compact-card" style="border-top-color: #FF9800;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
-                                        <i class="fas fa-compress-arrows-alt"></i>
-                                    </div>
-                                    <div class="compact-title">Condiciones de Presión</div>
-                                </div>
-                                <div style="font-size: 0.9rem;">
-                                    <p>La presión influye en la temperatura de autoignición. A mayor presión, generalmente <strong>disminuye</strong> la temperatura necesaria para la autoignición.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 1.3. COMPORTAMIENTO TÉRMICO DEL GNL -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #2196F3;">
-                                <i class="fas fa-snowflake"></i>
-                            </div>
-                            <h3>1.3. COMPORTAMIENTO TÉRMICO DEL GAS NATURAL LICUADO (GNL)</h3>
-                        </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: #2196F3;">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
-                            <div>
-                                <h4>Características Térmicas del GNL</h4>
-                                <p>El Gas Natural Licuado se mantiene a <span class="data-number">-160°C</span> durante el transporte en buques metaneros. Esta temperatura extremadamente baja presenta riesgos térmicos específicos.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="visual-diagram">
-                            <div class="diagram-title">Proceso de Licuefacción y Regasificación del GNL</div>
-                            <div class="procedure-timeline">
-                                <div class="timeline-step">
-                                    <div class="step-number">1</div>
-                                    <div class="step-title">Extracción</div>
-                                    <div style="font-size: 0.75rem;">Gas natural a presión de yacimientos</div>
-                                </div>
-                                <div class="timeline-step">
-                                    <div class="step-number">2</div>
-                                    <div class="step-title">Licuefacción</div>
-                                    <div style="font-size: 0.75rem;">Enfriamiento a <span class="data-number">-160°C</span></div>
-                                </div>
-                                <div class="timeline-step">
-                                    <div class="step-number">3</div>
-                                    <div class="step-title">Transporte</div>
-                                    <div style="font-size: 0.75rem;">Buques metaneros especializados</div>
-                                </div>
-                                <div class="timeline-step">
-                                    <div class="step-number">4</div>
-                                    <div class="step-title">Regasificación</div>
-                                    <div style="font-size: 0.75rem;">Calentamiento para uso en red</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="compact-card" style="border-top-color: #2196F3; margin-top: 1.5rem;">
-                            <div class="compact-header">
-                                <div class="compact-icon" style="background: #2196F3;">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                </div>
-                                <div class="compact-title">Riesgos Térmicos del GNL</div>
-                            </div>
-                            <ul class="compact-list">
-                                <li><strong>Criogenicidad extrema:</strong> <span class="data-number">-160°C</span> causa congelación instantánea</li>
-                                <li><strong>Expansión volumétrica:</strong> 1 litro líquido = 600 litros gas</li>
-                                <li><strong>Fragilización materiales:</strong> Metales se vuelven quebradizos</li>
-                                <li><strong>Condensación aire:</strong> Puede crear atmósfera enrarecida</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- SECCIÓN 2: LÍMITES DE INFLAMABILIDAD -->
-            <div class="horizontal-card" id="limites-inflamabilidad">
-                <div class="floating-icon" style="top: 20px; right: 30px;">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                
-                <div class="card-header-top" style="background: var(--gradient-gas);">
-                    <div class="card-title-container">
-                        <div class="card-icon-large">
-                            <i class="fas fa-fire-extinguisher"></i>
-                        </div>
-                        <div>
-                            <div class="card-title-top">⚠️ LÍMITES DE INFLAMABILIDAD DE GASES COMBUSTIBLES</div>
-                            <div class="card-subtitle-top">Rangos de concentración para combustión y explosión</div>
-                            <div>
-                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Límite Inferior</span>
-                                <span class="compact-chip" style="background: #FFF3E0; color: #FF8F00;">Límite Superior</span>
-                                <span class="compact-chip" style="background: #E8F5E9; color: #2E7D32;">Rango Peligroso</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="topic-number-badge">Sección 2</div>
-                </div>
-                
-                <div class="card-content">
-                    <!-- 2.1. DEFINICIÓN DE LÍMITES -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #FF9800;">
-                                <i class="fas fa-chart-area"></i>
-                            </div>
-                            <h3>2.1. DEFINICIÓN DE LÍMITES DE INFLAMABILIDAD</h3>
-                        </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: #FF9800;">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
-                            <div>
-                                <p>Los límites de inflamabilidad son las <strong>concentraciones, en tanto por ciento de gas en el aire</strong>, entre los cuales la mezcla es inflamable, para una temperatura y presión determinadas.</p>
+                                <h4>Características Generales</h4>
+                                <p>El Gas Natural es un gas <strong>limpio, sin olor ni color</strong>. Aunque no es tóxico, es inflamable y puede producir <strong>asfixia por desplazamiento del oxígeno</strong>.</p>
                             </div>
                         </div>
                         
@@ -1305,87 +1196,243 @@
                             <div class="compact-card" style="border-top-color: #D32F2F;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #D32F2F; width: 40px; height: 40px;">
-                                        <i class="fas fa-arrow-down"></i>
+                                        <i class="fas fa-skull-crossbones"></i>
                                     </div>
-                                    <div class="compact-title">Límite Inferior de Inflamabilidad (LII)</div>
+                                    <div class="compact-title">Asfixia</div>
                                 </div>
                                 <div style="font-size: 0.9rem;">
-                                    <p>Es la <strong>mínima concentración</strong> en tanto por ciento de gas en el aire en el que la mezcla es inflamable, para una temperatura y presión determinadas.</p>
-                                    <p class="data-number">Por debajo de esta concentración el gas no se inflama.</p>
+                                    <p>Una fuga disminuye el oxígeno en el recinto por dilución y desplazamiento del aire, generando:</p>
+                                    <ul style="margin-left: 1rem;">
+                                        <li>Mareo</li>
+                                        <li>Aumento del ritmo cardíaco y respiratorio</li>
+                                        <li>Dolor de cabeza</li>
+                                        <li>Pérdida de conciencia si O₂ &lt; <span class="data-number">19.5%</span></li>
+                                        <li>Asfixia mortal en casos extremos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #4CAF50; align-self: center;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4CAF50; width: 40px; height: 40px;">
+                                        <i class="fas fa-smog"></i>
+                                    </div>
+                                    <div class="compact-title">Toxicidad por Combustión</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Las llamas deben ser "higiénicas" (sin monóxido de carbono ni hollín):</p>
+                                    <ul style="margin-left: 1rem;">
+                                        <li><strong>Llama correcta:</strong> Azul, con trazas amarillas leves, dura y estable</li>
+                                        <li><strong>Llama incorrecta:</strong> Amarilla, blanda, ondulante (produce CO)</li>
+                                        <li>El CO es tóxico en concentraciones &gt; <span class="data-number">50 ppm</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Odorización del Gas Natural</h4>
+                                <p>Para facilitar su detección en caso de fuga, el Gas Natural se odoriza durante su regasificación añadiendo <strong>THT (tetrahidrotiofeno)</strong>.</p>
+                                <p>La odorización debe permitir detectar una fuga cuando la presencia de GN alcance las <span class="data-number">0,005 ppm de THT</span> (según ficha de seguridad).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 1.3. DENSIDAD RELATIVA DE LOS GASES COMBUSTIBLES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-weight-hanging"></i>
+                            </div>
+                            <h3>1.3. DENSIDAD RELATIVA DE LOS GASES COMBUSTIBLES</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Definición</h4>
+                                <p>Es la comparación de la densidad de una sustancia (Gas Natural o GLP) con la densidad del aire, ambas en las mismas condiciones de presión y temperatura.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="color: #2196F3;">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </div>
+                                    <span>Gas Natural (Metano)</span>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Densidad relativa:</strong> <span class="data-number">&lt; 1</span> (más ligero que el aire)</p>
+                                    <p><strong>Comportamiento en fuga:</strong> Se acumula en <strong>zonas altas</strong> de la estancia</p>
+                                    <p><strong>Riesgo principal:</strong> Acumulación en techos y partes superiores</p>
+                                </div>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="color: #FF9800;">
+                                        <i class="fas fa-arrow-down"></i>
+                                    </div>
+                                    <span>GLP (Propano/Butano)</span>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Densidad relativa:</strong> <span class="data-number">&gt; 1</span> (más pesado que el aire)</p>
+                                    <p><strong>Comportamiento en fuga:</strong> Se acumula en <strong>zonas bajas</strong> (sótanos, suelos)</p>
+                                    <p><strong>Riesgo principal:</strong> Acumulación en áreas deprimidas sin ventilación</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex;">
+                            <img src="image gas/Drel.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                        </div>
+
+                    </div>
+                    
+                    <!-- 1.4. FAMILIAS DE GASES COMBUSTIBLES - ÍNDICE DE WOBBE -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4CAF50;">
+                                <i class="fa-solid fa-w"></i>
+                            </div>
+                            <h3>1.4. FAMILIAS DE GASES COMBUSTIBLES - ÍNDICE DE WOBBE</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Norma UNE-EN 437</h4>
+                                <p>Clasifica los gases combustibles en <strong>tres familias</strong> según el <strong>Índice de Wobbe (Kcal/m³)</strong>, que expresa el cociente entre el poder calorífico superior y la raíz cuadrada de la densidad relativa del gas.</p>
+                                <p>Los gases de la misma familia son intercambiables porque tienen comportamiento similar en quemadores (mismo flujo calorífico y tipo de llama).</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex;">
+                            <img src="image gas/Wobbe.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                        </div>
+
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4>¡IMPORTANTE! - No Intercambiabilidad</h4>
+                                <p>Los aparatos que funcionan con GLP <strong>necesitan adaptación y regulación</strong> para funcionar con gas natural y viceversa, por tratarse de gases de distinta familia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 1.5. PROPIEDADES FÍSICAS DE LOS GASES -->
+                    <!-- 1.5. PROPIEDADES FÍSICAS. LÍMITES DE INFLAMABILIDAD -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #9C27B0;">
+                                <i class="fas fa-thermometer-half"></i>
+                            </div>
+                            <h3>1.5. PROPIEDADES FÍSICAS. LÍMITES DE INFLAMABILIDAD</h3>
+                        </div>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #D32F2F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #D32F2F; width: 40px; height: 40px;">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div class="compact-title">Punto de Inflamabilidad</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Es el conjunto de condiciones de <strong>temperatura, presión y concentración de gases</strong> en que una sustancia puede producir una cantidad de vapores suficiente para que al mezclarse con el aire pueda inflamarse si se le aplica una fuente de calor.</p>
                                 </div>
                             </div>
                             
                             <div class="compact-card" style="border-top-color: #FF9800;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
-                                        <i class="fas fa-arrow-up"></i>
+                                        <i class="fas fa-burn"></i>
                                     </div>
-                                    <div class="compact-title">Límite Superior de Inflamabilidad (LSI)</div>
+                                    <div class="compact-title">Punto de Autoignición</div>
                                 </div>
                                 <div style="font-size: 0.9rem;">
-                                    <p>Es la <strong>máxima concentración</strong> en tanto por ciento de gas en el aire en el que la mezcla es inflamable, para una temperatura y presión determinadas.</p>
-                                    <p class="data-number">Por encima de esta concentración el gas no se inflama.</p>
+                                    <p>Es el conjunto de condiciones de <strong>temperatura, presión y concentración</strong> tal que la sustancia combustible es capaz de inflamarse y mantener la combustión <strong>sin necesidad de una fuente externa</strong>.</p>
                                 </div>
                             </div>
                         </div>
+
+                        <div style="display: flex;">
+                            <img src="image gas/PFisicas.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                        </div>                        
                         
-                        <div class="compact-card" style="border-top-color: #4CAF50; margin-top: 1.5rem;">
-                            <div class="compact-header">
-                                <div class="compact-icon" style="background: #4CAF50;">
-                                    <i class="fas fa-expand-arrows-alt"></i>
+                        <div class="visual-diagram" style="margin-top: 1.5rem;">
+                            <div class="diagram-title" style="color: #9C27B0; font-size: 1.3rem; margin-bottom: 1.5rem;">
+                                <i class="fas fa-chart-line"></i> LÍMITES DE INFLAMABILIDAD
+                            </div>
+                            
+                            <div class="info-box" style="margin: 1rem 0;">
+                                <div class="box-icon" style="background: #9C27B0;">
+                                    <i class="fas fa-info-circle"></i>
                                 </div>
-                                <div class="compact-title">Rango de Inflamabilidad</div>
-                            </div>
-                            <div style="font-size: 0.9rem; text-align: center; padding: 1rem;">
-                                <div style="font-size: 1.2rem; font-weight: 700; color: #4CAF50;">
-                                    RANGO PELIGROSO = LII → LSI
+                                <div>
+                                    <p>Los límites de inflamabilidad son las <strong>concentraciones, en tanto por ciento de gas en el aire</strong>, entre los cuales la mezcla es inflamable, para una temperatura y presión determinadas.</p>
                                 </div>
-                                <p>El rango de inflamabilidad queda determinado entre el Límite Inferior y el Límite Superior de Inflamabilidad.</p>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 2.2. TABLA COMPARATIVA DE LÍMITES -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #D32F2F;">
-                                <i class="fas fa-table"></i>
+                            
+                            <div class="comparison-container">
+                                <div class="comparison-card" style="border-top-color: #D32F2F;">
+                                    <div class="comparison-title">
+                                        <div class="comparison-icon" style="color: #D32F2F;">
+                                            <i class="fas fa-arrow-down"></i>
+                                        </div>
+                                        <span>Límite Inferior de Inflamabilidad (LII)</span>
+                                    </div>
+                                    <div style="font-size: 0.9rem; padding: 0.5rem;">
+                                        <p>Es la <strong>mínima concentración</strong> en tanto por ciento de gas en el aire en el que la mezcla es inflamable, para una temperatura y presión determinadas.</p>
+                                        <p class="data-number" style="margin-top: 0.5rem; font-size: 1rem;">Por debajo de esta concentración el gas no se inflama.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="comparison-card" style="border-top-color: #FF9800;">
+                                    <div class="comparison-title">
+                                        <div class="comparison-icon" style="color: #FF9800;">
+                                            <i class="fas fa-arrow-up"></i>
+                                        </div>
+                                        <span>Límite Superior de Inflamabilidad (LSI)</span>
+                                    </div>
+                                    <div style="font-size: 0.9rem; padding: 0.5rem;">
+                                        <p>Es la <strong>máxima concentración</strong> en tanto por ciento de gas en el aire en el que la mezcla es inflamable, para una temperatura y presión determinadas.</p>
+                                        <p class="data-number" style="margin-top: 0.5rem; font-size: 1rem;">Por encima de esta concentración el gas no se inflama.</p>
+                                    </div>
+                                </div>
+
+                                <div class="comparison-card" style="border-top-color: #4CAF50;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #4CAF50;">
+                                            <i class="fas fa-expand-arrows-alt"></i>
+                                        </div>
+                                        <div class="compact-title">Rango de Inflamabilidad</div>
+                                    </div>
+                                    <div style="font-size: 1rem; padding: 1rem;">
+                                        <div style="font-size: 1rem; font-weight: 700; color: #4CAF50; margin-bottom: 0.5rem;">
+                                            RANGO INFLAMABLE = LII → LSI
+                                        </div>
+                                        <p>El rango de inflamabilidad queda determinado entre el Límite Inferior y el Límite Superior de Inflamabilidad.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <h3>2.2. TABLA COMPARATIVA DE LÍMITES DE INFLAMABILIDAD</h3>
+                            
+
                         </div>
                         
-                        <table class="visual-table">
-                            <thead>
-                                <tr>
-                                    <th>Tipo de Gas</th>
-                                    <th>Límite Inferior (LII)</th>
-                                    <th>Límite Superior (LSI)</th>
-                                    <th>Presión de Servicio</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Gas Natural (Metano)</strong></td>
-                                    <td><span class="data-number">5%</span></td>
-                                    <td><span class="data-number">15%</span></td>
-                                    <td>20 mbar</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Propano (GLP)</strong></td>
-                                    <td><span class="data-number">2.4%</span></td>
-                                    <td><span class="data-number">9.5%</span></td>
-                                    <td>37 mbar</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Butano (GLP)</strong></td>
-                                    <td><span class="data-number">1.5%</span></td>
-                                    <td><span class="data-number">8.5%</span></td>
-                                    <td>28 mbar</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                        <div class="warning-box">
+                        <div class="warning-box" style="margin-top: 1.5rem;">
                             <div class="box-icon" style="background: #FF9800;">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
@@ -1396,52 +1443,481 @@
                         </div>
                     </div>
                     
-                    <!-- 2.3. FACTORES QUE AFECTAN LOS LÍMITES -->
+                    <!-- 1.6. ORIGEN, EXTRACCIÓN Y TRANSPORTE -->
                     <div class="section">
                         <div class="section-title">
-                            <div class="section-icon" style="background: #2196F3;">
-                                <i class="fas fa-sliders-h"></i>
+                            <div class="section-icon" style="background: #607D8B;">
+                                <i class="fas fa-ship"></i>
                             </div>
-                            <h3>2.3. FACTORES QUE AFECTAN LOS LÍMITES DE INFLAMABILIDAD</h3>
+                            <h3>1.6. ORIGEN, EXTRACCIÓN Y TRANSPORTE</h3>
                         </div>
                         
-                        <div class="info-grid">
-                            <div class="compact-card" style="border-top-color: #D32F2F;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #D32F2F; width: 40px; height: 40px;">
-                                        <i class="fas fa-temperature-high"></i>
-                                    </div>
-                                    <div class="compact-title">Temperatura</div>
-                                </div>
-                                <div style="font-size: 0.9rem;">
-                                    <p>Al aumentar la temperatura, <strong>se amplía</strong> el rango de inflamabilidad.</p>
-                                    <p>El Límite Inferior <strong>disminuye</strong> y el Límite Superior <strong>aumenta</strong>.</p>
-                                </div>
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Extracción</div>
+                                <div style="font-size: 0.75rem;">De bolsas subterráneas a presión mediante plataformas de extracción</div>
                             </div>
-                            
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Procesamiento</div>
+                                <div style="font-size: 0.75rem;">Separación de GLP en torres de destilación</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Transporte</div>
+                                <div style="font-size: 0.75rem;">Gasoductos (GNC) o buques metaneros (GNL)</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">4</div>
+                                <div class="step-title">Distribución</div>
+                                <div style="font-size: 0.75rem;">Redes de transporte y distribución a consumidores</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-grid" style="margin-top: 2rem;">
                             <div class="compact-card" style="border-top-color: #2196F3;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #2196F3; width: 40px; height: 40px;">
-                                        <i class="fas fa-tachometer-alt"></i>
+                                        <i class="fas fa-ship"></i>
                                     </div>
-                                    <div class="compact-title">Presión</div>
+                                    <div class="compact-title">Transporte Marítimo (GNL)</div>
                                 </div>
                                 <div style="font-size: 0.9rem;">
-                                    <p>La presión tiene menos influencia en el Límite Inferior, pero <strong>aumenta significativamente</strong> el Límite Superior a presiones elevadas.</p>
+                                    <p><strong>Licuefacción:</strong> Enfriamiento a <span class="data-number">-160°C</span></p>
+                                    <p><strong>Buques metaneros:</strong> Mantienen GNL a -160°C durante trayectos largos</p>
+                                    <p><strong>Tanques:</strong> Esféricos de aluminio con aislamiento (PVC, poliuretano o fibra de vidrio)</p>
+                                    <p><strong>Entrada a España:</strong> <span class="data-number">61%</span> como GNL (más GNL que GN)</p>
                                 </div>
                             </div>
                             
                             <div class="compact-card" style="border-top-color: #4CAF50;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #4CAF50; width: 40px; height: 40px;">
-                                        <i class="fas fa-wind"></i>
+                                        <span class="fa-layers fa-fw" style="font-size: 1em;">
+                                        <i class="fas fa-square" 
+                                            style=" transform: scale(1.5, 0.4) translateY(30px);">
+                                        </i>
+                                        
+                                        <i class="fas fa-arrows-left-right" 
+                                            style=" transform: scale(0.8) translateY(-10px);">
+                                        </i>
+                                        </span>                                        
                                     </div>
-                                    <div class="compact-title">Concentración de Oxígeno</div>
+                                    <div class="compact-title">Transporte por Gasoducto</div>
                                 </div>
                                 <div style="font-size: 0.9rem;">
-                                    <p>Mayor concentración de O<sub>2</sub> <strong>amplía</strong> los límites de inflamabilidad.</p>
-                                    <p>Menor concentración de O<sub>2</sub> (por debajo del <span class="data-number">19.5%</span>) <strong>reduce</strong> el riesgo de combustión.</p>
+                                    <p><strong>Tuberías grandes:</strong> Transporte a altas presiones</p>
+                                    <p><strong>Diámetros:</strong> Desde <span class="data-number">48 pulgadas (106 cm)</span> hasta pocas pulgadas según ramificaciones</p>
+                                    <p><strong>Red española:</strong> Más de <span class="data-number">10.000 km</span> de canalizaciones</p>
                                 </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h4>Tipos de Gas Natural</h4>
+                                <p><strong>Gas Natural Asociado:</strong> Encontrado junto a yacimientos petrolíferos o de carbón</p>
+                                <p><strong>Gas Natural No Asociado:</strong> En yacimientos exclusivos de gas natural</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECCIÓN 2: DISTRIBUCIÓN DEL GAS NATURAL -->
+            <div class="horizontal-card" id="distribucion-gas">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: var(--gradient-gas);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🌐 DISTRIBUCIÓN DEL GAS NATURAL</div>
+                            <div class="card-subtitle-top">Redes nacionales, distribución local, presiones y materiales de canalización</div>
+                            <div>
+                                <span class="compact-chip" style="background: #E3F2FD; color: #1976D2;">Red Nacional</span>
+                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Madrid</span>
+                                <span class="compact-chip" style="background: #FFF3E0; color: #FF8F00;">Presiones</span>
+                                <span class="compact-chip" style="background: #E8F5E9; color: #2E7D32;">Materiales</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 2</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- 2.1. RED NACIONAL DE RECEPCIÓN Y DISTRIBUCIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <h3>2.1. RED NACIONAL DE RECEPCIÓN Y DISTRIBUCIÓN</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>El Sistema Gasista Español</h4>
+                                <p>El sistema gasista español cuenta con más de <span class="data-number">10.000 Km</span> de canalizaciones diseñadas para conducir grandes caudales de gas a grandes distancias. Según la Ley, está formado por tres tipos de redes:</p>
+                            </div>
+                        </div>
+                        
+                        <div class="procedure-timeline" style="margin: 2rem 0;">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Red Básica</div>
+                                <div style="font-size: 0.75rem;">Recoge, almacena y transporta gas por todo el territorio nacional ≥ 60 bar</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Red de Transporte Secundario</div>
+                                <div style="font-size: 0.75rem;">Gasoductos de presión entre 16 y 60 bar</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Redes de Distribución</div>
+                                <div style="font-size: 0.75rem;">Gasoductos de presión ≤ 16 bar y Líneas Directas</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #2196F3;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #2196F3; width: 40px; height: 40px;">
+                                        <i class="fas fa-layer-group"></i>
+                                    </div>
+                                    <div class="compact-title">Red Básica</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Componentes:</strong></p>
+                                    <ul style="margin-left: 1rem;">
+                                        <li>Plantas de regasificación de GNL y licuefacción de GN</li>
+                                        <li>Almacenamientos básicos de GN</li>
+                                        <li>Red de Transporte Primario a Alta Presión (≥ <span class="data-number">60 bar</span>)</li>
+                                    </ul>
+                                    <p style="margin-top: 0.5rem;">Incluye red troncal nacional y redes de influencia local.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #4CAF50;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4CAF50; width: 40px; height: 40px;">
+                                        <i class="fas fa-truck-loading"></i>
+                                    </div>
+                                    <div class="compact-title">Líneas Directas</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Líneas que independientemente de su presión máxima o localización, alimentan a un <strong>único consumidor</strong>.</p>
+                                    <p>Forman parte de las Redes de Distribución pero tienen carácter especial.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 2.1.2. ELEMENTOS DE SEÑALIZACIÓN -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #2196F3; padding-left: 1rem;">
+                            <i class="fas fa-map-signs"></i> 2.1.2. Elementos de Señalización y Reconocimiento
+                        </h4>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Elementos de Señalización en Red de Gas</div>
+                            <div class="diagram-grid">
+                                <div class="diagram-item">
+                                    <div class="diagram-icon" style="color: #4CAF50;">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">1. Bandas de Señalización</div>
+                                    <div style="font-size: 0.8rem;">Enterradas sobre la conducción para indicar presencia de gasoducto</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon" style="color: #FF9800;">
+                                        <i class="fas fa-map-pin"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">2. Hitos de Suelo</div>
+                                    <div style="font-size: 0.8rem;">Placas fijadas al suelo por donde discurre canalización de gas</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon" style="color: #2196F3;">
+                                        <i class="fas fa-sign"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">3. Hitos Intermedios y Kilométricos</div>
+                                    <div style="font-size: 0.8rem;">Postes con placa sobre trazado, con información del gasoducto, punto kilométrico y datos de contacto</div>
+                                </div>
+                                <div style="display: flex; flex: 1 1 150px;">
+                                    <img src="image gas/Señalización.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2.2. RED GASISTA DE LA COMUNIDAD DE MADRID -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #D32F2F;">
+                                <i class="fas fa-city"></i>
+                            </div>
+                            <h3>2.2. RED GASISTA DE LA COMUNIDAD DE MADRID</h3>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #D32F2F; margin-bottom: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #D32F2F;">
+                                    <i class="fas fa-subway"></i>
+                                </div>
+                                <div class="compact-title">Infraestructura en Madrid</div>
+                            </div>
+                            <div style="font-size: 0.9rem;">
+                                <p>El Gas Natural llega a la Comunidad de Madrid a través de la <strong>Red de Transporte Primario</strong> por gasoductos enterrados a <span class="data-number">4-6 metros</span> de profundidad.</p>
+                                <p>Esta red alimenta un <strong>anillo exterior</strong> al municipio de Madrid que distribuye el gas a la ciudad.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #D32F2F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #D32F2F; width: 40px; height: 40px;">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <div class="compact-title">Empresas Distribuidoras</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>NEDGIA y Madrileña Red de Gas:</strong> Distribución a consumidores domésticos e industriales (≈ <span class="data-number">50%</span> cada una)</p>
+                                    <p><strong>ENAGAS TRANSPORTE:</strong> Opera red de transporte en alta presión (generalmente <span class="data-number">72 bar</span>)</p>
+                                    <p><strong>ENAGAS GTS:</strong> Gestor técnico del sistema gasista a nivel nacional</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
+                                        <i class="fas fa-phone-volume"></i>
+                                    </div>
+                                    <div class="compact-title">Servicio de Urgencias</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Las empresas distribuidoras tienen <strong>obligación legal</strong> de tener:</p>
+                                    <ul style="margin-left: 1rem;">
+                                        <li>Teléfono de atención de urgencias 24 horas</li>
+                                        <li>Sistema para atender incidencias (olor a gas, intoxicaciones)</li>
+                                        <li>Cobertura en todos los municipios donde operan</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2.3. ESTACIONES DE REGULACIÓN Y MEDIDA (ERM) -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h3>2.3. ESTACIONES DE REGULACIÓN Y MEDIDA (ERM)</h3>
+                        </div>
+                        
+                        <div class="columnas">
+                            <div class="info-box" style="flex: 1 1 calc(50%)">
+                                <div class="box-icon" style="background: #FF9800;">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div>
+                                    <h4>Función de las ERM</h4>
+                                    <p>Instalaciones que <strong>cuantifican las magnitudes físicas</strong> del GN que les llega y <strong>regulan la presión</strong> del gas de suministro aguas abajo de la línea.</p>
+                                    <p>Cuentan con <strong>dos conducciones de regulación</strong> para permitir mantenimiento sin interrumpir el suministro.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex: 1 1 calc(48%)">
+                                <img src="image gas/ERM.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                              
+                        </div>
+
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Ubicaciones de las ERM</div>
+                            <div class="diagram-grid">
+                                <div class="diagram-item">
+                                    <div class="diagram-icon" style="color: #2196F3;">
+                                        <i class="fas fa-shipping-fast"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Red de Transporte</div>
+                                    <div style="font-size: 0.8rem;">Miden y mantienen presión a lo largo de la red y regulan paso a Red de Distribución</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon" style="color: #4CAF50;">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Red de Distribución</div>
+                                    <div style="font-size: 0.8rem;">Controlan presión que deben suministrar las acometidas</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon" style="color: #D32F2F;">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Interior de Edificios</div>
+                                    <div style="font-size: 0.8rem;">Cuando acometidas son de presión > <span class="data-number">5 bar</span> (industrias, grandes consumidores)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2.4. TRAZADO DE LAS REDES DE GN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4CAF50;">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <h3>2.4. TRAZADO DE LAS REDES DE GN</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <p>La tendencia constructiva actual en Madrid es que la red sea <strong>mallada</strong> para garantizar el suministro. A pesar de ello, existen zonas donde la red <strong>ramificada</strong> es la única solución.</p>
+                                <p>Existen <strong>grandes depósitos de gas natural</strong> en puntos estratégicos para asegurar que el suministro no se interrumpa de forma repentina.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-container">
+                            <div class="comparison-card" style="border-top-color: #2196F3; align-self: center;">                                
+                                <div class="columnas">
+                                    <div style=" flex: 1 1 calc(48%);">
+                                        <div class="comparison-title">
+                                            <div class="comparison-icon" style="color: #2196F3;">
+                                                <i class="fas fa-sitemap"></i>
+                                            </div>
+                                            <span>Red Mallada</span>
+                                        </div>
+                                        <div style="font-size: 0.9rem;">
+                                            <p><strong>Estructura:</strong> Conjunto de anillos ensamblados</p>
+                                            <p><strong>Ventaja:</strong> Garantiza suministro en caso de avería o mantenimiento (el gas sigue diferentes recorridos simultáneamente)</p>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; flex: 1 1 calc(48%);">
+                                        <img src="image gas/Mallada.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div> 
+                                </div>    
+                            </div>
+                            
+                            <div class="comparison-card" style="border-top-color: #FF9800;">                                
+                                <div class="columnas">
+                                    <div style=" flex: 1 1 calc(48%);">
+                                        <div class="comparison-title">
+                                            <div class="comparison-icon" style="color: #FF9800;">
+                                                <i class="fas fa-project-diagram"></i>
+                                            </div>
+                                            <span>Red Ramificada</span>
+                                        </div>
+                                        <div style="font-size: 0.9rem;  flex: 1 1 calc(48%)">
+                                            <p><strong>Estructura:</strong> Conjunto de canalizaciones de estructura arborescente con flujo unidireccional</p>
+                                            <p><strong>Desventaja:</strong> En caso de avería o mantenimiento, toda la red posterior al punto de corte queda desabastecida</p>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; flex: 1 1 calc(48%)">
+                                        <img src="image gas/Ramificada.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>                                     
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2.5. PRESIONES DE GAS EN LA RED DE DISTRIBUCIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #9C27B0;">
+                                <i class="fas fa-compress-arrows-alt"></i>
+                            </div>
+                            <h3>2.5. PRESIONES DE GAS EN LA RED DE DISTRIBUCIÓN</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #9C27B0;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Evolución de la Normativa</h4>
+                                <p>Antes de entrar en la UE, España tenía <strong>cinco rangos de presión</strong>. Con el mercado único se establecieron rangos comunes según <strong>MOP (Máxima Presión Operativa)</strong>.</p>
+                                <p>MOP: Presión máxima a la que la instalación se puede ver sometida de forma continuada en condiciones normales de operación.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex;">
+                            <img src="image gas/MOP.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                        </div>  
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #9C27B0; align-self: center;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #9C27B0; width: 40px; height: 40px;">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <div class="compact-title">Presiones en Edificios de Madrid</div>
+                                </div>
+                                <div>
+                                    <p><strong>Zonas antiguas (almendra central):</strong> Acometidas en <strong>Baja Presión</strong></p>
+                                    <p><strong>Resto de zonas:</strong> Acometidas en <strong>Media Presión</strong></p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
+                                        <i class="fas fa-hard-hat"></i>
+                                    </div>
+                                    <div class="compact-title">Identificación en Intervención</div>
+                                </div>
+                                <div">
+                                    <p><strong>Baja Presión:</strong> Montantes de sección grande, sin armario de regulación visible</p>
+                                    <p><strong>Media Presión:</strong> Montantes de sección más pequeña (1" o 1½"), con armario de regulación en fachada</p>
+                                    <p class="data-number" style="margin-top: 0.5rem;">¡PRECAUCIÓN! Mayor presión = mayor peligro</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 2.5.1. MATERIALES DE CONSTRUCCIÓN -->
+                        <h4 style="margin: 0rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #9C27B0; padding-left: 1rem;">
+                            <i class="fas fa-hammer"></i> 2.5.1. Materiales de Construcción de las Canalizaciones
+                        </h4>
+                        
+                        <div class="columnas">
+                            <div class="info-box" style="margin-bottom: 1.5rem; flex: 1 1; align-self: center;">
+                                <div class="box-icon" style="background: #9C27B0;">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div>
+                                    <p>El material utilizado en las canalizaciones de Gas Natural puede ser de:</p>
+                                    <ul style="margin-left: 1rem; margin-top: 0.5rem;">
+                                        <li><strong>Acero</strong></li>
+                                        <li><strong>Polietileno</strong></li>
+                                        <li><strong>Cobre</strong></li>
+                                        <li><strong>Fundición dúctil</strong> (en desuso)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #4CAF50; flex: 1 1">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4CAF50;">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <div class="compact-title">Criterios de Selección por Presión</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li><strong>Hasta <span class="data-number">10 bar</span>:</strong> Mayoritariamente <strong>polietileno enterrado</strong></li>
+                                    <li><strong>Superior a <span class="data-number">10 bar</span>:</strong> Obligatorio <strong>tuberías de acero</strong></li>
+                                    <li><strong>Instalaciones interiores:</strong> Se permite <strong>cobre</strong> para presiones hasta <span class="data-number">5 bar</span></li>
+                                    <li><strong>Fundición dúctil:</strong> En desuso por problemas de corrosión</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
