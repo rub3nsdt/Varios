@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corte Térmico y Soldadura - Instalaciones de Gas Natural</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-fire: #D32F2F;
+            --color-fire-light: #FF5252;
+            --color-fire-dark: #B71C1C;
+            --color-gas: #2196F3;
+            --color-gas-light: #64B5F6;
+            --color-gas-dark: #1976D2;
+            --color-tools: #FF9800;
+            --color-tools-light: #FFB74D;
+            --color-tools-dark: #F57C00;
+            --color-security: #4CAF50;
+            --color-security-light: #81C784;
+            --color-security-dark: #388E3C;
+            --color-metal: #607D8B;
+            --color-metal-light: #90A4AE;
+            --color-metal-dark: #455A64;
+            --color-text: #333333;
+            --color-light: #f8f9fa;
+            --color-dark: #212121;
+            --gradient-fire: linear-gradient(135deg, #D32F2F 0%, #FF5252 100%);
+            --gradient-gas: linear-gradient(135deg, #2196F3 0%, #64B5F6 100%);
+            --gradient-tools: linear-gradient(135deg, #FF9800 0%, #FFB74D 100%);
+            --gradient-security: linear-gradient(135deg, #4CAF50 0%, #81C784 100%);
+            --gradient-metal: linear-gradient(135deg, #607D8B 0%, #90A4AE 100%);
+            --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(45deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        
+        @media (max-width: 630px) {
+            body {
+                --escala: 0.4;
+                transform: scale(var(--escala));
+                transform-origin: top left;
+                width: calc(100% / var(--escala));
+                height: calc(100vh / var(--escala));
+                overflow-x: hidden;
+            }
+
+            .floating-btn {
+                display: none !important;
+            }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .hero-header {
+            background: var(--gradient-fire);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+        }
+        
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .logo-icon {
+            background: rgba(255, 255, 255, 0.2);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-icon:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+        
+        .hero-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            font-weight: 800;
+        }
+        
+        .hero-header p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.95;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        
+        .stat-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.3rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .stat-number.red {
+            color: #FFEB3B;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Navegación */
+        .visual-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 2.5rem auto;
+            padding: 1.2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            max-width: 1400px;
+            position: sticky;
+            top: 15px;
+            z-index: 99;
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 100px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            font-size: 0.9rem;
+        }
+        
+        .nav-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .nav-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        /* Sistema de tarjetas */
+        .horizontal-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .horizontal-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .horizontal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        /* Encabezado de tarjeta */
+        .card-header-top {
+            padding: 2rem 2rem 1.5rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .card-title-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card-icon-large {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-title-top {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-subtitle-top {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 12px;
+        }
+        
+        .topic-number-badge {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Elementos dentro del contenido */
+        .highlight-number {
+            color: var(--color-fire);
+            font-weight: 700;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            color: #333;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .visual-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .visual-list li {
+            padding: 0.9rem 0;
+            padding-left: 3rem;
+            position: relative;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .visual-list li:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+            padding-left: 3.2rem;
+            border-left-color: var(--color-fire);
+        }
+        
+        .visual-list li:before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 1.4rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        
+        /* Cajas especiales */
+        .info-box, .tip-box, .warning-box, .danger-box, .legal-box {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-box::before, .tip-box::before, .warning-box::before, .danger-box::before, .legal-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            border-left: 6px solid var(--color-gas);
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+            border-left: 6px solid var(--color-security);
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #FFF8E1, #FFECB3);
+            border-left: 6px solid var(--color-tools);
+        }
+        
+        .danger-box {
+            background: linear-gradient(135deg, #FFEBEE, #FFCDD2);
+            border-left: 6px solid var(--color-fire);
+        }
+        
+        .legal-box {
+            background: linear-gradient(135deg, #F3E5F5, #E1BEE7);
+            border-left: 6px solid #9C27B0;
+        }
+        
+        .box-icon {
+            font-size: 1.3rem;
+            min-width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        /* Diagramas y elementos visuales */
+        .visual-diagram {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px dashed #ddd;
+            text-align: center;
+        }
+        
+        .diagram-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+        
+        .diagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .diagram-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .diagram-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .diagram-icon {
+            font-size: 2rem;
+            color: var(--color-fire);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        .visual-footer {
+            background: linear-gradient(135deg, var(--color-dark), #424242);
+            color: white;
+            padding: 3.5rem 0;
+            text-align: center;
+            margin-top: 5rem;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .visual-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 0L0 0 892.25 114.72 1200 0z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        /* Botones flotantes */
+        .floating-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: var(--gradient-fire);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1) rotate(15deg);
+        }
+        
+        .floating-btn-left {
+            left: 25px;
+            right: auto;
+            background: var(--gradient-gas);
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+        }
+        
+        .floating-btn-left:hover {
+            transform: scale(1.1) rotate(-15deg);
+        }
+        
+        /* Etiquetas de categoría */
+        .category-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        
+        .tag-gas { background: #E3F2FD; color: #1565C0; }
+        .tag-tools { background: #FFF3E0; color: #EF6C00; }
+        .tag-security { background: #E8F5E9; color: #2E7D32; }
+        .tag-thermal { background: #FFEBEE; color: #D32F2F; }
+        .tag-pressure { background: #F3E5F5; color: #7B1FA2; }
+        
+        /* Iconos decorativos flotantes */
+        .floating-icon {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        /* Estilo para subtítulos dentro de las secciones */
+        .section h4 {
+            margin: 1.5rem 0 1rem 0;
+            color: #333;
+            font-size: 1.2rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid var(--color-fire);
+            padding-left: 1rem;
+        }
+        
+        /* Timeline horizontal */
+        .procedure-timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            justify-content: space-between;
+        }
+        
+        .timeline-step {
+            flex: 1;
+            min-width: 150px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            border-top: 4px solid var(--color-gas);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: var(--color-gas);
+            color: white;
+            border-radius: 50%;
+            line-height: 32px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .step-title {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+            color: var(--color-dark);
+        }
+        
+        /* Tablas */
+        .visual-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .visual-table th {
+            background: var(--gradient-gas);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .visual-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .visual-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .visual-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        /* Responsividad */
+        @media (max-width: 700px) {
+            .card-title-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .topic-number-badge {
+                align-self: center;
+            }
+            
+            .procedure-timeline {
+                flex-direction: column;
+            }
+            
+            .diagram-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-header p {
+                font-size: 1rem;
+            }
+            
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .stat-box {
+                min-width: 150px;
+                padding: 0.8rem 1rem;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .visual-nav {
+                padding: 1rem;
+                top: 10px;
+                gap: 10px;
+            }
+            
+            .nav-item {
+                min-width: 90px;
+                padding: 0.8rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .nav-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
+            }
+            
+            .card-title-top {
+                font-size: 1.6rem;
+            }
+            
+            .card-content {
+                padding: 1.5rem;
+            }
+            
+            .card-header-top {
+                padding: 1.5rem 1.5rem 1.2rem;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .floating-btn, .floating-btn-left {
+                width: 45px;
+                height: 45px;
+                font-size: 1.25rem;
+            }
+            
+            .floating-btn-left {
+                left: 15px;
+                bottom: 85px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .card-title-top {
+                font-size: 1.25rem;
+            }
+            
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .stats-container {
+                gap: 1rem;
+            }
+            
+            .stat-box {
+                min-width: 120px;
+            }
+        }
+        
+        /* Estilos para listas anidadas */
+        .nested-list {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+            list-style: none;
+        }
+        
+        .nested-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        .nested-list li:before {
+            content: '•';
+            position: absolute;
+            left: 0.5rem;
+            top: 0.3rem;
+            color: var(--color-gas);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Para destacar especialmente algunos elementos */
+        .emphasis-box {
+            background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+            border-left: 6px solid #FF9800;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .emphasis-box::before {
+            content: '⚠️';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            opacity: 0.2;
+        }
+        
+        /* Estilo para iconos en pasos de línea de tiempo */
+        .step-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Comparación de tipos */
+        .comparison-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .comparison-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--color-tools);
+            transition: transform 0.3s ease;
+        }
+        
+        .comparison-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .comparison-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--color-tools-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .comparison-icon {
+            font-size: 1.5rem;
+        }
+        
+        /* Estilos específicos para datos numéricos */
+        .data-number {
+            color: #D32F2F;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+        
+        /* Tarjetas compactas para información */
+        .compact-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .compact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .compact-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .compact-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .compact-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #333;
+            line-height: 1.3;
+        }
+        
+        .compact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .compact-list li {
+            padding: 0.4rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            border-bottom: 1px dotted #f0f0f0;
+        }
+        
+        .compact-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .compact-list li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        
+        /* Grid para información */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        /* Chips de categoría */
+        .compact-chip {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.3rem;
+            margin-bottom: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="hero-header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <div class="logo-icon" style="background: var(--gradient-fire);">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <div class="logo-icon" style="background: var(--gradient-gas);">
+                    <i class="fas fa-gas-pump"></i>
+                </div>
+                <div class="logo-icon" style="background: var(--gradient-tools);">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div class="logo-icon" style="background: var(--gradient-security);">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+            </div>
+            
+            <h1>🔥INSTALACIONES DE GAS NATURAL</h1>
+            <p>Guía visual completa sobre propiedades físicas, límites de inflamabilidad y riesgos térmicos en instalaciones de gas</p>
+            
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number red">-160°C</div>
+                    <div class="stat-label">Temperatura GNL</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number red">5% - 15%</div>
+                    <div class="stat-label">Límite inflamabilidad GN</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number red">2.4% - 9.5%</div>
+                    <div class="stat-label">Límite inflamabilidad GLP</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navegación simplificada -->
+    <div class="container">
+        <div class="visual-nav">
+            <a href="#propiedades-fisicas" class="nav-item" style="background: linear-gradient(135deg, #FFEBEE, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-fire);">
+                    <i class="fas fa-thermometer-half"></i>
+                </div>
+                <span>Propiedades Físicas</span>
+                <small>Sección 1</small>
+            </a>
+            
+            <a href="#limites-inflamabilidad" class="nav-item" style="background: linear-gradient(135deg, #E3F2FD, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-gas);">
+                    <i class="fas fa-fire-extinguisher"></i>
+                </div>
+                <span>Límites Inflamabilidad</span>
+                <small>Sección 2</small>
+            </a>
+            
+            <a href="#riesgos-termicos" class="nav-item" style="background: linear-gradient(135deg, #FFF3E0, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-tools);">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <span>Riesgos Térmicos</span>
+                <small>Sección 3</small>
+            </a>
+            
+            <a href="#materiales-tuberias" class="nav-item" style="background: linear-gradient(135deg, #E8F5E9, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-security);">
+                    <i class="fas fa-pipe"></i>
+                </div>
+                <span>Materiales Tuberías</span>
+                <small>Sección 4</small>
+            </a>
+            
+            <a href="#operativa-intervenciones" class="nav-item" style="background: linear-gradient(135deg, #F3E5F5, #FFFFFF);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #9C27B0, #BA68C8);">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <span>Operativa Intervenciones</span>
+                <small>Sección 5</small>
+            </a>
+        </div>
+    </div>
+    
+    <main class="container">
+        <div class="horizontal-cards-container">
+            
+            <!-- SECCIÓN 1: PROPIEDADES FÍSICAS -->
+            <div class="horizontal-card" id="propiedades-fisicas">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-atom"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: var(--gradient-fire);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🔥 PROPIEDADES FÍSICAS DE LOS GASES COMBUSTIBLES</div>
+                            <div class="card-subtitle-top">Puntos de inflamabilidad, autoignición y comportamiento térmico</div>
+                            <div>
+                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Temperatura Crítica</span>
+                                <span class="compact-chip" style="background: #E3F2FD; color: #1976D2;">Presión</span>
+                                <span class="compact-chip" style="background: #FFF3E0; color: #FF8F00;">Concentración</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 1</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- 1.1. PUNTO DE INFLAMABILIDAD -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #D32F2F;">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h3>1.1. PUNTO DE INFLAMABILIDAD</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Definición</h4>
+                                <p>Es el conjunto de condiciones de <strong>temperatura, presión y concentración de gases</strong> en que una sustancia puede producir una cantidad de vapores suficiente para que al mezclarse con el aire pueda inflamarse si se le aplica una fuente de calor.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #D32F2F; margin-bottom: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #D32F2F;">
+                                    <i class="fas fa-temperature-high"></i>
+                                </div>
+                                <div class="compact-title">Condiciones Críticas para Inflamación</div>
+                            </div>
+                            <ul class="compact-list">
+                                <li><strong>Temperatura mínima:</strong> Varía según el tipo de gas</li>
+                                <li><strong>Presión adecuada:</strong> Condiciones atmosféricas normales o específicas</li>
+                                <li><strong>Concentración vapor-aire:</strong> Proporción precisa para combustión</li>
+                                <li><strong>Fuente de ignición:</strong> Chispa, llama o superficie caliente</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 1.2. PUNTO DE AUTOIGNICIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;">
+                                <i class="fas fa-burn"></i>
+                            </div>
+                            <h3>1.2. PUNTO DE AUTOIGNICIÓN</h3>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4>Definición</h4>
+                                <p>Es el conjunto de condiciones de <strong>temperatura, presión y concentración</strong> tal que la sustancia combustible es capaz de inflamarse y mantener la combustión <strong>sin necesidad de una fuente externa</strong> de ignición.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
+                                        <i class="fas fa-temperature-high"></i>
+                                    </div>
+                                    <div class="compact-title">Temperatura Crítica</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>La temperatura de autoignición del gas natural es de aproximadamente <span class="data-number">540°C</span>.</p>
+                                    <p>Para los GLP (propano/butano) varía entre <span class="data-number">450-510°C</span>.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
+                                        <i class="fas fa-compress-arrows-alt"></i>
+                                    </div>
+                                    <div class="compact-title">Condiciones de Presión</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>La presión influye en la temperatura de autoignición. A mayor presión, generalmente <strong>disminuye</strong> la temperatura necesaria para la autoignición.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 1.3. COMPORTAMIENTO TÉRMICO DEL GNL -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-snowflake"></i>
+                            </div>
+                            <h3>1.3. COMPORTAMIENTO TÉRMICO DEL GAS NATURAL LICUADO (GNL)</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Características Térmicas del GNL</h4>
+                                <p>El Gas Natural Licuado se mantiene a <span class="data-number">-160°C</span> durante el transporte en buques metaneros. Esta temperatura extremadamente baja presenta riesgos térmicos específicos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Proceso de Licuefacción y Regasificación del GNL</div>
+                            <div class="procedure-timeline">
+                                <div class="timeline-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Extracción</div>
+                                    <div style="font-size: 0.75rem;">Gas natural a presión de yacimientos</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">Licuefacción</div>
+                                    <div style="font-size: 0.75rem;">Enfriamiento a <span class="data-number">-160°C</span></div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">Transporte</div>
+                                    <div style="font-size: 0.75rem;">Buques metaneros especializados</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">Regasificación</div>
+                                    <div style="font-size: 0.75rem;">Calentamiento para uso en red</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #2196F3; margin-top: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #2196F3;">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="compact-title">Riesgos Térmicos del GNL</div>
+                            </div>
+                            <ul class="compact-list">
+                                <li><strong>Criogenicidad extrema:</strong> <span class="data-number">-160°C</span> causa congelación instantánea</li>
+                                <li><strong>Expansión volumétrica:</strong> 1 litro líquido = 600 litros gas</li>
+                                <li><strong>Fragilización materiales:</strong> Metales se vuelven quebradizos</li>
+                                <li><strong>Condensación aire:</strong> Puede crear atmósfera enrarecida</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECCIÓN 2: LÍMITES DE INFLAMABILIDAD -->
+            <div class="horizontal-card" id="limites-inflamabilidad">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: var(--gradient-gas);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-fire-extinguisher"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">⚠️ LÍMITES DE INFLAMABILIDAD DE GASES COMBUSTIBLES</div>
+                            <div class="card-subtitle-top">Rangos de concentración para combustión y explosión</div>
+                            <div>
+                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Límite Inferior</span>
+                                <span class="compact-chip" style="background: #FFF3E0; color: #FF8F00;">Límite Superior</span>
+                                <span class="compact-chip" style="background: #E8F5E9; color: #2E7D32;">Rango Peligroso</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 2</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- 2.1. DEFINICIÓN DE LÍMITES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;">
+                                <i class="fas fa-chart-area"></i>
+                            </div>
+                            <h3>2.1. DEFINICIÓN DE LÍMITES DE INFLAMABILIDAD</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <p>Los límites de inflamabilidad son las <strong>concentraciones, en tanto por ciento de gas en el aire</strong>, entre los cuales la mezcla es inflamable, para una temperatura y presión determinadas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #D32F2F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #D32F2F; width: 40px; height: 40px;">
+                                        <i class="fas fa-arrow-down"></i>
+                                    </div>
+                                    <div class="compact-title">Límite Inferior de Inflamabilidad (LII)</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Es la <strong>mínima concentración</strong> en tanto por ciento de gas en el aire en el que la mezcla es inflamable, para una temperatura y presión determinadas.</p>
+                                    <p class="data-number">Por debajo de esta concentración el gas no se inflama.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </div>
+                                    <div class="compact-title">Límite Superior de Inflamabilidad (LSI)</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Es la <strong>máxima concentración</strong> en tanto por ciento de gas en el aire en el que la mezcla es inflamable, para una temperatura y presión determinadas.</p>
+                                    <p class="data-number">Por encima de esta concentración el gas no se inflama.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #4CAF50; margin-top: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #4CAF50;">
+                                    <i class="fas fa-expand-arrows-alt"></i>
+                                </div>
+                                <div class="compact-title">Rango de Inflamabilidad</div>
+                            </div>
+                            <div style="font-size: 0.9rem; text-align: center; padding: 1rem;">
+                                <div style="font-size: 1.2rem; font-weight: 700; color: #4CAF50;">
+                                    RANGO PELIGROSO = LII → LSI
+                                </div>
+                                <p>El rango de inflamabilidad queda determinado entre el Límite Inferior y el Límite Superior de Inflamabilidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2.2. TABLA COMPARATIVA DE LÍMITES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #D32F2F;">
+                                <i class="fas fa-table"></i>
+                            </div>
+                            <h3>2.2. TABLA COMPARATIVA DE LÍMITES DE INFLAMABILIDAD</h3>
+                        </div>
+                        
+                        <table class="visual-table">
+                            <thead>
+                                <tr>
+                                    <th>Tipo de Gas</th>
+                                    <th>Límite Inferior (LII)</th>
+                                    <th>Límite Superior (LSI)</th>
+                                    <th>Presión de Servicio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Gas Natural (Metano)</strong></td>
+                                    <td><span class="data-number">5%</span></td>
+                                    <td><span class="data-number">15%</span></td>
+                                    <td>20 mbar</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Propano (GLP)</strong></td>
+                                    <td><span class="data-number">2.4%</span></td>
+                                    <td><span class="data-number">9.5%</span></td>
+                                    <td>37 mbar</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Butano (GLP)</strong></td>
+                                    <td><span class="data-number">1.5%</span></td>
+                                    <td><span class="data-number">8.5%</span></td>
+                                    <td>28 mbar</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4>¡PRECAUCIÓN! - Concentraciones Variables</h4>
+                                <p>Las concentraciones de gas varían con el tiempo y de un punto a otro. Su peligrosidad depende en gran medida de la cantidad (volumen) presente de mezcla potencialmente explosiva, siendo especialmente peligrosas las fugas de gas en recintos confinados (sótanos, calas profundas, etc.).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2.3. FACTORES QUE AFECTAN LOS LÍMITES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <h3>2.3. FACTORES QUE AFECTAN LOS LÍMITES DE INFLAMABILIDAD</h3>
+                        </div>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #D32F2F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #D32F2F; width: 40px; height: 40px;">
+                                        <i class="fas fa-temperature-high"></i>
+                                    </div>
+                                    <div class="compact-title">Temperatura</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Al aumentar la temperatura, <strong>se amplía</strong> el rango de inflamabilidad.</p>
+                                    <p>El Límite Inferior <strong>disminuye</strong> y el Límite Superior <strong>aumenta</strong>.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #2196F3;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #2196F3; width: 40px; height: 40px;">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div class="compact-title">Presión</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>La presión tiene menos influencia en el Límite Inferior, pero <strong>aumenta significativamente</strong> el Límite Superior a presiones elevadas.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #4CAF50;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4CAF50; width: 40px; height: 40px;">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
+                                    <div class="compact-title">Concentración de Oxígeno</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Mayor concentración de O<sub>2</sub> <strong>amplía</strong> los límites de inflamabilidad.</p>
+                                    <p>Menor concentración de O<sub>2</sub> (por debajo del <span class="data-number">19.5%</span>) <strong>reduce</strong> el riesgo de combustión.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECCIÓN 3: RIESGOS TÉRMICOS -->
+            <div class="horizontal-card" id="riesgos-termicos">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-radiation"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: linear-gradient(135deg, #FF9800, #FFB74D);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🌡️ RIESGOS TÉRMICOS EN INSTALACIONES DE GAS</div>
+                            <div class="card-subtitle-top">Asfixia, toxicidad, explosiones y efectos del calor en materiales</div>
+                            <div>
+                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Asfixia</span>
+                                <span class="compact-chip" style="background: #E8F5E9; color: #2E7D32;">Toxicidad</span>
+                                <span class="compact-chip" style="background: #FFF3E0; color: #FF8F00;">Explosión</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 3</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- 3.1. ASFIXIA POR DESPLAZAMIENTO DE OXÍGENO -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-lungs"></i>
+                            </div>
+                            <h3>3.1. ASFIXIA POR DESPLAZAMIENTO DE OXÍGENO</h3>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-skull-crossbones"></i>
+                            </div>
+                            <div>
+                                <h4>Riesgo de Asfixia</h4>
+                                <p>El Gas Natural es un gas limpio, sin olor ni color. Aunque no es un gas tóxico se trata de un gas inflamable que, como riesgo adicional, puede producir <strong>asfixia por desplazamiento del oxígeno</strong>.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #D32F2F; margin-bottom: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #D32F2F;">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div class="compact-title">Síntomas de Asfixia por Gas Natural</div>
+                            </div>
+                            <ul class="compact-list">
+                                <li><strong>Mareo y desorientación</strong></li>
+                                <li><strong>Aumento del ritmo cardíaco</strong></li>
+                                <li><strong>Aumento del ritmo respiratorio</strong></li>
+                                <li><strong>Dolor de cabeza</strong></li>
+                                <li><strong>Pérdida de conciencia</strong> si la concentración de O<sub>2</sub> < <span class="data-number">19.5%</span></li>
+                                <li><strong>Asfixia mortal</strong> en casos extremos</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Odorización del Gas Natural</h4>
+                                <p>Para facilitar su detección en caso de fuga, el Gas Natural se odoriza durante su regasificación, añadiéndole <strong>THT (tetrahidrotiofeno)</strong>, un aditivo de olor característico.</p>
+                                <p>Según la ficha de seguridad de la empresa distribuidora, esta odorización deberá ser tal que una fuga sea detectable por el olfato medio cuando la presencia de GN en el aire alcance las <span class="data-number">0,005 ppm de THT</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3.2. TOXICIDAD POR COMBUSTIÓN INCOMPLETA -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4CAF50;">
+                                <i class="fas fa-smog"></i>
+                            </div>
+                            <h3>3.2. TOXICIDAD POR COMBUSTIÓN INCOMPLETA</h3>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4>Producción de Monóxido de Carbono (CO)</h4>
+                                <p>Las llamas de cocinas, calentadores y calderas deben ser "higiénicas", esto es que no produzcan monóxido de carbono ni hollín. Una llama con buena combustión es <strong>azul, con trazas amarillas muy leves, dura y estable</strong>.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #4CAF50;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4CAF50; width: 40px; height: 40px;">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="compact-title">Combustión Correcta</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Llama azul:</strong> Indica combustión completa</p>
+                                    <p><strong>Estable y dura:</strong> Sin fluctuaciones</p>
+                                    <p><strong>Sin hollín:</strong> No produce residuos</p>
+                                    <p><strong>Sin CO:</strong> No genera monóxido de carbono</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #D32F2F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #D32F2F; width: 40px; height: 40px;">
+                                        <i class="fas fa-times-circle"></i>
+                                    </div>
+                                    <div class="compact-title">Combustión Incorrecta</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Llama amarilla:</strong> Indica combustión incompleta</p>
+                                    <p><strong>Blanda y ondulante:</strong> Inestable</p>
+                                    <p><strong>Produce hollín:</strong> Residuos de carbono</p>
+                                    <p><strong>Genera CO:</strong> Monóxido de carbono tóxico</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-skull-crossbones"></i>
+                            </div>
+                            <div>
+                                <h4>Peligro del Monóxido de Carbono</h4>
+                                <p>El monóxido de carbono (CO) es tóxico para el ser humano en concentraciones superiores a <span class="data-number">50 ppm</span>.</p>
+                                <p>Por lo tanto, aunque el Gas Natural como tal no sea tóxico, los productos de su combustión incompleta sí pueden dar lugar a intoxicaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3.3. RIESGOS DE EXPLOSIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #D32F2F;">
+                                <i class="fas fa-bomb"></i>
+                            </div>
+                            <h3>3.3. RIESGOS DE EXPLOSIÓN POR MEZCLAS INFLAMABLES</h3>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-radiation-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Zonas de Mayor Peligro</h4>
+                                <p>Las fugas de gas en recintos confinados (sótanos, calas profundas, etc.) son especialmente peligrosas debido a la acumulación de mezclas inflamables.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Factores que Incrementan el Riesgo de Explosión</div>
+                            <div class="diagram-grid">
+                                <div class="diagram-item">
+                                    <div class="diagram-icon">
+                                        <i class="fas fa-box"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Espacio Confinado</div>
+                                    <div style="font-size: 0.8rem;">Acumulación de gas sin ventilación</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Alta Presión</div>
+                                    <div style="font-size: 0.8rem;">Fugas en redes de alta presión</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Fuente de Ignición</div>
+                                    <div style="font-size: 0.8rem;">Chispas, llamas, superficies calientes</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Falta de Ventilación</div>
+                                    <div style="font-size: 0.8rem;">No renovación del aire ambiente</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECCIÓN 4: MATERIALES DE TUBERÍAS -->
+            <div class="horizontal-card" id="materiales-tuberias">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-pipe"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: linear-gradient(135deg, #4CAF50, #81C784);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🛠️ MATERIALES DE CONSTRUCCIÓN DE CANALIZACIONES DE GAS</div>
+                            <div class="card-subtitle-top">Comportamiento térmico y resistencia de materiales en instalaciones</div>
+                            <div>
+                                <span class="compact-chip" style="background: #E8F5E9; color: #2E7D32;">Polietileno</span>
+                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Acero</span>
+                                <span class="compact-chip" style="background: #FFF3E0; color: #FF8F00;">Cobre</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 4</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- 4.1. MATERIALES SEGÚN PRESIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4CAF50;">
+                                <i class="fas fa-compress-arrows-alt"></i>
+                            </div>
+                            <h3>4.1. MATERIALES SEGÚN PRESIÓN DE TRABAJO</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Normativa de Materiales</h4>
+                                <p>El material utilizado en las canalizaciones de Gas Natural podrá ser de <strong>acero, polietileno, cobre o fundición dúctil</strong> (esta última en desuso).</p>
+                            </div>
+                        </div>
+                        
+                        <table class="visual-table">
+                            <thead>
+                                <tr>
+                                    <th>Material</th>
+                                    <th>Rango de Presión</th>
+                                    <th>Aplicación Principal</th>
+                                    <th>Ventajas Térmicas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Polietileno</strong></td>
+                                    <td>Hasta <span class="data-number">10 bar</span></td>
+                                    <td>Redes enterradas de distribución</td>
+                                    <td>Resistente a corrosión, flexible</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Acero</strong></td>
+                                    <td>Superior a <span class="data-number">10 bar</span></td>
+                                    <td>Redes de transporte y alta presión</td>
+                                    <td>Alta resistencia mecánica y térmica</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cobre</strong></td>
+                                    <td>Hasta <span class="data-number">5 bar</span></td>
+                                    <td>Instalaciones interiores en edificios</td>
+                                    <td>Buena conductividad térmica</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="compact-card" style="border-top-color: #4CAF50; margin-top: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #4CAF50;">
+                                    <i class="fas fa-hard-hat"></i>
+                                </div>
+                                <div class="compact-title">Recomendaciones por Presión</div>
+                            </div>
+                            <ul class="compact-list">
+                                <li><strong>Polietileno enterrado:</strong> Mayoritariamente para presiones hasta <span class="data-number">10 bar</span></li>
+                                <li><strong>Tuberías de acero:</strong> Obligatorias para presiones superiores a <span class="data-number">10 bar</span></li>
+                                <li><strong>Cobre:</strong> Para instalaciones receptoras en edificios</li>
+                                <li><strong>Fundición dúctil:</strong> En desuso por problemas de corrosión</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 4.2. COMPORTAMIENTO TÉRMICO DE MATERIALES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;">
+                                <i class="fas fa-temperature-high"></i>
+                            </div>
+                            <h3>4.2. COMPORTAMIENTO TÉRMICO DE MATERIALES</h3>
+                        </div>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #607D8B;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #607D8B; width: 40px; height: 40px;">
+                                        <i class="fas fa-magnet"></i>
+                                    </div>
+                                    <div class="compact-title">Acero</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Punto de fusión:</strong> <span class="data-number">1,370-1,530°C</span></p>
+                                    <p><strong>Conductividad térmica:</strong> Alta</p>
+                                    <p><strong>Dilatación térmica:</strong> Media (11 µm/m·°C)</p>
+                                    <p><strong>Resistencia al fuego:</strong> Alta, pero pierde resistencia > <span class="data-number">500°C</span></p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #2196F3;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #2196F3; width: 40px; height: 40px;">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="compact-title">Polietileno</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Punto de fusión:</strong> <span class="data-number">115-135°C</span></p>
+                                    <p><strong>Conductividad térmica:</strong> Baja (aislante)</p>
+                                    <p><strong>Dilatación térmica:</strong> Alta (200 µm/m·°C)</p>
+                                    <p><strong>Resistencia al fuego:</strong> Baja, se funde y quema</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
+                                        <i class="fas fa-coins"></i>
+                                    </div>
+                                    <div class="compact-title">Cobre</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Punto de fusión:</strong> <span class="data-number">1,085°C</span></p>
+                                    <p><strong>Conductividad térmica:</strong> Muy alta</p>
+                                    <p><strong>Dilatación térmica:</strong> Media (16.6 µm/m·°C)</p>
+                                    <p><strong>Resistencia al fuego:</strong> Alta, mantiene propiedades</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 4.3. EFECTOS DEL GNL EN MATERIALES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-snowflake"></i>
+                            </div>
+                            <h3>4.3. EFECTOS DEL GAS NATURAL LICUADO (GNL) EN MATERIALES</h3>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4>Riesgos Criogénicos</h4>
+                                <p>El GNL se transporta y almacena a <span class="data-number">-160°C</span>, temperatura que afecta drásticamente las propiedades de los materiales.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #2196F3; margin-bottom: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #2196F3;">
+                                    <i class="fas fa-temperature-low"></i>
+                                </div>
+                                <div class="compact-title">Efectos de Bajas Temperaturas en Materiales</div>
+                            </div>
+                            <ul class="compact-list">
+                                <li><strong>Fragilización:</strong> Los metales se vuelven quebradizos</li>
+                                <li><strong>Contracción térmica:</strong> Reducción dimensional significativa</li>
+                                <li><strong>Pérdida de ductilidad:</strong> Disminución de la capacidad de deformación</li>
+                                <li><strong>Rotura por choque térmico:</strong> Al exponer materiales calientes al GNL</li>
+                                <li><strong>Fallos en juntas y sellos:</strong> Pérdida de estanqueidad</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Materiales para Instalaciones de GNL</h4>
+                                <p>Los depósitos de GNL consisten en dos volúmenes, uno dentro del otro a modo de termo entre los que se hace el vacío para aislar el depósito de acero al carbono exterior del depósito de acero inoxidable interior.</p>
+                                <p>Están dotados de un evaporador rápido que pasa a gas cierta cantidad de GNL con la finalidad de presurizar el depósito, manteniendo una presión de servicio de la parte gaseosa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECCIÓN 5: OPERATIVA EN INTERVENCIONES -->
+            <div class="horizontal-card" id="operativa-intervenciones">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: linear-gradient(135deg, #9C27B0, #BA68C8);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-fire-extinguisher"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🚒 OPERATIVA EN INTERVENCIONES CON RIESGO TÉRMICO</div>
+                            <div class="card-subtitle-top">Protocolos de seguridad y procedimientos para bomberos en instalaciones de gas</div>
+                            <div>
+                                <span class="compact-chip" style="background: #F3E5F5; color: #9C27B0;">Protocolos</span>
+                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Seguridad</span>
+                                <span class="compact-chip" style="background: #E3F2FD; color: #1976D2;">Procedimientos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 5</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- 5.1. PROTOCOLOS DE SEGURIDAD -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #D32F2F;">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>5.1. PROTOCOLOS DE SEGURIDAD EN INTERVENCIONES</h3>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4>Restricciones de Manipulación</h4>
+                                <p>En intervenciones de Bomberos del Ayuntamiento de Madrid, debemos limitarnos a la manipulación de llaves <strong>aguas abajo desde la llave de acometida</strong>.</p>
+                                <p>No debemos manipular llaves o válvulas de la red de distribución, dado que se trata de una red mallada y desconocemos el plano de la misma.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Evaluación</div>
+                                <div style="font-size: 0.75rem;">Identificar tipo de gas y presión</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Ventilación</div>
+                                <div style="font-size: 0.75rem;">Crear corrientes de aire natural</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Confinamiento</div>
+                                <div style="font-size: 0.75rem;">Aislar zona afectada</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">4</div>
+                                <div class="step-title">Corte de Suministro</div>
+                                <div style="font-size: 0.75rem;">Utilizar llaves autorizadas</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.2. PROCEDIMIENTOS ESPECÍFICOS -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <h3>5.2. PROCEDIMIENTOS ESPECÍFICOS PARA CORTE DE SUMINISTRO</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Manipulación de Llaves</h4>
+                                <p>Si durante una intervención debemos cortar el suministro de una llave localizada en las zonas comunes no deberemos restablecer el servicio, dado que no controlamos los puntos no accesibles, pudiendo alguno de ellos generar una fuga incontrolada.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #2196F3; margin-bottom: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #2196F3;">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="compact-title">Contacto con Empresa Distribuidora</div>
+                            </div>
+                            <div style="font-size: 0.9rem;">
+                                <p>La metodología de actuación debería ser solicitar a la central de comunicaciones la presencia del servicio de urgencia de la compañía de distribución.</p>
+                                <p class="data-number">Este servicio es 24 horas y obligatorio para todas las compañías.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h4>Restablecimiento del Servicio</h4>
+                                <p>Una vez que el servicio 24 horas se encuentre en el lugar, explicaremos al técnico la actuación realizada, haciéndose ellos responsables del restablecimiento del servicio.</p>
+                                <p>Si la actuación se limita a una sola vivienda, sí podemos restablecer el servicio teniendo la precaución de cerrar todos los aparatos de consumo antes de su restablecimiento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.3. IDENTIFICACIÓN DE TUBERÍAS -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>5.3. IDENTIFICACIÓN DE TUBERÍAS DE GAS EN EDIFICIOS</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Normativa de Señalización</h4>
+                                <p>Existe la creencia de que en los edificios de vivienda, las tuberías de gas deben ser de un color concreto. La normativa no obliga al pintado completo de toda la tubería, pero deben estar señalizadas de alguna manera para su identificación, mediante <strong>franjas o abrazaderas de color amarillo</strong>, etiquetada cada cierta distancia y rotulada con la palabra "GAS".</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #FF9800;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #FF9800;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="compact-title">Recomendaciones para Identificación</div>
+                            </div>
+                            <ul class="compact-list">
+                                <li><strong>Color amarillo:</strong> Franjas o abrazaderas identificativas</li>
+                                <li><strong>Etiquetado periódico:</strong> Cada cierta distancia en la tubería</li>
+                                <li><strong>Rotulación "GAS":</strong> Claramente visible</li>
+                                <li><strong>Trazado visible:</strong> Preferible sobre trazado oculto</li>
+                                <li><strong>Conocimiento de esquemas:</strong> La mejor manera de identificar una instalación de gas es conocer los esquemas del edificio y seguir las tuberías hasta los elementos esenciales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Botones flotantes -->
+    <button class="floating-btn" id="scrollTopBtn" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <button class="floating-btn floating-btn-left" id="scrollNextBtn" title="Siguiente sección">
+        <i class="fas fa-arrow-down"></i>
+    </button>
+    
+    <!-- Footer -->
+    <footer class="visual-footer">
+        <div class="container">
+            <div class="footer-content">
+                <h2 style="color: #ffffff; margin-bottom: 1.5rem; font-size: 2rem;">🔥 Corte Térmico y Soldadura - Instalaciones de Gas Natural</h2>
+                <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.9;">
+                    Guía visual completa basada en la documentación técnica sobre propiedades físicas, límites de inflamabilidad y riesgos térmicos en instalaciones de gas natural y GLP
+                </p>
+                
+                <div class="footer-icons">
+                    <div class="footer-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="footer-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2.5rem;">
+                    <p style="opacity: 0.8; font-size: 0.95rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-info-circle"></i> Información extraída del documento "TEMA 21 - INSTALACIONES DE LA EDIFICACIÓN. GAS NATURAL" - Última modificación 09/2025
+                    </p>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">
+                        © 2025 Guía Visual de Corte Térmico y Soldadura - Basado en documentación técnica de instalaciones de gas - CC BY-NC-SA 4.0
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Función para obtener el factor de escala actual
+        function getScaleFactor() {
+            if (window.innerWidth <= 630) {
+                const bodyStyles = window.getComputedStyle(document.body);
+                const scaleValue = bodyStyles.getPropertyValue('--escala');
+                return scaleValue ? parseFloat(scaleValue) : 1;
+            }
+            return 1;
+        }
+
+        // Botón para volver arriba
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const scale = getScaleFactor();
+                    
+                    let currentElement = targetElement;
+                    let absoluteTop = 0;
+                    
+                    while (currentElement) {
+                        absoluteTop += currentElement.offsetTop;
+                        currentElement = currentElement.offsetParent;
+                    }
+                    
+                    const offset = absoluteTop * scale;
+                    
+                    window.scrollTo({
+                        top: offset - (100 * scale), 
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Función para navegar a la siguiente sección
+        const scrollNextBtn = document.getElementById('scrollNextBtn');
+        const sections = Array.from(document.querySelectorAll('.horizontal-card[id]'));
+        
+        sections.sort((a, b) => {
+            return a.offsetTop - b.offsetTop;
+        });
+        
+        function getCurrentSection() {
+            const scale = getScaleFactor();
+            const margin = 150 * scale;
+            
+            for (let i = sections.length - 1; i >= 0; i--) {
+                if (window.scrollY + margin >= sections[i].offsetTop * scale) {
+                    return i;
+                }
+            }
+            return 0;
+        }
+        
+        function goToNextSection() {
+            const currentIndex = getCurrentSection();
+            const nextIndex = currentIndex + 1;
+            
+            if (nextIndex < sections.length) {
+                const nextSection = sections[nextIndex];
+                const scale = getScaleFactor();
+                window.scrollTo({
+                    top: nextSection.offsetTop * scale - (100 * scale),
+                    behavior: 'smooth'
+                });
+                
+                history.pushState(null, null, `#${nextSection.id}`);
+            } else {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        scrollNextBtn.addEventListener('click', goToNextSection);
+        
+        window.addEventListener('scroll', () => {
+            const currentIndex = getCurrentSection();
+            
+            if (currentIndex === sections.length - 1) {
+                scrollNextBtn.innerHTML = '<i class="fas fa-home"></i>';
+                scrollNextBtn.title = "Volver al inicio";
+            } else {
+                scrollNextBtn.innerHTML = '<i class="fas fa-arrow-down"></i>';
+                scrollNextBtn.title = "Siguiente sección";
+            }
+            
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                scrollNextBtn.style.opacity = '0.5';
+            } else {
+                scrollNextBtn.style.opacity = '1';
+            }
+        });
+        
+        // Navegación con teclado
+        document.addEventListener('keydown', (e) => {
+            if ((e.key === 'ArrowRight' || e.key === ' ') && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                
+                e.preventDefault();
+                goToNextSection();
+            }
+            
+            if (e.key === 'ArrowLeft' && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                
+                e.preventDefault();
+                const currentIndex = getCurrentSection();
+                const prevIndex = currentIndex - 1;
+                
+                if (prevIndex >= 0) {
+                    const prevSection = sections[prevIndex];
+                    const scale = getScaleFactor();
+                    window.scrollTo({
+                        top: prevSection.offsetTop * scale - (100 * scale),
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+        
+        // Inicializar
+        window.addEventListener('load', () => {
+            scrollNextBtn.style.display = 'flex';
+            
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const targetElement = document.querySelector(window.location.hash);
+                    if (targetElement) {
+                        const scale = getScaleFactor();
+                        window.scrollTo({
+                            top: targetElement.offsetTop * scale - (100 * scale),
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100);
+            }
+        });
+        
+        // Solucionar problemas de hash en WebView
+        (function () {
+            function go() {
+                if (!location.hash) return;
+                const id = location.hash.slice(1);
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView();
+            }
+
+            window.addEventListener("load", () => {
+                go();
+                setTimeout(go, 800);
+                setTimeout(go, 2300);
+            });
+        })();
+    </script>
+</body>
+</html>
