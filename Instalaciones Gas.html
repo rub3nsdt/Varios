@@ -482,6 +482,20 @@
             justify-content: center;
             
         }
+
+        .diagram-item-2 {
+            flex: 1 1 250px;
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }        
         
         .diagram-item:hover {
             transform: translateY(-5px);
@@ -628,7 +642,7 @@
         }
         
         .timeline-step {
-            flex: 1;
+            flex: 1 1 100px;
             min-width: 150px;
             background: #f8f9fa;
             border-radius: 12px;
@@ -1079,19 +1093,19 @@
                 <small>Sección 2</small>
             </a>
             
-            <a href="#riesgos-termicos" class="nav-item" style="background: linear-gradient(135deg, #FFF3E0, #FFFFFF);">
-                <div class="nav-icon" style="background: var(--gradient-tools);">
-                    <i class="fas fa-exclamation-triangle"></i>
+            <a href="#instalaciones-gas-edificios" class="nav-item" style="background: linear-gradient(135deg, #E8F5E9, #FFFFFF);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #4CAF50, #81C784);">
+                    <i class="fas fa-building"></i>
                 </div>
-                <span>Riesgos Térmicos</span>
+                <span>Instalaciones Edificios</span>
                 <small>Sección 3</small>
             </a>
             
-            <a href="#materiales-tuberias" class="nav-item" style="background: linear-gradient(135deg, #E8F5E9, #FFFFFF);">
-                <div class="nav-icon" style="background: var(--gradient-security);">
-                    <i class="fas fa-pipe"></i>
+            <a href="#gases-licuados-petroleo" class="nav-item" style="background: linear-gradient(135deg, #FFF3E0, #FFFFFF);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #FF9800, #FFB74D);">
+                    <i class="fas fa-gas-pump"></i>
                 </div>
-                <span>Materiales Tuberías</span>
+                <span>Introducción GLP</span>
                 <small>Sección 4</small>
             </a>
             
@@ -1924,24 +1938,25 @@
                 </div>
             </div>
             
-            <!-- SECCIÓN 3: RIESGOS TÉRMICOS -->
-            <div class="horizontal-card" id="riesgos-termicos">
+            <!-- SECCIÓN 3: INSTALACIONES DE GAS EN LOS EDIFICIOS -->
+            <div class="horizontal-card" id="instalaciones-gas-edificios" style="margin: 3rem 0;">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
-                    <i class="fas fa-radiation"></i>
+                    <i class="fas fa-building"></i>
                 </div>
                 
-                <div class="card-header-top" style="background: linear-gradient(135deg, #FF9800, #FFB74D);">
+                <div class="card-header-top" style="background: linear-gradient(135deg, #4CAF50, #81C784);">
                     <div class="card-title-container">
                         <div class="card-icon-large">
-                            <i class="fas fa-exclamation-triangle"></i>
+                            <i class="fas fa-home"></i>
                         </div>
                         <div>
-                            <div class="card-title-top">🌡️ RIESGOS TÉRMICOS EN INSTALACIONES DE GAS</div>
-                            <div class="card-subtitle-top">Asfixia, toxicidad, explosiones y efectos del calor en materiales</div>
+                            <div class="card-title-top">🏢 INSTALACIONES DE GAS EN LOS EDIFICIOS</div>
+                            <div class="card-subtitle-top">Instalaciones Receptoras de Gas (IRG), centralización de contadores y configuración de redes</div>
                             <div>
-                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Asfixia</span>
-                                <span class="compact-chip" style="background: #E8F5E9; color: #2E7D32;">Toxicidad</span>
-                                <span class="compact-chip" style="background: #FFF3E0; color: #FF8F00;">Explosión</span>
+                                <span class="compact-chip" style="background: #E8F5E9; color: #2E7D32;">IRG</span>
+                                <span class="compact-chip" style="background: #FFF3E0; color: #FF8F00;">Contadores</span>
+                                <span class="compact-chip" style="background: #E3F2FD; color: #1976D2;">Escalonamiento</span>
+                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Acometidas</span>
                             </div>
                         </div>
                     </div>
@@ -1949,205 +1964,13 @@
                 </div>
                 
                 <div class="card-content">
-                    <!-- 3.1. ASFIXIA POR DESPLAZAMIENTO DE OXÍGENO -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #2196F3;">
-                                <i class="fas fa-lungs"></i>
-                            </div>
-                            <h3>3.1. ASFIXIA POR DESPLAZAMIENTO DE OXÍGENO</h3>
-                        </div>
-                        
-                        <div class="danger-box">
-                            <div class="box-icon" style="background: #D32F2F;">
-                                <i class="fas fa-skull-crossbones"></i>
-                            </div>
-                            <div>
-                                <h4>Riesgo de Asfixia</h4>
-                                <p>El Gas Natural es un gas limpio, sin olor ni color. Aunque no es un gas tóxico se trata de un gas inflamable que, como riesgo adicional, puede producir <strong>asfixia por desplazamiento del oxígeno</strong>.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="compact-card" style="border-top-color: #D32F2F; margin-bottom: 1.5rem;">
-                            <div class="compact-header">
-                                <div class="compact-icon" style="background: #D32F2F;">
-                                    <i class="fas fa-exclamation-circle"></i>
-                                </div>
-                                <div class="compact-title">Síntomas de Asfixia por Gas Natural</div>
-                            </div>
-                            <ul class="compact-list">
-                                <li><strong>Mareo y desorientación</strong></li>
-                                <li><strong>Aumento del ritmo cardíaco</strong></li>
-                                <li><strong>Aumento del ritmo respiratorio</strong></li>
-                                <li><strong>Dolor de cabeza</strong></li>
-                                <li><strong>Pérdida de conciencia</strong> si la concentración de O<sub>2</sub> < <span class="data-number">19.5%</span></li>
-                                <li><strong>Asfixia mortal</strong> en casos extremos</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: #2196F3;">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
-                            <div>
-                                <h4>Odorización del Gas Natural</h4>
-                                <p>Para facilitar su detección en caso de fuga, el Gas Natural se odoriza durante su regasificación, añadiéndole <strong>THT (tetrahidrotiofeno)</strong>, un aditivo de olor característico.</p>
-                                <p>Según la ficha de seguridad de la empresa distribuidora, esta odorización deberá ser tal que una fuga sea detectable por el olfato medio cuando la presencia de GN en el aire alcance las <span class="data-number">0,005 ppm de THT</span>.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 3.2. TOXICIDAD POR COMBUSTIÓN INCOMPLETA -->
+                    <!-- 3.1. INSTALACIONES RECEPTORAS DE GAS (IRG) -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: #4CAF50;">
-                                <i class="fas fa-smog"></i>
+                                <i class="fas fa-wrench"></i>
                             </div>
-                            <h3>3.2. TOXICIDAD POR COMBUSTIÓN INCOMPLETA</h3>
-                        </div>
-                        
-                        <div class="warning-box">
-                            <div class="box-icon" style="background: #FF9800;">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div>
-                                <h4>Producción de Monóxido de Carbono (CO)</h4>
-                                <p>Las llamas de cocinas, calentadores y calderas deben ser "higiénicas", esto es que no produzcan monóxido de carbono ni hollín. Una llama con buena combustión es <strong>azul, con trazas amarillas muy leves, dura y estable</strong>.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="info-grid">
-                            <div class="compact-card" style="border-top-color: #4CAF50;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #4CAF50; width: 40px; height: 40px;">
-                                        <i class="fas fa-check-circle"></i>
-                                    </div>
-                                    <div class="compact-title">Combustión Correcta</div>
-                                </div>
-                                <div style="font-size: 0.9rem;">
-                                    <p><strong>Llama azul:</strong> Indica combustión completa</p>
-                                    <p><strong>Estable y dura:</strong> Sin fluctuaciones</p>
-                                    <p><strong>Sin hollín:</strong> No produce residuos</p>
-                                    <p><strong>Sin CO:</strong> No genera monóxido de carbono</p>
-                                </div>
-                            </div>
-                            
-                            <div class="compact-card" style="border-top-color: #D32F2F;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #D32F2F; width: 40px; height: 40px;">
-                                        <i class="fas fa-times-circle"></i>
-                                    </div>
-                                    <div class="compact-title">Combustión Incorrecta</div>
-                                </div>
-                                <div style="font-size: 0.9rem;">
-                                    <p><strong>Llama amarilla:</strong> Indica combustión incompleta</p>
-                                    <p><strong>Blanda y ondulante:</strong> Inestable</p>
-                                    <p><strong>Produce hollín:</strong> Residuos de carbono</p>
-                                    <p><strong>Genera CO:</strong> Monóxido de carbono tóxico</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="danger-box">
-                            <div class="box-icon" style="background: #D32F2F;">
-                                <i class="fas fa-skull-crossbones"></i>
-                            </div>
-                            <div>
-                                <h4>Peligro del Monóxido de Carbono</h4>
-                                <p>El monóxido de carbono (CO) es tóxico para el ser humano en concentraciones superiores a <span class="data-number">50 ppm</span>.</p>
-                                <p>Por lo tanto, aunque el Gas Natural como tal no sea tóxico, los productos de su combustión incompleta sí pueden dar lugar a intoxicaciones.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 3.3. RIESGOS DE EXPLOSIÓN -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #D32F2F;">
-                                <i class="fas fa-bomb"></i>
-                            </div>
-                            <h3>3.3. RIESGOS DE EXPLOSIÓN POR MEZCLAS INFLAMABLES</h3>
-                        </div>
-                        
-                        <div class="danger-box">
-                            <div class="box-icon" style="background: #D32F2F;">
-                                <i class="fas fa-radiation-alt"></i>
-                            </div>
-                            <div>
-                                <h4>Zonas de Mayor Peligro</h4>
-                                <p>Las fugas de gas en recintos confinados (sótanos, calas profundas, etc.) son especialmente peligrosas debido a la acumulación de mezclas inflamables.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="visual-diagram">
-                            <div class="diagram-title">Factores que Incrementan el Riesgo de Explosión</div>
-                            <div class="diagram-grid">
-                                <div class="diagram-item">
-                                    <div class="diagram-icon">
-                                        <i class="fas fa-box"></i>
-                                    </div>
-                                    <div style="font-weight: 700;">Espacio Confinado</div>
-                                    <div style="font-size: 0.8rem;">Acumulación de gas sin ventilación</div>
-                                </div>
-                                <div class="diagram-item">
-                                    <div class="diagram-icon">
-                                        <i class="fas fa-tachometer-alt"></i>
-                                    </div>
-                                    <div style="font-weight: 700;">Alta Presión</div>
-                                    <div style="font-size: 0.8rem;">Fugas en redes de alta presión</div>
-                                </div>
-                                <div class="diagram-item">
-                                    <div class="diagram-icon">
-                                        <i class="fas fa-fire"></i>
-                                    </div>
-                                    <div style="font-weight: 700;">Fuente de Ignición</div>
-                                    <div style="font-size: 0.8rem;">Chispas, llamas, superficies calientes</div>
-                                </div>
-                                <div class="diagram-item">
-                                    <div class="diagram-icon">
-                                        <i class="fas fa-wind"></i>
-                                    </div>
-                                    <div style="font-weight: 700;">Falta de Ventilación</div>
-                                    <div style="font-size: 0.8rem;">No renovación del aire ambiente</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- SECCIÓN 4: MATERIALES DE TUBERÍAS -->
-            <div class="horizontal-card" id="materiales-tuberias">
-                <div class="floating-icon" style="top: 20px; right: 30px;">
-                    <i class="fas fa-pipe"></i>
-                </div>
-                
-                <div class="card-header-top" style="background: linear-gradient(135deg, #4CAF50, #81C784);">
-                    <div class="card-title-container">
-                        <div class="card-icon-large">
-                            <i class="fas fa-industry"></i>
-                        </div>
-                        <div>
-                            <div class="card-title-top">🛠️ MATERIALES DE CONSTRUCCIÓN DE CANALIZACIONES DE GAS</div>
-                            <div class="card-subtitle-top">Comportamiento térmico y resistencia de materiales en instalaciones</div>
-                            <div>
-                                <span class="compact-chip" style="background: #E8F5E9; color: #2E7D32;">Polietileno</span>
-                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Acero</span>
-                                <span class="compact-chip" style="background: #FFF3E0; color: #FF8F00;">Cobre</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="topic-number-badge">Sección 4</div>
-                </div>
-                
-                <div class="card-content">
-                    <!-- 4.1. MATERIALES SEGÚN PRESIÓN -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #4CAF50;">
-                                <i class="fas fa-compress-arrows-alt"></i>
-                            </div>
-                            <h3>4.1. MATERIALES SEGÚN PRESIÓN DE TRABAJO</h3>
+                            <h3>3.1. INSTALACIONES RECEPTORAS DE GAS (IRG)</h3>
                         </div>
                         
                         <div class="info-box">
@@ -2155,166 +1978,877 @@
                                 <i class="fas fa-info-circle"></i>
                             </div>
                             <div>
-                                <h4>Normativa de Materiales</h4>
-                                <p>El material utilizado en las canalizaciones de Gas Natural podrá ser de <strong>acero, polietileno, cobre o fundición dúctil</strong> (esta última en desuso).</p>
+                                <h4>Definición de IRG</h4>
+                                <p>Conjunto de tuberías y accesorios comprendidos entre la <strong>llave de acometida (excluida)</strong> y las <strong>llaves de conexión de aparato (incluidas)</strong>, excluyendo los tramos de conexión de aparato y los propios aparatos.</p>
                             </div>
                         </div>
+                        
+                        <div class="columnas">
+                            <div class="visual-diagram" style="margin: 1.5rem 0; background: linear-gradient(135deg, #F9F9F9, #FFFFFF); flex: 1 1 calc(38%);">
+                                <div class="diagram-title" style="color: #4CAF50; margin-bottom: 1rem;">
+                                    <i class="fas fa-project-diagram"></i> Configuración General de IRG en Edificios de Viviendas
+                                </div>
+                                
+                                <div class="procedure-timeline"">
+                                    <div class="timeline-step" style="min-width: 160px;">
+                                        <div class="step-number">1</div>
+                                        <div class="step-title">Acometida Exterior</div>
+                                        <div style="font-size: 0.7rem;">Red distribución → Llave acometida</div>
+                                    </div>
+                                    <div class="timeline-step" style="min-width: 160px;">
+                                        <div class="step-number">2</div>
+                                        <div class="step-title">Acometida Interior</div>
+                                        <div style="font-size: 0.7rem;">Llave acometida → Llave edificio</div>
+                                    </div>
+                                    <div class="timeline-step" style="min-width: 160px;">
+                                        <div class="step-number">3</div>
+                                        <div class="step-title">Instalación Común</div>
+                                        <div style="font-size: 0.7rem;">Llave edificio → Llave abonado</div>
+                                    </div>
+                                    <div class="timeline-step" style="min-width: 160px;">
+                                        <div class="step-number">4</div>
+                                        <div class="step-title">Instalación Individual (IRI)</div>
+                                        <div style="font-size: 0.7rem;">Llave abonado → Llaves aparato</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex: 1 1 calc(60%);">
+                                <img src="image gas/Instalaciones.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                              
+                        </div>
+
+                        <!-- Tabla de llaves -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #4CAF50; padding-left: 1rem;">
+                            <i class="fas fa-key"></i> Tipos de Llaves en IRG
+                        </h4>
                         
                         <table class="visual-table">
                             <thead>
                                 <tr>
-                                    <th>Material</th>
-                                    <th>Rango de Presión</th>
-                                    <th>Aplicación Principal</th>
-                                    <th>Ventajas Térmicas</th>
+                                    <th>Llave</th>
+                                    <th>Ubicación</th>
+                                    <th>Función en Intervención</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Polietileno</strong></td>
-                                    <td>Hasta <span class="data-number">10 bar</span></td>
-                                    <td>Redes enterradas de distribución</td>
-                                    <td>Resistente a corrosión, flexible</td>
+                                    <td><strong>Llave de Acometida</strong></td>
+                                    <td>Vía pública en arqueta cerca del edificio</td>
+                                    <td>Requiere llave especial para manipulación</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Acero</strong></td>
-                                    <td>Superior a <span class="data-number">10 bar</span></td>
-                                    <td>Redes de transporte y alta presión</td>
-                                    <td>Alta resistencia mecánica y térmica</td>
+                                    <td><strong>Llave de Edificio</strong></td>
+                                    <td>Cerca de la fachada del edificio</td>
+                                    <td>Corta suministro a todo el edificio sin llave especial</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Cobre</strong></td>
-                                    <td>Hasta <span class="data-number">5 bar</span></td>
-                                    <td>Instalaciones interiores en edificios</td>
-                                    <td>Buena conductividad térmica</td>
+                                    <td><strong>Llave de Armario de Regulación</strong></td>
+                                    <td>Dentro del armario de regulación (acometidas ≤ 5 bar)</td>
+                                    <td>Corta gas del edificio; típico punto de fuga a <span class="data-number">0°C</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Llave de Usuario/Abonado</strong></td>
+                                    <td>Centralización contadores o derivaciones de montantes</td>
+                                    <td>Corta suministro a una vivienda</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Llave de Vivienda/Local</strong></td>
+                                    <td>Fuera o dentro de la vivienda, accesible desde dentro</td>
+                                    <td>Corta suministro de toda la vivienda</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Llave de Contador</strong></td>
+                                    <td>Antes del contador</td>
+                                    <td>Cierra suministro al contador; puede hacer funciones de llave de abonado</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Llave de Aparato</strong></td>
+                                    <td>Misma estancia del aparato, lo más próximo posible</td>
+                                    <td>Corta suministro de un dispositivo específico, sectorizando la fuga</td>
                                 </tr>
                             </tbody>
                         </table>
                         
-                        <div class="compact-card" style="border-top-color: #4CAF50; margin-top: 1.5rem;">
-                            <div class="compact-header">
-                                <div class="compact-icon" style="background: #4CAF50;">
-                                    <i class="fas fa-hard-hat"></i>
-                                </div>
-                                <div class="compact-title">Recomendaciones por Presión</div>
+                        <div class="tip-box" style="margin-top: 1.5rem;">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-lightbulb"></i>
                             </div>
-                            <ul class="compact-list">
-                                <li><strong>Polietileno enterrado:</strong> Mayoritariamente para presiones hasta <span class="data-number">10 bar</span></li>
-                                <li><strong>Tuberías de acero:</strong> Obligatorias para presiones superiores a <span class="data-number">10 bar</span></li>
-                                <li><strong>Cobre:</strong> Para instalaciones receptoras en edificios</li>
-                                <li><strong>Fundición dúctil:</strong> En desuso por problemas de corrosión</li>
-                            </ul>
+                            <div>
+                                <h4>Notas Importantes</h4>
+                                <p>• La llave de edificio es necesaria cuando una acometida suministra a más de un edificio en la misma propiedad o la distancia desde la llave de acometida es demasiado elevada.</p>
+                                <p>• El armario de regulación se encuentra en fachada con llave de triángulo para su apertura. Por normativa, la llave se encuentra <strong>antes del regulador</strong>.</p>
+                                <p>• En ocasiones, llaves de vivienda, usuario y contador están muy próximas y una sola llave cumple doble función.</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- 4.2. COMPORTAMIENTO TÉRMICO DE MATERIALES -->
+                    <!-- 3.2. OTRAS INSTALACIONES RECEPTORAS -->
                     <div class="section">
                         <div class="section-title">
-                            <div class="section-icon" style="background: #FF9800;">
-                                <i class="fas fa-temperature-high"></i>
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-building"></i>
                             </div>
-                            <h3>4.2. COMPORTAMIENTO TÉRMICO DE MATERIALES</h3>
+                            <h3>3.2. OTRAS INSTALACIONES RECEPTORAS</h3>
                         </div>
                         
                         <div class="info-grid">
-                            <div class="compact-card" style="border-top-color: #607D8B;">
-                                <div class="compact-header">
-                                    <div class="compact-icon" style="background: #607D8B; width: 40px; height: 40px;">
-                                        <i class="fas fa-magnet"></i>
-                                    </div>
-                                    <div class="compact-title">Acero</div>
-                                </div>
-                                <div style="font-size: 0.9rem;">
-                                    <p><strong>Punto de fusión:</strong> <span class="data-number">1,370-1,530°C</span></p>
-                                    <p><strong>Conductividad térmica:</strong> Alta</p>
-                                    <p><strong>Dilatación térmica:</strong> Media (11 µm/m·°C)</p>
-                                    <p><strong>Resistencia al fuego:</strong> Alta, pero pierde resistencia > <span class="data-number">500°C</span></p>
-                                </div>
-                            </div>
-                            
                             <div class="compact-card" style="border-top-color: #2196F3;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #2196F3; width: 40px; height: 40px;">
-                                        <i class="fas fa-shield-alt"></i>
+                                        <i class="fas fa-home"></i>
                                     </div>
-                                    <div class="compact-title">Polietileno</div>
+                                    <div class="compact-title">Instalaciones con Contadores en Vivienda</div>
                                 </div>
                                 <div style="font-size: 0.9rem;">
-                                    <p><strong>Punto de fusión:</strong> <span class="data-number">115-135°C</span></p>
-                                    <p><strong>Conductividad térmica:</strong> Baja (aislante)</p>
-                                    <p><strong>Dilatación térmica:</strong> Alta (200 µm/m·°C)</p>
-                                    <p><strong>Resistencia al fuego:</strong> Baja, se funde y quema</p>
+                                    <p><strong>Contexto:</strong> Edificios con gasificación posterior, sin espacio para centralizar contadores.</p>
+                                    <p><strong>Configuración:</strong></p>
+                                    <ul style="margin-left: 1rem;">
+                                        <li>Contadores dentro de cada vivienda</li>
+                                        <li>Alimentados por montantes colectivos (instalación común)</li>
+                                        <li>IRI comienza en llave de usuario, próxima a vivienda pero accesible desde zonas comunes</li>
+                                    </ul>
                                 </div>
                             </div>
                             
                             <div class="compact-card" style="border-top-color: #FF9800;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
-                                        <i class="fas fa-coins"></i>
+                                        <i class="fas fa-house-user"></i>
                                     </div>
-                                    <div class="compact-title">Cobre</div>
+                                    <div class="compact-title">Edificio de un Único Usuario</div>
                                 </div>
                                 <div style="font-size: 0.9rem;">
-                                    <p><strong>Punto de fusión:</strong> <span class="data-number">1,085°C</span></p>
-                                    <p><strong>Conductividad térmica:</strong> Muy alta</p>
-                                    <p><strong>Dilatación térmica:</strong> Media (16.6 µm/m·°C)</p>
-                                    <p><strong>Resistencia al fuego:</strong> Alta, mantiene propiedades</p>
+                                    <p><strong>Ejemplos:</strong> Viviendas unifamiliares o edificios de un único propietario.</p>
+                                    <p><strong>Configuración:</strong></p>
+                                    <ul style="margin-left: 1rem;">
+                                        <li>Sin Instalación Común</li>
+                                        <li>IRI comienza en armario de regulación</li>
+                                        <li>Llave de contador hace funciones de llave de usuario</li>
+                                        <li>Puede existir Acometida Interior si se necesita llave de Edificio</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- 4.3. EFECTOS DEL GNL EN MATERIALES -->
+                    <!-- 3.3. ESCALONAMIENTOS DE PRESIÓN EN LOS EDIFICIOS -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <h3>3.3. ESCALONAMIENTOS DE PRESIÓN EN LOS EDIFICIOS</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Concepto de Escalonamiento</h4>
+                                <p>Las instalaciones de Gas Natural pueden alimentarse a varias presiones dependiendo de las dimensiones y demanda. El ajuste de presiones a la presión de servicio de cada zona se realiza de forma escalonada mediante elementos de regulación.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #FF9800; margin-bottom: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #FF9800;">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="compact-title">Ejemplo: Edificio Nueva Construcción con Acometida MOP 5</div>
+                            </div>
+                            <div style="font-size: 0.9rem; padding: 1rem;">
+                                <div class="procedure-timeline" style="margin: 0.5rem 0;">
+                                    <div class="timeline-step" style="min-width: 180px;">
+                                        <div class="step-number">1</div>
+                                        <div class="step-title">Armario de Regulación</div>
+                                        <div style="font-size: 0.7rem;">Primer escalonamiento (MOP 5 → presión menor)</div>
+                                    </div>
+                                    <div class="timeline-step" style="min-width: 180px;">
+                                        <div class="step-number">2</div>
+                                        <div class="step-title">Centralización Contadores</div>
+                                        <div style="font-size: 0.7rem;">Llega gas a presión reducida</div>
+                                    </div>
+                                    <div class="timeline-step" style="min-width: 180px;">
+                                        <div class="step-number">3</div>
+                                        <div class="step-title">Regulador en Contador</div>
+                                        <div style="font-size: 0.7rem;">Segundo escalonamiento (→ <span class="data-number">20 mbar</span> para GN)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box" style="background: linear-gradient(135deg, #FFF8E1, #FFFFFF); border: 2px solid #FFECB3;">
+                            <div class="diagram-title" style="color: #FF9800;">Configuraciones Habituales en Madrid</div>
+                            <div style="text-align: center; ">
+                                <div style="display: inline-block; background: #FFF3E0; padding: 0.5rem 1rem; border-radius: 8px; margin: 0.5rem;">
+                                    <strong>Acometidas ≤ MOP 5</strong><br>
+                                    <small>La compañía puede distribuir en MPB, MPA o BP</small>
+                                </div>
+                                <div style="display: inline-block; background: #E8F5E9; padding: 0.5rem 1rem; border-radius: 8px; margin: 0.5rem;">
+                                    <strong>1 ó 2 Escalonamientos</strong><br>
+                                    <small>Dependiendo del caso específico</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3.4. CENTRALIZACIÓN DE CONTADORES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #9C27B0;">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h3>3.4. CENTRALIZACIÓN DE CONTADORES</h3>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #9C27B0; margin-bottom: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #9C27B0;">
+                                    <i class="fas fa-boxes"></i>
+                                </div>
+                                <div class="compact-title">Definición y Características</div>
+                            </div>
+                            <ul class="compact-list">
+                                <li><strong>Recinto exclusivo para gas:</strong> Aloja aparatos de control de consumo de todos los usuarios</li>
+                                <li><strong>Ubicación:</strong> Zona comunitaria con accesibilidad grado 2 desde dicha zona</li>
+                                <li><strong>Requisitos:</strong> Ventilado y con extintores en sus cercanías</li>
+                                <li><strong>En edificios existentes:</strong> Si no se puede centralizar, contadores pueden instalarse dentro de viviendas o locales privados</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #9C27B0;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #9C27B0; width: 40px; height: 40px;">
+                                        <i class="fas fa-1"></i>
+                                    </div>
+                                    <div class="compact-title">Accesibilidad Grado 1</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Manipulación <strong>sin</strong> necesidad de abrir <strong>cerraduras</strong></p>
+                                    <p><strong>Sin</strong> escaleras convencionales o medios mecánicos especiales</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #9C27B0;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #9C27B0; width: 40px; height: 40px;">
+                                        <i class="fas fa-2"></i>
+                                    </div>
+                                    <div class="compact-title">Accesibilidad Grado 2</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p> Armario, registro o puerta,<strong> provistos de cerraduras</strong> con llave normalizada</p>
+                                    <p><strong>Sin</strong> escaleras convencionales o medios mecánicos especiales</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #9C27B0;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #9C27B0; width: 40px; height: 40px;">
+                                        <i class="fas fa-3"></i>
+                                    </div>
+                                    <div class="compact-title">Accesibilidad Grado 3</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Se precisan</strong> escaleras convencionales o medios mecánicos especiales</p>
+                                    <p>Hay que pasar por una <strong>zona privada</strong> o  que aun siendo común, sea de uso privado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3.5. IDENTIFICACIÓN DE TUBERÍAS DE GAS EN EDIFICIOS -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #607D8B;">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>3.5. IDENTIFICACIÓN DE TUBERÍAS DE GAS EN EDIFICIOS</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #607D8B;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Normativa de Señalización</h4>
+                                <p>Existe la creencia de que las tuberías de gas deben ser de un color concreto. La normativa <strong>no obliga al pintado completo</strong> de toda la tubería, pero deben estar señalizadas de alguna manera para su identificación:</p>
+                            </div>
+                        </div>
+                        
+                        <div class="columnas">
+                            <div class="compact-card" style="border-top-color: #607D8B; margin-bottom: 1.5rem;flex: 1 1 calc(64%);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #607D8B;">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <div class="compact-title">Requisitos de Identificación</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li><strong>Color amarillo:</strong> Franjas o abrazaderas identificativas</li>
+                                    <li><strong>Etiquetado periódico:</strong> Cada cierta distancia en la tubería</li>
+                                    <li><strong>Rotulación "GAS":</strong> Claramente visible</li>
+                                    <li><strong>Trazado preferente:</strong> Normativa establece como preferente la tipología vista por sencillez de control y mantenimiento</li>
+                                    <li><strong>Trazado oculto:</strong> Se permite ocultar el trazado en determinadas circunstancias siempre y cuando vaya envainado</li>
+                                </ul>
+                            </div>
+                            <div style="display: flex; flex: 1 1 calc(34%);">
+                                <img src="image gas/Tuberia.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h4>Mejor Método de Identificación</h4>
+                                <p>La mejor manera de identificar una instalación de gas es <strong>conocer los esquemas del edificio</strong> y seguir las tuberías hasta los elementos esenciales (llaves, reguladores, contadores).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. GAS NATURAL LICUADO (GNL) -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: #2196F3;">
                                 <i class="fas fa-snowflake"></i>
                             </div>
-                            <h3>4.3. EFECTOS DEL GAS NATURAL LICUADO (GNL) EN MATERIALES</h3>
+                            <h3>4. GAS NATURAL LICUADO (GNL)</h3>
                         </div>
                         
-                        <div class="warning-box">
-                            <div class="box-icon" style="background: #2196F3;">
+                        <div class="columnas">
+                            <div class="info-box" style="flex: 1 1 280px; align-self: center; margin-top: 0;">
+                                <div class="box-icon" style="background: #2196F3;">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div>
+                                    <h4>Plantas Satélites</h4>
+                                    <p>En ocasiones los núcleos de población crecen antes que la red de transporte y distribución de Gas Natural. Para dar servicio de gas en estas zonas, se opta por la introducción de <strong>plantas satélites</strong>.</p>
+                                    <p>Estas plantas reciben GNL a <span class="data-number">-160°C</span> por camiones cisterna. La licuefacción permite almacenar en un mismo volumen hasta <span class="data-number">600 veces</span> más cantidad de gas.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #2196F3; flex: 1 1 280px; align-self: center;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #2196F3;">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <div class="compact-title">Funcionamiento de Plantas Satélites</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li><strong>Reciben GNL:</strong> A -160°C por camiones cisterna</li>
+                                    <li><strong>Regasifican:</strong> Convierten GNL a gas para distribución</li>
+                                    <li><strong>Distribuyen:</strong> A través de red de canalizaciones local</li>
+                                    <li><strong>Transición:</strong> Cuando llega la red de gasoductos, se eliminan las plantas</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #2196F3; padding-left: 1rem;">
+                            <i class="fas fa-cogs"></i> Sistemas en una Planta Satélite
+                        </h4>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Sistemas en una Planta Satélite de GNL</div>
+                            <div class="diagram-grid">
+                                <div class="diagram-item-2">
+                                    <div class="diagram-icon" style="color: #2196F3;">
+                                        <i class="fas fa-cube"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Cubeto</div>
+                                    <div style="font-size: 0.8rem;">Estructura envolvente para contención de derrames peligrosos</div>
+                                </div>
+                                <div class="diagram-item-2">
+                                    <div class="diagram-icon" style="color: #D32F2F;">
+                                        <i class="fas fa-oil-can"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Depósito</div>
+                                    <div style="font-size: 0.8rem;">Doble volumen con vacío intermedio (acero inoxidable interior, acero al carbono exterior)</div>
+                                </div>
+                                <div class="diagram-item-2">
+                                    <div class="diagram-icon" style="color: #4CAF50;">
+                                        <i class="fas fa-truck-moving"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Zona de Trasvase</div>
+                                    <div style="font-size: 0.8rem;">Desde cisterna del camión metanero a la planta, con vaporizador ambiental de descarga</div>
+                                </div>
+                                <div class="diagram-item-2">
+                                    <div class="diagram-icon" style="color: #FF9800;">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Evaporadores Ambientales</div>
+                                    <div style="font-size: 0.8rem;">Conjunto de tubos verticales para regasificación de GNL, se utilizan alternativamente</div>
+                                </div>
+                                <div class="diagram-item-2">
+                                    <div class="diagram-icon" style="color: #9C27B0;">
+                                        <i class="fas fa-temperature-high"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Recalentador de Gas Natural</div>
+                                    <div style="font-size: 0.8rem;">Sistema de calentamiento forzado hasta temperatura adecuada para la red de distribución</div>
+                                </div>
+                                <div class="diagram-item-2">
+                                    <div class="diagram-icon" style="color: #607D8B;">
+                                        <i class="fas fa-thermometer-empty"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Válvula de Seguridad por Frío</div>
+                                    <div style="font-size: 0.8rem;">Cierra el suministro si el gas no está a temperatura aceptable para la red</div>
+                                </div>
+                                <div class="diagram-item-2">
+                                    <div class="diagram-icon" style="color: #00BCD4;">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Sistema de Odorización</div>
+                                    <div style="font-size: 0.8rem;">Inyecta odorizantes al gas antes de salir de la planta (el GNL no viene odorizado)</div>
+                                </div>
+                                <div class="diagram-item-2">
+                                    <div class="diagram-icon" style="color: #795548;">
+                                        <i class="fas fa-sliders-h"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Estación de Regulación</div>
+                                    <div style="font-size: 0.8rem;">A la salida de la planta, mantiene la presión de servicio en la inyección a la red</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box" style="margin-top: 1.5rem;">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h4>Características del Depósito</h4>
+                                <p>Los depósitos consisten en <strong>dos volúmenes, uno dentro del otro a modo de termo</strong> entre los que se hace el vacío para aislar el depósito de acero al carbono exterior del depósito de acero inoxidable interior.</p>
+                                <p>Están dotados de un <strong>evaporador rápido</strong> que pasa a gas cierta cantidad de GNL para presurizar el depósito, manteniendo una presión de servicio de la parte gaseosa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 5. OPERATIVA EN INTERVENCIONES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #D32F2F;">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <h3>5. OPERATIVA EN INTERVENCIONES</h3>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: #D32F2F;">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
                             <div>
-                                <h4>Riesgos Criogénicos</h4>
-                                <p>El GNL se transporta y almacena a <span class="data-number">-160°C</span>, temperatura que afecta drásticamente las propiedades de los materiales.</p>
+                                <h4>Limitación de Manipulación</h4>
+                                <p>En intervenciones de Bomberos del Ayuntamiento de Madrid, debemos limitarnos a la manipulación de llaves <strong>aguas abajo desde la llave de acometida</strong>.</p>
+                                <p><strong>No debemos manipular llaves o válvulas de la red de distribución</strong>, dado que se trata de una red mallada y desconocemos el plano de la misma.</p>
                             </div>
                         </div>
                         
-                        <div class="compact-card" style="border-top-color: #2196F3; margin-bottom: 1.5rem;">
-                            <div class="compact-header">
-                                <div class="compact-icon" style="background: #2196F3;">
-                                    <i class="fas fa-temperature-low"></i>
+                        <div class="columnas">
+                            <div style="flex: 1 1 280px; display: flex; flex-direction: column;">
+                                <!-- 5.1. Corte de Suministro en Zonas Comunes -->
+                                <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #D32F2F; padding-left: 1rem;">
+                                    <i class="fas fa-ban"></i> 5.1. Corte de Suministro en Zonas Comunes
+                                </h4>
+                                
+                                <div class="info-box" style="align-self: center; margin: auto;">
+                                    <div class="box-icon" style="background: #2196F3;">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
+                                    <div>
+                                        <p>Si durante una intervención debemos cortar el suministro de una llave localizada en las zonas comunes <strong>no deberemos restablecer el servicio</strong>, dado que no controlamos los puntos no accesibles, pudiendo alguno de ellos generar una fuga incontrolada.</p>
+                                    </div>
                                 </div>
-                                <div class="compact-title">Efectos de Bajas Temperaturas en Materiales</div>
                             </div>
-                            <ul class="compact-list">
-                                <li><strong>Fragilización:</strong> Los metales se vuelven quebradizos</li>
-                                <li><strong>Contracción térmica:</strong> Reducción dimensional significativa</li>
-                                <li><strong>Pérdida de ductilidad:</strong> Disminución de la capacidad de deformación</li>
-                                <li><strong>Rotura por choque térmico:</strong> Al exponer materiales calientes al GNL</li>
-                                <li><strong>Fallos en juntas y sellos:</strong> Pérdida de estanqueidad</li>
-                            </ul>
+                            <div style="flex: 1 1 280px;">   
+                                <!-- 5.2. Contacto con Servicio de Urgencia -->
+                                <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #2196F3; padding-left: 1rem;">
+                                    <i class="fas fa-phone-alt"></i> 5.2. Contacto con Servicio de Urgencia
+                                </h4>
+                                
+                                <div class="compact-card" style="border-top-color: #2196F3; margin-bottom: 1.5rem;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #2196F3;">
+                                            <i class="fas fa-phone-volume"></i>
+                                        </div>
+                                        <div class="compact-title">Metodología de Actuación</div>
+                                    </div>
+                                    <div style="font-size: 0.9rem; padding: 1rem;">
+                                        <p>La metodología de actuación debería ser solicitar a la central de comunicaciones la presencia del <strong>servicio de urgencia de la compañía de distribución</strong>.</p>
+                                        <p class="data-number" style="margin-top: 0.5rem; font-size: 1rem;">Este servicio es 24 horas y obligatorio para todas las compañías.</p>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+
+                        <!-- 5.3. Restablecimiento del Servicio -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #4CAF50; padding-left: 1rem;">
+                            <i class="fas fa-redo"></i> 5.3. Restablecimiento del Servicio
+                        </h4>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #4CAF50;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4CAF50; width: 40px; height: 40px;">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <div class="compact-title">Con Presencia de Técnico</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Una vez que el servicio 24 horas se encuentre en el lugar, <strong>explicaremos al técnico la actuación realizada</strong>, haciéndose ellos responsables del restablecimiento del servicio.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div class="compact-title">En Vivienda Individual</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Si la actuación se limita a una sola vivienda, <strong>sí podemos restablecer el servicio</strong> teniendo la precaución de cerrar todos los aparatos de consumo antes de su restablecimiento.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>                    
+                </div>
+            </div>
+            
+            
+            <!-- SECCIÓN 4: GASES LICUADOS DEL PETRÓLEO (GLP) -->
+            <div class="horizontal-card" id="gases-licuados-petroleo" style="margin: 3rem 0;" >
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-flask"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: linear-gradient(135deg, #FF9800, #FFB74D);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-gas-pump"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🔥 GASES LICUADOS DEL PETRÓLEO (GLP)</div>
+                            <div class="card-subtitle-top">Introducción, características, propiedades comerciales y comportamiento de inflamación</div>
+                            <div>
+                                <span class="compact-chip" style="background: #FFF3E0; color: #FF8F00;">Propano</span>
+                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Butano</span>
+                                <span class="compact-chip" style="background: #E8F5E9; color: #2E7D32;">Inflamabilidad</span>
+                                <span class="compact-chip" style="background: #E3F2FD; color: #1976D2;">Almacenamiento</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 4</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- 1.1. INTRODUCCIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <h3>1.1. INTRODUCCIÓN A LOS GLP</h3>
                         </div>
                         
                         <div class="info-box">
-                            <div class="box-icon" style="background: #2196F3;">
+                            <div class="box-icon" style="background: #FF9800;">
                                 <i class="fas fa-info-circle"></i>
                             </div>
                             <div>
-                                <h4>Materiales para Instalaciones de GNL</h4>
-                                <p>Los depósitos de GNL consisten en dos volúmenes, uno dentro del otro a modo de termo entre los que se hace el vacío para aislar el depósito de acero al carbono exterior del depósito de acero inoxidable interior.</p>
-                                <p>Están dotados de un evaporador rápido que pasa a gas cierta cantidad de GNL con la finalidad de presurizar el depósito, manteniendo una presión de servicio de la parte gaseosa.</p>
+                                <p>Los Gases Licuados del Petróleo (GLP) son <strong>hidrocarburos derivados del petróleo</strong> que, en condiciones normales de presión y temperatura, se encuentran en estado gaseoso pero son <strong>fácilmente licuables bajo presión</strong>.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #FF9800; margin-bottom: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #FF9800;">
+                                    <i class="fas fa-oil-well"></i>
+                                </div>
+                                <div class="compact-title">Origen y Obtención</div>
+                            </div>
+                            <ul class="compact-list">
+                                <li><strong>En yacimientos:</strong> Asociados tanto al petróleo como al gas natural</li>
+                                <li><strong>En refinerías:</strong> Separados del crudo por destilación fraccionada (separación por puntos de ebullición)</li>
+                                <li><strong>Del gas natural:</strong> Destilados para evitar que circulen en fase líquida por gasoductos</li>
+                                <li><strong>Procesamiento:</strong> Desulfuración (eliminación de azufre) y separación en propano, butano y otros hidrocarburos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 1.2. CARACTERÍSTICAS DE LOS GLP -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #D32F2F;">
+                                <i class="fas fa-list"></i>
+                            </div>
+                            <h3>1.2. CARACTERÍSTICAS DE LOS GLP</h3>
+                        </div>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #D32F2F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #D32F2F; width: 40px; height: 40px;">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <div class="compact-title">Propiedades Físicas</div>
+                                </div>
+                                <div style="font-size: 0.95rem; display: flex; flex-direction: column; gap: 8px;">
+                                    <p><strong>Limpios e inodoros:</strong> Se odorizan con mercaptanos por seguridad</p>
+                                    <p><strong>No tóxicos:</strong> Pero desplazan oxígeno produciendo asfixia</p>
+                                    <p><strong>Más densos que el aire:</strong> Se acumulan en zonas inferiores</p>
+                                    <p><strong>Sin azufre, plomo ni óxidos:</strong> Combustión limpia (CO₂ + agua)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #2196F3;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #2196F3; width: 40px; height: 40px;">
+                                        <i class="fas fa-balance-scale"></i>
+                                    </div>
+                                    <div class="compact-title">Densidad y Comportamiento</div>
+                                </div>
+                                <div style="font-size: 0.95rem; display: flex; flex-direction: column; gap: 8px;">
+                                    <p><strong>Densidad > aire:</strong> Tienden a acumularse en zonas bajas</p>
+                                    <p><strong>Rejillas obligatorias:</strong> En parte inferior de estancias con GLP</p>
+                                    <p><strong>Prohibido en:</strong> Sótanos, escaleras y lugares de tránsito</p>
+                                    <p><strong>No se disuelven en agua:</strong> No contaminan, uso en embarcaciones y vehículos</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box" style="margin-top: 1.5rem;">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4>Compatibilidad con Materiales</h4>
+                                <p>Los GLP <strong>no corroen el acero, cobre o aleaciones</strong> y <strong>no disuelven cauchos sintéticos</strong>, por lo que estos materiales pueden usarse en instalaciones.</p>
+                                <p><strong>¡PRECAUCIÓN!</strong> Sí disuelven <strong>grasas y caucho natural</strong>.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Dilatación Térmica Crítica</h4>
+                                <p>En fase líquida, los GLP <strong>se dilatan más que los recipientes</strong> que los contienen. Por seguridad, los envases <strong>NO deben llenarse al 100%</strong> para absorber el diferencial de dilatación y evitar excesos de presión.</p>
+                                <p class="data-number">Grado máximo de llenado: 85% de la capacidad del recipiente</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 1.3. PRINCIPALES GLP COMERCIALES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3>1.3. PRINCIPALES GLP COMERCIALES</h3>
+                        </div>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Tipos de GLP Comerciales</div>
+                            <div class="diagram-grid">
+                                <div class="diagram-item">
+                                    <div class="diagram-icon" style="color: #D32F2F;">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Propano Comercial</div>
+                                    <div style="font-size: 0.9rem;">• Mayoritariamente C₃H₈<br>• Poder calorífico: <span class="data-number">22.000 Kcal/m³</span><br>• Uso: Grandes demandas</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon" style="color: #FF9800;">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Butano Comercial</div>
+                                    <div style="font-size: 0.9rem;">• Mayoritariamente C₄H₁₀<br>• Poder calorífico: <span class="data-number">28.300 Kcal/m³</span><br>• Uso: Doméstico, caudales menores</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon" style="color: #2196F3;">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Mezclas Automoción</div>
+                                    <div style="font-size: 0.9rem;">• Propano: <span class="data-number">30-40%</span><br>• Butano: <span class="data-number">70-60%</span><br>• Uso: Vehículos</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <table class="visual-table" style="margin: 1.5rem 0;">
+                            <thead>
+                                <tr>
+                                    <th>Tipo de GLP</th>
+                                    <th>Propano (C₃H₈)</th>
+                                    <th>Butano (C₄H₁₀)</th>
+                                    <th>Notas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Propano Comercial</strong></td>
+                                    <td><span class="data-number">min. 80%</span></td>
+                                    <td><span class="data-number">máx. 20%</span></td>
+                                    <td>Para grandes demandas, facilidad de gasificación</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Butano Comercial</strong></td>
+                                    <td><span class="data-number">max. 20%</span></td>
+                                    <td><span class="data-number">min. 80%</span></td>
+                                    <td>Para usos domésticos, proteger de bajas temperaturas</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Mezclas Automoción</strong></td>
+                                    <td><span class="data-number">30-40%</span></td>
+                                    <td><span class="data-number">70-60%</span></td>
+                                    <td>Para vehículos a motor</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    
+                    <!-- 1.4. INFLAMABILIDAD Y COMBUSTIÓN DE LOS GLP -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #D32F2F;">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h3>1.4. INFLAMABILIDAD Y COMBUSTIÓN DE LOS GLP</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Familias de Gases Combustibles</h4>
+                                <p>Los GLP tienen un <strong>Índice de Wobbe</strong> que varía de <span class="data-number">18.500 a 22.070 Kcal/m³</span>, por lo que se consideran <strong>gases combustibles de la tercera familia</strong>.</p>
+                                <p>Recordemos: Los gases de la misma familia son intercambiables (mismo comportamiento en quemadores). Los aparatos para GLP necesitan adaptación para gas natural y viceversa.</p>
+                            </div>
+                        </div>
+                        
+                        <table class="visual-table" style="margin: 1.5rem 0;">
+                            <thead>
+                                <tr>
+                                    <th>Tipo de Gas</th>
+                                    <th>Límite Inferior (LII)</th>
+                                    <th>Límite Superior (LSI)</th>
+                                    <th>Presión de Servicio más habitual</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Gas Natural (Metano)</strong></td>
+                                    <td><span class="data-number">5%</span></td>
+                                    <td><span class="data-number">15%</span></td>
+                                    <td><span class="data-number">22 mbar</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Propano (GLP)</strong></td>
+                                    <td><span class="data-number">2.4%</span></td>
+                                    <td><span class="data-number">9.5%</span></td>
+                                    <td><span class="data-number">37 mbar (50 desde depositos fijos)</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Butano (GLP)</strong></td>
+                                    <td><span class="data-number">1.5%</span></td>
+                                    <td><span class="data-number">8.5%</span></td>
+                                    <td><span class="data-number">28 mbar</span></td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </table>
+                    
+                    <!-- 1.5. GRADO DE LLENADO DE ENVASES Y DEPÓSITOS -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4CAF50;">
+                                <i class="fas fa-weight"></i>
+                            </div>
+                            <h3>1.5. GRADO DE LLENADO DE ENVASES Y DEPÓSITOS</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Licuación y Almacenamiento</h4>
+                                <p>Para facilitar distribución y comercialización, los GLP son licuados a presión reduciendo su volumen aproximadamente <span class="data-number">240 veces</span>, conviviendo fase líquida y gaseosa dentro de envases/depósitos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-card" style="border-top-color: #4CAF50; margin-bottom: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #4CAF50;">
+                                    <i class="fas fa-compress-arrows-alt"></i>
+                                </div>
+                                <div class="compact-title">Tensión de Vapor</div>
+                            </div>
+                            <div style="font-size: 0.9rem; padding: 1rem;">
+                                <p>Presión en la que existe equilibrio dinámico entre fase líquida y gaseosa. <strong>DISTINTA PARA CADA TEMPERATURA</strong>.</p>
+                                <p>Si se calienta un recipiente con GLP, la presión aumenta porque parte del líquido pasa a gas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4>Límite de Seguridad: 85%</h4>
+                                <p>La normativa establece un <strong>grado máximo de llenado del 85%</strong> de la capacidad del recipiente para evitar que un aumento de temperatura provoque exceso de presión y daños en el envase.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-grid" style="margin-top: 1.5rem;">
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
+                                        <i class="fas fa-thermometer-half"></i>
+                                    </div>
+                                    <div class="compact-title">Puntos de Ebullición</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Propano:</strong> ≈ <span class="data-number">-42°C</span> (condiciones normales)</p>
+                                    <p><strong>Butano:</strong> ≈ <span class="data-number">0°C</span> (condiciones normales)</p>
+                                    <p><em>Muy sensibles a cambios de temperatura</em></p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #2196F3;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #2196F3; width: 40px; height: 40px;">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div class="compact-title">Presiones a Diferentes Temperaturas</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>A 15°C:</strong></p>
+                                    <ul style="margin-left: 1rem;">
+                                        <li>Propano: <span class="data-number">8 bares</span></li>
+                                        <li>Butano: <span class="data-number">2 bares</span></li>
+                                    </ul>
+                                    <p><strong>A 60°C:</strong></p>
+                                    <ul style="margin-left: 1rem;">
+                                        <li>Propano: ≈ <span class="data-number">20 bares</span></li>
+                                        <li>Butano: ≈ <span class="data-number">7.5 bares</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
+            
             <!-- SECCIÓN 5: OPERATIVA EN INTERVENCIONES -->
-            <div class="horizontal-card" id="operativa-intervenciones">
+            <div class="horizontal-card" id="operativa-intervenciones" style="margin: 3rem 0;">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-hard-hat"></i>
                 </div>
