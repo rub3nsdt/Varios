@@ -1890,7 +1890,7 @@
                                     </div>
                                     <div class="compact-title">Identificación en Intervención</div>
                                 </div>
-                                <div">
+                                <div>
                                     <p><strong>Baja Presión:</strong> Montantes de sección grande, sin armario de regulación visible</p>
                                     <p><strong>Media Presión:</strong> Montantes de sección más pequeña (1" o 1½"), con armario de regulación en fachada</p>
                                     <p class="data-number" style="margin-top: 0.5rem;">¡PRECAUCIÓN! Mayor presión = mayor peligro</p>
@@ -1939,7 +1939,7 @@
             </div>
             
             <!-- SECCIÓN 3: INSTALACIONES DE GAS EN LOS EDIFICIOS -->
-            <div class="horizontal-card" id="instalaciones-gas-edificios" style="margin: 3rem 0;">
+            <div class="horizontal-card" id="instalaciones-gas-edificios">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-building"></i>
                 </div>
@@ -2514,13 +2514,14 @@
                             </div>
                         </div>
                         
-                    </div>                    
+                    </div>   
+                                     
                 </div>
             </div>
             
             
             <!-- SECCIÓN 4: GASES LICUADOS DEL PETRÓLEO (GLP) -->
-            <div class="horizontal-card" id="gases-licuados-petroleo" style="margin: 3rem 0;" >
+            <div class="horizontal-card" id="gases-licuados-petroleo">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-flask"></i>
                 </div>
@@ -2761,8 +2762,8 @@
                                     <td><span class="data-number">28 mbar</span></td>
                                 </tr>
                             </tbody>
-                        </div>
-                    </table>
+                        </table>
+                    </div>
                     
                     <!-- 1.5. GRADO DE LLENADO DE ENVASES Y DEPÓSITOS -->
                     <div class="section">
@@ -2783,31 +2784,35 @@
                             </div>
                         </div>
                         
-                        <div class="compact-card" style="border-top-color: #4CAF50; margin-bottom: 1.5rem;">
-                            <div class="compact-header">
-                                <div class="compact-icon" style="background: #4CAF50;">
-                                    <i class="fas fa-compress-arrows-alt"></i>
+                        <div class="columnas">
+                            <div class="compact-card" style="border-top-color: #4CAF50; margin-bottom: 1.5rem; flex: 1 1 calc(50%);">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4CAF50;">
+                                        <i class="fas fa-compress-arrows-alt"></i>
+                                    </div>
+                                    <div class="compact-title">Tensión de Vapor</div>
                                 </div>
-                                <div class="compact-title">Tensión de Vapor</div>
+                                <div style="font-size: 0.9rem; padding: 1rem;">
+                                    <p>Presión en la que existe equilibrio dinámico entre fase líquida y gaseosa. <strong>DISTINTA PARA CADA TEMPERATURA</strong>.</p>
+                                    <p>Si se calienta un recipiente con GLP, la presión aumenta porque parte del líquido pasa a gas.</p>
+                                </div>
                             </div>
-                            <div style="font-size: 0.9rem; padding: 1rem;">
-                                <p>Presión en la que existe equilibrio dinámico entre fase líquida y gaseosa. <strong>DISTINTA PARA CADA TEMPERATURA</strong>.</p>
-                                <p>Si se calienta un recipiente con GLP, la presión aumenta porque parte del líquido pasa a gas.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="danger-box">
-                            <div class="box-icon" style="background: #D32F2F;">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div>
-                                <h4>Límite de Seguridad: 85%</h4>
-                                <p>La normativa establece un <strong>grado máximo de llenado del 85%</strong> de la capacidad del recipiente para evitar que un aumento de temperatura provoque exceso de presión y daños en el envase.</p>
+                            <div style="display: flex; flex: 1 1 calc(34%);">
+                                <img src="image gas/Llenado.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
                             </div>
                         </div>
                         
                         <div class="info-grid" style="margin-top: 1.5rem;">
-                            <div class="compact-card" style="border-top-color: #FF9800;">
+                            <div class="danger-box" style="flex: 1 1 280px; align-self: center;">
+                                <div class="box-icon" style="background: #D32F2F;">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div>
+                                    <h4>Límite de Seguridad:</h4>
+                                    <p>La normativa establece un <strong>grado máximo de llenado del <span class="data-number">85%</span></strong> de la capacidad del recipiente para evitar que un aumento de temperatura provoque exceso de presión y daños en el envase.</p>
+                                </div>
+                            </div>                            
+                            <div class="compact-card" style="border-top-color: #FF9800; flex: 1 1 200px; align-self: center;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
                                         <i class="fas fa-thermometer-half"></i>
@@ -2821,7 +2826,7 @@
                                 </div>
                             </div>
                             
-                            <div class="compact-card" style="border-top-color: #2196F3;">
+                            <div class="compact-card" style="border-top-color: #2196F3; flex: 1 1 200px; align-self: center;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background: #2196F3; width: 40px; height: 40px;">
                                         <i class="fas fa-tachometer-alt"></i>
@@ -2847,24 +2852,25 @@
             </div>
             
             
-            <!-- SECCIÓN 5: OPERATIVA EN INTERVENCIONES -->
-            <div class="horizontal-card" id="operativa-intervenciones" style="margin: 3rem 0;">
+            <!-- SECCIÓN 5: INSTALACIONES CON GLP -->
+            <div class="horizontal-card" id="instalaciones-glp">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
-                    <i class="fas fa-hard-hat"></i>
+                    <i class="fas fa-tools"></i>
                 </div>
                 
-                <div class="card-header-top" style="background: linear-gradient(135deg, #9C27B0, #BA68C8);">
+                <div class="card-header-top" style="background: linear-gradient(135deg, #795548, #A1887F);">
                     <div class="card-title-container">
                         <div class="card-icon-large">
-                            <i class="fas fa-fire-extinguisher"></i>
+                            <i class="fas fa-cogs"></i>
                         </div>
                         <div>
-                            <div class="card-title-top">🚒 OPERATIVA EN INTERVENCIONES CON RIESGO TÉRMICO</div>
-                            <div class="card-subtitle-top">Protocolos de seguridad y procedimientos para bomberos en instalaciones de gas</div>
+                            <div class="card-title-top">🔧 INSTALACIONES CON GASES LICUADOS DEL PETRÓLEO (GLP)</div>
+                            <div class="card-subtitle-top">Tipos de instalaciones, envases, conexiones, escalonamientos y depósitos de almacenamiento</div>
                             <div>
-                                <span class="compact-chip" style="background: #F3E5F5; color: #9C27B0;">Protocolos</span>
-                                <span class="compact-chip" style="background: #FFEBEE; color: #D32F2F;">Seguridad</span>
-                                <span class="compact-chip" style="background: #E3F2FD; color: #1976D2;">Procedimientos</span>
+                                <span class="compact-chip" style="background: #EFEBE9; color: #795548;">Envases</span>
+                                <span class="compact-chip" style="background: #D7CCC8; color: #5D4037;">Conexiones</span>
+                                <span class="compact-chip" style="background: #BCAAA4; color: #4E342E;">Escalonamiento</span>
+                                <span class="compact-chip" style="background: #A1887F; color: #3E2723;">Depósitos</span>
                             </div>
                         </div>
                     </div>
@@ -2872,128 +2878,835 @@
                 </div>
                 
                 <div class="card-content">
-                    <!-- 5.1. PROTOCOLOS DE SEGURIDAD -->
+                    <!-- 2.1. TIPOS DE INSTALACIONES CON GLP -->
                     <div class="section">
                         <div class="section-title">
-                            <div class="section-icon" style="background: #D32F2F;">
-                                <i class="fas fa-shield-alt"></i>
+                            <div class="section-icon" style="background: #795548;">
+                                <i class="fas fa-layer-group"></i>
                             </div>
-                            <h3>5.1. PROTOCOLOS DE SEGURIDAD EN INTERVENCIONES</h3>
+                            <h3>2.1. TIPOS DE INSTALACIONES CON GLP</h3>
                         </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #795548;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Complejidad de las Instalaciones de GLP</h4>
+                                <p>Las instalaciones de GLP pueden ser más complejas que las de Gas Natural debido a sus particularidades: existen distintas modalidades de suministro y gran variedad de combinaciones en la ejecución de instalaciones.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 2.1.1. SUMINISTRO DE GLP -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #795548; padding-left: 1rem;">
+                            <i class="fas fa-truck-loading"></i> 2.1.1. Suministro de GLP
+                        </h4>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Modalidades de Suministro de GLP</div>
+                            <div class="diagram-grid">
+                                <div class="diagram-item">
+                                <div style="display: flex;">
+                                    <img src="image gas/Envas.png" alt="" style="max-width: 100%; height: auto; margin: auto; max-height: 80%;">
+                                </div>
+                                    <div style="font-weight: 700;">Suministro Envasado</div>
+                                    <div style="font-size: 0.8rem;">Bombonas domésticas y botellas industriales</div>
+                                </div>
+                                <div class="diagram-item">
+                                <div style="display: flex;">
+                                    <img src="image gas/Granel.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>
+                                    <div style="font-weight: 700;">Suministro a Granel</div>
+                                    <div style="font-size: 0.8rem;">Depósitos fijos rellenados por camiones cisterna</div>
+                                </div>
+                                <div class="diagram-item">
+                                <div style="display: flex;">
+                                    <img src="image gas/Canal.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>
+                                    <div style="font-weight: 700;">Canalizado</div>
+                                    <div style="font-size: 0.8rem;">Por red de distribución en localidades pequeñas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2.2. ENVASES DE GLP -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #5D4037;">
+                                <i class="fas fa-box-open"></i>
+                            </div>
+                            <h3>2.2. ENVASES DE GLP (SUMINISTRO ENVASADO)</h3>
+                        </div>
+                        
+                        <div class="columnas">
+                            <div class="compact-card" style="border-top-color: #5D4037; margin-bottom: 1.5rem; flex: 1;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #5D4037;">
+                                        <i class="fas fa-box"></i>
+                                    </div>
+                                    <div class="compact-title">Definición y Características</div>
+                                </div>
+                                <ul class="compact-list">
+                                    <li><strong>Recipientes recargables portátiles:</strong> Volumen ≤ <span class="data-number">150 litros</span></li>
+                                    <li><strong>Carga másica máxima:</strong> <span class="data-number">40 kg</span></li>
+                                    <li><strong>Componentes:</strong> Envase + válvula para llenado/vaciado</li>
+                                    <li><strong>Volumen almacenamiento (Va):</strong> Volumen interior de la cavidad</li>
+                                    <li><strong>Capacidad almacenamiento (Ca):</strong> <span class="data-number">85% × Va</span> (protección contra dilatación)</li>
+                                </ul>
+                            </div>
+                            <div style="display: flex; flex: 1;">
+                                <img src="image gas/Envases.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                            
+                        </div>
+
+                        <!-- 2.2.1. TIPOS DE ENVASES DE GLP -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #5D4037; padding-left: 1rem;">
+                            <i class="fas fa-boxes"></i> 2.2.1. Tipos de Envases de GLP
+                        </h4>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #795548;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #795548; width: 40px; height: 40px;">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div class="compact-title">Bombonas Domésticas</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Capacidad:</strong> Hasta <span class="data-number">15 kg</span></p>
+                                    <p><strong>Construcción:</strong> Dos casquetes soldados</p>
+                                    <p><strong>Comunes:</strong> <span class="data-number">12,5 kg butano / 11 kg propano</span></p>
+                                    <p><strong>Uso:</strong> Aplicaciones domésticas</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #4E342E;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4E342E; width: 40px; height: 40px;">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <div class="compact-title">Botellas Industriales</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Capacidad:</strong> Superior a <span class="data-number">15 kg</span></p>
+                                    <p><strong>Construcción:</strong> Dos casquetes + virola intermedia</p>
+                                    <p><strong>Comunes:</strong> <span class="data-number">35 kg de propano</span></p>
+                                    <p><strong>Características:</strong> Base metálica con orificios de ventilación, guarda válvula protector</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="columnas">
+                            <div class="visual-diagram" style="margin: 1.5rem 0; flex: 1 1 280px; align-self: center;">
+                                <div class="diagram-title">Estructura de los Envases</div>
+                                <div class="diagram-grid">
+                                    <div class="diagram-item" style="flex: 1 1 360px;">
+                                        <div class="diagram-icon" style="color: #795548;">
+                                            <i class="fas fa-home"></i>
+                                        </div>
+                                        <div style="font-weight: 700;">Bombona Doméstica</div>
+                                        <div style="font-size: 0.8rem;">Dos casquetes soldados circunferencialmente</div>
+                                    </div>
+                                    <div class="diagram-item" style="flex: 1 1 360px;">
+                                        <div class="diagram-icon" style="color: #4E342E;">
+                                            <i class="fas fa-industry"></i>
+                                        </div>
+                                        <div style="font-weight: 700;">Botella Industrial</div>
+                                        <div style="font-size: 0.8rem;">Dos casquetes + virola intermedia, base metálica, guarda válvula</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex: 1 1 150px; ">
+                                <img src="image gas/Domin.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                              
+                        </div>
+
+                        <!-- 2.2.2. VÁLVULA DE SEGURIDAD. PRESIONES DE ROTURA. -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #D32F2F; padding-left: 1rem;">
+                            <i class="fas fa-shield-alt"></i> 2.2.2. Válvula de Seguridad. Presiones de Rotura.
+                        </h4>
                         
                         <div class="danger-box">
                             <div class="box-icon" style="background: #D32F2F;">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
                             <div>
-                                <h4>Restricciones de Manipulación</h4>
-                                <p>En intervenciones de Bomberos del Ayuntamiento de Madrid, debemos limitarnos a la manipulación de llaves <strong>aguas abajo desde la llave de acometida</strong>.</p>
-                                <p>No debemos manipular llaves o válvulas de la red de distribución, dado que se trata de una red mallada y desconocemos el plano de la misma.</p>
+                                <h4>Válvula de Seguridad en Bombonas Domésticas</h4>
+                                <p>Las bombonas domésticas incorporan en su parte superior una <strong>válvula de seguridad contra sobrepresiones</strong> que comienza a liberar gas cuando la presión interior alcanza <span class="data-number">26 bares</span>.</p>
+                                <p><strong>IMPORTANTE:</strong> Para funcionamiento correcto, las botellas deben permanecer en <strong>posición vertical</strong> (los GLP están en fase líquida).</p>
                             </div>
                         </div>
                         
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-number">1</div>
-                                <div class="step-title">Evaluación</div>
-                                <div style="font-size: 0.75rem;">Identificar tipo de gas y presión</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">2</div>
-                                <div class="step-title">Ventilación</div>
-                                <div style="font-size: 0.75rem;">Crear corrientes de aire natural</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">3</div>
-                                <div class="step-title">Confinamiento</div>
-                                <div style="font-size: 0.75rem;">Aislar zona afectada</div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">4</div>
-                                <div class="step-title">Corte de Suministro</div>
-                                <div style="font-size: 0.75rem;">Utilizar llaves autorizadas</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 5.2. PROCEDIMIENTOS ESPECÍFICOS -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #2196F3;">
-                                <i class="fas fa-clipboard-list"></i>
-                            </div>
-                            <h3>5.2. PROCEDIMIENTOS ESPECÍFICOS PARA CORTE DE SUMINISTRO</h3>
-                        </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: #2196F3;">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
-                            <div>
-                                <h4>Manipulación de Llaves</h4>
-                                <p>Si durante una intervención debemos cortar el suministro de una llave localizada en las zonas comunes no deberemos restablecer el servicio, dado que no controlamos los puntos no accesibles, pudiendo alguno de ellos generar una fuga incontrolada.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="compact-card" style="border-top-color: #2196F3; margin-bottom: 1.5rem;">
+                        <div class="compact-card" style="border-top-color: #D32F2F;">
                             <div class="compact-header">
-                                <div class="compact-icon" style="background: #2196F3;">
-                                    <i class="fas fa-phone-alt"></i>
+                                <div class="compact-icon" style="background: #D32F2F;">
+                                    <i class="fas fa-grip-lines"></i>
                                 </div>
-                                <div class="compact-title">Contacto con Empresa Distribuidora</div>
+                                <div class="compact-title">Presiones de Rotura</div>
                             </div>
-                            <div style="font-size: 0.9rem;">
-                                <p>La metodología de actuación debería ser solicitar a la central de comunicaciones la presencia del servicio de urgencia de la compañía de distribución.</p>
-                                <p class="data-number">Este servicio es 24 horas y obligatorio para todas las compañías.</p>
+                            <div style="font-size: 0.9rem; padding: 1rem;">
+                                <p>Las bombonas domésticas tienen una presión de rotura entre <span class="data-number">75 kg/cm²</span> y <span class="data-number">130 kg/cm²</span>, dependiendo del material de construcción.</p>
                             </div>
                         </div>
                         
-                        <div class="tip-box">
+                        <!-- 2.2.3. BOMBONAS DOMÉSTICAS MÁS COMUNES DEL MERCADO -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #795548; padding-left: 1rem;">
+                            <i class="fas fa-store"></i> 2.2.3. Bombonas Domésticas más Comunes del Mercado
+                        </h4>
+                        
+                        <table class="visual-table" style="margin: 1rem 0;">
+                            <thead>
+                                <tr>
+                                    <th>Comercializador</th>
+                                    <th>Modelo/Tipo</th>
+                                    <th>Contenido</th>
+                                    <th>Características Identificativas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="5"><strong>REPSOL</strong></td>
+                                    <td>Bombona K6</td>
+                                    <td>6 kg butano</td>
+                                    <td>Acero ligero/inox, altura menor, diseño moderno</td>
+                                </tr>
+                                <tr>
+                                    <td>Bombona K12 ligera</td>
+                                    <td>12 kg butano</td>
+                                    <td>Acero ligero, capuchón plástico azul (asidero/guarda válvula)</td>
+                                </tr>
+                                <tr>
+                                    <td>Bombona K12</td>
+                                    <td>12,5 kg butano</td>
+                                    <td>Acero, completamente naranja, dos asas junto a válvula</td>
+                                </tr>
+                                <tr>
+                                    <td>Bombona de propano</td>
+                                    <td>11 kg propano</td>
+                                    <td>Acero, franja negra alrededor del envase</td>
+                                </tr>
+                                <tr>
+                                    <td>Bombona de autogas</td>
+                                    <td>12 kg GLP automoción</td>
+                                    <td>Franja azul "AutoGas", única que va en posición horizontal</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3"><strong>CEPSA</strong></td>
+                                    <td>Bombona de butano</td>
+                                    <td>12,5 kg butano</td>
+                                    <td>Acero inoxidable o acero con guarda válvula plástico rojo</td>
+                                </tr>
+                                <tr>
+                                    <td>Bombona de propano</td>
+                                    <td>11 kg propano</td>
+                                    <td>Igual que butano, guarda válvula azul</td>
+                                </tr>
+                                <tr>
+                                    <td>Bombona de autogas</td>
+                                    <td>11 kg GLP automoción</td>
+                                    <td>Acero pintado completamente azul</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                            <div style="display: flex;">
+                                <img src="image gas/Repsol.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                        
+                        
+                        <!-- 2.2.4. BOTELLAS INDUSTRIALES MÁS COMUNES DEL MERCADO -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #4E342E; padding-left: 1rem;">
+                            <i class="fas fa-industry"></i> 2.2.4. Botellas Industriales más Comunes del Mercado
+                        </h4>
+                        
+                        <div class="columnas">
+                            <div class="info-grid" style="flex: 1 1 550px;">
+                                <div class="compact-card" style="border-top-color: #D32F2F; align-self: center;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #D32F2F; width: 40px; height: 40px;">
+                                            <i class="fas fa-fire"></i>
+                                        </div>
+                                        <div class="compact-title">REPSOL</div>
+                                    </div>
+                                    <div style="font-size: 0.9rem;">
+                                        <p><strong>Contenido:</strong> <span class="data-number">35 kg</span> propano</p>
+                                        <p><strong>Peso total llena:</strong> <span class="data-number">70 kg</span> (35 kg envase vacío)</p>
+                                        <p><strong>Color:</strong> Naranja con franja negra</p>
+                                        <p><strong>Regulador:</strong> No incluye, usa llave acodada tipo asiento por junta plana accionada por volante</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="compact-card" style="border-top-color: #2196F3;align-self: center;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background: #2196F3; width: 40px; height: 40px;">
+                                            <i class="fas fa-tint"></i>
+                                        </div>
+                                        <div class="compact-title">CEPSA</div>
+                                    </div>
+                                    <div style="font-size: 0.9rem;">
+                                        <p><strong>Contenido:</strong> <span class="data-number">35 kg</span> propano</p>
+                                        <p><strong>Peso total llena:</strong> <span class="data-number">70 kg</span> (35 kg envase vacío)</p>
+                                        <p><strong>Color:</strong> Completamente azul</p>
+                                        <p><strong>Regulador:</strong> No incluye, usa llave acodada tipo asiento por junta plana accionada por volante</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex: 1 1 150px;">
+                                <img src="image gas/Indust.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                              
+                        </div>
+
+                        <div class="tip-box" style="margin-top: 1.5rem;">
                             <div class="box-icon" style="background: #4CAF50;">
                                 <i class="fas fa-lightbulb"></i>
                             </div>
                             <div>
-                                <h4>Restablecimiento del Servicio</h4>
-                                <p>Una vez que el servicio 24 horas se encuentre en el lugar, explicaremos al técnico la actuación realizada, haciéndose ellos responsables del restablecimiento del servicio.</p>
-                                <p>Si la actuación se limita a una sola vivienda, sí podemos restablecer el servicio teniendo la precaución de cerrar todos los aparatos de consumo antes de su restablecimiento.</p>
+                                <h4>Unidades Normalizadas</h4>
+                                <p><strong>UD110:</strong> Unidad doméstica de propano con carga de <span class="data-number">11 kg</span></p>
+                                <p><strong>UD125:</strong> Unidad doméstica de butano con carga de <span class="data-number">12,5 kg</span></p>
+                                <p>Todas las bombonas tienen diámetro de aproximadamente <span class="data-number">30 cm</span>, variando la altura según modelo.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- 5.3. IDENTIFICACIÓN DE TUBERÍAS -->
+                    <!-- 2.3. CONEXIONES DE LOS ENVASES A LOS PUNTOS DE CONSUMO -->
                     <div class="section">
                         <div class="section-title">
-                            <div class="section-icon" style="background: #FF9800;">
-                                <i class="fas fa-search"></i>
+                            <div class="section-icon" style="background: #4E342E;">
+                                <i class="fas fa-plug"></i>
                             </div>
-                            <h3>5.3. IDENTIFICACIÓN DE TUBERÍAS DE GAS EN EDIFICIOS</h3>
+                            <h3>2.3. CONEXIONES DE LOS ENVASES A LOS PUNTOS DE CONSUMO</h3>
+                        </div>
+                        
+                        
+                        <!-- 2.3.1. CONEXIONADO DE BOMBONAS Y BOTELLAS -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #4E342E; padding-left: 1rem;">
+                            <i class="fas fa-link"></i> 2.3.1. Conexionado de Bombonas y Botellas
+                        </h4>
+
+                        <div class="compact-card" style="border-top-color: #795548; min-height: 320px;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #795548; width: 50px; height: 50px;">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="compact-title" style="font-size: 1.1rem;">Bombonas Domésticas (<span class="data-number" style="font-size: 1.1rem;">≤15 kg</span>)</div>
+                            </div>
+                            
+                            <div style="padding: 0.5rem 0;">
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.8rem;">
+                                    <div style="background: #795548; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; margin-right: 0.8rem; flex-shrink: 0;">
+                                        <i class="fas fa-plug"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Conexión:</strong> Adaptador tipo Jumbo a válvula de conexión rápida
+                                    </div>
+                                </div>
+                                
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.8rem;">
+                                    <div style="background: #D32F2F; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; margin-right: 0.8rem; flex-shrink: 0;">
+                                        <i class="fas fa-fire-extinguisher"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Seguridad incendio:</strong> Anillo de baquelita que se funde, desconectando automáticamente
+                                    </div>
+                                </div>
+                                
+                                <div style="background: #FFF8E1; border-left: 4px solid #FFC107; padding: 0.8rem; border-radius: 0 6px 6px 0; margin: 1rem 0;">
+                                    <div style="font-weight: 700; color: #795548; margin-bottom: 0.5rem; font-size: 1rem;">
+                                        <i class="fas fa-tools"></i> Tipos de Adaptadores
+                                    </div>
+                                    
+                                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                                        <div style="display: flex; align-items: flex-start;">
+                                            <div style="background: #795548; color: white; min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; margin-right: 0.8rem; flex-shrink: 0;">
+                                                1
+                                            </div>
+                                            <div>
+                                                <strong>Adaptador Regulador Fijo:</strong> Accionado por palanca, reduce presión a la de utilización
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="display: flex; align-items: flex-start;">
+                                            <div style="background: #D32F2F; color: white; min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; margin-right: 0.8rem; flex-shrink: 0;">
+                                                2
+                                            </div>
+                                            <div>
+                                                <strong>Adaptador de Salida Libre:</strong> Mando giratorio <span style="color: #D32F2F;">rojo</span>, no regula presión, solo exterior con liras
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="display: flex; align-items: flex-start;">
+                                            <div style="background: #000; color: white; min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; margin-right: 0.8rem; flex-shrink: 0;">
+                                                3
+                                            </div>
+                                            <div>
+                                                <strong>Adaptador de Presión Regulable:</strong> Mando giratorio <span style="color: #000;">negro</span>, regula presión entre <span class="data-number">0.5-2 bares</span>, interior/exterior con liras
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="info-grid">
+                            
+                            <div class="compact-card" style="border-top-color: #4E342E; flex: 1 1;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4E342E; width: 50px; height: 50px;">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <div class="compact-title" style="font-size: 1.1rem;">Botellas Industriales (<span class="data-number" style="font-size: 1.1rem;">>15 kg</span>)</div>
+                                </div>
+                                
+                                <div style="padding: 0.5rem 0;">
+                                    <div style="display: flex; align-items: flex-start; margin-bottom: 0.8rem;">
+                                        <div style="background: #4E342E; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; margin-right: 0.8rem; flex-shrink: 0;">
+                                            <i class="fas fa-key"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Conexión:</strong> Llave normalizada de volante
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: flex-start; margin-bottom: 0.8rem;">
+                                        <div style="background: #5D4037; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; margin-right: 0.8rem; flex-shrink: 0;">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Tipo:</strong> Salida libre (no regula presión de salida)
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: flex-start; margin-bottom: 0.8rem;">
+                                        <div style="background: #6D4C41; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; margin-right: 0.8rem; flex-shrink: 0;">
+                                            <i class="fas fa-cog"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Accionamiento:</strong> Volante giratorio, tipo asiento por junta plana
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: flex-start; margin-bottom: 0.8rem;">
+                                        <div style="background: #8D6E63; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; margin-right: 0.8rem; flex-shrink: 0;">
+                                            <i class="fas fa-sliders-h"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Regulación presión:</strong> Mediante accesorios añadidos a la instalación
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: flex-start;">
+                                        <div style="background: #A1887F; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; margin-right: 0.8rem; flex-shrink: 0;">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Conexionado:</strong> Utilizando liras (tubos flexibles reforzados)
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="background: #F5F5F5; border-left: 4px solid #4E342E; padding: 0.8rem; border-radius: 0 6px 6px 0; margin-top: 1rem;">
+                                        <div style="font-weight: 700; color: #4E342E; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                                            <i class="fas fa-info-circle"></i> Característica Principal
+                                        </div>
+                                        <div style="font-size: 0.9rem; margin-top: 0.3rem;">
+                                            Diseñada para uso industrial con mayores caudales, siempre en posición vertical
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex: 1 1 ;">
+                                <img src="image gas/Conexionado.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                             
+                        </div>
+                        
+                        <!-- 2.3.2. LIMITADORES -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #FF9800; padding-left: 1rem;">
+                            <i class="fas fa-filter"></i> 2.3.2. Limitadores
+                        </h4>
+                        
+                        <div class="compact-card" style="border-top-color: #FF9800; margin-bottom: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #FF9800;">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="compact-title">Función de los Limitadores</div>
+                            </div>
+                            <div style="display: flex; flex-direction: row;">                            
+                                <div style="font-size: 0.9rem; padding: 1rem;">
+                                    <p>Válvula de exceso de caudal que conecta el regulador o llave de las botellas con los tubos flexibles hacia la instalación receptora o aparato de consumo.</p>
+                                    <p><strong>Función principal:</strong> Cortar el gas en caso de rotura de la lira (tubo flexible).</p>
+                                </div>
+                                <div style="display: flex; margin-left: auto;">
+                                    <img src="image gas/Limitador.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>  
+                            </div>                                
+                        </div>
+                        
+                        <!-- 2.3.3. TUBOS FLEXIBLES -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #2196F3; padding-left: 1rem;">
+                            <i class="fas fa-exchange-alt"></i> 2.3.3. Tubos Flexibles
+                        </h4>
+                        
+                        <table class="visual-table" style="margin: 1rem 0;">
+                            <thead>
+                                <tr>
+                                    <th>Tipo de Tubo Flexible</th>
+                                    <th>Características</th>
+                                    <th>Aplicación</th>
+                                    <th>Notas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Tubo Flexible de Elastómero</strong></td>
+                                    <td>Diámetro interior <span class="data-number">9 mm</span>, color naranja</td>
+                                    <td>Conexión general</td>
+                                    <td>Fecha de caducidad, unión reforzada con abrazadera metálica</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tubo Flexible de Elastómero Reforzado (Lira)</strong></td>
+                                    <td>Doble seguridad: válvula exceso caudal + válvula antirretorno</td>
+                                    <td>Baterías de botellas para descarga múltiple</td>
+                                    <td>Fecha de caducidad, evita vaciado total por rotura</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tubo Flexible de Acero Inoxidable Ondulado</strong></td>
+                                    <td>Acero inoxidable, longitud máxima <span class="data-number">1,5 m</span></td>
+                                    <td>Aparatos móviles conectados directamente o aparatos fijos</td>
+                                    <td>Sin fecha de caducidad</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <!-- 2.3.4. VÁLVULA ANTIRRETORNO -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #4CAF50; padding-left: 1rem;">
+                            <i class="fas fa-arrow-left"></i> 2.3.4. Válvula Antirretorno
+                        </h4>
+                        
+                        <div class="compact-card" style="border-top-color: #4CAF50;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #4CAF50;">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="compact-title">Función de la Válvula Antirretorno</div>
+                            </div>
+                            <div style="font-size: 0.9rem; padding: 1rem;">
+                                <p>Válvula posterior a los tubos flexibles que los une a la instalación receptora o aparato de consumo.</p>
+                                <p><strong>Función:</strong> Impide retroceso del gas desde la instalación u otras botellas hacia la botella en cuestión.</p>
+                                <p><strong>Obligatoria en:</strong> Instalaciones suministradas por rampas de botellas industriales (entre tubo flexible de cada botella y el colector).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2.4. ESCALONAMIENTOS DE PRESIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #D32F2F;">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <h3>2.4. ESCALONAMIENTOS DE PRESIÓN</h3>
                         </div>
                         
                         <div class="info-box">
-                            <div class="box-icon" style="background: #FF9800;">
+                            <div class="box-icon" style="background: #D32F2F;">
                                 <i class="fas fa-info-circle"></i>
                             </div>
                             <div>
-                                <h4>Normativa de Señalización</h4>
-                                <p>Existe la creencia de que en los edificios de vivienda, las tuberías de gas deben ser de un color concreto. La normativa no obliga al pintado completo de toda la tubería, pero deben estar señalizadas de alguna manera para su identificación, mediante <strong>franjas o abrazaderas de color amarillo</strong>, etiquetada cada cierta distancia y rotulada con la palabra "GAS".</p>
+                                <h4>Diferencias entre Propano y Butano</h4>
+                                <p>Las características particulares de los GLP generan diferencias en las Instalaciones Receptoras de Gas (IRG):</p>
+                                <ul style="margin-left: 1rem; margin-top: 0.5rem;">
+                                    <li><strong>Presión interior:</strong> Propano → Alta Presión / Butano → Media Presión</li>
+                                    <li><strong>Presión servicio:</strong> Propano <span class="data-number">37 mbar</span> / Butano <span class="data-number">28 mbar</span></li>
+                                    <li><strong>Diferencias adicionales:</strong> Poder calorífico y capacidad de evaporación</li>
+                                </ul>
                             </div>
                         </div>
                         
-                        <div class="compact-card" style="border-top-color: #FF9800;">
-                            <div class="compact-header">
-                                <div class="compact-icon" style="background: #FF9800;">
-                                    <i class="fas fa-eye"></i>
+                        <div class="comparison-container">
+                            <div class="comparison-card" style="border-top-color: #795548;">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="color: #795548;">
+                                        <i class="fas fa-arrow-down"></i>
+                                    </div>
+                                    <span>IRG de un Único Escalonamiento</span>
                                 </div>
-                                <div class="compact-title">Recomendaciones para Identificación</div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Gas:</strong> Normalmente butano</p>
+                                    <p><strong>Regulación:</strong> En el propio envase</p>
+                                    <p><strong>Ventaja:</strong> Instalación simplificada</p>
+                                    <p><strong>Presión envase:</strong> Media Presión</p>
+                                </div>
                             </div>
-                            <ul class="compact-list">
-                                <li><strong>Color amarillo:</strong> Franjas o abrazaderas identificativas</li>
-                                <li><strong>Etiquetado periódico:</strong> Cada cierta distancia en la tubería</li>
-                                <li><strong>Rotulación "GAS":</strong> Claramente visible</li>
-                                <li><strong>Trazado visible:</strong> Preferible sobre trazado oculto</li>
-                                <li><strong>Conocimiento de esquemas:</strong> La mejor manera de identificar una instalación de gas es conocer los esquemas del edificio y seguir las tuberías hasta los elementos esenciales</li>
-                            </ul>
+                            
+                            <div class="comparison-card" style="border-top-color: #4E342E;">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="color: #4E342E;">
+                                        <i class="fas fa-arrows-alt-v"></i>
+                                    </div>
+                                    <span>IRG de Dos Escalonamientos</span>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Gas:</strong> Normalmente propano (depósito)</p>
+                                    <p><strong>Regulación:</strong> Dos etapas de reducción</p>
+                                    <p><strong>Ventaja:</strong> Mejor aprovechamiento del caudal</p>
+                                    <p><strong>Limitación:</strong> Instalación no puede superar MOP2</p>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    
+                    <!-- 2.5. TIPOS DE DESCARGA DE BOTELLAS DE GLP -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #9C27B0;">
+                                <i class="fas fa-faucet"></i>
+                            </div>
+                            <h3>2.5. TIPOS DE DESCARGA DE BOTELLAS DE GLP</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #9C27B0;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <p>La configuración de instalaciones varía según número de envases, ubicación (interior/exterior) y tipo de descarga (continua/discontinua).</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 1. Según número de envases -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #9C27B0; padding-left: 1rem;">
+                            <i class="fas fa-sort-amount-up"></i> 1. Según Número de Envases Conectados
+                        </h4>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #9C27B0;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #9C27B0; width: 40px; height: 40px;">
+                                        <i class="fas fa-1"></i>
+                                    </div>
+                                    <div class="compact-title">1.1. Descarga Unitaria</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Un único envase alimenta la instalación, independientemente de que exista o no envase de reserva conectado.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #7B1FA2;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #7B1FA2; width: 40px; height: 40px;">
+                                        <i class="fas fa-th-large"></i>
+                                    </div>
+                                    <div class="compact-title">1.2. Descarga Múltiple o en Batería</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p>Varios envases alimentan la IRG descargando simultáneamente, garantizando mayor caudal.</p>
+                                    <p><strong>Más de dos envases:</strong> Requiere colector donde acometan cada uno.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-grid" style="margin-top: 1rem;">
+                            <div class="compact-card" style="border-top-color: #6A1B9A;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #6A1B9A; width: 40px; height: 40px;">
+                                        <i class="fas fa-link"></i>
+                                    </div>
+                                    <div class="compact-title">1.2.1. Descarga Múltiple en Serie</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Descarga:</strong> Previo regulación en mismo envase (regulador fijo en cada recipiente)</p>
+                                    <p><strong>Ventaja:</strong> Alarga duración del servicio</p>
+                                    <p><strong>Limitación:</strong> No aumenta caudal en instalación</p>
+                                    <p><strong>Uso:</strong> Configuración discreta, generalmente dos bombonas de butano/propano en interior viviendas</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #4A148C;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4A148C; width: 40px; height: 40px;">
+                                        <i class="fas fa-project-diagram"></i>
+                                    </div>
+                                    <div class="compact-title">1.2.2. Descarga Múltiple en Paralelo</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Descarga:</strong> Directamente desde envases, sin regulación previa (regulador posterior)</p>
+                                    <p><strong>Ventajas:</strong> Aumenta caudal disponible y duración suministro</p>
+                                    <p><strong>Uso:</strong> Rampas de bombonas/botellas en casetas exteriores</p>
+                                    <p><strong>Limitación:</strong> Máximo <span class="data-number">1.000 kg</span> por conjunto de GLP</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 2. Según continuidad del servicio -->
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #FF9800; padding-left: 1rem;">
+                            <i class="fas fa-history"></i> 2. Según Continuidad del Servicio (con envases de reserva)
+                        </h4>
+                        
+                        <div class="info-grid">
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
+                                        <i class="fas fa-hand-paper"></i>
+                                    </div>
+                                    <div class="compact-title">2.1. Descarga Alterna o Discontinua</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Sustitución:</strong> Manual del envase gastado por el de reserva</p>
+                                    <p><strong>Métodos:</strong></p>
+                                    <ul style="margin-left: 1rem;">
+                                        <li>Desconectar regulador y conectarlo al de reserva</li>
+                                        <li>Inversor manual accionado por palanca/dispositivo similar</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #4CAF50;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4CAF50; width: 40px; height: 40px;">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </div>
+                                    <div class="compact-title">2.2. Descarga Continua</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Sustitución:</strong> Automática mediante inversor</p>
+                                    <p><strong>Funcionamiento:</strong> Detecta falta de presión del envase gastado y cambia paso de válvula al envase de reserva</p>
+                                    <p><strong>Ventaja:</strong> Servicio ininterrumpido</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2.6. DEPÓSITOS DE ALMACENAMIENTO -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #607D8B;">
+                                <i class="fas fa-oil-can"></i>
+                            </div>
+                            <h3>2.6. DEPÓSITOS DE ALMACENAMIENTO</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #607D8B;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Definición y Características</h4>
+                                <p>Recipientes destinados a contener GLP en estado líquido para almacenamiento y posterior consumo. Se ubican en el interior de la propiedad que suministran.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="visual-diagram">
+                            <div class="diagram-title">Clasificación de Depósitos de GLP</div>
+                            <div class="diagram-grid">
+                                <div class="diagram-item">
+                                    <div class="diagram-icon" style="color: #607D8B;">
+                                        <i class="fas fa-truck-moving"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Depósitos Móviles</div>
+                                    <div style="font-size: 0.8rem;">Trasladados a planta de llenado para carga</div>
+                                </div>
+                                <div class="diagram-item">
+                                    <div class="diagram-icon" style="color: #455A64;">
+                                        <i class="fas fa-anchor"></i>
+                                    </div>
+                                    <div style="font-weight: 700;">Depósitos Fijos</div>
+                                    <div style="font-size: 0.8rem;">Rellenados por camiones cisterna, subclasificados según ubicación</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-grid" style="margin-top: 1.5rem;">
+                            <div class="compact-card" style="border-top-color: #607D8B;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #607D8B; width: 40px; height: 40px;">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                    <div class="compact-title">Depósito Aéreo</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Ubicación:</strong> Al aire libre</p>
+                                    <p><strong>Posición:</strong> Generatriz inferior del cilindro por encima del terreno</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #455A64;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #455A64; width: 40px; height: 40px;">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                    <div class="compact-title">Depósito Semienterrado</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Ubicación:</strong> Enterrado parcialmente por impedimentos del terreno (rocas, nivel freático, etc.)</p>
+                                    <p><strong>Conversión:</strong> Puede convertirse en enterrado si se cubre completamente con obra de fábrica u hormigón</p>
+                                </div>
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #37474F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #37474F; width: 40px; height: 40px;">
+                                        <i class="fas fa-digging"></i>
+                                    </div>
+                                    <div class="compact-title">Depósito Enterrado</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Ubicación:</strong> Enteramente por debajo del nivel del terreno circundante</p>
+                                    <p><strong>Ventaja:</strong> Mayor protección y menor impacto visual</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box" style="margin-top: 1.5rem;">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4>¡PRECAUCIÓN! - Anclaje Obligatorio</h4>
+                                <p>Todos los depósitos deben estar <strong>anclados al terreno</strong> puesto que en caso de inundación flotarían (la densidad de los GLP licuados es inferior a la del agua).</p>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin: 2rem 0 1rem 0; color: #333; font-size: 1.2rem; padding-left: 0.5rem; border-left: 4px solid #607D8B; padding-left: 1rem;">
+                            <i class="fas fa-cogs"></i> Componentes de un Tanque de Almacenamiento
+                        </h4>
+                        
+                        <div class="columnas">
+                            <table class="visual-table" style="flex: 1 1 calc(20%);">
+                                <thead>
+                                    <tr>
+                                        <th>Componente</th>
+                                        <th>Función</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>1. Válvula de Llenado</strong></td>
+                                        <td>Permite la carga del depósito desde el camión cisterna</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>2. Válvula de Vaciado</strong></td>
+                                        <td>Para extraer el GLP líquido del depósito</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>3. Válvula de Paso de Gas</strong></td>
+                                        <td>Para extraer el GLP en fase gaseosa</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>4. Indicador de Nivel</strong></td>
+                                        <td>Indica nivel de gas líquido en el depósito</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>5. Válvula de Seguridad</strong></td>
+                                        <td>Funciona en caso de presión anormal, liberando gas hasta equilibrar presión</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>6. Drenaje</strong></td>
+                                        <td>Purga para extraer residuos acumulados en interior</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div style="display: flex; flex: 1 1 100px;">
+                                <img src="image gas/Tanque.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div> 
+                        </div>    
                     </div>
                 </div>
             </div>
