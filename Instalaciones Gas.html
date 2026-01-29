@@ -709,118 +709,6 @@
             background-color: #f1f1f1;
         }
         
-        /* Responsividad */
-        @media (max-width: 700px) {
-            .card-title-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .topic-number-badge {
-                align-self: center;
-            }
-            
-            .procedure-timeline {
-                flex-direction: column;
-            }
-            
-            .diagram-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-header p {
-                font-size: 1rem;
-            }
-            
-            .logo-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-            
-            .stat-box {
-                min-width: 150px;
-                padding: 0.8rem 1rem;
-            }
-            
-            .stat-number {
-                font-size: 1.5rem;
-            }
-            
-            .visual-nav {
-                padding: 1rem;
-                top: 10px;
-                gap: 10px;
-            }
-            
-            .nav-item {
-                min-width: 90px;
-                padding: 0.8rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .nav-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.5rem;
-            }
-            
-            .card-title-top {
-                font-size: 1.6rem;
-            }
-            
-            .card-content {
-                padding: 1.5rem;
-            }
-            
-            .card-header-top {
-                padding: 1.5rem 1.5rem 1.2rem;
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .floating-btn, .floating-btn-left {
-                width: 45px;
-                height: 45px;
-                font-size: 1.25rem;
-            }
-            
-            .floating-btn-left {
-                left: 15px;
-                bottom: 85px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-header h1 {
-                font-size: 1.5rem;
-            }
-            
-            .card-title-top {
-                font-size: 1.25rem;
-            }
-            
-            .section-title {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .stats-container {
-                gap: 1rem;
-            }
-            
-            .stat-box {
-                min-width: 120px;
-            }
-        }
         
         /* Estilos para listas anidadas */
         .nested-list {
@@ -1109,13 +997,21 @@
                 <small>Sección 4</small>
             </a>
             
-            <a href="#operativa-intervenciones" class="nav-item" style="background: linear-gradient(135deg, #F3E5F5, #FFFFFF);">
-                <div class="nav-icon" style="background: linear-gradient(135deg, #9C27B0, #BA68C8);">
-                    <i class="fas fa-hard-hat"></i>
+            <a href="#instalaciones-glp" class="nav-item" style="background: linear-gradient(135deg, #EFEBE9, #FFFFFF);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #795548, #A1887F);">
+                    <i class="fas fa-cogs"></i>
                 </div>
-                <span>Operativa Intervenciones</span>
+                <span>Instalaciones GLP</span>
                 <small>Sección 5</small>
             </a>
+
+            <a href="#esquemas-instalacion-glp" class="nav-item" style="background: linear-gradient(135deg, #E3F2FD, #FFFFFF);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #2196F3, #64B5F6);">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <span>Esquemas GLP</span>
+                <small>Sección 6</small>
+            </a>            
         </div>
     </div>
     
@@ -3710,6 +3606,252 @@
                     </div>
                 </div>
             </div>
+
+            <!-- SECCIÓN 6: ESQUEMAS DE INSTALACIÓN DE GLP -->
+            <div class="horizontal-card" id="esquemas-instalacion-glp">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: linear-gradient(135deg, #2196F3, #64B5F6);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">📐 ESQUEMAS DE INSTALACIÓN DE GLP</div>
+                            <div class="card-subtitle-top">Configuraciones habituales, ejemplos de instalaciones y conceptos principales</div>
+                            <div>
+                                <span class="compact-chip" style="background: #E3F2FD; color: #1565C0;">IRG</span>
+                                <span class="compact-chip" style="background: #FFF3E0; color: #EF6C00;">Butano</span>
+                                <span class="compact-chip" style="background: #F3E5F5; color: #7B1FA2;">Propano</span>
+                                <span class="compact-chip" style="background: #E8F5E9; color: #2E7D32;">Esquemas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 6</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- INTRODUCCIÓN - CONCEPTOS BÁSICOS -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3>CONCEPTOS BÁSICOS DE INSTALACIONES DE GLP</h3>
+                        </div>                        
+                        
+                        <div class="compact-card" style="border-top-color: #2196F3; margin-bottom: 1.5rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background: #2196F3;">
+                                    <i class="fas fa-grip-lines-vertical"></i>
+                                </div>
+                                <div class="compact-title">Definiciones Clave en GLP</div>
+                            </div>
+                            <ul class="compact-list">
+                                <li><strong>Instalación Receptora de Gas (IRG):</strong> Conjunto de conducciones y accesorios entre la llave de acometida (excluida) y las llaves de conexión de aparato (incluidas). No incluye tramos de conexión ni aparatos.</li>
+                                <li><strong>Acometida interior:</strong> Conducciones entre llave de acometida (excluida) y llave(s) de edificio (incluidas).</li>
+                                <li><strong>Instalación común (IRC):</strong> Entre llave de edificio (o acometida) y llaves de abonado.</li>
+                                <li><strong>Instalación Individual (IRI):</strong> Entre llave de abonado (excluida) y llaves de aparato (incluidas).</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h4>Excepción Importante</h4>
+                                <p><strong>NO tienen carácter de IRG</strong> las instalaciones alimentadas por una única botella doméstica conectada por una tubería flexible o acoplada directamente a un solo aparato de utilización móvil.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex;">
+                            <img src="image gas/ED1.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                        </div>                        
+                        
+                        <div class="info-grid" style="margin-top: 1.5rem;">
+                            <div class="compact-card" style="border-top-color: #795548;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #795548; width: 40px; height: 40px;">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div class="compact-title">Viviendas Unifamiliares / Único Usuario</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Configuración:</strong> Alimentadas desde depósitos fijos o batería de botellas dentro de la propiedad.</p>
+                                    <p><strong>Características:</strong> Sin acometida, sin instalación común, todas las canalizaciones son IRI.</p>
+                                    <p><strong>Llave:</strong> Una llave aísla el almacenamiento y hace funciones de llave de acometida (salida).</p>
+                                </div>
+                                <div style="display: flex;">
+                                    <img src="image gas/ED3.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                  
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #4E342E;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #4E342E; width: 40px; height: 40px;">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <div class="compact-title">Edificios Colectivos con Bombonas en Vivienda</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Configuración:</strong> Cada vivienda tiene su bombona (máximo dos) dentro de la propia vivienda.</p>
+                                    <p><strong>Características:</strong> Sin acometida, sin instalación común, sin contadores.</p>
+                                    <p><strong>Caso común:</strong> En ciudades y viviendas unifamiliares.</p>
+                                </div>
+                                <div style="display: flex;">
+                                    <img src="image gas/ED4.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
+                            </div>
+                        </div>
+                        
+                        <div class="info-grid" style="margin-top: 1rem;">
+                            <div class="compact-card" style="border-top-color: #D32F2F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #D32F2F; width: 40px; height: 40px;">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <div class="compact-title">Edificios con Depósitos/Baterías</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Configuración:</strong> Alimentados por depósitos fijos o baterías de botellas dentro de la propiedad.</p>
+                                    <p><strong>Características:</strong> Sin acometida (llave de salida del almacenamiento), con instalación común e IRI con contadores.</p>
+                                </div>
+                                <div style="display: flex;">
+                                    <img src="image gas/ED2.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
+                            </div>
+                            
+                            <div class="compact-card" style="border-top-color: #FF9800;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background: #FF9800; width: 40px; height: 40px;">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div class="compact-title">Aparatos Independientes</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">
+                                    <p><strong>Configuración:</strong> Aparatos conectados a un solo envase (estufas catalíticas, sopletes, etc.).</p>
+                                    <p><strong>Características:</strong> No se consideran IRG, no tienen revisiones obligatorias.</p>
+                                    <p><strong>Peligro:</strong> Foco de intoxicaciones e incendios, especialmente envases "populares" (≤3 kg sin válvula de seguridad).</p>
+                                </div>
+                                <div style="display: flex;">
+                                    <img src="image gas/ED5.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3.1. EJEMPLOS DE INSTALACIONES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4CAF50;">
+                                <i class="fas fa-list-ol"></i>
+                            </div>
+                            <h3>3.1. EJEMPLOS DE INSTALACIONES</h3>
+                        </div>
+                        
+                        
+                        <div class="columnas">
+                            <!-- 3.1.1. INSTALACIÓN UNITARIA DE GAS BUTANO CON BOMBONA -->
+                            <div class="subsection" style=" padding: 1.5rem; background: #F9F9F9; border-radius: 12px; border-left: 6px solid #FF9800; flex: 1 1 450px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <div style="background: #FF9800; color: white; width: 36px; font-size: 0.8rem; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 1rem; flex-shrink: 0;">
+                                        3.1.1
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0; color: #333;">INSTALACIÓN UNITARIA DE GAS BUTANO CON BOMBONA</h4>
+                                        <p style="margin: 0.3rem 0 0 0; color: #666; font-size: 0.95rem;">Descarga unitaria alterna con un único escalonamiento (no están consideradas IRG)</p>
+                                    </div>
+                                </div>
+                                
+                                <div style="display: flex;">
+                                    <img src="image gas/IN1.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>
+                            </div>
+                            
+                            <!-- 3.1.2. INSTALACIÓN INDIVIDUAL INTERIOR DE GAS BUTANO CON BOMBONA -->
+                            <div class="subsection" style=" padding: 1.5rem; background: #F9F9F9; border-radius: 12px; border-left: 6px solid #4CAF50;flex: 1 1 450px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <div style="background: #4CAF50; color: white; width: 36px; font-size: 0.8rem; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 1rem; flex-shrink: 0;">
+                                        3.1.2
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0; color: #333;">INSTALACIÓN INDIVIDUAL INTERIOR DE GAS BUTANO CON BOMBONA</h4>
+                                        <p style="margin: 0.3rem 0 0 0; color: #666; font-size: 0.95rem;">Instalación IRG. Descarga unitaria alterna con un único escalonamiento.</p>
+                                    </div>
+                                </div>
+                                
+                                <div style="display: flex;">
+                                    <img src="image gas/IN2.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>
+                            </div>
+                            
+                            <!-- 3.1.3. INSTALACIÓN INDIVIDUAL INTERIOR DE GAS PROPANO CON BOMBONAS -->
+                            <div class="subsection" style=" padding: 1.5rem; background: #F9F9F9; border-radius: 12px; border-left: 6px solid #9C27B0;flex: 1 1 450px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <div style="background: #9C27B0; color: white; width: 36px; font-size: 0.8rem; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 1rem; flex-shrink: 0;">
+                                        3.1.3
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0; color: #333;">INSTALACIÓN INDIVIDUAL INTERIOR DE GAS PROPANO CON BOMBONAS</h4>
+                                        <p style="margin: 0.3rem 0 0 0; color: #666; font-size: 0.95rem;">Instalación IRG. Descarga en batería en paralelo discontinua con doble escalonamiento.</p>
+                                    </div>
+                                </div>
+                                
+                                <div style="display: flex;">
+                                    <img src="image gas/IN3.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>
+                            </div>
+                        
+                            <!-- 3.1.4. INSTALACIÓN INDIVIDUAL EXTERIOR DE GAS PROPANO CON BOMBONAS -->
+                            <div class="subsection" style=" padding: 1.5rem; background: #F9F9F9; border-radius: 12px; border-left: 6px solid #2196F3; flex: 1 1 450px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <div style="background: #2196F3; color: white; width: 36px; font-size: 0.8rem; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 1rem; flex-shrink: 0;">
+                                        3.1.4
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0; color: #333;">INSTALACIÓN INDIVIDUAL EXTERIOR DE GAS PROPANO CON BOMBONAS</h4>
+                                        <p style="margin: 0.3rem 0 0 0; color: #666; font-size: 0.95rem;">Instalación IRG. Descarga en batería continua con doble escalonamiento.</p>
+                                    </div>
+                                </div>
+                                
+                                <div style="display: flex;">
+                                    <img src="image gas/IN4.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>
+                            </div>
+                            
+                            <!-- 3.1.5. INSTALACIÓN INDIVIDUAL EXTERIOR DE GAS PROPANO CON BOTELLAS INDUSTRIALES -->
+                            <div class="subsection" style=" padding: 1.5rem; background: #F9F9F9; border-radius: 12px; border-left: 6px solid #D32F2F; flex: 1 1 450px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <div style="background: #D32F2F; color: white; width: 36px; font-size: 0.8rem; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 1rem; flex-shrink: 0;">
+                                        3.1.5
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0; color: #333;">INSTALACIÓN INDIVIDUAL EXTERIOR DE GAS PROPANO CON BOTELLAS INDUSTRIALES</h4>
+                                        <p style="margin: 0.3rem 0 0 0; color: #666; font-size: 0.95rem;">Instalación IRG. Descarga en batería continua con doble escalonamiento.</p>
+                                    </div>
+                                </div>
+                                
+                                <div style="display: flex;">
+                                    <img src="image gas/IN5.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="danger-box" style="margin-top: 2rem;">
+                            <div class="box-icon" style="background: #D32F2F;">
+                                <i class="fas fa-skull-crossbones"></i>
+                            </div>
+                            <div>
+                                <h4>¡ATENCIÓN! - Peligro de Aparatos No Reglados</h4>
+                                <p>Los aparatos independientes conectados a envases "populares" (≤3 kg, generalmente sin válvula de seguridad) <strong>no se consideran IRG</strong> y por tanto no están obligados a pasar revisiones periódicas.</p>
+                                <p>Son extremadamente peligrosos en incendios para los bomberos y fuente de múltiples intervenciones por intoxicaciones (mala combustión) o fugas de gas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
         </div>
     </main>
     
