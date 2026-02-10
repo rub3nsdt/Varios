@@ -20,6 +20,7 @@
             --color-water-light: #64B5F6;
             --color-water-dark: #1976D2;
             --color-danger: #D32F2F;
+            --color-danger-dark: #9b1515;
             --color-warning: #FF9800;
             --color-info: #2196F3;
             --color-success: #4CAF50;
@@ -380,6 +381,16 @@
             padding-left: 1rem;
         }
 
+        .warning-box .visual-list, .text-box .visual-list {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: space-between;
+        }       
+        
+        .warning-box .visual-list li, .text-box .visual-list li {            
+            padding-left: 0.5rem;
+        }           
+
         .comparison-container .visual-list li {
             padding-left: 1rem;
         }        
@@ -508,7 +519,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.08);
             text-align: center;
             transition: transform 0.3s ease;
-            flex: 1 1 250px;
+            flex: 1 1 150px;
             max-width: 300px;
         }
         
@@ -582,6 +593,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 5px;
+            
         }
         
         /* Botones flotantes */
@@ -721,12 +733,15 @@
         
         /* Tablas */
         .visual-table {
-            width: 100%;
+            display: flex;
+            width: max-content;
             border-collapse: collapse;
             margin: 1.5rem 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             border-radius: 10px;
             overflow: hidden;
+            justify-content: center;
+            justify-self: center;
         }
         
         .visual-table th {
@@ -740,6 +755,7 @@
         .visual-table td {
             padding: 1rem;
             border-bottom: 1px solid #eee;
+            text-align: center;
         }
         
         .visual-table tr:nth-child(even) {
@@ -767,8 +783,8 @@
         .nested-list li:before {
             content: '•';
             position: absolute;
-            left: 0.5rem;
-            top: 0.3rem;
+            left: 0.2rem;
+            top: 0.2rem;
             color: var(--color-water);
             font-weight: bold;
             font-size: 1.2rem;
@@ -1161,21 +1177,15 @@
             color: #D32F2F;
         }
 
-        /* Para mejorar la responsividad de tablas */
-        @media (max-width: 768px) {
-            .visual-table {
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-            
-            .side-by-side {
-                flex-direction: column;
-            }
-            
-            .side-item {
-                max-width: 100%;
-            }
+        /* Para tablas más compactas dentro de info-box */
+        .info-box .visual-table {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .info-box .visual-table th,
+        .info-box .visual-table td {
+            padding: 0.5rem;
         }
 
     </style>
@@ -1977,7 +1987,7 @@
                                     <p>Donde:</p>
                                     <ul>
                                         <li>Q = potencia del incendio [MW]</li>
-                                        <li>E<sub>t</sub> = 0,0131 MJ/g (13,1 kJ/g) energía por gramo O₂ consumido</li>
+                                        <li>E<sub>t</sub> = <span class="important-number">0,0131 MJ/g (13,1 kJ/g)</span> energía por gramo O₂ consumido</li>
                                         <li>m<sub>O₂</sub> = masa oxígeno consumida [g]</li>
                                         <li>t = tiempo para consumir m<sub>O₂</sub> [s]</li>
                                     </ul>
@@ -2119,19 +2129,27 @@
                             <h3>1.6. Flashover</h3>
                         </div>
                         
-                        <div class="text-box">
-                        <p><strong>Definición (NFPA 921, 2008):</strong> Fase transitoria en el desarrollo de un incendio de interior en el que las superficies expuestas a la radiación térmica alcanzan su temperatura de inflamación de una manera casi simultánea y el incendio se extiende rápidamente por todo el espacio disponible generalizando el incendio en el recinto.</p>
-                        </div>
+                        <div class="columnas"> 
+                            <div style="flex: 1 1 calc(58%);">                      
+                                <div class="text-box">
+                                <p><strong>Definición (NFPA 921, 2008):</strong> Fase transitoria en el desarrollo de un incendio de interior en el que las superficies expuestas a la radiación térmica alcanzan su temperatura de inflamación de una manera casi simultánea y el incendio se extiende rápidamente por todo el espacio disponible generalizando el incendio en el recinto.</p>
+                                </div>
 
-                        <div class="danger-box">
-                            <div class="box-icon" style="background: var(--color-danger);">
-                                <i class="fas fa-skull-crossbones"></i>
+                                <div class="danger-box">
+                                    <div class="box-icon" style="background: var(--color-danger);">
+                                        <i class="fas fa-skull-crossbones"></i>
+                                    </div>
+                                    <div>
+                                        <p><strong>Nota:</strong> El desarrollo de un incendio no siempre transcurre por una fase de flashover. Para que concurra, deben darse circunstancias específicas.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <p><strong>Nota:</strong> El desarrollo de un incendio no siempre transcurre por una fase de flashover. Para que concurra, deben darse circunstancias específicas.</p>
-                            </div>
-                        </div>
-                        
+
+                            <div style="display: flex; flex: 1 1 calc(40%);">
+                                <img src="image interior/flashover.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                            
+                        </div>    
+                            
                         <h4>Condiciones para que ocurra flashover:</h4>
                         <div class="comparison-container">
                             <div class="comparison-card">
@@ -2469,16 +2487,20 @@
                         </div>
                         
                         <h4>Condiciones necesarias:</h4>
-                        <div class="listas">
-                        <ul class="visual-list">
-                            <li><strong>Fracción combustible realmente alta en interior</strong> (<span class="highlight-number">>15%</span> según autores)</li>
-                            <li>Abundante volumen productos pirólisis (combustibles ricos + altas temperaturas prolongadas)</li>
-                        </ul>
-                        <ul class="visual-list">
-                            <li>Productos incompletos combustión en recinto</li>
-                            <li><strong>Error común:</strong> Asociar a concentración CO (límite inflamabilidad CO: <span class="highlight-number">12%</span>, no supera <span class="highlight-number">5%</span> en incendios)</li>
-                        </ul>
-                        </div>
+                        <div class="columnas">
+                            <div class="listas" style="flex: 1 1 200px; gap: 0; padding: 0; margin: auto;">
+                            <ul class="visual-list">
+                                <li><strong>Fracción combustible realmente alta en interior</strong> (<span class="highlight-number">>15%</span> según autores)</li>
+                                <li>Abundante volumen productos pirólisis (combustibles ricos + altas temperaturas prolongadas)</li>
+                                <li>Productos incompletos combustión en recinto</li>
+                                <li><strong>Error común:</strong> Asociar a concentración CO (límite inflamabilidad CO: <span class="highlight-number">12%</span>, no supera <span class="highlight-number">5%</span> en incendios)</li>
+                            </ul>
+                            </div>
+
+                            <div style="display: flex; flex: 1 1 200px;">
+                                <img src="image interior/Backdraft.png" alt="" style="max-width: 100%; height: auto; margin: auto; width: 70%;">
+                            </div>
+                        </div>  
 
                         <h4>Indicadores de backdraft (no inequívocos):</h4>
                         <div class="info-flex" style="align-items: center;">
@@ -2681,7 +2703,7 @@
                 </div>
             </div>
             
-            <!-- SECCIÓN 2: INFLUENCIA DEL COMBUSTIBLE -->
+            <!-- SECCIÓN 2: INFLUENCIA DEL COMBUSTIBLE (COMPLETA Y AMPLIADA) -->
             <div class="horizontal-card" id="combustible">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-gas-pump"></i>
@@ -2694,11 +2716,12 @@
                         </div>
                         <div>
                             <div class="card-title-top">⛽ 2. INFLUENCIA DEL COMBUSTIBLE</div>
-                            <div class="card-subtitle-top">Poder calorífico, carga y diferencias entre combustibles tradicionales vs modernos</div>
+                            <div class="card-subtitle-top">Poder calorífico, carga, tasas de pirólisis y combustión, diferencias entre combustibles tradicionales vs modernos</div>
                             <div>
                                 <span class="category-tag tag-heat">Poder Calorífico</span>
                                 <span class="category-tag tag-fire">Carga Combustible</span>
-                                <span class="category-tag tag-warning">Tradicional vs Moderno</span>
+                                <span class="category-tag tag-warning">Tasas Pirólisis/Combustión</span>
+                                <span class="category-tag tag-danger">Tradicional vs Moderno</span>
                             </div>
                         </div>
                     </div>
@@ -2712,48 +2735,68 @@
                             <div class="section-icon" style="background: var(--color-heat);">
                                 <i class="fas fa-burn"></i>
                             </div>
-                            <h3>2.1. Poder Calorífico</h3>
+                            <h3>2.1. PODER CALORÍFICO</h3>
                         </div>
                         
-                        <p><strong>Definición:</strong> Energía química contenida en un combustible que depende de su composición, estructura molecular y diferencia energética entre estados anterior/posterior a combustión.</p>
-                        
-                        <div class="visual-diagram">
-                            <div class="diagram-title">Fórmula del poder calorífico</div>
-                            <p style="font-family: monospace; font-size: 1.2rem; margin: 1rem 0;">H<sub>c</sub> = E<sub>q inicio</sub> - E<sub>q final</sub> - E<sub>q activación</sub></p>
-                            <p>Donde H<sub>c</sub> = poder calorífico [kJ/kg]</p>
+                        <div class="text-box">
+                            <p>La <strong>energía química contenida en un combustible</strong> depende de:</p>
+                            <ul class="visual-list" style="flex: 1;">
+                                <li><strong>Su composición</strong></li>
+                                <li><strong>Su estructura molecular</strong></li>
+                                <li><strong>La diferencia energética entre los estados anterior y posterior a la combustión</strong></li>
+                            </ul>    
                         </div>
+
                         
-                        <div class="visual-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Material</th>
-                                        <th>Poder Calorífico (H<sub>c</sub>)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Madera</strong></td>
-                                        <td><span class="important-number">16 MJ/kg</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Poliuretano</strong></td>
-                                        <td><span class="important-number">23 MJ/kg</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Carbón</strong></td>
-                                        <td><span class="important-number">29 MJ/kg</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Neumáticos</strong></td>
-                                        <td><span class="important-number">32 MJ/kg</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Gasolina</strong></td>
-                                        <td><span class="important-number">45 MJ/kg</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="columnas">
+                            <div class="visual-diagram" style="flex: 1 1 400px; margin: auto;">
+                                <div class="diagram-title">Fórmula del poder calorífico</div>
+                                <p style="font-family: monospace; font-size: 1.3rem; margin: 1rem 0; text-align: center;">
+                                    H<sub>c</sub> = E<sub>q inicio</sub> - E<sub>q final</sub> - E<sub>q activación</sub>
+                                </p>
+                                <div style="text-align: left; padding: 0 1rem;">
+                                    <p><strong>Donde:</strong></p>
+                                    <ul>
+                                        <li>H<sub>c</sub> = poder calorífico [kJ/kg]</li>
+                                        <li>E<sub>q inicio</sub> = energía química del combustible [kJ/kg]</li>
+                                        <li>E<sub>q final</sub> = energía química de los productos de la combustión [kJ/kg]</li>
+                                        <li>E<sub>q activación</sub> = energía requerida para iniciar el proceso de combustión [kJ/kg]</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="visual-table" style="margin: auto;">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Material</th>
+                                            <th>Poder Calorífico (H<sub>c</sub>)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Madera</strong></td>
+                                            <td><span class="important-number">16 MJ/kg</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Poliuretano</strong></td>
+                                            <td><span class="important-number">23 MJ/kg</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Carbón</strong></td>
+                                            <td><span class="important-number">29 MJ/kg</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Neumáticos</strong></td>
+                                            <td><span class="important-number">32 MJ/kg</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Gasolina</strong></td>
+                                            <td><span class="important-number">45 MJ/kg</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     
@@ -2763,34 +2806,53 @@
                             <div class="section-icon" style="background: var(--color-heat-dark);">
                                 <i class="fas fa-weight-hanging"></i>
                             </div>
-                            <h3>2.2. Carga de Combustible</h3>
+                            <h3>2.2. CARGA DE COMBUSTIBLE</h3>
                         </div>
                         
-                        <p><strong>Definición:</strong> Medida de la cantidad de energía de los combustibles por unidad de superficie.</p>
-                        
-                        <div class="visual-diagram">
-                            <div class="diagram-title">Fórmula de carga de combustible</div>
-                            <p style="font-family: monospace; font-size: 1.2rem; margin: 1rem 0;">C<sub>c</sub> = H<sub>c</sub> · m<sub>u</sub></p>
-                            <p>Donde C<sub>c</sub> = carga combustible [kJ/m²], H<sub>c</sub> = poder calorífico [kJ/kg], m<sub>u</sub> = masa combustible por unidad superficie [kg/m²]</p>
+                        <div class="text-box">
+                            <p>La <strong>carga de combustible (C<sub>c</sub>)</strong> es una medida de la <strong>cantidad de energía de los combustibles por unidad de superficie</strong>.</p>
                         </div>
-                        
-                        <div class="info-box">
-                            <div class="box-icon" style="background: var(--color-info);">
-                                <i class="fas fa-info-circle"></i>
+
+                        <div class="columnas">
+                            <div class="visual-diagram" style="flex: 1 1 300px; margin: auto;">
+                                <div class="diagram-title">Fórmula de carga de combustible</div>
+                                <p style="font-family: monospace; font-size: 1.3rem; margin: 1rem 0; text-align: center;">
+                                    C<sub>c</sub> = H<sub>c</sub> · m<sub>u</sub>
+                                </p>
+                                <div style="text-align: left; padding: 0 1rem;">
+                                    <p><strong>Donde:</strong></p>
+                                    <ul>
+                                        <li>C<sub>c</sub> = carga de combustible [kJ/m²]</li>
+                                        <li>H<sub>c</sub> = poder calorífico [kJ/kg]</li>
+                                        <li>m<sub>u</sub> = masa de combustible por unidad de superficie [kg/m²]</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div>
-                                <p><strong>Influencia en incendios:</strong> Cargas de combustible de <span class="important-number">200 MJ/m²</span> han demostrado ser suficientes para alcanzar estados de ILV. Cargas bajas ni siquiera alcanzan ILV.</p>
+                            
+                            <div class="info-box"  style="flex: 1 1 400px;">
+                                <div class="box-icon" style="background: var(--color-info);">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Influencia en incendios de interior:</strong></p>
+                                    <ul class="visual-list" style="margin-bottom: 0;">
+                                        <li>Influye decisivamente en la <strong>duración del incendio</strong></li>
+                                        <li>Incendios con poca carga ni siquiera alcanzan el estado de <strong>ILV</strong></li>
+                                        <li>Cargas de combustible de <span class="important-number">200 MJ/m²</span> han demostrado ser suficientes para alcanzar estados de ILV</li>
+                                        <li>Ejemplo: <strong>papelera incendiada en una habitación</strong> que no se propaga (carga baja, oxígeno suficiente)</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- 2.3 Otros factores -->
+                    <!-- 2.3 Otros factores ligados al combustible -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-heat-light);">
                                 <i class="fas fa-cogs"></i>
                             </div>
-                            <h3>2.3. Otros Factores Ligados al Combustible</h3>
+                            <h3>2.3. OTROS FACTORES LIGADOS AL COMBUSTIBLE</h3>
                         </div>
                         
                         <div class="comparison-container">
@@ -2799,9 +2861,14 @@
                                     <div class="comparison-icon" style="background: var(--color-fire);">
                                         <i class="fas fa-fire"></i>
                                     </div>
-                                    <span>Tasa de Pirólisis (t<sub>p</sub>)</span>
+                                    <span>TASA DE PIRÓLISIS (t<sub>p</sub>)</span>
                                 </div>
-                                <p>Mide la masa de combustible que piroliza por unidad de tiempo y superficie. Indica volatilidad de compuestos inflamables en estado sólido.</p>
+                                <ul class="visual-list">
+                                    <li>Mide la <strong>masa de combustible que piroliza por unidad de tiempo y superficie</strong> [kg/(s·m²)]</li>
+                                    <li>Indica la <strong>volatilidad de los compuestos inflamables</strong> que contiene el combustible en estado sólido</li>
+                                    <li>En combustibles líquidos: medida de su <strong>volatilidad</strong></li>
+                                    <li>Factor clave en la <strong>velocidad de desarrollo del incendio</strong></li>
+                                </ul>
                             </div>
                             
                             <div class="comparison-card">
@@ -2809,24 +2876,87 @@
                                     <div class="comparison-icon" style="background: var(--color-heat);">
                                         <i class="fas fa-tachometer-alt"></i>
                                     </div>
-                                    <span>Tasa de Combustión (m<sub>c</sub>)</span>
+                                    <span>TASA DE COMBUSTIÓN (m<sub>c</sub>)</span>
                                 </div>
-                                <p>Velocidad a la que el combustible se consume [kg/s]. Depende de características del combustible, distribución y características del recinto.</p>
+                                <ul class="visual-list">
+                                    <li>Velocidad a la que el <strong>combustible se consume</strong> [kg/s]</li>
+                                    <li>Vinculada a la <strong>cantidad de energía requerida para comenzar la combustión</strong></li>
+                                    <li>Combustibles con <strong>alta energía de activación</strong> → incendios de desarrollo lento</li>
+                                    <li>Depende de: características del combustible, distribución y características del recinto</li>
+                                </ul>
                             </div>
+                        </div>                        
+
+                        
+                        <h4>Influencia del combustible sobre la potencia del incendio:</h4>
+                        <div class="columnas">
+                            <div class="colbox">
+                                <div class="visual-diagram" style="flex: 1 1 300px;">
+                                    <div class="diagram-title">Incendios ILC (Limitados por Combustible)</div>
+                                    <p style="font-family: monospace; font-size: 1.1rem; margin: 1rem 0;">
+                                        Q = m<sub>c</sub> · H<sub>c</sub>
+                                    </p>
+                                    <p>Donde la <strong>tasa de combustión (m<sub>c</sub>)</strong>, que depende en parte de las características del combustible, juega un papel importante.</p>
+                                </div>
+                            </div>
+                            <div class="colbox">
+                                <div class="visual-diagram" style="flex: 1 1 300px;">
+                                    <div class="diagram-title">Incendios ILV (Limitados por Ventilación)</div>
+                                    <p style="font-family: monospace; font-size: 1.1rem; margin: 1rem 0;">
+                                        Q = k · H<sub>c</sub> · A · √h
+                                    </p>
+                                    <p>La <strong>potencia es directamente proporcional al poder calorífico (H<sub>c</sub>)</strong> del combustible.</p>
+                                </div>
+                            </div>
+
+                            <div class="visual-table table-compact" style="margin: auto;">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Velocidad Desarrollo</th>
+                                            <th>Tasa Pirólisis</th>
+                                            <th>Tasa Combustión</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Muy rápido</strong></td>
+                                            <td><span class="important-number">Alta</span></td>
+                                            <td><span class="important-number">Alta</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Rápido</strong></td>
+                                            <td><span class="important-number">Media</span></td>
+                                            <td><span class="important-number">Alta</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Rápido</strong></td>
+                                            <td><span class="important-number">Alta</span></td>
+                                            <td><span class="important-number">Media</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Media</strong></td>
+                                            <td><span class="important-number">Media</span></td>
+                                            <td><span class="important-number">Media</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Lento</strong></td>
+                                            <td><span class="important-number">Baja</span></td>
+                                            <td><span class="important-number">Baja</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>                            
                         </div>
                         
-                        <h4>Influencia sobre potencia del incendio:</h4>
-                        <ul class="visual-list">
-                            <li><strong>Para ILC:</strong> Q = m<sub>c</sub> · H<sub>c</sub> → Tasa combustión (m<sub>c</sub>) juega papel importante</li>
-                            <li><strong>Para ILV:</strong> Q = k · H<sub>c</sub> · A · √h → Potencia proporcional a H<sub>c</sub></li>
-                        </ul>
-                        
-                        <h4>Influencia sobre velocidad de desarrollo:</h4>
-                        <ul class="visual-list">
-                            <li><strong>Facilidad para emitir productos combustibles en fase gaseosa</strong> (tasa de pirólisis)</li>
-                            <li><strong>Velocidad de consumo en combustión</strong> (tasa de combustión)</li>
-                            <li>Combustibles que requieren <strong>energía de activación grande</strong> → incendios de desarrollo lento</li>
-                        </ul>
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: var(--color-warning);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <p><strong>Nota:</strong> Cuantificar la influencia de ambos parámetros (tasa de pirólisis y tasa de combustión) en una expresión matemática es complejo. En la mayoría de modelos se introduce el <strong>"factor de crecimiento"</strong> como parámetro experimental para cada tipo de combustible y entorno.</p>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- 2.4 Combustibles tradicionales vs modernos -->
@@ -2835,15 +2965,15 @@
                             <div class="section-icon" style="background: var(--color-warning);">
                                 <i class="fas fa-exchange-alt"></i>
                             </div>
-                            <h3>2.4. Combustibles Tradicionales vs. Modernos</h3>
+                            <h3>2.4. COMBUSTIBLES TRADICIONALES VS. COMBUSTIBLES MODERNOS</h3>
                         </div>
                         
-                        <div class="warning-box">
-                            <div class="box-icon" style="background: var(--color-warning);">
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--color-danger);">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
                             <div>
-                                <p><strong>Cambio significativo:</strong> Incorporación masiva de materiales sintéticos en mobiliario y enseres domésticos ha tenido importante repercusión en desarrollo de incendios de interior.</p>
+                                <p><strong>Cambio significativo en los últimos años:</strong> La incorporación masiva de <strong>materiales sintéticos</strong> en mobiliario y enseres domésticos ha tenido una <strong>importante repercusión</strong> en el desarrollo de los incendios de interior.</p>
                             </div>
                         </div>
                         
@@ -2853,14 +2983,16 @@
                                     <div class="comparison-icon" style="background: #795548;">
                                         <i class="fas fa-tree"></i>
                                     </div>
-                                    <span>Combustibles Tradicionales</span>
+                                    <span>COMBUSTIBLES TRADICIONALES</span>
                                 </div>
                                 <ul class="visual-list">
-                                    <li>Madera maciza</li>
-                                    <li>Fibras textiles vegetales</li>
-                                    <li>Poder calorífico menor</li>
-                                    <li>Curvas desarrollo más lentas</li>
-                                    <li>Menor número elementos mobiliario</li>
+                                    <li><strong>Madera maciza</strong></li>
+                                    <li><strong>Fibras textiles vegetales</strong></li>
+                                    <li>Poder calorífico <span class="important-number">menor</span></li>
+                                    <li>Curvas de desarrollo <span class="important-number">más lentas</span></li>
+                                    <li>Menor número de elementos de mobiliario</li>
+                                    <li>Distribuciones más compartimentadas</li>
+                                    <li>Menor grado de aislamiento térmico</li>
                                 </ul>
                             </div>
                             
@@ -2869,34 +3001,90 @@
                                     <div class="comparison-icon" style="background: var(--color-danger);">
                                         <i class="fas fa-industry"></i>
                                     </div>
-                                    <span>Combustibles Modernos</span>
+                                    <span>COMBUSTIBLES MODERNOS</span>
                                 </div>
                                 <ul class="visual-list">
-                                    <li>Plásticos y materiales sintéticos</li>
-                                    <li>Derivados del petróleo</li>
-                                    <li><strong>Poder calorífico muy superior</strong></li>
-                                    <li><strong>Curvas desarrollo más rápidas</strong></li>
-                                    <li>Mayor número elementos mobiliario</li>
-                                    <li>Distribuciones planta abierta</li>
-                                    <li>Mayor grado aislamiento térmico</li>
+                                    <li><strong>Plásticos y materiales sintéticos</strong></li>
+                                    <li><strong>Derivados del petróleo</strong></li>
+                                    <li>Poder calorífico <span class="important-number">muy superior</span></li>
+                                    <li>Curvas de desarrollo <span class="important-number">más rápidas</span></li>
+                                    <li>Mayor número de elementos de mobiliario</li>
+                                    <li>Distribuciones en <strong>planta abierta</strong></li>
+                                    <li>Mayor superficie y <strong>mayor grado de aislamiento térmico</strong></li>
+                                    <li>Dinámicas de incendio <span class="important-number">más violentas</span></li>
                                 </ul>
                             </div>
                         </div>
                         
-                        <h4>Conclusiones estudio Underwriters Laboratories:</h4>
-                        <ul class="visual-list">
-                            <li><strong>ILV se alcanza con mayor rapidez:</strong> Materiales sintéticos pirolizan más fácilmente con menor energía de activación</li>
-                            <li><strong>Incendios confinados evolucionan en infraventilados:</strong> Cargas actuales requieren mayor volumen de aire</li>
-                            <li><strong>Temperaturas alcanzadas significativamente mayores</strong></li>
-                            <li><strong>Potencia del incendio mayor:</strong> Mayores cargas se consumen en menor tiempo</li>
-                            <li><strong>Concentraciones de oxígeno menores:</strong> A altas temperaturas, oxidación posible aún con bajas concentraciones O₂</li>
-                            <li><strong>Reacción a ventilación muy rápida:</strong> Mayor cantidad productos incompletos combustión + productos pirólisis</li>
-                        </ul>
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--color-info);">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div>
+                                <p><strong>Estudio Underwriters Laboratories:</strong> Se analizó el impacto de la ventilación en viviendas actuales frente a tradicionales, reproduciendo a escala real viviendas completamente instrumentadas con mobiliario tradicional y moderno.</p>
+                            </div>
+                        </div>
+                        
+                        <h4>Conclusiones del estudio (aplicables a países desarrollados):</h4>
+                        <div class="info-flex" style="margin-top: 1.5rem;">
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-danger);">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <span>Desarrollo más rápido</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li><strong>ILV se alcanza con mayor rapidez:</strong> Materiales sintéticos pirolizan más fácilmente con menor energía de activación</li>
+                                    <li><strong>Incendios confinados evolucionan en infraventilados:</strong> Cargas actuales requieren mayor volumen de aire que el contenido en toda la vivienda para alcanzar flashover</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-heat);">
+                                        <i class="fas fa-thermometer-full"></i>
+                                    </div>
+                                    <span>Mayor potencia y temperatura</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li><strong>Temperaturas alcanzadas son significativamente mayores</strong></li>
+                                    <li><strong>Potencia del incendio mayor:</strong> Mayores cargas de combustible se consumen en menos tiempo</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-smoke-dark);">
+                                        <i class="fas fa-lungs"></i>
+                                    </div>
+                                    <span>Condiciones más extremas</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li><strong>Concentraciones de oxígeno menores:</strong> A altas temperaturas, los procesos de oxidación son posibles aún con concentraciones muy bajas de O₂</li>
+                                    <li><strong>Reacción a la ventilación muy rápida:</strong> Mayor cantidad de productos incompletos de combustión y de pirólisis</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box" style="margin-top: 1.5rem;">
+                            <div class="box-icon" style="background: var(--color-warning);">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div>
+                                <p><strong>Escenario más probable a la llegada al incendio (con mobiliario moderno):</strong></p>
+                                <ul class="visual-list" style="margin-bottom: 0;">
+                                    <li><strong>Incendio infraventilado</strong></li>
+                                    <li><strong>Ausencia de visibilidad:</strong> plano neutro casi a ras de suelo</li>
+                                    <li><strong>Evolución brusca</strong> frente a la apertura de huecos de ventilación</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- SECCIÓN 3: INFLUENCIA DEL RECINTO -->
+            <!-- SECCIÓN 3: INFLUENCIA DEL RECINTO (COMPLETA Y AMPLIADA) -->
             <div class="horizontal-card" id="recinto">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-building"></i>
@@ -2909,11 +3097,12 @@
                         </div>
                         <div>
                             <div class="card-title-top">🏢 3. INFLUENCIA DEL RECINTO</div>
-                            <div class="card-subtitle-top">Contenido vs estructura, superficie, altura, confinamiento y aislamiento</div>
+                            <div class="card-subtitle-top">Contenido vs estructura, superficie, altura, confinamiento, compartimentación, aislamiento e inercia térmica</div>
                             <div>
                                 <span class="category-tag tag-smoke">Contenido vs Estructura</span>
                                 <span class="category-tag tag-fire">Superficie/Altura</span>
                                 <span class="category-tag tag-heat">Confinamiento</span>
+                                <span class="category-tag tag-water">Aislamiento</span>
                             </div>
                         </div>
                     </div>
@@ -2927,7 +3116,11 @@
                             <div class="section-icon" style="background: var(--color-smoke);">
                                 <i class="fas fa-home"></i>
                             </div>
-                            <h3>3.1. Incendios de Contenido vs. Incendios de Estructura</h3>
+                            <h3>3.1. INCENDIOS DE CONTENIDO VS. INCENDIOS DE ESTRUCTURA</h3>
+                        </div>
+                        
+                        <div class="text-box">
+                            <p>El primer factor a tener en cuenta en el desarrollo de un incendio es el <strong>alcance dentro del recinto</strong>:</p>
                         </div>
                         
                         <div class="comparison-container">
@@ -2936,13 +3129,14 @@
                                     <div class="comparison-icon" style="background: var(--color-info);">
                                         <i class="fas fa-box-open"></i>
                                     </div>
-                                    <span>Incendios de Contenido</span>
+                                    <span>INCENDIOS DE CONTENIDO</span>
                                 </div>
                                 <ul class="visual-list">
-                                    <li>Incendio se limita estrictamente a combustibles en interior</li>
-                                    <li>Continente NO aporta combustible</li>
-                                    <li>Característico de: sistemas constructivos con obra de fábrica y forjados de hormigón</li>
-                                    <li><strong>Propagación:</strong> Por espacio que comunica estancias</li>
+                                    <li>El incendio se limita <strong>estrictamente a los combustibles que hay en el interior</strong></li>
+                                    <li>El <strong>continente NO aporta combustible</strong> al incendio</li>
+                                    <li>Característicos de sistemas constructivos con <strong>obra de fábrica y forjados de hormigón</strong></li>
+                                    <li><strong>Propagación:</strong> Se produce por el <strong>espacio que comunica las estancias</strong></li>
+                                    <li>Desde un punto de vista táctico: la propagación entre estancias se produce por espacios de comunicación</li>
                                 </ul>
                             </div>
                             
@@ -2951,14 +3145,24 @@
                                     <div class="comparison-icon" style="background: var(--color-danger);">
                                         <i class="fas fa-building"></i>
                                     </div>
-                                    <span>Incendios de Estructura</span>
+                                    <span>INCENDIOS DE ESTRUCTURA</span>
                                 </div>
                                 <ul class="visual-list">
-                                    <li>Incendio alcanza contenidos + propia estructura</li>
-                                    <li>Continente ES parte del combustible</li>
-                                    <li>Característico de: casas tradicionales, cubiertas y forjados de madera</li>
-                                    <li><strong>Propagación:</strong> La propia estructura facilita propagación</li>
+                                    <li>El incendio alcanza a <strong>los contenidos y a la propia estructura</strong></li>
+                                    <li>El <strong>continente ES parte del combustible</strong> del incendio</li>
+                                    <li>Característicos de: <strong>casas tradicionales, cubiertas y forjados de madera</strong></li>
+                                    <li><strong>Propagación:</strong> La <strong>propia estructura facilita dicha propagación</strong></li>
+                                    <li>Desde un punto de vista táctico: la propia estructura puede estar facilitando la propagación</li>
                                 </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--color-info);">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div>
+                                <p><strong>Implicación táctica:</strong> Pueden requerir planteamientos distintos ya que en incendios de contenido, la propagación de unas estancias a otras se produce por el espacio que las comunica mientras que en incendios de estructura, es la propia estructura la que puede estar facilitando dicha propagación.</p>
                             </div>
                         </div>
                     </div>
@@ -2969,87 +3173,223 @@
                             <div class="section-icon" style="background: var(--color-smoke-dark);">
                                 <i class="fas fa-ruler-combined"></i>
                             </div>
-                            <h3>3.2. Superficie y Altura del Recinto</h3>
+                            <h3>3.2. SUPERFICIE Y ALTURA DEL RECINTO</h3>
+                        </div>
+                        
+                        <div class="columnas">
+                            <div class="text-box" style="flex: 1 1 300px; align-self: center;">
+                                <p>En la mayoría de los entornos urbanos, la <strong>carga de combustible depende de la superficie y del perímetro del recinto</strong>. Es en el suelo y en las paredes del recinto donde se encuentra la gran mayoría de los combustibles.</p>
+                            </div>
+                            
+                            <div class="visual-diagram" style="flex: 1 1 400px;">
+                                <div class="diagram-title">Relación perímetro/área en recintos</div>
+                                <div class="diagram-flex">
+                                    <div class="diagram-item" style="font-size: 0.8rem;">
+
+                                        <div style="font-weight: bold;">Recinto 4×4m</div>
+                                        <div>Área = <span class="important-number">16 m²</span></div>
+                                        <div>Perímetro = <span class="important-number">16 m</span></div>
+                                        <div>Relación = <span class="important-number">1:1</span></div>
+                                    </div>
+                                    
+                                    <div class="diagram-item"  style="font-size: 0.8rem;">
+
+                                        <div style="font-weight: bold;">Recinto 2×2m</div>
+                                        <div>Área = <span class="important-number">4 m²</span></div>
+                                        <div>Perímetro = <span class="important-number">8 m</span></div>
+                                        <div>Relación = <span class="important-number">2:1</span></div>
+                                    </div>
+                                </div>
+                                <p style="margin-top: 1rem; font-size: 0.9rem;"><strong>Conclusión:</strong> Proporcionalmente, los recintos pequeños tienen mayor longitud de perímetro en relación a su superficie.</p>
+                            </div>
+                        </div>
+
+                        <div class="warning-box" >
+                            <div class="box-icon" style="background: var(--color-warning);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <p><strong>Nota:</strong> En la mayoría de los códigos de protección contra incendios la carga de combustible queda referida en exclusiva a la superficie del recinto y expresada en [kJ/m²].</p>
+                            </div>
+                        </div>
+                        
+                        <h4>Influencia de la carga de combustible:</h4>
+                        <div class="columnas">
+                            <div class="colbox" style="display: flex; flex-direction: column;">
+                                <div class="info-flex-item" style="flex: 1 1; margin: 0;">
+                                    <div class="info-flex-title">
+                                        <div class="info-flex-icon" style="background: var(--color-fire);">
+                                            <i class="fas fa-fire"></i>
+                                        </div>
+                                        <span>En ILC (Limitados por Combustible)</span>
+                                    </div>
+                                    <ul class="visual-list">
+                                        <li>Condiciona la <strong>duración y desarrollo</strong> del incendio</li>
+                                        <li>Condiciona la <strong>potencia</strong> del incendio</li>
+                                    </ul>                                   
+                                </div>
+                                <div class="visual-table" style="font-size: 0.8rem; margin: auto; margin-top: 1rem;">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Tamaño Recinto</th>
+                                                <th>Potencia Estimada</th>
+                                                <th>Potencia por m²</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr >
+                                                <td  style="padding: 0.5rem;"><strong>Pequeño (10 m²)</strong></td>
+                                                <td  style="padding: 0.5rem;"><span class="important-number">4,4 MW</span></td>
+                                                <td  style="padding: 0.5rem;"><span class="important-number">440 kW/m²</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td  style="padding: 0.5rem;"><strong>Medio (16 m²)</strong></td>
+                                                <td  style="padding: 0.5rem;"><span class="important-number">5,3 MW</span></td>
+                                                <td  style="padding: 0.5rem;"><span class="important-number">331 kW/m²</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td  style="padding: 0.5rem;"><strong>Grande (25 m²)</strong></td>
+                                                <td  style="padding: 0.5rem;"><span class="important-number">6,1 MW</span></td>
+                                                <td  style="padding: 0.5rem;"><span class="important-number">224 kW/m²</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>                                 
+                            </div>
+                            <div class="colbox">
+                                <div class="info-flex-item" style="flex: 1 1 300px; margin: 0;">
+                                    <div class="info-flex-title">
+                                        <div class="info-flex-icon" style="background: var(--color-smoke);">
+                                            <i class="fas fa-wind"></i>
+                                        </div>
+                                        <span>En ILV (Limitados por Ventilación)</span>
+                                    </div>
+                                    <ul class="visual-list">
+                                        <li>Análisis más <strong>complejo</strong></li>
+                                        <li>Potencia depende de la <strong>apertura de ventilación</strong></li>
+                                        <li>Para mismo tamaño de hueco de ventilación:</li>
+                                        <ul class="nested-list">
+                                            <li>Recinto grande → <strong>mayores pérdidas de calor</strong> por el entorno</li>
+                                            <li>Recinto grande → <strong>menor temperatura</strong></li>
+                                            <li>Recinto grande → <strong>menor potencia</strong></li>
+                                        </ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <h4>Altura de la estructura (doble papel):</h4>
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: var(--color-info);">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </div>
+                                    <span>Mayor Altura</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li><strong>Mayor volumen de oxígeno disponible</strong> para misma cantidad de combustible</li>
+                                    <li><strong>Más pérdidas de calor por el entorno</strong></li>
+                                    <li><strong>Mayor volumen de gases para calentar</strong></li>
+                                    <li><strong>Menor radiación a los combustibles</strong> por parte del colchón de gases (se encuentran más alejados)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: var(--color-smoke);">
+                                        <i class="fas fa-arrow-down"></i>
+                                    </div>
+                                    <span>Menor Altura</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li><strong>El desarrollo del incendio será más rápido</strong></li>
+                                    <li><strong>El estado de ILV se alcanzará con mayor facilidad</strong></li>
+                                    <li><strong>Distancia entre colchón de gases y combustible se reduce</strong></li>
+                                    <li><strong>Aumenta la radiación</strong></li>
+                                    <li><strong>Volumen de oxígeno es menor</strong></li>
+                                </ul>
+                            </div>
                         </div>
                         
                         <div class="info-box">
                             <div class="box-icon" style="background: var(--color-info);">
-                                <i class="fas fa-info-circle"></i>
+                                <i class="fas fa-balance-scale"></i>
                             </div>
                             <div>
-                                <p><strong>Carga de combustible:</strong> En mayoría entornos urbanos depende de superficie y perímetro del recinto. En códigos protección contra incendios, se referencia exclusivamente a superficie [kJ/m²].</p>
+                                <p><strong>Equilibrio de efectos:</strong> Dado que ambos efectos se contrarestan, se puede decir que existe una determinada altura en que la potencia de incendio será máxima y que disminuirá a medida que la altura de techo aumente o disminuya.</p>
                             </div>
                         </div>
-                        
-                        <div class="visual-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Tamaño Recinto</th>
-                                        <th>Potencia Estimada</th>
-                                        <th>Potencia por m²</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Pequeño (10 m²)</strong></td>
-                                        <td><span class="important-number">4,4 MW</span></td>
-                                        <td><span class="important-number">440 kW/m²</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Medio (16 m²)</strong></td>
-                                        <td><span class="important-number">5,3 MW</span></td>
-                                        <td><span class="important-number">331 kW/m²</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Grande (25 m²)</strong></td>
-                                        <td><span class="important-number">6,1 MW</span></td>
-                                        <td><span class="important-number">224 kW/m²</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                        <h4>Altura de la estructura (doble papel):</h4>
-                        <ul class="visual-list">
-                            <li><strong>Mayor altura → mayor volumen oxígeno disponible</strong> para misma cantidad combustible</li>
-                            <li><strong>Mayor altura → más pérdidas calor por entorno, mayor volumen gases para calentar, menor radiación a combustibles</strong></li>
-                            <li>Existe altura determinada donde potencia será máxima (disminuye al aumentar o disminuir altura)</li>
-                            <li><strong>A menor altura:</strong> Desarrollo más rápido, ILV se alcanza con mayor facilidad</li>
-                        </ul>
                     </div>
                     
-                    <!-- 3.3 Confinamiento y compartimentación -->
+                    <!-- 3.3 Geometría interna: confinamiento y compartimentación -->
                     <div class="section" id="confinamiento">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-smoke);">
                                 <i class="fas fa-door-closed"></i>
                             </div>
-                            <h3>3.3. Confinamiento y Compartimentación Interior</h3>
+                            <h3>3.3. GEOMETRÍA INTERNA: CONFINAMIENTO Y COMPARTIMENTACIÓN INTERIOR</h3>
                         </div>
                         
-                        <h4>Nivel de confinamiento:</h4>
-                        <ul class="visual-list">
-                            <li><strong>Grado de ventilación</strong> entre recinto de incendio, exterior y resto de estancias</li>
-                            <li><strong>Determina potencia del incendio</strong> y posibilidad de alcanzar flashover</li>
-                            <li>Puertas cerradas → incendio no tiene acceso a oxígeno en resto estructura, gases no se extienden</li>
-                        </ul>
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: var(--color-smoke-dark);">
+                                        <i class="fas fa-compress-arrows-alt"></i>
+                                    </div>
+                                    <span>NIVEL DE CONFINAMIENTO</span>
+                                </div>
+                                <p><strong>Definición:</strong> Grado de ventilación que existe entre el recinto de incendio, el exterior y el resto de estancias del edificio.</p>
+                                <ul class="visual-list">
+                                    <li>El <strong>volumen de ventilación determina</strong> la potencia del incendio y la posibilidad de que se alcance el flashover</li>
+                                    <li>Un recinto con puertas cerradas al resto de la estructura implica:</li>
+                                    <ul class="nested-list">
+                                        <li>El incendio <strong>no tendrá acceso al oxígeno</strong> presente en el resto de la estructura</li>
+                                        <li>Los gases de incendio <strong>no se extenderán a otras estancias</strong> para propagarlo</li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: var(--color-smoke);">
+                                        <i class="fas fa-object-group"></i>
+                                    </div>
+                                    <span>COMPARTIMENTACIÓN INTERIOR</span>
+                                </div>
+                                <p><strong>Definición:</strong> Grado de división interna del edificio.</p>
+                                <ul class="visual-list">
+                                    <li>Afecta al desarrollo del incendio</li>
+                                    <li>El incendio comenzará donde se encuentre el foco dentro del recinto</li>
+                                    <li>Se propagará a otras estancias a través de <strong>puertas abiertas o consumidas</strong> en el incendio</li>
+                                    <li>En el mismo edificio, puede haber recintos en <strong>pleno desarrollo</strong> mientras otros están en <strong>fase de desarrollo</strong></li>
+                                </ul>
+                            </div>
+                        </div>
                         
-                        <h4>Compartimentación interior:</h4>
-                        <ul class="visual-list">
-                            <li><strong>Grado de división interna</strong> del edificio</li>
-                            <li>Afecta desarrollo: incendio comienza donde está foco, se propaga a otras estancias por puertas abiertas/consumidas</li>
-                            <li>Mismo edificio: recintos en pleno desarrollo + otros en fase de desarrollo</li>
-                        </ul>
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--color-info);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <p><strong>Importancia táctica:</strong> El nivel de confinamiento y compartimentación interior juega un importante papel en el desarrollo del incendio y en las tácticas a emplear para la extinción y el rescate.</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <!-- 3.4 Aislamiento e inercia térmica -->
+                    <!-- 3.4 Nivel de aislamiento, inercia térmica -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-heat);">
                                 <i class="fas fa-thermometer-half"></i>
                             </div>
-                            <h3>3.4. Nivel de Aislamiento e Inercia Térmica</h3>
+                            <h3>3.4. NIVEL DE AISLAMIENTO, INERCIA TÉRMICA</h3>
+                        </div>
+                        
+                        <div class="text-box">
+                            <p>En el desarrollo del incendio, la <strong>temperatura interior del recinto es un equilibrio</strong> entre la potencia del incendio y el calor que se pierde a través del entorno.</p>
                         </div>
                         
                         <div class="comparison-container">
@@ -3058,12 +3398,14 @@
                                     <div class="comparison-icon" style="background: var(--color-heat);">
                                         <i class="fas fa-home"></i>
                                     </div>
-                                    <span>Alto Aislamiento Térmico</span>
+                                    <span>ALTO NIVEL DE AISLAMIENTO TÉRMICO</span>
                                 </div>
                                 <ul class="visual-list">
-                                    <li><strong>Mayores temperaturas</strong></li>
-                                    <li><strong>Mayor velocidad desarrollo</strong> → mayor potencia</li>
-                                    <li><strong>Menores concentraciones O₂</strong> (mayor consumo a mayores temperaturas)</li>
+                                    <li>Impide que el calor se pierda con facilidad</li>
+                                    <li><strong>Provoca mayores temperaturas</strong> en el interior</li>
+                                    <li><strong>Mayor velocidad de desarrollo</strong> del incendio</li>
+                                    <li><strong>Consecuentemente, mayor potencia de incendio</strong></li>
+                                    <li><strong>Menores concentraciones de oxígeno</strong> (el incendio consume mayor cantidad de O₂ al haberse alcanzado mayores temperaturas)</li>
                                 </ul>
                             </div>
                             
@@ -3072,19 +3414,30 @@
                                     <div class="comparison-icon" style="background: var(--color-smoke);">
                                         <i class="fas fa-weight-hanging"></i>
                                     </div>
-                                    <span>Alta Inercia Térmica</span>
+                                    <span>ALTA INERCIA TÉRMICA</span>
                                 </div>
+                                <p><strong>Definición:</strong> Capacidad de acumulación de calor por parte del entorno.</p>
                                 <ul class="visual-list">
-                                    <li><strong>Fase crecimiento:</strong> Entorno absorbe energía → prolonga proceso</li>
-                                    <li><strong>Fase pleno desarrollo/decaimiento:</strong> Entorno transmite calor al recinto → alarga fases</li>
+                                    <li><strong>Influye alargando las fases del incendio</strong></li>
+                                    <li><strong>Fase de crecimiento:</strong> El entorno absorbe gran cantidad de energía → <strong>prolonga este proceso</strong></li>
+                                    <li><strong>Fase de pleno desarrollo y decaimiento:</strong> Será el entorno el que transmita calor al recinto</li>
                                 </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: var(--color-warning);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <p><strong>Contexto actual:</strong> Los edificios modernos tienden a tener mayor nivel de aislamiento térmico, lo que contribuye a incendios más violentos con mayores temperaturas y menor disponibilidad de oxígeno.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- SECCIÓN 4: RIESGOS DEL TRABAJO EN INCENDIOS DE INTERIOR -->
+            <!-- SECCIÓN 4: RIESGOS DEL TRABAJO EN INCENDIOS DE INTERIOR (COMPLETA Y AMPLIADA) -->
             <div class="horizontal-card" id="riesgos">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-exclamation-triangle"></i>
@@ -3097,11 +3450,12 @@
                         </div>
                         <div>
                             <div class="card-title-top">⚠️ 4. RIESGOS DEL TRABAJO EN INCENDIOS DE INTERIOR</div>
-                            <div class="card-subtitle-top">Inflamabilidad, calor, toxicidad, visibilidad y rango de supervivencia</div>
+                            <div class="card-subtitle-top">Inflamabilidad, calor, toxicidad, visibilidad, rango de supervivencia y flujos de gases</div>
                             <div>
-                                <span class="category-tag tag-danger">Calor</span>
-                                <span class="category-tag tag-warning">Toxicidad</span>
-                                <span class="category-tag tag-smoke">Visibilidad</span>
+                                <span class="category-tag tag-danger">Inflamabilidad</span>
+                                <span class="category-tag tag-heat">Calor</span>
+                                <span class="category-tag tag-smoke">Toxicidad</span>
+                                <span class="category-tag tag-info">Visibilidad</span>
                                 <span class="category-tag tag-fire">Supervivencia</span>
                             </div>
                         </div>
@@ -3110,13 +3464,17 @@
                 </div>
                 
                 <div class="card-content">
-                    <!-- 4.1 Inflamabilidad y fenómenos rápido desarrollo -->
-                    <div class="section">
+                    <!-- 4.1 Inflamabilidad y fenómenos de rápido desarrollo -->
+                    <div class="section" id="inflamabilidad">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-danger);">
                                 <i class="fas fa-fire"></i>
                             </div>
-                            <h3>4.1. Inflamabilidad y Fenómenos de Rápido Desarrollo</h3>
+                            <h3>4.1. INFLAMABILIDAD Y FENÓMENOS DE RÁPIDO DESARROLLO</h3>
+                        </div>
+                        
+                        <div class="text-box">
+                            <p>En determinadas circunstancias y a lo largo del desarrollo del incendio, los gases de incendio pueden alcanzar su <strong>punto de inflamabilidad</strong> generando fenómenos de rápido desarrollo (flashover, backdraft o explosión de humo).</p>
                         </div>
                         
                         <div class="danger-box">
@@ -3124,17 +3482,64 @@
                                 <i class="fas fa-skull-crossbones"></i>
                             </div>
                             <div>
-                                <p><strong>"El humo es combustible":</strong> Afirmación derivada del "Smoke is fuel" anglosajón. <strong>NO significa gases inflamables en cualquier circunstancia.</strong> Inflamabilidad depende de múltiples factores.</p>
+                                <p><strong>"El humo es combustible":</strong> Afirmación derivada del "Smoke is fuel" anglosajón. <strong>NO significa gases inflamables en cualquier circunstancia.</strong> En otros casos, se ha asociado erróneamente la inflamabilidad del humo a la presencia de monóxido de carbono.</p>
                             </div>
                         </div>
                         
-                        <h4>Factores que influyen en inflamabilidad gases incendio:</h4>
-                        <ul class="visual-list">
-                            <li><strong>Composición gases incendio</strong> (combustión + partículas suspensión + productos pirólisis)</li>
-                            <li><strong>Fracción de combustible</strong> (varía según desarrollo incendio)</li>
-                            <li><strong>Temperatura</strong></li>
-                            <li><strong>Concentración de oxígeno</strong></li>
-                        </ul>
+                        <h4>Extrema complejidad de la inflamabilidad de los gases de incendio:</h4>
+                        <div class="info-flex">
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-fire);">
+                                        <i class="fas fa-flask"></i>
+                                    </div>
+                                    <span>Factores que influyen</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li><strong>Composición de los gases de incendio</strong> (no solo gases de combustión, también partículas en suspensión y productos de pirólisis)</li>
+                                    <li><strong>Fracción de combustible</strong> (varía según cantidad inicial y tipo de desarrollo del incendio)</li>
+                                    <li><strong>Temperatura</strong></li>
+                                    <li><strong>Concentración de oxígeno</strong></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-smoke);">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <span>Fracción de combustible en incendios infraventilados</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Al no haber pasado por un estado de flashover donde se haya consumido el combustible...</li>
+                                    <li>Se encuentran <strong>fracciones de combustible mayores</strong></li>
+                                    <li>Mayor potencial para fenómenos de rápido desarrollo</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="columnas">
+                            <div class="visual-diagram" style="flex: 1 1 calc(40%); margin: auto;">
+                                <div class="diagram-title">Variación del rango de inflamabilidad con la temperatura</div>            
+                                <ul>
+                                    <li>A mayor temperatura → <strong>rango de inflamabilidad más amplio</strong></li>
+                                    <li>Los gases calientes pueden inflamarse con menores concentraciones de combustible</li>
+                                    <li>Por eso los gases de incendio a alta temperatura son más peligrosos</li>
+                                </ul>
+                            </div>
+                            <div style="display: flex; flex: 1 1 calc(57.7%); margin: auto;">
+                                <img src="image interior/Variacion.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                            
+
+                        </div>    
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: var(--color-warning);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <p><strong>Incluso sin llegar a fenómenos de rápido desarrollo:</strong> La ignición de gases provocará un aumento en la potencia del incendio que dificultará las condiciones para los intervinientes en el interior.</p>
+                            </div>
+                        </div>                        
                     </div>
                     
                     <!-- 4.2 Calor -->
@@ -3143,116 +3548,380 @@
                             <div class="section-icon" style="background: var(--color-heat);">
                                 <i class="fas fa-temperature-high"></i>
                             </div>
-                            <h3>4.2. Calor</h3>
+                            <h3>4.2. CALOR</h3>
                         </div>
                         
                         <div class="stat-highlight">
-                            <div class="stat-highlight-number">140°C</div>
-                            <div class="stat-highlight-label">Máxima temperatura aire respirado que permite sobrevivir (NRCC Canadá)</div>
+                            
+                            <div class="stat-highlight-label"><span class="stat-highlight-number" style="margin-right: 0.5rem;">140°C</span> Máxima temperatura del aire respirado que permite sobrevivir (National Research Council of Canadá - NRCC)</div>
                         </div>
                         
-                        <h4>Formas transmisión calor:</h4>
-                        <ul class="visual-list">
-                            <li><strong>Radiación desde foco</strong> sobre superficies expuestas</li>
-                            <li><strong>Radiación desde colchón gases</strong> (altas temperaturas, extendido por recinto)</li>
-                            <li><strong>Conducción</strong> entre EPI y gases incendio</li>
-                            <li><strong>Convección</strong> en zonas flujos gases calientes</li>
-                        </ul>
+                        <div class="text-box">
+                            <p>El calor representa un <strong>peligro físico directo para las personas</strong>. Si la energía calorífica total que incide sobre el cuerpo humano supera la capacidad de defensa del mismo, provoca desde lesiones leves hasta la muerte.</p>
+                        </div>
                         
-                        <h4>Efectos calor intenso:</h4>
-                        <ul class="visual-list">
-                            <li><strong>Drástica caída presión sanguínea</strong> + colapso vasos sanguíneos</li>
-                            <li><strong>Acumulación fluido en pulmones</strong></li>
-                            <li><strong>140°C máximo tolerable</strong> (breve periodo, sin humedad)</li>
-                        </ul>
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: var(--color-warning);">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div>
+                                <p><strong>Amplificación por humedad:</strong> Las consecuencias de la exposición al aire caliente se ven amplificadas si la atmósfera del fuego contiene humedad, ya que mejora la eficiencia de transmisión de calor y el cuerpo pierde facultades para liberarse de la carga calorífica.</p>
+                            </div>
+                        </div>
+                        
+                        <h4>Formas de transmisión de calor:</h4>
+                        <div class="info-flex">
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-fire);">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                    <span>Radiación</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>El <strong>foco del incendio irradia energía</strong> sobre las superficies expuestas</li>
+                                    <li>El <strong>colchón de gases de incendio</strong> (altas temperaturas, extendido por todo el recinto) irradia calor</li>
+                                    <li>Valores de <span class="important-number">10 kW/m²</span>: umbral de trabajo para bomberos completamente equipados</li>
+                                    <li>Calores puntuales de <span class="important-number">20 kW/m²</span>: daños a EPI y personales</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-heat);">
+                                        <i class="fas fa-hands"></i>
+                                    </div>
+                                    <span>Conducción y Convección</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li><strong>Conducción:</strong> Por contacto entre el equipo de protección personal y los gases de incendio</li>
+                                    <li><strong>Convección:</strong> En las zonas de flujos de gases de incendio calientes</li>
+                                    <li><strong>Efectos convección:</strong> Importantes efectos de convección sobre superficies expuestas en su camino</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h4>Efectos fisiológicos del calor intenso:</h4>
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--color-danger);">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div>
+                                <ul class="visual-list" style="margin-bottom: 0;">
+                                    <li><strong>Drástica caída de la presión sanguínea</strong> junto con colapso de vasos sanguíneos → fallo circulatorio</li>
+                                    <li><strong>Acumulación de fluido en los pulmones</strong> (edema pulmonar)</li>
+                                    <li><strong>140°C es el máximo tolerable</strong> (breve periodo de tiempo, sin presencia de humedad)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h4>Variaciones térmicas dentro del recinto:</h4>
+                        <div class="info-flex">
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-fire);">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </div>
+                                    <span>Zonas superiores</span>
+                                </div>
+                                <p>Pueden fácilmente superar los <span class="important-number">600°C</span></p>
+                            </div>
+                            
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-water);">
+                                        <i class="fas fa-arrow-down"></i>
+                                    </div>
+                                    <span>Colchón inferior</span>
+                                </div>
+                                <p>Puede estar en el entorno de los <span class="important-number">100°C</span></p>
+                            </div>
+                            
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-info);">
+                                        <i class="fas fa-door-open"></i>
+                                    </div>
+                                    <span>Fuera zona incendio</span>
+                                </div>
+                                <p>Temperaturas aún menores</p>
+                            </div>
+                        </div>
                         
                         <div class="info-box">
                             <div class="box-icon" style="background: var(--color-info);">
                                 <i class="fas fa-vest"></i>
                             </div>
                             <div>
-                                <p><strong>Protección EPI:</strong> Ofrece protección aislante pero <strong>absorbe calor del entorno</strong>. Protección no ilimitada en tiempo → traje se satura y sensación térmica se transmite al usuario.</p>
+                                <p><strong>Limitación de los EPI:</strong> Los equipos de protección individual ofrecen protección aislante pero también <strong>absorben parte del calor del entorno</strong>. Esta protección térmica no es ilimitada en el tiempo y, a medida que la operación se desarrolla, el traje de intervención se satura hasta que la sensación térmica se transmite al usuario.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--color-danger);">
+                                <i class="fas fa-ban"></i>
+                            </div>
+                            <div>
+                                <p><strong>Regla de seguridad:</strong> Los bomberos no penetrarán en ningún tipo de atmósfera hostil sin portar vestuario y máscaras protectoras.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- 4.3 Toxicidad -->
+                    <!-- 4.3 Flujos de gases (frío/caliente) -->
+                    <div class="section" id="flujos-gases">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-info);">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <h3>FLUJOS DE GASES: RUTA FRÍA Y RUTA CALIENTE</h3>
+                        </div>
+                        
+                        <div class="text-box">
+                            <p>Durante un incendio existe un <strong>volumen de gases en movimiento</strong> que abarca la alimentación de aire al incendio y los gases de incendio producidos. Este movimiento se produce por el <strong>diferencial de presión existente</strong>.</p>
+                        </div>
+                        
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: var(--color-water);">
+                                        <i class="fas fa-snowflake"></i>
+                                    </div>
+                                    <span>FLUJO DE GASES FRÍO (RUTA FRÍA)</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Desde la <strong>entrada de ventilación hasta el foco del incendio</strong></li>
+                                    <li>Son <strong>zonas donde el personal queda protegido</strong> de la exposición térmica</li>
+                                    <li>Zona de <strong>presiones negativas</strong></li>
+                                    <li>Corresponde al <strong>aporte de aire fresco</strong> al incendio</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: var(--color-fire);">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <span>FLUJO DE GASES CALIENTE (RUTA CALIENTE)</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Formado por los <strong>gases de incendio en busca de la salida</strong></li>
+                                    <li>Conforma una <strong>columna con importantes efectos de convección</strong> sobre superficies expuestas</li>
+                                    <li>Zona de <strong>presiones positivas</strong></li>
+                                    <li>Es la <strong>vía de escape de los gases calientes</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--color-info);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <p><strong>Identificar el flujo de gases, la ruta fría y la ruta caliente de gases es vital para la seguridad de víctimas e intervinientes.</strong> Permite aprovechar las zonas más seguras para el avance y evitar las zonas de mayor riesgo térmico.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 4.4 Toxicidad -->
                     <div class="section" id="toxicidad">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-smoke-dark);">
                                 <i class="fas fa-skull"></i>
                             </div>
-                            <h3>4.3. Toxicidad</h3>
+                            <h3>4.3. TOXICIDAD</h3>
                         </div>
                         
-                        <p>Personal expuesto a combinación de agentes irritantes y tóxicos con <strong>respuesta sinérgica</strong> (efecto combinado más tóxico que suma individual).</p>
+                        <div class="text-box">
+                            <p>El personal que realiza operaciones internas en incendios de interior está expuesto a una <strong>combinación de agentes irritantes y tóxicos</strong> que no puede ser identificada previamente con exactitud.</p>
+                        </div>
                         
-                        <h4>Factores que determinan toxicidad:</h4>
-                        <ul class="visual-list">
-                            <li><strong>Naturaleza combustible</strong></li>
-                            <li><strong>Desarrollo incendio</strong></li>
-                            <li><strong>Temperatura</strong></li>
-                            <li><strong>Concentración oxígeno</strong></li>
-                        </ul>
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--color-danger);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <p><strong>Respuesta sinérgica:</strong> La combinación puede tener una respuesta sinérgica, ya que el efecto combinado de dos o más sustancias es <strong>más tóxico o más irritante</strong> de lo que sería la suma de las respuestas si cada uno fuera inhalado por separado.</p>
+                            </div>
+                        </div>
+                        
+                        <h4>Efectos de los gases tóxicos:</h4>
+                        <div class="info-flex">
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-smoke);">
+                                        <i class="fas fa-lungs"></i>
+                                    </div>
+                                    <span>Efectos pulmonares directos</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Afectan <strong>directamente el tejido pulmonar</strong></li>
+                                    <li><strong>Deterioran su función</strong> respiratoria</li>
+                                    <li>Ejemplos: irritantes como cloro, amoníaco, ácidos</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-danger);">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <span>Efectos sistémicos</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Pasan hacia la <strong>corriente sanguínea</strong></li>
+                                    <li><strong>Impiden funciones vitales</strong></li>
+                                    <li>Ejemplos: monóxido de carbono (CO), cianuro de hidrógeno (HCN)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h4>Factores que determinan la toxicidad:</h4>
+                        <div class="info-flex">
+                            <div class="info-flex-item" style="flex: 1 1 200px;">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-fire);">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <span>Naturaleza del combustible</span>
+                                </div>
+                                <p>Diferentes materiales generan diferentes productos tóxicos</p>
+                            </div>
+                            
+                            <div class="info-flex-item" style="flex: 1 1 200px;">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-smoke);">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <span>Desarrollo del incendio</span>
+                                </div>
+                                <p>Combustión completa vs incompleta genera diferentes toxinas</p>
+                            </div>
+                            
+                            <div class="info-flex-item" style="flex: 1 1 200px;">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-heat);">
+                                        <i class="fas fa-thermometer-half"></i>
+                                    </div>
+                                    <span>Temperatura</span>
+                                </div>
+                                <p>Afecta a los productos de descomposición generados</p>
+                            </div>
+                            
+                            <div class="info-flex-item" style="flex: 1 1 200px;">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-info);">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
+                                    <span>Concentración de oxígeno</span>
+                                </div>
+                                <p>Combustión hipóxica genera más productos tóxicos</p>
+                            </div>
+                        </div>
                         
                         <div class="warning-box">
                             <div class="box-icon" style="background: var(--color-warning);">
-                                <i class="fas fa-exclamation-circle"></i>
+                                <i class="fas fa-clock"></i>
                             </div>
                             <div>
-                                <p><strong>Efecto dosis:</strong> No solo concentración, también tiempo exposición. Imposible evaluar efecto sinérgico de combinación gases.</p>
+                                <p><strong>Efecto dosis:</strong> Las respuestas fisiológicas frente a los agentes tóxicos dependen en gran medida del efecto dosis donde, <strong>no solo es importante la concentración, sino también el tiempo de exposición</strong>. Si bien se han podido realizar estudios que determinan las dosis de toxicidad de distintos gases de forma individual, es imposible evaluar el efecto sinérgico que la combinación de ellos produce.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- 4.4 Visibilidad -->
-                    <div class="section">
+                    <!-- 4.5 Visibilidad -->
+                    <div class="section" id="visibilidad">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-smoke);">
                                 <i class="fas fa-eye-slash"></i>
                             </div>
-                            <h3>4.4. Visibilidad</h3>
+                            <h3>4.4. VISIBILIDAD</h3>
                         </div>
                         
-                        <p>Se reduce a medida que crece concentración de partículas en suspensión. <strong>Transición ILC → ILV</strong> conlleva aparición productos incompletos combustión (partículas suspensión).</p>
+                        <div class="text-box">
+                            <p>La visibilidad dentro del recinto de incendio se reduce a medida que crece la <strong>concentración de partículas en suspensión</strong>.</p>
+                        </div>
                         
-                        <h4>Riesgos falta visibilidad:</h4>
-                        <ul class="visual-list">
-                            <li><strong>Ralentización operaciones</strong></li>
-                            <li><strong>Pérdida capacidad visión</strong> (sentido principal)</li>
-                            <li><strong>Desorientación</strong></li>
-                            <li><strong>Dificultad localizar foco</strong> aún en proximidades</li>
-                        </ul>
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--color-info);">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <p><strong>Transición ILC → ILV:</strong> El paso de un régimen de ILC a ILV conlleva la aparición de <strong>productos incompletos de la combustión</strong>, entre ellos, partículas en suspensión. Esta pérdida de visibilidad puede ser <strong>especialmente drástica cuando la transición ocurre en un corto espacio de tiempo</strong>.</p>
+                            </div>
+                        </div>
+                        
+                        <h4>Factores que afectan la visibilidad:</h4>
+                        <div class="info-flex">
+                            <div class="info-flex-item">
+                                <div class="info-flex-title" style="border-bottom: none; margin: 0;">
+                                    <div class="info-flex-icon" style="background: var(--color-smoke);">
+                                        <i class="fas fa-layer-group"></i>
+                                    </div>
+                                    <span>Estratificación térmica</span>
+                                </div>
+                            </div>
+                            
+                            <div class="info-flex-item">
+                                <div class="info-flex-title" style="border-bottom: none;  margin: 0;">
+                                    <div class="info-flex-icon" style="background: var(--color-info);">
+                                        <i class="fas fa-ruler-horizontal"></i>
+                                    </div>
+                                    <span>Localización del plano neutro</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>Riesgos derivados de la falta de visibilidad:</h4>
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--color-danger);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="listas" style="align-items: center;">
+                                <ul class="visual-list" style="margin-bottom: 0;">
+                                    <li><strong>Ralentización de las operaciones</strong> de búsqueda, rescate y extinción</li>
+                                    <li><strong>Pérdida de la capacidad de visión</strong>, el principal sentido en estas situaciones</li>
+                                    <li>Los intervinientes deben <strong>"palpar" el camino</strong>, aumentando el tiempo de intervención</li>
+                                </ul>
+                                <ul class="visual-list" style="margin-bottom: 0;"> 
+                                    <li><strong>Desorientación</strong> dentro del recinto</li>
+                                    <li><strong>Dificultad para localizar el foco</strong>, aún estando en sus proximidades</li>
+                                    <li><strong>Riesgos añadidos</strong> por colisiones con objetos o caídas</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     
-                    <!-- 4.5 Rango supervivencia víctimas -->
+                    <!-- 4.6 Rango de supervivencia de víctimas -->
                     <div class="section" id="supervivencia-victimas">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-danger);">
                                 <i class="fas fa-heartbeat"></i>
                             </div>
-                            <h3>4.5. Rango de Supervivencia de Víctimas</h3>
+                            <h3>4.5. RANGO DE SUPERVIVENCIA DE VÍCTIMAS</h3>
                         </div>
                         
                         <div class="stat-highlight">
-                            <div class="stat-highlight-number">6-12 min</div>
-                            <div class="stat-highlight-label">Rango supervivencia desde inicio incendio (Underwriters Laboratories)</div>
+                            <div class="stat-highlight-number">6-12 minutos</div>
+                            <div class="stat-highlight-label">Rango de supervivencia desde el inicio del incendio para víctimas en estancia con puerta abierta (Underwriters Laboratories)</div>
                         </div>
                         
-                        <h4>Parámetros que influyen:</h4>
+                        <div class="text-box">
+                            <p>Las condiciones de supervivencia para las víctimas en un incendio de interior son especialmente complejas. Influyen <strong>dos tipos de parámetros cuyo efecto dosis determinará el rango de supervivencia</strong>.</p>
+                        </div>
+                        
                         <div class="comparison-container">
                             <div class="comparison-card">
                                 <div class="comparison-title">
                                     <div class="comparison-icon" style="background: var(--color-smoke);">
                                         <i class="fas fa-lungs"></i>
                                     </div>
-                                    <span>Parámetros Respiratorios</span>
+                                    <span>PARÁMETROS RESPIRATORIOS</span>
                                 </div>
                                 <ul class="visual-list">
-                                    <li>Agentes tóxicos y acción sinérgica</li>
-                                    <li>Ausencia oxígeno</li>
-                                    <li>Partículas suspensión</li>
-                                    <li><strong>Resultan más críticos que térmicos</strong> (estudios)</li>
+                                    <li>Vinculados a la presencia de <strong>agentes tóxicos y su acción sinérgica</strong> en combinación</li>
+                                    <li><strong>Ausencia de oxígeno</strong> (hipoxia)</li>
+                                    <li>Presencia de <strong>partículas en suspensión</strong> que dificultan la respiración</li>
+                                    <li>Según estudios Underwriters Laboratories: <strong>resultaron más críticos que los térmicos</strong> (salvo en un experimento)</li>
                                 </ul>
                             </div>
                             
@@ -3261,29 +3930,39 @@
                                     <div class="comparison-icon" style="background: var(--color-heat);">
                                         <i class="fas fa-temperature-high"></i>
                                     </div>
-                                    <span>Parámetros Térmicos</span>
+                                    <span>PARÁMETROS TÉRMICOS</span>
                                 </div>
                                 <ul class="visual-list">
-                                    <li>Efectos calor organismo</li>
-                                    <li>Quemaduras</li>
-                                    <li>Bloqueo función respiratoria en altas temperaturas</li>
+                                    <li>Efectos del <strong>calor sobre el organismo</strong></li>
+                                    <li><strong>Quemaduras</strong> por radiación y convección</li>
+                                    <li><strong>Bloqueo de la función respiratoria</strong> en ambientes a alta temperatura</li>
+                                    <li><strong>Shock térmico</strong> y colapso circulatorio</li>
                                 </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--color-info);">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <p><strong>Variación en tiempo:</strong> La variación en el tiempo de supervivencia (6-12 min) dependía de la <strong>ubicación de la víctima con respecto al recinto de incendio</strong>.</p>
                             </div>
                         </div>
                         
                         <div class="danger-box">
                             <div class="box-icon" style="background: var(--color-danger);">
-                                <i class="fas fa-clock"></i>
+                                <i class="fas fa-exclamation-triangle"></i>
                             </div>
                             <div>
-                                <p><strong>Conclusión:</strong> Rango supervivencia víctima en incendio infraventilado con mobiliario moderno se extiende poco más allá de alcanzar ILV (≈5 minutos).</p>
+                                <p><strong>Conclusión crítica:</strong> Teniendo en cuenta que el régimen de ILV se alcanzaba a los <span class="important-number">5 minutos</span> en los experimentos, se puede concluir que <strong>el rango de supervivencia de una víctima en un incendio infraventilado con mobiliario moderno se extiende poco más allá de esta situación</strong>.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- SECCIÓN 5: INFLUENCIA DE LA APLICACIÓN DE AGUA -->
+            <!-- SECCIÓN 5: INFLUENCIA DE LA APLICACIÓN DE AGUA SOBRE INCENDIOS (COMPLETA Y AMPLIADA) -->
             <div class="horizontal-card" id="agua">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-tint"></i>
@@ -3296,12 +3975,13 @@
                         </div>
                         <div>
                             <div class="card-title-top">💧 5. INFLUENCIA DE LA APLICACIÓN DE AGUA SOBRE INCENDIOS</div>
-                            <div class="card-subtitle-top">Efectos de enfriamiento, dilución, efectividad y tamaño de gota</div>
+                            <div class="card-subtitle-top">Enfriamiento, dilución, efectividad, tamaño de gota y aplicación en diferentes lugares del incendio</div>
                             <div>
                                 <span class="category-tag tag-water">Enfriamiento</span>
                                 <span class="category-tag tag-info">Dilución</span>
                                 <span class="category-tag tag-fire">Efectividad</span>
                                 <span class="category-tag tag-smoke">Tamaño Gota</span>
+                                <span class="category-tag tag-heat">Aplicación</span>
                             </div>
                         </div>
                     </div>
@@ -3309,55 +3989,69 @@
                 </div>
                 
                 <div class="card-content">
-                    <!-- 5.1 Efecto enfriamiento -->
-                    <div class="section" id="efecto-enfriamiento">
+                    <!-- Introducción: Efectos generales -->
+                    <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-water);">
-                                <i class="fas fa-snowflake"></i>
+                                <i class="fas fa-tint"></i>
                             </div>
-                            <h3>5.1. Efecto de Enfriamiento</h3>
+                            <h3>5. INFLUENCIA DE LA APLICACIÓN DE AGUA SOBRE INCENDIOS</h3>
                         </div>
                         
-                        <p>Se produce en <strong>tres fases consecutivas</strong> a medida que se absorbe calor:</p>
+                        <div class="text-box">
+                            <p>Con carácter general, la aplicación de agua en el interior de un recinto incendiado modifica la dinámica del incendio a través de <strong>dos efectos principales:</strong></p>
+                        </div>
                         
-                        <div class="procedure-timeline">
-                            <div class="timeline-step">
-                                <div class="step-number">1</div>
-                                <div class="step-title">Calentamiento agua</div>
-                                <div style="font-size: 0.85rem;">
-                                    <p><strong>C<sub>eH2O</sub> = 4,183 kJ/kg°C</strong></p>
-                                    <p>1L agua 18°C → 100°C: <span class="important-number">343 kJ</span></p>
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: var(--color-water);">
+                                        <i class="fas fa-snowflake"></i>
+                                    </div>
+                                    <span>EFECTO DE ENFRIAMIENTO</span>
                                 </div>
+                                <ul class="visual-list">
+                                    <li>El <strong>calentamiento del agua aplicada</strong> y el <strong>cambio de fase líquido-gas</strong> generan una <strong>absorción de energía</strong></li>
+                                    <li>Consecuente enfriamiento de:
+                                        <ul class="nested-list">
+                                            <li>Masa de gases de incendio</li>
+                                            <li>Combustible</li>
+                                            <li>Estructura</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="timeline-step">
-                                <div class="step-number">2</div>
-                                <div class="step-title">Cambio fase líquido-gas</div>
-                                <div style="font-size: 0.85rem;">
-                                    <p><strong>C<sub>vH2O</sub> = 2.257 kJ/kg</strong></p>
-                                    <p>Evaporación 1L agua: <span class="important-number">2.257 kJ</span></p>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: var(--color-info);">
+                                        <i class="fas fa-expand-arrows-alt"></i>
+                                    </div>
+                                    <span>EFECTO DE DILUCIÓN</span>
                                 </div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="step-number">3</div>
-                                <div class="step-title">Calentamiento vapor agua</div>
-                                <div style="font-size: 0.85rem;">
-                                    <p><strong>C<sub>e vapor</sub> = 4,090 kJ/kg°C</strong></p>
-                                    <p>1kg vapor 100°C → 300°C: <span class="important-number">818 kJ</span></p>
-                                </div>
+                                <ul class="visual-list">
+                                    <li>Incorporación de <strong>vapor de agua</strong> a la mezcla</li>
+                                    <li>Desplaza el <strong>oxígeno disponible</strong></li>
+                                    <li><strong>Diluye los gases de incendio</strong></li>
+                                    <li>Contribuye a <strong>desplazarlos fuera de su punto de inflamabilidad</strong></li>
+                                </ul>
                             </div>
                         </div>
                         
-                        <h4>Efecto final según lugar aplicación:</h4>
+                        <h4>Lugar de aplicación y sus efectos:</h4>
                         <div class="info-flex">
                             <div class="info-flex-item">
                                 <div class="info-flex-title">
                                     <div class="info-flex-icon" style="background: var(--color-fire);">
                                         <i class="fas fa-fire"></i>
                                     </div>
-                                    <span>Superficies >100°C</span>
+                                    <span>Sobre Combustibles</span>
                                 </div>
-                                <p>Energía absorbida = calentamiento + evaporación</p>
-                                <p><strong>Máximo: 2,6 MJ/L</strong> (agua 18°C)</p>
+                                <ul class="visual-list">
+                                    <li>Enfriamiento de las superficies</li>
+                                    <li><strong>Cese de los procesos de pirólisis</strong> que incorporan gases inflamables al recinto</li>
+                                    <li>Cantidad apropiada de agua permitirá detener pirólisis <strong>sin generar exceso de vapor o escorrentía</strong></li>
+                                </ul>
                             </div>
                             
                             <div class="info-flex-item">
@@ -3365,104 +4059,325 @@
                                     <div class="info-flex-icon" style="background: var(--color-smoke);">
                                         <i class="fas fa-smog"></i>
                                     </div>
-                                    <span>Colchón gases</span>
+                                    <span>En el Colchón de Gases</span>
                                 </div>
-                                <p>Energía absorbida = calentamiento + evaporación + calentamiento vapor</p>
-                                <p><strong>Hasta 3,4 MJ/L</strong> (equilibrio 300°C)</p>
+                                <ul class="visual-list">
+                                    <li><strong>Doble efecto</strong>: enfriamiento y dilución</li>
+                                    <li>Aleja la masa de gases de incendio de su <strong>punto de inflamación</strong></li>
+                                    <li>Aplicación correcta (caudal, tamaño y geometría del cono) permitirá que la <strong>contracción del colchón de gases sea superior a la expansión del vapor de agua</strong></li>
+                                    <li>Mantiene el <strong>equilibrio térmico y la estratificación</strong> dentro del recinto</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-info);">
+                                        <i class="fa-solid fa-table-columns"></i>
+                                    </div>
+                                    <span>Superficies del Recinto</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Enfriamiento de paredes del contorno → <strong>reduce temperatura interior</strong></li>
+                                    <li>Vapor generado <strong>diluye los gases de incendio</strong></li>
+                                    <li>Contribuye a <strong>desplazarlos fuera de su punto de inflamabilidad</strong></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- 5.2 Efecto dilución -->
-                    <div class="section">
+                    <!-- 5.1 Efecto de enfriamiento -->
+                    <div class="section" id="efecto-enfriamiento">
                         <div class="section-title">
-                            <div class="section-icon" style="background: var(--color-water-dark);">
-                                <i class="fas fa-expand-arrows-alt"></i>
+                            <div class="section-icon" style="background: var(--color-water);">
+                                <i class="fas fa-snowflake"></i>
                             </div>
-                            <h3>5.2. Efecto de Dilución</h3>
+                            <h3>5.1. EFECTO DE ENFRIAMIENTO</h3>
+                        </div>
+                        
+                        <div class="text-box">
+                            <p>El efecto de enfriamiento o absorción del agua como agente extintor se produce en <strong>tres fases consecutivas</strong> a medida que se absorbe calor:</p>
+                        </div>
+                        
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: var(--color-water);">
+                                    <i class="fas fa-thermometer-quarter"></i>
+                                </div>
+                                <div class="step-title">FASE 1: CALENTAMIENTO DEL AGUA</div>
+                                <div style="font-size: 0.85rem;">
+                                    <p><strong>Calor específico del agua:</strong></p>
+                                    <p style="font-family: monospace;">C<sub>eH2O</sub> = <span class="important-number">4,183 kJ/kg°C</span></p>
+                                    <p><strong>Ejemplo:</strong> 1L agua de 18°C a 100°C</p>
+                                    <p>E<sub>ab</sub> = 1 × 4,183 × (100-18) = <span class="important-number">343 kJ</span></p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: var(--color-water-dark);">
+                                    <i class="fas fa-random"></i>
+                                </div>
+                                <div class="step-title">FASE 2: CAMBIO DE FASE LÍQUIDO-GAS</div>
+                                <div style="font-size: 0.85rem;">
+                                    <p><strong>Calor latente de evaporación:</strong></p>
+                                    <p style="font-family: monospace;">C<sub>vH2O</sub> = <span class="important-number">2.257 kJ/kg</span></p>
+                                    <p><strong>Propiedad única del agua:</strong> Requiere energía adicional para evaporarse una vez alcanzados 100°C</p>
+                                    <p>Evaporación 1L agua: <span class="important-number">2.257 kJ</span></p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon" style="background: var(--color-info);">
+                                    <i class="fas fa-thermometer-full"></i>
+                                </div>
+                                <div class="step-title">FASE 3: CALENTAMIENTO DEL VAPOR</div>
+                                <div style="font-size: 0.85rem;">
+                                    <p><strong>Calor específico del vapor:</strong></p>
+                                    <p style="font-family: monospace;">C<sub>e vapor</sub> = <span class="important-number">4,090 kJ/kg°C</span></p>
+                                    <p><strong>Ejemplo:</strong> 1kg vapor de 100°C a 300°C</p>
+                                    <p>E<sub>ab</sub> = 1 × 4,090 × (300-100) = <span class="important-number">818 kJ</span></p>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="info-box">
                             <div class="box-icon" style="background: var(--color-info);">
-                                <i class="fas fa-info-circle"></i>
+                                <i class="fas fa-lightbulb"></i>
                             </div>
                             <div>
-                                <p><strong>Mecanismo:</strong> Incorporación vapor de agua desplaza mezcla existente (combustible + comburente) alejándola del rango de inflamabilidad.</p>
+                                <p><strong>Propiedad clave del agua:</strong> El calor latente de evaporación (2.257 kJ/kg) es <strong>significativamente superior</strong> a la cantidad de energía necesaria para aumentar de 0°C a 100°C la misma cantidad de agua (≈418 kJ). Esta propiedad es la que hace única al agua como agente extintor.</p>
                             </div>
                         </div>
                         
-                        <div class="visual-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Temperatura [°C]</th>
-                                        <th>Volumen vapor por 1L agua</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>100°C</strong></td>
-                                        <td><span class="important-number">1.600 L</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>200°C</strong></td>
-                                        <td><span class="important-number">2.060 L</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>300°C</strong></td>
-                                        <td><span class="important-number">2.520 L</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>400°C</strong></td>
-                                        <td><span class="important-number">2.980 L</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>500°C</strong></td>
-                                        <td><span class="important-number">3.440 L</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <h4>Efecto final según lugar de aplicación:</h4>
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: var(--color-fire);">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <span>En Superficies >100°C</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Energía absorbida = energía para calentar + energía para evaporar</li>
+                                    <li><strong>Máximo: 2,6 MJ/L</strong> (agua a 18°C)</li>
+                                    <li>Cálculo: 343 kJ + 2.257 kJ = <span class="important-number">2.600 kJ = 2,6 MJ</span></li>
+                                    <li>Una vez en forma de vapor, pasa al recinto y el efecto enfriamiento sobre superficies será despreciable</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: var(--color-smoke);">
+                                        <i class="fas fa-smog"></i>
+                                    </div>
+                                    <span>En Colchón de Gases</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Energía absorbida = calentamiento + evaporación + calentamiento vapor</li>
+                                    <li><strong>Hasta 3,4 MJ/L</strong> (equilibrio a 300°C)</li>
+                                    <li>Cálculo: 343 kJ + 2.257 kJ + 818 kJ = <span class="important-number">3.418 kJ = 3,4 MJ</span></li>
+                                    <li>Efecto máximo cuando el agua se evapora completamente en el aire</li>
+                                </ul>
+                            </div>
                         </div>
                         
-                        <div class="visual-diagram">
-                            <div class="diagram-title">Ejemplo cálculo: Volumen vapor generado</div>
-                            <p>4 pulsaciones × 3s × 475LPM × 70% evaporación × 2.060 (200°C)</p>
-                            <p><strong>Resultado: 137 m³ vapor agua</strong></p>
+                        <div class="columnas">
+                            <div class="visual-diagram" style="flex: 1 1 calc(45%); align-self: center;">
+                                <div class="diagram-title">📈 Potencia de incendio absorbida según caudal</div>
+                                <p>El gráfico muestra que la potencia de incendio absorbida aumenta con el caudal de agua aplicado, demostrando la relación directa entre cantidad de agua y capacidad de enfriamiento.</p>
+                            </div>
+                            <div style="display: flex; margin: auto;">
+                                <img src="image interior/Caudal.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                            
                         </div>
                     </div>
                     
-                    <!-- 5.3 Efectividad aplicación agua -->
+                    <!-- 5.2 Efecto de dilución -->
+                    <div class="section" id="efecto-dilucion">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-water-dark);">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </div>
+                            <h3>5.2. EFECTO DE DILUCIÓN</h3>
+                        </div>
+                        
+                        <div class="text-box">
+                            <p>La aplicación de agua al recinto del incendio, siempre que genere vapor de agua, influye en la dinámica del incendio por el <strong>efecto de dilución del volumen de gases de combustible y comburente</strong>. A la mezcla existente, se incorpora un tercer fluido que la desplaza alejándola del rango de inflamabilidad.</p>
+                        </div>
+                        
+                        <div class="columnas">
+                            <div class="visual-table" style="margin:1rem auto;">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Temperatura [°C]</th>
+                                            <th>Vapor por 1L de agua</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>100°C</strong></td>
+                                            <td><span class="important-number">1.600 L</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>200°C</strong></td>
+                                            <td><span class="important-number">2.060 L</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>300°C</strong></td>
+                                            <td><span class="important-number">2.520 L</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>400°C</strong></td>
+                                            <td><span class="important-number">2.980 L</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>500°C</strong></td>
+                                            <td><span class="important-number">3.440 L</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>600°C</strong></td>
+                                            <td><span class="important-number">3.900 L</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div style="flex: 1 1 300px; align-self: center;">
+                                <div class="info-box">
+                                    <div class="box-icon" style="background: var(--color-info);">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
+                                    <div>
+                                        <p><strong>Característica clave:</strong> El volumen de vapor de agua que se genera a 100°C es aproximadamente <span class="important-number">1.600 veces mayor</span> que el volumen original en fase líquida. A medida que la temperatura aumenta, esta expansión es aún mayor.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="warning-box">
+                                    <div class="box-icon" style="background: var(--color-warning);">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div>
+                                        <p><strong>Importancia táctica:</strong> El vapor de agua generado permite desplazar el oxígeno disponible, reduciendo la concentración de comburente y dificultando la continuación de la combustión.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.3 Efectividad en la aplicación de agua -->
                     <div class="section" id="efectividad-agua">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-water);">
                                 <i class="fas fa-check-circle"></i>
                             </div>
-                            <h3>5.3. Efectividad en la Aplicación de Agua</h3>
+                            <h3>5.3. EFECTIVIDAD EN LA APLICACIÓN DE AGUA</h3>
                         </div>
                         
                         <div class="stat-highlight">
-                            <div class="stat-highlight-number">7,58×</div>
-                            <div class="stat-highlight-label">Mayor absorción energía si se consigue evaporación vs solo calentamiento</div>
+                            
+                            <div class="stat-highlight-label"><span class="stat-highlight-number" style="margin-right: 0.8rem;">7,58 veces mayor</span> Absorción de energía si se consigue evaporación vs solo calentamiento</div>
                         </div>
                         
-                        <h4>Factores que influyen en escorrentía (falta efectividad):</h4>
-                        <ul class="visual-list">
-                            <li><strong>Tamaño gota muy grueso:</strong> Menor relación superficie/volumen → menos absorción energía antes de impacto</li>
-                            <li><strong>Distancia excesivamente reducida:</strong> Tiempo insuficiente para que gotas reciban energía para evaporarse</li>
-                            <li><strong>Impacto con entorno/objetos:</strong> Superficie se enfría rápidamente (<100°C) → evita evaporación gotas posteriores</li>
-                        </ul>
+                        <div class="text-box">
+                            <p>Es fundamental determinar la efectividad de la aplicación de agua dentro de un recinto de incendio. El agua que no llega a evaporarse, como máximo, podrá absorber la energía correspondiente al aumento de temperatura hasta su temperatura final, mientras que el agua que consiga convertirse en vapor y llegar a la temperatura de equilibrio con el recinto tendrá una absorción de energía por lo menos <span class="important-number">siete veces mayor</span>.</p>
+                        </div>
                         
-                        <h4>Efectividad según técnica:</h4>
+                        <div class="visual-diagram" >
+                            <div class="diagram-title">Comparación de absorción de energía</div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin: 1rem 0;">
+                                <div style="text-align: center; flex: 1 1 150px;">
+                                    <div style="font-size: 1.5rem; color: var(--color-water);">💧</div>
+                                    <div style="font-weight: bold;">Agua solo calentada</div>
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-water);">343 kJ</div>
+                                    <p style="font-size: 0.9rem;">1L de agua de 18°C a 100°C sin evaporar</p>
+                                </div>
+                                
+                                <div style="text-align: center; flex: 1 1 150px;">
+                                    <div style="font-size: 1.5rem; color: var(--color-fire);">🔥</div>
+                                    <div style="font-weight: bold;">Agua evaporada</div>
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-fire);">2.600 kJ</div>
+                                    <p style="font-size: 0.9rem;">1L de agua evaporada completamente</p>
+                                </div>
+                                
+                                <div style="text-align: center; flex: 1 1 150px;">
+                                    <div style="font-size: 1.5rem; color: var(--color-danger);">⚡</div>
+                                    <div style="font-weight: bold;">Relación</div>
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-danger);">7,58×</div>
+                                    <p style="font-size: 0.9rem;">Mayor absorción de energía</p>
+                                </div>
+                            </div>
+                            <p><strong>Fórmula:</strong> 2.600 kJ ÷ 343 kJ = <span class="important-number">7,58</span></p>
+                        </div>
+                        
+                        <h4>Factores que influyen en la escorrentía (falta de efectividad):</h4>
+                        <div class="info-flex">
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-danger);">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <span>Tamaño de Gota muy Grueso</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Una gota de agua absorbe calor a través de su <strong>superficie exterior</strong></li>
+                                    <li>En gota gruesa: <strong>relación superficie/volumen menor</strong></li>
+                                    <li>Gota fina: capaz de absorber energía para calentarse y evaporarse <strong>antes de impactar</strong> con el entorno</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-warning);">
+                                        <i class="fas fa-ruler"></i>
+                                    </div>
+                                    <span>Distancia Excesivamente Reducida</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Tiempo insuficiente para que gotas reciban energía para evaporarse</li>
+                                    <li>Desde que salen del surtidor hasta que impactan</li>
+                                    <li>Distancia corta → menos tiempo para intercambio térmico</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="info-flex-item">
+                                <div class="info-flex-title">
+                                    <div class="info-flex-icon" style="background: var(--color-info);">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <span>Impacto con Entorno u Objetos</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Al impactar, reduce temperatura de la superficie</li>
+                                    <li>Si superficie >100°C y hay transferencia de calor → gota se evapora</li>
+                                    <li>Si no → gota se lamina o permanece sobre superficie</li>
+                                    <li>Primeras gotas enfrían superficie rápidamente → <strong>temperatura <100°C</strong> → evita evaporación de gotas posteriores</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: var(--color-warning);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <p><strong>Factor escorrentía:</strong> Constituye uno de los factores fundamentales en la falta de efectividad de la aplicación de agua al incendio.</p>
+                            </div>
+                        </div>
+                        
+                        <h4>Efectividad según técnica de aplicación:</h4>
                         <div class="comparison-container">
-                            <div class="comparison-card">
+                            <div class="comparison-card" style="align-self: center;">
                                 <div class="comparison-title">
                                     <div class="comparison-icon" style="background: var(--color-water);">
                                         <i class="fas fa-tint"></i>
                                     </div>
-                                    <span>Técnicas Dilución Gases</span>
+                                    <span>TÉCNICAS DE DILUCIÓN DE GASES</span>
                                 </div>
-                                <p>Buscan mayor transformación posible en vapor</p>
-                                <p>Efectividad: % agua que se evapora (colchón aire o contacto superficie)</p>
+                                <ul class="visual-list">
+                                    <li><strong>Objetivo:</strong> Mayor transformación posible en vapor de agua</li>
+                                    <li>Pueden usar evaporación de agua contra superficies</li>
+                                    <li><strong>Efectividad medida en:</strong> % de agua que se evapora dentro del colchón de aire o por contacto con superficie</li>
+                                    <li>Buscan diluir gases inflamables</li>
+                                </ul>
                             </div>
                             
                             <div class="comparison-card">
@@ -3470,36 +4385,69 @@
                                     <div class="comparison-icon" style="background: var(--color-info);">
                                         <i class="fas fa-snowflake"></i>
                                     </div>
-                                    <span>Técnicas Enfriamiento Gases</span>
+                                    <span>TÉCNICAS DE ENFRIAMIENTO DE GASES</span>
                                 </div>
-                                <p>Evaporación debe producirse en aire, antes contacto superficies</p>
-                                <p>Efectividad: <span class="important-number">50-70%</span> (lanzas combinadas)</p>
-                                <p>Escorrentía = agua no efectiva o perjudicial</p>
+                                <ul class="visual-list">
+                                    <li><strong>Objetivo:</strong> Evaporación del agua en el aire, antes de contacto con superficie</li>
+                                    <li>Gota debe refrigerar colchón de gases, no superficies</li>
+                                    <li>Contracción del colchón genera vapor mínimo para mantener equilibrio térmico</li>
+                                    <li><strong>Efectividad medida en:</strong> % de agua que se evapora dentro del colchón de aire</li>
+                                    <li><strong>Escorrentía y agua que alcance superficies = NO efectiva o perjudicial</strong></li>
+                                    <li><strong>Efectividad con lanzas combinadas:</strong> <span class="important-number">50-70%</span> (depende de entorno, entrenamiento, condicionantes)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--color-info);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <p><strong>Minimizar escorrentía</strong> permitirá realizar un uso más eficiente y eficaz del recurso agua dentro de un incendio. Para obtener mayor grado de eficiencia, las técnicas de extinción que buscan la dilución de los gases requieren la mayor transformación posible en vapor de agua.</p>
                             </div>
                         </div>
                     </div>
                     
                     <!-- 5.4 Tamaño de la gota -->
-                    <div class="section">
+                    <div class="section" id="tamano-gota">
                         <div class="section-title">
                             <div class="section-icon" style="background: var(--color-water-light);">
                                 <i class="fas fa-droplet"></i>
                             </div>
-                            <h3>5.4. Tamaño de la Gota</h3>
+                            <h3>5.4. TAMAÑO DE LA GOTA</h3>
+                        </div>
+                        
+                        <div class="text-box">
+                            <p>La distribución de temperatura en el recinto de incendio no es homogénea, menos aún si existe ventilación o si se ha iniciado la aplicación de agua para el enfriamiento de los gases de incendio. El bombero en punta de lanza deberá aplicar la cantidad de agua adecuada en las zonas más calientes, pudiendo trabajar con:</p>
+                            <ul class="visual-list" style="flex: 1;">
+                                <li>Selector de caudal</li>
+                                <li>Ángulo de cono</li>
+                                <li>Ángulo de aplicación con respecto al suelo</li>
+                            </ul>
                         </div>
                         
                         <div class="comparison-container">
                             <div class="comparison-card">
                                 <div class="comparison-title">
-                                    <div class="comparison-icon" style="background: var(--color-info);">
+                                    <div class="comparison-icon" style="background: var(--color-info); font-size: 0.9rem;">
                                         <i class="fas fa-droplet"></i>
                                     </div>
-                                    <span>Gota Reducida (pequeña)</span>
+                                    <span>GOTA REDUCIDA (PEQUEÑA)</span>
                                 </div>
                                 <ul class="visual-list">
-                                    <li><strong>Mayor tiempo suspensión</strong></li>
-                                    <li><strong>Mejor absorción energía</strong> (mayor relación superficie/volumen)</li>
-                                    <li><strong>Menor alcance</strong> (poca inercia)</li>
+                                    <li><strong>Ventajas:</strong>
+                                        <ul class="nested-list">
+                                            <li><strong>Mayor tiempo en suspensión</strong></li>
+                                            <li><strong>Mejor absorción de energía</strong> (mayor relación superficie/volumen)</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Desventajas:</strong>
+                                        <ul class="nested-list">
+                                            <li><strong>Menor alcance</strong> (poca inercia)</li>
+                                            <li>Rozan con el medio y pronto alcanzan velocidad horizontal nula</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Aplicación ideal:</strong> Enfriamiento de colchón de gases a corta distancia</li>
                                 </ul>
                             </div>
                             
@@ -3508,20 +4456,44 @@
                                     <div class="comparison-icon" style="background: var(--color-water);">
                                         <i class="fas fa-tint"></i>
                                     </div>
-                                    <span>Gota Grande</span>
+                                    <span>GOTA GRANDE</span>
                                 </div>
                                 <ul class="visual-list">
-                                    <li><strong>Mayor alcance</strong> (llega zonas distantes)</li>
-                                    <li><strong>Caen al suelo rápidamente</strong></li>
-                                    <li><strong>Intercambio calor menos efectivo</strong></li>
+                                    <li><strong>Ventajas:</strong>
+                                        <ul class="nested-list">
+                                            <li><strong>Mayor alcance</strong> (llegan a zonas más distantes)</li>
+                                            <li>Mayor inercia para penetración en colchón de gases</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Desventajas:</strong>
+                                        <ul class="nested-list">
+                                            <li><strong>Tienden a caer al suelo más rápidamente</strong></li>
+                                            <li><strong>Intercambio de calor menos efectivo</strong> (menor relación superficie/volumen)</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Aplicación ideal:</strong> Llegar a focos distantes, ataque directo a combustibles</li>
                                 </ul>
                             </div>
                         </div>
                         
-                        <div class="stat-highlight">
-                            <div class="stat-highlight-number">0,3-0,7 mm</div>
-                            <div class="stat-highlight-label">Tamaño óptimo gota (equilibrio alcance/absorción energía)</div>
-                        </div>
+
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: var(--color-danger);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <p>Un tamaño de gota <strong> excesivamente pequeño</strong> produce la evaporación en las inmediaciones del bombero y lo expone al vapor de agua. Un <strong>chorro sólido</strong>, por su parte, penetra evaporándose mínimamente hasta impactar con el entorno.</p>
+                            </div>
+                        </div>                        
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: var(--color-info);">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div>
+                                <p><strong>Equilibrio ideal:</strong> Diversos autores estiman el tamaño de gota óptimo entre <span class="important-number">0,3mm y 0,7mm</span>, ya que de esta forma se logra el equilibrio ideal entre <strong>alcance y capacidad de absorción de energía</strong>.</p>
+                            </div>
+                        </div>                    
                     </div>
                 </div>
             </div>
