@@ -212,7 +212,7 @@
             justify-content: center;
             color: white;
         }
-        
+
         /* Sistema de tarjetas */
         .horizontal-cards-container {
             display: flex;
@@ -1279,6 +1279,14 @@
                 <span>Ventilación</span>
                 <small>Sección 6</small>
             </a>
+
+            <a href="#presurizacion" class="nav-item" style="background: linear-gradient(135deg, #d48fff69, #ffffff);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #6A1B9A, #AB47BC);">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                </div>
+                <span>Presurización</span>
+                <small>Sección 7</small>
+            </a>            
         </div>
     </div>
     
@@ -4498,24 +4506,25 @@
                 </div>
             </div>
             
-            <!-- SECCIÓN 6: INFLUENCIA DE LA VENTILACIÓN -->
+            <!-- SECCIÓN 6: INFLUENCIA DE LA VENTILACIÓN (COMPLETA Y AMPLIADA) -->
             <div class="horizontal-card" id="ventilacion">
                 <div class="floating-icon" style="top: 20px; right: 30px;">
                     <i class="fas fa-wind"></i>
                 </div>
                 
-                <div class="card-header-top" style="background: linear-gradient(135deg, #4CAF50, #81C784);">
+                <div class="card-header-top" style="background: linear-gradient(135deg, #2E7D32, #81C784);">
                     <div class="card-title-container">
                         <div class="card-icon-large">
                             <i class="fas fa-wind"></i>
                         </div>
                         <div>
-                            <div class="card-title-top">🌬️ 6. INFLUENCIA DE LA VENTILACIÓN</div>
-                            <div class="card-subtitle-top">Principios, flujos, patrones y control en incendios de interior</div>
+                            <div class="card-title-top">🌪️ 6. INFLUENCIA DE LA VENTILACIÓN</div>
+                            <div class="card-subtitle-top">Conservación de la masa, Bernoulli, flotabilidad, flujos unidireccionales/bidireccionales, patrones de ventilación y VPP</div>
                             <div>
                                 <span class="category-tag" style="background: #E8F5E9; color: #2E7D32;">Conservación Masa</span>
-                                <span class="category-tag" style="background: #C8E6C9; color: #1B5E20;">Flujos Gases</span>
-                                <span class="category-tag" style="background: #A5D6A7; color: #33691E;">Patrones</span>
+                                <span class="category-tag" style="background: #C8E6C9; color: #1B5E20;">Bernoulli</span>
+                                <span class="category-tag" style="background: #A5D6A7; color: #33691E;">Flotabilidad</span>
+                                <span class="category-tag" style="background: #66BB6A; color: white;">Patrones</span>
                             </div>
                         </div>
                     </div>
@@ -4523,303 +4532,854 @@
                 </div>
                 
                 <div class="card-content">
-                    <!-- 6.1 Beneficios control ventilación -->
+                    <!-- INTRODUCCIÓN: Beneficios del control de ventilación -->
                     <div class="section">
                         <div class="section-title">
-                            <div class="section-icon" style="background: #4CAF50;">
-                                <i class="fas fa-fan"></i>
+                            <div class="section-icon" style="background: #2E7D32;">
+                                <i class="fas fa-info-circle"></i>
                             </div>
-                            <h3>6.1. Beneficios del Control de Ventilación</h3>
+                            <h3>6. INFLUENCIA DE LA VENTILACIÓN</h3>
                         </div>
                         
-                        <div class="info-flex">
-                            <div class="info-flex-item">
-                                <div class="info-flex-title">
-                                    <div class="info-flex-icon" style="background: #4CAF50;">
-                                        <i class="fas fa-eye"></i>
-                                    </div>
-                                    <span>Aumentar Visibilidad</span>
-                                </div>
+                        <div class="text-box">
+                            <p>El <strong>control de la ventilación</strong> en un incendio resulta <strong>vital durante las operaciones de rescate y extinción</strong>.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2E7D32;">
+                                <i class="fas fa-check-circle"></i>
                             </div>
-                            
-                            <div class="info-flex-item">
-                                <div class="info-flex-title">
-                                    <div class="info-flex-icon" style="background: #4CAF50;">
-                                        <i class="fas fa-temperature-low"></i>
-                                    </div>
-                                    <span>Reducir Temperatura</span>
+                            <div>
+                                <p><strong>Un apropiado control de la ventilación permitirá:</strong></p>
+                                <div class="columnas" style="margin-top: 0.5rem;">
+                                    <ul class="visual-list" style="flex: 1 1 250px; align-self: center;">
+                                        <li><strong>Aumentar la visibilidad</strong></li>
+                                        <li><strong>Reducir la temperatura</strong> en determinadas zonas</li>
+                                    </ul>
+                                    <ul class="visual-list" style="flex: 1 1 250px;">
+                                        <li><strong>Controlar la potencia del incendio</strong></li>
+                                        <li><strong>Conducir el flujo de gases</strong> según la opción táctica más recomendable</li>
+                                    </ul>
                                 </div>
+                                <p style="margin-top: 0.8rem;">Esta operación se realizará no solo controlando el volumen del flujo de entrada y salida, sino también la <strong>dirección y el camino</strong> que realizan estos flujos dentro de la propia estructura.</p>
                             </div>
-                            
-                            <div class="info-flex-item">
-                                <div class="info-flex-title">
-                                    <div class="info-flex-icon" style="background: #4CAF50;">
-                                        <i class="fas fa-tachometer-alt"></i>
-                                    </div>
-                                    <span>Controlar Potencia Incendio</span>
-                                </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-triangle"></i>
                             </div>
-                            
-                            <div class="info-flex-item">
-                                <div class="info-flex-title">
-                                    <div class="info-flex-icon" style="background: #4CAF50;">
-                                        <i class="fas fa-route"></i>
-                                    </div>
-                                    <span>Conducir Flujo Gases</span>
-                                </div>
+                            <div>
+                                <p><strong>Ventajas de la evacuación de gases:</strong> La apertura de una salida de gases al exterior permite establecer un flujo desde zonas de mayor presión (sobre plano neutro) hacia el exterior. Esto lleva pareja la <strong>liberación de gases tóxicos a alta temperatura y combustibles</strong>.</p>
+                                <p><strong>Aporte de aire fresco:</strong> Se establece un flujo desde el exterior hacia zonas de menor presión (bajo plano neutro). Este aire introduce atmósfera limpia que permite <strong>recuperar visibilidad</strong> (en incendios ILV también supondrá un aumento de la potencia del incendio).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div>
+                                <p><strong>Aplicación coordinada:</strong> La aplicación coordinada de agua y técnicas de ventilación permitirá sacar provecho de las ventajas que aporta la ventilación, <strong>minimizando los efectos de crecimiento del incendio</strong> producidos por el aporte de oxígeno.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- 6.2 Principio conservación masa -->
+                    <!-- 6.1 PRINCIPIO DE CONSERVACIÓN DE LA MASA -->
                     <div class="section" id="conservacion-masa">
                         <div class="section-title">
                             <div class="section-icon" style="background: #388E3C;">
                                 <i class="fas fa-weight"></i>
                             </div>
-                            <h3>6.2. Principio de Conservación de la Masa</h3>
+                            <h3>6.1. PRINCIPIO DE CONSERVACIÓN DE LA MASA</h3>
                         </div>
                         
-                        <p><strong>Enunciado:</strong> Masa total de sistema aislado no sufre cambios. Masa no se crea ni destruye, cambia en su disposición.</p>
-                        
-                        <div class="visual-diagram">
-                            <div class="diagram-title">Aplicado a recinto incendio</div>
-                            <p style="font-family: monospace; font-size: 1.2rem; margin: 1rem 0;">m<sub>saliente</sub> = m<sub>entrante</sub> + m<sub>gas</sub></p>
-                            <p>Donde:</p>
-                            <ul>
-                                <li>m<sub>saliente</sub> = masa gases que sale por aperturas [kg]</li>
-                                <li>m<sub>entrante</sub> = masa gases que entra por aperturas [kg]</li>
-                                <li>m<sub>gas</sub> = masa combustible que se convierte en gas [kg]</li>
-                            </ul>
+                        <div class="text-box">
+                            <p>El Principio de Conservación de la Masa establece que la <strong>masa total de un sistema aislado no sufre cambios</strong>. La masa no se crea ni se destruye, pero cambia en su disposición.</p>
                         </div>
                         
+                        <div class="columnas" style="justify-content: center;">
+                            <div class="visual-diagram" style="flex: 1 1 calc(38%);">
+                                <div class="diagram-title">Aplicado al recinto de incendio</div>
+                                <p style="font-family: monospace; font-size: 1.3rem; margin: 1rem 0; text-align: center;">
+                                    m<sub>saliente</sub> = m<sub>entrante</sub> + m<sub>gas</sub>
+                                </p>
+                                <div style="text-align: left; padding: 0 1rem;">
+                                    <p><strong>Donde:</strong></p>
+                                    <ul>
+                                        <li>m<sub>saliente</sub> = masa de gases que sale por todas las aperturas de ventilación [kg]</li>
+                                        <li>m<sub>entrante</sub> = masa de gases que entra por todas las aperturas de ventilación [kg]</li>
+                                        <li>m<sub>gas</sub> = masa combustible en el interior que se convierte en gas [kg]</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="display: flex;">
+                                <img src="image interior/Masa.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                            
+                        </div>
                         <div class="info-box">
                             <div class="box-icon" style="background: #4CAF50;">
-                                <i class="fas fa-info-circle"></i>
+                                <i class="fas fa-percentage"></i>
                             </div>
                             <div>
-                                <p><strong>Aproximación:</strong> m<sub>gas</sub> no excede 10% → frecuente igualar masa que sale a masa que entra. <strong>NO es cierto para volumen</strong> (gases calientes menor densidad → mayor volumen).</p>
+                                <p><strong>Aproximación frecuente:</strong> A lo largo de las distintas fases de incendio, el valor de la masa de combustible que se gasifica (m<sub>gas</sub>) <strong>no excede del <span class="important-number">10%</span></strong>, por lo que es frecuente emplear la aproximación de igualar la masa de gases que sale a la que entra dentro del incendio.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <p><strong>¡Cuidado! Masa ≠ Volumen:</strong> Si bien esto es cierto para la cantidad de masa, <strong>no lo es para el volumen de los gases</strong>. Los gases de incendio a altas temperaturas disminuyen su densidad generando un <strong>volumen de gases mayor que los de entrada, fríos y densos</strong>.</p>
+                                <p style="margin-top: 0.5rem;">Es frecuente ver incendios con una sola apertura al exterior donde se genera un flujo bidireccional. Aparentemente la salida de gases es mucho más notoria que la entrada (plano neutro muy bajo). <strong>El volumen de los gases que salen es mayor que el de entrada, pero la cantidad de masa que entra y sale es casi idéntica</strong>.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- 6.3 Movilidad gases: flotabilidad y diferencias presión -->
-                    <div class="section">
+                    <!-- 6.2 ECUACIÓN DE BERNOULLI -->
+                    <div class="section" id="ecuacion-bernoulli">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #1B5E20;">
+                                <i class="fas fa-square-root-alt"></i>
+                            </div>
+                            <h3>6.2. ECUACIÓN DE BERNOULLI</h3>
+                        </div>
+                        
+                        <div class="text-box">
+                            <p>La ecuación de Bernoulli es una formulación del <strong>principio de conservación de la energía</strong> en conducciones de fluidos ideales (no turbulentos e incompresibles) y supone una <strong>aproximación más que razonable al movimiento del flujo de gases de un incendio</strong>.</p>
+                        </div>
+                        
+                        <div class="columnas" style="justify-content: center;">
+                            <div class="visual-diagram" style="flex: 1 1 300px; margin: auto;">
+                                <div class="diagram-title">Ecuación de Bernoulli</div>
+                                <p style="font-family: monospace; font-size: 1.2rem; margin: 1rem 0; text-align: center;">
+                                    P + ρ g h + ½ ρ v² = constante
+                                </p>
+                                <div style="text-align: left; padding: 0 1rem;">
+                                    <p><strong>Donde:</strong></p>
+                                    <ul>
+                                        <li>P = presión estática [Pa] [N/m²]</li>
+                                        <li>ρ = densidad del fluido [kg/m³]</li>
+                                        <li>g = aceleración de la gravedad (g = <span class="important-number">9,81 m/s²</span>)</li>
+                                        <li>h = altura sobre un plano de referencia [m]</li>
+                                        <li>v = velocidad del fluido [m/s]</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex: 1 1 350px; max-width: fit-content; margin: auto;">
+                                <img src="image interior/Bernoulli.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                            
+                        </div>
+
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div>
+                                <p><strong>Aplicación a ventilación:</strong> Si los puntos 1 y 2 están a la misma altura y el fluido tiene la misma densidad, la ecuación de Bernoulli se simplifica:</p>
+                                
+                                <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.5rem; margin: 1rem 0;">
+                                    <div style="text-align: center;">
+                                        <p style="font-family: monospace; font-size: 1.3rem; margin: 0;">
+                                            P₁ + ½ρv₁² = P₂ + ½ρv₂²
+                                        </p>
+                                        <p style="margin: 0.2rem 0 0 0; color: #555;">Conservación de la energía</p>
+                                    </div>
+                                </div>
+                                                               
+                                
+                                <p style="margin-top: 0.5rem;">Cualquier diferencia de presión (ΔP) implicará una diferencia de velocidades (ΔV) y, por tanto, el movimiento del flujo.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- 6.3 CAUSAS DE LA MOVILIDAD DE GASES: FLOTABILIDAD Y DIFERENCIAS DE PRESIÓN (SIN EJEMPLO NUMÉRICO) -->
+                    <div class="section" id="flotabilidad-presion">
                         <div class="section-title">
                             <div class="section-icon" style="background: #2E7D32;">
                                 <i class="fas fa-arrows-alt-v"></i>
                             </div>
-                            <h3>6.3. Causas Movilidad Gases: Flotabilidad y Diferencias Presión</h3>
+                            <h3>6.3. CAUSAS DE LA MOVILIDAD DE GASES: FLOTABILIDAD Y DIFERENCIAS DE PRESIÓN</h3>
+                        </div>
+                        
+                        <div class="text-box">
+                            <p>Los gases de incendio, el aire fresco y el vapor de agua que las operaciones de extinción generan en el interior de un recinto constituyen fluidos cuya dinámica atiende básicamente a dos causas:</p>
                         </div>
                         
                         <div class="comparison-container">
+                            <!-- EFECTO DE FLOTABILIDAD -->
                             <div class="comparison-card">
                                 <div class="comparison-title">
-                                    <div class="comparison-icon" style="background: #4CAF50;">
+                                    <div class="comparison-icon" style="background: #2196F3;">
                                         <i class="fas fa-arrow-up"></i>
                                     </div>
-                                    <span>Efecto Flotabilidad</span>
+                                    <span>EFECTO DE FLOTABILIDAD</span>
                                 </div>
-                                <p>Vinculado directamente con <strong>densidad</strong>. Masa fluido menos denso que medio circundante tiende a flotar.</p>
-                                <p><strong>Causas diferencias densidad:</strong></p>
-                                <ul class="nested-list">
-                                    <li>Diferente composición química</li>
-                                    <li>Diferente temperatura (caso incendios)</li>
+                                <ul class="visual-list">
+                                    <li>El efecto flotabilidad de un fluido está vinculado directamente con la <strong>densidad del mismo</strong>.</li>
+                                    <li>Una masa de un fluido menos denso que el que lo rodea recibe en su cara inferior una presión mayor que en su cara superior → <strong>tiende a flotar</strong>.</li>
                                 </ul>
+                                <p style="margin-top: 0.8rem; font-size: 1.1rem; margin-bottom: 0.8rem;"><strong>Las diferencias de densidad se pueden deber a dos motivos:</strong></p>
+                                <ul class="visual-list">
+                                    <li><strong>Diferente composición química:</strong> dirigibles llenos de Helio (<span class="important-number">0,18 kg/m³</span>) flotan en aire (<span class="important-number">1,2 kg/m³</span>).</li>
+                                    <li><strong>Diferente temperatura y, por tanto densidad:</strong> globos aerostáticos de aire caliente.</li>
+                                </ul>
+                                <p style="margin-top: 0.8rem;">Dentro de un incendio, el efecto flotabilidad se debe a la <strong>diferencia de temperatura</strong>, ya que el componente principal del aire, el nitrógeno, se mantiene en los gases de incendio en una proporción muy similar.</p>
                             </div>
                             
+                            <!-- DIFERENCIAS DE PRESIÓN -->
                             <div class="comparison-card">
                                 <div class="comparison-title">
-                                    <div class="comparison-icon" style="background: #388E3C;">
+                                    <div class="comparison-icon" style="background: #F57C00;">
                                         <i class="fas fa-compress-arrows-alt"></i>
                                     </div>
-                                    <span>Diferencias Presión</span>
+                                    <span>DIFERENCIAS DE PRESIÓN</span>
                                 </div>
-                                <p>Fluidos se desplazan de zonas mayor presión a zonas menor presión por camino más corto (máximo gradiente).</p>
-                                <p><strong>Causas diferencias presión:</strong></p>
-                                <ul class="nested-list">
-                                    <li>Diferencias densidad por temperatura gases</li>
-                                    <li>Agentes externos (viento, ventiladores)</li>
+                                <ul class="visual-list">
+                                    <li>Dentro de un recinto de incendio se producen <strong>diferencias de presión</strong> entre las distintas estancias del edificio y también con el exterior como consecuencia de las <strong>diferencias de temperatura</strong> de los gases de incendio.</li>
+                                    <li>La salida de gases hacia el exterior también implica <strong>cambios en la presión interior</strong>.</li>
+                                    <li>El empleo de <strong>ventiladores de presión positiva o extractores de gases</strong> supondrá la creación de un diferencial de presión.</li>
+                                    <li>Los fluidos se desplazarán de <strong>zonas de mayor presión a zonas de menor presión</strong> siguiendo el camino más corto (de máximo gradiente).</li>
                                 </ul>
                             </div>
                         </div>
                         
-                        <div class="visual-diagram">
-                            <div class="diagram-title">Cálculo efecto flotabilidad gases incendio</div>
-                            <p>Gases 500°C vs aire 20°C:</p>
-                            <p>ρ<sub>20°C</sub> = <span class="important-number">1,2 kg/m³</span></p>
-                            <p>ρ<sub>500°C</sub> = <span class="important-number">0,46 kg/m³</span></p>
-                            <p>Flotabilidad 1m³ = (1,2 - 0,46) × 9,81 = <span class="important-number">7,25 N (≈0,74 kg)</span></p>
+                        <!-- El flujo de gases tenderá a igualar la diferencia de presión -->
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <p style=" font-size: 1.1rem; margin-bottom: 0.8rem;"><strong>El flujo de gases tenderá a igualar la diferencia de presión creada por:</strong></p>
+                                <ul class="visual-list" style="margin-bottom: 0;">
+                                    <li><strong>Las diferencias en densidad debido a la temperatura de los gases.</strong></li>
+                                    <li><strong>Agentes externos</strong> (viento o ventiladores de presión positiva) que incidan sobre aperturas del recinto al exterior.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Condicionamiento por flotabilidad -->
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #FF9800;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <p><strong>Condicionamiento por flotabilidad:</strong> En el recinto de un incendio, este movimiento de los fluidos hacia zonas de menor presión se ve condicionado también por el <strong>efecto de flotabilidad</strong> de los gases. Si el movimiento de los gases simplemente obedeciese a los diferenciales de presión, las <strong>capas superiores del colchón de gases (a mayor presión) se intentarían desplazar a las zonas más bajas por debajo del plano neutro (presiones menores)</strong>. Esto, en la realidad, <strong>no ocurre por el efecto de flotación de los gases de incendio a mucha temperatura y, por tanto, baja densidad</strong>.</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- 6.4 Identificación flujos gases -->
-                    <div class="section" id="flujos-gases">
+                    <!-- 6.4 IDENTIFICACIÓN DE FLUJOS DE GASES -->
+                    <div class="section" id="identificacion-flujos">
                         <div class="section-title">
-                            <div class="section-icon" style="background: #4CAF50;">
+                            <div class="section-icon" style="background: #388E3C;">
                                 <i class="fas fa-route"></i>
                             </div>
-                            <h3>6.4. Identificación de Flujos de Gases</h3>
+                            <h3>6.4. IDENTIFICACIÓN DE FLUJOS DE GASES</h3>
                         </div>
                         
-                        <div class="info-flex">
-                            <div class="info-flex-item">
-                                <div class="info-flex-title">
-                                    <div class="info-flex-icon" style="background: #2196F3;">
+                        <div class="text-box">
+                            <p>En todo incendio no confinado (con aperturas al exterior), se produce un <strong>movimiento de gases</strong> que abarca la alimentación de aire al incendio y los gases de incendio producidos. Este volumen es el denominado <strong>flujo de gases</strong>.</p>
+                        </div>
+                        
+                        <div class="comparison-container" style="justify-content: center;">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: #2196F3;">
                                         <i class="fas fa-snowflake"></i>
                                     </div>
-                                    <span>Ruta Gases Fría</span>
+                                    <span>RUTA FRÍA</span>
                                 </div>
-                                <p>Desde entrada ventilación hasta foco incendio</p>
-                                <p>Zona personal protegido exposición térmica</p>
+                                <ul class="visual-list">
+                                    <li>Desde la <strong>entrada de ventilación</strong> hasta el <strong>foco del incendio</strong></li>
+                                    <li><strong>Buena visibilidad</strong></li>
+                                    <li><strong>Baja temperatura</strong></li>
+                                    <li><strong>Alta concentración de oxígeno</strong> (aumento de potencia en ILV)</li>
+                                    <li><strong>Buenas condiciones de supervivencia</strong></li>
+                                </ul>
                             </div>
+
+                            <div style="display: flex; flex: 1 1 200px;">
+                                <img src="image interior/Ruta.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                            
                             
-                            <div class="info-flex-item">
-                                <div class="info-flex-title">
-                                    <div class="info-flex-icon" style="background: #D32F2F;">
+                            <div class="comparison-card" style="max-width: max-content;">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: #D32F2F;">
                                         <i class="fas fa-fire"></i>
                                     </div>
-                                    <span>Ruta Gases Caliente</span>
+                                    <span>RUTA CALIENTE</span>
                                 </div>
-                                <p>Gases incendio en busca de salida</p>
-                                <p>Importantes efectos convección sobre superficies</p>
+                                <ul class="visual-list">
+                                    <li>Formada por los <strong>gases de incendio en busca de la salida</strong></li>
+                                    <li><strong>Baja visibilidad</strong></li>
+                                    <li><strong>Alta temperatura</strong></li>
+                                    <li><strong>Alta concentración de gases tóxicos</strong></li>
+                                    <li><strong>Gases potencialmente inflamables</strong></li>
+                                    <li><strong>Condiciones de supervivencia críticas</strong></li>
+                                </ul>
                             </div>
                         </div>
                         
                         <div class="info-box">
-                            <div class="box-icon" style="background: #4CAF50;">
-                                <i class="fas fa-lightbulb"></i>
+                            <div class="box-icon" style="background: #388E3C;">
+                                <i class="fas fa-weight"></i>
                             </div>
                             <div>
-                                <p><strong>Identificar ruta fría/ruta caliente es vital para seguridad de víctimas e intervinientes.</strong></p>
+                                <p><strong>La masa de aire que entra es igual a la masa que sale más la masa de combustible gasificado.</strong> Esto es cierto para la masa, <strong>no para el volumen</strong>: los gases de salida, dilatados por la temperatura, presentan un <strong>volumen muy superior</strong> al de entrada.</p>
+                            </div>
+                        </div>
+
+                        <!-- Síntesis: Incendios confinados -->
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #455A64;">
+                                <i class="fas fa-door-closed"></i>
+                            </div>
+                            <div>
+                                <p>En <strong>incendios confinados no existe flujo de gases</strong> (sin aperturas, no hay alimentación de aire ni expulsión). Sin embargo, sí hay <strong>movimiento de fluidos en el interior</strong> generado por la <strong>columna de convección</strong> del foco.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- 6.5 Flujos unidireccionales -->
-                    <div class="section">
+                    <!-- 6.5 FLUJOS UNIDIRECCIONALES -->
+                    <div class="section" id="flujos-unidireccionales">
                         <div class="section-title">
-                            <div class="section-icon" style="background: #388E3C;">
+                            <div class="section-icon" style="background: #2E7D32;">
                                 <i class="fas fa-arrow-right"></i>
                             </div>
-                            <h3>6.5. Flujos Unidireccionales</h3>
+                            <h3>6.5. FLUJOS UNIDIRECCIONALES</h3>
                         </div>
                         
-                        <p><strong>Condición:</strong> Apertura claramente por encima o por debajo del plano neutro.</p>
+                        <div class="text-box">
+                            <p>Cuando se produce una <strong>apertura de ventilación situada claramente por encima o por debajo del plano neutro</strong>, se conforma un flujo unidireccional en dicha apertura:</p>
+                            <ul class="visual-list" style="margin-top: 0.5rem; flex: 1;">
+                                <li><strong>Por debajo del plano neutro</strong> (zona de presiones negativas): flujo de <strong>entrada</strong></li>
+                                <li><strong>Por encima del plano neutro</strong> (zona de presiones positivas): flujo de <strong>salida</strong></li>
+                                <div style="display: flex;">
+                                    <img src="image interior/Unidirec.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                            
+                            </ul>
+                        </div>
                         
-                        <div class="info-flex">
-                            <div class="info-flex-item">
-                                <div class="info-flex-title">
-                                    <div class="info-flex-icon" style="background: #2196F3;">
-                                        <i class="fas fa-sign-in-alt"></i>
-                                    </div>
-                                    <span>Apertura bajo plano neutro</span>
-                                </div>
-                                <p>Zona presiones negativas</p>
-                                <p><strong>Flujo de entrada</strong></p>
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #2196F3;">
+                                <i class="fas fa-info-circle"></i>
                             </div>
-                            
-                            <div class="info-flex-item">
-                                <div class="info-flex-title">
-                                    <div class="info-flex-icon" style="background: #D32F2F;">
-                                        <i class="fas fa-sign-out-alt"></i>
-                                    </div>
-                                    <span>Apertura sobre plano neutro</span>
-                                </div>
-                                <p>Zona presiones positivas</p>
-                                <p><strong>Flujo de salida</strong></p>
+                            <div>
+                                <p><strong>Condición necesaria:</strong> Para que se produzca un flujo unidireccional es necesaria la existencia de, al menos, <strong>dos aperturas</strong>; una de entrada y otra de salida bien diferenciadas.</p>
+                                <p style="margin-top: 0.5rem;">Los flujos unidireccionales son típicos en <strong>incendios ventilados de forma natural</strong> en los que la alimentación y salida de gases se realiza a distintos niveles, mediando una diferencia de altura que contribuye a favorecer la diferencia de presión.</p>
                             </div>
                         </div>
+                        
+                        <div class="tip-box">
+                            <div class="box-icon" style="background: #4CAF50;">
+                                <i class="fas fa-fan"></i>
+                            </div>
+                            <div>
+                                <p><strong>Ventilación en Presión Positiva (VPP):</strong> Las técnicas de VPP consiguen generar flujos unidireccionales utilizando entradas y salidas por las que, de forma natural, no se establecerían flujos unidireccionales. Constituye una de las maneras más efectivas de asegurar un flujo de gases unidireccional que facilite las operaciones interiores.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 6.6 FLUJOS BIDIRECCIONALES -->
+                    <div class="section" id="flujos-bidireccionales">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #1B5E20;">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h3>6.6. FLUJOS BIDIRECCIONALES</h3>
+                        </div>
+                        
+                        <div class="text-box">
+                            <div class="visual-list" style="flex: 1; align-items: center;">
+                            <p>Los <strong>flujos bidireccionales</strong> se forman en aperturas de ventilación cuya altura abarca zonas que se sitúan <strong>por encima y por debajo del plano neutro</strong>.</p>
+                                <div style="display: flex;">
+                                    <img src="image interior/Bidirec.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>
+                            </div>                         
+                        </div>
+                        
+
                         
                         <div class="info-box">
                             <div class="box-icon" style="background: #4CAF50;">
                                 <i class="fas fa-info-circle"></i>
                             </div>
                             <div>
-                                <p><strong>Requiere al menos dos aperturas</strong> (entrada + salida diferenciadas). Típicos en incendios ventilados naturalmente con alimentación/salida a distintos niveles.</p>
+                                <p><strong>En incendios confinados:</strong> No existe el denominado flujo de gases. La ausencia de aperturas al exterior impide la alimentación con aire fresco y la expulsión de gases. Sin embargo, sí existe movimiento de fluidos en el interior alimentado por la <strong>columna de convección</strong> que origina el foco del incendio.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- 6.6 Flujos bidireccionales -->
-                    <div class="section">
+                    <!-- 6.7 PATRONES DE VENTILACIÓN -->
+                    <div class="section" id="patrones-ventilacion">
                         <div class="section-title">
                             <div class="section-icon" style="background: #2E7D32;">
-                                <i class="fas fa-exchange-alt"></i>
-                            </div>
-                            <h3>6.6. Flujos Bidireccionales</h3>
-                        </div>
-                        
-                        <p><strong>Se forman en aperturas cuya altura abarca zonas por encima y por debajo del plano neutro.</strong></p>
-                        
-                        <div class="visual-diagram">
-                            <div class="diagram-title">Comportamiento flujo bidireccional</div>
-                            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: center; margin: 1rem 0;">
-                                <div style="text-align: center;">
-                                    <div style="width: 60px; height: 60px; background: #D32F2F; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: white;">
-                                        <i class="fas fa-arrow-up"></i>
-                                    </div>
-                                    <div style="font-weight: 700;">Área sobre plano neutro</div>
-                                    <div style="font-size: 0.9rem;">Flujo de salida gases</div>
-                                </div>
-                                
-                                <div style="text-align: center;">
-                                    <div style="width: 60px; height: 60px; background: #2196F3; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: white;">
-                                        <i class="fas fa-arrow-down"></i>
-                                    </div>
-                                    <div style="font-weight: 700;">Área bajo plano neutro</div>
-                                    <div style="font-size: 0.9rem;">Flujo de alimentación</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 6.7 Patrones ventilación -->
-                    <div class="section">
-                        <div class="section-title">
-                            <div class="section-icon" style="background: #4CAF50;">
                                 <i class="fas fa-project-diagram"></i>
                             </div>
-                            <h3>6.7. Patrones de Ventilación</h3>
+                            <h3>6.7. PATRONES DE VENTILACIÓN</h3>
                         </div>
                         
-                        <p>Análisis de cómo se genera flujo de gases en incendio revela diversos patrones.</p>
+                        <div class="text-box">
+                            <p>Si se analiza cómo se genera el flujo de gases en un incendio, se encontrarán diversos patrones de ventilación:</p>
+                        </div>
                         
-                        <div class="info-flex">
-                            <div class="info-flex-item">
-                                <div class="info-flex-title">
-                                    <div class="info-flex-icon" style="background: #4CAF50;">
-                                        <i class="fas fa-wind"></i>
-                                    </div>
-                                    <span>Ventilación Natural</span>
+                        <!-- a) Antiventilación (incendio confinado) -->
+                        <div class="subsection" style="margin-top: 2rem;">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: #455A64;">
+                                    <i class="fas fa-door-closed"></i>
                                 </div>
-                                <p>Flujos establecidos por diferencias temperatura/presión</p>
+                                <h4>a) Antiventilación (Incendio Confinado)</h4>
                             </div>
                             
-                            <div class="info-flex-item">
-                                <div class="info-flex-title">
-                                    <div class="info-flex-icon" style="background: #2196F3;">
-                                        <i class="fas fa-fan"></i>
+                            <div class="info-flex">
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title">
+                                        <div class="info-flex-icon" style="background: #455A64;">
+                                            <i class="fas fa-door-closed"></i>
+                                        </div>
+                                        <span>Características</span>
                                     </div>
-                                    <span>VPP (Ventilación Presión Positiva)</span>
+                                    <ul class="visual-list">
+                                        <li>El incendio está <strong>confinado</strong>, sin ventilación efectiva</li>
+                                        <li><strong>Flujo de gases inexistente</strong> (aunque hay movimiento por convección del foco)</li>
+                                        <li>Al alcanzar régimen ILV: la concentración de O₂ cae sin posibilidad de aporte adicional</li>
+                                        <li>La potencia del incendio se reduce <strong>aproximándose a cero</strong></li>
+                                        <li><strong>Plano neutro muy bajo</strong>, visibilidad casi nula</li>
+                                        <li>Condiciones de supervivencia para víctimas <strong>desfavorables</strong></li>
+                                    </ul>
                                 </div>
-                                <p>Genera flujos unidireccionales con ventiladores</p>
+                                
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title">
+                                        <div class="info-flex-icon" style="background: #D32F2F;">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <span>Evolución</span>
+                                    </div>
+                                    <ul class="visual-list">
+                                        <li>La caída de la potencia del incendio está vinculada al <strong>déficit de oxígeno</strong></li>
+                                        <li>Un incendio confinado puede experimentar <strong>presiones negativas</strong> en su interior</li>
+                                        <li><strong>Ausencia de humo como signo externo</strong> no equivale a ausencia de incendio, sino quizás a un incendio listo para reaccionar frente a la ventilación</li>
+                                        <div style="display: flex;">
+                                            <img src="image interior/Anti.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                        </div>                                    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- b) Ventilación natural -->
+                        <div class="subsection" style="margin-top: 2rem;">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: #2196F3;">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <h4>b) Ventilación Natural</h4>
                             </div>
                             
-                            <div class="info-flex-item">
-                                <div class="info-flex-title">
-                                    <div class="info-flex-icon" style="background: #D32F2F;">
-                                        <i class="fas fa-ban"></i>
+                            <div class="info-flex">
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title">
+                                        <div class="info-flex-icon" style="background: #2196F3;">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <span>Características</span>
                                     </div>
-                                    <span>Antiventilación</span>
+                                    <ul class="visual-list">
+                                        <li>Incendio <strong>no confinado</strong> con aperturas al exterior</li>
+                                        <li>Se establecen <strong>flujos unidireccionales o bidireccionales</strong></li>
+                                        <li>El motor del flujo es el <strong>diferencial de presiones</strong> interior-exterior</li>
+                                        <li>En ILV, la potencia depende del <strong>tamaño y geometría de las aperturas</strong></li>
+                                        <li>Si ventilación y carga de combustible son suficientes → pueden alcanzar <strong>flashover</strong></li>
+                                    </ul>
                                 </div>
-                                <p>Control deliberado para limitar aporte oxígeno</p>
+                                
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title">
+                                        <div class="info-flex-icon" style="background: #4CAF50;">
+                                            <i class="fas fa-eye"></i>
+                                        </div>
+                                        <span>Ventajas tácticas</span>
+                                    </div>
+                                    <ul class="visual-list">
+                                        <li><strong>Estratificación clara</strong> con zona de visibilidad en parte baja</li>
+                                        <li>Mantenida por el <strong>flujo de alimentación de aire fresco</strong></li>
+                                        <li>Mantener el equilibrio térmico durante la intervención favorece la <strong>visibilidad</strong></li>
+                                        <div style="display: flex;">
+                                            <img src="image interior/Natural.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                        </div>                                      
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- c) Incendios dominados por el viento -->
+                        <div class="subsection" style="margin-top: 2rem;">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: #F57C00;">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <h4>c) Incendios Dominados por el Viento</h4>
+                            </div>
+                            
+                            <div class="danger-box">
+                                <div class="box-icon" style="background: #D32F2F;">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Influencia del viento:</strong> La fachada en <strong>barlovento</strong> está sometida a presión, la fachada a <strong>sotavento</strong> experimenta depresión. A velocidades de viento de tan solo <span class="important-number">6 m/s (21 km/h)</span>, la diferencia de presión entre fachadas opuestas genera presiones en el entorno de <span class="important-number">25-30 Pa</span>, superiores en muchos casos a las que se consiguen en un incendio durante la mayor parte de su desarrollo.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-flex">
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title">
+                                        <div class="info-flex-icon" style="background: #F57C00;">
+                                            <i class="fas fa-fire"></i>
+                                        </div>
+                                        <span>Efectos</span>
+                                    </div>
+                                    <ul class="visual-list">
+                                        <li>Genera <strong>incendios sobrealimentados</strong>: aporte adicional de aire por ventanas expuestas al viento y salida de gases en distinta fachada</li>
+                                        <li><strong>Flujo de gases caliente favorece la propagación</strong> a lo largo del flujo</li>
+                                        <li>Acumulación previa + rotura sobrevenida de ventana → régimen turbulento → mezcla aire-gases → <strong>combustión casi completa en forma de antorcha</strong></li>
+                                        <li><strong>Salto de potencia</strong> y flujo de gases extremadamente calientes</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title">
+                                        <div class="info-flex-icon" style="background: #D32F2F;">
+                                            <i class="fas fa-exclamation"></i>
+                                        </div>
+                                        <span>Características y seguridad</span>
+                                    </div>
+                                    <ul class="visual-list">
+                                        <li><strong>Flujos menos intuitivos</strong> que en ventilación natural</li>
+                                        <li>Aumentos de potencia <strong>muy significativos</strong></li>
+                                        <li><strong>Flujos unidireccionales</strong> a lo largo de la dirección del viento</li>
+                                        <li><strong>Humos claros</strong> de combustión casi completa (efecto antorcha) por abundancia de oxígeno</li>
+                                        <li><span class="important-number" style="font-weight: 800;">¡ABSOLUTAMENTE DESACONSEJABLE el acceso interior a lo largo del flujo de gases calientes!</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- d) Ventilación en Presión Positiva (VPP) -->
+                        <div class="subsection" style="margin-top: 2rem;">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: #4CAF50;">
+                                    <i class="fas fa-fan"></i>
+                                </div>
+                                <h4>d) Ventilación en Presión Positiva (VPP) como patrón táctico</h4>
+                            </div>
+                            
+                            <div class="info-box">
+                                <div class="box-icon" style="background: #4CAF50;">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Mecanismo:</strong> El empleo de ventiladores de presión positiva genera una <strong>masa de aire en movimiento</strong> que penetra, <strong>presuriza el interior del recinto</strong> y establece un flujo de gases <strong>unidireccional</strong> a través del recinto del incendio.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="comparison-container">
+                                <div class="comparison-card">
+                                    <div class="comparison-title">
+                                        <div class="comparison-icon" style="background: #4CAF50;">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <span>VENTAJAS</span>
+                                    </div>
+                                    <ul class="visual-list">
+                                        <li><strong>Recobrar visibilidad</strong></li>
+                                        <li><strong>Reducir la temperatura</strong></li>
+                                        <li><strong>Aumentar la supervivencia</strong> de víctimas en el interior</li>
+                                        <li><strong>Expulsar con rapidez</strong> los gases de incendio acumulados ricos en productos combustibles</li>
+                                        <div style="display: flex;">
+                                            <img src="image interior/VPP.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                        </div>                                      
+                                    </ul>
+                                </div>
+                                
+                                <div class="comparison-card">
+                                    <div class="comparison-title">
+                                        <div class="comparison-icon" style="background: #D32F2F;">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                        <span>RIESGOS</span>
+                                    </div>
+                                    <ul class="visual-list">
+                                        <li>El aporte de aire fresco genera un <strong>aumento en la potencia del incendio</strong></li>
+                                        <li><span class="important-number">Hasta un 60%</span> según experimentos reales (depende de efectividad del barrido y nivel de turbulencias)</li>
+                                        <li>Los ILV sometidos a VPP pueden experimentar importante aumento de potencia</li>
+                                        <li><strong>Debe coordinarse con labores de extinción mediante aplicación de agua</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <h4>Mecanismos de extinción favorecidos por VPP:</h4>
+                            <div class="info-flex">
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title">
+                                        <div class="info-flex-icon" style="background: #2196F3;">
+                                            <i class="fas fa-broom"></i>
+                                    </div>
+                                        <span>Efecto Barrido</span>
+                                    </div>
+                                    <ul class="visual-list">
+                                        <li>Consecuencia de la <strong>distinta densidad</strong> entre el aire introducido y los gases de incendio</li>
+                                        <li>Sin apenas mezclarse, se genera un <strong>empuje o efecto pistón</strong></li>
+                                        <li>Se produce el <strong>barrido de los gases de incendio con aire limpio</strong></li>
+                                        <li>Contribuye a la <strong>expulsión de combustible</strong> y a <strong>recuperar visibilidad</strong></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title">
+                                        <div class="info-flex-icon" style="background: #4CAF50;">
+                                            <i class="fas fa-snowflake"></i>
+                                        </div>
+                                        <span>Enfriamiento y Dilución</span>
+                                    </div>
+                                    <ul class="visual-list">
+                                        <li>En zonas de mezcla con turbulencia, el aire fresco contribuye a <strong>diluir y enfriar</strong> la masa de gases de incendio</li>
+                                        <li>La inflamabilidad de los gases es particularmente sensible a esta <strong>bajada de temperatura y dilución</strong></li>
+                                        <li>Algunas zonas pueden quedar fuera del punto de inflamabilidad, pero otras pueden entrar en combustión y aumentar la potencia</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="warning-box">
+                                <div class="box-icon" style="background: #FF9800;">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Coordinación obligatoria:</strong> El empleo de la ventilación como elemento táctico debe quedar siempre <strong>coordinado con las labores de extinción mediante la aplicación de agua</strong>.</p>
+                                    <p style="margin-top: 0.5rem;"><strong>Acceso seguro:</strong> Al igual que en incendios dominados por el viento (sobrealimentados), el acceso debe realizarse en la dirección del flujo de gases (<strong>aire fresco a la espalda siempre</strong>). Se distinguen en que el flujo se establece por decisión táctica para permitir rápido avance interior.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
+            <!-- SECCIÓN 7: INFLUENCIA DE LA PRESURIZACIÓN DE RECINTOS -->
+            <div class="horizontal-card" id="presurizacion">
+                <div class="floating-icon" style="top: 20px; right: 30px;">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                </div>
+                
+                <div class="card-header-top" style="background: linear-gradient(135deg, #6A1B9A, #AB47BC);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large">
+                            <i class="fas fa-compress-arrows-alt"></i>
+                        </div>
+                        <div>
+                            <div class="card-title-top">🗜️ 7. INFLUENCIA DE LA PRESURIZACIÓN DE RECINTOS</div>
+                            <div class="card-subtitle-top">Presiones en el recinto, diferenciales, plano neutro, efectos VPP y propagación</div>
+                            <div>
+                                <span class="category-tag" style="background: #E1BEE7; color: #4A148C;">Presiones</span>
+                                <span class="category-tag" style="background: #D1C4E9; color: #311B92;">Diferenciales</span>
+                                <span class="category-tag" style="background: #CE93D8; color: #4A148C;">VPP</span>
+                                <span class="category-tag" style="background: #B39DDB; color: #1A237E;">Propagación</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 7</div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- 7.1. PRESIONES EN EL RECINTO DE INCENDIO -->
+                    <div class="section" id="presiones-recinto">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #7B1FA2;">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>7.1. PRESIONES EN EL RECINTO DE INCENDIO</h3>
+                        </div>
+                        
+                        <div class="text-box">
+                            <p>El <strong>efecto flotabilidad</strong> explica las diferencias de presión dentro de un recinto de incendio, consecuencia de las diferencias de <strong>presión hidrostática</strong> (término ρgh en la ecuación de Bernoulli).</p>
+                            <p>Para un punto dentro del recinto, la <strong>columna de gases calientes</strong> por encima del mismo es más ligera que la columna de gases fríos de un punto externo y genera una diferencia de presión.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #7B1FA2;">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div>
+                                <p><strong>Presión atmosférica (P₀) y presión interior (Pᵢ):</strong></p>
+                                <ul class="visual-list">
+                                    <li>La <strong>presión atmosférica varía con la altura</strong>: aumenta a medida que la columna de aire situada encima es de mayor altura.</li>
+                                    <li>Para la presión en el interior del recinto ocurre lo mismo, pero la columna encima de un punto de incendio <strong>pesa menos porque los gases están dilatados por efecto de la temperatura</strong>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #6A1B9A;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <p><strong>Hablar de presiones absolutas (P₁ y P₀) tiene poco sentido:</strong> el flujo de fluidos estará definido por la <strong>diferencia de presiones (ΔP = P₁ – P₀)</strong>. En adelante, se hablará siempre de diferenciales de presión.</p>
+                            </div>
+                        </div>
+
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #8E24AA;">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div>
+                                <p><strong>Valores típicos de diferencial de presión (Pᵢ – P₀) en incendio ventilado en pleno desarrollo:</strong></p>
+                                <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 0.8rem;">
+                                    <div style="text-align: center; background: #f3e5f5; padding: 0.8rem 1.5rem; border-radius: 12px; align-self: center;">
+                                        <span style="font-size: 1.5rem; font-weight: 800; color: #D32F2F;">-15 Pa</span>
+                                        <p style="margin: 0; font-size: 0.9rem;">zona inferior</p>
+                                    </div>
+                                    <div style="text-align: center; background: #f3e5f5; padding: 0.8rem 1.5rem; border-radius: 12px; align-self: center;">
+                                        <span style="font-size: 1.5rem; font-weight: 800; color: #D32F2F;">+30 Pa</span>
+                                        <p style="margin: 0; font-size: 0.9rem;">zona superior</p>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <img src="image interior/Presion.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>                                    
+                                </div>
+                                <p style="margin-top: 0.8rem;">Nótese que la gráfica representa valores para los <strong>diferenciales de presión</strong>, no de presión absoluta. La línea vertical no representa la presión atmosférica, sino un <strong>diferencial cero</strong> entre exterior e interior.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Incendio confinado y presiones negativas -->
+                        <div class="warning-box">
+                            <div class="box-icon" style="background: #4A148C;">
+                                <i class="fas fa-door-closed"></i>
+                            </div>
+                            <div>
+                                <p><strong>Incendio confinado:</strong> Puede experimentar <strong>presiones negativas</strong> en su interior. Como consecuencia, <strong>desaparecen signos externos de la presencia de humo</strong>.</p>
+                                <p style="margin-top: 0.5rem;"><span class="important-number">¡IMPORTANTE!</span> La <strong>ausencia de humo a la llegada a un siniestro no equivale a la ausencia de incendio</strong>, sino quizás a un incendio listo para reaccionar frente a la ventilación.</p>
+                                <p style="margin-top: 0.5rem;">Mientras el diferencial de presión sea positivo, durante el reconocimiento exterior pueden aparecer penachos de humo saliendo por pequeñas rendijas. Una vez alcanzado el ILV, la presión cae hasta ser negativa para después igualarse, con lo que <strong>desaparecerán signos externos de humo</strong>.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Efecto viento y VPP, Principio de Pascal -->
+                        <div class="subsection" style="margin-top: 2rem;">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: #5E35B1;">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <h4>Efecto del viento y ventiladores de presión positiva</h4>
+                            </div>
+                            
+                            <div class="info-flex">
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title">
+                                        <div class="info-flex-icon" style="background: #5E35B1;">
+                                            <i class="fas fa-fan"></i>
+                                        </div>
+                                        <span>Principio de Pascal</span>
+                                    </div>
+                                    <p>Los recintos sometidos a los efectos del viento o de ventiladores de presión positiva sufren un <strong>aumento de presión en la totalidad del volumen</strong>. El principio de Pascal establece que la presión ejercida en un punto sobre un fluido se transmite con igual magnitud en todo su volumen.</p>
+                                </div>
+                                
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title">
+                                        <div class="info-flex-icon" style="background: #7B1FA2;">
+                                            <i class="fas fa-chart-simple"></i>
+                                        </div>
+                                        <span>Valores típicos VPP</span>
+                                    </div>
+                                    <p>En un recinto habitual, sin incendio, los valores de diferencial de presión típicos generados por un ventilador de presión positiva de <span class="important-number"> 18”- 21”</span> varían entre <span class="important-number">15 Pa y 30 Pa</span> dependiendo de las geometrías de la entrada y salida de gases.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box">
+                                <div class="box-icon" style="background: #8E24AA;">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Composición de presiones:</strong> Cuando el efecto del viento o del ventilador de VPP se añade al incendio, se produce una composición de presiones resultado de <strong>superponer esta última configuración con la obtenida para un incendio ventilado</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Caída de presión a lo largo del flujo -->
+                        <div class="subsection" style="margin-top: 2rem;">
+                            <div class="subsection-title">
+                                <div class="subsection-icon" style="background: #3949AB;">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                                <h4>Caída de presión a lo largo del flujo de gases</h4>
+                            </div>
+                        
+                            <div class="columnas" style="justify-content: center;">
+                                <div class="visual-diagram" style="flex: 1 1 300px;">
+                                    <div class="diagram-title">Ecuación de Bernoulli aplicada al flujo</div>
+                                    <p style="text-align: left;">A lo largo del flujo de gases, las partículas están en movimiento. La suma de la <strong>presión estática (P)</strong> y la <strong>presión dinámica (½ ρ v²)</strong> es constante (Bernoulli).</p>
+                                    <p style="text-align: left; margin-top: 0.5rem;">Por ello, a lo largo del flujo de gases se produce una <strong>caída de presión proporcional al cuadrado de la velocidad</strong> con la que se mueve el flujo.</p>
+                                    <p style="text-align: left; margin-top: 0.5rem;">La diferencia de velocidad entre las partículas en reposo y las que constituyen el flujo supone que estas últimas experimenten <strong>menores presiones estáticas</strong>.</p>
+                                </div>
+                                <div style="display: flex;">
+                                    <img src="image interior/Gases.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                    
+                    <!-- 7.2. EFECTOS SOBRE LA PROPAGACIÓN DEL INCENDIO -->
+                    <div class="section" id="propagacion-presurizacion">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4A148C;">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <h3>7.2. EFECTOS SOBRE LA PROPAGACIÓN DEL INCENDIO</h3>
+                        </div>
+                        
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #6A1B9A;">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div>
+                                <p><strong>Evidencia experimental:</strong> Diversos experimentos han demostrado que la <strong>presurización de un recinto adyacente al incendio evita la propagación hacia este</strong>.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-container">
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: #7B1FA2;">
+                                        <i class="fas fa-arrow-left"></i>
+                                    </div>
+                                    <span>Mecanismo</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Los gases de incendio buscarán preferentemente la salida que suponga la <strong>mayor caída de presión</strong>.</li>
+                                    <li>Seguirán el <strong>camino más corto</strong> desde la máxima presión a la mínima presión.</li>
+                                    <li><strong>Diferenciales de presión relativamente pequeños (<span class="important-number">5 Pa</span>) permiten evitar la propagación</strong>, incluso existiendo pequeñas aperturas entre el recinto de incendio y el adyacente.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <div class="comparison-title">
+                                    <div class="comparison-icon" style="background: #5E35B1;">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <span>Aplicación táctica</span>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>Este principio es el empleado en tácticas como el <strong>ataque en presión positiva contra la propagación</strong>.</li>
+                                    <li>El mando de intervención <strong>protege las zonas no afectadas del incendio</strong> mediante la sobrepresión generada por un ventilador de presión positiva.</li>
+                                    <li>El recinto permanece <strong>lo más cerrado posible</strong> para evitar pérdidas de flujo y, por tanto, de presión interior.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
         </div>
     </main>
     
