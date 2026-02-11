@@ -1188,46 +1188,436 @@
             padding: 0.5rem;
         }
 
+    /* ===== HEADER TEMÁTICO - INCENDIOS DE INTERIOR + VENTILACIÓN ===== */
+    .interior-header {
+        position: relative;
+        background: radial-gradient(circle at 30% 40%, #0A2F44, #B71C1C 50%, #FF6F00 100%);
+        background-size: 300% 300%;
+        animation: bgShift 18s infinite alternate;
+        color: white;
+        padding: 2.5rem 0 3rem 0;
+        text-align: center;
+        overflow: hidden;
+        margin-bottom: 2.5rem;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        box-shadow: 0 15px 35px rgba(183, 28, 28, 0.5);
+        min-height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @keyframes bgShift {
+        0% { background-position: 0% 0%; }
+        50% { background-position: 80% 60%; }
+        100% { background-position: 20% 100%; }
+    }
+
+    /* ===== ANIMACIONES ===== */
+    @keyframes flameFlicker {
+        0%, 100% { opacity: 0.9; transform: scaleY(1) translateY(0); }
+        25% { opacity: 1; transform: scaleY(1.2) translateY(-6px); }
+        50% { opacity: 0.8; transform: scaleY(0.9) translateY(-3px); }
+        75% { opacity: 1; transform: scaleY(1.1) translateY(-4px); }
+    }
+    @keyframes smokeRise {
+        0% { opacity: 0; transform: translateY(0) scale(0.8); }
+        30% { opacity: 0.6; transform: translateY(-50px) scale(1.1); }
+        70% { opacity: 0.4; transform: translateY(-120px) scale(1.3); }
+        100% { opacity: 0; transform: translateY(-200px) scale(1.6); }
+    }
+    @keyframes smokeHorizontal {
+        0% { opacity: 0.1; transform: translateX(-30px); }
+        50% { opacity: 0.5; transform: translateX(80px); }
+        100% { opacity: 0.1; transform: translateX(-30px); }
+    }
+    @keyframes emberFloat {
+        0% { opacity: 0; transform: translateY(0) rotate(0deg); }
+        50% { opacity: 1; transform: translateY(-70px) rotate(180deg); }
+        100% { opacity: 0; transform: translateY(-150px) rotate(360deg); }
+    }
+    @keyframes spinFan {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    @keyframes airflowPulse {
+        0% { opacity: 0.2; transform: scale(0.9); }
+        50% { opacity: 0.8; transform: scale(1.2); }
+        100% { opacity: 0.2; transform: scale(0.9); }
+    }
+    @keyframes neutralWave {
+        0% { top: 30%; opacity: 0.7; }
+        50% { top: 60%; opacity: 1; }
+        100% { top: 30%; opacity: 0.7; }
+    }
+    @keyframes titleGlow {
+        0% { text-shadow: 0 0 15px #FFB74D, 0 0 30px #FF9800; }
+        100% { text-shadow: 0 0 25px #FFEE58, 0 0 60px #FF6D00; }
+    }
+
+    /* ===== LLAMAS ===== */
+    .flames-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .flame {
+        position: absolute;
+        width: 35px;
+        height: 65px;
+        background: radial-gradient(circle at 50% 0%, #FFEE58, #FF9800 60%, #D32F2F 90%);
+        border-radius: 50% 50% 30% 30% / 60% 60% 30% 30%;
+        filter: blur(2px);
+        animation: flameFlicker 0.25s infinite ease-in-out;
+        transform-origin: bottom center;
+        box-shadow: 0 0 20px rgba(255, 87, 34, 0.8);
+    }
+    .flame-1 { bottom: 5%; left: 8%; width: 45px; height: 80px; animation-delay: 0s; }
+    .flame-2 { bottom: 2%; left: 22%; width: 30px; height: 55px; animation-delay: 0.1s; }
+    .flame-3 { bottom: 8%; right: 12%; width: 55px; height: 95px; animation-delay: 0.2s; }
+    .flame-4 { bottom: 3%; right: 28%; width: 35px; height: 65px; animation-delay: 0.05s; }
+    .flame-5 { bottom: 12%; left: 45%; width: 40px; height: 70px; animation-delay: 0.15s; }
+    .flame-blue {
+        bottom: 7%; left: 68%; width: 28px; height: 50px;
+        background: radial-gradient(circle at 50% 0%, #80DEEA, #29B6F6, #0D47A1);
+    }
+    .flame-green {
+        bottom: 1%; left: 75%; width: 25px; height: 45px;
+        background: radial-gradient(circle at 50% 0%, #A5D6A7, #43A047, #1B5E20);
+    }
+
+    /* ===== HUMO ===== */
+    .smoke-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+    }
+    .smoke {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(20px);
+        opacity: 0.4;
+        animation: smokeRise 12s infinite ease-out;
+    }
+    .smoke-white { background: rgba(255,255,255,0.4); width: 200px; height: 100px; bottom: 10%; left: 5%; }
+    .smoke-grey { background: rgba(158,158,158,0.5); width: 280px; height: 130px; bottom: 15%; left: 20%; animation-delay: 2s; }
+    .smoke-dark { background: rgba(33,33,33,0.5); width: 240px; height: 110px; bottom: 5%; right: 15%; animation-delay: 4s; }
+    .smoke-white-2 { background: rgba(255,255,255,0.3); width: 180px; height: 90px; bottom: 20%; right: 30%; animation-delay: 1s; }
+    .smoke-horizontal {
+        position: absolute;
+        height: 30px;
+        background: linear-gradient(90deg, transparent, rgba(158,158,158,0.3), rgba(33,33,33,0.4), rgba(158,158,158,0.3), transparent);
+        filter: blur(8px);
+        animation: smokeHorizontal 15s infinite ease-in-out;
+    }
+    .hs-1 { top: 20%; left: -20%; width: 150%; height: 25px; }
+    .hs-2 { top: 60%; left: -30%; width: 160%; height: 20px; animation-delay: 5s; }
+
+    /* ===== BRASAS ===== */
+    .embers-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        pointer-events: none;
+    }
+    .ember {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #FFB300;
+        border-radius: 50%;
+        filter: blur(1.5px);
+        box-shadow: 0 0 12px #FF6D00;
+        animation: emberFloat 6s infinite ease-out;
+    }
+    .ember-1 { bottom: 20%; left: 15%; animation-delay: 0.2s; }
+    .ember-2 { bottom: 30%; left: 35%; width: 10px; height: 10px; animation-delay: 1.5s; }
+    .ember-3 { bottom: 10%; left: 55%; animation-delay: 0.8s; }
+    .ember-4 { bottom: 25%; left: 75%; width: 7px; height: 7px; animation-delay: 2.2s; }
+    .ember-5 { bottom: 5%; left: 85%; animation-delay: 0.5s; }
+
+    /* ===== VENTILACIÓN ===== */
+    .ventilation-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+        pointer-events: none;
+    }
+    .vpp-fan {
+        position: absolute;
+        top: 15%;
+        right: 10%;
+        font-size: 3.8rem;
+        color: rgba(38, 166, 154, 0.4);
+        animation: spinFan 10s infinite linear;
+        text-shadow: 0 0 20px #26A69A;
+    }
+    .airflow-arrow {
+        position: absolute;
+        font-size: 2.5rem;
+        animation: airflowPulse 2.5s infinite ease-in-out;
+        text-shadow: 0 0 15px currentColor;
+    }
+    .arrow-in-1 { bottom: 25%; left: 12%; transform: rotate(35deg); color: #4FC3F7; }
+    .arrow-in-2 { bottom: 40%; left: 18%; transform: rotate(25deg); color: #29B6F6; font-size: 3rem; animation-delay: 0.5s; }
+    .arrow-out-1 { top: 30%; right: 20%; transform: rotate(210deg); color: #FF8A65; }
+    .arrow-out-2 { top: 45%; right: 12%; transform: rotate(225deg); color: #FF7043; font-size: 3rem; animation-delay: 0.7s; }
+    .neutral-plane {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: repeating-linear-gradient(90deg, transparent, transparent 12px, #FFEE58 12px, #FFEE58 24px);
+        box-shadow: 0 0 20px #FFEE58;
+        animation: neutralWave 12s infinite ease-in-out;
+    }
+    .neutral-label {
+        position: absolute;
+        left: 5%;
+        background: rgba(0,0,0,0.7);
+        color: #FFEE58;
+        padding: 4px 14px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        border: 1px solid #FFEE58;
+        animation: airflowPulse 4s infinite;
+        white-space: nowrap;
+    }
+    .thermal-layer {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+        z-index: 3;
+    }
+    .cold-layer {
+        bottom: 0;
+        height: 25%;
+        background: linear-gradient(to top, rgba(30,136,229,0.25), rgba(30,136,229,0.05), transparent);
+    }
+    .hot-layer {
+        top: 0;
+        height: 35%;
+        background: linear-gradient(to bottom, rgba(255,87,34,0.25), rgba(255,152,0,0.1), transparent);
+    }
+
+    /* ===== CONTENIDO PRINCIPAL ===== */
+    .header-content-visual {
+        position: relative;
+        z-index: 20;
+        max-width: 1000px;
+        padding: 0 20px;
+    }
+    .main-title-visual { margin-bottom: 1.2rem; }
+    .title-text { display: flex; flex-direction: column; gap: 0.2rem; }
+    .title-word {
+        font-size: 3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 1.1;
+        text-shadow: 0 5px 20px rgba(0,0,0,0.6);
+    }
+    .title-1 { color: #FFF9C4; animation: titleGlow 1.8s infinite alternate; }
+    .title-2 { color: #FFE082; font-size: 2.5rem; text-shadow: 0 0 30px #FFB300; }
+    .title-3 {
+        color: #FFD180;
+        font-size: 2.5rem;
+        text-shadow: 0 0 30px #FF6D00;
+        position: relative;
+    }
+    .title-3:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 250px;
+        height: 4px;
+        background: linear-gradient(90deg, transparent, #FFEE58, #FFB300, #FF6D00, #FFB300, #FFEE58, transparent);
+        border-radius: 4px;
+        animation: fireLine 2.8s infinite;
+    }
+    @keyframes fireLine {
+        0%, 100% { width: 180px; opacity: 0.9; }
+        50% { width: 300px; opacity: 1; }
+    }
+
+    .subtitle-visual { margin-bottom: 1.5rem; margin-top: 3.5rem; }
+    .subtitle-text {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.5;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        font-weight: 600;
+        background: rgba(0,0,0,0.25);
+        backdrop-filter: blur(4px);
+        padding: 0.7rem 1.5rem;
+        border-radius: 50px;
+        border: 1px solid rgba(255,255,255,0.2);
+        display: inline-block;
+    }
+    .subtitle-tags {
+        margin-top: 0.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        justify-content: center;
+    }
+    .subtitle-tags span {
+        background: rgba(0,0,0,0.4);
+        backdrop-filter: blur(2px);
+        padding: 0.3rem 1rem;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: 1px solid rgba(255,255,255,0.3);
+        color: white;
+    }
+
+    .title-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .line-part {
+        height: 2px;
+        background: rgba(255,255,255,0.4);
+        flex: 1;
+    }
+    .line-center {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,87,34,0.3);
+        border-radius: 50%;
+        backdrop-filter: blur(5px);
+        border: 2px solid rgba(255,255,255,0.5);
+    }
+    .combined-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    .combined-icon i {
+        font-size: 2rem;
+        color: white;
+        filter: drop-shadow(0 0 10px #FF9800);
+    }
+    .combined-icon i.fa-wind {
+        color: #B3E5FC;
+        filter: drop-shadow(0 0 10px #29B6F6);
+        animation: spinFan 6s infinite linear;
+    }        
+
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="hero-header">
-        <div class="container header-content">
-            <div class="logo-container">
-                <div class="logo-icon" style="background: var(--gradient-fire);">
-                    <i class="fas fa-fire"></i>
-                </div>
-                <div class="logo-icon" style="background: var(--gradient-heat);">
-                    <i class="fas fa-temperature-high"></i>
-                </div>
-                <div class="logo-icon" style="background: var(--gradient-smoke);">
-                    <i class="fas fa-smog"></i>
-                </div>
-                <div class="logo-icon" style="background: var(--gradient-water);">
-                    <i class="fas fa-tint"></i>
-                </div>
-            </div>
-            
-            <h1>🔥 INCENDIOS DE INTERIOR (I)</h1>
-            <p>Guía visual completa sobre desarrollo, riesgos, ventilación y técnicas de extinción en espacios confinados</p>
-            
-            <div class="stats-container">
-                <div class="stat-box">
-                    <div class="stat-number red">140°C</div>
-                    <div class="stat-label">Temperatura máxima aire respirado</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number red">5-12 min</div>
-                    <div class="stat-label">Rango supervivencia víctimas</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number red">2 min</div>
-                    <div class="stat-label">Flashover por ventilación</div>
-                </div>
-            </div>
+<header class="hero-header interior-header">
+    <!-- Fondo animado (gradiente cambiante) -->
+    <div class="fire-bg"></div>
+
+    <!-- LLAMAS (multicolor) -->
+    <div class="flames-container">
+        <div class="flame flame-1"></div>
+        <div class="flame flame-2"></div>
+        <div class="flame flame-3"></div>
+        <div class="flame flame-4"></div>
+        <div class="flame flame-5"></div>
+        <div class="flame flame-blue"></div>
+        <div class="flame flame-green"></div>
+    </div>
+
+    <!-- HUMO (estratificado) -->
+    <div class="smoke-container">
+        <div class="smoke smoke-white"></div>
+        <div class="smoke smoke-grey"></div>
+        <div class="smoke smoke-dark"></div>
+        <div class="smoke smoke-white-2"></div>
+        <div class="smoke-horizontal hs-1"></div>
+        <div class="smoke-horizontal hs-2"></div>
+    </div>
+
+    <!-- BRASAS (partículas incandescentes) -->
+    <div class="embers-container">
+        <div class="ember ember-1"></div>
+        <div class="ember ember-2"></div>
+        <div class="ember ember-3"></div>
+        <div class="ember ember-4"></div>
+        <div class="ember ember-5"></div>
+    </div>
+
+    <!-- ELEMENTOS DE VENTILACIÓN -->
+    <div class="ventilation-container">
+        <!-- Ventilador VPP animado -->
+        <div class="vpp-fan">
+            <i class="fas fa-fan"></i>
         </div>
-    </header>
+        <!-- Flechas entrada de aire (ruta fría) -->
+        <div class="airflow-arrow arrow-in-1">
+            <i class="fas fa-long-arrow-alt-right"></i>
+        </div>
+        <div class="airflow-arrow arrow-in-2">
+            <i class="fas fa-long-arrow-alt-right"></i>
+        </div>
+        <!-- Flechas salida de gases (ruta caliente) -->
+        <div class="airflow-arrow arrow-out-1">
+            <i class="fas fa-long-arrow-alt-left"></i>
+        </div>
+        <div class="airflow-arrow arrow-out-2">
+            <i class="fas fa-long-arrow-alt-left"></i>
+        </div>
+        <!-- Plano neutro animado -->
+        <div class="neutral-plane"></div>
+
+        <!-- Capas térmicas -->
+        <div class="thermal-layer cold-layer"></div>
+        <div class="thermal-layer hot-layer"></div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL DEL HEADER (TEXTO) -->
+    <div class="container header-content-visual">
+        <div class="main-title-visual">
+            <h1 class="title-text">
+                <span class="title-word title-1">INCENDIOS</span>
+                <span class="title-word title-2">DE INTERIOR</span>
+                <span class="title-word title-3">(I)</span>
+            </h1>
+        </div>
+
+        <div class="subtitle-visual">
+
+
+        </div>
+
+        <div class="title-line">
+            <div class="line-part"></div>
+            <div class="line-center">
+                <div class="combined-icon">
+                    <i class="fas fa-fire"></i>
+
+                </div>
+            </div>
+            <div class="line-part"></div>
+        </div>
+    </div>
+</header>
     
     <!-- Navegación simplificada -->
     <div class="container">
