@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incendios de Interior (II) - Guía Visual</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-fire: #D32F2F;
+            --color-fire-light: #FF5252;
+            --color-fire-dark: #B71C1C;
+            --color-heat: #FF9800;
+            --color-heat-light: #FFB74D;
+            --color-heat-dark: #F57C00;
+            --color-smoke: #607D8B;
+            --color-smoke-light: #90A4AE;
+            --color-smoke-dark: #455A64;
+            --color-water: #2196F3;
+            --color-water-light: #64B5F6;
+            --color-water-dark: #1976D2;
+            --color-danger: #D32F2F;
+            --color-danger-dark: #9b1515;
+            --color-warning: #FF9800;
+            --color-info: #2196F3;
+            --color-success: #4CAF50;
+            --color-text: #333333;
+            --color-light: #f8f9fa;
+            --color-dark: #212121;
+            --gradient-fire: linear-gradient(135deg, #D32F2F 0%, #FF5252 100%);
+            --gradient-heat: linear-gradient(135deg, #FF9800 0%, #FFB74D 100%);
+            --gradient-smoke: linear-gradient(135deg, #607D8B 0%, #90A4AE 100%);
+            --gradient-water: linear-gradient(135deg, #2196F3 0%, #64B5F6 100%);
+            --gradient-danger: linear-gradient(135deg, #D32F2F 0%, #FF5252 100%);
+            --gradient-warning: linear-gradient(135deg, #FF9800 0%, #FFB74D 100%);
+            --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(45deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 630px) {
+            body {
+                --escala: 0.4;
+                transform: scale(var(--escala));
+                transform-origin: top left;
+                width: calc(100% / var(--escala));
+                height: calc(100vh / var(--escala));
+                overflow-x: hidden;
+            }
+            .floating-btn { display: none !important; }
+        }        
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .hero-header {
+            background: var(--gradient-fire);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+        }
+        
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .logo-icon {
+            background: rgba(255, 255, 255, 0.2);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-icon:hover { transform: scale(1.1) rotate(10deg); }
+        .hero-header h1 { font-size: 2.2rem; margin-bottom: 1rem; text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); font-weight: 800; }
+        .hero-header p { font-size: 1.2rem; max-width: 900px; margin: 0 auto 1.5rem; opacity: 0.95; }
+        
+        /* Navegación */
+        .visual-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 2.5rem auto;
+            padding: 1.2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            max-width: 1400px;
+            position: sticky;
+            top: 15px;
+            z-index: 99;
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 100px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            font-size: 0.9rem;
+        }
+        .nav-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .nav-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Sistema de tarjetas */
+        .horizontal-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .horizontal-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .horizontal-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+        
+        .card-header-top {
+            padding: 2rem 2rem 1.5rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-header-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        .card-title-container { display: flex; align-items: center; gap: 20px; position: relative; z-index: 2; }
+        .card-icon-large {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            background: rgba(255,255,255,0.2);
+        }
+        .card-title-top { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; text-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+        .card-subtitle-top { font-size: 1.1rem; opacity: 0.9; margin-bottom: 12px; }
+        .topic-number-badge {
+            background: rgba(255,255,255,0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .card-content { padding: 2.5rem; display: flex; flex-direction: column; }
+        .section { margin-bottom: 1.5rem; position: relative; }
+        .section h4 {
+            font-size: 1.2rem;
+        }
+        .section:last-child { margin-bottom: 0; }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            color: #333;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        .visual-list {
+            flex: 1 1 350px;
+            list-style: none;
+            padding-left: 0;
+        }
+        .visual-list li {
+            padding: 0.3rem 0;
+            padding-left: 3rem;
+            position: relative;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .visual-list li:hover {
+            background-color: rgba(0,0,0,0.02);
+            padding-left: 3.2rem;
+            border-left-color: var(--color-fire);
+        }
+        .visual-list li:before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 1.4rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .info-flex-item .visual-list li { padding-left: 1rem; }
+        .warning-box .visual-list, .text-box .visual-list { display: flex; gap: 1.5rem; justify-content: space-between; }       
+        .warning-box .visual-list li, .text-box .visual-list li { padding-left: 0.5rem; }           
+        .comparison-container .visual-list li { padding-left: 1rem; }        
+        
+        /* Cajas especiales */
+        .info-box, .tip-box, .warning-box, .danger-box, .legal-box, .text-box {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .text-box { flex-direction: column; background: linear-gradient(135deg, #f1f1f18a, #d5d6d6b4); border-left: 6px solid #9E9E9E; }
+        .info-box { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); border-left: 6px solid var(--color-water); }
+        .tip-box { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left: 6px solid var(--color-success); }
+        .warning-box { background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left: 6px solid var(--color-heat); }
+        .danger-box { background: linear-gradient(135deg, #FFEBEE, #FFCDD2); border-left: 6px solid var(--color-fire); }
+        .legal-box { background: linear-gradient(135deg, #F3E5F5, #E1BEE7); border-left: 6px solid #9C27B0; }
+        .box-icon {
+            font-size: 1.3rem;
+            min-width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .visual-diagram {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px dashed #ddd;
+            text-align: center;
+            max-width: fit-content;
+            justify-self: center;
+        }
+        .visual-diagram ul { list-style: none; padding-left: 0; }
+        .diagram-title { font-weight: 700; margin-bottom: 1rem; color: var(--color-text); }
+        .diagram-flex { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem; justify-content: center; }
+        .diagram-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+            flex: 1 1 200px;
+            
+        }
+        .diagram-item:hover { transform: translateY(-5px); }
+        .diagram-icon { font-size: 2rem; color: var(--color-fire); margin-bottom: 0.5rem; }
+        
+        .visual-footer {
+            background: linear-gradient(135deg, var(--color-dark), #424242);
+            color: white;
+            padding: 3.5rem 0;
+            text-align: center;
+            margin-top: 5rem;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .visual-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 0L0 0 892.25 114.72 1200 0z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        .footer-content { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; }
+        .footer-icons { display: flex; justify-content: center; gap: 25px; margin: 2rem 0; flex-wrap: wrap; }
+        .footer-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+        }
+        .footer-icon:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
+
+        .listas { display: flex; flex-wrap: wrap; gap: 5px; }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: var(--gradient-fire);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        .floating-btn:hover { transform: scale(1.1) rotate(15deg); }
+        .floating-btn-left {
+            left: 25px;
+            right: auto;
+            background: var(--gradient-water);
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+        }
+        .floating-btn-left:hover { transform: scale(1.1) rotate(-15deg); }
+        
+        .category-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        .tag-fire { background: #FFEBEE; color: #D32F2F; }
+        .tag-heat { background: #FFF3E0; color: #EF6C00; }
+        .tag-smoke { background: #F5F5F5; color: #616161; }
+        .tag-water { background: #E3F2FD; color: #1565C0; }
+        
+        .procedure-timeline { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; justify-content: space-between; }
+        .timeline-step {
+            flex: 1 1 200px;
+            min-width: 150px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            border-top: 4px solid var(--color-water);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .timeline-step:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+        .step-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: var(--color-water);
+            color: white;
+            border-radius: 50%;
+            line-height: 32px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .step-title { font-weight: 700; margin-bottom: 0.3rem; font-size: 0.95rem; color: var(--color-dark); }
+
+        .columnas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .colbox {
+            display: flex;
+            flex: 1 1 220px;
+        }
+        
+        .centrado {
+            display: flex;
+            flex-direction: column;
+        } 
+        
+        .visual-table {
+            display: flex;            
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            justify-content: center;
+            justify-self: center;
+        }
+        .visual-table th {
+            background: var(--gradient-water);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+   
+
+        .visual-table td { padding: 1rem; border-bottom: 1px solid #eee; text-align: center; }
+        .visual-table tr:nth-child(even) { background-color: #f9f9f9;}
+        .visual-table tr:hover { background-color: #f1f1f1;}
+        .visual-table tr {border-bottom: 1px solid #ffffff;}
+        .visual-table ul {
+            list-style-type: none;
+            padding-left: 0; 
+        }  
+        
+        .visual-table tr li::before {
+            content: '•';
+            color: black;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-block;
+            width: 1.2em;
+        }
+        
+        .nested-list { margin-left: 2rem; margin-top: 0.5rem; list-style: none; }
+        .nested-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        .nested-list li:before {
+            content: '•';
+            position: absolute;
+            left: 0.2rem;
+            top: 0.2rem;
+            color: var(--color-water);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .comparison-container { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0; }
+        .comparison-card {
+            align-self: center;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--color-heat);
+            transition: transform 0.3s ease;
+            flex: 1 1 300px;
+        }
+        .comparison-card:hover { transform: translateY(-5px); }
+        .comparison-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--color-heat-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .comparison-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .info-flex { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0; }
+        .info-flex-item {
+            align-self: center;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--color-water);
+            transition: all 0.3s ease;
+            flex: 1 1 300px;
+        }
+        .info-flex-item:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+        .info-flex-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--color-water-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 0.5rem;
+        }
+        .info-flex-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .important-number { color: #D32F2F; font-weight: 800; }
+        .stat-highlight {
+            background: linear-gradient(135deg, rgba(255, 82, 82, 0.1), rgba(255, 82, 82, 0.05));
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid var(--color-fire);
+            position: relative;
+            align-self: center;
+        }
+        .stat-highlight-number { font-size: 1.3rem; font-weight: 900; color: var(--color-fire); line-height: 1; text-shadow: 0 3px 6px rgba(0,0,0,0.1); margin-bottom: 0.5rem; }
+        .stat-highlight-label { font-size: 1.1rem; color: #555; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <header class="hero-header">
+        <div class="container header-content-visual">
+            <div class="main-title-visual">
+                <h1 class="title-text">INCENDIOS DE INTERIOR (II) <br> VENTILACIÓN Y TÉCNICAS DE INTERVENCIÓN</h1>
+            </div>
+            <div class="title-line">
+                <div class="line-part"></div>
+                <div class="line-center"><div class="combined-icon"><i class="fas fa-fire"></i><i class="fas fa-wind"></i></div></div>
+                <div class="line-part"></div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="visual-nav">
+            <a href="#aplicacion-agua" class="nav-item" style="background: linear-gradient(135deg, #E3F2FD, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-water);"><i class="fas fa-tint"></i></div>
+                <span>Aplicación Agua</span><small>1</small>
+            </a>
+            <a href="#control-ventilacion" class="nav-item" style="background: linear-gradient(135deg, #E8F5E9, #FFFFFF);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #2E7D32, #81C784);"><i class="fas fa-wind"></i></div>
+                <span>Control Ventilación</span><small>2</small>
+            </a>
+            <a href="#trabajo-sin-visibilidad" class="nav-item" style="background: linear-gradient(135deg, #FFEBEE, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-smoke);"><i class="fas fa-eye-slash"></i></div>
+                <span>Sin Visibilidad</span><small>3</small>
+            </a>
+        </div>
+    </div>
+    
+    <main class="container">
+        <div class="horizontal-cards-container">
+
+            <!-- SECCIÓN INTRODUCCIÓN (nueva) -->
+            <div class="horizontal-card" id="introduccion">
+                <div class="card-header-top" style="background: linear-gradient(135deg, #5D4037, #8D6E63);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large"><i class="fas fa-book-open"></i></div>
+                        <div>
+                            <div class="card-title-top">📘 INTRODUCCIÓN</div>
+                            <div class="card-subtitle-top">Objetivos de las técnicas de intervención en incendios de interior</div>
+                            <span class="category-tag" style="background:#EFEBE9;color:#5D4037;">Fundamentos</span>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Base</div>
+                </div>
+                <div class="card-content">
+                    <div class="section">
+                        <p style="font-size:1.2rem; margin-bottom:1.5rem;">Las técnicas de intervención en incendios de interior constituyen el conjunto de acciones y procedimientos que persiguen:</p>
+                        <div class="info-flex">
+                            <div class="info-flex-item" style="flex:1 1 250px;">
+                                <ul class="visual-list" style="list-style:none; padding-left:0;">
+                                    <li><i class="fas fa-fire" style="color:var(--color-fire); margin-right:10px;"></i> <strong>Reducir la inflamabilidad</strong> de los gases de incendio.</li>
+                                    <li><i class="fas fa-chart-line" style="color:var(--color-heat); margin-right:10px;"></i> <strong>Reducir la tasa de pirólisis</strong> de los combustibles.</li>
+                                    <li><i class="fas fa-temperature-low" style="color:var(--color-water); margin-right:10px;"></i> <strong>Reducir la temperatura</strong> del recinto.</li>
+                                </ul>
+                            </div>
+                            <div class="info-flex-item" style="flex:1 1 250px;">
+                                <ul class="visual-list" style="list-style:none; padding-left:0;">
+                                    <li><i class="fas fa-eye" style="color:var(--color-success); margin-right:10px;"></i> <strong>Aumentar la visibilidad</strong> en el interior.</li>
+                                    <li><i class="fas fa-lungs" style="color:var(--color-info); margin-right:10px;"></i> <strong>Mejorar la respirabilidad</strong> de la atmósfera.</li>
+                                    <li><i class="fas fa-magnifying-glass" style="color:var(--color-smoke); margin-right:10px;"></i> <strong>Rastrear la presencia</strong> de víctimas en el interior.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tip-box" style="margin-top:1rem;">
+                            <div class="box-icon" style="background: var(--color-success);"><i class="fas fa-lightbulb"></i></div>
+                            <div>
+                                <p>El dominio de un mayor número de técnicas supone disponer de mayores recursos para afrontar la intervención, poder emplear tácticas más complejas y, en definitiva, intervenciones <strong>más seguras, eficientes y eficaces</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 1: APLICACIÓN DE AGUA (solo apartado 1.1 completo) -->
+            <div class="horizontal-card" id="aplicacion-agua">
+                <div class="card-header-top" style="background: var(--gradient-water);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large"><i class="fas fa-tint"></i></div>
+                        <div>
+                            <div class="card-title-top">💧 1. APLICACIÓN DE AGUA</div>
+                            <div class="card-subtitle-top">Ataque indirecto, directo, enfriamiento de gases, defensivo, ablandado, caudal</div>
+                            <span class="category-tag tag-water">Indirecto</span>
+                            <span class="category-tag tag-fire">Directo</span>
+                            <span class="category-tag tag-heat">Enfriamiento gases</span>
+                            <span class="category-tag tag-smoke">Defensivo</span>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 1</div>
+                </div>
+                <div class="card-content">
+                    <!-- 1.1 ATAQUE INDIRECTO (completo) -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-water);"><i class="fas fa-water"></i></div>
+                            <h3>1.1. ATAQUE INDIRECTO</h3>
+                        </div>
+                        <div class="text-box">
+                            <p><strong>Objetivo:</strong> Extinción mediante la <strong>inundación del recinto con vapor de agua</strong> desde un punto exterior. El chorro no alcanza directamente el foco del incendio.</p>
+                        </div>
+
+                        <!-- Ventajas / Inconvenientes -->
+                        <div class="info-flex">
+                            <div style="flex: 1 1 300px;">
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title"><div class="info-flex-icon" style="background: #4CAF50;"><i class="fas fa-check"></i></div>VENTAJAS</div>
+                                    <ul class="visual-list">
+                                        <li>Permite un ataque desde una <strong>posición segura</strong> (interior o exterior) sin exponerse a los riesgos del recinto.</li>
+                                    </ul>
+                                </div>
+                                <div style="display: flex; flex: 1 1 200px; margin-top: 0.5rem;">
+                                    <img src="image interior/Indirecto.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
+                            </div>
+                            <div class="info-flex-item">
+                                <div class="info-flex-title"><div class="info-flex-icon" style="background: #D32F2F;"><i class="fas fa-times"></i></div>INCONVENIENTES</div>
+                                <ul class="visual-list">
+                                    <li><strong>Pérdida completa de visibilidad</strong> al inundarse el recinto con vapor.</li>
+                                    <li>Posibles <strong>quemaduras por vapor</strong> a víctimas en el interior.</li>
+                                    <li><strong>Desplazamiento de gases</strong> a otras estancias, pudiendo inflamarse al contacto con el aire.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Descripción del proceso -->
+                        <div class="section" style="margin-top:1rem;">
+                            <h4 style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;"><i class="fas fa-list-ol" style="color:var(--color-water);"></i> Descripción del proceso</h4>
+                            <div class="info-flex" style="gap:1rem;">
+                                <div class="info-flex-item" style="flex:1 1 300px;">
+                                    <ul class="visual-list">
+                                        <li>Desde un punto exterior, a través de una apertura (puerta/ventana), se realiza una aplicación de agua <strong>relativamente prolongada</strong> hasta llenar el recinto de vapor.</li>
+                                        <li>Se busca <strong>profundidad en el chorro</strong> con cono <strong>cerrado</strong> (<span class="important-number">15° a 30°</span>), pulsaciones de <strong>media a larga duración</strong> (<span class="important-number">3" a 20"</span>) y caudal <strong>medio a alto</strong> (<span class="important-number">100 a 500 lpm</span>).</li>
+                                        <li>El impacto contra paredes es menos negativo que en otras técnicas, aunque es preferible que la evaporación ocurra en el colchón de gases.</li>
+                                    </ul>
+                                    <ul class="visual-list">
+                                        <li>El chorro debe describir un <strong>movimiento</strong>: patrón en <strong>"T"</strong> (primeras pulsaciones o fuerte gradiente térmico) o en <strong>"O"</strong> (grandes volúmenes o aplicaciones sucesivas).</li>
+                                        <li>Tras cada aplicación, <strong>pausa</strong> de <span class="important-number">15" a 45"</span> para redistribución del vapor y equilibrio térmico.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Patrones gráficos (simulados) -->
+                            <div class="columnas">
+                                <div class="visual-diagram" style="display: flex; gap: 2rem; justify-content: center; flex: 1 1 300px; flex-wrap: wrap;">
+                                    <div class="diagram-item">
+                                        <div style="display: flex; flex: 1 1 200px;">
+                                            <img src="image interior/T.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                        </div> 
+                                        <strong>Patrón en "T"</strong><br>
+                                        <small>Tres tiempos: dos horizontales superiores, uno vertical central.</small>
+                                    </div>
+                                    <div class="diagram-item" style="display: flex;flex-direction: column; justify-content: center;">
+                                        <div style="display: flex;">
+                                            <img src="image interior/O.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                        </div> 
+                                        <strong>Patrón en "O"</strong><br>
+                                        <small>Movimiento circular completo.</small>
+                                    </div>
+                                </div>
+
+                                <div class="stat-highlight" style="max-width: max-content; flex: 1 1 300px;">
+                                    <div class="stat-highlight-number">📐 Ejemplo de cálculo</div>
+                                    <p><strong>Recinto:</strong> 5×5×2,5 m (62,5 m³). <strong>Temperatura equilibrio:</strong> 200°C.</p>
+                                    <p>Volumen de vapor necesario: <span class="important-number">62.500 L</span>; coeficiente de expansión a 200°C = <span class="important-number">2.060</span>.</p>
+                                    <p><strong>Agua líquida necesaria:</strong> <span class="important-number">62.500 / 2.060 = 30,3 L</span>.</p>
+                                    <p>Equivalente a <strong>dos pulsaciones de <span class="important-number">6"</span> a <span class="important-number">150 lpm</span></strong> con efectividad del 100%.</p>
+                                </div>                            
+                            </div> 
+                        </div>
+                        
+                        <!-- Tabla resumen (Tabla 8 del PDF) -->
+                        <div class="section">
+                            <div class="visual-table" style="overflow-x:auto;">
+                                <table style="width:100%; border-collapse:collapse;">
+                                    <tr><th style="background:var(--color-water); color:white;">Objetivo</th><td colspan="3">Extinción. Inundación mediante vapor de agua.</td></tr>
+                                    <tr><th style="background:var(--color-water); color:white;">Posición</th><td colspan="3">Interior o exterior. Personal fuera del recinto donde se aplica.</td></tr>
+                                    <tr><th style="background:var(--color-water); color:white;">Caudal</th><td colspan="3">Medio a alto (<span class="important-number">100 lpm a 500 lpm</span>)</td></tr>
+                                    <tr><th style="background:var(--color-water); color:white;">Cono</th><td colspan="3"><span class="important-number">15° a 30°</span></td></tr>
+                                    <tr><th style="background:var(--color-water); color:white;">Patrón de pulsaciones</th><td colspan="3">Pulsaciones de media a larga duración (<span class="important-number">3" a 20"</span>) · Pausas <span class="important-number">15" a 45"</span></td></tr>
+                                    <tr><th style="background:var(--color-water); color:white;">Movimiento de lanza</th><td colspan="3">En "T" (fuerte gradiente o primera pulsación) · En "O" (grandes volúmenes o sucesivas). Velocidad constante, comenzando en la parte superior.</td></tr>
+                                    <tr><th style="background:var(--color-water); color:white;">Consideraciones de seguridad</th><td colspan="3">
+                                        <ul style="margin:0; padding-left:1.2rem;">
+                                            <li>Valorar presencia de víctimas: el vapor puede empeorar condiciones, pero sin ataque indirecto podrían ser aún peores.</li>
+                                            <li>Ausencia de personal en el recinto a inundar.</li>
+                                            <li>Controlar desplazamiento de gases a otras estancias.</li>
+                                        </ul>
+                                    </td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Nota adicional sobre víctimas -->
+                        <div class="warning-box" style="margin-top:1.5rem;">
+                            <div class="box-icon" style="background: #FF9800;"><i class="fas fa-user-shield"></i></div>
+                            <div>
+                                <strong>⚠️ Consideración sobre víctimas:</strong> Si bien el vapor de agua puede contribuir a empeorar las condiciones de supervivencia por su efecto de conducción de calor, se deberá valorar si las condiciones del incendio sin ataque indirecto no serán aún peores para la víctima.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continuación dentro de la tarjeta "Aplicación de Agua" -->
+                    <!-- 1.2 ATAQUE DIRECTO -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-fire);"><i class="fas fa-bullseye"></i></div>
+                            <h3>1.2. ATAQUE DIRECTO</h3>
+                        </div>
+                        <div class="text-box">
+                            <p><strong>Objetivo:</strong> Extinción mediante <strong>enfriamiento de superficies incendiadas</strong> e <strong>interrupción de la pirólisis</strong>. Aplicación continua sobre el combustible en llamas. Solo debe emplearse cuando se haya localizado visualmente el foco y haya certeza de que el chorro impactará en los combustibles incendiados. Es la técnica <strong>más efectiva</strong> en esas condiciones.</p>
+                        </div>
+
+                        <!-- Ventajas / Inconvenientes (Tabla 9 del PDF) -->
+                        <div class="info-flex">
+                            <div style="flex: 1 1 300px;">
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title"><div class="info-flex-icon" style="background: #4CAF50;"><i class="fas fa-check"></i></div>VENTAJAS</div>
+                                    <ul class="visual-list">
+                                        <li>Permite atacar directamente el <strong>motor del incendio</strong>.</li>
+                                        <li>Efectos muy rápidos sobre la extinción.</li>
+                                    </ul>
+                                </div>
+                                <div style="display: flex; flex: 1 1 200px; margin-top: 1rem;">
+                                    <img src="image interior/Directo.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
+                            </div>                            
+
+                            <div class="info-flex-item">
+                                <div class="info-flex-title"><div class="info-flex-icon" style="background: #D32F2F;"><i class="fas fa-times"></i></div>INCONVENIENTES</div>
+                                <ul class="visual-list">
+                                    <li>Se <strong>pierde el equilibrio térmico</strong> dentro del recinto.</li>
+                                    <li>El vapor de agua generado en exceso puede <strong>empeorar la visibilidad</strong>.</li>
+                                    <li>Posibles <strong>quemaduras por vapor</strong> a víctimas en el interior.</li>
+                                    <li><strong>Desplazamiento de gases</strong> a otras estancias.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Descripción del proceso detallada -->
+                        <div class="section" style="margin-top:1rem;">
+                            <h4 style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;"><i class="fas fa-list-ol" style="color:var(--color-fire);"></i> Descripción del proceso</h4>
+                            <div class="info-flex" style="gap:1rem;">
+                                <div class="info-flex-item" style="flex:1 1 300px;">
+                                    <ul class="visual-list">
+                                        <li>Puede emplearse desde <strong>interior o exterior</strong>. Normalmente en progresión interior, tras localizar el foco.</li>
+                                        <li>Aplicación de agua <strong>continua</strong> (sin dejar de mover el chorro) para cubrir con una <strong>fina película</strong> todas las superficies del combustible.</li>
+                                        <li>Se busca <strong>profundidad en el chorro</strong> con cono <strong>cerrado</strong> (<span class="important-number">0° a 15°</span>), llegando incluso a <strong>chorro sólido</strong> para efecto de <strong>penetración</strong>.</li>
+                                    </ul>
+                                    <ul class="visual-list">
+                                        <li>Caudal <strong>medio</strong> (<span class="important-number">100 a 250 lpm</span>). Pulsaciones de <strong>larga duración</strong> (<span class="important-number">>20"</span>), pudiendo ser continuas.</li>
+                                        <li><strong>Eficiencia:</strong> minimizar la <strong>escorrentía</strong> (agua no evaporada que escurre sobre superficies frías o ya mojadas).</li>
+                                        <li>Tras cada aplicación, <strong>pausa</strong> de <span class="important-number">15" a 45"</span> para recuperar equilibrio térmico y visibilidad, evaluando la efectividad.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tabla resumen (Tabla 10 del PDF y características) -->
+                        <div class="section">                           
+                            <div class="visual-table" style="overflow-x:auto;">
+                                <table style="width:100%; border-collapse:collapse;">
+                                    <tr><th style="background:var(--color-fire); color:white;">Objetivo</th><td colspan="3">Extinción. Enfriamiento de superficies incendiadas e interrupción de la pirólisis.</td></tr>
+                                    <tr><th style="background:var(--color-fire); color:white;">Posición</th><td colspan="3">Interior o exterior.</td></tr>
+                                    <tr><th style="background:var(--color-fire); color:white;">Caudal</th><td colspan="3">Medio (<span class="important-number">100 lpm a 250 lpm</span>)</td></tr>
+                                    <tr><th style="background:var(--color-fire); color:white;">Cono</th><td colspan="3"><span class="important-number">0° a 15°</span> (puede llegar a chorro sólido)</td></tr>
+                                    <tr><th style="background:var(--color-fire); color:white;">Patrón de pulsaciones</th><td colspan="3">Aplicaciones de larga duración (<span class="important-number">>20"</span>) que pueden llegar a ser <strong>continuas</strong>. Pausas de <span class="important-number">15" a 45"</span>.</td></tr>
+                                    <tr><th style="background:var(--color-fire); color:white;">Movimiento de lanza</th><td colspan="3">La lanza se moverá a <strong>velocidad constante</strong> para distribuir el agua homogéneamente y evitar escorrentía.</td></tr>
+                                    <tr><th style="background:var(--color-fire); color:white;">Consideraciones de seguridad</th><td colspan="3">
+                                        <ul style="margin:0; padding-left:1.2rem;">
+                                            <li>Valorar presencia de víctimas: el exceso de vapor puede quemarlas.</li>
+                                            <li>Controlar el desplazamiento de gases a otras estancias.</li>
+                                            <li>La pérdida de equilibrio térmico puede generar condiciones adversas temporales.</li>
+                                        </ul>
+                                    </td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Nota adicional sobre eficiencia y escorrentía -->
+                        <div class="tip-box" style="margin-top:1rem;">
+                            <div class="box-icon" style="background: var(--color-success);"><i class="fas fa-tint"></i></div>
+                            <div>
+                                <strong>💧 Eficiencia en la aplicación:</strong> Se busca que las gotas que impactan en los combustibles se evaporen (robando la máxima cantidad de calor) y formen una fina película. <strong>Minimizar la escorrentía</strong> es clave: el agua que escurre sin evaporarse es agua desaprovechada. Para ello, seleccionar un caudal no muy alto y mover la lanza para distribuir homogéneamente.
+                            </div>
+                        </div>
+                    </div>                    
+
+                    <!-- Continuación dentro de la tarjeta "Aplicación de Agua" -->
+                    <!-- 1.3 ENFRIAMIENTO DE GASES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-heat);"><i class="fas fa-wind"></i></div>
+                            <h3>1.3. ENFRIAMIENTO DE GASES</h3>
+                        </div>
+                        <div class="text-box">
+                            <p><strong>Objetivo:</strong> Reducir la <strong>inflamabilidad del colchón de gases</strong> para proporcionar <strong>seguridad al equipo</strong> que progresa por el interior frente a fenómenos de rápido desarrollo (<strong>flashover y backdraft</strong>). La acción es doble: <strong>enfriamiento</strong> de los gases y <strong>dilución</strong> con vapor de agua.</p>
+                            <p style="margin-top:0.5rem;"><span class="important-number">IMPORTANTE:</span> Esta técnica <strong>no produce la extinción</strong>, solo genera condiciones más seguras para la progresión hasta localizar el foco, donde se empleará ataque directo o indirecto.</p>
+                        </div>
+
+                        <!-- Ventajas / Inconvenientes (Tabla 11 del PDF) -->
+                        <div class="info-flex">
+                            <div class="info-flex-item">
+                                <div class="info-flex-title"><div class="info-flex-icon" style="background: #4CAF50;"><i class="fas fa-check"></i></div>VENTAJAS</div>
+                                <ul class="visual-list">
+                                    <li>Permite una progresión más segura frente a <strong>flashover y backdraft</strong>.</li>
+                                    <li>Mantiene el <strong>equilibrio térmico</strong> y conserva la <strong>capa inferior visible y fresca</strong>, incluso elevando el plano neutro.</li>
+                                    <li>El agua tiene un calor específico <strong>4 veces superior</strong> al de los gases (<span class="important-number">4,090 kJ/kg°C</span> vs <span class="important-number">1,0 kJ/kg°C</span>), permitiendo enfriar con pequeñas cantidades de agua.</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1 1 300px;">
+                                <div class="info-flex-item">
+                                    <div class="info-flex-title"><div class="info-flex-icon" style="background: #D32F2F;"><i class="fas fa-times"></i></div>INCONVENIENTES</div>
+                                    <ul class="visual-list">
+                                        <li><strong>No es una técnica de extinción.</strong></li>
+                                        <li>Una aplicación <strong>excesiva</strong> puede retrasar el acceso al foco.</li>
+                                        <li><strong>No es posible evaluar</strong> con certeza el efecto de enfriamiento ni la inflamabilidad residual.</li>
+                                    </ul>
+                                </div>
+                                <div style="display: flex; flex: 1 1 200px; margin-top: 1rem;">
+                                    <img src="image interior/Enfriamiento.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
+                            </div>                             
+                        </div>
+
+                        <!-- Descripción del proceso: tradicional vs moderno -->
+                        <div class="section" style="margin-top:1rem;">
+                            <h4 style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;"><i class="fas fa-list-ol" style="color:var(--color-heat);"></i> Descripción del proceso</h4>
+                            <!-- Box: Ejecución de las pulsaciones -->
+                            <!-- Box: Ejecución de pulsaciones (sintetizado) -->
+                            <div class="tip-box" style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2); border-left-color: var(--color-heat); margin-top:1rem;">
+                                <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-hand-holding-droplet"></i></div>
+                                <div>
+                                    <strong>💧 Ejecución:</strong> Pulsaciones de <strong>corta duración y caudal bajo</strong> para introducir <strong>niebla de agua</strong> en el colchón de gases y producir enfriamiento por evaporación.
+                                </div>
+                            </div>    
+
+                            <div class="comparison-container">
+                                <div class="comparison-card" style="border-top-color: #9E9E9E; display: flex; flex-wrap: wrap;">
+                                    <div style="flex: 1 1 250px;">
+                                        <div class="comparison-title"><i class="fas fa-history"></i> Tradicional</div>
+                                        <ul class="visual-list" style="padding-left:0;">
+                                            <li>Pulsaciones muy cortas (<span class="important-number"><1"</span>) con cono ancho (<span class="important-number">45°</span>) y ángulo pronunciado (<span class="important-number">75°</span>).</li>
+                                            <li>Enfriaba solo la zona de gases <strong>inmediata a los bomberos</strong>.</li>
+                                            <li>No aseguraba condiciones en zonas más internas.</li>
+                                        </ul>
+                                    </div>
+                                    <div style="display: flex; margin: auto; flex: 1 1 150px;">
+                                        <img src="image interior/Tradicional.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>                                      
+                                </div>
+                                <div class="comparison-card" style="border-top-color: var(--color-heat); display: flex; flex-wrap: wrap;">
+                                    <div style="flex: 1 1 250px;">
+                                        <div class="comparison-title"><i class="fas fa-flask"></i> Moderno (mayor profundidad)</div>
+                                        <ul class="visual-list" style="padding-left:0;">
+                                            <li>Pulsaciones más largas (<span class="important-number">1" a 5"</span>).</li>
+                                            <li>Cono más cerrado (<span class="important-number">30°</span>).</li>
+                                            <li>Ángulo respecto a horizontal reducido (<span class="important-number">30°</span>).</li>
+                                            <li>Dirigido a <strong>esquinas superiores del fondo</strong> del recinto.</li>
+                                            <li>Movimiento de <strong>barrido ligero</strong> (<span class="important-number">1 a 5 m</span>) o pulsaciones múltiples.</li>
+                                        </ul>
+                                    </div>
+                                    <div style="display: flex; margin: auto; flex: 1 1 150px;">
+                                        <img src="image interior/Moderno.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>                                    
+
+                                </div>
+                            </div>
+                            <div class="tip-box" style="margin-top:0.5rem;">
+                                <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-ruler"></i></div>
+                                <div>La refrigeración en zonas más profundas evita que el exceso de vapor llegue a la dotación, al haber <strong>mayor distancia</strong> hasta la zona de evaporación.</div>
+                            </div>
+                            <!-- Box: Pausas y evaluación (sintetizado) -->
+                            <div class="info-box" style="background: linear-gradient(135deg, #E1F5FE, #B3E5FC); border-left-color: var(--color-info); margin-top:0.8rem;">
+                                <div class="box-icon" style="background: var(--color-info);"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <strong>⏱️ Pausas y evaluación:</strong> Tras cada aplicación, <strong>pausa</strong> para recuperar equilibrio térmico y visibilidad. Permite <strong>evaluar efectividad</strong> y ajustar parámetros. La técnica debe adaptarse a <strong>condiciones y geometría</strong> del recinto.
+                                </div>
+                            </div>
+
+                            <!-- Box: Impacto negativo en paredes (sintetizado) -->
+                            <div class="warning-box" style="background: linear-gradient(135deg, #FFEBEE, #FFCDD2); border-left-color: var(--color-fire); margin-top:0.8rem;">
+                                <div class="box-icon" style="background: var(--color-fire);"><i class="fas fa-triangle-exclamation"></i></div>
+                                <div>
+                                    <strong>⚠️ Impacto en paredes:</strong> Efecto <strong>negativo</strong>: el agua impacta en paredes, no refrigera gases. El vapor generado se expande, <strong>rompe equilibrio térmico</strong> y hace <strong>descender el plano neutro</strong>.
+                                </div>
+                            </div>                          
+                        </div>
+
+                        <!-- Gráfica de expansión/contracción (página 6) -->
+                        <div class="section">
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-chart-line" style="color:var(--color-heat);"></i> Efecto del impacto en paredes: gráfica de expansión/contracción</h4>
+                            <div class="columnas" style="gap: 0;"> 
+                                <div class="visual-diagram" style="max-width:600px; align-self: center; margin: auto; flex: 1 1 350px;">
+                                    <div style="background:#f8f9fa; padding:1rem; border-radius:8px;">
+                                        <p><strong>Partiendo de un colchón de gases a <span class="important-number">600°C</span> (T₁):</strong></p>
+                                        <ul style="text-align:left;">
+                                            <li>Si se evapora <strong>entre el 30% y el 100%</strong> del agua en el colchón (el resto en paredes) → el volumen final es <strong>igual o menor</strong> → se conserva el equilibrio térmico y la estratificación.</li>
+                                            <li>Si se evapora <strong>menos del 30%</strong> en el colchón → <strong>expansión del volumen</strong> y pérdida del equilibrio térmico.</li>
+                                        </ul>
+                                        <div style="display:flex; justify-content:space-around; margin-top:1rem;">
+                                            <div><span class="important-number">100%</span> efectividad en colchón → contracción</div>
+                                            <div><span class="important-number">30%</span> → punto de equilibrio</div>
+                                            <div><span class="important-number">10%</span> → <span class="important-number">+50%</span> volumen</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; margin: auto; ">
+                                    <img src="image interior/Expansión.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                  
+                            </div>   
+                            <p style="margin-top:0.5rem;"><strong>Ejemplo:</strong> 50% de efectividad (mitad en colchón, mitad en paredes) → reducir de <span class="important-number">600°C</span> a <span class="important-number">200°C</span> y <strong>contraer el colchón un <span class="important-number">20%</span></strong>. Si la efectividad es solo del 10% → <strong>expansión del <span class="important-number">50%</span></strong> para alcanzar la misma temperatura.</p>
+                        </div>
+
+                        <!-- El problema de evaluar la inflamabilidad -->
+                        <div class="warning-box" style="margin-top:1.5rem;">
+                            <div class="box-icon" style="background: #D32F2F;"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div>
+                                <strong>⚠️ Dificultad de evaluar la inflamabilidad:</strong> En condiciones reales es <strong>imposible determinar el rango y la temperatura de inflamabilidad</strong> de la mezcla de gases. Depende de múltiples variables (concentración de comburente, fracción de combustible, naturaleza de los gases, desarrollo previo). 
+                                <p style="margin-top:0.5rem;">Tradicionalmente se usaban criterios como pequeñas pulsaciones a 90° y observar si las gotas se evaporaban, pero <strong>esto no tiene base científica</strong>. Tampoco es fiable equiparar la inflamabilidad a la temperatura o al CO. La <strong>experiencia y observación del rollover</strong> son vitales.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tabla resumen (Tabla 12 del PDF) -->
+                        <div class="section">                           
+                            <div class="visual-table" style="overflow-x:auto;">
+                                <table style="width:100%; border-collapse:collapse;">
+                                    <tr><th style="background:var(--color-heat); color:white;">Objetivo</th><td colspan="3">Reducir la inflamabilidad del colchón de gases para permitir una progresión segura. Enfriamiento y dilución del colchón de gases de incendio.</td></tr>
+                                    <tr><th style="background:var(--color-heat); color:white;">Posición</th><td colspan="3">Interior.</td></tr>
+                                    <tr><th style="background:var(--color-heat); color:white;">Caudal</th><td colspan="3">Bajo a medio (<span class="important-number">50 lpm a 250 lpm</span>)</td></tr>
+                                    <tr><th style="background:var(--color-heat); color:white;">Cono</th><td colspan="3"><span class="important-number">30°</span></td></tr>
+                                    <tr><th style="background:var(--color-heat); color:white;">Patrón de pulsaciones</th><td colspan="3">Pulsaciones de corta duración (<span class="important-number">1" a 5"</span>) dirigidas a las esquinas superiores del fondo del recinto. En pulsaciones cortas, conjuntos de pulsaciones apuntando a distintas posiciones. En pulsaciones más largas, efecto barrido.</td></tr>
+                                    <tr><th style="background:var(--color-heat); color:white;">Movimiento de lanza</th><td colspan="3">En pulsaciones cortas, conjuntos que apuntan a distintas posiciones. En pulsaciones más largas, barrido ligero.</td></tr>
+                                    <tr><th style="background:var(--color-heat); color:white;">Consideraciones de seguridad</th><td colspan="3">
+                                        <ul style="margin:0; padding-left:1.2rem;">
+                                            <li><strong>No confundir con herramienta de extinción.</strong></li>
+                                            <li>La realización de enfriamiento de gases <strong>no garantiza la no inflamabilidad</strong> de los gases.</li>
+                                            <li>Evitar que el agua impacte en paredes (reduce efectividad).</li>
+                                        </ul>
+                                    </td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continuación dentro de la tarjeta "Aplicación de Agua" -->
+                    <!-- 1.4 ATAQUE DEFENSIVO CONTRA LA PROPAGACIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-smoke);"><i class="fas fa-shield-halved"></i></div>
+                            <h3>1.4. ATAQUE DEFENSIVO CONTRA LA PROPAGACIÓN</h3>
+                        </div>
+                        
+                        <div class="text-box">
+                            <p><strong>Objetivo:</strong> Limitar la propagación del incendio a zonas no afectadas mediante la aplicación de agua sobre las <strong>superficies combustibles</strong>. Se crea una <strong>película de agua</strong> que dificulta o interrumpe los procesos de pirólisis, exigiendo energía adicional para que el combustible libere gases.</p>
+                            <p style="margin-top:0.5rem;">A diferencia del ataque directo (agua sobre superficies ya incendiadas), aquí el objetivo es <strong>evitar que se incendien</strong>.</p>
+                        </div>
+
+                        <!-- Circunstancias de especial utilidad -->
+                        <div class="info-box" style="background: linear-gradient(135deg, #F5F5F5, #EEEEEE); border-left-color: var(--color-smoke); margin:1.5rem 0;">
+                            <div class="box-icon" style="background: var(--color-smoke);"><i class="fas fa-lightbulb"></i></div>
+                            <div>
+                                <strong>🎯 Especial utilidad en:</strong>
+                                <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+                                    <span style="flex:1 1 200px;">• <strong>Recursos limitados</strong> frente al tamaño del incendio.</span>
+                                    <span style="flex:1 1 200px;">• Incendios en <strong>grandes estructuras</strong> con posibilidad de propagación.</span>
+                                    <span style="flex:1 1 200px;">• <strong>Escasez de agua</strong> que impide ataque de extinción con éxito.</span>
+                                    <span style="flex:1 1 200px;">• <strong>Garantizar</strong> que zonas ya extinguidas <strong>no vuelvan a incendiarse</strong> (reignición).</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Descripción del proceso -->
+                        <div class="section" style="margin-top:1rem;">
+                            <h4 style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;"><i class="fas fa-list-ol" style="color:var(--color-smoke);"></i> Descripción del proceso</h4>
+                            
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                <ul class="visual-list" style="padding-left:0;">
+                                    <li>Puede emplearse desde <strong>interior o exterior</strong>. Normalmente desde el exterior en intervención en <strong>modo defensivo</strong>.</li>
+                                    <li>Común durante la progresión interior: <strong>"pintado de paredes"</strong> para asegurar zonas frente a propagación por detrás de la zona ya recorrida.</li>
+                                    <li>Aplicación de agua <strong>continua</strong>, moviendo el chorro para cubrir con una <strong>fina película</strong> todas las superficies del combustible.</li>
+                                    <li><strong>Evitar escorrentía</strong> a toda costa: indica que el agua se aplica sobre un punto con exceso.</li>
+                                </ul>
+                            </div>
+
+                            <div class="warning-box" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat);">
+                                <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-droplet"></i></div>
+                                <div>
+                                    <strong>📊 Parámetros de ejecución:</strong>
+                                    <ul style="margin:0.5rem 0 0 1.2rem;">
+                                        <li><strong>Caudal bajo:</strong> <span class="important-number">50 a 100 lpm</span></li>
+                                        <li><strong>Cono cerrado:</strong> <span class="important-number">0° a 15°</span> (incluso chorro sólido para profundidad)</li>
+                                        <li><strong>Pulsaciones:</strong> larga duración (<span class="important-number">>20"</span>) que pueden llegar a ser continuas</li>
+                                        <li><strong>Movimiento lanza:</strong> velocidad constante para distribución homogénea</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <p style="margin-top:0.8rem; font-style:italic;">Como en cualquier técnica, debe realizarse en función de las <strong>condiciones del incendio y la geometría del recinto</strong>.</p>
+                        </div>
+
+                        <!-- Tabla resumen (Tabla 13 del PDF) -->
+                        <div class="section">
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-table" style="color:var(--color-smoke);"></i> Tabla 13. Ataque defensivo contra la propagación</h4>
+                            <div class="visual-table" style="overflow-x:auto;">
+                                <table style="width:100%; border-collapse:collapse;">
+                                    <tr><th style="background:var(--color-smoke); color:white;">Objetivo</th><td colspan="3">Limitar la propagación del incendio. Enfriamiento de superficies del combustible e interrupción de la pirólisis.</td></tr>
+                                    <tr><th style="background:var(--color-smoke); color:white;">Posición</th><td colspan="3">Interior o exterior.</td></tr>
+                                    <tr><th style="background:var(--color-smoke); color:white;">Caudal</th><td colspan="3"><span class="important-number">50 a 100 lpm</span></td></tr>
+                                    <tr><th style="background:var(--color-smoke); color:white;">Cono</th><td colspan="3"><span class="important-number">0° a 15°</span></td></tr>
+                                    <tr><th style="background:var(--color-smoke); color:white;">Patrón de pulsaciones</th><td colspan="3">Aplicaciones de larga duración (<span class="important-number">>20"</span>) que pueden llegar a ser continuas.</td></tr>
+                                    <tr><th style="background:var(--color-smoke); color:white;">Movimiento de lanza</th><td colspan="3">La lanza se moverá a velocidad constante.</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Representación visual -->
+                        <div style="display:flex; justify-content:center; margin-top:1.5rem; gap:2rem; flex-wrap:wrap;">
+                            <div style="text-align:center; background:#f0f0f0; padding:1rem; border-radius:12px; flex:1 1 200px;">
+                                <i class="fas fa-solid fa-paint-roller" style="font-size:2.5rem; color:var(--color-smoke);"></i>
+                                <p><strong>"Pintado de paredes"</strong><br><small>Aplicación continua en superficie</small></p>
+                            </div>
+                            <div style="text-align:center; background:#f0f0f0; padding:1rem; border-radius:12px; flex:1 1 200px;">
+                                <i class="fas fa-solid fa-ban" style="font-size:2.5rem; color:var(--color-smoke-dark);"></i>
+                                <p><strong>Evitar escorrentía</strong><br><small>Agua no evaporada = desperdicio</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>            
+
+            <!-- SECCIÓN 2: CONTROL DE LA VENTILACIÓN -->
+            <div class="horizontal-card" id="control-ventilacion">
+                <div class="card-header-top" style="background: linear-gradient(135deg, #2E7D32, #81C784);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large"><i class="fas fa-wind"></i></div>
+                        <div>
+                            <div class="card-title-top">🌪️ 2. TÉCNICAS DE CONTROL DE LA VENTILACIÓN</div>
+                            <div class="card-subtitle-top">Antiventilación, natural, forzada, VPP, VPN, presurización</div>
+                            <span class="category-tag" style="background:#E8F5E9;color:#2E7D32;">Antiventilación</span>
+                            <span class="category-tag" style="background:#C8E6C9;color:#1B5E20;">Ventilación natural</span>
+                            <span class="category-tag" style="background:#A5D6A7;color:#33691E;">VPP</span>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 2</div>
+                </div>
+                <div class="card-content">
+                    <!-- 2.1 ANTIVENTILACIÓN O CONFINAMIENTO -->
+                    <div class="section">
+                        <div class="section-title"><div class="section-icon" style="background: #455A64;"><i class="fas fa-door-closed"></i></div><h3>2.1. ANTIVENTILACIÓN (CONFINAMIENTO)</h3></div>
+                        <div class="info-box"><div class="box-icon" style="background: #455A64;"><i class="fas fa-info"></i></div><div>Privar de aire fresco al incendio (cerrar puertas/ventanas, cortinas de bloqueo). Reduce potencia, evita propagación a otras estancias. <strong>Importante control de puerta de acceso</strong>.</div></div>
+                        <div class="warning-box"><div class="box-icon" style="background: #9E9E9E;"><i class="fas fa-arrow-down"></i></div><div>El plano neutro baja hasta el suelo, pérdida de visibilidad. En incendios infraventilados no hay efecto negativo.</div></div>
+                    </div>
+                    <!-- 2.2 VENTILACIÓN NATURAL -->
+                    <div class="section">
+                        <div class="section-title"><div class="section-icon" style="background: #2196F3;"><i class="fas fa-tree"></i></div><h3>2.2. VENTILACIÓN NATURAL</h3></div>
+                        <div class="info-flex">
+                            <div class="info-flex-item"><div class="info-flex-title"><i class="fas fa-arrow-up"></i> Vertical</div>Entrada y salida a distinto nivel. Flujo unidireccional. Eficiencia depende de relación Ae/Ai. Para r=0,5 → rendimiento <span class="important-number">90%</span> a 500°C.</div>
+                            <div class="info-flex-item"><div class="info-flex-title"><i class="fas fa-arrows-left-right"></i> Horizontal</div>Misma altura, flujo bidireccional. Menos efectiva. Con cortinas de humo se puede transformar en unidireccional.</div>
+                        </div>
+                        <div class="visual-table">
+                            <table><tr><th>Relación r (Ae/Ai)</th><th>Rendimiento 500°C</th></tr><tr><td>0,5</td><td>90%</td></tr><tr><td>1</td><td>71%</td></tr><tr><td>1,5</td><td>50%</td></tr></table>
+                        </div>
+                    </div>
+                    <!-- 2.3 VENTILACIÓN FORZADA (general) -->
+                    <div class="section">
+                        <div class="section-title"><div class="section-icon" style="background: #4CAF50;"><i class="fas fa-fan"></i></div><h3>2.3. VENTILACIÓN FORZADA</h3></div>
+                        <div class="text-box"><p><strong>Presión Positiva (VPP):</strong> Ventilador en entrada, presuriza interior. Cálculo ΔP: ejemplo v=8→4 m/s → <span class="important-number">28,8 Pa</span>; flujo <span class="important-number">23.040 m³/h</span>.</p><p><strong>Presión Negativa (VPN):</strong> Extractores en salida. Menos eficiente, personal expuesto.</p><p>Tipos ventiladores: térmicos, eléctricos, hidráulicos.</p></div>
+                        <div class="info-flex">
+                            <div class="info-flex-item"><div class="info-flex-title"><i class="fas fa-shield"></i> Defensiva</div>Flujo no atraviesa el foco, confinamiento. Pasos: confinar incendio, apertura salida, entrada, iniciar VPP, progresión.</div>
+                            <div class="info-flex-item"><div class="info-flex-title"><i class="fas fa-bolt"></i> Ofensiva</div>Flujo atraviesa el foco. Crea ventana temporal de mejora. Requiere rápida progresión y coordinación con agua.</div>
+                        </div>
+                        <!-- Barómetro de entrada, colocación ventilador -->
+                        <div class="warning-box"><div class="box-icon" style="background: #388E3C;"><i class="fas fa-ruler"></i></div><div><strong>Colocación VPP:</strong> Distancia óptima <span class="important-number">1,8-5 m</span> según modelo. Evitar cortocircuito (demasiado cerca). Barómetro de entrada: dirigir flujo más bajo (15% altura) para evitar bloqueo superior.</div></div>
+                        <!-- Relación entrada/salida -->
+                        <div class="visual-table">
+                            <table><tr><th></th><th>r recomendable</th><th>r mínimo</th></tr><tr><td>V. natural vertical</td><td><0,5</td><td><1</td></tr><tr><td>VPP ofensiva</td><td>>2</td><td>>1</td></tr><tr><td>VPP defensiva</td><td>>2</td><td>>0,5</td></tr></table>
+                        </div>
+                        <!-- Diferencial de presión en función de r -->
+                        <div class="stat-highlight">ΔP = k'/(1+r²). Para r=0,5 → <span class="important-number">80%</span> del ΔP máx; r=1 → <span class="important-number">50%</span>; r=2 → <span class="important-number">20%</span>.</div>
+                        <!-- Pérdidas, mal sellado, combinación ventiladores -->
+                        <div class="info-flex">
+                            <div class="info-flex-item">Pérdidas por mal sellado y fricción reducen eficiencia.</div>
+                            <div class="info-flex-item">Ventiladores en paralelo para entradas grandes; en V hasta +35% caudal; en serie a lo largo del recorrido recomendable en edificios altura.</div>
+                        </div>
+                        <!-- Influencia del viento -->
+                        <div class="warning-box"><div class="box-icon" style="background: #FFB74D;"><i class="fas fa-wind"></i></div><div>Viento a 6 m/s genera ΔP entre fachadas de <span class="important-number">25,92 Pa</span>. Calcular: Pwb = ρv²/2 = 21,6 Pa; coeficientes 0,8 y -0,4.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: TRABAJO EN ESPACIOS SIN VISIBILIDAD -->
+            <div class="horizontal-card" id="trabajo-sin-visibilidad">
+                <div class="card-header-top" style="background: var(--gradient-smoke);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large"><i class="fas fa-eye-slash"></i></div>
+                        <div>
+                            <div class="card-title-top">👁️ 3. TRABAJO EN ESPACIOS SIN VISIBILIDAD</div>
+                            <div class="card-subtitle-top">Orientación, rastreo y búsqueda de víctimas</div>
+                            <span class="category-tag tag-smoke">Orientación</span>
+                            <span class="category-tag tag-heat">Rastreo</span>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Sección 3</div>
+                </div>
+                <div class="card-content">
+                    <!-- 3.1 ORIENTACIÓN -->
+                    <div class="section">
+                        <div class="section-title"><div class="section-icon" style="background: var(--color-smoke);"><i class="fas fa-compass"></i></div><h3>3.1. ORIENTACIÓN EN ESPACIOS SIN VISIBILIDAD</h3></div>
+                        <div class="info-flex">
+                            <div class="info-flex-item">Tendido de manguera (guía).</div>
+                            <div class="info-flex-item">Paramento de referencia (siempre misma mano).</div>
+                            <div class="info-flex-item">Cámara térmica (complementaria).</div>
+                            <div class="info-flex-item">Cuerda guía en espacios amplios.</div>
+                        </div>
+                    </div>
+                    <!-- 3.2 RASTREO Y BÚSQUEDA -->
+                    <div class="section">
+                        <div class="section-title"><div class="section-icon" style="background: var(--color-fire);"><i class="fas fa-magnifying-glass"></i></div><h3>3.2. RASTREO Y BÚSQUEDA DE VÍCTIMAS</h3></div>
+                        <div class="info-flex">
+                            <div class="info-flex-item"><div class="info-flex-title">Método de barrido</div>Avanzar con referencia de pared, rastrear perímetro, luego zona central.</div>
+                            <div class="info-flex-item"><div class="info-flex-title">Método francés</div>Avance hasta puerta siguiente, punta lanza estático, apoyo rastrea perímetro.</div>
+                            <div class="info-flex-item"><div class="info-flex-title">Equipo independiente</div>Barrido con referencia de pared o cuerda guía; acceso interior o exterior (VEIS).</div>
+                            <div class="info-flex-item"><div class="info-flex-title">VPP defensiva</div>Confinar incendio, ventilar para ganar visibilidad en zonas comunes, ventilación secuencial de recintos.</div>
+                        </div>
+                        <div class="warning-box"><div class="box-icon" style="background: #FF9800;"><i class="fas fa-clock"></i></div><div><strong>Prioridad táctica:</strong> a veces es necesario controlar el incendio antes de la búsqueda para asegurar la vida de la víctima.</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="visual-footer">
+        <div class="container footer-content">
+            <h3 style="margin-bottom:1.5rem;">Incendios de Interior (II) - Guía Visual Completa</h3>
+            <p>Basado en el manual "INCENDIOS DE INTERIOR. VENTILACION (II)" de Grupo Tragsa y CEIS Guadalajara. Licencia CC BY-NC-SA 4.0.</p>
+            <div class="footer-icons">
+                <div class="footer-icon"><i class="fas fa-fire"></i></div>
+                <div class="footer-icon"><i class="fas fa-tint"></i></div>
+                <div class="footer-icon"><i class="fas fa-wind"></i></div>
+                <div class="footer-icon"><i class="fas fa-eye-slash"></i></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="floating-btn" id="scrollTopBtn" title="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+    <button class="floating-btn floating-btn-left" id="scrollNextBtn" title="Siguiente sección"><i class="fas fa-arrow-down"></i></button>
+
+    <script>
+        // Scroll suave y navegación (mismo script del ejemplo, simplificado)
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => { scrollTopBtn.style.display = window.scrollY > 500 ? 'flex' : 'none'; });
+        scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Siguiente sección
+        const sections = Array.from(document.querySelectorAll('.horizontal-card[id]'));
+        const scrollNextBtn = document.getElementById('scrollNextBtn');
+        scrollNextBtn.addEventListener('click', () => {
+            let current = 0;
+            const scrollY = window.scrollY + 150;
+            for (let i = 0; i < sections.length; i++) {
+                if (sections[i].offsetTop <= scrollY) current = i;
+            }
+            const next = current + 1;
+            if (next < sections.length) sections[next].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            else window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
