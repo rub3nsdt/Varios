@@ -451,17 +451,17 @@
         .timeline-step:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
         .step-number {
             display: inline-block;
-            width: 32px;
-            height: 32px;
+            width: 25px;
+            height: 25px;
             background: var(--color-water);
             color: white;
             border-radius: 50%;
-            line-height: 32px;
+            line-height: 23px;
             font-weight: 700;
             margin-bottom: 0.5rem;
             font-size: 1rem;
         }
-        .step-title { font-weight: 700; margin-bottom: 0.3rem; font-size: 0.95rem; color: var(--color-dark); }
+        .step-title { font-weight: 700; margin-bottom: 0.3rem; font-size: 1.1rem; color: var(--color-dark); }
 
         .columnas {
             display: flex;
@@ -1624,7 +1624,7 @@
                             <h3>Introducción: Control de la ventilación</h3>
                         </div>
                         <div class="text-box">
-                            <p>💨 Las técnicas de control de la ventilación permiten <strong>cambiar la dinámica del incendio</strong> 🔥, desde el <strong>confinamiento total</strong> (eliminación de la ventilación) hasta la <strong>ventilación mecánica forzada</strong> 🌀, pasando por las posibilidades de la ventilación natural.</p>
+                            <p style="">💨 Las técnicas de control de la ventilación permiten <strong>cambiar la dinámica del incendio</strong> 🔥, desde el <strong>confinamiento total</strong> (eliminación de la ventilación) hasta la <strong>ventilación mecánica forzada</strong> 🌀, pasando por las posibilidades de la ventilación natural.</p>
                             <p style="margin-top:0.5rem;">⚠️ Un <strong>aporte de aire al foco</strong> implica un crecimiento del incendio que debe ser mitigado con la <strong>aplicación simultánea y coordinada de agua</strong> 💧. Solo una correcta coordinación consigue mejorar las condiciones internas (visibilidad 👁️, menor temperatura 🌡️ y toxicidad ☠️) sin efectos adversos de propagación.</p>
                             <p style="margin-top:0.5rem;">🎯 No solo es necesario saber <strong>cómo</strong> se ejecuta cada técnica, sino también <strong>cuándo y por qué</strong>. Comprender la influencia de la ventilación es fundamental para su correcta aplicación.</p>
                         </div>
@@ -1711,7 +1711,7 @@
                             <h3> 2.2. VENTILACIÓN NATURAL</h3>
                         </div>
 
-                        <div class="text-box">
+                        <div class="text-box" style="align-items: stretch;">
                             <p>🎯 <strong>Propósito:</strong> Evacuar los gases de incendio de un recinto empleando las diferencias de presión generadas por el propio incendio. Se persigue:</p>
                             <ul style="margin:0.5rem 0 0 1.5rem;">
                                 <li>👁️ <strong>Recobrar la visibilidad</strong>.</li>
@@ -1756,7 +1756,7 @@
                                 <ul class="visual-list" style="padding-left:1.2rem;">
                                     <li>📊 <strong>Diferencia de presión</strong> entre entrada y salida: vinculada al gradiente térmico y a la altura entre ambas.</li>
                                     <li>📏 <strong>Tamaño de la salida de gases (Ae)</strong>: a mayor salida, mayor caudal, pero el incremento es decreciente. No hay un tamaño idóneo fijo; depende de las condiciones.</li>
-                                    <li>🔄 <strong>Relación entre salida y entrada (r = Ae / Ai)</strong>: la efectividad aumenta cuando la entrada es mayor que la salida. Se recomienda <strong>r ≤ 0,5</strong> (entrada al menos el doble que la salida). <strong>Nunca reducir la salida</strong> para conseguir esta relación, pues empeora el rendimiento.</li>
+                                    <li>🔄 <strong>Relación entre salida y entrada (r = Ae / Ai)</strong>: la efectividad aumenta cuando la entrada es mayor que la salida. La entrada debe ser al menos, tan grande como la salida <strong>r =1</strong>. Se recomienda <strong>r ≤ 0,5</strong> (entrada al menos el doble que la salida). <strong>Nunca reducir la salida</strong> para conseguir esta relación, pues empeora el rendimiento.</li>
                                     <li>📍 <strong>Cercanía de la salida al foco</strong>: reduce pérdidas por fricción y evita la propagación por la ruta caliente.</li>
                                 </ul>
                             </div>
@@ -1764,17 +1764,22 @@
                             <!-- Gráfico de rendimiento (Tabla 18) -->
                             <div class="stat-highlight" style="margin-top:1.5rem;">
                                 <div class="stat-highlight-number">📈 Rendimiento de la ventilación vertical a 500°C (sobre el máximo teórico)</div>
-                                <div class="visual-table" style="margin:1rem 0; min-width:auto;">
-                                    <table style="width:100%; max-width:400px; margin:0 auto;">
-                                        <thead>
-                                            <tr><th style="background:#2196F3; color:white;">Relación r = Ae/Ai</th><th style="background:#2196F3; color:white;">Rendimiento</th></tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr><td style="text-align:center;"><span class="important-number">0,5</span></td><td style="text-align:center;"><span class="important-number">90%</span></td></tr>
-                                            <tr><td style="text-align:center;"><span class="important-number">1</span></td><td style="text-align:center;"><span class="important-number">71%</span></td></tr>
-                                            <tr><td style="text-align:center;"><span class="important-number">1,5</span></td><td style="text-align:center;"><span class="important-number">50%</span></td></tr>
-                                        </tbody>
-                                    </table>
+                                <div class="columnas" style="justify-content: center; gap: 2rem; flex-wrap: nowrap;">
+                                    <div class="visual-table" style="min-width:auto;">
+                                        <table style="width:100%; max-width:400px; margin:0 auto;">
+                                            <thead>
+                                                <tr><th style="background:#2196F3; color:white;">Relación r = Ae/Ai</th><th style="background:#2196F3; color:white;">Rendimiento</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td style="text-align:center;"><span class="important-number">0,5</span></td><td style="text-align:center;"><span class="important-number">90%</span></td></tr>
+                                                <tr><td style="text-align:center;"><span class="important-number">1</span></td><td style="text-align:center;"><span class="important-number">71%</span></td></tr>
+                                                <tr><td style="text-align:center;"><span class="important-number">1,5</span></td><td style="text-align:center;"><span class="important-number">50%</span></td></tr>
+                                            </tbody>
+                                        </table>                                        
+                                    </div>
+                                    <div style="display: flex; flex: 0 2 auto;">
+                                        <img src="image interior/Vertical.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>                                      
                                 </div>
                                 <p style="margin-top:0.5rem;">🔍 Una entrada dos veces el tamaño de la salida (r=0,5) proporciona resultados más que suficientes (90% del máximo).</p>
                             </div>
@@ -1792,8 +1797,8 @@
                         <div class="section" style="margin-top:2rem;">
                             <h4 style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;"><i class="fas fa-arrows-left-right" style="color:#2196F3;"></i> Ventilación horizontal</h4>
                             <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-                                <p><strong>Características:</strong> En aperturas al mismo nivel (ventanas, puertas) se establecen flujos bidireccionales. Favorece la estratificación (capa fría abajo, caliente arriba).</p>
-                                <p><strong>Inconvenientes frente a la vertical:</strong></p>
+                                <p><strong>Características:</strong> En aperturas al mismo nivel (ventanas, puertas) se establecen flujos <strong>bidireccionales</strong>. Favorece la estratificación (capa fría abajo, caliente arriba).</p>
+                                <p style="margin-top: 0.5rem;"><strong>Inconvenientes frente a la vertical:</strong></p>
                                 <ul class="visual-list" style="padding-left:1.2rem;">
                                     <li>📉 <strong>Menor efectividad</strong>.</li>
                                     <li>🚫 No hay flujo unidireccional; el equipo progresa bajo la capa caliente.</li>
@@ -1802,7 +1807,7 @@
                                 <p style="margin-top:0.5rem;"><strong>Factores que influyen:</strong></p>
                                 <ul class="visual-list" style="padding-left:1.2rem;">
                                     <li>📐 <strong>Tamaño de la apertura</strong>: a mayor apertura, mayor flujo bidireccional.</li>
-                                    <li>📏 <strong>Altura de la apertura</strong>: las aperturas altas comunican mejor las zonas con mayor diferencial de presión. Para una misma superficie, una apertura alargada verticalmente tiene mayor rendimiento.</li>
+                                    <li>📏 <strong>Altura de la apertura</strong>: las aperturas altas comunican mejor las zonas con mayor diferencial de presión. Para una misma superficie, una apertura <strong>alargada verticalmente tiene mayor rendimiento</strong>.</li>
                                 </ul>
                             </div>
 
@@ -1815,25 +1820,700 @@
                             </div>
                         </div>
 
-                        <!-- Representación visual resumen -->
-                        <div style="display:flex; justify-content:center; margin-top:2rem; gap:2rem; flex-wrap:wrap;">
-                            <div style="text-align:center; background:#f0f0f0; padding:1rem; border-radius:12px; flex:1 1 200px;">
-                                <i class="fas fa-arrow-up" style="font-size:2.5rem; color:#2196F3;"></i>
-                                <i class="fas fa-arrow-down" style="font-size:2.5rem; color:#2196F3; margin-left:0.5rem;"></i>
-                                <p><strong>Vertical</strong><br><small>Flujo unidireccional</small></p>
+                        <!-- Nota adicional sobre la cercanía al foco (reiteración) -->
+                        <p style="margin-top:1.5rem; font-style:italic;">📍 En cualquier tipo de ventilación, la <strong>cercanía de la salida al foco</strong> reduce pérdidas de fricción y evita la propagación a lo largo de la ruta caliente.</p>
+                    </div>
+
+                    <!-- Continuación dentro de la tarjeta "Control de la Ventilación" -->
+                    <!-- 2.3 VENTILACIÓN FORZADA (PARTE INICIAL) -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-fan"></i></div>
+                            <h3>2.3. VENTILACIÓN FORZADA</h3>
+                        </div>
+
+                        <div class="text-box">
+                            <p>🎯 <strong>Objetivo:</strong> Emplear ventiladores mecánicos para expulsar los gases de una estructura. El flujo ya no está dominado solo por los diferenciales de presión del incendio, sino por los establecidos por los ventiladores. Es una herramienta para establecer el <strong>flujo de gases más conveniente a nivel táctico</strong>, permitiendo accesos por ruta fría y canalización de gases calientes.</p>
+                            <p style="font-size: 1.1rem;">🔍 Las técnicas se diferencian por:</p>
+                            <ul class="visual-list" style="flex: 1; gap: 5rem;">
+                                <li><strong>🌀Tipo de diferencial de presión</strong></li>
+                                <li><strong>⚙️Forma de propulsión</strong></li>
+                                <li><strong>➡️Recorrido del flujo de gases</strong></li>
+                            </ul>                            
+                        </div>
+
+                        <!-- a) Por diferencial de presión (detallado con visual-list) -->
+                        <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-gauge-high" style="color:#4CAF50;"></i> a) Por diferencial de presión</h4>
+                        <div class="info-flex">
+                            <!-- VPP - Presión Positiva -->
+                            <div class="info-flex-item" style="flex:1 1 400px;">
+                                <div class="info-flex-title"><i class="fas fa-plus-circle" style="color:#4CAF50;"></i> Presión Positiva (VPP) ⬆️</div>
+                                <ul class="visual-list">
+                                    <li><strong>Concepto:</strong> Ventilador colocado en el exterior del recinto (generalmente en la puerta de acceso) que impulsa aire hacia el interior, <strong>presurizando</strong> la estructura y forzando la salida de gases por las aberturas designadas.</li>
+                                    <li><strong>Mecanismo físico:</strong> El flujo de alta velocidad generado por el ventilador impacta en la apertura de entrada. Al reducirse la velocidad (deceleración), se produce un aumento de presión en el interior según la <strong>Ecuación de Bernoulli</strong>.</li>
+                                    <li><strong>Ventajas operativas:</strong> El ventilador se sitúa en zona no contaminada, sin riesgo para el operador. Permite establecer flujos unidireccionales y mejorar las condiciones para el avance interior.</li>
+                                </ul>
+                                <div style="display: flex; margin: auto; margin-top: 2rem;">
+                                    <img src="image interior/VPPN.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                  
                             </div>
-                            <div style="text-align:center; background:#f0f0f0; padding:1rem; border-radius:12px; flex:1 1 200px;">
-                                <i class="fas fa-arrows-left-right" style="font-size:2.5rem; color:#2196F3;"></i>
-                                <p><strong>Horizontal</strong><br><small>Flujo bidireccional</small></p>
-                            </div>
-                            <div style="text-align:center; background:#f0f0f0; padding:1rem; border-radius:12px; flex:1 1 200px;">
-                                <i class="fas fa-tshirt" style="font-size:2.5rem; color:#2196F3;"></i>
-                                <p><strong>Cortina + horizontal</strong><br><small>Simula vertical</small></p>
+
+                            <!-- VPN - Presión Negativa -->
+                            <div class="info-flex-item" style="flex:1 1 400px;">
+                                <div class="info-flex-title"><i class="fas fa-minus-circle" style="color:#D32F2F;"></i> Presión Negativa (VPN) ⬇️</div>
+                                <ul class="visual-list">
+                                    <li><strong>Concepto:</strong> Extractores colocados en las <strong>salidas de gases</strong> (ventanas, huecos) que generan una depresión en el interior, aspirando los gases hacia el exterior.</li>
+                                    <li><strong>Inconvenientes principales:</strong>
+                                        <ul class="nested-list">
+                                            <li><strong>Exposición del personal:</strong> El equipo debe situarse en la ruta de salida de gases calientes y tóxicos.</li>
+                                            <li><strong>Menor rendimiento:</strong> Para igual diámetro de hélice y potencia, el caudal efectivo es inferior al de VPP.</li>
+                                            <li><strong>Limitaciones del motor:</strong> No pueden emplearse motores de explosión (los gases de incendio interfieren en la combustión y pueden dañar el motor).</li>
+                                            <li><strong>Coste y complejidad:</strong> Los extractores aptos para altas temperaturas son más caros y requieren mantenimiento especializado.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Ámbitos de uso:</strong> Queda limitado a situaciones muy concretas como túneles o garajes.</li>
+                                    
+                                </ul>
                             </div>
                         </div>
 
-                        <!-- Nota adicional sobre la cercanía al foco (reiteración) -->
-                        <p style="margin-top:1.5rem; font-style:italic;">📍 En cualquier tipo de ventilación, la <strong>cercanía de la salida al foco</strong> reduce pérdidas de fricción y evita la propagación a lo largo de la ruta caliente.</p>
+                        <!-- b) Por tipo de propulsión -->
+                        <h4 style="display:flex; align-items:center; gap:10px; margin:2rem 0 1rem;"><i class="fas fa-engine" style="color:#4CAF50;"></i> b) Por tipo de propulsión</h4>
+                        <div class="visual-table" style="overflow-x:auto;">
+                            <table style="width:100%; min-width:600px;">
+                                <thead><tr><th style="background:#4CAF50; color:white;">Tipo</th><th style="background:#4CAF50; color:white;">Características</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>Térmicos</strong> 🔥</td><td>Motor explosión (<span class="important-number">3-150 CV</span>). Autónomos, ligeros, pero ruidosos, arrastran gases escape, no ATEX, no válidos como extractores.</td></tr>
+                                    <tr><td><strong>Eléctricos a red</strong> ⚡</td><td>Silenciosos, sin gases, ATEX, válidos como extractores. Requieren cableado, menor potencia/peso.</td></tr>
+                                    <tr><td><strong>Eléctricos a batería</strong> 🔋</td><td>Autonomía limitada, baja potencia. Solo como auxiliares.</td></tr>
+                                    <tr><td><strong>Hidráulicos por turbina</strong> 💧</td><td>Accionados por agua de la bomba. Sin gases escape, ATEX, válidos en extracción. Mayor logística (tendidos).</td></tr>
+                                    <tr><td><strong>Ventilación hidráulica por flujo de manguera</strong> 🌊</td><td>Cono de agua en salida genera depresión. Bombero en ruta caliente. Rendimiento bajo, solo para ventilación final.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- c) Por recorrido del flujo (táctico) -->
+                        <h4 style="display:flex; align-items:center; gap:10px; margin:2rem 0 1rem;"><i class="fas fa-route" style="color:#4CAF50;"></i> c) Por recorrido del flujo (táctico)</h4>
+                        <div class="info-flex">
+                            <div class="info-flex-item" style="flex:1 1 300px;">
+                                <div class="info-flex-title"><i class="fas fa-shield-halved" style="color:#4CAF50;"></i> Defensiva</div>
+                                <p>El flujo <strong>no atraviesa el foco</strong>. Basada en el confinamiento del incendio. Se evacúan gases de otras zonas sin aportar oxígeno al incendio.</p>                               
+                            </div>
+                            <div class="info-flex-item" style="flex:1 1 300px;">
+                                <div class="info-flex-title"><i class="fas fa-bolt" style="color:#4CAF50;"></i> Ofensiva</div>
+                                <p>El flujo <strong>atraviesa el foco</strong> y provee aire fresco generando un crecimiento del mismo en incendios ILV.</p>                                                                
+                            </div>
+                        </div>
+
+                        <!-- Relación salida/entrada (r) - primeras tablas -->
+                        <div class="section" style="margin-top:2rem;">
+                            <h4 style="display:flex; align-items:center; gap:10px;"><i class="fas fa-chart-line" style="color:#4CAF50;"></i> Relación salida/entrada (r = Ae/Ai) - Recomendaciones iniciales</h4>
+                            <div class="visual-table" style="overflow-x:auto; margin-top:1rem;">
+                                <table style="width:100%;">
+                                    <thead><tr><th style="background:#4CAF50; color:white;">Técnica</th><th style="background:#4CAF50; color:white;">r recomendable</th><th style="background:#4CAF50; color:white;">r mínimo</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>Ventilación natural vertical</td><td>r &lt; <span class="important-number">0,5</span></td><td>r &lt; <span class="important-number">1</span></td></tr>
+                                        <tr><td>VPP ofensiva</td><td>r &gt; <span class="important-number">2</span></td><td>r &gt; <span class="important-number">1</span></td></tr>
+                                        <tr><td>VPP defensiva</td><td>r &gt; <span class="important-number">2</span></td><td>r &gt; <span class="important-number">0,5</span></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p style="margin-top:0.5rem;">🔍 A partir de r=<span class="important-number">2</span>, la eficacia no aumenta excesivamente; abrir más salidas no compensa el esfuerzo.</p>
+                        </div>
+
+                        <!-- Continuación dentro de la tarjeta "Control de la Ventilación" -->
+                        <!-- 2.3.1 VENTILACIÓN EN PRESIÓN POSITIVA DEFENSIVA -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-shield-halved"></i></div>
+                                <h3>2.3.1. VENTILACIÓN EN PRESIÓN POSITIVA DEFENSIVA</h3>
+                            </div>
+
+                            <div class="text-box">
+                                <p>🎯 <strong>Definición:</strong> Técnica que emplea un ventilador VPP para establecer un flujo de gases que <strong>no atraviesa el foco del incendio</strong>. Su objetivo es evacuar los gases acumulados en la estructura sin aportar oxígeno adicional al incendio, basándose en el <strong>confinamiento del área incendiada</strong>. Su uso deberá ser decidido por el Mando de la Intervención </p>
+                            </div>
+
+                            <!-- Ventajas principales -->
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-thumbs-up" style="color:#4CAF50;"></i> Ventajas de la VPP defensiva</h4>
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                <ul class="visual-list">
+                                    <li>🆘 <strong>Mejora la supervivencia</strong> de víctimas y ocupantes atrapados fuera de la zona directamente afectada por el incendio, al introducir una atmósfera respirable.</li>
+                                    <li>👁️ <strong>Permite realizar operaciones de búsqueda</strong> con plena visibilidad en pasillos y cajas de escalera.</li>
+                                    <li>🧹 <strong>Limpia y asegura las rutas de escape</strong> (pasillos, escaleras) para la evacuación de ocupantes.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Secuencia de actuación VPP defensiva (con iconos) -->
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-list-ol" style="color:#4CAF50;"></i> Secuencia de actuación (7 pasos)</h4>
+                            <div class="procedure-timeline" style="margin-bottom:1.5rem;">
+                                <div class="timeline-step">
+                                    <div class="step-number">1</div>
+                                    <i class="fas fa-lock" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Confinamiento del incendio</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">2</div>
+                                    <i class="fas fa-smog" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Apertura de salida de gases</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">3</div>
+                                    <i class="fas fa-door-open" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Apertura de la entrada de aire fresco</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">4</div>
+                                    <i class="fas fa-play" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Inicio de la ventilación</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">5</div>
+                                    <i class="fas fa-eye" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Valoración del funcionamiento</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">6</div>
+                                    <i class="fas fa-person-walking" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Progresión interior rápida</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">7</div>
+                                    <i class="fas fa-hand-holding-heart" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Búsqueda y rescate</div>
+                                </div>
+                            </div>
+                       
+
+                            <!-- Nota sobre inicio sin confinamiento -->
+                            <div class="warning-box" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat); margin:1.5rem 0;">
+                                <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div>
+                                    <strong>⚠️ Inicio sin confinamiento previo:</strong> Si bien no es la mejor opción, es posible iniciar una VPP defensiva sin haber confinado el incendio, siempre que el recinto del incendio <strong>no tenga aperturas al exterior</strong> que pudieran generar un flujo a través del foco. En cualquier caso, se debe confinar lo antes posible.
+                                </div>
+                            </div>
+
+                            <!-- Comportamiento del flujo antes y durante la VPP -->
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-water" style="color:#4CAF50;"></i> Comportamiento del flujo de gases</h4>
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+                                <ul class="visual-list">
+                                    <li><strong>Antes de la VPP:</strong> En la puerta de acceso al recinto de incendio existe un <strong>flujo bidireccional</strong>: gases calientes salen por la parte superior, y aire frío entra por la inferior, debido al diferencial de presión generado por el incendio.</li>
+                                    <li><strong>Durante la VPP:</strong> El ventilador presuriza <strong>todo el interior</strong> de forma homogénea. El flujo bidireccional en la puerta del recinto incendiado se <strong>mantiene</strong> (la misma presión en ambos lados), pero ahora el diferencial favorece la entrada de aire. Sin embargo, <strong>sigue habiendo salida de gases</strong> desde el recinto de incendio.</li>
+                                    <li>⚠️ Por tanto, es <strong>imprescindible confinar ese recinto</strong> (puerta cerrada o cortina) lo antes posible para evitar que los gases sigan propagándose y para que la VPP sea realmente efectiva en las zonas comunes.</li>
+                                </ul>
+                            </div>
+                        </div>                        
+
+                        <!-- Continuación dentro de la tarjeta "Control de la Ventilación" -->
+                        <!-- 2.3.2 VENTILACIÓN EN PRESIÓN POSITIVA OFENSIVA -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-bolt"></i></div>
+                                <h3>2.3.2. VENTILACIÓN EN PRESIÓN POSITIVA OFENSIVA</h3>
+                            </div>
+
+                            <div class="text-box">
+                                <p>🎯 <strong>Definición:</strong> Técnica que emplea un ventilador VPP para establecer un flujo de gases que <strong>atraviesa el foco del incendio</strong> con objeto de producir un cambio rápido de las condiciones en el interior del recinto, creando una <strong>ventana temporal</strong> de mejora (visibilidad, temperatura, supervivencia) que permita un avance rápido de efectivos hasta el foco.</p>
+                            </div>
+
+                            <!-- Ventajas principales -->
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-thumbs-up" style="color:#4CAF50;"></i> Ventajas de la VPP ofensiva</h4>
+                            <div class="info-flex">
+                                <div class="info-flex-item" style="flex:1 1 300px;">
+                                    <ul class="visual-list">
+                                        <li>👁️ <strong>Mejora la visibilidad:</strong> Permite localizar rápidamente el camino de acceso y escape, y realizar búsqueda de víctimas.</li>
+                                        <li>🆘 <strong>Mejora la supervivencia:</strong> El aire fresco introducido cae por su mayor densidad y crea un colchón respirable para posibles víctimas.</li>
+                                    </ul>
+                                </div>
+                                <div class="info-flex-item" style="flex:1 1 300px;">
+                                    <ul class="visual-list">
+                                        <li>🌡️ <strong>Reduce la temperatura:</strong> La sustitución rápida de la atmósfera interior por aire fresco disminuye la temperatura.</li>
+                                        <li>🔥 <strong>Menor cantidad de combustible:</strong> Al expulsar al exterior los gases de incendio, gran parte de los combustibles son arrastrados al exterior y no contribuyen al crecimiento del incendio</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Ventana temporal y cuña de avance -->
+                            <div class="tip-box" style="margin:1.5rem 0; background: linear-gradient(135deg, #E1F5FE, #B3E5FC); border-left-color: #2196F3;">
+                                <div class="box-icon" style="background: #2196F3;"><i class="fas fa-hourglass-half"></i></div>
+                                <div>
+                                    <strong>⏳ Ventana temporal y cuña de avance:</strong>
+                                    <p>La VPP ofensiva genera una <strong>ventana temporal</strong> de condiciones favorables antes de que el incendio responda al aporte de oxígeno. Durante ese tiempo, el equipo debe aplicar agua para reducir la potencia del fuego.</p>
+                                    <p>📐 La <strong>rapidez</strong> evita la mezcla de gases y crea una <strong>cuña de avance</strong>: el aire frío (densidad <span class="important-number">1,2 kg/m³</span>) empuja a los gases calientes (densidad <span class="important-number">0,46 kg/m³</span> a 500°C) sin mezclarse, gracias a la diferencia de densidades. Una ventilación lenta provocaría turbulencias y mezcla en rango inflamable.</p>
+                                </div>
+                            </div>
+
+                            <!-- Secuencia de actuación (6 pasos) con iconos -->
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:2rem 0 1rem;"><i class="fas fa-list-ol" style="color:#4CAF50;"></i> Secuencia de actuación (6 pasos)</h4>
+                            <div class="procedure-timeline" style="margin-bottom:1.5rem;">
+                                <div class="timeline-step">
+                                    <div class="step-number">1</div>
+                                    <i class="fas fa-smog" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Apertura de salida de gases</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">2</div>
+                                    <i class="fas fa-door-open" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Apertura de la entrada de aire fresco</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">3</div>
+                                    <i class="fas fa-play" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Inicio de la ventilación</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">4</div>
+                                    <i class="fas fa-eye" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Valoración del funcionamiento</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">5</div>
+                                    <i class="fas fa-person-walking" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Progresión interior rápida</div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-number">6</div>
+                                    <i class="fas fa-fire-extinguisher" style="font-size:1.5rem; color:#4CAF50; margin-bottom:0.3rem;"></i>
+                                    <div class="step-title">Control del incendio</div>
+                                </div>
+                            </div>
+
+                            <!-- Consideraciones de seguridad -->
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:2rem 0 1rem;"><i class="fas fa-shield-alt" style="color:#4CAF50;"></i> Consideraciones de seguridad</h4>
+                            <div class="warning-box" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat);">
+                                <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div>
+                                    <ul class="visual-list" style="margin:0; flex-direction: column; gap: 0.2rem;">
+                                        <li>🤝 <strong>Coordinar</strong> la VPP ofensiva con técnicas de aplicación de agua (enfriamiento de gases, ataque directo).</li>
+                                        <li>📈 <strong>Prever un potencial crecimiento</strong> del incendio por el aporte de oxígeno.</li>
+                                        <li>🔥 <strong>Vigilar la propagación</strong> del incendio a zonas no afectadas; la ruta de gases debe estar bien definida.</li>
+                                        <li>🚫 <strong>No situar personal</strong> a lo largo de la ruta caliente de gases.</li>
+                                        <li>🚪 <strong>Abrir la salida de gases en primer lugar</strong> y a continuación comenzar la VPP para evitar mezcla de gases con aire exterior.</li>
+                                        <li>🌬️ <strong>Vigilar las condiciones de viento</strong> exterior: viento en contra reduce drásticamente la eficacia. Con viento en contra superior a <span class="important-number">4 m/s</span>, valorar si es viable.</li>
+                                        <li>⛔ <strong>No emplear en condiciones de backdraft inminente</strong> ni con combustibles muy volátiles (polvo, gases licuados).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Continuación dentro de la tarjeta "Control de la Ventilación" -->
+                        <!-- 2.3.3 PRESURIZACIÓN DE RECINTOS -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-compress"></i></div>
+                                <h3>2.3.3. PRESURIZACIÓN DE RECINTOS</h3>
+                            </div>
+
+                            <div class="text-box">
+                                <p>🎯 <strong>Definición:</strong> Técnica que emplea ventiladores de VPP para crear <strong>diferenciales de presión</strong> en zonas anexas a recintos de incendio con el objeto de <strong>protegerlas de la propagación</strong> del incendio y la dispersión de los gases de incendio.</p>
+                            </div>
+
+                            <!-- Mecanismo físico -->
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin:1.5rem 0;">
+                                <h4 style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;"><i class="fas fa-physics" style="color:#4CAF50;"></i> Mecanismo físico</h4>
+                                <ul class="visual-list">
+                                    <li>📊 Cuando existe un <strong>diferencial de presión</strong> entre dos estancias, se establece un flujo de gases que intenta compensar esa diferencia.</li>
+                                    <li>💨 El fluido se desplaza desde el recinto de <strong>mayor presión</strong> al de <strong>menor presión</strong> siguiendo el camino de mínima fricción (donde la pérdida de presión es más rápida).</li>
+                                    <li>🔥 En la propagación de incendios, la <strong>convección</strong> (transmisión de calor a través de fluidos calientes en movimiento) juega un papel decisivo.</li>
+                                    <li>⬆️ Al <strong>aumentar la presión</strong> de un recinto sobre el inmediatamente anexo donde se desarrolla un incendio, el flujo de gases de incendio tiende a desplazarse a través de las posibles aperturas hacia el exterior o hacia zonas no presurizadas, <strong>evitando que entren en la zona presurizada</strong>.</li>
+                                </ul>
+                            </div>
+
+                            <div class="columnas">
+                                <!-- Aplicación práctica: caja de escalera -->
+                                <div class="tip-box" style="flex: 4 1 400px; margin:1.5rem 0; background: linear-gradient(135deg, #E1F5FE, #B3E5FC); border-left-color: #2196F3;">
+                                    <div class="box-icon" style="background: #2196F3;"><i class="fas fa-stairs"></i></div>
+                                    <div>
+                                        <strong>🏢 Aplicación práctica: Presurización de caja de escalera</strong>
+                                        <p>Es el ejemplo más común. El equipo interior, al acceder desde un tiro de escalera limpio de humos hacia la vivienda incendiada, puede provocar que parte de los gases de incendio se desplacen a la caja de escalera. A través de la pequeña apertura necesaria para el paso de la manguera también pueden escapar gases.</p>
+                                        <p>✅ <strong>Solución:</strong> Presurizar la caja de escalera evita que los gases escapen del interior de la vivienda, especialmente si existe alguna apertura desde la vivienda al exterior.</p>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; margin: auto; flex: 1 2 200px;">
+                                    <img src="image interior/Escalera.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                  
+                            </div>
+                            <!-- Importante: limitaciones de la técnica -->
+                            <div class="warning-box" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat);">
+                                <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div>
+                                    <strong>⚠️ Limitaciones de la presurización:</strong>
+                                    <p>La presurización de recintos es una técnica eficaz para proteger de la propagación del incendio por efecto de la <strong>convección</strong>, pero <strong>no protege frente a la propagación por radiación o conducción</strong>, si bien estos modos juegan un papel de menor importancia en la propagación de incendios de interior.</p>
+                                </div>
+                            </div>                            
+                        </div>
+
+                        <!-- Continuación dentro de la tarjeta "Control de la Ventilación" -->
+                        <!-- 2.3.4 USO DE VENTILADORES DE PRESIÓN POSITIVA -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-fan"></i></div>
+                                <h3>2.3.4. USO DE VENTILADORES DE PRESIÓN POSITIVA</h3>
+                            </div>
+
+                            <div class="text-box">
+                                <p>Los ventiladores de presión positiva crean un flujo de aire a gran velocidad mediante el giro de una hélice radial. Es fundamental entender su comportamiento para obtener el máximo rendimiento en intervención.</p>
+                            </div>
+
+                            <!-- a) Huella de un ventilador -->
+                            <div class="section">
+                                <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-map" style="color:#4CAF50;"></i> a) Huella de un ventilador</h4>
+                                
+                                <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                    <ul class="visual-list">
+                                        <li>💨 Desde el punto de vista de la dinámica de fluidos, un ventilador de presión positiva permite crear un <strong>campo de vectores en movimiento</strong> en las partículas de aire, lo que también se denomina como <strong>huella del ventilador</strong>.</li>
+                                        <li>🌀 En las inmediaciones del ventilador, cada partícula se mueve con una <strong>velocidad y dirección definida</strong>.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="columnas">
+                                    <!-- Factores que influyen en la huella -->                                
+                                    <div class="info-flex-item" style="flex: 1 2 300px; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                        <p style="font-size: 1.1rem; margin-bottom: 1rem;">Los distintos ventiladores producen huellas ligeramente diferentes dependiendo de:</p>
+                                        <ul class="visual-list">
+                                            <li>⚙️ El <strong>diseño de hélice</strong></li>
+                                            <li>📊 El <strong>régimen de giro</strong></li>
+                                            <li>🔲 La <strong>rejilla frontal</strong></li>
+                                            <li>📐 La <strong>existencia de deflectores</strong></li>
+                                            <li>🏗️ La <strong>forma de la carcasa exterior</strong></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Zonas de la huella -->
+                                    <div class="info-flex" style="flex: 1 1 300px; flex-direction: column; margin-top: 0;">
+                                        <div class="info-flex-item" style="flex:1 1;">
+                                            <div class="info-flex-title"><i class="fas fa-bullseye" style="color:#4CAF50;"></i> Dardo a alta velocidad</div>
+                                            <p>Flujo central de <strong>alta velocidad</strong> que impacta directamente en la apertura. Es la zona más energética y la principal responsable de la presurización.</p>
+                                        </div>
+                                        <div class="info-flex-item" style="flex:1 1;">
+                                            <div class="info-flex-title"><i class="fas fa-water" style="color:#4CAF50;"></i> Bulbo de aire succionado</div>
+                                            <p>Volumen de aire <strong>arrastrado por el dardo</strong> a su alrededor, de menor velocidad pero que contribuye al caudal total que penetra en la estructura.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Cálculos de caudal y empuje -->                                
+                                <div class="stat-highlight" style="margin:1rem 0;">
+                                    <div class="columnas">
+                                        <div style="flex: 1 1;">
+                                            <div class="stat-highlight-number">📐 Caudal libre y empuje</div>
+                                            <p>Además de la velocidad, es posible determinar el <strong>caudal libre</strong> y el <strong>empuje</strong> del flujo:</p>
+                                            <ul style="margin:0.5rem 0 0 1.2rem;">
+                                                <li><strong>Caudal libre:</strong> Q = v × A [m³/s]</li>
+                                                <li><strong>Empuje:</strong> E = ρ × Q² / A [N]</li>
+                                            </ul>
+                                        </div>
+                                        <div style="flex: 1 1;">
+                                            <p style="margin-top:0.5rem;">Donde:</p>
+                                            <ul style="margin:0.2rem 0 0 1.2rem;">
+                                                <li>Q = caudal libre [m³/s]</li>
+                                                <li>A = sección transversal del ventilador [m²]</li>
+                                                <li>E = empuje [N]</li>
+                                                <li>ρ = densidad del aire (<span class="important-number">1,2 kg/m³</span>)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p style="margin-top:0.8rem;">🔍 Este puede ser un método efectivo para la <strong>valoración relativa del rendimiento comparado</strong> de distintos ventiladores.</p>
+                                </div>
+
+                                <!-- Nota sobre valores en condiciones reales -->
+                                <div class="warning-box" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat); margin-top:1.5rem;">
+                                    <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-exclamation-triangle"></i></div>
+                                    <div>
+                                        <strong>⚠️ Importante:</strong> Los valores de capacidad obtenidos en <strong>condiciones reales</strong> de intervención difieren significativamente de los referidos por los fabricantes en condiciones de laboratorio. Esto se debe a que el sellado de los recintos no es perfecto, existen elementos de fricción y los tamaños de apertura y salida de gases no permiten obtener resultados tan óptimos.
+                                    </div>
+                                </div>
+
+                                <!-- Tabla 19. Comparativa de las ventajas de los conos de los ventiladores -->                                
+                                <div class="visual-table" style="overflow-x:auto; margin-bottom:1.5rem;">
+                                    <table style="width:100%; min-width:500px; border-collapse:collapse;">
+                                        <thead>
+                                            <tr>
+                                                <th style="background:#4CAF50; color:white; padding:12px; width:50%;">🔽 CONO CERRADO</th>
+                                                <th style="background:#4CAF50; color:white; padding:12px; width:50%;">🔀 CONO ABIERTO</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding:12px; border:1px solid #ddd; vertical-align:top;">
+                                                    <div style="margin-bottom:8px;">📏 <strong>Posicionamiento más lejano:</strong> Permiten un posicionamiento más lejano de la puerta de acceso, no dificultan el paso.</div>
+                                                </td>
+                                                <td style="padding:12px; border:1px solid #ddd; vertical-align:top;">
+                                                    <div style="margin-bottom:8px;">🚪 <strong>Colocación cercana:</strong> Al poderse colocar más cerca de la puerta, se ajustan mejor a descansillos o plataformas donde no es posible alejar el ventilador.</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:12px; border:1px solid #ddd; vertical-align:top;">
+                                                    <div style="margin-bottom:8px;">📈 <strong>Rendimiento estable:</strong> Una variación, a partir de la distancia óptima de colocación, no afecta tanto al rendimiento como en los de cono abierto.</div>
+                                                </td>
+                                                <td style="padding:12px; border:1px solid #ddd; vertical-align:top;">
+                                                    <div style="margin-bottom:8px;">🔇 <strong>Menor ruido:</strong> El cono más abierto implica menor velocidad de las partículas en la zona central y, por tanto, niveles de ruido aerodinámico inferiores.</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:12px; border:1px solid #ddd; vertical-align:top;">
+                                                    <div style="margin-bottom:8px;">💧 <strong>Caudal superior:</strong> El caudal es ligeramente superior al existir mayor distancia entre el ventilador y la puerta de entrada para la succión de aire.</div>
+                                                </td>
+                                                <td style="padding:12px; border:1px solid #ddd; vertical-align:top;">
+                                                    <div style="margin-bottom:8px;">🌪️ <strong>Menor turbulencia:</strong> Menor nivel de turbulencias.</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Nota adicional sobre criterios de elección (opcional) -->
+                                <div class="tip-box" style="margin-top:1rem; background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left-color: var(--color-success);">
+                                    <div class="box-icon" style="background: var(--color-success);"><i class="fas fa-arrow-right"></i></div>
+                                    <div>
+                                        <strong>🎯 Criterio de elección:</strong> El cono cerrado es preferible cuando se dispone de espacio para alejar el ventilador y se busca máximo caudal. El cono abierto es más adecuado en espacios reducidos (rellanos, descansillos) y cuando se prioriza la reducción de ruido y turbulencias.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- b) Capacidad de un ventilador (caudales y ensayos) -->
+                            <div class="section">
+                                <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-chart-line" style="color:#4CAF50;"></i> b) Capacidad de un ventilador</h4>
+                                
+                                <div class="text-box" style="margin-bottom:1.5rem;">
+                                    <p>Si bien la medición de la capacidad de un ventilador puede realizarse a través de varios parámetros, es preciso tener en cuenta el <strong>tipo de caudal</strong> referido y el <strong>método de medición</strong> a la hora de establecer comparaciones:</p>
+                                </div>
+
+                                <div class="columnas">
+                                    <div class="columnas" style="flex: 1 1 350px; gap: 0;">
+                                        <!-- Caudal estricto -->
+                                        <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                            <div class="info-flex-title"><i class="fas fa-compress" style="color:#4CAF50;"></i> Caudal estricto (Qₐ)</div>
+                                            <p><span class="important-number">[m³/s]</span> o <span class="important-number">[m³/h]</span>: es el volumen de aire que <strong>atraviesa la hélice</strong> del ventilador en la unidad de tiempo. Es el flujo de aire directamente impulsado por la hélice y <strong>no tiene en consideración el flujo succionado</strong>. Este parámetro solo puede ser de utilidad en el empleo de VPP con mangas de prolongación.</p>
+                                        </div>
+
+                                        <!-- Caudal efectivo -->
+                                        <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                            <div class="info-flex-title"><i class="fas fa-water" style="color:#4CAF50;"></i> Caudal efectivo (Qₑ)</div>
+                                            <p><span class="important-number">[m³/s]</span> o <span class="important-number">[m³/h]</span>: es el <strong>volumen efectivo del flujo de gases</strong> creado mediante un ventilador de VPP a través de una estructura, medido en la <strong>salida de gases</strong>. El caudal efectivo proporciona una clara idea de la <strong>efectividad y rendimiento</strong> de un ventilador de VPP en una operación real.</p>
+                                        </div>                                        
+                                    </div>
+                                    <!-- Caudal libre -->
+                                    <div class="info-flex-item" style=" flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                        <div class="info-flex-title"><i class="fas fa-expand" style="color:#4CAF50;"></i> Caudal libre (Qₗ)</div>
+                                        <p><span class="important-number">[m³/s]</span> o <span class="important-number">[m³/h]</span>: es el volumen de aire total del flujo en un espacio abierto en la unidad de tiempo. Es la <strong>suma del caudal estricto y el flujo de aire arrastrado</strong> (Qₐ). Este valor es de escasa utilidad, pues no se ajusta a las condiciones reales de aplicación en las que el flujo debe penetrar a través de una apertura.</p>
+                                        <p style="margin-top:0.5rem;"><strong>Fórmula:</strong> Qₗ = Qₑ + Qₐ = <em>max</em> (Aᵢ × vᵢ)</p>
+                                        <p>Donde:</p>
+                                        <ul style="margin-left:1.5rem;">
+                                            <li>Aᵢ = sección transversal i de la huella del ventilador [m²].</li>
+                                            <li>vᵢ = velocidad longitudinal media de las partículas de aire en la sección Aᵢ [m/s].</li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Empuje -->
+                                    <div class="info-flex-item" style=" flex: 1 1 350px; align-self: stretch;background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                        <div class="info-flex-title"><i class="fas fa-rocket" style="color:#4CAF50;"></i> Empuje (E)</div>
+                                        <p><span class="important-number">[N]</span>: si se aplica el principio de conservación de la cantidad de movimiento, la fuerza de empuje de un ventilador es una medida del caudal libre del mismo.</p>
+                                        <p style="margin-top:0.5rem;"><strong>Relación con caudal libre:</strong> Qₗ = √(E × A₀ / ρ)</p>
+                                        <p>Donde:</p>
+                                        <ul style="margin-left:1.5rem;">
+                                            <li>Qₗ = caudal libre [m³/s].</li>
+                                            <li>A₀ = sección transversal del ventilador [m²].</li>
+                                            <li>E = empuje [N].</li>
+                                            <li>ρ = densidad del aire (<span class="important-number">1,2 kg/m³</span>).</li>
+                                        </ul>
+                                        <p>🔍 Este puede ser un método efectivo para la <strong>valoración relativa del rendimiento comparado</strong> de distintos ventiladores.</p>
+                                    </div>
+
+
+                                    <!-- Caudal AMCA 240 -->
+                                    <div class="info-flex-item" style=" flex: 1 1 350px; align-self: stretch;background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                        <div class="info-flex-title"><i class="fas fa-flask" style="color:#4CAF50;"></i> Caudal AMCA 240 (Q<sub>AMCA240</sub>)</div>
+                                        <p><span class="important-number">[m³/s]</span> o <span class="important-number">[m³/h]</span>: caudal efectivo medido de acuerdo al ensayo normalizado <strong>AMCA 240</strong> (American Air Movement Association).</p>
+                                        <p><strong>Procedimiento:</strong> El ventilador VPP se coloca en el exterior de una primera cámara que presuriza su interior a través de una apertura. En una segunda cámara, comunicada a través de una apertura normalizada, un extractor crea una depresión. El cálculo del rendimiento se realiza usando la relación entre la presión exterior y la de las dos cámaras para distintos regímenes de giro del extractor.</p>
+                                        <p>✅ Es el procedimiento estandarizado más comúnmente empleado por los fabricantes y permite tener en cuenta el efecto del tránsito a través de la estructura.</p>
+                                        <p>📊 La mayoría de los ventiladores de entre <span class="important-number">18 y 20 pulgadas</span> obtienen resultados entre <span class="important-number">25.000 m³/h</span> y <span class="important-number">30.000 m³/h</span>.</p>
+                                    </div>
+
+                                    <!-- Caudal ULH -->
+                                    <div class="info-flex-item" style=" flex: 1 1 350px; align-self: stretch;background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                        <div class="info-flex-title"><i class="fas fa-university" style="color:#4CAF50;"></i> Caudal ULH (Universidad de Le Havre) (Q<sub>ULH</sub>)</div>
+                                        <p><span class="important-number">[m³/s]</span> o <span class="important-number">[m³/h]</span>: caudal efectivo resultado de la extrapolación a la sección completa de la velocidad del aire medida con un anemómetro en el <strong>punto central de la apertura de salida de gases</strong>.</p>
+                                        <p style="margin-top:0.5rem;"><strong>Fórmula:</strong> Q<sub>ULH</sub> = Aₑ × vₑ</p>
+                                        <p>Donde:</p>
+                                        <ul style="margin-left:1.5rem;">
+                                            <li>Aₑ = sección transversal de la salida de gases [m²].</li>
+                                            <li>vₑ = velocidad en el punto central de la salida de gases [m/s].</li>
+                                        </ul>
+                                        <p>⚠️ <strong>Sobrestima claramente</strong> el caudal efectivo real al suponer que la velocidad en cualquier punto de la salida es igual a la velocidad en el punto central. En esta metodología no está definida la geometría del recinto ni la entrada y salida de gases, por lo que el valor dependerá de dichos factores.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="columnas">
+                                    <!-- Comparativa de valores (Groupe Leader MT236) -->
+                                    <div class="stat-highlight" style="margin:1.5rem 0; flex: 1 1 300px;">
+                                        <div class="stat-highlight-number">📊 Comparativa de caudales para un mismo modelo (Groupe Leader MT236)</div>                                    
+                                        
+                                        <h5 style="margin:1rem 0 0.5rem;">🔬 Ensayos laboratorio</h5>
+                                        <ul style="margin-left:1.5rem;">
+                                            <li>Q<sub>AMCA240</sub> = <span class="important-number">30.000 m³/h</span></li>
+                                            <li>Q<sub>ULH</sub> = <span class="important-number">43.000 m³/h</span></li>
+                                        </ul>
+
+                                        <h5 style="margin:1rem 0 0.5rem;">🏗️ Empleo en situación real</h5>
+                                        <ul style="margin-left:1.5rem;">
+                                            <li>Q<sub>ULH</sub> (real) = <span class="important-number">14.400 a 18.000 m³/h</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Diferencia laboratorio vs realidad -->
+                                    <div class="warning-box" style="flex: 1 1 300px; background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat); margin:1.5rem 0;">
+                                        <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-exclamation-triangle"></i></div>
+                                        <div>
+                                            <strong>⚠️ Condiciones reales vs. laboratorio:</strong>
+                                            <p>Los valores de capacidad obtenidos en <strong>condiciones reales de intervención</strong> difieren significativamente de los referidos por los fabricantes en condiciones de laboratorio. Esto obedece a que:</p>
+                                            <ul style="margin:0.5rem 0 0 1.2rem;">
+                                                <li>🔓 El sellado de los recintos no es perfecto.</li>
+                                                <li>⚡ Existen elementos de fricción (pérdidas de carga).</li>
+                                                <li>📏 Los tamaños de apertura y salida de gases no permiten obtener resultados tan óptimos como los de laboratorio.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- c) Factores en la elección de un ventilador VPP -->
+                            <div class="section">
+                                <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-check-circle" style="color:#4CAF50;"></i> c) Factores en la elección de un ventilador VPP</h4>
+                                
+                                <div class="text-box" style="margin-bottom:1.5rem;">
+                                    <p>La elección del ventilador adecuado para una operación de VPP depende de múltiples factores operativos y técnicos. A continuación se detallan los más relevantes.</p>
+                                </div>
+
+                                <div class="columnas">
+                                <!-- Capacidad del ventilador -->
+                                <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                    <div class="info-flex-title"><i class="fas fa-gauge-high" style="color:#4CAF50;"></i> Capacidad del ventilador</div>
+                                    <ul class="visual-list">
+                                        <li>📦 Los recintos de <strong>gran volumen</strong> con baja estanqueidad o con pasillos y elementos de fricción en el interior requieren ventiladores de <strong>mayor capacidad</strong>.</li>
+                                        <li>📈 La capacidad de un ventilador <strong>crece ligeramente con la potencia</strong>; sin embargo, es el <strong>aumento de diámetro</strong> lo que la incrementa en mayor medida.</li>
+                                        <li>🏠 Un ventilador de <span class="important-number">18-20"</span> con Q<sub>AMCA240</sub> entre <span class="important-number">25.000 y 30.000 m³/h</span> es suficiente para:
+                                            <ul class="nested-list">
+                                                <li>VPP ofensiva en viviendas unifamiliares de tamaño medio con estanqueidad estándar.</li>
+                                                <li>VPP defensiva en bloques de viviendas de <span class="important-number">4 a 6 plantas</span>.</li>
+                                            </ul>
+                                        </li>
+                                        <li>🔬 Para recintos mayores o con mayor pérdida de carga, pueden requerirse ventiladores de mayor diámetro (24-30") o la combinación de varios equipos.</li>
+                                    </ul>
+                                </div>                                
+
+                                <!-- Distancia de colocación -->
+                                <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                    <div class="info-flex-title"><i class="fas fa-arrows-left-right" style="color:#4CAF50;"></i> Distancia de colocación</div>
+                                    <ul class="visual-list">
+                                        <li>📏 La distancia óptima varía según el modelo y el tamaño de la puerta. Para ventiladores de <span class="important-number">18-20"</span> y puerta estándar (2×0,9 m), la distancia óptima se sitúa entre <span class="important-number">1,8 y 5 m</span>.</li>
+                                        <li>⚠️ <strong>Demasiado cerca:</strong> Se produce <strong>cortocircuito</strong>; parte del aire que entra vuelve a salir y es arrastrado de nuevo, generando un flujo estéril. La entrada no se presuriza completamente.</li>
+                                        <li>⚠️ <strong>Demasiado lejos:</strong> La velocidad media del flujo que impacta en la apertura es baja, reduciendo el diferencial de presión interior.</li>
+                                        <li>💡 <strong>Regla general:</strong> En caso de duda, es preferible una distancia <strong>mayor</strong> que una demasiado corta. Cada modelo debe ser ensayado para determinar su distancia óptima.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Sistema de alimentación -->
+                                <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                    <div class="info-flex-title"><i class="fas fa-bolt" style="color:#4CAF50;"></i> Sistema de alimentación</div>
+                                    <ul class="visual-list">
+                                        <li>🔥 <strong>Térmico:</strong> Motor de explosión. Autonomía total, libertad de ubicación. Ruidoso, arrastra gases de escape, no ATEX, no válido como extractor.</li>
+                                        <li>⚡ <strong>Eléctrico a red:</strong> Silencioso, sin gases, ATEX, válido como extractor. Requiere cableado, menor potencia/peso.</li>
+                                        <li>💧 <strong>Hidráulico:</strong> Accionado por agua de la bomba. Sin gases, ATEX, válido en extracción. Mayor despliegue de tendidos, limitado a aplicaciones específicas.</li>
+                                        <li>🔋 <strong>Eléctrico a batería:</strong> Autonomía limitada, baja potencia. Solo como auxiliar en estructuras complejas.</li>
+                                    </ul>
+                                </div>                                
+
+                                <!-- Diámetro de hélice -->
+                                <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                    <div class="info-flex-title"><i class="fas fa-circle" style="color:#4CAF50;"></i> Diámetro de hélice</div>
+                                    <ul class="visual-list">
+                                        <li>🌀 El diámetro determina el tamaño de la huella y la capacidad de cubrir la apertura. Un ventilador de <span class="important-number">18-20"</span> es el más común en bomberos.</li>
+                                        <li>📐 Permite trabajar con aperturas de hasta <span class="important-number">2,5 m</span> de altura/anchura máxima, aunque a partir de <span class="important-number">2 m</span> el rendimiento baja notablemente.</li>
+                                        <li>🔄 Para aperturas mayores, se requieren ventiladores de mayor diámetro o varios ventiladores en paralelo.</li>
+                                    </ul>
+                                </div>
+
+
+                                <!-- Peso -->
+                                <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                    <div class="info-flex-title"><i class="fas fa-weight-hanging" style="color:#4CAF50;"></i> Peso</div>
+                                    <ul class="visual-list">
+                                        <li>🏋️ El peso es crítico para la movilidad, especialmente en operaciones en altura. Existen ventiladores de <span class="important-number">18-20"</span> con peso inferior a <span class="important-number">35 kg</span> que permiten que un solo bombero los transporte por escaleras.</li>
+                                        <li>📦 Los ventiladores más pesados pueden requerir varios operadores para su despliegue.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Ruido -->
+                                <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                    <div class="info-flex-title"><i class="fas fa-volume-high" style="color:#4CAF50;"></i> Ruido</div>
+                                    <ul class="visual-list">
+                                        <li>🔊 El ruido aerodinámico generado por la hélice dificulta las comunicaciones. Una vez arrancado, las comunicaciones se complican.</li>
+                                        <li>🎯 El diseño de la hélice es el factor fundamental que contribuye a la reducción de ruido.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Diseño funcional -->
+                                <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                    <div class="info-flex-title"><i class="fas fa-tools" style="color:#4CAF50;"></i> Diseño funcional</div>
+                                    <ul class="visual-list">
+                                        <li>🦵 <strong>Ventiladores sobre patas:</strong> El flujo se <strong>despega del suelo</strong>, lo que mejora el rendimiento, reduce el arrastre de material suelto y permite la colocación en escaleras.</li>
+                                        <li>🛞 <strong>Ventiladores con ruedas</strong> (en parte anterior o posterior): Ofrecen ventajas de <strong>movilidad</strong> para su despliegue y reposicionamiento.</li>
+                                        <li>📐 <strong>Sistemas de inclinación:</strong> Los rangos y mecanismos varían entre fabricantes, lo que influye en el <strong>nivel de efectividad</strong> para adaptar el flujo a diferentes alturas de apertura.</li>
+                                    </ul>
+                                </div>                              
+                                </div>
+                            </div>
+
+                            <!-- Barómetro de entrada -->
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:2rem 0 1rem;"><i class="fas fa-tachometer-alt" style="color:#4CAF50;"></i> Barómetro de entrada</h4>
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                <ul class="visual-list">
+                                    <li>🎯 <strong>Objetivo:</strong> Valorar el funcionamiento de la ventilación desde la entrada cuando el interior está inundado de humo y no se ve la salida.</li>
+                                    <li>🔧 <strong>Técnica:</strong> Dirigir el flujo del ventilador de modo que no quede centrado, sino un <span class="important-number">15%</span> más bajo que el centro de la apertura. La parte superior queda a menor presión.</li>
+                                    <li>👀 Si tras el inicio de la ventilación se observa una <strong>salida continua o creciente de gases</strong> por la zona superior de la puerta, es síntoma de que la ventilación no funciona correctamente (salida obstruida o puertas intermedias cerradas).</li>
+                                </ul>
+                                <div class="warning-box" style="margin-top:1rem; background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat);">
+                                    <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-exclamation-triangle"></i></div>
+                                    <div>
+                                        <strong>Ventajas e inconvenientes:</strong>
+                                        <ul style="margin:0.5rem 0 0 1.2rem;">
+                                            <li>✅ Proporciona información adicional desde la entrada.</li>
+                                            <li>⚠️ Ligera reducción en la efectividad de la ventilación.</li>
+                                            <li>⚠️ En gases extremadamente calientes puede favorecer turbulencias.</li>
+                                            <li>⚠️ Solo aplicable si el recinto tras la puerta está inundado de humo.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Entrada de gases -->
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:2rem 0 1rem;"><i class="fas fa-door-open" style="color:#4CAF50;"></i> Entrada de gases</h4>
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                <ul class="visual-list">
+                                    <li>🚪 En VPP se emplea normalmente <strong>una sola entrada</strong> para establecer flujo unidireccional. Si se usan varias entradas, todas deben tener ventiladores de similar potencia.</li>
+                                    <li>📏 El <strong>tamaño de la entrada</strong> determina el tipo de ventilador. Los ventiladores de <span class="important-number">18-20"</span> están optimizados para puertas estándar (2×0,9 m ≈ <span class="important-number">1,8 m²</span>).</li>
+                                    <li>🔄 Cuando la entrada excede la capacidad de un ventilador, se pueden emplear:
+                                        <ul class="nested-list">
+                                            <li><strong>Ventiladores en paralelo:</strong> Cubren toda la entrada con pequeños solapes. Distancia entre ellos igual al tamaño óptimo de apertura (≈2m).</li>
+                                            <li><strong>Ventiladores en V:</strong> Flujos dirigidos al centro; aumentan caudal hasta un <span class="important-number">35%</span>.</li>
+                                            <li><strong>Ventiladores en serie a lo largo del recorrido:</strong> Útiles en edificios de varias plantas para compensar pérdidas de carga.</li>
+                                        </ul>
+                                    </li>
+                                    <li>🔒 Para <strong>presurización</strong> (no ventilación), se puede reducir el tamaño de la entrada (ej. con cortina recogida a media altura) para aumentar el diferencial de presión. En un test se pasó de <span class="important-number">30 Pa</span> a <span class="important-number">60 Pa</span> al reducir la apertura al <span class="important-number">50%</span>.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Nota sobre la necesidad de ensayos -->
+                            <div class="tip-box" style="margin-top:1.5rem; background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left-color: var(--color-success);">
+                                <div class="box-icon" style="background: var(--color-success);"><i class="fas fa-flask"></i></div>
+                                <div>
+                                    <strong>🔬 Importante:</strong> Cada modelo de ventilador debe ser ensayado para determinar su distancia óptima de colocación para los tamaños de puerta habituales. Los valores de capacidad en condiciones reales difieren de los de laboratorio debido al sellado imperfecto, fricción y tamaño de aperturas.
+                                </div>
+                            </div>
+                        </div>                        
+
                     </div>
 
                 </div>
