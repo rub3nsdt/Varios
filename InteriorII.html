@@ -434,7 +434,11 @@
         
         .procedure-timeline { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; justify-content: space-between; }
         .timeline-step {
-            flex: 1 1 200px;
+            flex: 1 1 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             min-width: 150px;
             background: #f8f9fa;
             border-radius: 12px;
@@ -511,6 +515,82 @@
             display: inline-block;
             width: 1.2em;
         }
+
+        .visual-table-1 {
+            display: flex;            
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            justify-content: center;
+            justify-self: center;
+        }
+        .visual-table-1 th {
+            background: var(--gradient-water);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+   
+
+        .visual-table-1 td { padding: 1rem; border-bottom: 1px solid #eee; text-align: center; }
+        .visual-table-1 tr:nth-child(even) { background-color: #f9f9f9;}
+        .visual-table-1 tr:hover { background-color: #f1f1f1;}
+        .visual-table-1 tr {border-bottom: 1px solid #ffffff;}
+        .visual-table-1 ul {
+            list-style-type: none;
+            padding-left: 0; 
+        }  
+        
+        .visual-table-1 tr li::before {
+            content: '•';
+            color: black;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-block;
+            width: 1.2em;
+        }    
+        
+        @media (max-width: 1100px) {
+            .visual-table-1 {
+                font-size: 0.8rem;
+                
+            }
+            .visual-table-1 th {
+                padding: 0.5rem !important; 
+
+            }  
+            .visual-table-1 td { padding: 0.5rem !important;}          
+        }    
+
+        @media (max-width: 850px) {
+            .visual-table-1 {
+                font-size: 0.7rem;
+            }
+
+            .visual-table-1 th {
+                padding: 0.2rem !important; 
+
+            }  
+            .visual-table-1 td { padding: 0.2rem !important;}   
+            
+        }   
+        
+        @media (max-width: 630px) {
+            .visual-table-1 {
+                font-size: 1rem;
+            }
+
+            .visual-table-1 th {
+                padding: 0.7rem !important; 
+
+            }  
+            .visual-table-1 td { padding: 0.2rem !important;}   
+            
+        }          
+        
         
         .nested-list { margin-left: 2rem; margin-top: 0.5rem; list-style: none; }
         .nested-list li {
@@ -1070,19 +1150,23 @@
                         </div>
 
                         <!-- Circunstancias de especial utilidad -->
-                        <div class="info-box" style="background: linear-gradient(135deg, #F5F5F5, #EEEEEE); border-left-color: var(--color-smoke); margin:1.5rem 0;">
-                            <div class="box-icon" style="background: var(--color-smoke);"><i class="fas fa-lightbulb"></i></div>
-                            <div>
-                                <strong>🎯 Especial utilidad en:</strong>
-                                <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
-                                    <span style="flex:1 1 200px;">• <strong>Recursos limitados</strong> frente al tamaño del incendio.</span>
-                                    <span style="flex:1 1 200px;">• Incendios en <strong>grandes estructuras</strong> con posibilidad de propagación.</span>
-                                    <span style="flex:1 1 200px;">• <strong>Escasez de agua</strong> que impide ataque de extinción con éxito.</span>
-                                    <span style="flex:1 1 200px;">• <strong>Garantizar</strong> que zonas ya extinguidas <strong>no vuelvan a incendiarse</strong> (reignición).</span>
+                        <div class="columnas">
+                            <div class="info-box" style="background: linear-gradient(135deg, #F5F5F5, #EEEEEE); border-left-color: var(--color-smoke); margin:1.5rem 0; flex: 1 1 350px;">
+                                <div class="box-icon" style="background: var(--color-smoke);"><i class="fas fa-lightbulb"></i></div>
+                                <div>
+                                    <strong>🎯 Especial utilidad en:</strong>
+                                    <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-top:0.5rem; flex-direction: column;">
+                                        <span>• <strong>Recursos limitados</strong> frente al tamaño del incendio.</span>
+                                        <span>• Incendios en <strong>grandes estructuras</strong> con posibilidad de propagación.</span>
+                                        <span>• <strong>Escasez de agua</strong> que impide ataque de extinción con éxito.</span>
+                                        <span>• <strong>Garantizar</strong> que zonas ya extinguidas <strong>no vuelvan a incendiarse</strong> (reignición).</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
+                            <div style="display: flex; margin: auto;  flex: 1 1 200px;">
+                                <img src="image interior/Defensivo.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                          
+                        </div> 
                         <!-- Descripción del proceso -->
                         <div class="section" style="margin-top:1rem;">
                             <h4 style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;"><i class="fas fa-list-ol" style="color:var(--color-smoke);"></i> Descripción del proceso</h4>
@@ -1093,28 +1177,16 @@
                                     <li>Común durante la progresión interior: <strong>"pintado de paredes"</strong> para asegurar zonas frente a propagación por detrás de la zona ya recorrida.</li>
                                     <li>Aplicación de agua <strong>continua</strong>, moviendo el chorro para cubrir con una <strong>fina película</strong> todas las superficies del combustible.</li>
                                     <li><strong>Evitar escorrentía</strong> a toda costa: indica que el agua se aplica sobre un punto con exceso.</li>
+                                    <li>El objetivo es <strong> humedecer y enfriar todas las superficies</strong>, se buscará bastante profundidad en el chorro.</li>
                                 </ul>
                             </div>
 
-                            <div class="warning-box" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat);">
-                                <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-droplet"></i></div>
-                                <div>
-                                    <strong>📊 Parámetros de ejecución:</strong>
-                                    <ul style="margin:0.5rem 0 0 1.2rem;">
-                                        <li><strong>Caudal bajo:</strong> <span class="important-number">50 a 100 lpm</span></li>
-                                        <li><strong>Cono cerrado:</strong> <span class="important-number">0° a 15°</span> (incluso chorro sólido para profundidad)</li>
-                                        <li><strong>Pulsaciones:</strong> larga duración (<span class="important-number">>20"</span>) que pueden llegar a ser continuas</li>
-                                        <li><strong>Movimiento lanza:</strong> velocidad constante para distribución homogénea</li>
-                                    </ul>
-                                </div>
-                            </div>
                             
                             <p style="margin-top:0.8rem; font-style:italic;">Como en cualquier técnica, debe realizarse en función de las <strong>condiciones del incendio y la geometría del recinto</strong>.</p>
                         </div>
 
                         <!-- Tabla resumen (Tabla 13 del PDF) -->
-                        <div class="section">
-                            <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-table" style="color:var(--color-smoke);"></i> Tabla 13. Ataque defensivo contra la propagación</h4>
+                        <div class="section">                            
                             <div class="visual-table" style="overflow-x:auto;">
                                 <table style="width:100%; border-collapse:collapse;">
                                     <tr><th style="background:var(--color-smoke); color:white;">Objetivo</th><td colspan="3">Limitar la propagación del incendio. Enfriamiento de superficies del combustible e interrupción de la pirólisis.</td></tr>
@@ -1126,16 +1198,401 @@
                                 </table>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Representación visual -->
-                        <div style="display:flex; justify-content:center; margin-top:1.5rem; gap:2rem; flex-wrap:wrap;">
-                            <div style="text-align:center; background:#f0f0f0; padding:1rem; border-radius:12px; flex:1 1 200px;">
-                                <i class="fas fa-solid fa-paint-roller" style="font-size:2.5rem; color:var(--color-smoke);"></i>
-                                <p><strong>"Pintado de paredes"</strong><br><small>Aplicación continua en superficie</small></p>
+                    <!-- Continuación dentro de la tarjeta "Aplicación de Agua" -->
+                    <!-- 1.5 ATAQUE EXTERIOR OFENSIVO O “ABLANDADO” -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-water-dark);"><i class="fa-solid fa-house-flood-water"></i></div>
+                            <h3>1.5. ATAQUE EXTERIOR OFENSIVO (ABLANDADO)</h3>
+                        </div>
+
+                        <div class="text-box">
+                            <p><strong>Objetivo:</strong> Reducir la <strong>potencia del incendio</strong> desde una posición segura exterior mediante la aplicación de agua <strong>sin alterar el flujo de gases</strong> existente. Comúnmente denominado <strong>"ablandado"</strong> o <strong>"resetear el incendio"</strong> porque no consigue la extinción completa, sino que atenúa las condiciones para una posterior progresión interior.</p>
+                            <p style="margin-top:0.5rem;">Estudios de <strong>UL, NIST y FDNY</strong> demuestran que un correcto ablandado reduce la temperatura no solo en el recinto incendiado, sino también en estancias conectadas, contribuyendo decisivamente a la <strong>supervivencia de víctimas</strong>.</p>
+                        </div>
+
+                        <!-- Ventajas y precaución principal -->
+                        <div class="info-flex">
+                            <div class="info-flex-item" style="flex:1 1 300px;">
+                                <div class="info-flex-title"><div class="info-flex-icon" style="background: #4CAF50;"><i class="fas fa-check"></i></div>VENTAJAS</div>
+                                <ul class="visual-list">
+                                    <li>Reduce la temperatura en el recinto de incendio y <strong>adyacentes</strong>.</li>
+                                    <li><strong>Aumenta la supervivencia</strong> de víctimas.</li>
+                                    <li>Reduce el tiempo necesario para el <strong>control y extinción</strong> posterior.</li>
+                                    <li>Diluye los gases con vapor de agua.</li>
+                                </ul>
                             </div>
-                            <div style="text-align:center; background:#f0f0f0; padding:1rem; border-radius:12px; flex:1 1 200px;">
-                                <i class="fas fa-solid fa-ban" style="font-size:2.5rem; color:var(--color-smoke-dark);"></i>
-                                <p><strong>Evitar escorrentía</strong><br><small>Agua no evaporada = desperdicio</small></p>
+
+                            <div style="flex: 1 1 300px;">
+                                <div class="info-flex-item" style="flex:1 1 300px;">
+                                    <div class="info-flex-title"><div class="info-flex-icon" style="background: #D32F2F;"><i class="fas fa-exclamation-triangle"></i></div>PRECAUCIÓN</div>
+                                    <ul class="visual-list">
+                                        <li>Una mala aplicación que <strong>bloquee la salida de gases</strong> (chorro en cono o movimiento que ocupe la abertura) desplazará los gases y vapor a zonas no deseadas.</li>
+                                        <li>Posibles <strong>quemaduras por vapor</strong> a víctimas en el interior.</li>
+                                    </ul>
+                                </div>
+                                <div style="display: flex; flex: 1 1 200px; margin-top: 1rem;">
+                                    <img src="image interior/Ablandado.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                
+                            </div>                             
+                        </div>
+
+                        <!-- Descripción del proceso detallada -->
+                        <div class="section" style="margin-top:1rem;">
+                            <h4 style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;"><i class="fas fa-list-ol" style="color:var(--color-water-dark);"></i> Descripción del proceso</h4>
+
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                <ul class="visual-list" style="padding-left:0;">
+                                    <li>Útil en incendios rotos por fachada durante la <strong>fase inicial</strong> de ataque al fuego, especialmente si se quiere acompañar de técnicas de <strong>ventilación forzada ofensiva</strong>.</li>
+                                    <li>Identificar la apertura (ventana/puerta) con <strong>flujo de salida de gases</strong> (generalmente bidireccional: sale por arriba, entra por abajo).</li>
+                                    <li>Aplicar <strong>chorro sólido</strong> (no cono) dirigido a un <strong>punto fijo del techo</strong> del interior. El impacto crea gotas pequeñas que se dispersan sin obstruir la salida de gases.</li>
+                                    <li><strong>No mover la lanza</strong> durante la pulsación para mantener la trayectoria fija y no bloquear la abertura.</li>
+                                    <li>Pulsaciones de <strong>media a larga duración</strong>: <span class="important-number">5" a 30"</span>.</li>
+                                    <li><strong>Pausas</strong> de <span class="important-number">15" a 45"</span> para permitir la recuperación del <strong>equilibrio térmico</strong> y la <strong>expulsión del exceso de vapor</strong>.</li>
+                                    <li><strong>Variar el punto y ángulo de impacto</strong> en sucesivas pulsaciones para distribuir el agua en distintas zonas del recinto.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Comparativa visual: chorro sólido vs cono -->
+                            <div class="comparison-container" style="margin-top:1rem;">
+                                <div class="comparison-card" style="border-top-color: #4CAF50;">
+                                    <div class="comparison-title"><i class="fas fa-check-circle" style="color:#4CAF50;"></i> ✅ Correcto: chorro sólido</div>
+                                    <p>Chorro sólido dirigido al techo. Las gotas se forman por deflexión, <strong>no bloquea la salida de gases</strong>.</p>
+                                    <div style="text-align:center; font-size:2rem; color:var(--color-water-dark);"><i class="fas fa-arrow-up"></i> <i class="fas fa-arrow-down"></i></div>
+                                </div>
+                                <div class="comparison-card" style="border-top-color: #D32F2F;">
+                                    <div class="comparison-title"><i class="fas fa-times-circle" style="color:#D32F2F;"></i> ❌ Incorrecto: chorro en cono</div>
+                                    <p>Chorro en cono que ocupa la abertura. <strong>Bloquea la salida de gases</strong>, los desplaza por el interior pudiendo afectar a víctimas o bomberos en progresión.</p>
+                                    <div style="text-align:center; font-size:2rem; color:var(--color-fire);"><i class="fas fa-ban"></i></div>
+                                </div>
+                            </div>
+
+                            <!-- Efectos combinados -->
+                            <div class="tip-box" style="background: linear-gradient(135deg, #E1F5FE, #B3E5FC); border-left-color: var(--color-water-dark); margin-top:1rem;">
+                                <div class="box-icon" style="background: var(--color-water-dark);"><i class="fas fa-atom"></i></div>
+                                <div>
+                                    <strong>⚛️ Efectos combinados:</strong> La reducción de potencia se consigue por:
+                                    <ul style="margin:0.5rem 0 0 1.2rem;">
+                                        <li><strong>Enfriamiento del colchón de gases</strong> que irradia sobre combustibles.</li>
+                                        <li><strong>Enfriamiento de superficies incendiadas</strong> alcanzadas por las gotas deflactadas.</li>
+                                        <li><strong>Dilución temporal</strong> de gases con vapor de agua.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tabla resumen (Tablas 14 y 15 integradas) -->
+                        <div class="section">                            
+                            <div class="visual-table" style="overflow-x:auto;">
+                                <table style="width:100%; border-collapse:collapse;">
+                                    <tr><th style="background:var(--color-water-dark); color:white;">Objetivo</th><td colspan="3">Reducción de la potencia y temperatura del incendio, mejora de condiciones de supervivencia, facilitación del ataque interior posterior.</td></tr>
+                                    <tr><th style="background:var(--color-water-dark); color:white;">Posición</th><td colspan="3">Exterior, a través de una ventana o puerta.</td></tr>
+                                    <tr><th style="background:var(--color-water-dark); color:white;">Caudal</th><td colspan="3">Medio (<span class="important-number">100 a 250 lpm</span>)</td></tr>
+                                    <tr><th style="background:var(--color-water-dark); color:white;">Cono</th><td colspan="3"><strong>Chorro sólido</strong> dirigido al techo.</td></tr>
+                                    <tr><th style="background:var(--color-water-dark); color:white;">Patrón de pulsaciones</th><td colspan="3">Aplicaciones de media a larga duración (<span class="important-number">5" a 30"</span>). Pausas de <span class="important-number">15" a 45"</span> para recuperar equilibrio y expulsar vapor.</td></tr>
+                                    <tr><th style="background:var(--color-water-dark); color:white;">Movimiento de lanza</th><td colspan="3"><strong>Lanza estática</strong>, apuntando a un punto fijo en el techo (variar el punto en sucesivas pulsaciones).</td></tr>
+                                    <tr><th style="background:var(--color-water-dark); color:white;">Consideraciones de seguridad</th><td colspan="3">
+                                        <ul style="margin:0; padding-left:1.2rem;">
+                                            <li><strong>Nunca bloquear la salida de gases</strong> con chorros en cono o movimientos de barrido.</li>
+                                            <li>Aplicación moderada y progresiva si hay efectivos en progresión interior o víctimas.</li>
+                                            <li>Vigilar el volumen de vapor generado y sus efectos sobre el interior.</li>
+                                            <li>Controlar el desplazamiento de gases y vapor a otras estancias.</li>
+                                        </ul>
+                                    </td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continuación dentro de la tarjeta "Aplicación de Agua" -->
+                    <!-- 1.6 CUADRO RESUMEN DE TÉCNICAS (COMPARATIVA) -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #9C27B0;"><i class="fas fa-table-list"></i></div>
+                            <h3>1.6. CUADRO RESUMEN DE TÉCNICAS DE APLICACIÓN DE AGUA</h3>
+                        </div>
+
+                        <div class="visual-table-1" style="overflow-x:auto; margin-top:1rem;">
+                            <table style="width:100%; border-collapse:collapse;">
+                                <thead>
+                                    <tr>
+                                        <th style="background: #9C27B0; color:white; padding:12px;">Técnica</th>
+                                        <th style="background: #9C27B0; color:white; padding:12px;">Objetivo principal</th>
+                                        <th style="background: #9C27B0; color:white; padding:12px 20px;">Caudal (lpm)</th>
+                                        <th style="background: #9C27B0; color:white; padding:12px;">Cono</th>
+                                        <th style="background: #9C27B0; color:white; padding:12px;">Pulsaciones / Pausas</th>
+                                        <th style="background: #9C27B0; color:white; padding:12px;">Movimiento lanza</th>
+                                        <th style="background: #9C27B0; color:white; padding:12px;">Posición</th>
+                                        <th style="background: #9C27B0; color:white; padding:12px;">Notas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Ataque Directo -->
+                                    <tr style="background:#f9f9f9;">
+                                        <td style="padding:12px; font-weight:700; border-bottom:1px solid #ddd;"><span style="color:var(--color-fire);">🔥 Ataque Directo</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd;">Extinción. Enfriamiento de superficies incendiadas e interrupción de pirólisis.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Medio<br><span class="important-number">100-250</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;"><span class="important-number">0-15°</span> (chorro sólido)</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Largas (<span class="important-number">>20"</span>) o continuas. Pausas <span class="important-number">15-45"</span>.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Velocidad constante, distribuyendo homogéneamente.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Interior / Exterior</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd;">Evitar escorrentía. Ataque directo al foco.</td>
+                                    </tr>
+                                    <!-- Ataque Indirecto -->
+                                    <tr>
+                                        <td style="padding:12px; font-weight:700; border-bottom:1px solid #ddd;"><span style="color:var(--color-water);">💧 Ataque Indirecto</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd;">Extinción por inundación de vapor de agua.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Medio Alto<br><span class="important-number">100-500</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;"><span class="important-number">15-30°</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Media-larga (<span class="important-number">3-20"</span>). Pausas <span class="important-number">15-45"</span>.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Patrón en "T" (primera pulsación) o en "O" (grandes volúmenes).</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Exterior (o interior fuera del recinto)</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd;">Pérdida total de visibilidad. Controlar desplazamiento de gases.</td>
+                                    </tr>
+                                    <!-- Enfriamiento de gases -->
+                                    <tr style="background:#f9f9f9;">
+                                        <td style="padding:12px; font-weight:700; border-bottom:1px solid #ddd;"><span style="color:var(--color-heat);">🌫️ Enfriamiento de gases</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd;">Reducir inflamabilidad del colchón de gases para progresión segura.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Bajo Medio<br><span class="important-number">50-250</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;"><span class="important-number">30°</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Cortas (<span class="important-number">1-5"</span>) dirigidas a esquinas superiores. Pausas para evaluar.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Barrido ligero o conjuntos de pulsaciones.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Interior</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd;">No extingue. Evitar impacto en paredes (reduce efectividad).</td>
+                                    </tr>
+                                    <!-- Defensivo contra propagación -->
+                                    <tr>
+                                        <td style="padding:12px; font-weight:700; border-bottom:1px solid #ddd;"><span style="color:var(--color-smoke);">🛡️ Defensivo (propagación)</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd;">Limitar propagación humedeciendo superficies no afectadas.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Bajo<br><span class="important-number">50-100</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;"><span class="important-number">0-15°</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Largas (<span class="important-number">>20"</span>) o continuas.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Velocidad constante ("pintado de paredes").</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Interior / Exterior</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd;">Útil en recursos limitados, grandes estructuras o para evitar reignición.</td>
+                                    </tr>
+                                    <!-- Ablandado (ataque exterior ofensivo) -->
+                                    <tr style="background:#f9f9f9;">
+                                        <td style="padding:12px; font-weight:700; border-bottom:1px solid #ddd;"><span style="color:var(--color-water-dark);">🏠 Ablandado (exterior ofensivo)</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd;">Reducir potencia del incendio desde exterior sin bloquear salida de gases.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Medio<br><span class="important-number">100-250</span></td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Chorro sólido</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Media-larga (<span class="important-number">5-30"</span>). Pausas <span class="important-number">15-45"</span>.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Lanza estática, apuntando a punto fijo en techo.</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd; text-align:center;">Exterior (ventana/puerta)</td>
+                                        <td style="padding:12px; border-bottom:1px solid #ddd;">No usar cono. Mejora supervivencia víctimas (estudios UL/NIST).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Continuación dentro de la tarjeta "Aplicación de Agua" -->
+                    <!-- 1.7 ACCESO A TRAVÉS DE PUERTA -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #795548;"><i class="fas fa-door-open"></i></div>
+                            <h3>1.7. ACCESO A TRAVÉS DE PUERTA</h3>
+                        </div>
+
+                        <div class="text-box">
+                            <p>El acceso a un recinto a través de una <strong>puerta cerrada</strong> exige una técnica que <strong>minimice el riesgo</strong> de penetrar un recinto de incendio y permita <strong>evaluar las condiciones interiores</strong>. Cualquier puerta dentro de la zona de incendio (interior o exterior) es susceptible de contener gases de incendio, por tanto, su apertura debe seguir un procedimiento.</p>
+                        </div>
+
+                        <!-- Importancia del tipo de puerta -->
+                        <div class="info-box" style="background: linear-gradient(135deg, #EFEBE9, #D7CCC8); border-left-color: #795548; margin:1.5rem 0;">
+                            <div class="box-icon" style="background: #795548;"><i class="fas fa-thermometer-half"></i></div>
+                            <div>
+                                <strong>🚪 Influencia del tipo de puerta:</strong>
+                                <ul style="margin:0.5rem 0 0 1.2rem;">
+                                    <li><strong>Puertas con alto aislamiento térmico</strong> (uso generalizado en España): la temperatura en la cara exterior ofrece poca información sobre las condiciones al otro lado.</li>
+                                    <li><strong>Puertas metálicas de una sola hoja</strong> o con buena conducción térmica: permiten incluso evaluar la <strong>altura del plano neutro</strong> antes de abrir.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Dos fases del procedimiento -->
+                        <div class="warning-box" style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2); border-left-color: var(--color-heat);">
+                            <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-sitemap"></i></div>
+                            <div>
+                                <strong>📋 El procedimiento de apertura debe comprender dos fases claras:</strong>
+                                <ol style="margin:0.5rem 0 0 1.2rem;">
+                                    <li><strong>Evaluar las condiciones interiores:</strong> altura del colchón de gases, temperatura, color y densidad de los gases, corrientes de ventilación, nivel de visibilidad y localización de focos.</li>
+                                    <li><strong>Reducir la peligrosidad</strong> de la atmósfera interior mediante la refrigeración/dilución del colchón de gases.</li>
+                                </ol>
+                                <p style="margin-top:0.5rem;">Existen múltiples procedimientos, todos válidos mientras permitan la evaluación y reducción del riesgo. <strong>Es importante que el procedimiento esté bien procedimentado y sea único</strong> en cada servicio.</p>
+                            </div>
+                        </div>
+
+                        <!-- Procedimiento detallado (basado en Irlanda y Australia) -->
+                        <h4 style="display:flex; align-items:center; gap:10px; margin:1.8rem 0 1rem;"><i class="fas fa-list-ol" style="color:#795548;"></i> Procedimiento común (Irlanda / Australia)</h4>
+                        
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Pulsación en tercio superior</div>
+                                <p>El bombero en punta de lanza efectúa una <strong>pulsación sobre el tercio superior de la puerta cerrada</strong> para determinar la temperatura al otro lado. (Puede obviarse en puertas con alto aislamiento térmico, pero algunos servicios prefieren hacerlo siempre para comunicar la intención de abrir.)</p>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Observación</div>
+                                <p>Ambos bomberos observan las condiciones <strong>por encima del plano neutro</strong> y después <strong>por debajo</strong>. Es importante no aplicar agua antes de disponer de esta información.</p>
+                            </div>
+                        </div>
+                        <div class="procedure-timeline">
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Enfriamiento profundo</div>
+                                <p>Si hay un colchón de gases importante, el punta de lanza efectúa <strong>dos pulsaciones profundas</strong> apuntando a las <strong>esquinas superiores del fondo</strong>. Esto permite evaluar temperatura y evaporación, además de mejorar las condiciones interiores.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">4</div>
+                                <div class="step-title">Cerrar y esperar</div>
+                                <p>El bombero encargado <strong>cierra la puerta</strong> y deja que el interior recobre su <strong>equilibrio térmico</strong> (pausa).</p>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">5</div>
+                                <div class="step-title">Acceso</div>
+                                <p>Si se valoran condiciones suficientemente seguras, se <strong>abre la puerta</strong> y se produce el acceso del equipo completo. En caso contrario, repetir pasos 3 y 4 hasta que las condiciones permitan el acceso.</p>
+                            </div>
+                        </div>
+
+                        <!-- Nota adicional sobre el procedimiento -->
+                        <div class="tip-box" style="margin-top:1.5rem; background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left-color: var(--color-success);">
+                            <div class="box-icon" style="background: var(--color-success);"><i class="fas fa-check-circle"></i></div>
+                            <div>
+                                <strong>✅ Procedimiento único y entrenado:</strong> Es fundamental que todo el personal conozca y practique el mismo procedimiento de acceso para garantizar la coordinación y la seguridad. La secuencia descrita (evaluación → enfriamiento → cierre → acceso) es una de las más actualizadas.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continuación dentro de la tarjeta "Aplicación de Agua" -->
+                    <!-- 1.8 ELECCIÓN DEL CAUDAL APROPIADO: DISPONIBLE, CRÍTICO Y ÓPTIMO -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-heat-dark);"><i class="fas fa-gauge-high"></i></div>
+                            <h3>1.8. ELECCIÓN DEL CAUDAL: DISPONIBLE, CRÍTICO Y ÓPTIMO</h3>
+                        </div>
+
+                        <div class="text-box">
+                            <p>Una de las decisiones más importantes en la extinción es decidir el <strong>caudal disponible</strong> para la aplicación de agua. Durante la intervención, el caudal empleado <strong>no es uniforme ni continuo</strong>: las condiciones interiores dictan el caudal a emplear en cada momento o incluso la interrupción temporal de la aplicación para recobrar el equilibrio térmico.</p>
+                        </div>
+
+                        <!-- Definiciones clave -->
+                        <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-book-open" style="color:var(--color-heat-dark);"></i> Definiciones fundamentales</h4>
+                        
+                        <div class="info-flex">
+                            <div class="info-flex-item" style="flex:1 1 200px;">
+                                <div class="info-flex-title"><i class="fas fa-water"></i> Gasto de agua</div>
+                                <p>Volumen total de agua empleado a lo largo de toda la intervención.</p>
+                            </div>
+                            <div class="info-flex-item" style="flex:1 1 200px;">
+                                <div class="info-flex-title"><i class="fas fa-chart-line"></i> Caudal medio</div>
+                                <p>Gasto de agua dividido entre el tiempo total de intervención.</p>
+                            </div>
+                            <div class="info-flex-item" style="flex:1 1 200px;">
+                                <div class="info-flex-title"><i class="fas fa-bolt"></i> Caudal disponible</div>
+                                <p>Máximo caudal que se puede obtener en punta de lanza en cualquier momento.</p>
+                            </div>
+                            <div class="info-flex-item" style="flex:1 1 200px;">
+                                <div class="info-flex-title"><i class="fas fa-crosshairs"></i> Caudal crítico</div>
+                                <p>Mínimo caudal necesario para conseguir la extinción.</p>
+                            </div>
+                            <div class="info-flex-item" style="flex:1 1 200px;">
+                                <div class="info-flex-title"><i class="fas fa-star"></i> Caudal óptimo</div>
+                                <p>Caudal con el que se consigue la extinción con el <strong>mínimo gasto de agua</strong>.</p>
+                            </div>
+                        </div>
+
+                        <!-- Importancia del caudal crítico -->
+                        <div class="warning-box" style="background: linear-gradient(135deg, #FFEBEE, #FFCDD2); border-left-color: var(--color-fire); margin:1.5rem 0;">
+                            <div class="box-icon" style="background: var(--color-fire);"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div>
+                                <strong>⚠️ Consecuencias de un caudal insuficiente:</strong>
+                                <p>A medida que el caudal disponible se reduce, el tiempo necesario para la extinción se alarga, llegando a una <strong>asíntota vertical</strong> en el valor del caudal crítico. Con caudal inferior al crítico, el incendio <strong>solo decaerá cuando se agote el combustible</strong>, no por la intervención.</p>
+                                <p style="margin-top:0.5rem;">Durante la aplicación de un caudal bajo, el incendio tiene la capacidad de <strong>seguir desarrollándose</strong> si el enfriamiento no es suficiente.</p>
+                            </div>
+                        </div>
+
+                        <!-- Datos normativos -->
+                        <div class="stat-highlight">
+                            <div class="stat-highlight-number">📋 Requisitos normativos mínimos</div>
+                            <ul style="margin:0.5rem 0 0 1.2rem;">
+                                <li><strong>Francia:</strong> <span class="important-number">500 LPM</span> por ley (tras trágicos accidentes).</li>
+                                <li><strong>NFPA 1410 (EE.UU.):</strong> mínimo de <span class="important-number">378 LPM</span> (100 GPM).</li>
+                            </ul>
+                            <p style="margin-top:0.5rem;">La investigación de múltiples accidentes con bomberos fallecidos evidencia la necesidad de un <strong>caudal mínimo suficiente</strong> durante las primeras fases.</p>
+                        </div>
+
+                        <!-- Gráfica conceptual: caudal vs tiempo -->
+                        <div style="display:flex; justify-content:center; margin:2rem 0; gap:2rem; flex-wrap:wrap;">
+                            <!-- Box: Relación caudal-tiempo -->
+                            <div class="warning-box" style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2); border-left-color: var(--color-heat); flex:1 1 300px;flex-wrap: wrap;">
+                                <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-chart-line"></i></div>
+                                <div style="flex: 1 1 190px;">
+                                    <strong>📉 Relación caudal disponible vs. tiempo de extinción:</strong>
+                                    <p style="margin-top:0.5rem;">A medida que se <strong>aumenta el caudal disponible</strong>, el tiempo necesario para la extinción <strong>se reduce</strong>. Se produce una <strong>brusca caída</strong> si se aumenta ligeramente por encima del <strong>caudal crítico</strong>, y continúa reduciéndose en <strong>menor medida.</strong></p>
+                                </div>
+                                <div style="display: flex; margin: auto; flex: 1 1 190px;">
+                                    <img src="image interior/Óptimo.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                  
+                            </div>
+                            <div style="text-align:center; background:#f0f0f0; padding:1.5rem; border-radius:12px; flex:1 1 300px; align-self: center;">
+                                <i class="fas fa-lightbulb" style="font-size:3rem; color:var(--color-heat-dark);"></i>
+                                <p style="margin-top:0.5rem;"><strong>Frase clave</strong></p>
+                                <p style="font-size:1.3rem; font-weight:700; color:var(--color-fire);">"Los incendios se apagan con <br><span class="important-number">mucho caudal</span> y <span class="important-number">poca agua</span>"</p>
+                                <p style="margin-top:0.5rem;">Un exceso de caudal genera más gasto, igual que un caudal cercano al crítico. El <strong>óptimo</strong> minimiza el consumo.</p>
+                            </div>
+                        </div>
+
+                        <!-- Criterio de Grimwood -->
+                        <div class="section">
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-calculator" style="color:var(--color-heat-dark);"></i> Cálculo del caudal necesario (Grimwood, 2014)</h4>
+                            
+                            <div class="stat-highlight">
+                                <div class="stat-highlight-number">📊 24 LPM por MW</div>
+                                <p>Análisis estadístico de más de <span class="important-number">5.000 incendios</span> en viviendas residenciales y estudios de Barnett (2004) establecen:</p>
+                                <ul style="margin:0.5rem 0 0 1.2rem;">
+                                    <li><strong>Incendios en vivienda residencial:</strong> <span class="important-number">24 LPM/MW</span></li>
+                                    <li><strong>Grandes superficies (&gt;100 m²):</strong> <span class="important-number">5 LPM/m²</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Box: Criterios para el caudal disponible -->
+                        <div class="info-box" style="background: linear-gradient(135deg, #E1F5FE, #B3E5FC); border-left-color: var(--color-info); margin:1.5rem 0;">
+                            <div class="box-icon" style="background: var(--color-info);"><i class="fas fa-tachometer-alt"></i></div>
+                            <div>
+                                <strong>🎯 Criterios para la elección del caudal disponible:</strong>
+                                <div class="columnas">
+                                    <div style="flex: 1 1;">
+                                        <p style="margin-top:0.5rem;">El caudal disponible a emplear en una intervención deberá ser:</p>
+                                        <ul style="margin:0.5rem 0 0.5rem 1.5rem;">
+                                            <li><strong>No inferior al caudal óptimo.</strong></li>
+                                            <li><strong>Suficiente para garantizar la seguridad del personal</strong> frente a fenómenos de rápido desarrollo.</li>
+                                            <li><strong>Lo más cercano posible al caudal óptimo.</strong></li>
+                                        </ul>
+                                    </div>
+                                    <div style="flex: 1 1;">
+                                        <p style="margin-top:0.5rem;"><strong>Este valor depende de múltiples factores:</strong></p>
+                                        <ul style="margin:0.5rem 0 0 1.5rem;">
+                                            <li><strong>Potencia del incendio</strong> (tipo de combustible y grado de ventilación).</li>
+                                            <li><strong>Cantidad de combustible.</strong></li>
+                                            <li><strong>Área afectada.</strong></li>
+                                            <li><strong>Estado de desarrollo del incendio.</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nota sobre lanzas modernas -->
+                        <div class="info-box" style="background: linear-gradient(135deg, #F3E5F5, #E1BEE7); border-left-color: #9C27B0; margin-top:1.5rem;">
+                            <div class="box-icon" style="background: #9C27B0;"><i class="fas fa-bolt"></i></div>
+                            <div>
+                                <strong>🔧 Tecnología actual:</strong> Las lanzas modernas consiguen <strong>óptimos tamaños de gota</strong> a presiones nominales de <span class="important-number">6-7 bar</span>, sin necesidad de recurrir a esquemas de alta presión para realizar enfriamiento de gases eficiente.
                             </div>
                         </div>
                     </div>
@@ -1149,8 +1606,8 @@
                     <div class="card-title-container">
                         <div class="card-icon-large"><i class="fas fa-wind"></i></div>
                         <div>
-                            <div class="card-title-top">🌪️ 2. TÉCNICAS DE CONTROL DE LA VENTILACIÓN</div>
-                            <div class="card-subtitle-top">Antiventilación, natural, forzada, VPP, VPN, presurización</div>
+                            <div class="card-title-top">2. TÉCNICAS DE CONTROL DE LA VENTILACIÓN</div>
+                            <div class="card-subtitle-top">Confinamiento · Ventilación natural · VPP · Presurización</div>
                             <span class="category-tag" style="background:#E8F5E9;color:#2E7D32;">Antiventilación</span>
                             <span class="category-tag" style="background:#C8E6C9;color:#1B5E20;">Ventilación natural</span>
                             <span class="category-tag" style="background:#A5D6A7;color:#33691E;">VPP</span>
@@ -1158,48 +1615,227 @@
                     </div>
                     <div class="topic-number-badge">Sección 2</div>
                 </div>
+
                 <div class="card-content">
+                    <!-- INTRODUCCIÓN GENERAL A LA SECCIÓN 2 -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2E7D32;"><i class="fas fa-info-circle"></i></div>
+                            <h3>Introducción: Control de la ventilación</h3>
+                        </div>
+                        <div class="text-box">
+                            <p>💨 Las técnicas de control de la ventilación permiten <strong>cambiar la dinámica del incendio</strong> 🔥, desde el <strong>confinamiento total</strong> (eliminación de la ventilación) hasta la <strong>ventilación mecánica forzada</strong> 🌀, pasando por las posibilidades de la ventilación natural.</p>
+                            <p style="margin-top:0.5rem;">⚠️ Un <strong>aporte de aire al foco</strong> implica un crecimiento del incendio que debe ser mitigado con la <strong>aplicación simultánea y coordinada de agua</strong> 💧. Solo una correcta coordinación consigue mejorar las condiciones internas (visibilidad 👁️, menor temperatura 🌡️ y toxicidad ☠️) sin efectos adversos de propagación.</p>
+                            <p style="margin-top:0.5rem;">🎯 No solo es necesario saber <strong>cómo</strong> se ejecuta cada técnica, sino también <strong>cuándo y por qué</strong>. Comprender la influencia de la ventilación es fundamental para su correcta aplicación.</p>
+                        </div>
+                    </div>
+
                     <!-- 2.1 ANTIVENTILACIÓN O CONFINAMIENTO -->
                     <div class="section">
-                        <div class="section-title"><div class="section-icon" style="background: #455A64;"><i class="fas fa-door-closed"></i></div><h3>2.1. ANTIVENTILACIÓN (CONFINAMIENTO)</h3></div>
-                        <div class="info-box"><div class="box-icon" style="background: #455A64;"><i class="fas fa-info"></i></div><div>Privar de aire fresco al incendio (cerrar puertas/ventanas, cortinas de bloqueo). Reduce potencia, evita propagación a otras estancias. <strong>Importante control de puerta de acceso</strong>.</div></div>
-                        <div class="warning-box"><div class="box-icon" style="background: #9E9E9E;"><i class="fas fa-arrow-down"></i></div><div>El plano neutro baja hasta el suelo, pérdida de visibilidad. En incendios infraventilados no hay efecto negativo.</div></div>
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #455A64;"><i class="fas fa-door-closed"></i></div>
+                            <h3>2.1. ANTIVENTILACIÓN O CONFINAMIENTO DE INCENDIO</h3>
+                        </div>
+
+                        <div class="text-box">
+                            <p>🎯 <strong>Objetivo:</strong> Privar al incendio del acceso a <strong>aire fresco</strong> 💨 para limitar su crecimiento. Especialmente útil en incendios <strong>limitados por la ventilación</strong>. La ecuación de Kawagoe vincula directamente la potencia de un incendio ILV al área y geometría de la apertura.</p>
+                            <p>🚪 El confinamiento también evita que los <strong>gases de incendio se dirijan a otras estancias</strong> , aspecto crítico en bloques de viviendas o grandes edificios. La masa de aire que entra sale en forma de gases expandidos por la temperatura, <strong>ocupando mayor volumen. Proteger la caja de escalera o pasillos de evacuación es prioritario</strong>.</p>
+                        </div>
+
+                        <!-- Ventajas e Inconvenientes (Tabla 17) -->
+                        <div class="info-flex">
+                            <div class="info-flex-item">
+                                <div class="info-flex-title"><div class="info-flex-icon" style="background: #4CAF50;"><i class="fas fa-check"></i></div>VENTAJAS</div>
+                                <ul class="visual-list">
+                                    <li>🔻 <strong>Reduce la potencia</strong> del incendio.</li>
+                                    <li>🚫 Evita que los gases de incendio <strong>salgan del recinto</strong> inundando otras estancias.</li>
+                                </ul>
+                            </div>
+                            <div class="info-flex-item">
+                                <div class="info-flex-title"><div class="info-flex-icon" style="background: #D32F2F;"><i class="fas fa-times"></i></div>INCONVENIENTES</div>
+                                <ul class="visual-list">
+                                    <li>📉 El <strong>plano neutro baja</strong> hasta el suelo, perdiendo visibilidad 👁️‍🗨️. (En incendios infraventilados o con plano neutro muy bajo, este efecto no se produce.)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Métodos de confinamiento -->
+                        <div class="section" style="margin-top:1rem;">
+                            <h4 style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;"><i class="fas fa-tools" style="color:#455A64;"></i> Métodos de confinamiento</h4>
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+                                <ul class="visual-list" style="padding-left:0;">
+                                    <li>🔒 <strong>Cerrar puertas y ventanas</strong> del propio edificio.</li>
+                                    <li>🧱 Empleo de <strong>dispositivos de aislamiento</strong> como <strong>cortinas portátiles</strong> de bloqueo de humo.</li>
+                                    <li>🚶 Durante la progresión interior, la dotación <strong>compartimenta el edificio</strong>, priva de aire fresco a los recintos con incendio y protege zonas no afectadas.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Control de puerta de acceso -->
+                        <div class="warning-box" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat); margin:1.5rem 0;">
+                            <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-door-open"></i></div>
+                            <div>
+                                <strong>Control de puerta de acceso:</strong> ⚠️ Un incendio infraventilado responde de forma violenta a la ventilación (posible flashover inducido). Por ello, se debe realizar un <strong>control de puerta</strong>: un bombero en el exterior mantiene la puerta <strong>entornada al ancho de paso de la manguera</strong> 🧯, permitiendo la entrada pero limitando la ventilación.
+                            </div>
+                            <div style="display: flex; margin: auto; height: 140px;">
+                                <img src="image interior/Puerta.png" alt="">
+                            </div>                              
+                        </div>
+
+                        <!-- Cortinas de bloqueo de humo -->
+                        <div class="section">
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-tshirt" style="color:#455A64;"></i> Cortinas de bloqueo de humo</h4>
+                            <div class="info-box" style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left-color: var(--color-success);">
+                                <div class="box-icon" style="background: var(--color-success);"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <p>🇪🇺 Su uso se ha popularizado en Centro Europa (paso obligado en protocolos de acceso) y en EE.UU. Ventajas:</p>
+                                    <ul style="margin:0.5rem 0 0 1.2rem;">
+                                        <li>✅ <strong>Garantizan el confinamiento</strong> en puertas de escasa resistencia al fuego o estanqueidad insuficiente.</li>
+                                        <li>🚪 Pueden utilizarse en <strong>dinteles sin puerta</strong> o pasillos.</li>
+                                        <li>🧯 <strong>Facilitan el paso de la manguera</strong> por la parte baja.</li>
+                                    </ul>
+                                </div>
+                                <div style="display: flex; margin: auto; height: 160px;">
+                                    <img src="image interior/Cortina.png" alt="">
+                                </div>                                 
+                            </div>
+                            <p style="margin-top:1rem; font-style:italic; font-size: 1.1rem;">⏳ Los efectos del confinamiento no son inmediatos, pero son esenciales para evitar la propagación y proteger vías de evacuación.</p>
+                        </div>
                     </div>
+
+                    <!-- Continuación dentro de la tarjeta "Control de la Ventilación" -->
                     <!-- 2.2 VENTILACIÓN NATURAL -->
                     <div class="section">
-                        <div class="section-title"><div class="section-icon" style="background: #2196F3;"><i class="fas fa-tree"></i></div><h3>2.2. VENTILACIÓN NATURAL</h3></div>
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2196F3;"><i class="fas fa-tree"></i></div>
+                            <h3> 2.2. VENTILACIÓN NATURAL</h3>
+                        </div>
+
+                        <div class="text-box">
+                            <p>🎯 <strong>Propósito:</strong> Evacuar los gases de incendio de un recinto empleando las diferencias de presión generadas por el propio incendio. Se persigue:</p>
+                            <ul style="margin:0.5rem 0 0 1.5rem;">
+                                <li>👁️ <strong>Recobrar la visibilidad</strong>.</li>
+                                <li>💨 <strong>Expulsar la atmósfera combustible</strong> al exterior (hasta un <span class="important-number">50%</span> de los gases inflamables pueden ser expulsados).</li>
+                                <li>🌡️ <strong>Reducir la temperatura</strong> para facilitar la progresión y la supervivencia de víctimas.</li>
+                            </ul>
+                            <p style="margin-top:0.5rem;">⚠️ El personal en progresión interior debe ser consciente de los cambios que experimenta el incendio al ventilar y de la necesidad de <strong>aplicación coordinada de agua</strong>. De lo contrario, la reacción del incendio generará un aumento de potencia y empeorará las condiciones.</p>
+                        </div>
+
+                        <!-- Limitaciones actuales -->
+                        <div class="warning-box" style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2); border-left-color: var(--color-heat); margin:1.5rem 0;">
+                            <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div>
+                                <strong>📉 Limitaciones actuales:</strong>
+                                <ul style="margin:0.5rem 0 0 1.2rem;">
+                                    <li>La ventilación natural tiene una <strong>efectividad limitada</strong>: algo mayor la <strong>ventilación vertical</strong>, muy limitada la <strong>horizontal</strong>.</li>
+                                    <li>El volumen de gases evacuado depende de la diferencia de presiones creada por el incendio, que es reducida durante gran parte de la fase de desarrollo.</li>
+                                    <li>Los <strong>combustibles modernos</strong> tienen una reacción muy rápida a la ventilación, lo que concede escaso tiempo para evacuar gases antes de que el incendio crezca exponencialmente.</li>
+                                </ul>
+                                <p style="margin-top:0.5rem;">✅ Aún así, son aplicables en incendios limitados por el combustible (ILV) con aperturas grandes y acceso rápido al foco.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tipos de ventilación natural -->
+                        <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-arrows-up-down" style="color:#2196F3;"></i> Tipos de ventilación natural</h4>
                         <div class="info-flex">
-                            <div class="info-flex-item"><div class="info-flex-title"><i class="fas fa-arrow-up"></i> Vertical</div>Entrada y salida a distinto nivel. Flujo unidireccional. Eficiencia depende de relación Ae/Ai. Para r=0,5 → rendimiento <span class="important-number">90%</span> a 500°C.</div>
-                            <div class="info-flex-item"><div class="info-flex-title"><i class="fas fa-arrows-left-right"></i> Horizontal</div>Misma altura, flujo bidireccional. Menos efectiva. Con cortinas de humo se puede transformar en unidireccional.</div>
+                            <div class="info-flex-item" style="flex:1 1 300px;">
+                                <div class="info-flex-title"><i class="fas fa-arrow-up"></i> Vertical</div>
+                                <p>Entrada y salida de gases a <strong>distinto nivel</strong>. Flujo de gases <strong>unidireccional</strong>. Ideal para establecer una <strong>ruta fría</strong> de acceso y una <strong>ruta caliente</strong> de salida.</p>
+                            </div>
+                            <div class="info-flex-item" style="flex:1 1 300px;">
+                                <div class="info-flex-title"><i class="fas fa-arrows-left-right"></i> Horizontal</div>
+                                <p>Entrada y salida al <strong>mismo nivel</strong>. Flujo de gases <strong>bidireccional</strong> (salida por arriba, entrada por abajo). Menos efectiva y con mayores inconvenientes.</p>
+                            </div>
                         </div>
-                        <div class="visual-table">
-                            <table><tr><th>Relación r (Ae/Ai)</th><th>Rendimiento 500°C</th></tr><tr><td>0,5</td><td>90%</td></tr><tr><td>1</td><td>71%</td></tr><tr><td>1,5</td><td>50%</td></tr></table>
+
+                        <!-- VENTILACIÓN VERTICAL (detalle) -->
+                        <div class="section" style="margin-top:1.5rem;">
+                            <h4 style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;"><i class="fas fa-arrow-up" style="color:#2196F3;"></i> Ventilación vertical</h4>
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+                                <p><strong>Factores que determinan la eficiencia:</strong></p>
+                                <ul class="visual-list" style="padding-left:1.2rem;">
+                                    <li>📊 <strong>Diferencia de presión</strong> entre entrada y salida: vinculada al gradiente térmico y a la altura entre ambas.</li>
+                                    <li>📏 <strong>Tamaño de la salida de gases (Ae)</strong>: a mayor salida, mayor caudal, pero el incremento es decreciente. No hay un tamaño idóneo fijo; depende de las condiciones.</li>
+                                    <li>🔄 <strong>Relación entre salida y entrada (r = Ae / Ai)</strong>: la efectividad aumenta cuando la entrada es mayor que la salida. Se recomienda <strong>r ≤ 0,5</strong> (entrada al menos el doble que la salida). <strong>Nunca reducir la salida</strong> para conseguir esta relación, pues empeora el rendimiento.</li>
+                                    <li>📍 <strong>Cercanía de la salida al foco</strong>: reduce pérdidas por fricción y evita la propagación por la ruta caliente.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Gráfico de rendimiento (Tabla 18) -->
+                            <div class="stat-highlight" style="margin-top:1.5rem;">
+                                <div class="stat-highlight-number">📈 Rendimiento de la ventilación vertical a 500°C (sobre el máximo teórico)</div>
+                                <div class="visual-table" style="margin:1rem 0; min-width:auto;">
+                                    <table style="width:100%; max-width:400px; margin:0 auto;">
+                                        <thead>
+                                            <tr><th style="background:#2196F3; color:white;">Relación r = Ae/Ai</th><th style="background:#2196F3; color:white;">Rendimiento</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td style="text-align:center;"><span class="important-number">0,5</span></td><td style="text-align:center;"><span class="important-number">90%</span></td></tr>
+                                            <tr><td style="text-align:center;"><span class="important-number">1</span></td><td style="text-align:center;"><span class="important-number">71%</span></td></tr>
+                                            <tr><td style="text-align:center;"><span class="important-number">1,5</span></td><td style="text-align:center;"><span class="important-number">50%</span></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p style="margin-top:0.5rem;">🔍 Una entrada dos veces el tamaño de la salida (r=0,5) proporciona resultados más que suficientes (90% del máximo).</p>
+                            </div>
+
+                            <!-- Ventilación en cubierta (contexto) -->
+                            <div class="tip-box" style="margin-top:1.5rem; background: linear-gradient(135deg, #E1F5FE, #B3E5FC); border-left-color: #2196F3;">
+                                <div class="box-icon" style="background: #2196F3;"><i class="fas fa-home"></i></div>
+                                <div>
+                                    <strong>🏠 Ventilación vertical en cubierta:</strong> Muy extendida en Norteamérica (cubiertas de madera y entramados ligeros). Se practica un hueco cerca del foco, donde las presiones son máximas. ⚠️ Implica riesgo para el personal en cubierta. En Europa, muchas cubiertas no son perforables, por lo que esta técnica no se aplica. Con combustibles tradicionales y estructuras sólidas era eficaz; hoy tiene menos sentido.
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- VENTILACIÓN HORIZONTAL (detalle) -->
+                        <div class="section" style="margin-top:2rem;">
+                            <h4 style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;"><i class="fas fa-arrows-left-right" style="color:#2196F3;"></i> Ventilación horizontal</h4>
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+                                <p><strong>Características:</strong> En aperturas al mismo nivel (ventanas, puertas) se establecen flujos bidireccionales. Favorece la estratificación (capa fría abajo, caliente arriba).</p>
+                                <p><strong>Inconvenientes frente a la vertical:</strong></p>
+                                <ul class="visual-list" style="padding-left:1.2rem;">
+                                    <li>📉 <strong>Menor efectividad</strong>.</li>
+                                    <li>🚫 No hay flujo unidireccional; el equipo progresa bajo la capa caliente.</li>
+                                    <li>🧭 El acceso no está libre de gases; la capa caliente busca la salida justo encima de los bomberos.</li>
+                                </ul>
+                                <p style="margin-top:0.5rem;"><strong>Factores que influyen:</strong></p>
+                                <ul class="visual-list" style="padding-left:1.2rem;">
+                                    <li>📐 <strong>Tamaño de la apertura</strong>: a mayor apertura, mayor flujo bidireccional.</li>
+                                    <li>📏 <strong>Altura de la apertura</strong>: las aperturas altas comunican mejor las zonas con mayor diferencial de presión. Para una misma superficie, una apertura alargada verticalmente tiene mayor rendimiento.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Cortinas de bloqueo para transformar horizontal en vertical -->
+                            <div class="info-box" style="margin-top:1.5rem; background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left-color: var(--color-success);">
+                                <div class="box-icon" style="background: var(--color-success);"><i class="fas fa-tshirt"></i></div>
+                                <div>
+                                    <strong>🧵 Cortinas de bloqueo de humo:</strong> Permiten <strong>transformar una ventilación horizontal bidireccional en una ventilación vertical unidireccional</strong>. Al colocar una cortina que no llega al suelo, se permite la entrada de aire fresco por la parte baja mientras los gases calientes salen por la parte alta, creando un flujo ordenado y mejorando la eficiencia.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Representación visual resumen -->
+                        <div style="display:flex; justify-content:center; margin-top:2rem; gap:2rem; flex-wrap:wrap;">
+                            <div style="text-align:center; background:#f0f0f0; padding:1rem; border-radius:12px; flex:1 1 200px;">
+                                <i class="fas fa-arrow-up" style="font-size:2.5rem; color:#2196F3;"></i>
+                                <i class="fas fa-arrow-down" style="font-size:2.5rem; color:#2196F3; margin-left:0.5rem;"></i>
+                                <p><strong>Vertical</strong><br><small>Flujo unidireccional</small></p>
+                            </div>
+                            <div style="text-align:center; background:#f0f0f0; padding:1rem; border-radius:12px; flex:1 1 200px;">
+                                <i class="fas fa-arrows-left-right" style="font-size:2.5rem; color:#2196F3;"></i>
+                                <p><strong>Horizontal</strong><br><small>Flujo bidireccional</small></p>
+                            </div>
+                            <div style="text-align:center; background:#f0f0f0; padding:1rem; border-radius:12px; flex:1 1 200px;">
+                                <i class="fas fa-tshirt" style="font-size:2.5rem; color:#2196F3;"></i>
+                                <p><strong>Cortina + horizontal</strong><br><small>Simula vertical</small></p>
+                            </div>
+                        </div>
+
+                        <!-- Nota adicional sobre la cercanía al foco (reiteración) -->
+                        <p style="margin-top:1.5rem; font-style:italic;">📍 En cualquier tipo de ventilación, la <strong>cercanía de la salida al foco</strong> reduce pérdidas de fricción y evita la propagación a lo largo de la ruta caliente.</p>
                     </div>
-                    <!-- 2.3 VENTILACIÓN FORZADA (general) -->
-                    <div class="section">
-                        <div class="section-title"><div class="section-icon" style="background: #4CAF50;"><i class="fas fa-fan"></i></div><h3>2.3. VENTILACIÓN FORZADA</h3></div>
-                        <div class="text-box"><p><strong>Presión Positiva (VPP):</strong> Ventilador en entrada, presuriza interior. Cálculo ΔP: ejemplo v=8→4 m/s → <span class="important-number">28,8 Pa</span>; flujo <span class="important-number">23.040 m³/h</span>.</p><p><strong>Presión Negativa (VPN):</strong> Extractores en salida. Menos eficiente, personal expuesto.</p><p>Tipos ventiladores: térmicos, eléctricos, hidráulicos.</p></div>
-                        <div class="info-flex">
-                            <div class="info-flex-item"><div class="info-flex-title"><i class="fas fa-shield"></i> Defensiva</div>Flujo no atraviesa el foco, confinamiento. Pasos: confinar incendio, apertura salida, entrada, iniciar VPP, progresión.</div>
-                            <div class="info-flex-item"><div class="info-flex-title"><i class="fas fa-bolt"></i> Ofensiva</div>Flujo atraviesa el foco. Crea ventana temporal de mejora. Requiere rápida progresión y coordinación con agua.</div>
-                        </div>
-                        <!-- Barómetro de entrada, colocación ventilador -->
-                        <div class="warning-box"><div class="box-icon" style="background: #388E3C;"><i class="fas fa-ruler"></i></div><div><strong>Colocación VPP:</strong> Distancia óptima <span class="important-number">1,8-5 m</span> según modelo. Evitar cortocircuito (demasiado cerca). Barómetro de entrada: dirigir flujo más bajo (15% altura) para evitar bloqueo superior.</div></div>
-                        <!-- Relación entrada/salida -->
-                        <div class="visual-table">
-                            <table><tr><th></th><th>r recomendable</th><th>r mínimo</th></tr><tr><td>V. natural vertical</td><td><0,5</td><td><1</td></tr><tr><td>VPP ofensiva</td><td>>2</td><td>>1</td></tr><tr><td>VPP defensiva</td><td>>2</td><td>>0,5</td></tr></table>
-                        </div>
-                        <!-- Diferencial de presión en función de r -->
-                        <div class="stat-highlight">ΔP = k'/(1+r²). Para r=0,5 → <span class="important-number">80%</span> del ΔP máx; r=1 → <span class="important-number">50%</span>; r=2 → <span class="important-number">20%</span>.</div>
-                        <!-- Pérdidas, mal sellado, combinación ventiladores -->
-                        <div class="info-flex">
-                            <div class="info-flex-item">Pérdidas por mal sellado y fricción reducen eficiencia.</div>
-                            <div class="info-flex-item">Ventiladores en paralelo para entradas grandes; en V hasta +35% caudal; en serie a lo largo del recorrido recomendable en edificios altura.</div>
-                        </div>
-                        <!-- Influencia del viento -->
-                        <div class="warning-box"><div class="box-icon" style="background: #FFB74D;"><i class="fas fa-wind"></i></div><div>Viento a 6 m/s genera ΔP entre fachadas de <span class="important-number">25,92 Pa</span>. Calcular: Pwb = ρv²/2 = 21,6 Pa; coeficientes 0,8 y -0,4.</div></div>
-                    </div>
+
                 </div>
             </div>
 
