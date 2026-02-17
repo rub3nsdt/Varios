@@ -1905,21 +1905,6 @@
                             </div>
                         </div>
 
-                        <!-- Relación salida/entrada (r) - primeras tablas -->
-                        <div class="section" style="margin-top:2rem;">
-                            <h4 style="display:flex; align-items:center; gap:10px;"><i class="fas fa-chart-line" style="color:#4CAF50;"></i> Relación salida/entrada (r = Ae/Ai) - Recomendaciones iniciales</h4>
-                            <div class="visual-table" style="overflow-x:auto; margin-top:1rem;">
-                                <table style="width:100%;">
-                                    <thead><tr><th style="background:#4CAF50; color:white;">Técnica</th><th style="background:#4CAF50; color:white;">r recomendable</th><th style="background:#4CAF50; color:white;">r mínimo</th></tr></thead>
-                                    <tbody>
-                                        <tr><td>Ventilación natural vertical</td><td>r &lt; <span class="important-number">0,5</span></td><td>r &lt; <span class="important-number">1</span></td></tr>
-                                        <tr><td>VPP ofensiva</td><td>r &gt; <span class="important-number">2</span></td><td>r &gt; <span class="important-number">1</span></td></tr>
-                                        <tr><td>VPP defensiva</td><td>r &gt; <span class="important-number">2</span></td><td>r &gt; <span class="important-number">0,5</span></td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <p style="margin-top:0.5rem;">🔍 A partir de r=<span class="important-number">2</span>, la eficacia no aumenta excesivamente; abrir más salidas no compensa el esfuerzo.</p>
-                        </div>
 
                         <!-- Continuación dentro de la tarjeta "Control de la Ventilación" -->
                         <!-- 2.3.1 VENTILACIÓN EN PRESIÓN POSITIVA DEFENSIVA -->
@@ -2388,7 +2373,7 @@
 
                                 <div class="columnas">
                                 <!-- Capacidad del ventilador -->
-                                <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                <div class="info-flex-item" style="flex: 1 1 1000px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
                                     <div class="info-flex-title"><i class="fas fa-gauge-high" style="color:#4CAF50;"></i> Capacidad del ventilador</div>
                                     <ul class="visual-list">
                                         <li>📦 Los recintos de <strong>gran volumen</strong> con baja estanqueidad o con pasillos y elementos de fricción en el interior requieren ventiladores de <strong>mayor capacidad</strong>.</li>
@@ -2402,17 +2387,6 @@
                                         <li>🔬 Para recintos mayores o con mayor pérdida de carga, pueden requerirse ventiladores de mayor diámetro (24-30") o la combinación de varios equipos.</li>
                                     </ul>
                                 </div>                                
-
-                                <!-- Distancia de colocación -->
-                                <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
-                                    <div class="info-flex-title"><i class="fas fa-arrows-left-right" style="color:#4CAF50;"></i> Distancia de colocación</div>
-                                    <ul class="visual-list">
-                                        <li>📏 La distancia óptima varía según el modelo y el tamaño de la puerta. Para ventiladores de <span class="important-number">18-20"</span> y puerta estándar (2×0,9 m), la distancia óptima se sitúa entre <span class="important-number">1,8 y 5 m</span>.</li>
-                                        <li>⚠️ <strong>Demasiado cerca:</strong> Se produce <strong>cortocircuito</strong>; parte del aire que entra vuelve a salir y es arrastrado de nuevo, generando un flujo estéril. La entrada no se presuriza completamente.</li>
-                                        <li>⚠️ <strong>Demasiado lejos:</strong> La velocidad media del flujo que impacta en la apertura es baja, reduciendo el diferencial de presión interior.</li>
-                                        <li>💡 <strong>Regla general:</strong> En caso de duda, es preferible una distancia <strong>mayor</strong> que una demasiado corta. Cada modelo debe ser ensayado para determinar su distancia óptima.</li>
-                                    </ul>
-                                </div>
 
                                 <!-- Sistema de alimentación -->
                                 <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
@@ -2435,6 +2409,15 @@
                                     </ul>
                                 </div>
 
+                                <!-- Diseño funcional -->
+                                <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                    <div class="info-flex-title"><i class="fas fa-tools" style="color:#4CAF50;"></i> Diseño funcional</div>
+                                    <ul class="visual-list">
+                                        <li>🦵 <strong>Ventiladores sobre patas:</strong> El flujo se <strong>despega del suelo</strong>, lo que mejora el rendimiento, reduce el arrastre de material suelto y permite la colocación en escaleras.</li>
+                                        <li>🛞 <strong>Ventiladores con ruedas</strong> (en parte anterior o posterior): Ofrecen ventajas de <strong>movilidad</strong> para su despliegue y reposicionamiento.</li>
+                                        <li>📐 <strong>Sistemas de inclinación:</strong> Los rangos y mecanismos varían entre fabricantes, lo que influye en el <strong>nivel de efectividad</strong> para adaptar el flujo a diferentes alturas de apertura.</li>
+                                    </ul>
+                                </div>                                 
 
                                 <!-- Peso -->
                                 <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
@@ -2454,67 +2437,684 @@
                                     </ul>
                                 </div>
 
-                                <!-- Diseño funcional -->
+                                <!-- Distancia de colocación -->
                                 <div class="info-flex-item" style="flex: 1 1 350px; align-self: stretch; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
-                                    <div class="info-flex-title"><i class="fas fa-tools" style="color:#4CAF50;"></i> Diseño funcional</div>
+                                    <div class="info-flex-title"><i class="fas fa-arrows-left-right" style="color:#4CAF50;"></i> Distancia de colocación</div>
                                     <ul class="visual-list">
-                                        <li>🦵 <strong>Ventiladores sobre patas:</strong> El flujo se <strong>despega del suelo</strong>, lo que mejora el rendimiento, reduce el arrastre de material suelto y permite la colocación en escaleras.</li>
-                                        <li>🛞 <strong>Ventiladores con ruedas</strong> (en parte anterior o posterior): Ofrecen ventajas de <strong>movilidad</strong> para su despliegue y reposicionamiento.</li>
-                                        <li>📐 <strong>Sistemas de inclinación:</strong> Los rangos y mecanismos varían entre fabricantes, lo que influye en el <strong>nivel de efectividad</strong> para adaptar el flujo a diferentes alturas de apertura.</li>
+                                        <li>📏 Los ventiladores con distancia de colocación a la puerta mayor permiten el paso con facilidad al personal, aunque son más difíciles de colocar en espacios reducidos como rellanos pequeños o puertas con escalera de entrada.</li>
                                     </ul>
-                                </div>                              
+                                </div>
+                             
                                 </div>
                             </div>
 
-                            <!-- Barómetro de entrada -->
-                            <h4 style="display:flex; align-items:center; gap:10px; margin:2rem 0 1rem;"><i class="fas fa-tachometer-alt" style="color:#4CAF50;"></i> Barómetro de entrada</h4>
-                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
-                                <ul class="visual-list">
-                                    <li>🎯 <strong>Objetivo:</strong> Valorar el funcionamiento de la ventilación desde la entrada cuando el interior está inundado de humo y no se ve la salida.</li>
-                                    <li>🔧 <strong>Técnica:</strong> Dirigir el flujo del ventilador de modo que no quede centrado, sino un <span class="important-number">15%</span> más bajo que el centro de la apertura. La parte superior queda a menor presión.</li>
-                                    <li>👀 Si tras el inicio de la ventilación se observa una <strong>salida continua o creciente de gases</strong> por la zona superior de la puerta, es síntoma de que la ventilación no funciona correctamente (salida obstruida o puertas intermedias cerradas).</li>
-                                </ul>
-                                <div class="warning-box" style="margin-top:1rem; background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat);">
-                                    <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-exclamation-triangle"></i></div>
-                                    <div>
-                                        <strong>Ventajas e inconvenientes:</strong>
-                                        <ul style="margin:0.5rem 0 0 1.2rem;">
-                                            <li>✅ Proporciona información adicional desde la entrada.</li>
-                                            <li>⚠️ Ligera reducción en la efectividad de la ventilación.</li>
-                                            <li>⚠️ En gases extremadamente calientes puede favorecer turbulencias.</li>
-                                            <li>⚠️ Solo aplicable si el recinto tras la puerta está inundado de humo.</li>
+                            <!-- d) Colocación de un ventilador VPP -->
+                            <div class="section">
+                                <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-arrows-left-right" style="color:#4CAF50;"></i> d) Colocación de un ventilador VPP</h4>
+                                
+                                <div class="text-box" style="margin-bottom:1.5rem;">
+                                    <p>La colocación del ventilador respecto a la puerta de entrada es crítica para maximizar el caudal efectivo. La distancia óptima depende de la <strong>huella del ventilador</strong> y del <strong>tamaño de la entrada</strong>.</p>
+                                </div>
+
+                                <!-- Distancia óptima -->
+                                <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                    <div class="info-flex-title"><i class="fas fa-ruler" style="color:#4CAF50;"></i> Distancia óptima</div>
+                                    <ul class="visual-list">
+                                        <li>📏 Para ventiladores de <span class="important-number">18-20 pulgadas</span> y una puerta de dimensiones estándar (2 m × 0,9 m), la distancia óptima varía entre <span class="important-number">1,8 m y 5 m</span>.</li>
+                                        <li>📊 Esta distancia depende del modelo específico; cada ventilador debe ser ensayado para determinar su distancia óptima para los tamaños de puerta habituales.</li>
+                                        <li>🎯 El objetivo es que el <strong>dardo de alta velocidad</strong> cubra la mayor parte de la entrada, permitiendo que el <strong>bulbo de aire succionado</strong> contribuya al caudal total.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="columnas">
+                                    <!-- Problemas de colocación incorrecta -->
+                                    <div class="info-flex-item" style="flex: 4 1 350px; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                        <div class="info-flex-title"><i class="fas fa-exclamation-triangle" style="color:#D32F2F;"></i> Problemas de colocación incorrecta</div>
+                                        <ul class="visual-list">
+                                            <li>🔴 <strong>Demasiado cerca:</strong> Se produce <strong>cortocircuito</strong>. Parte del flujo que entra vuelve a salir por la parte exterior de la puerta y es aspirado de nuevo, generando una recirculación estéril. La entrada no se presuriza completamente y gran parte del flujo no penetra en la estructura.</li>
+                                            <li>🔵 <strong>Demasiado lejos:</strong> La velocidad media del flujo que impacta en la apertura es baja, reduciendo el diferencial de presión interior y, por tanto, el caudal efectivo.</li>
                                         </ul>
+                                    </div>
+
+                                    <div style="display: flex; margin: auto; flex: 1 1 200px;">
+                                        <img src="image interior/Colocación.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>  
+                                </div>
+                                <!-- Relación con el tamaño de la entrada -->
+                                <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                    <div class="info-flex-title"><i class="fas fa-door-open" style="color:#4CAF50;"></i> Influencia del tamaño de la entrada</div>
+                                    <ul class="visual-list">
+                                        <li>🚪 El tamaño de cono necesario viene determinado por la apertura de entrada. A medida que el ventilador se aleja, el cono aumenta de tamaño, pero llega un punto en que el rendimiento cae notablemente.</li>
+                                        <li>📐 Un ventilador de <span class="important-number">18-20"</span> permite trabajar con aperturas de hasta <span class="important-number">2,5 m</span> de altura/anchura máxima, aunque a partir de <span class="important-number">2 m</span> su rendimiento baja de forma significativa.</li>
+                                        <li>📊 Se deberá tener en cuenta la <strong>mayor de las dimensiones</strong> (altura o anchura), ya que la sección transversal de la huella de un ventilador es circular</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Regla general -->
+                                <div class="tip-box" style="margin:1.5rem 0; background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left-color: var(--color-success);">
+                                    <div class="box-icon" style="background: var(--color-success);"><i class="fas fa-check-circle"></i></div>
+                                    <div>
+                                        <strong>💡 Regla general:</strong> En caso de duda sobre la distancia de colocación, es preferible <strong>alejarse más</strong> que acercarse demasiado, ya que una distancia excesiva afecta menos al rendimiento que un cortocircuito.
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Entrada de gases -->
-                            <h4 style="display:flex; align-items:center; gap:10px; margin:2rem 0 1rem;"><i class="fas fa-door-open" style="color:#4CAF50;"></i> Entrada de gases</h4>
-                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
-                                <ul class="visual-list">
-                                    <li>🚪 En VPP se emplea normalmente <strong>una sola entrada</strong> para establecer flujo unidireccional. Si se usan varias entradas, todas deben tener ventiladores de similar potencia.</li>
-                                    <li>📏 El <strong>tamaño de la entrada</strong> determina el tipo de ventilador. Los ventiladores de <span class="important-number">18-20"</span> están optimizados para puertas estándar (2×0,9 m ≈ <span class="important-number">1,8 m²</span>).</li>
-                                    <li>🔄 Cuando la entrada excede la capacidad de un ventilador, se pueden emplear:
-                                        <ul class="nested-list">
-                                            <li><strong>Ventiladores en paralelo:</strong> Cubren toda la entrada con pequeños solapes. Distancia entre ellos igual al tamaño óptimo de apertura (≈2m).</li>
-                                            <li><strong>Ventiladores en V:</strong> Flujos dirigidos al centro; aumentan caudal hasta un <span class="important-number">35%</span>.</li>
-                                            <li><strong>Ventiladores en serie a lo largo del recorrido:</strong> Útiles en edificios de varias plantas para compensar pérdidas de carga.</li>
+                            <!-- e) Barómetro de entrada -->
+                            <div class="section">
+                                <h4 style="display:flex; align-items:center; gap:10px; margin:1.5rem 0 1rem;"><i class="fas fa-tachometer-alt" style="color:#4CAF50;"></i> e) Barómetro de entrada</h4>
+                                
+                                <div class="text-box" style="margin-bottom:1.5rem;">
+                                    <p>Cuando se emplean técnicas de VPP ofensivas y el ventilador se coloca en una puerta tras la cual el recinto está inundado de humo, puede emplearse el <strong>barómetro de entrada</strong> para valorar el funcionamiento de la ventilación desde la propia entrada.</p>
+                                </div>
+
+                                <!-- Descripción de la técnica -->
+                                <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                    <div class="info-flex-title"><i class="fas fa-ruler" style="color:#4CAF50;"></i> Técnica</div>
+                                    <ul class="visual-list">
+                                        <li>🎯 Consiste en <strong>dirigir el flujo del ventilador</strong> de modo que no quede centrado en la apertura, sino aproximadamente un <span class="important-number">15%</span> más bajo que el centro de la puerta.</li>
+                                        <li>📐 De esta forma, la <strong>parte superior de la apertura</strong> queda sometida a una menor presión por parte del VPP que la parte inferior, donde la velocidad del flujo es mayor.</li>
+                                        <li>👀 Si tras el inicio de la ventilación se observa una <strong>salida continua o creciente de gases</strong> por la zona superior de la puerta, es síntoma claro de que la ventilación no funciona correctamente (salida obstruida, puertas intermedias cerradas o flujo insuficiente).</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Ventajas e inconvenientes -->
+                                <div class="info-flex" style="margin:1.5rem 0;">
+                                    <div class="info-flex-item" style="flex:1 1 250px;">
+                                        <div class="info-flex-title"><i class="fas fa-thumbs-up" style="color:#4CAF50;"></i> Ventajas</div>
+                                        <ul class="visual-list">
+                                            <li>✅ Proporciona <strong>información sobre el funcionamiento</strong> de la ventilación desde la entrada, sin necesidad de ver la salida.</li>
+                                            <li>👁️ Permite al equipo que progresará por el interior conocer si el flujo se está estableciendo correctamente.</li>
                                         </ul>
-                                    </li>
-                                    <li>🔒 Para <strong>presurización</strong> (no ventilación), se puede reducir el tamaño de la entrada (ej. con cortina recogida a media altura) para aumentar el diferencial de presión. En un test se pasó de <span class="important-number">30 Pa</span> a <span class="important-number">60 Pa</span> al reducir la apertura al <span class="important-number">50%</span>.</li>
+                                        <div style="display: flex; margin: auto;">
+                                            <img src="image interior/Barómetro.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                        </div>                                          
+                                    </div>
+                                    <div class="info-flex-item" style="flex:1 1 250px;">
+                                        <div class="info-flex-title"><i class="fas fa-thumbs-down" style="color:#D32F2F;"></i> Inconvenientes</div>
+                                        <ul class="visual-list">
+                                            <li>📉 <strong>Ligera reducción</strong> en la efectividad de la ventilación al descentrar el flujo.</li>
+                                            <li>🔥 En situaciones de gases extremadamente calientes, puede favorecer la <strong>turbulencia</strong> y mezcla.</li>
+                                            <li>🚪 Solo aplicable en caso de que el recinto inmediatamente tras la puerta esté <strong>inundado de humo</strong>.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Nota adicional -->
+                                <div class="tip-box" style="background: linear-gradient(135deg, #E1F5FE, #B3E5FC); border-left-color: #2196F3;">
+                                    <div class="box-icon" style="background: #2196F3;"><i class="fas fa-info-circle"></i></div>
+                                    <div>
+                                        <strong>📌 Observación:</strong> El barómetro de entrada no sustituye la valoración en la salida de gases, sino que ofrece una información adicional valiosa para el equipo que va a progresar. Si el flujo de salida por la parte superior no se reduce o aumenta, es necesario revisar la configuración (salidas cerradas, puertas intermedias, etc.).
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>                        
+
+                        <!-- 2.3.5 ENTRADA DE GASES -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-door-open"></i></div>
+                                <h3>2.3.5. ENTRADA DE GASES</h3>
+                            </div>
+
+                            <div class="text-box" style="margin-bottom:1.5rem;">
+                                <p>En las técnicas de VPP, tanto de carácter ofensivo como defensivo, se emplea <strong>una sola entrada</strong> para establecer el flujo de gases unidireccional a lo largo de la estructura. En ocasiones, pueden emplearse varias entradas, pero en todas ellas deberá ponerse un ventilador de tal modo y potencia que, a nivel de entrada, la presión ejercida por todos ellos sea similar.</p>
+                            </div>
+
+                            <!-- Ventaja principal -->
+                            <div class="info-flex-item" style="flex: 1 1 200px; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:0.5rem;">
+                                <div class="info-flex-title"><i class="fas fa-check-circle" style="color:#4CAF50;"></i> Ventaja operativa</div>
+                                <ul class="visual-list">
+                                    <li>✅ La colocación del equipo se realiza generalmente en la <strong>misma puerta por la que se accede</strong> a la operación, lo que favorece que el equipo en progresión interior acceda con un <strong>soplo de aire fresco a su espalda</strong> desde el primer momento.</li>
                                 </ul>
                             </div>
 
-                            <!-- Nota sobre la necesidad de ensayos -->
-                            <div class="tip-box" style="margin-top:1.5rem; background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left-color: var(--color-success);">
-                                <div class="box-icon" style="background: var(--color-success);"><i class="fas fa-flask"></i></div>
+                            <div class="columnas">
+                                <!-- Reducción de entrada para presurización -->
+                                <div class="info-flex-item" style="flex: 1 1 300px; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                    <div class="info-flex-title"><i class="fas fa-compress" style="color:#4CAF50;"></i> Reducción para presurización</div>
+                                    <ul class="visual-list">
+                                        <li>🔒 Cuando se emplean técnicas de VPP para la <strong>presurización de recintos</strong> (no ventilación), es preciso <strong>reducir el tamaño de entrada</strong> buscando la supresión total de la salida de gases y <strong>acortar la distancia de colocación</strong> del ventilador para ajustarse al dardo de alta velocidad central.</li>
+                                        <li>📈 El flujo de aire que impacta en la atmósfera interior lo hará a <strong>mayor velocidad</strong> y, por tanto, será capaz de crear un <strong>mayor diferencial de presión</strong>.</li>
+                                    </ul>
+                                </div>                            
+                                <!-- Tamaño de la entrada y tipo de ventilador -->
+                                <div class="info-flex-item" style="flex: 3 1 300px; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                    <div class="info-flex-title"><i class="fas fa-ruler" style="color:#4CAF50;"></i> Tamaño de la entrada</div>
+                                    <ul class="visual-list">
+                                        <li>📏 El <strong>tamaño de la entrada de gases</strong> determina en gran medida el tipo de ventilador VPP a emplear.</li>
+                                        <li>🏠 Los ventiladores habituales de <span class="important-number">18 a 20 pulgadas</span> de diámetro han sido diseñados y optimizados para el tamaño estándar de puertas de acceso a viviendas (<span class="important-number">2 × 0,9 m</span>, aproximadamente <span class="important-number">1,8 m²</span>).</li>
+                                        <li>🚪 Cuando la entrada de ventilación <strong>excede la capacidad</strong> de un ventilador, se debe emplear un ventilador de <strong>mayor diámetro</strong> o <strong>varios ventiladores en paralelo</strong>, de modo que las huellas generadas por cada uno cubran la totalidad de la entrada con <strong>pequeños solapes</strong> entre ellas.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2.3.6 SALIDA DE GASES -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-smog"></i></div>
+                                <h3>2.3.6. SALIDA DE GASES</h3>
+                            </div>
+
+                            <div class="text-box" style="margin-bottom:1.5rem;">
+                                <p>Idealmente, la creación de un flujo unidireccional bien definido requiere una <strong>entrada y una salida</strong>. Se puede considerar que la apertura de varios huecos o ventanas dentro de un mismo recinto constituye una <strong>sola salida</strong>. Lo que debe evitarse es una <strong>ramificación del flujo de gases</strong> con huecos de salida diferentes a los del recinto por el que se pretende evacuarlos.</p>
+                            </div>
+
+                            <!-- Ubicación ideal de la salida -->
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                <div class="info-flex-title"><i class="fas fa-bullseye" style="color:#4CAF50;"></i> Ubicación ideal en VPP ofensiva</div>
+                                <ul class="visual-list">
+                                    <li>🎯 Establecer la salida de gases en el <strong>punto más cercano al foco del incendio</strong> por varios motivos:
+                                        <ul class="nested-list">
+                                            <li>📉 Reduce la <strong>ruta caliente</strong> del flujo de gases (espacio entre foco y salida), disminuyendo la mezcla con gases de incendio y evitando que contribuyan al desarrollo interior.</li>
+                                            <li>🔥 Disminuye la <strong>propagación</strong> a lo largo de la ruta caliente, ya que los gases abandonan la estructura rápidamente sin afectar otras zonas.</li>
+                                            <li>👥 Reduce la probabilidad de que <strong>víctimas</strong> se encuentren en la ruta caliente, ya que tienden a dirigirse a la entrada natural y la ruta es más corta.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Uso de cámara térmica -->
+                            <div class="tip-box" style="margin:1.5rem 0; background: linear-gradient(135deg, #E1F5FE, #B3E5FC); border-left-color: #2196F3;">
+                                <div class="box-icon" style="background: #2196F3;"><i class="fa-solid fa-camera"></i></div>
                                 <div>
-                                    <strong>🔬 Importante:</strong> Cada modelo de ventilador debe ser ensayado para determinar su distancia óptima de colocación para los tamaños de puerta habituales. Los valores de capacidad en condiciones reales difieren de los de laboratorio debido al sellado imperfecto, fricción y tamaño de aperturas.
+                                    <strong>Cámara térmica:</strong> Resulta de gran utilidad durante la valoración perimetral exterior, ya que permite comparar la <strong>temperatura exterior</strong> de las distintas ventanas para determinar la localización del foco del incendio.
+                                </div>
+                            </div>
+
+                            <div class="columnas">
+                                <!-- Salida en VPP defensiva -->
+                                <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                    <div class="info-flex-title"><i class="fas fa-shield-halved" style="color:#4CAF50;"></i> VPP defensiva</div>
+                                    <ul class="visual-list">
+                                        <li>📏 La salida de gases deberá localizarse en la <strong>posición más alta posible</strong>. Los humos se estratifican por temperatura, y la ventilación solo evacuará el humo acumulado hasta la altura de salida practicada.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Presurización de recintos -->
+                                <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                    <div class="info-flex-title"><i class="fas fa-compress" style="color:#4CAF50;"></i> Presurización de recintos</div>
+                                    <ul class="visual-list">
+                                        <li>🔒 El tamaño de la salida de gases deberá ser lo <strong>más pequeño posible</strong> o, mejor aún, <strong>ausencia total de salida</strong>. Al reducir el flujo de gases y mantener la posición del ventilador, el <strong>diferencial de presión interior será mayor</strong>.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>   
+                        
+                        <!-- 2.3.7 VENTILACIÓN SECUENCIAL -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-layer-group"></i></div>
+                                <h3>2.3.7. VENTILACIÓN SECUENCIAL</h3>
+                            </div>
+
+                            <div class="text-box" style="margin-bottom:1.5rem;">
+                                <p>La limpieza completa de un <strong>recinto complejo</strong> (con múltiples estancias) en una técnica VPP defensiva requiere un <strong>barrido secuencial de las estancias</strong> y el uso de <strong>múltiples salidas de gases</strong>.</p>
+                            </div>
+
+                            <!-- Advertencia fundamental -->
+                            <div class="warning-box" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat); margin-bottom:1.5rem;">
+                                <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div>
+                                    <strong>⚠️ Regla fundamental:</strong> En ningún caso se debe permitir que el <strong>flujo de ventilación</strong> (establecido para evacuar los gases de las zonas comunes o adyacentes) <strong>atraviese el recinto de incendio</strong>. El confinamiento del incendio debe mantenerse en todo momento.
+                                </div>
+                            </div>
+
+                            <div class="columnas">
+                                <!-- Procedimiento secuencial en 4 pasos (info-flex-item) -->
+                                <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                    <div class="info-flex-title"><i class="fas fa-list-ol" style="color:#4CAF50;"></i> Procedimiento secuencial (4 pasos)</div>
+                                    <ul class="visual-list" style="list-style-type:none; padding-left:0;">
+                                        <li style="margin-bottom:1rem;">
+                                            <span style="display:inline-block; background:#4CAF50; color:white; width:24px; height:24px; border-radius:50%; text-align:center; line-height:24px; margin-right:10px;">1</span>
+                                            <strong>Abrir la salida de gases más cercana a la puerta de entrada.</strong>
+                                        </li>
+                                        <li style="margin-bottom:1rem;">
+                                            <span style="display:inline-block; background:#4CAF50; color:white; width:24px; height:24px; border-radius:50%; text-align:center; line-height:24px; margin-right:10px;">2</span>
+                                            <strong>Una vez limpia la zona conexa a dicha apertura, abrir la segunda salida de gases más cercana a la puerta.</strong>
+                                        </li>
+                                        <li style="margin-bottom:1rem;">
+                                            <span style="display:inline-block; background:#4CAF50; color:white; width:24px; height:24px; border-radius:50%; text-align:center; line-height:24px; margin-right:10px;">3</span>
+                                            <strong>Cerrar inmediatamente la primera salida de gases.</strong>
+                                        </li>
+                                        <li style="margin-bottom:0.5rem;">
+                                            <span style="display:inline-block; background:#4CAF50; color:white; width:24px; height:24px; border-radius:50%; text-align:center; line-height:24px; margin-right:10px;">4</span>
+                                            <strong>Repetir el proceso sucesivamente</strong> de modo que en ningún momento queden cerradas todas las salidas de gases y que solo, de forma puntual (mientras se cierra la salida de gases anterior), haya dos abiertas.
+                                        </li>
+                                    </ul>
+                                    <div style="margin-top:1rem; padding-top:1rem; border-top:1px dashed #ccc;">
+                                        <p style="margin:0;"><i class="fas fa-info-circle" style="color:#4CAF50; margin-right:8px;"></i> La apertura de salida de gases se realizará desde la <strong>zona más cercana a la entrada a la más lejana</strong> para evitar que se disperse humo a zonas ya limpias.</p>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; margin: auto; flex: 0.2 1 300px;">
+                                    <img src="image interior/Secuencial.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                                              
+                            </div>
+                        </div>                      
+
+                        <!-- 2.3.8 VARIACIÓN DEL CAUDAL DE VENTILACIÓN DEPENDIENDO DE LA RELACIÓN ENTRADA/SALIDA -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-chart-bar"></i></div>
+                                <h3>2.3.8. VARIACIÓN DEL CAUDAL DE VENTILACIÓN DEPENDIENDO DE LA RELACIÓN ENTRE ENTRADA Y SALIDA</h3>
+                            </div>
+
+                            <!-- Principios generales -->
+                            <div class="text-box" style="margin-bottom:1.5rem;">
+                                <p>Con carácter general se establece que:</p>
+                                <ul style="margin-left:1.5rem;">
+                                    <li>📈 Una <strong>salida de mayor tamaño</strong> implica <strong>mayor caudal</strong>.</li>
+                                    <li>⚖️ El caudal de salida <strong>no solo depende del tamaño de la salida</strong>, sino también del <strong>área de entrada</strong>.</li>
+                                    <li>⚠️ Una ventilación poco efectiva en operaciones ofensivas (flujo a través del foco de incendio) puede implicar el <strong>crecimiento del incendio</strong> por la mezcla de aire y gases de incendio.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Fundamento físico y fórmula -->
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                <div class="info-flex-title"><i class="fas fa-square-root-variable" style="color:#4CAF50;"></i> Fundamento físico</div>
+                                <div class="columnas">
+                                <div style="flex: 1 1;">
+                                    <p>Aplicando el Principio de Conservación de la Masa, el Principio de Conservación de la Cantidad de Movimiento y la Ecuación de Bernoulli, es posible determinar el <strong>caudal efectivo (Q<sub>e</sub>)</strong> de un flujo generado por un ventilador de VPP y expresarse en base a la relación entre los tamaños de salida (A<sub>e</sub>) y la entrada de gases (A<sub>i</sub>). A efectos de simplificación se descarta el efecto del incendio.</p>
+                                    <div style="text-align:center; margin:1.5rem 0;">
+                                        <p style="font-size:1.3rem;"><strong>Q<sub>e</sub> = k × r / √(1 + r²)</strong></p>
+                                        <p>con <strong>r = A<sub>e</sub> / A<sub>i</sub></strong></p>
+                                    </div>
+                                </div>
+                                <div style="flex: 1 1;">
+                                <p><strong>Donde:</strong></p>
+                                <ul style="margin-left:1.5rem;">
+                                    <li>Q<sub>e</sub> = caudal efectivo del flujo generado por la VPP, excluyendo el efecto del incendio [m³/s].</li>
+                                    <li>k = constante que depende del flujo del ventilador, su diámetro, la geometría de la entrada y el coeficiente de pérdida de presión del recinto.</li>
+                                    <li>A<sub>e</sub> = área de la salida [m²].</li>
+                                    <li>A<sub>i</sub> = área de la entrada [m²].</li>
+                                </ul>
+                                </div>
+                            </div>
+                            </div>
+
+
+                            <!-- Análisis de la gráfica -->
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                <div class="info-flex-title"><i class="fas fa-chart-line" style="color:#4CAF50;"></i> Análisis de la variación</div>
+                                <ul class="visual-list">
+                                    <li>📊 A medida que la salida de gases (A<sub>e</sub>) se hace <strong>mayor con respecto a la entrada (A<sub>i</sub>)</strong>, el caudal efectivo (Q<sub>r</sub>) <strong>crece hasta alcanzar una asíntota</strong> (límite para el cual un mayor aumento de la salida implica un aumento del caudal despreciable).</li>
+                                    <li>📐 En un recinto habitual de incendio, el rango posible para la relación r entre la salida y la entrada varía entre <span class="important-number">r=0,5</span> y <span class="important-number">r=4</span>.</li>
+                                    <li>🔍 <strong>Reducir el tamaño de la entrada</strong> con objeto de obtener un valor de r mayor sin variar la salida de gases <strong>no aumenta la efectividad de la ventilación</strong>. Al reducir el tamaño de la entrada y, por tanto, su geometría, modificamos el valor de k de la expresión anterior y el <strong>rendimiento se reduce</strong>.</li>
+                                    <li>🚪 A efectos prácticos, el tamaño de la entrada viene determinado por el <strong>tamaño de la puerta de acceso</strong> y la variación de r se consigue <strong>modificando el tamaño de la salida de gases (A<sub>e</sub>)</strong>.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Tabla 20. Valores de caudal efectivo (porcentaje sobre el máximo) -->
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                <div class="info-flex-title"><i class="fas fa-table" style="color:#4CAF50;"></i> Tabla 20. Caudal efectivo para distintos valores de r (sobre el teórico máximo)</div>
+                                <div class="columnas" style="justify-content: center; flex-wrap: nowrap;">
+                                <div class="visual-table" style="overflow-x:auto; margin-top:1rem; margin: auto; flex: 0 0 250px;">
+                                    <table style="width:100%; max-width:400px; margin:0 auto; border-collapse:collapse;">
+                                        <thead>
+                                            <tr>
+                                                <th style="background:#4CAF50; color:white; padding:8px;">r = A<sub>e</sub>/A<sub>i</sub></th>
+                                                <th style="background:#4CAF50; color:white; padding:8px;">Caudal efectivo (%)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">0,5</span></td><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">80%</span></td></tr>
+                                            <tr><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">1</span></td><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">50%</span></td></tr>
+                                            <tr><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">2</span></td><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">20%</span></td></tr>
+                                            <tr><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">3</span></td><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">10%</span></td></tr>
+                                            <tr><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">4</span></td><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">6%</span></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div style="display: flex; margin: auto; flex: 0 1 400px;">
+                                    <img src="image interior/Rendimiento.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                  
+                                </div>
+
+                                <p style="margin-top:0.8rem;">🔍 Una salida dos veces el tamaño de la entrada (r=<span class="important-number">2</span>) proporciona un caudal efectivo del <span class="important-number">20%</span> del máximo teórico, pero es un valor más que suficiente en la práctica, ya que aumentar r por encima de 2 apenas incrementa el caudal (asíntota).</p>
+                            </div>
+
+                            <!-- Nota adicional sobre la relación óptima -->
+                            <div class="tip-box" style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left-color: var(--color-success);">
+                                <div class="box-icon" style="background: var(--color-success);"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <strong>💡 Conclusión práctica:</strong> En operaciones de VPP, una relación r = <span class="important-number">2</span> (salida de doble tamaño que la entrada) ofrece un equilibrio óptimo entre caudal efectivo y esfuerzo operativo. Valores superiores no compensan por el trabajo adicional de abrir más salidas.
+                                </div>
+                            </div>
+
+                            <div class="columnas" style="justify-content: center;">
+                                <!-- Puntos clave sobre valores mínimos (página 2) -->
+                                <div class="info-flex-item" style="flex: 3 1 350px; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+                                    <ul class="visual-list">
+                                        <li>📌 <strong>Para operaciones con técnicas VPP ofensivas</strong> se recomienda un valor mínimo de <span class="important-number">r=1</span> (salida igual a la entrada).</li>
+                                        <li>📌 <strong>Para operaciones con técnicas VPP defensivas</strong> se recomienda un valor mínimo de <span class="important-number">r=0,5</span> (salida la mitad de tamaño que la entrada).</li>
+                                        <li>⚠️ <strong>En cualquier caso, a partir de <span class="important-number">r=2</span></strong>, la eficacia de la ventilación <strong>no aumenta excesivamente</strong>, por lo que la apertura de más salidas (considerando el tiempo y esfuerzo necesario para ello) <strong>no compensa</strong>.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Tabla 21. Relación salida/entrada (r = Ae / Ai) -->
+                                <div class="visual-table" style="overflow-x:auto; align-self: center;">
+                                    <table style="width:100%; border-collapse:collapse;">
+                                        <thead>
+                                            <tr>
+                                                <th style="background:#4CAF50; color:white; padding:8px;">Técnica</th>
+                                                <th style="background:#4CAF50; color:white; padding:8px;">r recomendable</th>
+                                                <th style="background:#4CAF50; color:white; padding:8px;">r mínimo</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding:8px; border:1px solid #ddd;">Ventilación natural vertical</td>
+                                                <td style="padding:8px; border:1px solid #ddd; text-align:center;">r &lt; <span class="important-number">0,5</span></td>
+                                                <td style="padding:8px; border:1px solid #ddd; text-align:center;">r &lt; <span class="important-number">1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:8px; border:1px solid #ddd;">VPP ofensiva</td>
+                                                <td style="padding:8px; border:1px solid #ddd; text-align:center;">r &gt; <span class="important-number">2</span></td>
+                                                <td style="padding:8px; border:1px solid #ddd; text-align:center;">r &gt; <span class="important-number">1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:8px; border:1px solid #ddd;">VPP defensiva</td>
+                                                <td style="padding:8px; border:1px solid #ddd; text-align:center;">r &gt; <span class="important-number">2</span></td>
+                                                <td style="padding:8px; border:1px solid #ddd; text-align:center;">r &gt; <span class="important-number">0,5</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Nota sobre el efecto del viento -->
+                            <div class="warning-box" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat);">
+                                <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-wind"></i></div>
+                                <div>
+                                    <strong>🌬️ Efecto del viento:</strong> Este cuadro <strong>no considera los efectos exteriores de viento</strong>. Para VPP, la <strong>r recomendable se reduce</strong> cuando la salida se encuentra a barlovento (ventilación contra el viento).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2.3.9 VARIACIÓN DEL DIFERENCIAL DE PRESIÓN INTERIOR -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-chart-line"></i></div>
+                                <h3>2.3.9. VARIACIÓN DEL DIFERENCIAL DE PRESIÓN INTERIOR DEPENDIENDO DE LA RELACIÓN ENTRE ENTRADA Y SALIDA</h3>
+                            </div>
+
+                            <!-- Introducción conceptual -->
+                            <div class="text-box" style="margin-bottom:1.5rem;">
+                                <p>Una <strong>mayor velocidad de flujo</strong> (alta eficiencia de ventilación) implica un <strong>bajo diferencial de presión interior</strong>, lo cual es adecuado cuando el objetivo es <strong>evacuar gases</strong>. Por el contrario, cuando se busca <strong>presurizar un recinto</strong> para evitar la propagación del incendio y la dispersión de gases, es preferible <strong>reducir el flujo disminuyendo el tamaño de la salida</strong>, lo que aumenta la presión interior.</p>
+                            </div>
+
+                            <!-- Fundamento físico y fórmula -->
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                <div class="info-flex-title"><i class="fas fa-square-root-variable" style="color:#4CAF50;"></i> Fundamento físico</div>
+                                <p>Aplicando los principios de conservación de masa, cantidad de movimiento y la ecuación de Bernoulli (descartando el efecto del incendio), se obtiene la siguiente expresión para el diferencial de presión:</p>
+                                <div style="text-align:center; margin:1.2rem 0;">
+                                    <p style="font-size:1.3rem;"><strong>ΔP = k' / (1 + r²)</strong> &nbsp; con &nbsp; <strong>r = A<sub>e</sub> / A<sub>i</sub></strong></p>
+                                </div>
+                                <ul class="visual-list">
+                                    <li><strong>ΔP</strong> = diferencial de presión interior, excluyendo el efecto del incendio [Pa].</li>
+                                    <li><strong>k'</strong> = constante que depende de la densidad del aire, el flujo del ventilador, su diámetro, la geometría de la entrada y el coeficiente de pérdida de presión del recinto.</li>
+                                    <li><strong>A<sub>e</sub></strong> = área de la salida de gases [m²].</li>
+                                    <li><strong>A<sub>i</sub></strong> = área de la entrada de aire [m²].</li>
+                                </ul>
+                            </div>
+
+                            <div class="columnas" style="justify-content: center;">
+                                <!-- Análisis detallado -->
+                                <div class="info-flex-item" style="flex: 1 1 300px; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                    <div class="info-flex-title"><i class="fas fa-chart-line" style="color:#4CAF50;"></i> Análisis de la variación</div>
+                                    <ul class="visual-list">
+                                        <li>📉 <strong>Relación inversa:</strong> Al aumentar el área de salida (A<sub>e</sub>) respecto a la entrada (A<sub>i</sub>), el diferencial de presión (ΔP) disminuye desde su valor máximo (cuando la salida está cerrada) hasta acercarse a cero.</li>
+                                        <li>📊 <strong>Rango típico:</strong> En incendios, la relación r suele oscilar entre <span class="important-number">0,5</span> y <span class="important-number">4</span>.</li>
+                                        <li>🔧 <strong>Modificación de la entrada:</strong> Aumentar el tamaño de la entrada para reducir r no incrementa ΔP, sino que altera la constante k' y reduce el rendimiento. En la práctica, el tamaño de entrada viene fijado por la puerta de acceso, y la variación de r se logra <strong>modificando la salida</strong>.</li>
+                                        <li>🔒 <strong>Presurización:</strong> Para maximizar la presión interior, se debe <strong>cerrar toda salida de gases</strong> (r → 0).</li>
+                                        <li>💨 <strong>Ventilación:</strong> En operaciones ofensivas o defensivas, el objetivo es evacuar gases, por lo que la relación r debe elegirse con <strong>criterios de caudal efectivo</strong>, no de presión.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Tabla 22. Valores de ΔP -->                            
+                                <div class="visual-table" style="overflow-x:auto; margin-top:1rem; align-self: center; min-height: 350px;">
+                                    <table style="width:100%; max-width:350px; margin:0 auto; border-collapse:collapse;">
+                                        <thead>
+                                            <tr><th style="background:#4CAF50; color:white; padding:8px;">r = A<sub>e</sub>/A<sub>i</sub></th><th style="background:#4CAF50; color:white; padding:8px;">ΔP (%)</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">0,5</span></td><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">80%</span></td></tr>
+                                            <tr><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">1</span></td><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">50%</span></td></tr>
+                                            <tr><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">2</span></td><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">20%</span></td></tr>
+                                            <tr><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">3</span></td><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">10%</span></td></tr>
+                                            <tr><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">4</span></td><td style="padding:8px; border:1px solid #ddd; text-align:center;"><span class="important-number">6%</span></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- Conclusión táctica -->
+                            <div class="tip-box" style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left-color: var(--color-success);">
+                                <div class="box-icon" style="background: var(--color-success);"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <strong>🎯 Conclusión operativa:</strong> La elección de la relación r debe basarse en el objetivo táctico: <strong>r pequeño (salida mínima)</strong> para <strong>presurización</strong> (máximo ΔP), y <strong>r grande (≥ 2)</strong> para <strong>ventilación</strong> (máximo caudal), asumiendo la consiguiente pérdida de presión interior.
+                                </div>
+                            </div>
+                        </div>                       
+
+                        <!-- 2.3.10 PÉRDIDAS DE EFICIENCIA: MAL SELLADO Y FRICCIÓN -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-exclamation-triangle"></i></div>
+                                <h3>2.3.10. PÉRDIDAS DE EFICIENCIA: MAL SELLADO Y FRICCIÓN</h3>
+                            </div>
+
+                            <div class="columnas">
+                                <!-- Pérdidas de flujo (mal sellado) -->
+                                <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+                                    <div class="info-flex-title"><i class="fas fa-door-open" style="color:#4CAF50;"></i> Pérdidas de flujo: mal sellado</div>
+                                    <ul class="visual-list">
+                                        <li>🚪 La <strong>falta de sellado</strong> o las <strong>aperturas no deseadas</strong> (que no pueden cerrarse) constituyen una pérdida constante de flujo y presión.</li>
+                                        <li>🔍 Se trata de un <strong>cúmulo de pequeñas pérdidas</strong> en:
+                                            <ul class="nested-list" style="flex-direction: row; display: flex; gap: 0 1rem; flex-wrap: wrap; justify-content: center; margin-left: 0;">
+                                                <li>Cajas de persiana</li>
+                                                <li>Rejillas de ventilación</li>
+                                                <li>Conductos de extracción</li>
+                                                <li>Ventanas deslizantes</li>
+                                                <li>Rendijas de puertas, etc.</li>
+                                            </ul>
+                                        </li>
+                                        <li>🏠 Las viviendas con <strong>buen aislamiento térmico</strong> gozan de <strong>mayor estanqueidad</strong> que las tradicionales.</li>
+                                        <li>📉 Las pérdidas de flujo suponen una <strong>caída de la presión interior</strong> y, por tanto, un <strong>menor flujo en la salida de gases designada</strong>.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Pérdidas por fricción -->
+                                <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                    <div class="info-flex-title"><i class="fas fa-road" style="color:#4CAF50;"></i> Pérdidas por fricción</div>
+                                    <ul class="visual-list">
+                                        <li>🔄 A lo largo del recorrido del flujo de gases se producen <strong>giros, estrechamientos y choques</strong> con elementos fijos.</li>
+                                        <li>⚡ Estos fenómenos implican <strong>aceleración y desaceleración</strong> de las partículas de aire, con la consiguiente <strong>pérdida de energía</strong>.</li>
+                                        <li>📏 A <strong>mayor longitud y sinuosidad</strong> en el recorrido del flujo de gases, <strong>mayor fricción</strong>, por lo que se requiere más energía para mantener el flujo.</li>
+                                        <li>📊 Los elementos de fricción suponen una <strong>mayor resistencia al tránsito del fluido</strong> y, por tanto, un <strong>menor caudal efectivo de salida</strong>.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Aclaración sobre el volumen de la estructura -->
+                            <div class="tip-box" style="margin:1.5rem 0; background: linear-gradient(135deg, #E1F5FE, #B3E5FC); border-left-color: #2196F3;">
+                                <div class="box-icon" style="background: #2196F3;"><i class="fas fa-cube"></i></div>
+                                <div>
+                                    <strong>📦 El volumen de la estructura por sí mismo no supone una pérdida de flujo o presión.</strong> La disminución de la eficiencia está directamente relacionada con la <strong>cantidad de aperturas no deseadas</strong> y de <strong>elementos de fricción</strong> en el recorrido.
+                                </div>
+                            </div>
+
+                            <!-- Importancia crítica en VPP ofensiva -->
+                            <div class="warning-box" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat); margin:1.5rem 0;">
+                                <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-fire"></i></div>
+                                <div>
+                                    <strong>⚠️ Factor crítico en VPP ofensiva:</strong> La eficiencia en la ventilación constituye un factor determinante en operaciones de VPP ofensiva. Su empleo en viviendas con <strong>bajo nivel de estanqueidad</strong> o que requieran un <strong>recorrido largo del flujo de gases</strong> hasta el recinto de incendio debe valorarse especialmente, pues un caudal reducido puede <strong>no ser capaz de realizar el barrido de los gases</strong> y, en cambio, <strong>generar una mezcla de gases de incendio y aire hasta su rango de inflamabilidad</strong>.
+                                </div>
+                            </div>
+
+                            <!-- Medidas correctivas -->
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+                                <div class="info-flex-title"><i class="fas fa-tools" style="color:#4CAF50;"></i> Medidas para mejorar la eficiencia</div>
+                                <ul class="visual-list">
+                                    <li>🔧 Durante la aplicación de una ventilación VPP, tan pronto como sea posible, debe <strong>revisarse todo el recorrido de los gases</strong> cerrando aquellos huecos innecesarios. Esta tarea puede realizarse incluso desde el exterior.</li>
+                                    <li>🚪 <strong>Cerrar las puertas de acceso a habitaciones</strong>, a pesar de que sus ventanas estén cerradas, contribuye a una mayor estanqueidad.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 2.3.11 USO COMBINADO DE VENTILADORES -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-fan"></i></div>
+                                <h3>2.3.11. USO COMBINADO DE VENTILADORES</h3>
+                            </div>
+
+                            <!-- Situaciones que requieren combinación -->
+                            <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                <div class="info-flex-title"><i class="fas fa-exclamation-circle" style="color:#4CAF50;"></i> Situaciones que requieren combinación</div>
+                                <ul class="visual-list">
+                                    <li>🚪 <strong>Hueco de entrada excesivamente grande:</strong> Un solo ventilador no cubre toda la apertura.</li>
+                                    <li>🔓 <strong>Pérdidas de flujo:</strong> Volumen importante de aire se escapa por salidas no deseadas.</li>
+                                    <li>🔄 <strong>Pérdidas por fricción:</strong> Largos recorridos, pasillos estrechos o cambios de dirección disipan la energía cinética.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Tipos de combinación -->
+                            <h4 style="display:flex; align-items:center; gap:10px; margin:2rem 0 1rem;"><i class="fas fa-code-branch" style="color:#4CAF50;"></i> Tipologías de combinación</h4>
+
+                            <div class="columnas" style="justify-content: center;">
+                            <!-- Paralelo -->
+                            <div class="info-flex-item" style="background: white; padding:1.2rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                <div class="info-flex-title"><i class="fas fa-equals" style="color:#4CAF50;"></i> Ventiladores en paralelo</div>
+                                <p>Cubren entradas grandes. Separación entre ventiladores igual al tamaño óptimo de apertura (<span class="important-number">2 m</span> para modelos de <span class="important-number">18-20"</span>), con flujos paralelos.</p>
+                            </div>
+
+                            <!-- Serie en entrada -->
+                            <div class="info-flex-item" style="background: white; padding:1.2rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                <div class="info-flex-title"><i class="fas fa-arrow-right-arrow-left" style="color:#4CAF50;"></i> Ventiladores en serie en la entrada</div>
+                                <p>Aumento del caudal de solo <span class="important-number">5-10%</span>. Configuración <strong>ineficiente</strong> (el diseño de hélice acelera aire en reposo, no aire ya en movimiento). Debe evitarse.</p>
+                            </div>
+
+                            <!-- En V -->
+                            <div class="info-flex-item" style="background: white; padding:1.2rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1rem;">
+                                <div class="info-flex-title"><i class="fas fa-code-branch" style="color:#4CAF50;"></i> Ventiladores en V</div>
+                                <p>Dos ventiladores con flujos dirigidos al centro de la apertura. Aumento de caudal hasta <span class="important-number">35%</span> con separación de <span class="important-number">2 m</span> (para 18-20").</p>
+                            </div>
+
+                            <!-- Serie a lo largo del recorrido -->
+                            <div class="info-flex-item" style="flex: 1 1 1000px; background: white; padding:1.2rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                                <div class="info-flex-title"><i class="fas fa-road" style="color:#4CAF50;"></i> Ventiladores en serie a lo largo del recorrido</div>
+                                <p>Ventilador <strong>principal</strong> en la entrada y <strong>auxiliar</strong> en un punto donde la velocidad ha decaído. Aumento de flujo <strong>superior a las otras configuraciones</strong>. El auxiliar genera depresión que favorece la aspiración del principal. <strong>Muy recomendable en edificios de varias alturas</strong> para VPP ofensiva.</p>
+                            </div>
+                            </div>
+                        </div>   
+                        
+                        <!-- 2.3.12 INFLUENCIA DEL VIENTO EN LA VPP -->
+                        <div class="section">
+                            <div class="section-title">
+                                <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-wind"></i></div>
+                                <h3>2.3.12. INFLUENCIA DEL VIENTO EN LA VPP</h3>
+                            </div>
+
+                            <div class="columnas" style="width: 95%; justify-self: center;">
+                            <!-- Introducción: presión eólica en fachadas -->
+                            <div class="info-flex-item" style="flex: 1 1 400px; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:0.5rem;">
+                                <div class="info-flex-title"><i class="fas fa-building" style="color:#4CAF50;"></i> Presión eólica en edificios</div>
+                                <ul class="visual-list">
+                                    <li>🌬️ Cuando el viento incide sobre las fachadas, genera un <strong>diferencial de presión</strong> cuya magnitud depende de la <strong>velocidad del viento</strong>, la <strong>geometría del edificio</strong> y la <strong>posición de la fachada</strong>.</li>
+                                    <li>⬆️ En general: <strong>sobrepresión en fachadas a barlovento</strong> (orientadas al viento) y <strong>succión en fachadas a sotavento</strong>.</li>
+                                    <li>📐 En cubiertas y fachadas laterales, la presión varía desde valores positivos (cerca de barlovento) a negativos (cerca de sotavento).</li>
+                                </ul>
+                            </div>
+
+                            <!-- Efecto en la VPP: configuraciones favorables/desfavorables -->
+                            <div class="info-flex-item" style="flex: 1 1 400px; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:0.5rem;">
+                                <div class="info-flex-title"><i class="fas fa-arrow-trend-up" style="color:#4CAF50;"></i> Influencia en la VPP</div>
+                                <ul class="visual-list">
+                                    <li>✅ El viento puede <strong>actuar a favor o en contra</strong> del flujo de VPP según la configuración de entrada y salida.</li>
+                                    <li>📌 Se recomienda elegir configuraciones que <strong>eviten tener que vencer el diferencial de presión</strong> generado por el viento. La opción óptima es que el viento actúe a favor.</li>
+                                    <li>⚠️ Las configuraciones con entrada o salida a barlovento (contra el viento) deben <strong>evitarse</strong>.</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Presión eólica básica y coeficientes -->
+                            <div class="info-flex-item" style="flex: 1 1 400px; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:0.5rem;">
+                                <div class="info-flex-title"><i class="fas fa-square-root-variable" style="color:#4CAF50;"></i> Presión eólica básica (Pwb)</div>
+                                <p>Se denomina <strong>presión eólica básica</strong> al aumento de presión resultante de reducir la velocidad del viento hasta su detención completa:</p>
+                                <div style="text-align:center; margin:1rem 0;">
+                                    <p style="font-size:1.2rem;"><strong>P<sub>wb</sub> = (ρ · v²) / 2</strong></p>
+                                </div>
+                                <ul class="visual-list">
+                                    <li>📏 P<sub>wb</sub> = presión eólica básica [Pa]</li>
+                                    <li>🌫️ ρ = densidad del aire (<span class="important-number">1,2 kg/m³</span>)</li>
+                                    <li>💨 v = velocidad de referencia del viento [m/s]</li>
+                                </ul>    
+                                <div style="display: flex; margin: auto;">
+                                    <img src="image interior/Pwb.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                                              
+                            </div>                            
+
+                            <!-- Análisis gráfico: saldo de presión -->
+                            <div class="info-flex-item" style="flex: 1 1 400px; background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:0.5rem;">
+                                <div class="info-flex-title"><i class="fas fa-chart-line" style="color:#4CAF50;"></i> Saldo de presión en contra del viento</div>
+                                <ul class="visual-list">
+                                    <li>📉 En la gráfica ΔP vs. r, el viento en contra se representa como una <strong>línea horizontal</strong> a la altura del diferencial a vencer. El saldo de presión interior es el resultado de alcanzar la curva desde esa línea.</li>
+                                    <li>🔧 Si se opta por <strong>reducir el tamaño de la salida</strong> (r menor) en viento en contra, se aumenta el ΔP interior por encima de la presión eólica, permitiendo establecer flujo. Sin embargo, esto <strong>reduce el rendimiento</strong> de la ventilación y aumenta el riesgo de mezcla de gases en VPP ofensiva.</li>
+                                </ul>
+                                <div style="display: flex; margin: auto;">
+                                    <img src="image interior/ContraV.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                  
+                            </div>
+                            </div>                            
+
+                            <!-- Límite práctico: 4 m/s -->
+                            <div class="warning-box" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); border-left-color: var(--color-heat); margin:1.5rem 0;">
+                                <div class="box-icon" style="background: var(--color-heat);"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div>
+                                    <strong>⚠️ Límite operativo:</strong> Al representar la curva típica de ΔP de un ventilador VPP frente a presiones eólicas en contra de <span class="important-number">4 m/s</span>, <span class="important-number">6 m/s</span> y <span class="important-number">8 m/s</span>, se observa que resulta <strong>imposible mantener una relación r > 1 y un diferencial de presión interior aceptable</strong> con vientos en contra superiores a <span class="important-number">4 m/s</span>. Por tanto, <strong>debe valorarse el empleo de VPP con vientos en contra superiores a 4 m/s</strong>.
                                 </div>
                             </div>
                         </div>                        
-
                     </div>
+
+                    <!-- 2.4 CONTROL DE PUERTA DE ACCESO -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;"><i class="fas fa-door-open"></i></div>
+                            <h3>2.4. CONTROL DE PUERTA DE ACCESO</h3>
+                        </div>
+
+                        <div class="columnas">
+                        <!-- Importancia de la puerta -->
+                        <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:0.5rem;">
+                            <div class="info-flex-title"><i class="fas fa-exclamation-triangle" style="color:#FF9800;"></i> Impacto de la puerta en la operación</div>
+                            <ul class="visual-list">
+                                <li>🚪 Una puerta abierta tiene un <strong>impacto fundamental</strong> en el desarrollo de la intervención.</li>
+                                <li>🌬️ No solo permite el paso de los bomberos, sino que <strong>aporta aire fresco</strong> al interior y <strong>permite la dispersión de gases</strong>, alterando la dinámica del incendio.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Técnicas de control -->
+                        <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:0.5rem;">
+                            <div class="info-flex-title"><i class="fas fa-tools" style="color:#FF9800;"></i> Técnicas de control</div>
+                            <ul class="visual-list">
+                                <li>🔧 Consisten en <strong>entornar la puerta</strong> o <strong>colocar una cortina de bloqueo de humo</strong> para evitar o minimizar el flujo de aire entre el interior y el exterior.</li>
+                                <li>📏 La puerta debe quedar <strong>entornada al ancho de la manguera</strong>, y un bombero <strong>administra el paso de la manguera</strong> a medida que el equipo interior avanza.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Ventajas de las cortinas de bloqueo -->
+                        <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:0.5rem;">
+                            <div class="info-flex-title"><i class="fas fa-tshirt" style="color:#FF9800;"></i> Cortinas de bloqueo de humo</div>
+                            <ul class="visual-list">
+                                <li>🧵 Además de proporcionar un <strong>sencillo paso de la manguera por la parte baja</strong>, <strong>evitan la dispersión de gases al exterior</strong> al bloquear completamente la parte superior.</li>
+                                <li>✅ Permiten <strong>prescindir del bombero</strong> que ayuda a la operación de paso de manguera.</li>
+                            </ul>
+                        </div>
+                        </div>
+
+
+                    </div>                    
 
                 </div>
             </div>
@@ -2529,31 +3129,157 @@
                             <div class="card-subtitle-top">Orientación, rastreo y búsqueda de víctimas</div>
                             <span class="category-tag tag-smoke">Orientación</span>
                             <span class="category-tag tag-heat">Rastreo</span>
+                            <span class="category-tag tag-fire">Rescate</span>
                         </div>
                     </div>
                     <div class="topic-number-badge">Sección 3</div>
                 </div>
+
                 <div class="card-content">
-                    <!-- 3.1 ORIENTACIÓN -->
+                    <!-- 3.1 ORIENTACIÓN EN ESPACIOS SIN VISIBILIDAD -->
                     <div class="section">
-                        <div class="section-title"><div class="section-icon" style="background: var(--color-smoke);"><i class="fas fa-compass"></i></div><h3>3.1. ORIENTACIÓN EN ESPACIOS SIN VISIBILIDAD</h3></div>
-                        <div class="info-flex">
-                            <div class="info-flex-item">Tendido de manguera (guía).</div>
-                            <div class="info-flex-item">Paramento de referencia (siempre misma mano).</div>
-                            <div class="info-flex-item">Cámara térmica (complementaria).</div>
-                            <div class="info-flex-item">Cuerda guía en espacios amplios.</div>
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-smoke);"><i class="fas fa-compass"></i></div>
+                            <h3>3.1. ORIENTACIÓN EN ESPACIOS SIN VISIBILIDAD</h3>
+                        </div>
+
+                        <div class="text-box" style="margin-bottom:1.5rem;">
+                            <p>Cuando el equipo en progresión interior se interna en un recinto sin visibilidad, deben emplearse técnicas que permitan la <strong>orientación</strong> para realizar búsqueda, rescate y ataque al fuego, así como para <strong>localizar la ruta de escape</strong> ante un desarrollo desfavorable.</p>
+                            <p>Siempre que sea posible, el bombero deberá disponer de, al menos, <strong>dos</strong> de los siguientes medios:</p>
+                        </div>
+
+                        <div class="info-flex" style="width: 98%; justify-content: center;">
+                            <!-- Tendido de manguera -->
+                            <div class="info-flex-item">
+                                <div class="info-flex-title"><i class="fas fa-fire-hose"></i> Tendido de manguera</div>
+                                <ul class="visual-list">
+                                    <li>🧯 No solo protege frente a la evolución del incendio, sino que constituye un <strong>elemento guía</strong> que marca la ruta de escape al exterior.</li>
+                                    <li>🔍 El bombero desorientado que pierda la referencia de la manguera debe <strong>buscar a ras de suelo</strong> realizando un barrido sin perder la pared de referencia.</li>
+                                    <li>⏱️ En zonas amplias, este método puede resultar lento y estresante.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Paramento de referencia -->
+                            <div class="info-flex-item">
+                                <div class="info-flex-title"><i class="fas fa-border-all"></i> Paramento de referencia</div>
+                                <ul class="visual-list">
+                                    <li>🧱 En visibilidad nula, la progresión debe realizarse tomando como referencia <strong>la pared del recinto</strong>.</li>
+                                    <li>🫱 Mantener la referencia <strong>siempre a la misma mano</strong> (izquierda o derecha) permite en todo momento deshacer el camino simplemente cambiando la mano de referencia.</li>
+                                    <li>👁️ Incluso con visibilidad, conviene mantener referencia visual con la pared por si cae el plano neutro.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Cámara térmica -->
+                            <div class="info-flex-item">
+                                <div class="info-flex-title"><i class="fas fa-thermal-image"></i> Cámara térmica</div>
+                                <ul class="visual-list">
+                                    <li>📸 Permite una visión completa del recinto. En muchas situaciones ofrece imagen nítida para orientarse.</li>
+                                    <li>⚠️ En humo muy denso y altas temperaturas, la imagen puede <strong>perder definición</strong>. Además, hay riesgo de agotamiento de baterías.</li>
+                                    <li>🔄 Por ello, <strong>debe ser siempre un medio complementario</strong> a otros.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Cuerda guía (se menciona en 3.2 pero también sirve para orientación) -->
+                            <div class="info-flex-item">
+                                <div class="info-flex-title"><i class="fas fa-rope"></i> Cuerda guía</div>
+                                <ul class="visual-list">
+                                    <li>🧗 En espacios amplios sin visibilidad y baja temperatura (fuera del recinto de incendio), se emplean cuerdas guía para <strong>asegurar el retorno</strong> al punto de origen o para realizar barridos de rastreo.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <!-- 3.2 RASTREO Y BÚSQUEDA -->
+
+                    <!-- 3.2 RASTREO Y BÚSQUEDA DE VÍCTIMAS -->
                     <div class="section">
-                        <div class="section-title"><div class="section-icon" style="background: var(--color-fire);"><i class="fas fa-magnifying-glass"></i></div><h3>3.2. RASTREO Y BÚSQUEDA DE VÍCTIMAS</h3></div>
-                        <div class="info-flex">
-                            <div class="info-flex-item"><div class="info-flex-title">Método de barrido</div>Avanzar con referencia de pared, rastrear perímetro, luego zona central.</div>
-                            <div class="info-flex-item"><div class="info-flex-title">Método francés</div>Avance hasta puerta siguiente, punta lanza estático, apoyo rastrea perímetro.</div>
-                            <div class="info-flex-item"><div class="info-flex-title">Equipo independiente</div>Barrido con referencia de pared o cuerda guía; acceso interior o exterior (VEIS).</div>
-                            <div class="info-flex-item"><div class="info-flex-title">VPP defensiva</div>Confinar incendio, ventilar para ganar visibilidad en zonas comunes, ventilación secuencial de recintos.</div>
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-fire);"><i class="fas fa-magnifying-glass"></i></div>
+                            <h3>3.2. RASTREO Y BÚSQUEDA DE VÍCTIMAS EN ESPACIOS SIN VISIBILIDAD</h3>
                         </div>
-                        <div class="warning-box"><div class="box-icon" style="background: #FF9800;"><i class="fas fa-clock"></i></div><div><strong>Prioridad táctica:</strong> a veces es necesario controlar el incendio antes de la búsqueda para asegurar la vida de la víctima.</div></div>
+
+                        <div class="text-box" style="margin-bottom:1.5rem;">
+                            <p>🎯 El rastreo y búsqueda de víctimas es una <strong>prioridad táctica</strong> en la mayoría de las intervenciones, aunque en ocasiones es necesario <strong>controlar previamente el incendio</strong> para asegurar la vida de la víctima o evitar un agravamiento general.</p>
+                            <p>📊 Los recursos disponibles y el número de víctimas condicionan la técnica a emplear. La posibilidad de <strong>simultanear ataque y búsqueda</strong> aumenta la probabilidad de supervivencia.</p>
+                            <p>🔧 Herramientas como la <strong>cámara térmica</strong> o herramientas de mano (halligan, TNT) facilitan el rastreo y los accesos forzados.</p>
+                        </div>
+
+                        <!-- a) Rastreo por el equipo de ataque interior -->
+                        <h4 style="display:flex; align-items:center; gap:10px; margin:2rem 0 1rem;"><i class="fas fa-fire-extinguisher" style="color:var(--color-fire);"></i> a) Rastreo y búsqueda por el equipo de ataque interior al incendio</h4>
+
+                        <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                            <p>El equipo en progresión interior recorre, en sentido inverso, la posible ruta de escape de las víctimas. Durante la progresión puede rastrear el recinto.</p>
+                            <div class="info-flex" style="margin-top:1rem;">
+                                <!-- Método de barrido -->
+                                <div class="info-flex-item" style="flex:1;">
+                                    <div class="info-flex-title"><i class="fas fa-arrows-spin"></i> Método de barrido</div>
+                                    <ol class="visual-list" style="list-style:decimal; padding-left:1.5rem;">
+                                        <li>Una vez pasada la puerta de acceso, el equipo toma una <strong>referencia de avance</strong> (pared derecha o izquierda).</li>
+                                        <li>Siempre avanzando con el tendido y sin perder la referencia, se rastrea la zona al alcance desde la pared.</li>
+                                        <li>Completado el perímetro y de vuelta a la puerta, se avanza hasta la puerta siguiente, rastreando la zona central.</li>
+                                    </ol>
+
+                                    <div style="display: flex; margin: auto;">
+                                        <img src="image interior/Barrido.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>                                      
+                                </div>
+
+                                <!-- Método francés -->
+                                <div class="info-flex-item" style="flex:1;">
+                                    <div class="info-flex-title"><i class="fas fa-flag"></i> Método francés</div>
+                                    <ol class="visual-list" style="list-style:decimal; padding-left:1.5rem;">
+                                        <li>En la puerta de acceso, el equipo avanza hasta la <strong>puerta del siguiente recinto</strong> rastreando la zona a su paso.</li>
+                                        <li>Al alcanzar esa puerta, el <strong>punta de lanza permanece estático</strong> mientras el bombero de apoyo toma una referencia y rastrea el perímetro hasta cruzarse con el tendido.</li>
+                                        <li>Una vez que el apoyo retorna, se repite la secuencia tomando la referencia contraria.</li>
+                                    </ol>
+                                    <div style="display: flex; margin: auto;">
+                                        <img src="image interior/Francés.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- b) Rastreo por equipo independiente -->
+                        <h4 style="display:flex; align-items:center; gap:10px; margin:2rem 0 1rem;"><i class="fas fa-user-friends" style="color:var(--color-smoke);"></i> b) Rastreo y búsqueda por equipo independiente al de ataque</h4>
+
+                        <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
+                            <p>Simultanear ataque y búsqueda reduce el tiempo de rescate. El equipo independiente realiza un <strong>barrido del recinto</strong> tomando una referencia de pared para retornar al inicio. En superficies &gt; <span class="important-number">30 m²</span> es útil emplear <strong>cuerda guía</strong> para la zona central.</p>
+                            <p><strong>Modos de acceso:</strong></p>
+                            <ul class="visual-list">
+                                <li>🚪 <strong>Por el interior:</strong> El equipo de rescate accede por el interior de la vivienda, generalmente en zonas que quedan atrás del punto de máximo avance del tendido.</li>
+                                <li>🪟 <strong>Por el exterior (VEIS):</strong> Principal modo en servicios norteamericanos. En Europa se usa con vehículos de altura o escalera corredera. Eficaz en viviendas unifamiliares.</li>
+                            </ul>
+
+                            <div class="tip-box" style="margin-top:1rem; background: linear-gradient(135deg, #E1F5FE, #B3E5FC); border-left-color: #2196F3;">
+                                <div class="box-icon" style="background: #2196F3;"><i class="fas fa-list-ol"></i></div>
+                                <div>
+                                    <strong>Secuencia VEIS:</strong>
+                                    <ol style="margin:0.5rem 0 0 1.2rem;">
+                                        <li>Acceder por ventana con vehículo de altura o escalera.</li>
+                                        <li>Cerrar inmediatamente la puerta del recinto para evitar flujo de gases que salga por la ventana.</li>
+                                        <li>Tomar una referencia y rastrear la estancia con ayuda de herramienta de mano.</li>
+                                        <li>Abandonar por la misma ventana para no exponerse a gases del resto de la estructura.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- c) Rastreo empleando VPP defensiva -->
+                        <h4 style="display:flex; align-items:center; gap:10px; margin:2rem 0 1rem;"><i class="fas fa-shield-halved" style="color:var(--color-water);"></i> c) Rastreo y búsqueda empleando técnicas de VPP defensiva</h4>
+
+                        <div class="info-flex-item" style="background: white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+                            <p>🌫️ Los gases de incendio son el mayor riesgo para las víctimas. En lugar de extraer a la víctima, se puede <strong>retirar el peligro</strong> (humo y temperatura) de la zona donde se encuentra.</p>
+                            <p>🏢 Esta técnica es de especial interés en <strong>edificios complejos</strong>, incidentes con <strong>múltiples víctimas</strong> o cuando no se puede simultanear ataque y búsqueda por falta de personal.</p>
+
+                            <div class="stat-highlight" style="margin:1rem 0;">
+                                <div class="stat-highlight-number">📋 Secuencia VPP defensiva para búsqueda</div>
+                                <ol style="margin:0.8rem 0 0 1.5rem;">
+                                    <li><strong>Confinamiento del incendio:</strong> Cerrar puerta de acceso al incendio o colocar cortina de bloqueo.</li>
+                                    <li><strong>VPP para ganar visibilidad:</strong> Emplear ventilación en presión positiva en espacios comunes (cajas de escalera, pasillos).</li>
+                                    <li><strong>Ventilación secuencial:</strong> Ventilar uno a uno los recintos inundados de humo en busca de víctimas.</li>
+                                </ol>
+                            </div>
+
+                            <p>✅ Así se crean zonas limpias y respirables para facilitar la localización y rescate sin exponer a los bomberos a atmósferas tóxicas.</p>
+                        </div>
                     </div>
                 </div>
             </div>
