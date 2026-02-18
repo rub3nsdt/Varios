@@ -146,9 +146,11 @@
         }
         
         .nav-item {
+            flex: 1 1 120px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             padding: 1rem 1.5rem;
             border-radius: 12px;
             text-decoration: none;
@@ -158,6 +160,7 @@
             min-width: 100px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             font-size: 0.9rem;
+            text-align: center;
         }
         .nav-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
         .nav-icon {
@@ -689,18 +692,440 @@
         }
         .stat-highlight-number { font-size: 1.3rem; font-weight: 900; color: var(--color-fire); line-height: 1; text-shadow: 0 3px 6px rgba(0,0,0,0.1); margin-bottom: 0.5rem; }
         .stat-highlight-label { font-size: 1.1rem; color: #555; font-weight: 600; }
+
+        /* ===== HEADER TÉCNICO INCENDIOS DE INTERIOR (II) ===== */
+        .technical-header {
+            position: relative;
+            background: linear-gradient(135deg, #0b1c2f 0%, #1e3a5f 40%, #2c4c6e 100%);
+            color: white;
+            overflow: hidden;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 15px 35px rgba(0, 20, 40, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+
+        /* FONDO TÉCNICO (rejilla + líneas de flujo) */
+        .tech-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+        }
+        .grid {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(100, 181, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(100, 181, 246, 0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .flow-lines {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+        .flow-line {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #4fc3f7, #29b6f6, #4fc3f7, transparent);
+            opacity: 0.3;
+            animation: flowMove 8s infinite linear;
+        }
+        .flow-line:nth-child(1) { top: 20%; animation-duration: 12s; }
+        .flow-line:nth-child(2) { top: 40%; animation-duration: 10s; animation-delay: 2s; }
+        .flow-line:nth-child(3) { top: 60%; animation-duration: 14s; animation-delay: 4s; }
+        .flow-line:nth-child(4) { top: 80%; animation-duration: 9s; animation-delay: 1s; }
+        @keyframes flowMove {
+            0% { transform: translateX(-100%); opacity: 0; }
+            20% { opacity: 0.5; }
+            80% { opacity: 0.5; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+
+        /* VENTILADORES */
+        .fans {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .fan-unit {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+        }
+        .fan-left {
+            top: 20%;
+            left: 5%;
+        }
+        .fan-right {
+            bottom: 20%;
+            right: 5%;
+        }
+        .fan-blade {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid rgba(41, 182, 246, 0.5);
+            border-top-color: rgba(255, 255, 255, 0.8);
+            animation: spinFan 6s infinite linear;
+        }
+        .fan-blade:nth-child(2) { transform: rotate(120deg); }
+        .fan-blade:nth-child(3) { transform: rotate(240deg); }
+        .fan-hub {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: #29b6f6;
+            border-radius: 50%;
+            box-shadow: 0 0 30px #29b6f6;
+        }
+        .airflow-cone {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 200px;
+            height: 60px;
+            background: linear-gradient(90deg, rgba(41,182,246,0.6), transparent);
+            filter: blur(20px);
+            transform: translateY(-50%);
+            animation: conePulse 3s infinite alternate;
+        }
+        .fan-left .airflow-cone { left: 100%; }
+        .fan-right .airflow-cone { left: auto; right: 100%; background: linear-gradient(270deg, rgba(41,182,246,0.6), transparent); }
+        @keyframes spinFan {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes conePulse {
+            0% { opacity: 0.3; width: 150px; }
+            100% { opacity: 0.8; width: 250px; }
+        }
+
+        /* MANGUERAS Y CHORROS DE AGUA */
+        .hoses {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 3;
+        }
+        .hose {
+            position: absolute;
+            width: 200px;
+            height: 300px;
+        }
+        .hose-1 {
+            bottom: 5%;
+            left: 15%;
+        }
+        .hose-2 {
+            top: 10%;
+            right: 15%;
+            transform: scaleX(-1);
+        }
+        .hose-curve {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, #4a4a4a, #2a2a2a);
+            border-radius: 50% / 100% 100% 0 0;
+            transform: rotate(20deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            border: 2px solid #757575;
+        }
+        .hose-2 .hose-curve {
+            transform: rotate(-20deg) scaleX(-1);
+        }
+        .nozzle {
+            position: absolute;
+            bottom: 20%;
+            right: 10%;
+            width: 30px;
+            height: 40px;
+            background: #9e9e9e;
+            border-radius: 20% 20% 40% 40%;
+            transform: rotate(25deg);
+            box-shadow: inset 0 -3px 0 #616161;
+        }
+        .hose-2 .nozzle {
+            bottom: auto;
+            top: 20%;
+            left: 10%;
+            transform: rotate(-25deg) scaleX(-1);
+        }
+        .water-jet {
+            position: absolute;
+            bottom: 20%;
+            right: -30px;
+            display: flex;
+            gap: 8px;
+            transform: rotate(25deg);
+        }
+        .hose-2 .water-jet {
+            bottom: auto;
+            top: 20%;
+            left: -30px;
+            transform: rotate(-25deg) scaleX(-1);
+        }
+        .droplet {
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle at 30% 30%, #b3e5fc, #0288d1);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            filter: blur(1px);
+            animation: dropletShot 2s infinite;
+        }
+        .droplet:nth-child(2) { animation-delay: 0.3s; width: 12px; height: 12px; }
+        .droplet:nth-child(3) { animation-delay: 0.6s; width: 8px; height: 8px; }
+        .droplet:nth-child(4) { animation-delay: 0.9s; width: 11px; height: 11px; }
+        .droplet:nth-child(5) { animation-delay: 1.2s; width: 9px; height: 9px; }
+        @keyframes dropletShot {
+            0% { transform: translateX(0) translateY(0) scale(1); opacity: 0.9; }
+            50% { opacity: 0.5; }
+            100% { transform: translateX(80px) translateY(-40px) scale(0.2); opacity: 0; }
+        }
+
+        /* FLECHAS DE FLUJO DE AIRE */
+        .airflow-arrows {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 4;
+            pointer-events: none;
+        }
+        .arrow-group {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        .arrow-in {
+            bottom: 25%;
+            left: 10%;
+        }
+        .arrow-out {
+            top: 25%;
+            right: 10%;
+        }
+        .arrow-group i {
+            font-size: 3rem;
+            color: #81d4fa;
+            text-shadow: 0 0 20px #29b6f6;
+            animation: arrowMove 2.5s infinite;
+        }
+        .arrow-out i {
+            color: #ffb74d;
+            text-shadow: 0 0 20px #ff9800;
+        }
+        .arrow-group i:nth-child(2) { animation-delay: 0.8s; }
+        .arrow-group i:nth-child(3) { animation-delay: 1.6s; }
+        .arrow-group span {
+            background: rgba(0,0,0,0.6);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(3px);
+        }
+        @keyframes arrowMove {
+            0% { transform: translateX(0) scale(1); opacity: 0.3; }
+            50% { transform: translateX(25px) scale(1.2); opacity: 1; }
+            100% { transform: translateX(50px) scale(1); opacity: 0.3; }
+        }
+        .arrow-out i {
+            animation-name: arrowMoveOut;
+        }
+        @keyframes arrowMoveOut {
+            0% { transform: translateX(0) scaleX(-1); opacity: 0.3; }
+            50% { transform: translateX(-25px) scaleX(-1.2); opacity: 1; }
+            100% { transform: translateX(-50px) scaleX(-1); opacity: 0.3; }
+        }
+
+        /* TEXTO PRINCIPAL */
+        .header-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+
+        .sup-title {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            color: #90caf9;
+            margin-bottom: 0.5rem;
+        }
+        .main-title {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            margin-bottom: 1rem;
+        }
+        .title-line {
+            font-size: 3.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        .title-line.highlight {
+            font-size: 3.5rem;
+            color: #ffb74d;
+            text-shadow: 0 0 30px #ff9800;
+        }
+        .sub-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #e0e0e0;
+            margin-bottom: 1.5rem;
+        }
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+        .tech-badges span {
+            background: rgba(0, 30, 60, 0.8);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #4fc3f7;
+            color: #e1f5fe;
+            backdrop-filter: blur(2px);
+        }
+        .divider-tech {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 2rem;
+        }
+        .divider-tech .line {
+            height: 2px;
+            width: 200px;
+            background: linear-gradient(90deg, transparent, #90caf9, #4fc3f7, #90caf9, transparent);
+        }
+        .divider-tech .icon-group {
+            display: flex;
+            gap: 20px;
+            font-size: 2.5rem;
+        }
+        .divider-tech .icon-group i {
+            color: white;
+            filter: drop-shadow(0 0 15px #4fc3f7);
+            animation: techIconFloat 3s infinite;
+        }
+        .divider-tech .icon-group i:nth-child(2) { animation-delay: 0.5s; }
+        .divider-tech .icon-group i:nth-child(3) { animation-delay: 1s; }
+        @keyframes techIconFloat {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        
     </style>
 </head>
 <body>
-    <header class="hero-header">
-        <div class="container header-content-visual">
-            <div class="main-title-visual">
-                <h1 class="title-text">INCENDIOS DE INTERIOR (II) <br> VENTILACIÓN Y TÉCNICAS DE INTERVENCIÓN</h1>
+    <header class="hero-header technical-header">
+        <!-- FONDO TÉCNICO (rejilla y líneas de flujo) -->
+        <div class="tech-bg">
+            <div class="grid"></div>
+            <div class="flow-lines">
+                <div class="flow-line" style="top: 20%;"></div>
+                <div class="flow-line" style="top: 40%;"></div>
+                <div class="flow-line" style="top: 60%;"></div>
+                <div class="flow-line" style="top: 80%;"></div>
             </div>
-            <div class="title-line">
-                <div class="line-part"></div>
-                <div class="line-center"><div class="combined-icon"><i class="fas fa-fire"></i><i class="fas fa-wind"></i></div></div>
-                <div class="line-part"></div>
+        </div>
+
+        <!-- VENTILADORES (hélices animadas) -->
+        <div class="fans">
+            <div class="fan-unit fan-left">
+                <div class="fan-blade"></div>
+                <div class="fan-blade"></div>
+                <div class="fan-blade"></div>
+                <div class="fan-hub"></div>
+                <div class="airflow-cone"></div>
+            </div>
+            <div class="fan-unit fan-right">
+                <div class="fan-blade"></div>
+                <div class="fan-blade"></div>
+                <div class="fan-blade"></div>
+                <div class="fan-hub"></div>
+                <div class="airflow-cone"></div>
+            </div>
+        </div>
+
+        <!-- MANGUERAS Y CHORROS DE AGUA -->
+        <div class="hoses">
+            <!-- Manguera 1 (desde izquierda) -->
+            <div class="hose hose-1">
+                <div class="hose-curve"></div>
+                <div class="nozzle"></div>
+                <div class="water-jet jet-1">
+                    <div class="droplet"></div>
+                    <div class="droplet"></div>
+                    <div class="droplet"></div>
+                    <div class="droplet"></div>
+                    <div class="droplet"></div>
+                </div>
+            </div>
+            <!-- Manguera 2 (desde derecha) -->
+            <div class="hose hose-2">
+                <div class="hose-curve"></div>
+                <div class="nozzle"></div>
+                <div class="water-jet jet-2">
+                    <div class="droplet"></div>
+                    <div class="droplet"></div>
+                    <div class="droplet"></div>
+                    <div class="droplet"></div>
+                    <div class="droplet"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FLECHAS DE FLUJO DE AIRE (grandes y dinámicas) -->
+        <div class="airflow-arrows">
+            <div class="arrow-group arrow-in">
+                <i class="fas fa-long-arrow-alt-right"></i>
+                <i class="fas fa-long-arrow-alt-right"></i>
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+            <div class="arrow-group arrow-out">
+                <i class="fas fa-long-arrow-alt-left"></i>
+                <i class="fas fa-long-arrow-alt-left"></i>
+                <i class="fas fa-long-arrow-alt-left"></i>
+            </div>
+        </div>
+
+        <!-- TEXTO PRINCIPAL (estilo técnico) -->
+        <div class="container header-content" style="margin-top: 0;">
+            <div class="title-block">
+                <h1 class="main-title">
+                    <span class="title-line">INCENDIOS</span>
+                    <span class="title-line">DE INTERIOR</span>
+                    <span class="title-line highlight">(II)</span>
+                </h1>
+                <div class="sub-title">TÉCNICAS DE INTERVENCIÓN</div>
+            </div>
+            <div class="divider-tech">
+                <div class="line"></div>
+                <div class="icon-group">
+                    <i class="fas fa-fan"></i>
+                    <i class="fas fa-tint"></i>
+                    <i class="fas fa-wind"></i>
+                </div>
+                <div class="line"></div>
             </div>
         </div>
     </header>
@@ -709,16 +1134,34 @@
         <div class="visual-nav">
             <a href="#aplicacion-agua" class="nav-item" style="background: linear-gradient(135deg, #E3F2FD, #FFFFFF);">
                 <div class="nav-icon" style="background: var(--gradient-water);"><i class="fas fa-tint"></i></div>
-                <span>Aplicación Agua</span><small>1</small>
+                <span>Aplicación Agua</span>
             </a>
+            <a href="#tecnicas-agua" class="nav-item" style="background: linear-gradient(135deg, #91aefd54, #FFFFFF);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #0288D1, #4FC3F7);"><i class="fas fa-hand-holding-droplet"></i></div>
+                <span>Técnicas de Agua</span>
+            </a>    
+
             <a href="#control-ventilacion" class="nav-item" style="background: linear-gradient(135deg, #E8F5E9, #FFFFFF);">
                 <div class="nav-icon" style="background: linear-gradient(135deg, #2E7D32, #81C784);"><i class="fas fa-wind"></i></div>
-                <span>Control Ventilación</span><small>2</small>
+                <span>Control Ventilación</span>
             </a>
+            <a href="#ventilacion-forzada" class="nav-item" style="background: linear-gradient(135deg, #c8e6ddab, #FFFFFF);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #2E7D32, #81C784);"><i class="fas fa-fan"></i></div>
+                <span>Ventilación Forzada</span>
+            </a>  
+            <a href="#vpp" class="nav-item" style="background: linear-gradient(135deg, #ffe0b285, #FFFFFF);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #F57C00, #FFB74D);"><i class="fas fa-arrow-trend-up"></i></div>
+                <span>VPP</span>
+            </a> 
+            <a href="#caudal-presion" class="nav-item" style="background: linear-gradient(135deg, #e1bee773, #FFFFFF);">
+                <div class="nav-icon" style="background: linear-gradient(135deg, #9C27B0, #BA68C8);"><i class="fas fa-gauge-high"></i></div>
+                <span>Caudal y Presión</span>
+            </a>                                
             <a href="#trabajo-sin-visibilidad" class="nav-item" style="background: linear-gradient(135deg, #FFEBEE, #FFFFFF);">
                 <div class="nav-icon" style="background: var(--gradient-smoke);"><i class="fas fa-eye-slash"></i></div>
-                <span>Sin Visibilidad</span><small>3</small>
+                <span>Sin Visibilidad</span>
             </a>
+            
         </div>
     </div>
     
@@ -1308,7 +1751,7 @@
 
                     <!-- Continuación dentro de la tarjeta "Aplicación de Agua" -->
                     <!-- 1.6 CUADRO RESUMEN DE TÉCNICAS (COMPARATIVA) -->
-                    <div class="section">
+                    <div class="section" id="tecnicas-agua">
                         <div class="section-title">
                             <div class="section-icon" style="background: #9C27B0;"><i class="fas fa-table-list"></i></div>
                             <h3>1.6. CUADRO RESUMEN DE TÉCNICAS DE APLICACIÓN DE AGUA</h3>
@@ -1826,7 +2269,7 @@
 
                     <!-- Continuación dentro de la tarjeta "Control de la Ventilación" -->
                     <!-- 2.3 VENTILACIÓN FORZADA (PARTE INICIAL) -->
-                    <div class="section">
+                    <div class="section" id="ventilacion-forzada">
                         <div class="section-title">
                             <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-fan"></i></div>
                             <h3>2.3. VENTILACIÓN FORZADA</h3>
@@ -2130,7 +2573,7 @@
 
                         <!-- Continuación dentro de la tarjeta "Control de la Ventilación" -->
                         <!-- 2.3.4 USO DE VENTILADORES DE PRESIÓN POSITIVA -->
-                        <div class="section">
+                        <div class="section" id="vpp">
                             <div class="section-title">
                                 <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-fan"></i></div>
                                 <h3>2.3.4. USO DE VENTILADORES DE PRESIÓN POSITIVA</h3>
@@ -2694,7 +3137,7 @@
                         </div>                      
 
                         <!-- 2.3.8 VARIACIÓN DEL CAUDAL DE VENTILACIÓN DEPENDIENDO DE LA RELACIÓN ENTRADA/SALIDA -->
-                        <div class="section">
+                        <div class="section" id="caudal-presion">
                             <div class="section-title">
                                 <div class="section-icon" style="background: #4CAF50;"><i class="fas fa-chart-bar"></i></div>
                                 <h3>2.3.8. VARIACIÓN DEL CAUDAL DE VENTILACIÓN DEPENDIENDO DE LA RELACIÓN ENTRE ENTRADA Y SALIDA</h3>
@@ -3303,32 +3746,207 @@
     <button class="floating-btn floating-btn-left" id="scrollNextBtn" title="Siguiente sección"><i class="fas fa-arrow-down"></i></button>
 
     <script>
-        // Scroll suave y navegación (mismo script del ejemplo, simplificado)
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-        window.addEventListener('scroll', () => { scrollTopBtn.style.display = window.scrollY > 500 ? 'flex' : 'none'; });
-        scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        // Función para obtener el factor de escala actual (solo para móviles)
+        function getScaleFactor() {
+            if (window.innerWidth <= 630) {
+                const bodyStyles = window.getComputedStyle(document.body);
+                const scaleValue = bodyStyles.getPropertyValue('--escala');
+                return scaleValue ? parseFloat(scaleValue) : 1;
+            }
+            return 1;
+        }
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Botón para volver arriba
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
 
-        // Siguiente sección
-        const sections = Array.from(document.querySelectorAll('.horizontal-card[id]'));
-        const scrollNextBtn = document.getElementById('scrollNextBtn');
-        scrollNextBtn.addEventListener('click', () => {
-            let current = 0;
-            const scrollY = window.scrollY + 150;
-            for (let i = 0; i < sections.length; i++) {
-                if (sections[i].offsetTop <= scrollY) current = i;
+        // Obtener todos los destinos de los enlaces del menú (visual-nav)
+        const navLinks = document.querySelectorAll('.visual-nav a.nav-item[href^="#"]');
+        const sectionElements = [];
+        const seenIds = new Set();
+
+        navLinks.forEach(link => {
+            const id = link.getAttribute('href').substring(1); // quita el '#'
+            if (id && !seenIds.has(id)) {
+                const element = document.getElementById(id);
+                if (element) {
+                    sectionElements.push(element);
+                    seenIds.add(id);
+                }
             }
-            const next = current + 1;
-            if (next < sections.length) sections[next].scrollIntoView({ behavior: 'smooth', block: 'start' });
-            else window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // Ordenar por su posición vertical absoluta (de arriba a abajo)
+        sectionElements.sort((a, b) => {
+            const aTop = a.getBoundingClientRect().top + window.scrollY;
+            const bTop = b.getBoundingClientRect().top + window.scrollY;
+            return aTop - bTop;
+        });
+
+        const sections = sectionElements; // Ahora contiene todas las secciones del menú
+
+        // Función para obtener el índice de la sección actual (la que está más cerca del tope de la ventana)
+        function getCurrentSection() {
+            const scale = getScaleFactor();
+            const margin = 150 * scale; // margen para considerar que estamos en una sección
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const elementTop = sections[i].getBoundingClientRect().top + window.scrollY;
+                if (window.scrollY + margin >= elementTop) {
+                    return i;
+                }
+            }
+            return 0;
+        }
+
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const scale = getScaleFactor();
+                    
+                    let currentElement = targetElement;
+                    let absoluteTop = 0;
+                    
+                    while (currentElement) {
+                        absoluteTop += currentElement.offsetTop;
+                        currentElement = currentElement.offsetParent;
+                    }
+                    
+                    const offset = absoluteTop * scale;
+                    
+                    window.scrollTo({
+                        top: offset - (100 * scale), 
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });        
+
+        // Función para ir a la siguiente sección
+        function goToNextSection() {
+            const currentIndex = getCurrentSection();
+            const nextIndex = currentIndex + 1;
+
+            if (nextIndex < sections.length) {
+                const nextSection = sections[nextIndex];
+                const elementTop = nextSection.getBoundingClientRect().top + window.scrollY;
+                const scale = getScaleFactor();
+                window.scrollTo({
+                    top: elementTop - (100 * scale), // dejar un margen superior
+                    behavior: 'smooth'
+                });
+                history.pushState(null, null, `#${nextSection.id}`);
+            } else {
+                // Si estamos en la última, volver arriba
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Botón de siguiente sección
+        const scrollNextBtn = document.getElementById('scrollNextBtn');
+        scrollNextBtn.addEventListener('click', goToNextSection);
+
+        // Actualizar el icono del botón según la posición
+        window.addEventListener('scroll', () => {
+            const currentIndex = getCurrentSection();
+            if (currentIndex === sections.length - 1) {
+                scrollNextBtn.innerHTML = '<i class="fas fa-home"></i>';
+                scrollNextBtn.title = "Volver al inicio";
+            } else {
+                scrollNextBtn.innerHTML = '<i class="fas fa-arrow-down"></i>';
+                scrollNextBtn.title = "Siguiente sección";
+            }
+
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                scrollNextBtn.style.opacity = '0.5';
+            } else {
+                scrollNextBtn.style.opacity = '1';
+            }
+        });
+
+        // Navegación con teclado (flecha derecha/espacio para siguiente, flecha izquierda para anterior)
+        document.addEventListener('keydown', (e) => {
+            if ((e.key === 'ArrowRight' || e.key === ' ') && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                e.preventDefault();
+                goToNextSection();
+            }
+
+            if (e.key === 'ArrowLeft' && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                e.preventDefault();
+                const currentIndex = getCurrentSection();
+                const prevIndex = currentIndex - 1;
+                if (prevIndex >= 0) {
+                    const prevSection = sections[prevIndex];
+                    const elementTop = prevSection.getBoundingClientRect().top + window.scrollY;
+                    const scale = getScaleFactor();
+                    window.scrollTo({
+                        top: elementTop - (100 * scale),
+                        behavior: 'smooth'
+                    });
+                    history.pushState(null, null, `#${prevSection.id}`);
+                } else {
+                    // Si estamos en la primera, ir al inicio
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        });
+
+        // Inicializar: mostrar el botón y manejar hash inicial
+        window.addEventListener('load', () => {
+            scrollNextBtn.style.display = 'flex';
+
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const targetElement = document.querySelector(window.location.hash);
+                    if (targetElement) {
+                        const elementTop = targetElement.getBoundingClientRect().top + window.scrollY;
+                        const scale = getScaleFactor();
+                        window.scrollTo({
+                            top: elementTop - (100 * scale),
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100);
+            }
+        });
+
+        // Solución para problemas de hash en WebView (varios intentos)
+        (function () {
+            function go() {
+                if (!location.hash) return;
+                const id = location.hash.slice(1);
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView();
+            }
+            window.addEventListener("load", () => {
+                go();
+                setTimeout(go, 800);
+                setTimeout(go, 2300);
+            });
+        })();
     </script>
 </body>
 </html>
