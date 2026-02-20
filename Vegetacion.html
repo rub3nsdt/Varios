@@ -92,13 +92,13 @@
             opacity: 0.95;
         }
 
-        /* Navegación visual */
+        /* ===== ESTILOS DE NAVEGACIÓN AL ESTILO ACCESOS FORZADOS ===== */
         .visual-nav {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 15px;
-            margin: 2rem auto 3rem;
+            margin: 2.5rem auto;
             padding: 1.2rem;
             background: white;
             border-radius: 20px;
@@ -110,6 +110,7 @@
         }
 
         .nav-item {
+            flex: 1 1 120px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -119,9 +120,10 @@
             color: #333;
             font-weight: 600;
             transition: all 0.3s ease;
-            min-width: 90px;
-            background: #f5f5f5;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            min-width: 100px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            font-size: 0.9rem;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff); /* fallback */
         }
 
         .nav-item:hover {
@@ -139,7 +141,13 @@
             align-items: center;
             justify-content: center;
             color: white;
-            background: var(--color-fire);
+        }
+
+        .nav-item small {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            margin-top: 4px;
+            color: #666;
         }
 
         /* Sistema de tarjetas principal (igual que en gas) */
@@ -383,7 +391,7 @@
         .columnas {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         /* compact-card (como en gas) */
@@ -424,14 +432,16 @@
         .compact-list li {
             padding: 0.4rem 0 0.4rem 1.8rem;
             position: relative;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
         .compact-list li:before {
             content: "•";
-            position: absolute;
-            left: 0.3rem;
+            position: relative;
+            left: -0.4rem;
+            top: 0.2rem;
             color: var(--color-fire);
             font-weight: bold;
+            font-size:1.6rem;
         }
 
         .compact-chip {
@@ -442,6 +452,103 @@
             font-weight: 600;
             background: #e0e0e0;
         }
+
+        /* ===== ESTILOS COMPACTOS (tomados de Accesos Forzados) ===== */
+        .compact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .compact-card {
+            flex: 1 1 280px;
+            background: white;
+            border-radius: 12px;
+            padding: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid;
+            transition: all 0.3s ease;
+        }
+
+        .compact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .compact-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .compact-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .compact-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+
+        .stats-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            justify-content: center;
+        }
+
+        .stat-compact {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid;
+        }
+
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .tool-card {
+            flex: 1 1 180px;
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid #FF9800;
+        }
+
+        .tool-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #FF9800;
+        }        
 
         /* footer */
         .visual-footer {
@@ -491,6 +598,56 @@
             right: auto;
             background: var(--gradient-forest);
         }
+
+        /* Bloques para partes del incendio */
+        .parte-block {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: white;
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border-left: 6px solid;
+            transition: all 0.2s ease;
+            flex: 1 1 250px; /* Se ajustan en filas de ancho mínimo 280px */
+        }
+
+        .parte-block:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .parte-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .parte-content {
+            flex: 1;
+        }
+
+        .parte-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: #333;
+        }
+
+        .parte-desc {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+        }
+         
+
     </style>
 </head>
 <body>
@@ -507,96 +664,499 @@
         </div>
     </header>
 
-    <!-- Navegación -->
+    <!-- Navegación estilo Accesos Forzados -->
     <div class="container">
         <div class="visual-nav">
-            <a href="#card1" class="nav-item"><div class="nav-icon" style="background:#D32F2F;"><i class="fas fa-tree"></i></div><span>1. Incendios</span></a>
-            <a href="#card2" class="nav-item"><div class="nav-icon" style="background:#0288D1;"><i class="fas fa-thermometer-half"></i></div><span>2. Transmisión</span></a>
-            <a href="#card3" class="nav-item"><div class="nav-icon" style="background:#F57C00;"><i class="fas fa-mountain"></i></div><span>3. Factores</span></a>
-            <a href="#card4" class="nav-item"><div class="nav-icon" style="background:#2E7D32;"><i class="fas fa-leaf"></i></div><span>4. Combustibles</span></a>
-            <a href="#card5" class="nav-item"><div class="nav-icon" style="background:#8D6E63;"><i class="fas fa-ruler"></i></div><span>5. Comportamiento</span></a>
-            <a href="#card6" class="nav-item"><div class="nav-icon" style="background:#757575;"><i class="fas fa-smog"></i></div><span>6. Humo</span></a>
+            <a href="#incendios" class="nav-item" style="background: linear-gradient(135deg, #FFEBEE, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-fire);">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <span>Incendios</span>
+                <small>Tema 1</small>
+            </a>
+            <a href="#transmision" class="nav-item" style="background: linear-gradient(135deg, #E3F2FD, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-atm);">
+                    <i class="fas fa-thermometer-half"></i>
+                </div>
+                <span>Transmisión</span>
+                <small>Tema 2</small>
+            </a>
+            <a href="#factores" class="nav-item" style="background: linear-gradient(135deg, #F3E5F5, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-topo);">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <span>Factores</span>
+                <small>Tema 3</small>
+            </a>
+            <a href="#combustibles" class="nav-item" style="background: linear-gradient(135deg, #E8F5E9, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-forest);">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <span>Combustibles</span>
+                <small>Tema 4</small>
+            </a>
+            <a href="#comportamiento" class="nav-item" style="background: linear-gradient(135deg, #EFEBE9, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-topo);">
+                    <i class="fas fa-ruler"></i>
+                </div>
+                <span>Comportamiento</span>
+                <small>Tema 5</small>
+            </a>
+            <a href="#humo" class="nav-item" style="background: linear-gradient(135deg, #F5F5F5, #FFFFFF);">
+                <div class="nav-icon" style="background: var(--gradient-humo);">
+                    <i class="fas fa-smog"></i>
+                </div>
+                <span>Humo</span>
+                <small>Tema 6</small>
+            </a>
         </div>
     </div>
 
     <main class="container">
         <div class="horizontal-cards-container">
 
-            <!-- TARJETA 1 – INCENDIOS EXCLUSIVOS DE VEGETACIÓN -->
-            <div class="horizontal-card" id="card1">
+            <!-- TARJETA 1 – INCENDIOS EXCLUSIVOS DE VEGETACIÓN (ESTILO ORIGINAL + ESTÉTICA MODERNA) -->
+            <div class="horizontal-card" id="incendios">
                 <div class="card-header-top" style="background: var(--gradient-fire);">
                     <div class="card-title-container">
                         <div class="card-icon-large"><i class="fas fa-fire"></i></div>
                         <div>
                             <div class="card-title-top">1. INCENDIOS EXCLUSIVOS DE VEGETACIÓN</div>
-                            <div class="card-subtitle-top">concepto · clasificación · interfaz · partes · morfología · competencias</div>
+                            <div class="card-subtitle-top">concepto · clasificación · interfaz · partes · morfología · patrones · competencias</div>
+                            <div style="margin-top: 0.5rem;">
+                                <span class="compact-chip" style="background:#FFEBEE; color:#D32F2F;">96% origen humano</span>
+                                <span class="compact-chip" style="background:#E3F2FD; color:#1976D2;">GIF ≥500 ha</span>
+                                <span class="compact-chip" style="background:#FFF3E0; color:#EF6C00;">4ª generación</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="topic-number-badge">1/6</div>
+                    <div class="topic-number-badge">Tema 1</div>
                 </div>
+
                 <div class="card-content">
-                    <!-- 1.1 concepto y clasificación -->
+                    <!-- 1.1 INCENDIOS: CONCEPTO Y CLASIFICACIÓN (emoticonos solo en listas) -->
                     <div class="section">
-                        <div class="section-title"><div class="section-icon" style="background:#D32F2F;"><i class="fas fa-info"></i></div><h3>1.1 Concepto y clasificación</h3></div>
-                        <div class="info-box"><div class="box-icon" style="background:#D32F2F;"><i class="fas fa-fire-extinguisher"></i></div><div><p><strong>Incendio:</strong> fuego sin control sobre vegetación no destinada a arder. En España <span class="data-number">96%</span> origen humano (Greenpeace).</p></div></div>
-                        <div class="comparison-container">
-                            <div class="comparison-card"><strong>Forestal:</strong> terreno forestal arbóreo/arbustivo/matorral. <span class="data-number">≥1 ha</span> (incendio), <span class="data-number">≥500 ha</span> (GIF).</div>
-                            <div class="comparison-card"><strong>Agrícola:</strong> terreno de cultivo agrícola.</div>
-                            <div class="comparison-card"><strong>Suelo urbano:</strong> parques, jardines, cunetas sin influencia forestal.</div>
+                        <div class="section-title">
+                            <div class="section-icon" style="background: var(--color-fire);"><i class="fas fa-info-circle"></i></div>
+                            <h3>1.1 Incendios: concepto y clasificación</h3>
+                        </div>
+
+                        <!-- Definición esencial + matiz sobre quemas controladas -->
+                        <div class="info-box" style="margin-bottom: 1rem;">
+                            <div class="box-icon" style="background: var(--color-fire);"><i class="fas fa-fire-extinguisher"></i></div>
+                            <div>
+                                <p><strong>Incendio:</strong> fuego que se extiende sin control sobre vegetación no destinada a arder. La falta de control es esencial; las quemas autorizadas (pastos, residuos forestales) <strong>no son incendios</strong>.</p>
+                                <p><span class="data-number">96%</span> de los incendios en España tienen origen humano (Greenpeace). Superficie afectada: <span class="data-number">18.000 ha</span> (2013) y <span class="data-number">135.000 ha</span> (2012).</p>
+                            </div>
+                        </div>
+
+                        <!-- Papel ecológico del fuego -->
+                        <div class="tip-box" style="margin-bottom: 1rem;">
+                            <div class="box-icon" style="background: #2E7D32;"><i class="fas fa-seedling"></i></div>
+                            <div>
+                                <strong>El ecosistema necesita el fuego:</strong> aporta estrategias rebrotadoras y de germinación. Sin embargo, actualmente ha perdido este carácter para convertirse en una amenaza para la biodiversidad y la seguridad de la población.
+                            </div>
+                        </div>
+
+                        <!-- Factores de incremento (con emoticonos en los li) -->
+                        <div class="warning-box" style="margin-bottom: 1rem;">
+                            <div class="box-icon" style="background: #F57C00;"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div>
+                                <strong>Factores del incremento de incendios:</strong>
+                                <ul class="compact-list" style="margin-top:0.3rem;">
+                                    <li>🔥 Falta de prevención</li>
+                                    <li>🏚️ Abandono rural y otras dificultades estructurales</li>
+                                    <li>🌡️ Mayor frecuencia e intensidad de olas de calor (aumento de temperaturas)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Incendio forestal (definición ampliada) -->
+                        <div class="compact-card" style="border-top-color: #2E7D32; margin-bottom: 1rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#2E7D32;"><i class="fas fa-tree"></i></div>
+                                <span class="compact-title">Incendio forestal</span>
+                            </div>
+                            <p style="font-size:0.9rem; margin-bottom:0.5rem;">Fuego sin control en terreno con especies forestales (arbóreas, arbustivas, matorral, herbáceas) que cumplan funciones ambientales, protectoras, productoras, culturales, paisajísticas o recreativas.</p>
+                            <p style="font-size:0.9rem; font-weight:700; margin-top:0.5rem;">También tienen consideración de incendio forestal:</p>
+                            <ul class="compact-list" style="font-size:0.85rem;">
+                                <li>🏜️ Terrenos yermos, roquedos y arenales.</li>
+                                <li>🏠 Construcciones e infraestructuras destinadas al servicio del monte.</li>
+                                <li>🌾 Terrenos agrícolas abandonados que, según la CC.AA., hayan adquirido signos inequívocos de estado forestal.</li>
+                                <li>🌳 Enclaves forestales en terrenos agrícolas con la superficie mínima determinada por la CC.AA.</li>
+                                <li>📜 Todo terreno que, sin reunir las características anteriores, se adscriba a la finalidad de ser repoblado o transformado al uso forestal (conforme a normativa).</li>
+                            </ul>
+                        </div>
+
+                        <!-- Incendio agrícola y de suelo urbano -->
+                        <div class="compact-grid" style="margin-bottom: 1rem;">
+                            <div class="compact-card" style="border-top-color: #FBC02D;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#FBC02D;"><i class="fas fa-tractor"></i></div>
+                                    <span class="compact-title">Incendio agrícola</span>
+                                </div>
+                                <p style="font-size:0.9rem;">Fuego sin control en terreno dedicado a cultivo agrícola. Se considera suelo agrícola aquel apto para la actividad agrícola o agricultura.</p>
+                            </div>
+                            <div class="compact-card" style="border-top-color: #795548;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#795548;"><i class="fas fa-city"></i></div>
+                                    <span class="compact-title">Suelo urbano</span>
+                                </div>
+                                <p style="font-size:0.9rem;">Incendios de vegetación en suelo urbano sin influencia forestal: parques, jardines, cunetas de caminos y carreteras en suelo urbano.</p>
+                            </div>
+                        </div>
+
+                        <!-- Nota: clima mediterráneo -->
+                        <div class="info-box" style="background: #E1F5FE; border-left-color: var(--color-atm);">
+                            <div class="box-icon" style="background: var(--color-atm);"><i class="fas fa-sun"></i></div>
+                            <div>
+                                <strong>Clima mediterráneo:</strong> periodo de sequía prolongado con temperaturas altas → la vegetación se seca total o parcialmente y se vuelve altamente inflamable. Cualquier fuego puede provocar un gran incendio forestal.
+                            </div>
                         </div>
                     </div>
-                    <!-- 1.2 interfaz -->
+
+                    <!-- 1.2 INCENDIOS DE INTERFAZ URBANO FORESTAL -->
                     <div class="section">
-                        <div class="section-title"><div class="section-icon" style="background:#8D6E63;"><i class="fas fa-home"></i></div><h3>1.2 Interfaz urbano‑forestal</h3></div>
-                        <p>Edificaciones dentro o próximas a vegetación forestal. <span class="data-number">Incendios de 4ª generación</span>: fuego alcanza estructuras y combustible no forestal (jardines).</p>
-                        <div class="diagram-flex">
-                            <div class="diagram-item">Estructuras en masa forestal</div>
-                            <div class="diagram-item">Vegetación aislada en zona urbana</div>
-                            <div class="diagram-item">Estructuras aisladas en área forestal</div>
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #8D6E63;"><i class="fas fa-city"></i></div>
+                            <h3>1.2 Incendios de interfaz urbano forestal</h3>
                         </div>
-                        <div class="warning-box"><div class="box-icon" style="background:#F57C00;"><i class="fas fa-exclamation"></i></div><div>Mayor fuente de ignición + vulnerabilidad de población.</div></div>
+
+                        <!-- Definición y concepto de 4ª generación -->
+                        <div class="info-box" style="margin-bottom: 1rem;">
+                            <div class="box-icon" style="background: #8D6E63;"><i class="fas fa-house-fire"></i></div>
+                            <div>
+                                <p><strong>Interfaz urbano‑forestal:</strong> zona que incluye edificaciones dentro o próximas a espacios de vegetación forestal. Añade complejidad por la interacción de dos entornos muy diferentes.</p>
+                                <p><strong>Incendios de <span class="data-number">4ª generación</span>:</strong> el fuego alcanza las edificaciones y, además, se propaga por la existencia de combustibles no forestales, como la propia vivienda o la vegetación de jardines.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tres escenarios de interfaz -->
+                        <p style="font-weight: 700; margin-bottom: 0.8rem; color: #5D4037;">Escenarios de interfaz:</p>
+                        <div class="compact-grid" style="margin-bottom: 1rem;">
+                            <div class="compact-card" style="border-top-color: #A1887F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#A1887F;"><i class="fa-solid fa-tree-city"></i></div>
+                                    <span class="compact-title">Estructuras en masa forestal</span>
+                                </div>
+                                <p style="font-size:0.9rem; text-align: center;">Edificaciones insertadas en masa forestal, generalmente agrupadas. Domina la vegetación sobre las estructuras.</p>
+                            </div>
+                            <div class="compact-card" style="border-top-color: #A1887F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#A1887F;"><i class="fas fa-tree"></i></div>
+                                    <span class="compact-title">Vegetación aislada en área urbana</span>
+                                </div>
+                                <p style="font-size:0.9rem ;text-align: center;">Zonas de vegetación aisladas en medio de áreas urbanizadas, como parques y jardines.</p>
+                            </div>
+                            <div class="compact-card" style="border-top-color: #A1887F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#A1887F;"><i class="fas fa-home"></i></div>
+                                    <span class="compact-title">Estructuras aisladas en área forestal</span>
+                                </div>
+                                <p style="font-size:0.9rem; text-align: center;">Construcciones aisladas en medio de áreas forestales o agrícolas.</p>
+                            </div>
+                        </div>
+
+                        <!-- Peligro doble -->
+                        <div class="danger-box">
+                            <div class="box-icon" style="background: #C62828;"><i class="fa-solid fa-skull-crossbones"></i></div>
+                            <div>
+                                <strong>Peligro doble en la interfaz:</strong>
+                                <ul class="compact-list" style="margin-top:0.3rem;">
+                                    <li>🔥 <strong>Fuente de peligro:</strong> la presencia de espacios urbanizados incrementa las posibilidades de ignición.</li>
+                                    <li>🏠 <strong>Mayor vulnerabilidad:</strong> la población que vive en el entorno de estos espacios aumenta el riesgo y la exposición.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <!-- 1.3 clasificación de incendios (superficie y estrato) -->
+
+                    <!-- 1.3 CLASIFICACIÓN DE LOS INCENDIOS -->
                     <div class="section">
-                        <div class="section-title"><div class="section-icon" style="background:#4FC3F7;"><i class="fas fa-chart-pie"></i></div><h3>1.3 Clasificación por superficie y estrato</h3></div>
-                        <ul class="visual-list">
-                            <li><strong>Conato:</strong> &lt;1 ha</li>
-                            <li><strong>Incendio:</strong> ≥1 ha</li>
-                            <li><strong>GIF:</strong> ≥500 ha</li>
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4FC3F7;"><i class="fas fa-chart-pie"></i></div>
+                            <h3>1.3 Clasificación de los incendios</h3>
+                        </div>
+
+                        <div class="columnas">
+                            <!-- Introducción: doble clasificación -->
+                            <div class="info-box" style="margin-bottom: 0rem; flex: 1 1 300px; align-self: center;">
+                                <div class="box-icon" style="background: #4FC3F7;"><i class="fas fa-diagram-project"></i></div>
+                                <div>
+                                    <p>Los incendios se clasifican según <strong>la superficie afectada</strong> y según <strong>el estrato vegetativo</strong> por el que se propagan.</p>
+                                </div>
+                            </div>
+
+                            <div style="flex: 1 1 300px;">
+                                <!-- Por superficie -->
+                                <h4 style="margin: 0 0 0.8rem 0; color: #01579B;">Por superficie afectada</h4>
+                                <div class="stats-compact" style="margin-bottom: 1.5rem;">
+                                    <div class="stat-compact" style="border-top-color: #D32F2F;">
+                                        <div class="stat-number data-number">&lt;1 ha</div>
+                                        <div class="stat-label">Conato</div>
+                                    </div>
+                                    <div class="stat-compact" style="border-top-color: #D32F2F;">
+                                        <div class="stat-number data-number">≥1 ha</div>
+                                        <div class="stat-label">Incendio</div>
+                                    </div>
+                                    <div class="stat-compact" style="border-top-color: #D32F2F;">
+                                        <div class="stat-number data-number">≥500 ha</div>
+                                        <div class="stat-label">Gran Incendio Forestal (GIF)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Por estrato -->
+                        <h4 style="margin: 1.5rem 0 0.8rem 0; color: #01579B;">Por estrato vegetativo</h4>
+                        <p style="margin-bottom: 1rem; font-size:0.95rem;">Según la capa de vegetación por la que progresa el fuego:</p>
+
+                        <div class="compact-grid" style="margin-bottom: 0.5rem; width: 91%; margin: auto;">
+                            <!-- Suelo / subsoleo -->
+                            <div class="compact-card" style="border-top-color: #5D4037;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#5D4037;"><i class="fas fa-layer-group"></i></div>
+                                    <span class="compact-title">Suelo / subsoleo</span>
+                                </div>
+                                <ul class="compact-list" style="font-size:0.85rem;">
+                                    <li>🌱 Se propaga por materia orgánica en descomposición y raíces.</li>
+                                    <li>🔥 Combustión lenta e incandescente (falta de oxígeno).</li>
+                                    <li>🔍 Difícil detección; se necesita línea de defensa hasta suelo mineral.</li>
+                                    <li>🌍 Típico en turberas o gayuba. En España son escasos.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Superficie -->
+                            <div class="compact-card" style="border-top-color: #2E7D32;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#2E7D32;"><i class="fas fa-leaf"></i></div>
+                                    <span class="compact-title">Superficie</span>
+                                </div>
+                                <ul class="compact-list" style="font-size:0.85rem;">
+                                    <li>🌿 Combustible hasta <span class="data-number">1,5 m</span> de altura: hojarasca sin descomponer, hierbas, arbustos, leños caídos.</li>
+                                    <li>📈 <strong>Más frecuentes</strong> por rápida pérdida de humedad.</li>
+                                    <li>⚡ Propicios para inicio y propagación de llamas.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Antorcheo -->
+                            <div class="compact-card" style="border-top-color: #F57C00;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#F57C00;"><i class="fas fa-tree"></i></div>
+                                    <span class="compact-title">Antorcheo</span>
+                                </div>
+                                <ul class="compact-list" style="font-size:0.85rem;">
+                                    <li>🔥 Incendio de superficie que corona copas aisladas por continuidad vertical.</li>
+                                    <li>↩️ Al desaparecer la copa, sigue propagándose por superficie.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Copas pasivo -->
+                            <div class="compact-card" style="border-top-color: #FBC02D;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#FBC02D;"><i class="fas fa-tree"></i></div>
+                                    <span class="compact-title">Copas pasivo</span>
+                                </div>
+                                <ul class="compact-list" style="font-size:0.85rem;">
+                                    <li>🌲 Avanza por las copas acoplado a un fuego de superficie, no independiente.</li>
+                                    <li>⛓️ Si se elimina el fuego de superficie, se detiene.</li>
+                                    <li>📏 Propagación principal por combustible superficial.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Copas activo -->
+                            <div class="compact-card" style="border-top-color: #D32F2F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#D32F2F;"><i class="fas fa-fire"></i></div>
+                                    <span class="compact-title">Copas activo</span>
+                                </div>
+                                <ul class="compact-list" style="font-size:0.85rem;">
+                                    <li>💨 Independiente de lo que ocurre en superficie. Las copas se queman primero (combustibles ligeros, más viento).</li>
+                                    <li>💨 Requiere viento fuerte y continuidad horizontal y vertical del combustible.</li>
+                                    <li>⚠️ Incendios de <strong>muy alta intensidad</strong> y difícil control.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Nota complementaria sobre imagen de alta intensidad -->
+                        <div class="tip-box" style="margin-top: 1rem;">
+                            <div class="box-icon" style="background: #FFB74D;"><i class="fas fa-image"></i></div>
+                            <div>
+                                <strong>📷 Incendio de alta intensidad:</strong> el fuego de copas activo genera temperaturas extremas y una propagación muy rápida, como se ilustra en la documentación técnica.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.4 PARTES DE UN INCENDIO (bloques individuales) -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #795548;"><i class="fas fa-puzzle-piece"></i></div>
+                            <h3>1.4 Partes de un incendio</h3>
+                        </div>
+
+                        <div class="columnas">
+                            <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 4 1 300px;">
+                                <!-- Origen -->
+                                <div class="parte-block" style="border-left-color: #D32F2F;">
+                                    <div class="parte-icon" style="background: #D32F2F;"><i class="fas fa-map-pin"></i></div>
+                                    <div class="parte-content">
+                                        <div class="parte-title">Origen</div>
+                                        <div class="parte-desc">Ubicación donde se ha iniciado el incendio.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Cabeza -->
+                                <div class="parte-block" style="border-left-color: #FF7043;">
+                                    <div class="parte-icon" style="background: #FF7043;"><i class="fas fa-arrow-right-to-bracket"></i></div>
+                                    <div class="parte-content">
+                                        <div class="parte-title">Cabeza</div>
+                                        <div class="parte-desc">Parte más caliente y activa, indica la dirección de avance.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Flancos -->
+                                <div class="parte-block" style="border-left-color: #FBC02D;">
+                                    <div class="parte-icon" style="background: #FBC02D;"><i class="fas fa-arrows-left-right"></i></div>
+                                    <div class="parte-content">
+                                        <div class="parte-title">Flancos</div>
+                                        <div class="parte-desc">Lados paralelos a la dirección principal; fuego activo pero menos intenso que la cabeza.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Cola -->
+                                <div class="parte-block" style="border-left-color: #42A5F5;">
+                                    <div class="parte-icon" style="background: #42A5F5;"><i class="fas fa-arrow-left"></i></div>
+                                    <div class="parte-content">
+                                        <div class="parte-title">Cola</div>
+                                        <div class="parte-desc">Parte opuesta a la cabeza, se quema más despacio; suele estar cerca del origen.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Perímetro -->
+                                <div class="parte-block" style="border-left-color: #66BB6A;">
+                                    <div class="parte-icon" style="background: #66BB6A;"><i class="fas fa-draw-polygon"></i></div>
+                                    <div class="parte-content">
+                                        <div class="parte-title">Perímetro</div>
+                                        <div class="parte-desc">Línea límite o borde del incendio; puede no tener fuego activo en algunas partes.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Dedo -->
+                                <div class="parte-block" style="border-left-color: #AB47BC;">
+                                    <div class="parte-icon" style="background: #AB47BC;"><i class="fas fa-hand-point-up"></i></div>
+                                    <div class="parte-content">
+                                        <div class="parte-title">Dedo</div>
+                                        <div class="parte-desc">Franja estrecha que se extiende del incendio principal. Peligroso si flanquea al personal.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Bolsa -->
+                                <div class="parte-block" style="border-left-color: #EC407A;">
+                                    <div class="parte-icon" style="background: #EC407A;"><i class="fas fa-square"></i></div>
+                                    <div class="parte-content">
+                                        <div class="parte-title">Bolsa</div>
+                                        <div class="parte-desc">Área no quemada entre el incendio principal y un dedo.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Isla -->
+                                <div class="parte-block" style="border-left-color: #2E7D32;">
+                                    <div class="parte-icon" style="background: #2E7D32;"><i class="fas fa-tree"></i></div>
+                                    <div class="parte-content">
+                                        <div class="parte-title">Isla</div>
+                                        <div class="parte-desc">Área de combustible sin quemar dentro del perímetro.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Focos secundarios -->
+                                <div class="parte-block" style="border-left-color: #B71C1C;">
+                                    <div class="parte-icon" style="background: #B71C1C;"><i class="fas fa-fire"></i></div>
+                                    <div class="parte-content">
+                                        <div class="parte-title">Focos secundarios</div>
+                                        <div class="parte-desc">Áreas ardientes fuera del perímetro, generados por pavesas o piñas. Pueden independizarse y unirse al principal.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex: 1 1 300px;">
+                                <img src="image vegetacion/partes.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                            </div>                             
+                        </div>
+                    </div>
+
+                    <!-- 1.5 MORFOLOGÍA SEGÚN PATRÓN DE PROPAGACIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #FF9800;"><i class="fas fa-share-alt"></i></div>
+                            <h3>1.5 Morfología del incendio</h3>
+                        </div>
+                        <p><strong>Formas determinadas por:</strong> meteorología (viento), topografía (pendiente), ecología (combustible).</p>
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: #FFB74D;">Circular: terreno plano, combustible homogéneo, sin viento.</div>
+                            <div class="compact-card" style="border-top-color: #FFB74D;">Elíptica: viento dominante, combustible homogéneo, terreno plano o pendiente regular.</div>
+                            <div class="compact-card" style="border-top-color: #FFB74D;">Irregular: viento variable y/o topografía irregular y/o combustible heterogéneo.</div>
+                        </div>
+                    </div>
+
+                    <!-- 1.6 PATRONES BÁSICOS DE PROPAGACIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #0288D1;"><i class="fas fa-wind"></i></div>
+                            <h3>1.6 Patrones básicos de propagación</h3>
+                        </div>
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: #2E7D32;">
+                                <div class="compact-header"><div class="compact-icon" style="background:#2E7D32;"><i class="fas fa-leaf"></i></div>Conducido por combustible</div>
+                                <div>Influencia de tipo, estado, cantidad, continuidad, resinas. Oportunidad: cambio a modelo favorable.</div>
+                            </div>
+                            <div class="compact-card" style="border-top-color: #8D6E63;">
+                                <div class="compact-header"><div class="compact-icon" style="background:#8D6E63;"><i class="fas fa-mountain"></i></div>Topográfico</div>
+                                <div>Pendiente, exposición. Oportunidad: cuando avance en descendente.</div>
+                            </div>
+                            <div class="compact-card" style="border-top-color: #0288D1;">
+                                <div class="compact-header"><div class="compact-icon" style="background:#0288D1;"><i class="fas fa-wind"></i></div>Conducido por viento</div>
+                                <div>Aporta oxígeno, deseca combustible. Oportunidad: zona donde el viento deje de ser determinante.</div>
+                            </div>
+                            <div class="compact-card" style="border-top-color: #757575;">
+                                <div class="compact-header"><div class="compact-icon" style="background:#757575;"><i class="fas fa-fire"></i></div>Ambiente del incendio (GIF)</div>
+                                <div>Crea su propia meteorología. Solo ataque indirecto.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.7 COMPETENCIAS Y LEGISLACIÓN (ESPAÑA) -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #283593;"><i class="fas fa-gavel"></i></div>
+                            <h3>1.7 Competencias y legislación en España</h3>
+                        </div>
+                        <div class="info-box" style="margin-bottom: 1rem;">
+                            <div class="box-icon" style="background: #283593;"><i class="fas fa-balance-scale"></i></div>
+                            <div>
+                                <p><strong>Comunidades autónomas:</strong> competencia exclusiva en prevención y extinción.</p>
+                                <p><strong>Estado:</strong> estadísticas, estrategia nacional, coordinación. Interviene si lo solicita la CC.AA. o si afecta a varias.</p>
+                            </div>
+                        </div>
+                        <p><strong>Ley de Montes (básica):</strong></p>
+                        <ul class="compact-list">
+                            <li>Campañas de concienciación.</li>
+                            <li>Participación ciudadana en prevención.</li>
+                            <li>Zonas de alto riesgo y planes de defensa.</li>
+                            <li>Obligación de comunicar incendios y colaborar.</li>
+                            <li>Coordinación entre administraciones.</li>
+                            <li>Mando único en extinción.</li>
+                            <li>Restauración y prohibición de cambio de uso forestal.</li>
+                            <li>Responsabilidades administrativas.</li>
                         </ul>
-                        <div class="comparison-container">
-                            <div class="comparison-card"><strong>Suelo/subsoleo:</strong> materia orgánica en descomposición, combustión lenta.</div>
-                            <div class="comparison-card"><strong>Superficie:</strong> hasta 1,5 m altura (hojarasca, hierbas). Más frecuente.</div>
-                            <div class="comparison-card"><strong>Antorcheo:</strong> copas aisladas.</div>
-                            <div class="comparison-card"><strong>Copas pasivo:</strong> acoplado a superficie.</div>
-                            <div class="comparison-card"><strong>Copas activo:</strong> independiente, viento fuerte, muy intenso.</div>
-                        </div>
+                        <p><strong>Protección Civil:</strong> normativa básica estatal que las CC.AA. deben respetar.</p>
+                        <p><strong>Colaboración estatal:</strong> normalización de medios y apoyo a CC.AA.</p>
                     </div>
-                    <!-- 1.4 Partes del incendio -->
-                    <div class="section">
-                        <div class="section-title"><div class="section-icon" style="background:#795548;"><i class="fas fa-puzzle-piece"></i></div><h3>1.4 Partes del incendio</h3></div>
-                        <div class="diagram-flex">
-                            <div class="diagram-item">Origen · Cabeza · Flancos · Cola · Perímetro</div>
-                            <div class="diagram-item">Dedo · Bolsa · Isla · Focos secundarios</div>
-                        </div>
+
+                    <!-- Nota final ecológica -->
+                    <div class="tip-box" style="margin-top: 1rem;">
+                        <div class="box-icon" style="background: #2E7D32;"><i class="fas fa-seedling"></i></div>
+                        <div><strong>El ecosistema necesita el fuego:</strong> aporta estrategias rebrotadoras y de germinación. Pero actualmente es una amenaza por la acción humana y el cambio climático.</div>
                     </div>
-                    <!-- 1.5 Morfología según propagación -->
-                    <div class="section">
-                        <div class="section-title"><div class="section-icon" style="background:#FF9800;"><i class="fas fa-share-alt"></i></div><h3>1.5 Morfología y patrones</h3></div>
-                        <ul class="visual-list">
-                            <li><strong>Circular:</strong> sin viento, homogéneo.</li>
-                            <li><strong>Elíptica:</strong> viento dominante.</li>
-                            <li><strong>Irregular:</strong> viento variable / topografía irregular.</li>
-                        </ul>
-                        <p><strong>Patrones:</strong> conducido por combustible, topográfico, viento, o ambiente de GIF (burbuja propia).</p>
-                    </div>
-                    <!-- 1.6 Competencias España -->
-                    <div class="section">
-                        <div class="section-title"><div class="section-icon" style="background:#283593;"><i class="fas fa-gavel"></i></div><h3>1.6 Competencias y legislación (España)</h3></div>
-                        <p>CC.AA. competencia exclusiva (prevención/extinción). Estado: estadísticas, estrategia, coordinación, medios si lo solicita la CC.AA. <strong>Ley de Montes</strong> y normativa de Protección Civil.</p>
-                    </div>
-                </div>
-            </div>
+                </div><!-- .card-content -->
+            </div><!-- .horizontal-card -->
 
             <!-- TARJETA 2 – TRANSMISIÓN DEL CALOR -->
             <div class="horizontal-card" id="card2">
@@ -633,6 +1193,7 @@
                         <tbody><tr><td>Grave</td><td>2 coincidencias: T>30°C, HR<35%, viento >30 km/h</td></tr><tr><td>Extremo</td><td>3 condiciones</td></tr></tbody>
                     </table>
                     <p><strong>Inversión térmica:</strong> nocturna, frontal, marina, subsidencia. Al romperse (media mañana) cambio súbito.</p>
+                </div>
                 </div>
             </div>
 
