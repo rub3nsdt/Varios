@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incendios de vegetación · Guía visual completa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== ESTILOS FIELES AL ARCHIVO DE GAS (con adaptación cromática) ===== */
+        :root {
+            --color-fire: #D32F2F;
+            --color-fire-light: #FF5252;
+            --color-fire-dark: #B71C1C;
+            --color-forest: #2E7D32;
+            --color-forest-light: #81C784;
+            --color-forest-dark: #1B5E20;
+            --color-topo: #795548;
+            --color-topo-light: #BCAAA4;
+            --color-topo-dark: #4E342E;
+            --color-atm: #0288D1;
+            --color-atm-light: #4FC3F7;
+            --color-atm-dark: #01579B;
+            --color-humo: #757575;
+            --color-humo-light: #BDBDBD;
+            --color-humo-dark: #424242;
+            --color-text: #333333;
+            --color-light: #f8f9fa;
+            --color-dark: #212121;
+            --gradient-fire: linear-gradient(135deg, #D32F2F 0%, #FF5252 100%);
+            --gradient-forest: linear-gradient(135deg, #2E7D32 0%, #81C784 100%);
+            --gradient-topo: linear-gradient(135deg, #795548 0%, #BCAAA4 100%);
+            --gradient-atm: linear-gradient(135deg, #0288D1 0%, #4FC3F7 100%);
+            --gradient-humo: linear-gradient(135deg, #757575 0%, #BDBDBD 100%);
+            --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Responsive igual que el original */
+        @media (max-width: 630px) {
+            body {
+                --escala: 0.4;
+                transform: scale(var(--escala));
+                transform-origin: top left;
+                width: calc(100% / var(--escala));
+                height: calc(100vh / var(--escala));
+                overflow-x: hidden;
+            }
+            .floating-btn { display: none !important; }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER SENCILLO (sin animaciones, como pide el usuario) */
+        .hero-header {
+            background: linear-gradient(155deg, #1B5E20, #2E7D32, #4CAF50);
+            color: white;
+            padding: 2.5rem 0 2rem 0;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0, 40, 0, 0.6);
+        }
+
+        .hero-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.3);
+        }
+
+        .hero-header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        /* Navegación visual */
+        .visual-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 2rem auto 3rem;
+            padding: 1.2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            max-width: 1400px;
+            position: sticky;
+            top: 15px;
+            z-index: 99;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 90px;
+            background: #f5f5f5;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .nav-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .nav-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background: var(--color-fire);
+        }
+
+        /* Sistema de tarjetas principal (igual que en gas) */
+        .horizontal-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .horizontal-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.4s ease;
+        }
+
+        .horizontal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-header-top {
+            padding: 2rem 2rem 1.5rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header-top::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .card-title-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-icon-large {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            background: rgba(255,255,255,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .card-title-top {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .card-subtitle-top {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .topic-number-badge {
+            background: rgba(255,255,255,0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            backdrop-filter: blur(10px);
+            z-index: 2;
+        }
+
+        .card-content {
+            padding: 2.5rem;
+        }
+
+        /* Secciones internas */
+        .section {
+            margin-bottom: 2.8rem;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        /* listas visuales */
+        .visual-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .visual-list li {
+            padding: 0.7rem 0 0.7rem 2.5rem;
+            position: relative;
+            font-size: 1.05rem;
+            border-left: 3px solid transparent;
+            transition: 0.2s;
+        }
+
+        .visual-list li:hover {
+            background: #f9f9f9;
+            border-left-color: var(--color-fire);
+        }
+
+        .visual-list li:before {
+            content: "🌿";
+            position: absolute;
+            left: 0.5rem;
+            top: 0.7rem;
+            font-size: 1.2rem;
+        }
+
+        /* cajas de información */
+        .info-box, .warning-box, .danger-box, .tip-box {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            border-left: 6px solid;
+        }
+        .info-box { background: #E1F5FE; border-left-color: var(--color-atm); }
+        .warning-box { background: #FFF3E0; border-left-color: #F57C00; }
+        .danger-box { background: #FFEBEE; border-left-color: var(--color-fire); }
+        .tip-box { background: #E8F5E9; border-left-color: var(--color-forest); }
+
+        .box-icon {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        /* números destacados en rojo */
+        .data-number {
+            color: #C62828;
+            font-weight: 800;
+        }
+
+        /* comparaciones flexibles */
+        .comparison-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .comparison-card {
+            flex: 1 1 280px;
+            background: white;
+            border-radius: 10px;
+            padding: 1.3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--color-topo);
+        }
+
+        /* diagramas flex (sustituye a grid) */
+        .diagram-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.8rem 0;
+            justify-content: center;
+        }
+
+        .diagram-item {
+            flex: 1 1 180px;
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            text-align: center;
+            border-top: 5px solid var(--color-fire);
+        }
+
+        .diagram-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* tablas */
+        .visual-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin: 1.5rem 0;
+        }
+
+        .visual-table th {
+            background: var(--gradient-topo);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .visual-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .visual-table tr:nth-child(even) { background: #f9f9f9; }
+
+        /* columnas flexibles */
+        .columnas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        /* compact-card (como en gas) */
+        .compact-card {
+            flex: 1 1 280px;
+            background: white;
+            border-radius: 12px;
+            padding: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid;
+            transition: 0.2s;
+        }
+        .compact-card:hover { transform: translateY(-3px); }
+
+        .compact-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 0.8rem;
+        }
+
+        .compact-icon {
+            width: 45px; height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .compact-list {
+            list-style: none;
+            padding: 0;
+        }
+        .compact-list li {
+            padding: 0.4rem 0 0.4rem 1.8rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        .compact-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0.3rem;
+            color: var(--color-fire);
+            font-weight: bold;
+        }
+
+        .compact-chip {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: #e0e0e0;
+        }
+
+        /* footer */
+        .visual-footer {
+            background: linear-gradient(135deg, #263238, #37474F);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 5rem;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            text-align: center;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .footer-icon {
+            width: 55px; height: 55px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+        }
+
+        /* botones flotantes */
+        .floating-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px; height: 55px;
+            border-radius: 50%;
+            background: var(--gradient-fire);
+            color: white;
+            border: none;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 25px rgba(211,47,47,0.4);
+            cursor: pointer;
+            z-index: 100;
+        }
+        .floating-btn-left {
+            left: 25px;
+            right: auto;
+            background: var(--gradient-forest);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER SENCILLO (sin animaciones) -->
+    <header class="hero-header">
+        <div class="container">
+            <h1>🔥 INCENDIOS DE VEGETACIÓN</h1>
+            <p>Concepto, clasificación, transmisión del calor, factores, combustibles, comportamiento y humo</p>
+            <div style="margin-top: 1rem;">
+                <span class="compact-chip" style="background:#ffe082;">interfaz</span>
+                <span class="compact-chip" style="background:#a5d6a5;">GIF</span>
+                <span class="compact-chip" style="background:#ef9a9a;">Rothermel</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación -->
+    <div class="container">
+        <div class="visual-nav">
+            <a href="#card1" class="nav-item"><div class="nav-icon" style="background:#D32F2F;"><i class="fas fa-tree"></i></div><span>1. Incendios</span></a>
+            <a href="#card2" class="nav-item"><div class="nav-icon" style="background:#0288D1;"><i class="fas fa-thermometer-half"></i></div><span>2. Transmisión</span></a>
+            <a href="#card3" class="nav-item"><div class="nav-icon" style="background:#F57C00;"><i class="fas fa-mountain"></i></div><span>3. Factores</span></a>
+            <a href="#card4" class="nav-item"><div class="nav-icon" style="background:#2E7D32;"><i class="fas fa-leaf"></i></div><span>4. Combustibles</span></a>
+            <a href="#card5" class="nav-item"><div class="nav-icon" style="background:#8D6E63;"><i class="fas fa-ruler"></i></div><span>5. Comportamiento</span></a>
+            <a href="#card6" class="nav-item"><div class="nav-icon" style="background:#757575;"><i class="fas fa-smog"></i></div><span>6. Humo</span></a>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="horizontal-cards-container">
+
+            <!-- TARJETA 1 – INCENDIOS EXCLUSIVOS DE VEGETACIÓN -->
+            <div class="horizontal-card" id="card1">
+                <div class="card-header-top" style="background: var(--gradient-fire);">
+                    <div class="card-title-container">
+                        <div class="card-icon-large"><i class="fas fa-fire"></i></div>
+                        <div>
+                            <div class="card-title-top">1. INCENDIOS EXCLUSIVOS DE VEGETACIÓN</div>
+                            <div class="card-subtitle-top">concepto · clasificación · interfaz · partes · morfología · competencias</div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">1/6</div>
+                </div>
+                <div class="card-content">
+                    <!-- 1.1 concepto y clasificación -->
+                    <div class="section">
+                        <div class="section-title"><div class="section-icon" style="background:#D32F2F;"><i class="fas fa-info"></i></div><h3>1.1 Concepto y clasificación</h3></div>
+                        <div class="info-box"><div class="box-icon" style="background:#D32F2F;"><i class="fas fa-fire-extinguisher"></i></div><div><p><strong>Incendio:</strong> fuego sin control sobre vegetación no destinada a arder. En España <span class="data-number">96%</span> origen humano (Greenpeace).</p></div></div>
+                        <div class="comparison-container">
+                            <div class="comparison-card"><strong>Forestal:</strong> terreno forestal arbóreo/arbustivo/matorral. <span class="data-number">≥1 ha</span> (incendio), <span class="data-number">≥500 ha</span> (GIF).</div>
+                            <div class="comparison-card"><strong>Agrícola:</strong> terreno de cultivo agrícola.</div>
+                            <div class="comparison-card"><strong>Suelo urbano:</strong> parques, jardines, cunetas sin influencia forestal.</div>
+                        </div>
+                    </div>
+                    <!-- 1.2 interfaz -->
+                    <div class="section">
+                        <div class="section-title"><div class="section-icon" style="background:#8D6E63;"><i class="fas fa-home"></i></div><h3>1.2 Interfaz urbano‑forestal</h3></div>
+                        <p>Edificaciones dentro o próximas a vegetación forestal. <span class="data-number">Incendios de 4ª generación</span>: fuego alcanza estructuras y combustible no forestal (jardines).</p>
+                        <div class="diagram-flex">
+                            <div class="diagram-item">Estructuras en masa forestal</div>
+                            <div class="diagram-item">Vegetación aislada en zona urbana</div>
+                            <div class="diagram-item">Estructuras aisladas en área forestal</div>
+                        </div>
+                        <div class="warning-box"><div class="box-icon" style="background:#F57C00;"><i class="fas fa-exclamation"></i></div><div>Mayor fuente de ignición + vulnerabilidad de población.</div></div>
+                    </div>
+                    <!-- 1.3 clasificación de incendios (superficie y estrato) -->
+                    <div class="section">
+                        <div class="section-title"><div class="section-icon" style="background:#4FC3F7;"><i class="fas fa-chart-pie"></i></div><h3>1.3 Clasificación por superficie y estrato</h3></div>
+                        <ul class="visual-list">
+                            <li><strong>Conato:</strong> &lt;1 ha</li>
+                            <li><strong>Incendio:</strong> ≥1 ha</li>
+                            <li><strong>GIF:</strong> ≥500 ha</li>
+                        </ul>
+                        <div class="comparison-container">
+                            <div class="comparison-card"><strong>Suelo/subsoleo:</strong> materia orgánica en descomposición, combustión lenta.</div>
+                            <div class="comparison-card"><strong>Superficie:</strong> hasta 1,5 m altura (hojarasca, hierbas). Más frecuente.</div>
+                            <div class="comparison-card"><strong>Antorcheo:</strong> copas aisladas.</div>
+                            <div class="comparison-card"><strong>Copas pasivo:</strong> acoplado a superficie.</div>
+                            <div class="comparison-card"><strong>Copas activo:</strong> independiente, viento fuerte, muy intenso.</div>
+                        </div>
+                    </div>
+                    <!-- 1.4 Partes del incendio -->
+                    <div class="section">
+                        <div class="section-title"><div class="section-icon" style="background:#795548;"><i class="fas fa-puzzle-piece"></i></div><h3>1.4 Partes del incendio</h3></div>
+                        <div class="diagram-flex">
+                            <div class="diagram-item">Origen · Cabeza · Flancos · Cola · Perímetro</div>
+                            <div class="diagram-item">Dedo · Bolsa · Isla · Focos secundarios</div>
+                        </div>
+                    </div>
+                    <!-- 1.5 Morfología según propagación -->
+                    <div class="section">
+                        <div class="section-title"><div class="section-icon" style="background:#FF9800;"><i class="fas fa-share-alt"></i></div><h3>1.5 Morfología y patrones</h3></div>
+                        <ul class="visual-list">
+                            <li><strong>Circular:</strong> sin viento, homogéneo.</li>
+                            <li><strong>Elíptica:</strong> viento dominante.</li>
+                            <li><strong>Irregular:</strong> viento variable / topografía irregular.</li>
+                        </ul>
+                        <p><strong>Patrones:</strong> conducido por combustible, topográfico, viento, o ambiente de GIF (burbuja propia).</p>
+                    </div>
+                    <!-- 1.6 Competencias España -->
+                    <div class="section">
+                        <div class="section-title"><div class="section-icon" style="background:#283593;"><i class="fas fa-gavel"></i></div><h3>1.6 Competencias y legislación (España)</h3></div>
+                        <p>CC.AA. competencia exclusiva (prevención/extinción). Estado: estadísticas, estrategia, coordinación, medios si lo solicita la CC.AA. <strong>Ley de Montes</strong> y normativa de Protección Civil.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA 2 – TRANSMISIÓN DEL CALOR -->
+            <div class="horizontal-card" id="card2">
+                <div class="card-header-top" style="background: var(--gradient-atm);">
+                    <div class="card-title-container"><div class="card-icon-large"><i class="fas fa-temperature-high"></i></div><div><div class="card-title-top">2. TRANSMISIÓN DEL CALOR</div><div class="card-subtitle-top">conducción · radiación · convección · pavesas</div></div></div>
+                    <div class="topic-number-badge">2/6</div>
+                </div>
+                <div class="card-content">
+                    <div class="comparison-container">
+                        <div class="comparison-card"><span class="diagram-icon">🔥</span><strong>Conducción:</strong> contacto sólido‑sólido, baja eficiencia. Compacidad (pinocha) puede ayudar.</div>
+                        <div class="comparison-card"><span class="diagram-icon">☀️</span><strong>Radiación:</strong> ondas electromagnéticas. Favorecida por relación superficie/volumen y ahuecamiento.</div>
+                        <div class="comparison-card"><span class="diagram-icon">💨</span><strong>Convección:</strong> transporte por aire caliente ascendente; principal causa de paso a copas. + pendiente acelera.</div>
+                    </div>
+                    <div class="danger-box"><div class="box-icon" style="background:#C62828;"><i class="fas fa-wind"></i></div><div><strong>Emisión de partículas (pavesas):</strong> proyección de material incandescente. Saltos hasta <span class="data-number">0,5 km</span> (pinos). Piñas de pino carrasco y corteza de eucalipto muy peligrosas. Condiciones: T <span class="data-number">20‑35°C</span>, HR <span class="data-number">20‑50%</span>, viento <span class="data-number">16‑39 km/h</span>.</div></div>
+                </div>
+            </div>
+
+            <!-- TARJETA 3 – FACTORES (TOPOGRAFÍA, METEOROLOGÍA) -->
+            <div class="horizontal-card" id="card3">
+                <div class="card-header-top" style="background: var(--gradient-topo);">
+                    <div class="card-title-container"><div class="card-icon-large"><i class="fas fa-mountain"></i></div><div><div class="card-title-top">3. FACTORES DEL COMPORTAMIENTO</div><div class="card-subtitle-top">topografía · clima · vientos · inversión · tormentas</div></div></div>
+                    <div class="topic-number-badge">3/6</div>
+                </div>
+                <div class="card-content">
+                    <div class="section"><div class="section-title"><div class="section-icon" style="background:#8D6E63;"><i class="fas fa-mountain"></i></div><h3>3.1 Topografía</h3></div>
+                    <ul class="visual-list"><li><strong>Pendiente:</strong> a <span class="data-number">45°</span> (100%) la velocidad se multiplica hasta 20 veces en ascenso.</li><li><strong>Exposición:</strong> solana más seca.</li><li><strong>Configuración:</strong> barrancos aceleran convección.</li><li>Altitud, orientación, rugosidad.</li></ul></div>
+                    <div class="section"><div class="section-title"><div class="section-icon" style="background:#4FC3F7;"><i class="fas fa-wind"></i></div><h3>3.2 Climatología y tiempo</h3></div>
+                    <p><strong>Temperatura:</strong> en llamas <span class="data-number">700‑1000°C</span>, zona precalentada <span class="data-number">500‑1400°C</span>.</p>
+                    <p><strong>Humedad relativa:</strong> <span class="data-number">HR<30%</span> extremo. Regla: +10°C → HR mitad, -10°C → HR doble.</p>
+                    <p><strong>Viento:</strong> 1 nudo = <span class="data-number">1,852 km/h</span>. Vientos locales: ladera ascendente/descendente, valle, brisa, foehn (<span class="data-number">HR 3%</span>, hasta <span class="data-number">145 km/h</span>), torbellinos.</p>
+                    <div class="info-box"><div class="box-icon" style="background:#0288D1;"><i class="fas fa-cloud-rain"></i></div><div><strong>Tormenta ígnea / pyrocumulus:</strong> incendio crea su propio clima, reventones.</div></div>
+                    <table class="visual-table">
+                        <thead><tr><th>Riesgo</th><th>Condiciones</th></tr></thead>
+                        <tbody><tr><td>Grave</td><td>2 coincidencias: T>30°C, HR<35%, viento >30 km/h</td></tr><tr><td>Extremo</td><td>3 condiciones</td></tr></tbody>
+                    </table>
+                    <p><strong>Inversión térmica:</strong> nocturna, frontal, marina, subsidencia. Al romperse (media mañana) cambio súbito.</p>
+                </div>
+            </div>
+
+            <!-- TARJETA 4 – COMBUSTIBLES FORESTALES -->
+            <div class="horizontal-card" id="card4">
+                <div class="card-header-top" style="background: var(--gradient-forest);">
+                    <div class="card-title-container"><div class="card-icon-large"><i class="fas fa-leaf"></i></div><div><div class="card-title-top">4. COMBUSTIBLES FORESTALES</div><div class="card-subtitle-top">tipos · características · modelos Rothermel · inflamabilidad</div></div></div>
+                    <div class="topic-number-badge">4/6</div>
+                </div>
+                <div class="card-content">
+                    <div class="columnas">
+                        <div class="compact-card" style="border-top-color: #5D4037;"><div class="compact-header"><div class="compact-icon" style="background:#5D4037;"><i class="fas fa-weight"></i></div><div class="compact-title">Características</div></div><ul class="compact-list"><li><strong>Tamaño:</strong> fino <span class="data-number">0-5 mm</span>, regulares 5-25, medianos 25-75, gruesos >75 mm.</li><li><strong>Humedad:</strong> vivos (máx primavera, mín verano); muertos (tiempo retardo 1h, 10h, 100h, 1000h).</li><li>Compactación, densidad, resinas.</li></ul></div>
+                        <div class="compact-card" style="border-top-color: #F57C00;"><div class="compact-header"><div class="compact-icon" style="background:#F57C00;"><i class="fas fa-layer-group"></i></div><div class="compact-title">Modelos Rothermel (13)</div></div><ul class="compact-list"><li><strong>Pastos 1-3:</strong> carga 1-6 t/ha.</li><li><strong>Matorral 4-7:</strong> hasta 35 t/ha.</li><li><strong>Hojarasca 8-10:</strong> 10-12 t/ha.</li><li><strong>Ramaje/restos 11-13:</strong> 25-80 t/ha.</li></ul></div>
+                    </div>
+                    <div class="section"><div class="section-title"><div class="section-icon" style="background:#9C27B0;"><i class="fas fa-seedling"></i></div><h3>4.5 Inflamabilidad de especies</h3></div>
+                    <p><strong>Muy inflamables todo el año:</strong> brezo, eucalipto, retama, pino carrasco, encina, romero, tomillo.</p>
+                    <p><strong>Muy inflamables en verano:</strong> jara pringosa, espliego, pino rodeno, pino piñonero, alcornoque, esparto.</p>
+                    <p><strong>Medianamente:</strong> madroño, enebro, carrasca, quejigo.</p>
+                </div>
+                </div>
+            </div>
+
+            <!-- TARJETA 5 – FACTORES DEL PROPIO INCENDIO -->
+            <div class="horizontal-card" id="card5">
+                <div class="card-header-top" style="background: var(--gradient-topo);">
+                    <div class="card-title-container"><div class="card-icon-large"><i class="fas fa-ruler"></i></div><div><div class="card-title-top">5. FACTORES DEL PROPIO INCENDIO</div><div class="card-subtitle-top">longitud de llama · intensidad lineal · velocidad · GIF</div></div></div>
+                    <div class="topic-number-badge">5/6</div>
+                </div>
+                <div class="card-content">
+                    <ul class="visual-list">
+                        <li><strong>Longitud de llama (m):</strong> distancia base‑punta. Indicador de intensidad.</li>
+                        <li><strong>Intensidad lineal (kW/m):</strong> potencia por unidad de frente; determina controlabilidad.</li>
+                        <li><strong>Velocidad de propagación:</strong> lineal (control perímetro), perimetral (recursos), areal (daño).</li>
+                        <li><strong>GIF (≥500 ha):</strong> crean su propio “ambiente de fuego” (temperatura, humedad, viento propios).</li>
+                    </ul>
+                    <div class="tip-box"><div class="box-icon" style="background:#2E7D32;"><i class="fas fa-chart-line"></i></div><div>Estos factores permiten decidir ataque directo, indirecto o mixto.</div></div>
+                </div>
+            </div>
+
+            <!-- TARJETA 6 – CLASIFICACIÓN POR EL HUMO -->
+            <div class="horizontal-card" id="card6">
+                <div class="card-header-top" style="background: var(--gradient-humo);">
+                    <div class="card-title-container"><div class="card-icon-large"><i class="fas fa-smog"></i></div><div><div class="card-title-top">6. ALARMA POR EL HUMO</div><div class="card-subtitle-top">origen · color · volumen · ángulo</div></div></div>
+                    <div class="topic-number-badge">6/6</div>
+                </div>
+                <div class="card-content">
+                    <div class="comparison-container">
+                        <div class="comparison-card"><strong>Origen:</strong> legítimo (quemas), ilegítimo (incendio), falso (polvo/polen).</div>
+                        <div class="comparison-card"><strong>Color:</strong> gris‑café (matorral ralo), gris‑negro (denso/eucalipto/pinar), amarillo (coníferas), blanco (pastos húmedos), blanco‑azulado (pastos secos).</div>
+                    </div>
+                    <div class="info-box"><div class="box-icon" style="background:#616161;"><i class="fas fa-arrow-up"></i></div><div><strong>Volumen:</strong> proporcional a combustible. <strong>Ángulo:</strong> vertical (<span class="data-number">80‑90°</span> poco viento, fácil control); diagonal (<span class="data-number">40‑50°</span> viento 20‑30 nudos, peligroso); tumbada (<span class="data-number">~20°</span> vientos muy fuertes, estabilidad).</div></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="visual-footer">
+        <div class="container">
+            <h2 style="font-size: 2rem;">🌲 INCENDIOS DE VEGETACIÓN</h2>
+            <p>Guía visual basada en documentación técnica (Grupo Tragsa / CEIS Guadalajara) · CC BY‑NC‑SA 4.0</p>
+            <div class="footer-icons">
+                <div class="footer-icon"><i class="fas fa-tree"></i></div>
+                <div class="footer-icon"><i class="fas fa-fire"></i></div>
+                <div class="footer-icon"><i class="fas fa-wind"></i></div>
+                <div class="footer-icon"><i class="fas fa-mountain"></i></div>
+            </div>
+            <p style="opacity:0.7;">© 2025 · Datos numéricos en rojo · Fiel al PDF original</p>
+        </div>
+    </footer>
+
+    <!-- Botones flotantes -->
+    <button class="floating-btn" id="scrollTopBtn" title="Arriba"><i class="fas fa-arrow-up"></i></button>
+    <button class="floating-btn floating-btn-left" id="scrollNextBtn" title="Siguiente sección"><i class="fas fa-arrow-down"></i></button>
+
+    <script>
+        // scroll suave y navegación básica
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        const scrollNextBtn = document.getElementById('scrollNextBtn');
+        const sections = Array.from(document.querySelectorAll('.horizontal-card'));
+        window.addEventListener('scroll',()=>{ scrollTopBtn.style.display = window.scrollY>400 ? 'flex' : 'none'; });
+        scrollTopBtn.addEventListener('click',()=> window.scrollTo({top:0,behavior:'smooth'}));
+        function getCurrentIndex(){
+            let idx = 0, minDist = Infinity;
+            sections.forEach((s,i)=>{ let d = Math.abs(s.getBoundingClientRect().top); if(d<minDist){ minDist=d; idx=i; } });
+            return idx;
+        }
+        scrollNextBtn.addEventListener('click',()=>{
+            let curr = getCurrentIndex();
+            if(curr < sections.length-1) sections[curr+1].scrollIntoView({behavior:'smooth'});
+            else sections[0].scrollIntoView({behavior:'smooth'});
+        });
+        document.querySelectorAll('.nav-item').forEach(a=>{
+            a.addEventListener('click',(e)=>{
+                e.preventDefault();
+                let href = a.getAttribute('href');
+                if(href && href!=='#') document.querySelector(href)?.scrollIntoView({behavior:'smooth'});
+            });
+        });
+    </script>
+</body>
+</html>
