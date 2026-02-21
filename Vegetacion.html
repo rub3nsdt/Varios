@@ -909,12 +909,12 @@
                         <h4 style="margin: 1.5rem 0 0.8rem 0; color: #01579B;">Por estrato vegetativo</h4>
                         <p style="margin-bottom: 1rem; font-size:0.95rem;">Según la capa de vegetación por la que progresa el fuego:</p>
 
-                        <div class="compact-grid" style="margin-bottom: 0.5rem; width: 91%; margin: auto;">
+                        <div class="compact-grid" style="margin-bottom: 0.5rem; margin: auto;">
                             <!-- Suelo / subsoleo -->
-                            <div class="compact-card" style="border-top-color: #5D4037;">
+                            <div class="compact-card" style="border-top-color: #5D4037; flex: 7 1 500px;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background:#5D4037;"><i class="fas fa-layer-group"></i></div>
-                                    <span class="compact-title">Suelo / subsoleo</span>
+                                    <span class="compact-title">Suelo / subsuleo</span>
                                 </div>
                                 <ul class="compact-list" style="font-size:0.85rem;">
                                     <li>🌱 Se propaga por materia orgánica en descomposición y raíces.</li>
@@ -925,7 +925,7 @@
                             </div>
 
                             <!-- Superficie -->
-                            <div class="compact-card" style="border-top-color: #2E7D32;">
+                            <div class="compact-card" style="border-top-color: #2E7D32;flex: 7 1 400px;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background:#2E7D32;"><i class="fas fa-leaf"></i></div>
                                     <span class="compact-title">Superficie</span>
@@ -938,7 +938,7 @@
                             </div>
 
                             <!-- Antorcheo -->
-                            <div class="compact-card" style="border-top-color: #F57C00;">
+                            <div class="compact-card" style="border-top-color: #F57C00;flex: 1 1 300px;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background:#F57C00;"><i class="fas fa-tree"></i></div>
                                     <span class="compact-title">Antorcheo</span>
@@ -950,7 +950,7 @@
                             </div>
 
                             <!-- Copas pasivo -->
-                            <div class="compact-card" style="border-top-color: #FBC02D;">
+                            <div class="compact-card" style="border-top-color: #FBC02D;flex: 3 1 300px;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background:#FBC02D;"><i class="fas fa-tree"></i></div>
                                     <span class="compact-title">Copas pasivo</span>
@@ -963,7 +963,7 @@
                             </div>
 
                             <!-- Copas activo -->
-                            <div class="compact-card" style="border-top-color: #D32F2F;">
+                            <div class="compact-card" style="border-top-color: #D32F2F;flex: 3 1 300px;">
                                 <div class="compact-header">
                                     <div class="compact-icon" style="background:#D32F2F;"><i class="fas fa-fire"></i></div>
                                     <span class="compact-title">Copas activo</span>
@@ -1082,97 +1082,473 @@
                         </div>
                     </div>
 
-                    <!-- 1.5 MORFOLOGÍA SEGÚN PATRÓN DE PROPAGACIÓN -->
+                    <!-- 1.5 MORFOLOGÍA DEL INCENDIO SEGÚN EL PATRÓN BÁSICO DE PROPAGACIÓN -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: #FF9800;"><i class="fas fa-share-alt"></i></div>
                             <h3>1.5 Morfología del incendio</h3>
                         </div>
-                        <p><strong>Formas determinadas por:</strong> meteorología (viento), topografía (pendiente), ecología (combustible).</p>
-                        <div class="compact-grid">
-                            <div class="compact-card" style="border-top-color: #FFB74D;">Circular: terreno plano, combustible homogéneo, sin viento.</div>
-                            <div class="compact-card" style="border-top-color: #FFB74D;">Elíptica: viento dominante, combustible homogéneo, terreno plano o pendiente regular.</div>
-                            <div class="compact-card" style="border-top-color: #FFB74D;">Irregular: viento variable y/o topografía irregular y/o combustible heterogéneo.</div>
+
+                        <!-- Introducción: importancia de la morfología -->
+                        <div class="info-box" style="margin-bottom: 1rem;">
+                            <div class="box-icon" style="background: #FF9800;"><i class="fas fa-brain"></i></div>
+                            <div>
+                                <p>Conocer la morfología del incendio es esencial para describir y entender su comportamiento, así como para tomar decisiones sobre los medios de extinción y diseñar estrategias adecuadas.</p>
+                            </div>
+                        </div>
+
+                        <!-- Factores determinantes de la forma -->
+                        <h4 style="margin: 1rem 0 0.8rem 0; color: #E65100;">Factores determinantes de la forma</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+                            <div class="parte-block" style="border-left-color: #42A5F5;">
+                                <div class="parte-icon" style="background: #42A5F5;"><i class="fas fa-wind"></i></div>
+                                <div class="parte-content">
+                                    <div class="parte-title"> Meteorológicos</div>
+                                    <div class="parte-desc">Dirección y velocidad del viento.</div>
+                                </div>
+                            </div>
+                            <div class="parte-block" style="border-left-color: #8D6E63;">
+                                <div class="parte-icon" style="background: #8D6E63;"><i class="fas fa-mountain"></i></div>
+                                <div class="parte-content">
+                                    <div class="parte-title"> Topográficos</div>
+                                    <div class="parte-desc">Pendiente, tipo de suelo.</div>
+                                </div>
+                            </div>
+                            <div class="parte-block" style="border-left-color: #2E7D32;">
+                                <div class="parte-icon" style="background: #2E7D32;"><i class="fas fa-leaf"></i></div>
+                                <div class="parte-content">
+                                    <div class="parte-title"> Ecológicos</div>
+                                    <div class="parte-desc">Variación según el tipo de combustible.</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Utilidad en predicción -->
+                        <div class="tip-box" style="margin-top: 1.5rem; align-items: center;">
+                            <div class="box-icon" style="background: #FFB74D;"><i class="fas fa-chart-line"></i></div>
+                            <div>
+                                <strong>Predicción:</strong> El conocimiento de estas formas ayuda a prever la evolución del incendio y a planificar las tácticas de extinción.
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 1.6 PATRONES BÁSICOS DE PROPAGACIÓN -->
+                    <!-- 1.6 FORMAS DE PROPAGACIÓN DE UN INCENDIO FORESTAL -->
                     <div class="section">
                         <div class="section-title">
                             <div class="section-icon" style="background: #0288D1;"><i class="fas fa-wind"></i></div>
-                            <h3>1.6 Patrones básicos de propagación</h3>
+                            <h3>1.6 Formas de propagación de un incendio forestal</h3>
                         </div>
-                        <div class="compact-grid">
+
+                        <!-- Introducción: formas básicas -->
+                        <div class="info-box" style="margin-bottom: 1rem;">
+                            <div class="box-icon" style="background: #0288D1;"><i class="fas fa-shapes"></i></div>
+                            <div>
+                                <p>En general, los incendios forestales pueden adquirir formas circulares, elípticas o irregulares. Estas formas están determinadas por factores meteorológicos, topográficos y ecológicos.</p>
+                            </div>
+                        </div>
+
+                        <!-- Formas de progresión (en tarjetas compactas con listas) -->
+                        <h4 style="margin: 1rem 0 0.8rem 0; color: #01579B;">Formas de progresión</h4>
+                            <div class="compact-grid" style="margin-bottom: 2rem;">
+                                <div style="flex: 10 1 300px; flex-direction: row; display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <!-- Circular -->
+                                    <div class="compact-card" style="border-top-color: #FBC02D; flex: 1 1 300px;">
+                                        <div class="compact-header">
+                                            <div class="compact-icon" style="background:#FBC02D;"><i class="fas fa-circle"></i></div>
+                                            <span class="compact-title">Circular (a)</span>
+                                        </div>
+                                        <ul class="compact-list">
+                                            <li>⭕ Se produce en terreno plano, con combustible homogéneo y sin viento.</li>
+                                            <li>➡️ El frente del incendio avanza en todas direcciones desde la zona central hacia el exterior.</li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Elíptica -->
+                                    <div class="compact-card" style="border-top-color: #FF7043; flex: 1 1 300px;">
+                                        <div class="compact-header">
+                                            <div class="compact-icon" style="background:#FF7043;"><i class="fas fa-egg"></i></div>
+                                            <span class="compact-title">Elíptica (b)</span>
+                                        </div>
+                                        <ul class="compact-list">
+                                            <li>🌬️ Presencia de viento con dirección predominante.</li>
+                                            <li>🌿 Combustible homogéneo y terreno plano o pendiente regular.</li>
+                                            <li>🔥 La propagación es más rápida en la dirección del viento, alargando la forma.</li>
+                                        </ul>
+                                    </div>                                    
+                                </div>
+
+                                <div style="display: flex; flex: 1 1 300px;">
+                                    <img src="image vegetacion/Tipos.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                                                 
+                            </div>           
+
+                                <!-- Irregular (con tres variantes) -->
+                                <div class="compact-card" style="border-top-color: #AB47BC; flex: 1 1 400px;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background:#AB47BC;"><i class="fas fa-shapes"></i></div>
+                                        <span class="compact-title">Irregular</span>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>🌀 Se desarrolla bajo la influencia de viento variable (cambios de intensidad y dirección).</li>
+                                        <li>🌲 Se quema combustible heterogéneo (diferentes tipos y cargas) y se propaga en ⛰️ pendientes irregulares o con topografía accidentada.</li>
+                                        <li><strong> c)</strong> Viento variable y/o topografía irregular con distribución heterogénea del combustible</li>
+                                        <li><strong> e)</strong> Incendio impulsado por viento que sube una ladera mientras restos encendidos caen y mantienen fuego en la base.</li>
+                                        <li><strong> d)</strong> Fuerte viento transporta pavesas creando focos secundarios por delante del frente principal.</li>
+                                    </ul>
+                                </div>                            
+
+
+                        <!-- Patrones básicos de propagación (el resto de la sección se mantiene igual) -->
+                        <h4 style="margin: 1.5rem 0 0.8rem 0; color: #01579B;">Patrones básicos de propagación</h4>
+                        <div class="info-box" style="margin-bottom: 1rem;">
+                            <div class="box-icon" style="background: #0288D1;"><i class="fas fa-ruler"></i></div>
+                            <div>
+                                <p>El comportamiento y la evolución de un incendio dependen del patrón básico de propagación. Pueden darse patrones diferentes simultáneamente en distintas zonas del fuego o encadenarse a lo largo del tiempo.</p>
+                            </div>
+                        </div>
+
+                        <!-- Grid de patrones (con listas e iconos en <li>) -->
+                        <div class="compact-grid" style="margin-bottom: 1rem;">
+                            <!-- Conducido por combustible -->
                             <div class="compact-card" style="border-top-color: #2E7D32;">
-                                <div class="compact-header"><div class="compact-icon" style="background:#2E7D32;"><i class="fas fa-leaf"></i></div>Conducido por combustible</div>
-                                <div>Influencia de tipo, estado, cantidad, continuidad, resinas. Oportunidad: cambio a modelo favorable.</div>
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#2E7D32;"><i class="fas fa-leaf"></i></div>
+                                    <span class="compact-title">Conducido por combustible</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🌲 <strong>Influencia:</strong> tipo: vivo o muerto; subterráneo, superficial o aéreo; cantidad, grosor, continuidad vertical/ horizontal, densidad, compactación, resinas y humedad.</li>
+                                    <li>🔍 <strong>Detección:</strong> estudio del combustible que se quema y su forma de propagación.</li>
+                                    <li>⏳ <strong>Oportunidad:</strong> cambio a modelo de combustible favorable o modificación estructural.</li>
+                                </ul>
                             </div>
+
+                            <!-- Topográfico -->
                             <div class="compact-card" style="border-top-color: #8D6E63;">
-                                <div class="compact-header"><div class="compact-icon" style="background:#8D6E63;"><i class="fas fa-mountain"></i></div>Topográfico</div>
-                                <div>Pendiente, exposición. Oportunidad: cuando avance en descendente.</div>
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#8D6E63;"><i class="fas fa-mountain"></i></div>
+                                    <span class="compact-title">Topográfico</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>📐 <strong>Factores:</strong> pendiente, exposición solar, rugosidad del terreno.</li>
+                                    <li>🔥 Quema "ollas" y vaguadas; cabeza y flancos difíciles de diferenciar.</li>
+                                    <li>📍 <strong>Detección:</strong> comportamiento similar en cabeza y flancos.</li>
+                                    <li>⬇️ <strong>Oportunidad:</strong> cuando avanza en descendente (en contra de la topografía).</li>
+                                </ul>
                             </div>
+
+                            <!-- Conducido por viento -->
                             <div class="compact-card" style="border-top-color: #0288D1;">
-                                <div class="compact-header"><div class="compact-icon" style="background:#0288D1;"><i class="fas fa-wind"></i></div>Conducido por viento</div>
-                                <div>Aporta oxígeno, deseca combustible. Oportunidad: zona donde el viento deje de ser determinante.</div>
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#0288D1;"><i class="fas fa-wind"></i></div>
+                                    <span class="compact-title">Conducido por viento</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🧭 <strong>Influencia:</strong> dirección, intensidad y velocidad; aporta oxígeno y deseca combustible.</li>
+                                    <li>📡 <strong>Detección:</strong> columna convectiva y fuerte viento en superficie.</li>
+                                    <li>⛰️ Tiende a crestas y puntos altos.</li>
+                                    <li>🎯 <strong>Oportunidad:</strong> zona sin viento determinante (ataque por flancos desde cola).</li>
+                                </ul>
                             </div>
-                            <div class="compact-card" style="border-top-color: #757575;">
-                                <div class="compact-header"><div class="compact-icon" style="background:#757575;"><i class="fas fa-fire"></i></div>Ambiente del incendio (GIF)</div>
-                                <div>Crea su propia meteorología. Solo ataque indirecto.</div>
+
+                            <!-- Ambiente del incendio (GIF) -->
+                            <div class="compact-card" style="border-top-color: #757575; flex: 1 1 230px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#757575;"><i class="fas fa-fire"></i></div>
+                                    <span class="compact-title">Ambiente del incendio</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🌪️ Gran incendio que crea su propia burbuja meteorológica (temperatura, humedad, viento).</li>
+                                    <li>🚫 Solo ataque indirecto con ventana de actuación programada.</li>
+                                    <li>⏱️ Requiere maniobras planificadas y esperar condiciones favorables.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Nota sobre patrones simultáneos -->
+                        <div class="tip-box" style="margin-top: 1rem;">
+                            <div class="box-icon" style="background: #FFB74D;"><i class="fas fa-sync-alt"></i></div>
+                            <div>
+                                <strong>🔄 Patrones simultáneos:</strong> Un incendio puede presentar diferentes patrones en distintas zonas o encadenarlos a lo largo de su evolución. Por ejemplo, un fuego impulsado por viento que sube una ladera mientras restos encendidos caen y crean focos secundarios en la base.
                             </div>
                         </div>
                     </div>
 
-                    <!-- 1.7 COMPETENCIAS Y LEGISLACIÓN (ESPAÑA) -->
-                    <div class="section">
+                    <!-- 1.7 COMPETENCIAS Y LEGISLACIÓN EN ESPAÑA -->
+                    <div class="section" style="margin-bottom: 0;">
                         <div class="section-title">
                             <div class="section-icon" style="background: #283593;"><i class="fas fa-gavel"></i></div>
                             <h3>1.7 Competencias y legislación en España</h3>
                         </div>
+
+                        <!-- Resumen competencial -->
                         <div class="info-box" style="margin-bottom: 1rem;">
                             <div class="box-icon" style="background: #283593;"><i class="fas fa-balance-scale"></i></div>
                             <div>
-                                <p><strong>Comunidades autónomas:</strong> competencia exclusiva en prevención y extinción.</p>
-                                <p><strong>Estado:</strong> estadísticas, estrategia nacional, coordinación. Interviene si lo solicita la CC.AA. o si afecta a varias.</p>
+                                <p><strong>Comunidades Autónomas:</strong> competencia exclusiva en prevención y extinción dentro de su territorio. Desarrollan su propia normativa.</p>
+                                <p><strong>Estado:</strong> competencias en estadísticas, estrategia forestal nacional y coordinación de medios. Interviene si lo solicita la CC.AA. o si el incendio afecta a varias comunidades.</p>
                             </div>
                         </div>
-                        <p><strong>Ley de Montes (básica):</strong></p>
-                        <ul class="compact-list">
-                            <li>Campañas de concienciación.</li>
-                            <li>Participación ciudadana en prevención.</li>
-                            <li>Zonas de alto riesgo y planes de defensa.</li>
-                            <li>Obligación de comunicar incendios y colaborar.</li>
-                            <li>Coordinación entre administraciones.</li>
-                            <li>Mando único en extinción.</li>
-                            <li>Restauración y prohibición de cambio de uso forestal.</li>
-                            <li>Responsabilidades administrativas.</li>
-                        </ul>
-                        <p><strong>Protección Civil:</strong> normativa básica estatal que las CC.AA. deben respetar.</p>
-                        <p><strong>Colaboración estatal:</strong> normalización de medios y apoyo a CC.AA.</p>
-                    </div>
 
-                    <!-- Nota final ecológica -->
-                    <div class="tip-box" style="margin-top: 1rem;">
-                        <div class="box-icon" style="background: #2E7D32;"><i class="fas fa-seedling"></i></div>
-                        <div><strong>El ecosistema necesita el fuego:</strong> aporta estrategias rebrotadoras y de germinación. Pero actualmente es una amenaza por la acción humana y el cambio climático.</div>
+                        <!-- Ley de Montes (estatal, básica) -->
+                        <div class="compact-card" style="border-top-color: #283593; margin-bottom: 1rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#283593;"><i class="fas fa-book"></i></div>
+                                <span class="compact-title">📜 Ley de Montes (estatal, básica)</span>
+                            </div>
+                            <p style="font-size:0.9rem; margin-bottom:0.5rem;">Las CC.AA. deben respetar esta ley al desarrollar su regulación autonómica. Principales referencias sobre incendios:</p>
+                            <ul class="compact-list" style="font-size:0.85rem;">
+                                <li>📢 Promoción de campañas de concienciación y sensibilización ciudadana.</li>
+                                <li>👥 Participación activa de la población en la prevención de incendios forestales.</li>
+                                <li>🗺️ Determinación de zonas de alto riesgo de incendio forestal y elaboración de planes de defensa.</li>
+                                <li>📞 Obligación de toda persona de comunicar la existencia de un incendio y, en su caso, colaborar en las tareas de extinción.</li>
+                                <li>🤝 Necesidad de coordinación entre las diferentes administraciones públicas en prevención y lucha.</li>
+                                <li>🎯 Fijación de un mando único como director técnico de la extinción.</li>
+                                <li>🌲 Obligación de restaurar los terrenos afectados, prohibiendo el cambio de uso forestal.</li>
+                                <li>⚖️ Establecimiento de responsabilidades administrativas por incumplimiento de las obligaciones derivadas de la Ley de Montes.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Colaboración estatal y Protección Civil -->
+                        <div class="compact-grid" style="margin-bottom: 1rem;">
+                            <div class="compact-card" style="border-top-color: #1565C0;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#1565C0;"><i class="fas fa-handshake"></i></div>
+                                    <span class="compact-title">🤝 Colaboración estatal</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🛠️ Normalización de medios materiales de extinción.</li>
+                                    <li>🚁 Despliegue de medios estatales para apoyar y completar los destinados por las CC.AA.</li>
+                                </ul>
+                            </div>
+
+                            <div class="compact-card" style="border-top-color: #9C27B0;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#9C27B0;"><i class="fas fa-shield-alt"></i></div>
+                                    <span class="compact-title">🛡️ Protección Civil</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>📋 Normativa básica estatal que las CC.AA. deben respetar en su territorio.</li>
+                                    <li>🚒 Se aplica también a la extinción de incendios.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Nota final sobre el desarrollo autonómico -->
+                        <div class="tip-box">
+                            <div class="box-icon" style="background: #FFB74D;"><i class="fas fa-lightbulb"></i></div>
+                            <div>
+                                <strong>📌 Desarrollo autonómico:</strong> La mayoría de las CC.AA. han desarrollado su propia normativa respetando la Ley de Montes y la legislación básica de Protección Civil. El Estado mantiene competencias estadísticas, estratégicas y de coordinación.
+                            </div>
+                        </div>
                     </div>
                 </div><!-- .card-content -->
             </div><!-- .horizontal-card -->
 
-            <!-- TARJETA 2 – TRANSMISIÓN DEL CALOR -->
-            <div class="horizontal-card" id="card2">
+            <!-- TARJETA 2 – TRANSMISIÓN DEL CALOR EN LOS INCENDIOS FORESTALES -->
+            <div class="horizontal-card" id="transmision">
                 <div class="card-header-top" style="background: var(--gradient-atm);">
-                    <div class="card-title-container"><div class="card-icon-large"><i class="fas fa-temperature-high"></i></div><div><div class="card-title-top">2. TRANSMISIÓN DEL CALOR</div><div class="card-subtitle-top">conducción · radiación · convección · pavesas</div></div></div>
-                    <div class="topic-number-badge">2/6</div>
-                </div>
-                <div class="card-content">
-                    <div class="comparison-container">
-                        <div class="comparison-card"><span class="diagram-icon">🔥</span><strong>Conducción:</strong> contacto sólido‑sólido, baja eficiencia. Compacidad (pinocha) puede ayudar.</div>
-                        <div class="comparison-card"><span class="diagram-icon">☀️</span><strong>Radiación:</strong> ondas electromagnéticas. Favorecida por relación superficie/volumen y ahuecamiento.</div>
-                        <div class="comparison-card"><span class="diagram-icon">💨</span><strong>Convección:</strong> transporte por aire caliente ascendente; principal causa de paso a copas. + pendiente acelera.</div>
+                    <div class="card-title-container">
+                        <div class="card-icon-large"><i class="fas fa-temperature-high"></i></div>
+                        <div>
+                            <div class="card-title-top">2. TRANSMISIÓN DEL CALOR EN LOS INCENDIOS FORESTALES</div>
+                            <div class="card-subtitle-top">conducción · radiación · convección · pavesas</div>
+                            <div style="margin-top: 0.5rem;">
+                                <span class="compact-chip" style="background:#E3F2FD; color:#1976D2;">compacidad</span>
+                                <span class="compact-chip" style="background:#FFF3E0; color:#EF6C00;">ahuecamiento</span>
+                                <span class="compact-chip" style="background:#FFEBEE; color:#D32F2F;">saltos hasta 0,5 km</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="danger-box"><div class="box-icon" style="background:#C62828;"><i class="fas fa-wind"></i></div><div><strong>Emisión de partículas (pavesas):</strong> proyección de material incandescente. Saltos hasta <span class="data-number">0,5 km</span> (pinos). Piñas de pino carrasco y corteza de eucalipto muy peligrosas. Condiciones: T <span class="data-number">20‑35°C</span>, HR <span class="data-number">20‑50%</span>, viento <span class="data-number">16‑39 km/h</span>.</div></div>
+                    <div class="topic-number-badge">Tema 2</div>
                 </div>
-            </div>
+
+                <div class="card-content">
+                    <!-- Factores generales que intervienen en la transmisión -->
+                    <div class="info-box" style="margin-bottom: 1.5rem;">
+                        <div class="box-icon" style="background: var(--color-atm);"><i class="fas fa-microscope"></i></div>
+                        <div style="flex: 1 1;">
+                            <p><strong>Factores que influyen en la transmisión del calor:</strong></p>
+                            <div class="columnas" style="justify-content: center;">
+                                <ul class="compact-list" style="flex: 1 1 200px;">
+                                    <li>📐 Distribución espacial de los combustibles (suelo / aéreos).</li>
+                                    <li>⛰️ Pendiente del terreno.</li>
+                                </ul>
+                                <ul class="compact-list" style="flex: 1 1 200px;">
+                                    <li>🧱 Compacidad o ahuecamiento de la capa combustible.</li>
+                                    <li>💨 Viento.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.1 CONDUCCIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #8D6E63;"><i class="fas fa-arrow-right-arrow-left"></i></div>
+                            <h3>2.1 Conducción</h3>
+                        </div>
+
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: #8D6E63; flex: 3 1 280px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#8D6E63;"><i class="fas fa-fire"></i></div>
+                                    <span class="compact-title">Mecanismo</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🔥 Transmisión del calor entre sólidos mediante contacto.</li>
+                                    <li>⚡ Velocidad variable con la conductividad térmica de la materia.</li>
+                                    <li>🌿 La conductividad de la materia vegetal es baja y el contacto imperfecto (salvo hojarasca y leña delgada).</li>
+                                    <li>📉 <strong>Mecanismo poco eficiente</strong> para la transmisión entre combustibles forestales.</li>
+                                </ul>
+                            </div>
+                            <div class="compact-card" style="border-top-color: #A1887F;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#A1887F;"><i class="fas fa-cubes"></i></div>
+                                    <span class="compact-title">Relación con la compacidad</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>📦 A mayor compacidad, mayor eficiencia en la conducción (ej. pinocha de pino silvestre, hojarasca de haya).</li>
+                                    <li>🕳️ Sin embargo, la compacidad limita la combustibilidad fuera de periodos secos por falta de aire interpuesto.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.2 RADIACIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #F57C00;"><i class="fas fa-sun"></i></div>
+                            <h3>2.2 Radiación</h3>
+                        </div>
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: #F57C00;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#F57C00;"><i class="fas fa-wave-square"></i></div>
+                                    <span class="compact-title">Mecanismo</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>☀️ Transmisión del calor como ondas electromagnéticas a través del aire.</li>
+                                    <li>🔄 La continuidad horizontal y vertical de los combustibles influye decisivamente en su eficiencia.</li>
+                                    <li>📈 La relación superficie/volumen favorece el efecto: aumenta la superficie que irradia y la que recibe.</li>
+                                </ul>
+                            </div>
+                            <div class="compact-card" style="border-top-color: #FFB74D; ">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#FFB74D;"><i class="fas fa-expand"></i></div>
+                                    <span class="compact-title">Ahuecamiento</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🌀 Es lo opuesto a la compacidad; el ahuecamiento favorece la radiación.</li>
+                                    <li>🌬️ El calor se transmite por el aire interpuesto en la capa de combustibles, siempre que los huecos no sean excesivamente grandes.</li>
+                                    <li>🍂 Ejemplos: hojarasca de roble melojo, matorrales bajos o altos, combustibles de superficie y aéreos continuos.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.3 CONVECCIÓN -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #0288D1;"><i class="fas fa-wind"></i></div>
+                            <h3>2.3 Convección</h3>
+                        </div>
+                        <div class="compact-grid">
+                            <div class="compact-card" style="border-top-color: #0288D1; flex: 3 1 280px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#0288D1;"><i class="fas fa-arrow-up"></i></div>
+                                    <span class="compact-title">Mecanismo</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>💨 Transporte del calor por el aire que se expande al recibirlo, disminuye su densidad y asciende.</li>
+                                    <li>🌲 Al contactar con combustibles a mayor altura, cede el calor y desciende.</li>
+                                    <li>🔥 <strong>Principal responsable de que los incendios de superficie se conviertan en fuegos de copas.</strong></li>
+                                    <li>📈 Convierte los combustibles aéreos en disponibles.</li>
+                                </ul>
+                            </div>
+                            <div class="compact-card" style="border-top-color: #4FC3F7; ">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#4FC3F7;"><i class="fas fa-mountain"></i></div>
+                                    <span class="compact-title">Efecto combinado con la pendiente</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>⬆️ Acelera la desecación por calentamiento de combustibles situados por encima del foco.</li>
+                                    <li>🚀 Favorece la propagación cuesta arriba.</li>
+                                    <li>⬇️ Cuesta abajo la propagación es mucho más lenta (solo por radiación).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.4 EMISIÓN DE PARTÍCULAS EN IGNICIÓN (PAVESAS) -->
+                    <div class="section" style="margin-bottom: 0;">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #D32F2F;"><i class="fas fa-wind"></i></div>
+                            <h3>2.4 Emisión de partículas en ignición (pavesas)</h3>
+                        </div>
+                        <div class="danger-box" style="margin-bottom:1rem;">
+                            <div class="box-icon" style="background:#D32F2F;"><i class="fas fa-fire"></i></div>
+                            <div>
+                                <p><strong>Pavesas:</strong> proyección a distancia de partículas vegetales incandescentes o inflamadas. Pueden originar incendios secundarios fuera del perímetro ("saltos de fuego").</p>
+                            </div>
+                        </div>
+
+                        <div class="compact-grid" style="margin-bottom: 0;">
+                            <div class="compact-card" style="border-top-color: #B71C1C;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#B71C1C;"><i class="fas fa-ruler"></i></div>
+                                    <span class="compact-title">Distancias y condiciones</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>📏 Distancia típica: hasta <span class="data-number">0,5 km</span> en masas de pinos con fuego de copas.</li>
+                                    <li>⏰ Horas centrales del día.</li>
+                                    <li>🌡️ Temperatura: <span class="data-number">20‑35°C</span>.</li>
+                                    <li>💧 Humedad relativa: <span class="data-number">20‑50%</span>.</li>
+                                    <li>💨 Viento: <span class="data-number">16‑39 km/h</span> (moderado a vivo).</li>
+                                </ul>
+                            </div>                      
+                        
+                            <div class="compact-card" style="border-top-color: #B71C1C; margin-bottom:1rem;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#B71C1C;"><i class="fas fa-cloud-rain"></i></div>
+                                    <span class="compact-title">Factores que influyen</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🔥 Características del fuego (intensidad, tipo de copas).</li>
+                                    <li>🌿 Tipo de vegetación (especies, humedad).</li>
+                                    <li>🌡️ Condiciones climatológicas (temperatura, humedad, viento).</li>
+                                    <li>💨 Las ráfagas de viento favorecen la emisión, el transporte a larga distancia y la eclosión de focos secundarios.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="compact-grid" style="margin-bottom: 0;">
+                            <div class="warning-box" style="flex: 5 1 280px;">
+                                <div class="box-icon" style="background: #F57C00;"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div>
+                                    <strong>Consecuencias operativas:</strong>
+                                    <ul class="compact-list" style="margin-top:0.3rem;">
+                                        <li>⚠️ Afecta a la propagación del fuego.</li>
+                                        <li>🛡️ Reduce la eficacia de las estructuras preventivas.</li>
+                                        <li>🚒 Puede poner en riesgo a los equipos de extinción y a zonas habitadas próximas.</li>
+                                        <li>🎯 Influye en las estrategias de lucha contra incendios.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                            <div class="compact-card" style="border-top-color: #B71C1C; align-self: center; flex: 1 1 calc(25%)">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#B71C1C;"><i class="fas fa-leaf"></i></div>
+                                    <span class="compact-title">Especies más peligrosas</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🌲 Piñas del pino carrasco (<em>Pinus halepensis</em>).</li>
+                                    <li>🌳 Corteza del eucalipto.</li>
+                                </ul>
+                            </div>
+                        </div>                                                        
+                    </div>
+                </div><!-- .card-content -->
+            </div><!-- .horizontal-card -->
 
             <!-- TARJETA 3 – FACTORES (TOPOGRAFÍA, METEOROLOGÍA) -->
             <div class="horizontal-card" id="card3">
