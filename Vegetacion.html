@@ -1550,28 +1550,244 @@
                 </div><!-- .card-content -->
             </div><!-- .horizontal-card -->
 
-            <!-- TARJETA 3 – FACTORES (TOPOGRAFÍA, METEOROLOGÍA) -->
-            <div class="horizontal-card" id="card3">
+            <!-- TARJETA 3 – FACTORES QUE DETERMINAN EL COMPORTAMIENTO (inicio: introducción + topografía) -->
+            <div class="horizontal-card" id="factores">
                 <div class="card-header-top" style="background: var(--gradient-topo);">
-                    <div class="card-title-container"><div class="card-icon-large"><i class="fas fa-mountain"></i></div><div><div class="card-title-top">3. FACTORES DEL COMPORTAMIENTO</div><div class="card-subtitle-top">topografía · clima · vientos · inversión · tormentas</div></div></div>
-                    <div class="topic-number-badge">3/6</div>
+                    <div class="card-title-container">
+                        <div class="card-icon-large"><i class="fas fa-mountain"></i></div>
+                        <div>
+                            <div class="card-title-top">3. FACTORES QUE DETERMINAN EL COMPORTAMIENTO</div>
+                            <div class="card-subtitle-top">topografía · climatología · combustibles · vientos · inversión · tormentas</div>
+                            <div style="margin-top: 0.5rem;">
+                                <span class="compact-chip" style="background:#F3E5F5; color:#7B1FA2;">gran tríada</span>
+                                <span class="compact-chip" style="background:#FFEBEE; color:#D32F2F;">pendiente 45° = 100%</span>
+                                <span class="compact-chip" style="background:#E3F2FD; color:#1976D2;">hasta 20× velocidad</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Tema 3</div>
                 </div>
+
                 <div class="card-content">
-                    <div class="section"><div class="section-title"><div class="section-icon" style="background:#8D6E63;"><i class="fas fa-mountain"></i></div><h3>3.1 Topografía</h3></div>
-                    <ul class="visual-list"><li><strong>Pendiente:</strong> a <span class="data-number">45°</span> (100%) la velocidad se multiplica hasta 20 veces en ascenso.</li><li><strong>Exposición:</strong> solana más seca.</li><li><strong>Configuración:</strong> barrancos aceleran convección.</li><li>Altitud, orientación, rugosidad.</li></ul></div>
-                    <div class="section"><div class="section-title"><div class="section-icon" style="background:#4FC3F7;"><i class="fas fa-wind"></i></div><h3>3.2 Climatología y tiempo</h3></div>
-                    <p><strong>Temperatura:</strong> en llamas <span class="data-number">700‑1000°C</span>, zona precalentada <span class="data-number">500‑1400°C</span>.</p>
-                    <p><strong>Humedad relativa:</strong> <span class="data-number">HR<30%</span> extremo. Regla: +10°C → HR mitad, -10°C → HR doble.</p>
-                    <p><strong>Viento:</strong> 1 nudo = <span class="data-number">1,852 km/h</span>. Vientos locales: ladera ascendente/descendente, valle, brisa, foehn (<span class="data-number">HR 3%</span>, hasta <span class="data-number">145 km/h</span>), torbellinos.</p>
-                    <div class="info-box"><div class="box-icon" style="background:#0288D1;"><i class="fas fa-cloud-rain"></i></div><div><strong>Tormenta ígnea / pyrocumulus:</strong> incendio crea su propio clima, reventones.</div></div>
-                    <table class="visual-table">
-                        <thead><tr><th>Riesgo</th><th>Condiciones</th></tr></thead>
-                        <tbody><tr><td>Grave</td><td>2 coincidencias: T>30°C, HR<35%, viento >30 km/h</td></tr><tr><td>Extremo</td><td>3 condiciones</td></tr></tbody>
-                    </table>
-                    <p><strong>Inversión térmica:</strong> nocturna, frontal, marina, subsidencia. Al romperse (media mañana) cambio súbito.</p>
-                </div>
-                </div>
-            </div>
+                    <!-- INTRODUCCIÓN: LA GRAN TRÍADA -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #8D6E63;"><i class="fas fa-cubes"></i></div>
+                            <h3>La gran tríada del comportamiento</h3>
+                        </div>
+                        <div class="info-box">
+                            <div class="box-icon" style="background: #8D6E63;"><i class="fas fa-fire"></i></div>
+                            <div>
+                                <p>El comportamiento de un fuego de vegetación depende de tres factores interrelacionados:</p>
+                                <ul class="compact-list" style="margin-top:0.3rem;">
+                                    <li>⛰️ <strong>Topografía:</strong> características del terreno (la más constante).</li>
+                                    <li>🌤️ <strong>Climatología y tiempo atmosférico:</strong> ambiente del sector afectado.</li>
+                                    <li>🌿 <strong>Combustible vegetal:</strong> propiedades del material que arde.</li>
+                                </ul>
+                                <p style="margin-top:0.5rem;">La topografía influye decisivamente en los otros dos componentes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.1 TOPOGRAFÍA (general) -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #8D6E63;"><i class="fas fa-mountain"></i></div>
+                            <h3>3.1 Topografía</h3>
+                        </div>
+
+                        <!-- Factores topográficos principales -->
+                        <div class="compact-grid" style="margin-bottom:1rem;">
+                            <div class="compact-card" style="border-top-color: #8D6E63; flex: 10 1 280px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#8D6E63;"><i class="fas fa-arrow-up"></i></div>
+                                    <span class="compact-title">Pendiente</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>📐 Factor más importante en el comportamiento del fuego.</li>
+                                    <li>⬆️ A mayor pendiente, mayor velocidad de propagación en ascenso (hasta <span class="data-number">20 veces</span> más rápida).</li>
+                                    <li>⬇️ El progreso descendente es mucho más lento (solo por radiación).</li>                                    
+                                    <li>🔥 En barrancos con mucha pendiente y laderas próximas, la convección se acelera por el estrechamiento, aumentando la velocidad de propagación.</li>
+                                </ul>
+                            </div>
+
+                            <div class="compact-card" style="border-top-color: #8D6E63;flex: 3 1 280px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#8D6E63;"><i class="fas fa-sun"></i></div>
+                                    <span class="compact-title">Exposición</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>☀️ Posición de las laderas respecto a la radiación solar.</li>
+                                    <li>🌵 <strong>Solana:</strong> mayor temperatura, menor humedad en vegetales → combustible más seco.</li>
+                                    <li>🌲 <strong>Umbría:</strong> menor temperatura, mayor humedad.</li>
+                                    <li>📊 Influye en la distribución y cantidad de combustible.</li>
+                                </ul>
+                            </div>
+
+                            <div class="compact-card" style="border-top-color: #8D6E63;flex: 1 1 240px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#8D6E63;"><i class="fas fa-draw-polygon"></i></div>
+                                    <span class="compact-title">Configuración</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🗺️ Relieve: valles, crestas, barrancos.</li>
+                                    <li>🌬️ Condiciona microclimas y regímenes de viento local.</li>
+                                    <li>🔥 Fondos de barranco con fuerte pendiente aceleran la propagación (efecto chimenea).</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="columnas">
+                            <!-- 3.1.1 Influencia de la topografía en el tiempo atmosférico -->
+                            <div class="compact-card" style="border-top-color: #5D4037; margin-bottom:1rem; flex: 1 1 280px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#5D4037;"><i class="fas fa-cloud-sun"></i></div>
+                                    <span class="compact-title">3.1.1 Influencia en el tiempo atmosférico</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>⛰️ Las elevaciones obstaculizan masas de aire: al superarlas varían temperatura y humedad.</li>
+                                    <li>🌪️ Modifican velocidad, dirección y comportamiento de los vientos generales.</li>
+                                    <li>🌬️ Generan fenómenos locales: vientos de ladera, de valle, brisas, foehn, torbellinos.</li>
+                                </ul>
+                            </div>
+
+                            <!-- 3.1.2 Relación de la topografía con los combustibles (versión completa pero concisa) -->
+                            <div class="compact-card" style="border-top-color: #5D4037; margin-bottom:1rem; flex: 3 1 280px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#5D4037;"><i class="fas fa-leaf"></i></div>
+                                    <span class="compact-title">3.1.2 Relación de la topografía con los combustibles</span>
+                                </div>
+                                
+                                <p style="font-size:0.9rem; margin-bottom:0.8rem;">Los factores topográficos están directamente relacionados con la <strong>clase, cantidad y humedad</strong> de los combustibles.</p>
+                                
+                                <ul class="compact-list" style="font-size:0.85rem;">
+                                    <li>📏 <strong>Altitud:</strong> a mayor altitud, menor cantidad de vegetación y, por tanto, menor cantidad de combustible.</li>
+                                    <li>☀️ <strong>Exposición (solana/umbría):</strong> las solanas están más secas y tienen menos combustible; las umbrías, más húmedas y con mayor carga.</li>
+                                    <li>📐 <strong>Pendiente:</strong> favorece la continuidad horizontal y vertical de los combustibles, facilitando la propagación.</li>                                
+                                </ul>                                
+                            </div>
+                        </div>
+
+                        <!-- Nota adicional sobre el cálculo de pendiente -->
+                        <div class="tip-box" style="margin-top:1rem;">
+                            <div class="box-icon" style="background: #FFB74D;"><i class="fas fa-calculator"></i></div>
+                            <div>
+                                <strong>📐 Cálculo de pendiente:</strong> Se expresa en grados o porcentaje. Una pendiente del <span class="data-number">100%</span> corresponde a <span class="data-number">45°</span>. La velocidad de propagación en ascenso puede multiplicarse hasta <span class="data-number">20 veces</span> respecto a terreno llano, mientras que  con fuertes corrientes de viento se propaga <span class="data-number">100 veces</span> más rápido.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.2 CLIMATOLOGÍA Y TIEMPO ATMOSFÉRICO (hasta 3.2.3) -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #4FC3F7;"><i class="fas fa-cloud-sun"></i></div>
+                            <h3>3.2 Climatología y tiempo atmosférico</h3>
+                        </div>
+
+                        <!-- Introducción general -->
+                        <div class="info-box" style="margin-bottom:1rem;">
+                            <div class="box-icon" style="background: #4FC3F7;"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <p>En los incendios forestales interesan tres escalas temporales:</p>
+                                <ul class="compact-list" style="margin-top:0.3rem;">
+                                    <li>📅 <strong>Tiempo previo:</strong> factor de riesgo y determinación de la cubierta forestal.</li>
+                                    <li>🔥 <strong>Tiempo actual:</strong> causa desencadenante (rayo, combustión).</li>
+                                    <li>⏳ <strong>Tiempo durante el fuego:</strong> viento, lluvia, etc.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 3.2.1 Variables meteorológicas -->
+                        <div class="compact-card" style="border-top-color: #4FC3F7; margin-bottom:1rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#4FC3F7;"><i class="fas fa-chart-line"></i></div>
+                                <span class="compact-title">3.2.1 Variables meteorológicas</span>
+                            </div>
+                            <p style="font-size:0.9rem;">Las variables con mayor influencia sobre un incendio son:</p>
+                            <ul class="compact-list" style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-right: 1rem;">
+                                <li>🌡️ <strong>Temperatura</strong></li>
+                                <li>💨 <strong>Velocidad del viento</strong></li>
+                                <li>💧 <strong>Humedad relativa</strong></li>
+                                <li>⚖️ <strong>Estabilidad atmosférica</strong></li>
+                            </ul>
+                            <p style="font-size:0.85rem; margin-top:0.5rem;">En ambientes estables y secos del verano, la energía solar aumenta la temperatura y disminuye la humedad relativa, afectando a la hidratación de los combustibles muertos.</p>
+                        </div>
+
+                        <!-- 3.2.2 Temperatura -->
+                        <div class="compact-card" style="border-top-color: #F57C00; margin-bottom:1rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#F57C00;"><i class="fas fa-thermometer-half"></i></div>
+                                <span class="compact-title">3.2.2 Temperatura</span>
+                            </div>
+                            <p style="font-size:0.9rem;">Medida del efecto de la radiación solar. Influye en la desecación y temperatura interna de los tejidos vegetales, así como en la humedad de los combustibles muertos.</p>
+                            <ul class="compact-list">
+                                <li>📆 <strong>Estacional:</strong> máxima en verano.</li>
+                                <li>⏰ <strong>Variación diaria:</strong> mínima ~6:00, máxima entre 15:00-17:00.</li>
+                            </ul>
+
+                            <div style="margin-top:0.8rem; background:#FFF3E0; border-radius:8px; padding:0.6rem;">
+                                <div style="font-weight:700; color:#E65100;">Temperaturas características en el incendio:</div>
+                                <ul class="compact-list" style="margin-top:0.3rem;">
+                                    <li>🌍 <strong>Suelo:</strong> aumento mínimo, depende del lecho orgánico.</li>
+                                    <li>🔥 <strong>Zona de combustible (precalentada):</strong> <span class="data-number">1000‑1400°C</span> en zonas arboladas y <span class="data-number">~500°C</span> en matorrales.</li>
+                                    <li>⚡ <strong>Zona de llamas:</strong> <span class="data-number">700‑1000°C</span>, con rápidas fluctuaciones por turbulencia.</li>
+                                    <li>☁️ <strong>Columna de convección:</strong> temperatura decrece rápidamente con la altura. <span class="data-number">A 3m puede reducirse en 3/4; al duplicar altura, otro tercio.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 3.2.3 Vapor de agua – humedad (versión precisa y ordenada) -->
+                        <div class="compact-card" style="border-top-color: #0288D1; margin-bottom:1rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#0288D1;"><i class="fas fa-water"></i></div>
+                                <span class="compact-title">3.2.3 Vapor de agua – humedad</span>
+                            </div>
+
+                            <!-- Introducción -->
+                            <p style="font-size:0.9rem; margin-bottom:0.8rem;">El vapor de agua es uno de los parámetros más importantes en el inicio y comportamiento del fuego. El aire atmosférico nunca está totalmente seco.</p>
+
+                            <!-- Humedad absoluta y relativa -->
+                            <div style="margin-bottom:1rem;">
+                                <div style="font-weight:700; color:#01579B; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+                                    <i class="fas fa-chart-bar"></i> Formas de expresar la humedad
+                                </div>
+                                <ul class="compact-list">
+                                    <li>📊 <strong>Humedad absoluta:</strong> cantidad de vapor de agua (gramos) por unidad de volumen de aire (m³). Junto a la temperatura, sirve para estimar la capacidad del aire para admitir o no mayor cantidad de vapor.</li>
+                                    <li>📈 <strong>Humedad relativa (HR):</strong> proporción de vapor de agua presente respecto al máximo que podría contener el aire a esa temperatura. HR <span class="data-number">100%</span> indica saturación.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Valores críticos y regla de temperatura -->
+                            <div style="margin-bottom:1rem; background:#E1F5FE; border-radius:8px; padding:0.6rem;">
+                                <div style="font-weight:700; color:#01579B; margin-bottom:0.3rem;">⚠️ Valores críticos</div>
+                                <ul class="compact-list">
+                                    <li>🔥 HR por debajo del <span class="data-number">30%</span> genera condiciones <strong>muy favorables</strong> para el inicio y propagación del fuego.</li>
+                                </ul>
+                                <div style="font-weight:700; color:#01579B; margin:0.5rem 0 0.3rem 0;">📐 Regla aproximada (temperatura vs. HR)</div>
+                                <ul class="compact-list">
+                                    <li>⬇️ Cuando la temperatura desciende <span class="data-number">10°C</span>, la humedad relativa se <strong>duplica</strong>.</li>
+                                    <li>⬆️ Cuando la temperatura asciende <span class="data-number">10°C</span>, la humedad relativa se <strong>reduce a la mitad</strong>.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Influencia en el comportamiento del fuego -->
+                            <div style="margin-bottom:1rem;">
+                                <div style="font-weight:700; color:#01579B; margin-bottom:0.5rem;">🔥 Influencia en el comportamiento del fuego</div>
+                                <ul class="compact-list">
+                                    <li>🫧 <strong>Disponibilidad de oxígeno:</strong> a mayor HR, menor proporción de oxígeno en el ambiente, lo que retarda la combustión.</li>
+                                    <li>🌿 <strong>Humedad de la vegetación:</strong> cuanto mayor es la HR, mayor es el contenido de agua en los combustibles vivos y muertos. Se requiere más energía calórica para evaporar esa agua, alargando la fase de presecado y retrasando la ignición.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Variación diurna -->
+                            <p style="font-size:0.95rem; margin-top:0.8rem; background:#BBDEFB; padding:0.5rem; border-radius:6px;">
+                                <i class="fas fa-clock" style="margin-right:0.3rem;"></i> La humedad relativa tiene una marcada variación diurna:<strong> máxima en horas de oscuridad, mínima después del mediodía</strong>.
+                            </p>
+                        </div>
+                    </div>                    
+
+                </div><!-- .card-content -->
+            </div><!-- .horizontal-card -->
 
             <!-- TARJETA 4 – COMBUSTIBLES FORESTALES -->
             <div class="horizontal-card" id="card4">
