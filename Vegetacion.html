@@ -385,7 +385,9 @@
             padding: 0.8rem 1rem;
             border-bottom: 1px solid #eee;
         }
+                
         .visual-table tr:nth-child(even) { background: #f9f9f9; }
+        .visual-table tr:hover { background-color: #f1f1f1;}
 
         /* columnas flexibles */
         .columnas {
@@ -433,6 +435,8 @@
             padding: 0.4rem 0 0.4rem 1.8rem;
             position: relative;
             font-size: 1rem;
+            transition: all 0.3s ease;
+            
         }
         .compact-list li:before {
             content: "•";
@@ -443,6 +447,12 @@
             font-weight: bold;
             font-size:1.6rem;
         }
+
+        .compact-list li:hover {
+            background-color: rgba(0,0,0,0.02);
+            padding-left: 2rem;
+            border-left-color: var(--color-fire);
+        }        
 
         .compact-chip {
             display: inline-block;
@@ -578,26 +588,33 @@
             font-size: 1.6rem;
         }
 
-        /* botones flotantes */
         .floating-btn {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            width: 55px; height: 55px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             background: var(--gradient-fire);
             color: white;
-            border: none;
-            font-size: 1.8rem;
-            box-shadow: 0 8px 25px rgba(211,47,47,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
             cursor: pointer;
             z-index: 100;
+            transition: all 0.3s ease;
+            border: none;
         }
+        .floating-btn:hover { transform: scale(1.1) rotate(15deg); }
         .floating-btn-left {
             left: 25px;
             right: auto;
             background: var(--gradient-forest);
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
         }
+        .floating-btn-left:hover { transform: scale(1.1) rotate(-15deg); }
 
         /* Bloques para partes del incendio */
         .parte-block {
@@ -1678,7 +1695,7 @@
                     </div>
 
                     <!-- 3.2 CLIMATOLOGÍA Y TIEMPO ATMOSFÉRICO (hasta 3.2.3) -->
-                    <div class="section">
+                    <div class="section" style="margin-bottom: 0;">
                         <div class="section-title">
                             <div class="section-icon" style="background: #4FC3F7;"><i class="fas fa-cloud-sun"></i></div>
                             <h3>3.2 Climatología y tiempo atmosférico</h3>
@@ -1784,8 +1801,362 @@
                                 <i class="fas fa-clock" style="margin-right:0.3rem;"></i> La humedad relativa tiene una marcada variación diurna:<strong> máxima en horas de oscuridad, mínima después del mediodía</strong>.
                             </p>
                         </div>
-                    </div>                    
 
+                        <!-- 3.2.4 VIENTOS (versión desarrollada con subtarjetas) -->
+                        <div class="section" style="border-top-color: #0288D1; margin-top: 2rem; margin-bottom: 0;">
+                            <div class="section-title">
+                                <div class="compact-icon" style="background:#0288D1;"><i class="fas fa-wind"></i></div>
+                                <span class="compact-title">3.2.4 Vientos</span>
+                            </div>
+
+                            <div class="columnas">
+                                <!-- SUBTARJETA: Definición y medición -->
+                                <div class="compact-card" style="border-top-color: #0288D1; margin-bottom:1rem; padding:0.8rem; flex: 5 1 400px;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#0288D1; width:35px; height:35px;"><i class="fas fa-ruler"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">Definición y medición</span>
+                                    </div>
+                                    <p style="font-size:0.9rem;"><strong>Viento:</strong> movimiento del aire con relación a la superficie terrestre. Al ser un vector, interesa conocer su <strong>dirección</strong> e <strong>intensidad</strong>.</p>
+                                    <ul class="compact-list">
+                                        <li>🧭 <strong>Dirección:</strong> de donde procede el viento, expresada en grados desde el Norte geográfico (0° o 360° = N, 90° = E, 180° = S, 270° = O).</li>
+                                        <li>📏 <strong>Velocidad:</strong> se mide en m/s, km/h o nudos. <span class="data-number">1 nudo = 1,852 km/h = 0,515 m/s</span>.</li>
+                                        <li>🗺️ <strong>Relación presión‑viento:</strong> mapas de isobaras (líneas de igual presión). El viento sopla paralelo a las isobaras; cuanto más juntas, más fuerte.</li>
+                                        <li>🌍 A nivel de superficie, el rozamiento con el terreno y la adaptación al relieve modifican velocidad y dirección.</li>
+                                        <li>🗺️ Relación directa entre presión y viento: en los mapas de isobaras, la velocidad es proporcional al gradiente de presión.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- SUBTARJETA: Causas del viento -->
+                                <div class="compact-card" style="border-top-color: #0288D1; margin-bottom:1rem; padding:0.8rem; flex: 1 1 200px; align-self: center;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#0288D1; width:35px; height:35px;"><i class="fas fa-globe"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">Causas del viento</span>
+                                    </div>
+                                    <ul class="compact-list" style="font-weight: 600;">
+                                        <li>🌡️ Diferencias de temperatura en grandes áreas de la superficie terrestre.</li>
+                                        <li>📊 Diferencias de presión que crean esas diferencias de temperatura.</li>
+                                        <li>🌍 Rotación de la Tierra.</li>
+                                        <li>🔄 Fuerza de Coriolis.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- SUBTARJETA: Efecto del viento en los incendios forestales -->
+                            <div class="compact-card" style="border-top-color: #D32F2F; margin-bottom:1rem; padding:0.8rem; background:#FFEBEE;">
+                                <div class="compact-header" style="padding-bottom:0.3rem;">
+                                    <div class="compact-icon" style="background:#D32F2F; width:35px; height:35px;"><i class="fas fa-fire"></i></div>
+                                    <span class="compact-title" style="font-size:1rem;">Efectos del viento en el incendio</span>
+                                </div>
+                                <div class="columnas">
+                                    <ul class="compact-list" style="flex: 1 1;">
+                                        <li>🫧 Aumenta la cantidad de oxígeno disponible para la combustión.</li>
+                                        <li>🧭 Influye en la dirección de avance y permite prever hacia dónde se dirigirá con mayor velocidad.</li>
+                                        <li>💧 Seca los combustibles, especialmente los muertos.</li>
+                                        <li>💨 Transporta chispas y pavesas, creando focos secundarios fuera de la línea principal.</li>
+                                    </ul>
+                                    <ul class="compact-list" style="flex: 1 1;">  
+                                        <li>⚡ Aumenta la velocidad de propagación del incendio.</li>
+                                        <li>📈 La fluctuación de velocidad y dirección hace que sus efectos sean complejos: a mayor velocidad, mayor intensidad y velocidad de propagación.</li>
+                                        <li>📐 Componentes de la llama: el componente vertical inclina la llama hacia el combustible (incrementa radiación); el horizontal produce contacto directo y transporte por convección.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- SUBTARJETA: Vientos locales (introducción) -->
+                            <div class="compact-card" style="border-top-color: #0288D1; margin-bottom:1rem; padding:0.8rem;">
+                                <div class="compact-header" style="padding-bottom:0.3rem;">
+                                    <div class="compact-icon" style="background:#0288D1; width:35px; height:35px;"><i class="fas fa-map-signs"></i></div>
+                                    <span class="compact-title" style="font-size:1rem;">Vientos locales</span>
+                                </div>
+                                <p style="font-size:0.9rem;">Sistemas de viento secundarios generados por el contraste entre el calentamiento y el enfriamiento local del suelo, que pueden surgir de forma independiente o combinados con la orografía.</p>
+                            </div>
+
+                            <div class="compact-grid">
+                                <!-- SUBTARJETA: a) Vientos de ladera -->
+                                <div class="compact-card" style="border-top-color: #8D6E63; margin-bottom:1rem; padding:0.8rem; flex: 5 1 380px;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#8D6E63; width:35px; height:35px;"><i class="fas fa-mountain"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">a) Vientos de ladera</span>
+                                    </div>
+                                    <p style="font-size:0.95rem; margin-left: 0.5rem;">Soplan paralelos a la inclinación de las vertientes, producidos por diferencias de temperatura entre el aire adyacente a la ladera y el aire exterior.</p>
+                                    <ul class="compact-list">
+                                        <li>⬆️ <strong>Ascendentes (día):</strong> el aire en contacto con la ladera se calienta más que el aire a igual altitud, haciéndolo más liviano y ascendiendo. <span class="data-number">Duración: 8:00 a.m. – puesta de sol</span>. Velocidad <span class="data-number">6‑13 km/h</span>. En cumbres puede ser intenso y con turbulencias.</li>
+                                        <li>⬇️ <strong>Descendentes (noche/madrugada):</strong> el aire se enfría, se vuelve más denso y desciende hacia valles. <span class="data-number">Duración: 6:00 p.m. – 5:00 a.m.</span>. Velocidad <span class="data-number">1‑10 km/h</span>, flujo laminar sin turbulencia.</li>
+                                        <li>⚠️ <strong>Transición:</strong> el cambio de descendente a ascendente puede reactivar un fuego controlado en minutos, acompañado de ruptura de inversión térmica, disminuyendo la estabilidad y aumentando las rachas.</li>
+                                    </ul>
+                                    <div style="display: flex;">
+                                        <img src="image vegetacion/Ladera.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div>                                     
+                                </div>
+
+                                <!-- SUBTARJETA: b) Vientos de valle -->
+                                <div class="compact-card" style="border-top-color: #2E7D32; margin-bottom:1rem; padding:0.8rem; flex: 1 1 300px;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#2E7D32; width:35px; height:35px;"><i class="fas fa-leaf"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">b) Vientos de valle</span>
+                                    </div>
+                                    <p style="font-size:0.95rem; margin-left: 0.5rem;">Soplan paralelos al eje longitudinal del valle, producidos por gradientes de presión horizontal debidos a diferencias de temperatura en el eje del valle o entre el aire del valle y el aire a la misma altura sobre el plano adyacente.</p>
+                                    <ul class="compact-list">
+                                        <li>⬆️ <strong>Ascendentes (día):</strong> el sol calienta el aire, provocando corrientes hacia las partes altas.</li>
+                                        <li>⬇️ <strong>Descendentes (noche):</strong> el aire frío baja hacia el fondo del valle.</li>
+                                        <li>🔄 El cambio de dirección es más lento cuando se movilizan grandes masas de aire.</li>
+                                    </ul>
+                                    <div style="display: flex;">
+                                        <img src="image vegetacion/Valle.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                    </div> 
+                                </div>
+
+                                <!-- SUBTARJETA: c) Brisa -->
+                                <div class="compact-card" style="border-top-color: #4FC3F7; margin-bottom:1rem; padding:0.8rem; flex: 3 1 300px;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#4FC3F7; width:35px; height:35px;"><i class="fas fa-water"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">c) Brisa</span>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>🌊 <strong>Brisa marina:</strong> diferencia de temperatura tierra‑mar. Día: tierra más caliente → convección → aire frío del mar (brisa). Noche: mar más cálido → inversión, brisa más suave.</li>
+                                        <li>🏔️ <strong>Brisa de montaña (catabática):</strong> nocturna, el aire frío desciende por laderas (especialmente solanas). Velocidad suave (pocos km/h). Si la pendiente es fuerte y lisa, puede alcanzar fuerza considerable.</li>
+                                        <li>🏞️ <strong>Brisa de valle (anabática):</strong> diurna, flujo ascendente por pendientes. Débil, pero en días calurosos puede formar pequeños cúmulos por inestabilidad convectiva.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- SUBTARJETA: d) Olas de montaña -->
+                                <div class="compact-card" style="border-top-color: #9C27B0; margin-bottom:1rem; padding:0.8rem; flex: 3 1 350px;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#9C27B0; width:35px; height:35px;"><i class="fas fa-wave-square"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">d) Olas de montaña</span>
+                                    </div>
+                                    <p style="font-size:0.95rem; margin-left: 0.5rem;">Frente de ondas que se desplaza con la masa de aire en la zona de sotavento cuando:</p>
+                                    <ul class="compact-list">
+                                        <li>💨 Una masa de aire se desplaza deprisa.</li>
+                                        <li>📐 Incide perpendicularmente en el eje de la cadena montañosa.</li>
+                                        <li>⚖️ Sin perder estabilidad.</li>
+                                        <li>〰️ Si los senos de las ondas tocan el suelo, puede producirse subsidencia con viento cálido y muy seco (similar a foehn, más atenuado). La primera onda puede generar turbulencia de eje horizontal en sentido contrario al flujo alto. Si existen cadenas montañosas, puede incrementarse el efecto por un fenómeno de resonancia.</li>
+                                        <li>☁️ Indicador: nubes lenticulares sobre las crestas.</li>
+                                    </ul>
+                                    
+                                </div>
+
+                                <!-- SUBTARJETA: e) Foehn (destacada por su peligrosidad) -->
+                                <div class="compact-card" style="border-top-color: #B71C1C; margin-bottom:1rem; padding:0.8rem; background:#FFEBEE; flex: 3 1 350px;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#B71C1C; width:35px; height:35px;"><i class="fas fa-fire"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">e) Viento Foehn</span>
+                                    </div>
+                                    <p style="font-size:0.95rem; margin-left: 0.5rem;">Vientos muy cálidos, secos y de gran intensidad que soplan desde regiones altas hacia bajas. Son las situaciones meteorológicas más desfavorables para incendios.</p>
+                                    <ul class="compact-list">
+                                        <li>📏 Se han medido hasta <span class="data-number">145 km/h</span> con humedad relativa del <span class="data-number">3%</span>.</li>
+                                        <li>⏳ Suelen terminar bruscamente y no duran más de tres días.</li>
+                                        <li>🌊 Afectan especialmente a zonas costeras: el aire remonta la cadena montañosa, descarga su humedad y desciende seco y cálido (efecto foehn).</li>
+                                        <li>🌍 Nombres locales: Poniente (Valencia/Murcia), Austrum (Rumanía), Puelche (sur de Chile).</li>
+                                        <li>⚠️ Pueden hacer los incendios forestales realmente incontrolables por su velocidad y poder desecante.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- SUBTARJETA: f) Torbellinos (vórtices de fuego) -->
+                                <div class="compact-card" style="border-top-color: #FF9800; margin-bottom:1rem; padding:0.8rem; flex: 4 1 350px;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#FF9800; width:35px; height:35px;"><i class="fas fa-tornado"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">f) Torbellinos (vórtices de fuego)</span>
+                                    </div>
+                                    <p style="font-size:0.95rem; margin-left: 0.5rem;">Columna de aire ascendente que rota y se desplaza, levantando humo, escombros y fuego. Se desarrollan por el calentamiento de capas atmosféricas inferiores y por la generación de giro en el flujo de aire local.</p>
+                                    <ul class="compact-list">
+                                        <li>📐 <strong>Tipos según eje:</strong>
+                                            <ul class="compact-list" style="margin-left:1.5rem;">
+                                                <li>➡️ <strong>Horizontal:</strong> rotación paralela al suelo.</li>
+                                                <li>⬆️ <strong>Vertical:</strong> rotación perpendicular al suelo.</li>
+                                            </ul>
+                                        </li>
+                                        <li>🔥 Contribuyen a la propagación transfiriendo masa y calor, arrojando pavesas que se transportan en las corrientes locales.</li>
+                                        <li>💨 Cuando el viento en superficie supera los <span class="data-number">7‑8 km/h</span>, los remolinos tienden a desplazarse con el viento.</li>
+                                        <li>⏱️ Pueden disiparse en minutos o durar más de una hora.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3.2.5 INVERSIÓN TÉRMICA -->
+                        <div class="section" style="border-top-color: #4FC3F7; margin-top: 0rem; margin-bottom:0rem;">
+                            <div class="section-title">
+                                <div class="compact-icon" style="background:#4FC3F7;"><i class="fas fa-temperature-low"></i></div>
+                                <span class="compact-title">3.2.5 Inversión térmica</span>
+                            </div>
+
+                            <!-- Introducción general -->
+                            <div class="compact-card" style="border-top-color: #4FC3F7; margin-bottom:1rem; padding:0.8rem;">
+                                <div class="compact-header" style="padding-bottom:0.3rem;">
+                                    <div class="compact-icon" style="background:#4FC3F7; width:35px; height:35px;"><i class="fas fa-info-circle"></i></div>
+                                    <span class="compact-title" style="font-size:1rem;">Concepto y efecto en incendios</span>
+                                </div>
+                                <p style="font-size:0.9rem;">Normalmente la temperatura disminuye con la altitud. En la inversión térmica, el aire frío se sitúa debajo de una capa de aire caliente, invirtiendo el gradiente. Asociada a sistemas montañosos.</p>
+                                <ul class="compact-list">
+                                    <li>🌙 Se produce por la tarde-noche: aire frío y denso ocupa el fondo de valles, desplazando al caliente.</li>
+                                    <li>❄️ En estas condiciones, los incendios en el valle suelen estar contenidos (baja Tª, alta HR).</li>
+                                    <li>☀️ A media mañana, el fondo del valle se calienta más rápido, rompiendo el "cinturón térmico" y provocando un aporte súbito de aire desde las laderas.</li>
+                                    <li>⚡ Esto cambia bruscamente el comportamiento del fuego: aumenta velocidad de propagación y longitud de llama.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Tipos de inversión (subtítulo) -->
+                            <div style="font-weight:700; color:#01579B; margin:0.5rem 0 0.3rem 0;">Tipos de inversión térmica</div>
+
+                            <div class="compact-grid">
+                                <!-- a) Inversión nocturna o de radiación -->
+                                <div class="compact-card" style="border-top-color: #2E7D32; margin-bottom:1rem; padding:0.8rem; flex: 4 1 350px;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#2E7D32; width:35px; height:35px;"><i class="fas fa-moon"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">a) Inversión nocturna o de radiación</span>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>🌙 Se forma durante la noche: el aire cercano al suelo se enfría más rápido que las capas altas.</li>
+                                        <li>📉 Al inicio de la noche es débil y poco profunda (<span class="data-number">&#60;100 m</span>).</li>
+                                        <li>⬇️ A medida que avanza la noche, el enfriamiento radiactivo intensifica la inversión, drenando aire frío hacia niveles inferiores.</li>
+                                        <li>🌅 Alcanza su máxima profundidad al amanecer, con temperaturas superficiales mínimas.</li>
+                                        <li>🔥 Efecto en incendios: durante la noche el fuego se ralentiza; al romperse la inversión (media mañana) se produce un cambio brusco de viento y comportamiento.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- b) Inversión frontal -->
+                                <div class="compact-card" style="border-top-color: #F57C00; margin-bottom:1rem; padding:0.8rem; flex: 1 1 300px;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#F57C00; width:35px; height:35px;"><i class="fas fa-cloud-rain"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">b) Inversión frontal</span>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>🌀 Se forma cuando una capa de aire frío cerca del suelo pasa por debajo de una capa cálida, desplazándola hacia arriba (paso de un <strong>frente frío</strong>).</li>
+                                        <li>☀️ También cuando una capa cálida asciende sobre una capa fría y densa (paso de un <strong>frente cálido</strong>).</li>
+                                        <li>🔥 Asociada a cambios bruscos de viento y temperatura que pueden alterar drásticamente el comportamiento del incendio.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- c) Inversión marina -->
+                                <div class="compact-card" style="border-top-color: #0288D1; margin-bottom:1rem; padding:0.8rem; flex: 4 1 350px;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#0288D1; width:35px; height:35px;"><i class="fas fa-water"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">c) Inversión marina</span>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>🌊 Frecuente en costas y grandes lagos.</li>
+                                        <li>💨 Una masa de aire marino fresca, húmeda y estable pasa por debajo de una capa de aire caliente, seco e inestable en las planicies litorales, impulsada por la brisa marina.</li>
+                                        <li>⏰ Puede persistir todo el día, pero es más intensa y evidente por la noche.</li>
+                                        <li>🌫️ Si el flujo es intenso, la inversión alcanza profundidad suficiente para extender niebla y estratos bajos tierra adentro.</li>
+                                        <li>🔥 En incendios costeros, esta inversión puede mantener una capa húmeda que dificulta la propagación, pero su ruptura puede traer vientos cálidos.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- d) Inversión por subsidencia -->
+                                <div class="compact-card" style="border-top-color: #AB47BC; margin-bottom:1rem; padding:0.8rem; flex: 4 1 350px;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#AB47BC; width:35px; height:35px;"><i class="fas fa-arrow-down"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">d) Inversión por subsidencia</span>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>⏬ La temperatura aumenta con la altura porque capas de aire a nivel medio, vinculadas a un anticiclón, se hunden progresivamente y se calientan por compresión adiabática.</li>
+                                        <li>🔥 Resultado: capa de aire caliente, seco y muy estable.</li>
+                                        <li>📅 Puede prolongarse durante días, volviéndose cada vez más cálida y seca.</li>
+                                        <li>🏔️ Frecuente en cimas de cadenas montañosas, especialmente al final del verano y otoño.</li>
+                                        <li>⚠️ Favorece incendios extremos por la sequedad y altas temperaturas que provoca.</li>
+                                    </ul>
+                                </div>
+                                <div style="display: flex; flex: 4 1 300px;">
+                                    <img src="image vegetacion/Inversiones.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                                 
+                            </div>
+                        </div>  
+                        
+                        <!-- 3.2.6 TORMENTAS -->
+                        <div class="section" style="border-top-color: #9C27B0; margin-bottom:0rem; margin-top:0rem;">
+                            <div class="section-title">
+                                <div class="compact-icon" style="background:#9C27B0;"><i class="fas fa-cloud-bolt"></i></div>
+                                <span class="compact-title">3.2.6 Tormentas</span>
+                            </div>
+
+                            
+                                <!-- a) Tormenta ígnea -->
+                                <div class="compact-card" style="border-top-color: #D32F2F; margin-bottom:1rem; padding:0.8rem;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#D32F2F; width:35px; height:35px;"><i class="fas fa-fire"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">a) Tormenta ígnea</span>
+                                    </div>
+                                    <p style="font-size:0.9rem;">Fenómeno natural que se produce en grandes incendios forestales cuando alcanzan tal intensidad que crean su propio sistema de viento.</p>
+                                    <ul class="compact-list">
+                                        <li>🔥 El aire sobre el área incendiada se calienta extremadamente y produce una corriente ascendente con fuertes ráfagas hacia el fuego (efecto chimenea).</li>
+                                        <li>💨 El aire frío a nivel de suelo ocupa el espacio dejado, agitando llamas y aportando oxígeno, incrementando combustión y calor.</li>
+                                        <li>🌀 La turbulencia genera pequeños tornados y remolinos que extienden el fuego rápidamente fuera de la zona central.</li>
+                                        <li>☢️ El intenso calor irradiado (infrarrojos) puede incendiar combustible más allá del propio fuego, aumentando área e intensidad.</li>
+                                        <li>⚠️ Las corrientes succionan aire hacia el interior: si alguien queda atrapado cerca, fallece por falta de oxígeno.</li>
+                                        <li>🌪️ Una tormenta ígnea muy grande puede crear su propio sistema ambiental, inyectando aire y generando climas similares a tormentas eléctricas.</li>
+                                    </ul>
+                                </div>
+                            <div class="compact-grid">
+                                <!-- b) Pyrocumulus o nubes de fuego -->
+                                <div class="compact-card" style="border-top-color: #FF9800; margin-bottom:1rem; padding:0.8rem;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#FF9800; width:35px; height:35px;"><i class="fas fa-cloud-sun"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">b) Pyrocumulus o nubes de fuego</span>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>☁️ Nube que acompaña a incendios o actividad volcánica, formada por el gran calentamiento del aire desde el fuego.</li>
+                                        <li>⬆️ El aire caliente asciende hasta alcanzar capas más frías y húmedas, donde se estabiliza formando una nube.</li>
+                                        <li>⚡ Puede generar rayos y precipitación, aunque a veces la lluvia se evapora antes de llegar al suelo (virga).</li>
+                                        <li>🌧️ Si la nube crece lo suficiente, puede producir lluvia que ayude a la extinción, pero también puede generar reventones.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- c) Los reventones o corrientes descendentes -->
+                                <div class="compact-card" style="border-top-color: #0288D1; margin-bottom:1rem; padding:0.8rem; flex: 2 1 280px;">
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#0288D1; width:35px; height:35px;"><i class="fas fa-arrow-down"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">c) Los reventones o corrientes descendentes</span>
+                                    </div>
+                                    <p style="font-size:0.9rem;">Fenómeno que ocurre dentro de la columna de convección cuando esta crece y el aire que mueve comienza a enfriarse, descendiendo hacia tierra y extendiéndose en abanico desde la base.</p>
+                                    <ul class="compact-list">
+                                        <li>🌧️ Si empieza a llover, se produce evaporación que enfría el aire y acelera la corriente descendente.</li>
+                                        <li>📈 Un signo inicial de posible reventón es el desarrollo de una intensa columna de convección.</li>
+                                        <li>🔄 Cuando el flujo de entrada se transforma en reventón, los vientos en superficie se calman momentáneamente antes de la llegada violenta del aire frío.</li>
+                                        <li>💨 Al golpear el suelo, los vientos pueden superar los <span class="data-number">100 km/h</span> en pocos segundos, cambiando drásticamente la dirección del fuego.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            
+                                <!-- Tabla de niveles de riesgo (formato visual-table) -->
+                                
+                                    <div class="compact-header" style="padding-bottom:0.3rem;">
+                                        <div class="compact-icon" style="background:#4CAF50; width:35px; height:35px;"><i class="fas fa-exclamation-triangle"></i></div>
+                                        <span class="compact-title" style="font-size:1rem;">Niveles de riesgo (Tabla 1)</span>
+                                    </div>
+                            <div class="columnas">        
+                                    <table class="visual-table" style="margin:1rem 0; width:100%; flex: 2 1 200px; align-self: center;">
+                                        <thead>
+                                            <tr>
+                                                <th>Riesgo potencial</th>
+                                                <th>Coincidencias</th>
+                                                <th>Condiciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Grave</td>
+                                                <td><span class="data-number">2 condiciones</span></td>
+                                                <td rowspan="3">Temperatura ambiental alta (> <span class="data-number">30°C</span>)<br>Humedad relativa escasa (< <span class="data-number">35%</span>)<br>Velocidad del viento:  vivo, fuerte, muy fuerte o masivo a partir de <span class="data-number">30 km/h</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Extremo</td>
+                                                <td><span class="data-number">3 condiciones</span></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Extremo a nivel máximo</td>
+                                                <td><span class="data-number">3 condiciones + pendiente</span></td>                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                
+                                <div style="display: flex; flex: 1 1 200px;">
+                                    <img src="image vegetacion/Tormenta.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                                </div>                            
+                            </div>
+                        </div>                        
+                    </div>                    
                 </div><!-- .card-content -->
             </div><!-- .horizontal-card -->
 
@@ -1857,34 +2228,211 @@
         </div>
     </footer>
 
-    <!-- Botones flotantes -->
-    <button class="floating-btn" id="scrollTopBtn" title="Arriba"><i class="fas fa-arrow-up"></i></button>
+    <button class="floating-btn" id="scrollTopBtn" title="Volver arriba"><i class="fas fa-arrow-up"></i></button>
     <button class="floating-btn floating-btn-left" id="scrollNextBtn" title="Siguiente sección"><i class="fas fa-arrow-down"></i></button>
 
     <script>
-        // scroll suave y navegación básica
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-        const scrollNextBtn = document.getElementById('scrollNextBtn');
-        const sections = Array.from(document.querySelectorAll('.horizontal-card'));
-        window.addEventListener('scroll',()=>{ scrollTopBtn.style.display = window.scrollY>400 ? 'flex' : 'none'; });
-        scrollTopBtn.addEventListener('click',()=> window.scrollTo({top:0,behavior:'smooth'}));
-        function getCurrentIndex(){
-            let idx = 0, minDist = Infinity;
-            sections.forEach((s,i)=>{ let d = Math.abs(s.getBoundingClientRect().top); if(d<minDist){ minDist=d; idx=i; } });
-            return idx;
+        // Función para obtener el factor de escala actual (solo para móviles)
+        function getScaleFactor() {
+            if (window.innerWidth <= 630) {
+                const bodyStyles = window.getComputedStyle(document.body);
+                const scaleValue = bodyStyles.getPropertyValue('--escala');
+                return scaleValue ? parseFloat(scaleValue) : 1;
+            }
+            return 1;
         }
-        scrollNextBtn.addEventListener('click',()=>{
-            let curr = getCurrentIndex();
-            if(curr < sections.length-1) sections[curr+1].scrollIntoView({behavior:'smooth'});
-            else sections[0].scrollIntoView({behavior:'smooth'});
+
+        // Botón para volver arriba
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
         });
-        document.querySelectorAll('.nav-item').forEach(a=>{
-            a.addEventListener('click',(e)=>{
-                e.preventDefault();
-                let href = a.getAttribute('href');
-                if(href && href!=='#') document.querySelector(href)?.scrollIntoView({behavior:'smooth'});
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
+
+        // Obtener todos los destinos de los enlaces del menú (visual-nav)
+        const navLinks = document.querySelectorAll('.visual-nav a.nav-item[href^="#"]');
+        const sectionElements = [];
+        const seenIds = new Set();
+
+        navLinks.forEach(link => {
+            const id = link.getAttribute('href').substring(1); // quita el '#'
+            if (id && !seenIds.has(id)) {
+                const element = document.getElementById(id);
+                if (element) {
+                    sectionElements.push(element);
+                    seenIds.add(id);
+                }
+            }
+        });
+
+        // Ordenar por su posición vertical absoluta (de arriba a abajo)
+        sectionElements.sort((a, b) => {
+            const aTop = a.getBoundingClientRect().top + window.scrollY;
+            const bTop = b.getBoundingClientRect().top + window.scrollY;
+            return aTop - bTop;
+        });
+
+        const sections = sectionElements; // Ahora contiene todas las secciones del menú
+
+        // Función para obtener el índice de la sección actual (la que está más cerca del tope de la ventana)
+        function getCurrentSection() {
+            const scale = getScaleFactor();
+            const margin = 150 * scale; // margen para considerar que estamos en una sección
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const elementTop = sections[i].getBoundingClientRect().top + window.scrollY;
+                if (window.scrollY + margin >= elementTop) {
+                    return i;
+                }
+            }
+            return 0;
+        }
+
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const scale = getScaleFactor();
+                    
+                    let currentElement = targetElement;
+                    let absoluteTop = 0;
+                    
+                    while (currentElement) {
+                        absoluteTop += currentElement.offsetTop;
+                        currentElement = currentElement.offsetParent;
+                    }
+                    
+                    const offset = absoluteTop * scale;
+                    
+                    window.scrollTo({
+                        top: offset - (100 * scale), 
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });        
+
+        // Función para ir a la siguiente sección
+        function goToNextSection() {
+            const currentIndex = getCurrentSection();
+            const nextIndex = currentIndex + 1;
+
+            if (nextIndex < sections.length) {
+                const nextSection = sections[nextIndex];
+                const elementTop = nextSection.getBoundingClientRect().top + window.scrollY;
+                const scale = getScaleFactor();
+                window.scrollTo({
+                    top: elementTop - (100 * scale), // dejar un margen superior
+                    behavior: 'smooth'
+                });
+                history.pushState(null, null, `#${nextSection.id}`);
+            } else {
+                // Si estamos en la última, volver arriba
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Botón de siguiente sección
+        const scrollNextBtn = document.getElementById('scrollNextBtn');
+        scrollNextBtn.addEventListener('click', goToNextSection);
+
+        // Actualizar el icono del botón según la posición
+        window.addEventListener('scroll', () => {
+            const currentIndex = getCurrentSection();
+            if (currentIndex === sections.length - 1) {
+                scrollNextBtn.innerHTML = '<i class="fas fa-home"></i>';
+                scrollNextBtn.title = "Volver al inicio";
+            } else {
+                scrollNextBtn.innerHTML = '<i class="fas fa-arrow-down"></i>';
+                scrollNextBtn.title = "Siguiente sección";
+            }
+
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                scrollNextBtn.style.opacity = '0.5';
+            } else {
+                scrollNextBtn.style.opacity = '1';
+            }
+        });
+
+        // Navegación con teclado (flecha derecha/espacio para siguiente, flecha izquierda para anterior)
+        document.addEventListener('keydown', (e) => {
+            if ((e.key === 'ArrowRight' || e.key === ' ') && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                e.preventDefault();
+                goToNextSection();
+            }
+
+            if (e.key === 'ArrowLeft' && 
+                !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+                e.preventDefault();
+                const currentIndex = getCurrentSection();
+                const prevIndex = currentIndex - 1;
+                if (prevIndex >= 0) {
+                    const prevSection = sections[prevIndex];
+                    const elementTop = prevSection.getBoundingClientRect().top + window.scrollY;
+                    const scale = getScaleFactor();
+                    window.scrollTo({
+                        top: elementTop - (100 * scale),
+                        behavior: 'smooth'
+                    });
+                    history.pushState(null, null, `#${prevSection.id}`);
+                } else {
+                    // Si estamos en la primera, ir al inicio
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        });
+
+        // Inicializar: mostrar el botón y manejar hash inicial
+        window.addEventListener('load', () => {
+            scrollNextBtn.style.display = 'flex';
+
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const targetElement = document.querySelector(window.location.hash);
+                    if (targetElement) {
+                        const elementTop = targetElement.getBoundingClientRect().top + window.scrollY;
+                        const scale = getScaleFactor();
+                        window.scrollTo({
+                            top: elementTop - (100 * scale),
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100);
+            }
+        });
+
+        // Solución para problemas de hash en WebView (varios intentos)
+        (function () {
+            function go() {
+                if (!location.hash) return;
+                const id = location.hash.slice(1);
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView();
+            }
+            window.addEventListener("load", () => {
+                go();
+                setTimeout(go, 800);
+                setTimeout(go, 2300);
+            });
+        })();
     </script>
 </body>
 </html>
