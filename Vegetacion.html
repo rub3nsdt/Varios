@@ -663,20 +663,459 @@
             color: #555;
             line-height: 1.4;
         }
+
+        /* ===== HEADER TEMÁTICO - INCENDIOS DE VEGETACIÓN ===== */
+        .vegetacion-header {
+            position: relative;
+            background: radial-gradient(circle at 30% 40%, #1B5E20, #2E7D32 30%, #F57C00 70%, #D32F2F 100%);
+            background-size: 300% 300%;
+            animation: bgShift 18s infinite alternate;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0, 40, 0, 0.6);
+            min-height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes bgShift {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 80% 60%; }
+            100% { background-position: 20% 100%; }
+        }
+
+        /* ===== ÁRBOLES Y HOJAS ===== */
+        .trees-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .tree {
+            position: absolute;
+            font-size: 3.5rem;
+            color: rgba(46, 125, 50, 0.25);
+            text-shadow: 0 0 15px #2E7D32;
+            animation: treeSway 8s infinite ease-in-out;
+            transform-origin: bottom center;
+        }
+        .tree-1 { bottom: 5%; left: 5%; }
+        .tree-2 { bottom: 8%; left: 20%; font-size: 4rem; animation-delay: -1s; }
+        .tree-3 { bottom: 2%; right: 10%; font-size: 4.5rem; animation-delay: -3s; }
+        .tree-4 { bottom: 12%; right: 25%; font-size: 3rem; animation-delay: -5s; }
+        .tree-5 { bottom: 6%; left: 40%; font-size: 3.8rem; animation-delay: -2s; }
+
+        .leaf {
+            position: absolute;
+            font-size: 1.8rem;
+            color: rgba(129, 199, 132, 0.5);
+            animation: leafFloat 12s infinite linear;
+        }
+        .leaf-1 { top: 15%; left: 30%; animation-delay: 0s; }
+        .leaf-2 { top: 40%; right: 20%; animation-delay: -3s; }
+        .leaf-3 { top: 60%; left: 15%; animation-delay: -6s; }
+        .leaf-4 { top: 70%; right: 35%; animation-delay: -9s; }
+
+        @keyframes treeSway {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            75% { transform: rotate(-1deg); }
+        }
+
+        @keyframes leafFloat {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-200px) rotate(360deg); opacity: 0; }
+        }
+
+        /* ===== LLAMAS (adaptadas de InteriorI) ===== */
+        .flames-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            pointer-events: none;
+        }
+        .flame {
+            position: absolute;
+            width: 0px;
+            height: 65px;
+            background: radial-gradient(circle at 50% 0%, #FFEE58, #FF9800 60%, #D32F2F 90%);
+            border-radius: 50% 50% 30% 30% / 60% 60% 30% 30%;
+            filter: blur(2px);
+            animation: flameFlicker 0.25s infinite ease-in-out;
+            transform-origin: bottom center;
+            box-shadow: 0 0 20px rgba(255, 87, 34, 0.8);
+
+        }
+        .flame-1 { bottom: 5%; left: 8%; width: 25px; height: 60px; animation-delay: 0s; }
+        .flame-2 { bottom: 2%; left: 22%; width: 10px; height: 35px; animation-delay: 0.1s; }
+        .flame-3 { bottom: 8%; right: 12%; width: 35px; height: 65px; animation-delay: 0.2s; }
+        .flame-4 { bottom: 3%; right: 28%; width: 15px; height: 45px; animation-delay: 0.05s; }
+        .flame-5 { bottom: 12%; left: 45%; width: 20px; height: 50px; animation-delay: 0.15s; }
+
+
+        @keyframes flameFlicker {
+            0%, 100% { opacity: 0.9; transform: scaleY(1) translateY(0); }
+            25% { opacity: 1; transform: scaleY(1.2) translateY(-6px); }
+            50% { opacity: 0.8; transform: scaleY(0.9) translateY(-3px); }
+            75% { opacity: 1; transform: scaleY(1.1) translateY(-4px); }
+        }
+
+        /* ===== HUMO ===== */
+        .smoke-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 9;
+            pointer-events: none;
+        }
+        .smoke {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(20px);
+            opacity: 0.4;
+            animation: smokeRise 12s infinite ease-out;
+        }
+        .smoke-white { background: rgba(255,255,255,0.4); width: 200px; height: 100px; bottom: 10%; left: 5%; }
+        .smoke-grey { background: rgba(158,158,158,0.5); width: 280px; height: 130px; bottom: 15%; left: 20%; animation-delay: 2s; }
+        .smoke-dark { background: rgba(33,33,33,0.5); width: 240px; height: 110px; bottom: 5%; right: 15%; animation-delay: 4s; }
+        .smoke-white-2 { background: rgba(255,255,255,0.3); width: 180px; height: 90px; bottom: 20%; right: 30%; animation-delay: 1s; }
+        .smoke-horizontal {
+            position: absolute;
+            height: 30px;
+            background: linear-gradient(90deg, transparent, rgba(158,158,158,0.3), rgba(33,33,33,0.4), rgba(158,158,158,0.3), transparent);
+            filter: blur(8px);
+            animation: smokeHorizontal 15s infinite ease-in-out;
+        }
+        .hs-1 { top: 20%; left: -20%; width: 150%; height: 25px; }
+        .hs-2 { top: 60%; left: -30%; width: 160%; height: 20px; animation-delay: 5s; }
+
+        @keyframes smokeRise {
+            0% { opacity: 0; transform: translateY(0) scale(0.8); }
+            30% { opacity: 0.6; transform: translateY(-50px) scale(1.1); }
+            70% { opacity: 0.4; transform: translateY(-120px) scale(1.3); }
+            100% { opacity: 0; transform: translateY(-200px) scale(1.6); }
+        }
+        @keyframes smokeHorizontal {
+            0% { opacity: 0.1; transform: translateX(-30px); }
+            50% { opacity: 0.5; transform: translateX(80px); }
+            100% { opacity: 0.1; transform: translateX(-30px); }
+        }
+
+        /* ===== BRASAS / PAVESAS ===== */
+        .embers-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 12;
+            pointer-events: none;
+        }
+        .ember {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #FFB300;
+            border-radius: 50%;
+            filter: blur(1.5px);
+            box-shadow: 0 0 12px #FF6D00;
+            animation: emberFloat 6s infinite ease-out;
+        }
+        .ember-1 { bottom: 20%; left: 15%; animation-delay: 0.2s; }
+        .ember-2 { bottom: 30%; left: 35%; width: 10px; height: 10px; animation-delay: 1.5s; }
+        .ember-3 { bottom: 10%; left: 55%; animation-delay: 0.8s; }
+        .ember-4 { bottom: 25%; left: 75%; width: 7px; height: 7px; animation-delay: 2.2s; }
+        .ember-5 { bottom: 5%; left: 85%; animation-delay: 0.5s; }
+        .ember-6 { bottom: 15%; left: 45%; width: 6px; height: 6px; animation-delay: 1.2s; }
+
+        @keyframes emberFloat {
+            0% { opacity: 0; transform: translateY(0) rotate(0deg); }
+            50% { opacity: 1; transform: translateY(-70px) rotate(180deg); }
+            100% { opacity: 0; transform: translateY(-150px) rotate(360deg); }
+        }
+
+        /* ===== VIENTO Y PROPAGACIÓN ===== */
+        .wind-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 15;
+            pointer-events: none;
+        }
+        .wind-arrow {
+            position: absolute;
+            font-size: 2.5rem;
+            color: rgba(129, 212, 250, 0.4);
+            animation: windFlow 3s infinite ease-in-out;
+            text-shadow: 0 0 15px #4FC3F7;
+        }
+        .arrow-1 { top: 25%; left: 10%; transform: rotate(15deg); animation-delay: 0s; }
+        .arrow-2 { top: 45%; left: 18%; transform: rotate(10deg); animation-delay: 0.5s; }
+        .arrow-3 { top: 65%; left: 5%; transform: rotate(20deg); animation-delay: 1s; }
+        .wind-spiral {
+            position: absolute;
+            top: 15%;
+            right: 15%;
+            font-size: 4rem;
+            color: rgba(165, 214, 167, 0.4);
+            animation: spin 10s infinite linear;
+            text-shadow: 0 0 20px #81C784;
+        }
+        .spark {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FFA726;
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: sparkFly 5s infinite linear;
+        }
+        .spark-1 { bottom: 40%; left: 60%; animation-delay: 0s; }
+        .spark-2 { bottom: 30%; left: 70%; animation-delay: 0.7s; }
+        .spark-3 { bottom: 50%; left: 80%; animation-delay: 1.4s; }
+
+        @keyframes windFlow {
+            0% { opacity: 0.2; transform: translateX(0) rotate(15deg); }
+            50% { opacity: 0.8; transform: translateX(60px) rotate(20deg); }
+            100% { opacity: 0.2; transform: translateX(0) rotate(15deg); }
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes sparkFly {
+            0% { opacity: 0; transform: translateY(0) translateX(0); }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(-120px) translateX(80px); }
+        }
+        @keyframes windFlow-1 {
+            0% { opacity: 0.9; transform: translateX(20px) rotate(0); }
+            50% { opacity: 0.8; transform: translateX(35px) rotate(0); }
+            100% { opacity: 0.9; transform: translateX(20px) rotate(0); }
+        }        
+
+        /* ===== CAPAS DE VEGETACIÓN (estratos) ===== */
+        .strata-layer {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+            z-index: 3;
+        }
+        .ground-layer {
+            bottom: 0;
+            height: 20%;
+            background: linear-gradient(to top, #795548, #8B6B4D, transparent);
+        }
+        .shrub-layer {
+            bottom: 20%;
+            height: 25%;
+            background: linear-gradient(to top, #4CAF50, #81C784, transparent);
+            opacity: 0.3;
+        }
+        .tree-layer {
+            top: 0;
+            height: 40%;
+            background: linear-gradient(to bottom, #2E7D32, #66BB6A, transparent);
+            opacity: 0.2;
+        }
+
+        /* ===== TEXTO PRINCIPAL ===== */
+        .header-content-visual {
+            position: relative;
+            z-index: 30;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+        .main-title-visual { margin-bottom: 1.2rem; }
+        .title-text { display: flex; flex-direction: column; gap: 0.2rem; }
+        .title-word {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.6);
+        }
+        .title-1 { color: #A5D6A7; animation: titleGlow 1.8s infinite alternate; }
+        .title-2 { color: #FFE082; font-size: 2.5rem; text-shadow: 0 0 30px #FFB300; }
+        .title-3 { color: #FFAB91; font-size: 2.5rem; text-shadow: 0 0 30px #FF6D00; }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 15px #81C784, 0 0 30px #2E7D32; }
+            100% { text-shadow: 0 0 25px #FFB74D, 0 0 60px #FF9800; }
+        }
+
+        .subtitle-visual { margin-bottom: 1.5rem; margin-top: 1rem; }
+        .subtitle-text {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 0.8rem;
+            line-height: 1.5;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            font-weight: 600;
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(4px);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: inline-block;
+        }
+        .subtitle-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+        }
+        .subtitle-tags span {
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(2px);
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        .title-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 3rem;
+        }
+        .line-part {
+            height: 2px;
+            background: rgba(255,255,255,0.4);
+            flex: 1;
+        }
+        .line-center {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(46,125,50,0.3);
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        .combined-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .combined-icon i {
+            font-size: 2rem;
+            color: white;
+            filter: drop-shadow(0 0 10px #FF9800);
+        }
+        .combined-icon i.fa-tree { color: #A5D6A7; filter: drop-shadow(0 0 10px #2E7D32); margin-right: 0.3rem;transform:  translateX(-20px);}
+        .combined-icon i.fa-wind { color: #B3E5FC; filter: drop-shadow(0 0 10px #29B6F6); animation: windFlow-1 12s infinite linear; transform:  translateX(20px);}        
          
 
     </style>
 </head>
 <body>
-    <!-- HEADER SENCILLO (sin animaciones) -->
-    <header class="hero-header">
-        <div class="container">
-            <h1>🔥 INCENDIOS DE VEGETACIÓN</h1>
-            <p>Concepto, clasificación, transmisión del calor, factores, combustibles, comportamiento y humo</p>
-            <div style="margin-top: 1rem;">
-                <span class="compact-chip" style="background:#ffe082;">interfaz</span>
-                <span class="compact-chip" style="background:#a5d6a5;">GIF</span>
-                <span class="compact-chip" style="background:#ef9a9a;">Rothermel</span>
+    <header class="hero-header vegetacion-header">
+        <!-- Fondo animado (gradiente bosque-fuego) -->
+        <div class="forest-bg"></div>
+
+        <!-- CAPA DE ÁRBOLES Y VEGETACIÓN -->
+        <div class="trees-container">
+            <div class="tree tree-1"><i class="fas fa-tree"></i></div>
+            <div class="tree tree-2"><i class="fas fa-tree"></i></div>
+            <div class="tree tree-3"><i class="fas fa-tree"></i></div>
+            <div class="tree tree-4"><i class="fas fa-tree"></i></div>
+            <div class="tree tree-5"><i class="fas fa-tree"></i></div>
+            <div class="leaf leaf-1"><i class="fas fa-leaf"></i></div>
+            <div class="leaf leaf-2"><i class="fas fa-leaf"></i></div>
+            <div class="leaf leaf-3"><i class="fas fa-leaf"></i></div>
+            <div class="leaf leaf-4"><i class="fas fa-leaf"></i></div>
+        </div>
+
+        <!-- LLAMAS (fuego activo) -->
+        <div class="flames-container">
+            <div class="flame flame-1"></div>
+            <div class="flame flame-2"></div>
+            <div class="flame flame-3"></div>
+            <div class="flame flame-4"></div>
+            <div class="flame flame-5"></div>
+            <div class="flame flame-blue"></div>   <!-- llama de alta temperatura -->
+        </div>
+
+        <!-- HUMO -->
+        <div class="smoke-container">
+            <div class="smoke smoke-white"></div>
+            <div class="smoke smoke-grey"></div>
+            <div class="smoke smoke-dark"></div>
+            <div class="smoke smoke-white-2"></div>
+            <div class="smoke-horizontal hs-1"></div>
+            <div class="smoke-horizontal hs-2"></div>
+        </div>
+
+        <!-- BRASAS (pavesas) -->
+        <div class="embers-container">
+            <div class="ember ember-1"></div>
+            <div class="ember ember-2"></div>
+            <div class="ember ember-3"></div>
+            <div class="ember ember-4"></div>
+            <div class="ember ember-5"></div>
+            <div class="ember ember-6"></div>
+        </div>
+
+        <!-- ELEMENTOS DE VIENTO Y PROPAGACIÓN -->
+        <div class="wind-container">
+            <!-- Flechas de viento (dirección) -->
+            <div class="wind-arrow arrow-1"><i class="fas fa-long-arrow-alt-right"></i></div>
+            <div class="wind-arrow arrow-2"><i class="fas fa-long-arrow-alt-right"></i></div>
+            <div class="wind-arrow arrow-3"><i class="fas fa-long-arrow-alt-right"></i></div>
+            <!-- Icono de viento giratorio (efecto foehn) -->
+            <div class="wind-spiral"><i class="fas fa-wind"></i></div>
+            <!-- Partículas de polen / pavesas pequeñas (adicional) -->
+            <div class="spark spark-1"></div>
+            <div class="spark spark-2"></div>
+            <div class="spark spark-3"></div>
+        </div>
+
+        <!-- CAPAS DE VEGETACIÓN (estratos: suelo, matorral, arbolado) -->
+        <div class="strata-layer ground-layer"></div>
+        <div class="strata-layer shrub-layer"></div>
+        <div class="strata-layer tree-layer"></div>
+
+        <!-- CONTENIDO PRINCIPAL DEL HEADER (TEXTO) -->
+        <div class="container header-content-visual">
+            <div class="main-title-visual">
+                <h1 class="title-text">
+                    <span class="title-word title-1">INCENDIOS</span>
+                    <span class="title-word title-2">DE VEGETACIÓN</span>
+                    <span class="title-word title-3">🌲🔥</span>
+                </h1>
+            </div>
+
+
+            <div class="title-line">
+                <div class="line-part"></div>
+                <div class="line-center">
+                    <div class="combined-icon">
+                        <i class="fas fa-tree"></i>
+                        <i class="fas fa-fire"></i>
+                        <i class="fas fa-wind"></i>
+                    </div>
+                </div>
+                <div class="line-part"></div>
             </div>
         </div>
     </header>
@@ -2161,53 +2600,581 @@
             </div><!-- .horizontal-card -->
 
             <!-- TARJETA 4 – COMBUSTIBLES FORESTALES -->
-            <div class="horizontal-card" id="card4">
+            <div class="horizontal-card" id="combustibles">
                 <div class="card-header-top" style="background: var(--gradient-forest);">
-                    <div class="card-title-container"><div class="card-icon-large"><i class="fas fa-leaf"></i></div><div><div class="card-title-top">4. COMBUSTIBLES FORESTALES</div><div class="card-subtitle-top">tipos · características · modelos Rothermel · inflamabilidad</div></div></div>
-                    <div class="topic-number-badge">4/6</div>
-                </div>
-                <div class="card-content">
-                    <div class="columnas">
-                        <div class="compact-card" style="border-top-color: #5D4037;"><div class="compact-header"><div class="compact-icon" style="background:#5D4037;"><i class="fas fa-weight"></i></div><div class="compact-title">Características</div></div><ul class="compact-list"><li><strong>Tamaño:</strong> fino <span class="data-number">0-5 mm</span>, regulares 5-25, medianos 25-75, gruesos >75 mm.</li><li><strong>Humedad:</strong> vivos (máx primavera, mín verano); muertos (tiempo retardo 1h, 10h, 100h, 1000h).</li><li>Compactación, densidad, resinas.</li></ul></div>
-                        <div class="compact-card" style="border-top-color: #F57C00;"><div class="compact-header"><div class="compact-icon" style="background:#F57C00;"><i class="fas fa-layer-group"></i></div><div class="compact-title">Modelos Rothermel (13)</div></div><ul class="compact-list"><li><strong>Pastos 1-3:</strong> carga 1-6 t/ha.</li><li><strong>Matorral 4-7:</strong> hasta 35 t/ha.</li><li><strong>Hojarasca 8-10:</strong> 10-12 t/ha.</li><li><strong>Ramaje/restos 11-13:</strong> 25-80 t/ha.</li></ul></div>
+                    <div class="card-title-container">
+                        <div class="card-icon-large"><i class="fas fa-leaf"></i></div>
+                        <div>
+                            <div class="card-title-top">4. COMBUSTIBLES FORESTALES</div>
+                            <div class="card-subtitle-top">tipos · características · disponibilidad · modelos Rothermel · inflamabilidad</div>
+                            <div style="margin-top: 0.5rem;">
+                                <span class="compact-chip" style="background:#E8F5E9; color:#2E7D32;">fino &lt;5 mm</span>
+                                <span class="compact-chip" style="background:#FFF3E0; color:#EF6C00;">modelos 1-13</span>
+                                <span class="compact-chip" style="background:#FFEBEE; color:#D32F2F;">resinas</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="section"><div class="section-title"><div class="section-icon" style="background:#9C27B0;"><i class="fas fa-seedling"></i></div><h3>4.5 Inflamabilidad de especies</h3></div>
-                    <p><strong>Muy inflamables todo el año:</strong> brezo, eucalipto, retama, pino carrasco, encina, romero, tomillo.</p>
-                    <p><strong>Muy inflamables en verano:</strong> jara pringosa, espliego, pino rodeno, pino piñonero, alcornoque, esparto.</p>
-                    <p><strong>Medianamente:</strong> madroño, enebro, carrasca, quejigo.</p>
+                    <div class="topic-number-badge">Tema 4</div>
                 </div>
+
+                <div class="card-content">
+                    <!-- Introducción general a combustibles forestales (contexto mediterráneo y español) -->
+                    <div class="compact-card" style="border-top-color: #2E7D32; margin-bottom:1.5rem;">
+                        <div class="compact-header">
+                            <div class="compact-icon" style="background:#2E7D32;"><i class="fas fa-tree"></i></div>
+                            <span class="compact-title">🌲 Contexto mediterráneo y español</span>
+                        </div>
+
+                        <div class="columnas">
+                            <!-- Clima y adaptación -->
+                            <div style="flex: 1 1 200px;">
+                                <div style="font-weight:700; color:#2E7D32; margin-bottom:0.3rem;">☀️ Clima y vegetación</div>
+                                <ul class="compact-list">
+                                    <li>🌞 Veranos con prolongadas sequías.</li>
+                                    <li>🔥 Los bosques se han estabilizado con especies que necesitan el fuego en su ciclo reproductivo (estrategias rebrotadoras y germinativas).</li>
+                                    <li>🌲 En España, los pinares más extendidos son: <strong>pino carrasco</strong> (<em>Pinus halepensis</em>), <strong>pino piñonero</strong> (<em>P. pinea</em>), <strong>pinaster</strong> (<em>P. pinaster</em>) y <strong>laricio</strong> (<em>P. nigra</em>).</li>
+                                </ul>
+                            </div>
+
+                            <!-- Inflamabilidad de las especies -->
+                            <div style="flex: 1 1 200px;">
+                                <div style="font-weight:700; color:#2E7D32; margin-bottom:0.3rem;">🔥 Inflamabilidad natural</div>
+                                <ul class="compact-list">
+                                    <li>🌿 Todas estas especies tienen <strong>alto contenido en resinas y aceites esenciales</strong>, lo que las hace extremadamente inflamables.</li>
+                                    <li>🌰 Por ejemplo, las piñas del pino carrasco necesitan el calor intenso para abrirse y liberar semillas (serotinia).</li>
+                                    <li>⚠️ Esta característica, beneficiosa para la regeneración, incrementa el peligro de incendios.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Factor socioeconómico -->
+                            <div style="flex: 1 1 200px;">
+                                <div style="font-weight:700; color:#2E7D32; margin-bottom:0.3rem;">🏚️ Cambios socioeconómicos</div>
+                                <ul class="compact-list">
+                                    <li>📉 El éxodo rural y el abandono de actividades tradicionales han reducido drásticamente el pastoreo y la extracción de leña y broza.</li>
+                                    <li>🌳 Esto ha provocado una <strong>acumulación de biomasa</strong> y un aumento de la continuidad del combustible en los montes.</li>
+                                    <li>📈 Como consecuencia, la <strong>combustibilidad del monte</strong> se ha incrementado significativamente, favoreciendo incendios más grandes e intensos.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.1 TIPOS DE COMBUSTIBLES -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2E7D32;"><i class="fas fa-tags"></i></div>
+                            <h3>4.1 Tipos de combustibles</h3>
+                        </div>
+
+                        <div class="compact-card" style="border-top-color: #2E7D32; margin-bottom:1rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#2E7D32;"><i class="fas fa-layer-group"></i></div>
+                                <span class="compact-title">Clasificación según velocidad de propagación y resistencia al control</span>
+                            </div>
+                            <p style="font-size:0.95rem;">Los combustibles se clasifican en niveles: <strong>bajo, medio, alto y extremo</strong>. Esta clasificación se basa en partes de incendios y estimaciones de expertos, influyendo <strong>tanto las características como la disponibilidad del combustible</strong>.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4.2 CARACTERÍSTICAS DEL COMBUSTIBLE -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2E7D32;"><i class="fas fa-microscope"></i></div>
+                            <h3>4.2 Características del combustible</h3>
+                        </div>
+
+                        <div class="compact-grid">
+                            <!-- Tamaño y forma -->
+                            <div class="compact-card" style="border-top-color: #388E3C; flex: 2 1 280px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#388E3C;"><i class="fas fa-ruler"></i></div>
+                                    <span class="compact-title">📏 Tamaño y forma</span>
+                                </div>
+                                <p style="font-size:0.9rem;">A menor tamaño y forma, más rápido se pierde la humedad y se alcanza la temperatura de ignición.</p>
+                                <ul class="compact-list">
+                                    <li>🔹 <strong>Fino:</strong> <span class="data-number">0-5 mm</span> diámetro (hojarascas, pasto, acículas).</li>
+                                    <li>🔸 <strong>Regulares:</strong> <span class="data-number">5-25 mm</span> (ramillas, tallos pequeños).</li>
+                                    <li>🔹 <strong>Medianos:</strong> <span class="data-number">25-75 mm</span> (ramas, matorrales).</li>
+                                    <li>🔸 <strong>Gruesos:</strong> > <span class="data-number">75 mm</span> (ramas gruesas, fustes, troncos).</li>
+                                </ul>
+                            </div>
+
+                            <!-- Compactación -->
+                            <div class="compact-card" style="border-top-color: #388E3C; flex: 1 1 280px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#388E3C;"><i class="fas fa-compress-alt"></i></div>
+                                    <span class="compact-title">📦 Compactación</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🕳️ Espacio disponible entre partículas del combustible.</li>
+                                    <li>💨 A mayor espacio, más rápida circulación del aire → más secado y mayor velocidad de propagación.</li>
+                                    <li>🧱 Capas muy compactas (pinocha, hojarasca de haya) limitan la combustibilidad fuera de periodos secos por falta de aire.</li>
+                                </ul>
+                            </div>
+
+                            <div class="columnas" style="flex: 8 1 360px; gap: 1rem;">
+                                <!-- Densidad -->
+                                <div class="compact-card" style="border-top-color: #388E3C; flex: 1 1 300px;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background:#388E3C;"><i class="fas fa-weight-hanging"></i></div>
+                                        <span class="compact-title">⚖️ Densidad</span>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>📈 A mayor densidad, mayor capacidad para absorber calor sin elevar la temperatura de ignición.</li>
+                                        <li>🛡️ Por tanto, mayor resistencia a ser quemado (más energía necesaria para la ignición).</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Sustancias químicas -->
+                                <div class="compact-card" style="border-top-color: #388E3C; flex: 1 1 300px;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background:#388E3C;"><i class="fas fa-flask"></i></div>
+                                        <span class="compact-title">🧪 Sustancias químicas</span>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>🌲 Maderas con resinas, aceites esenciales, etc., aumentan la propagación y velocidad del incendio.</li>
+                                        <li>🔥 Ejemplos: pinos, eucaliptos, jaras, brezos.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Humedad -->
+                            <div class="compact-card" style="border-top-color: #0288D1; flex: 1 1 320px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#0288D1;"><i class="fas fa-water"></i></div>
+                                    <span class="compact-title">💧 Humedad</span>
+                                </div>
+                                <p style="font-size:0.9rem;">El contenido de humedad es decisivo para la inflamabilidad: mientras hay agua, la reacción es endotérmica (absorbe calor).</p>
+                                
+                                <div style="margin-top:0.5rem;">
+                                    <div style="font-weight:700; color:#01579B;">🌱 Combustibles vivos</div>
+                                    <ul class="compact-list">
+                                        <li>📊 Varía durante el periodo vegetativo: <strong>máximo en primavera</strong>, <strong>mínimo en verano</strong> (coincidiendo con disponibilidad de agua).</li>
+                                    </ul>
+                                </div>
+                                
+                                <div style="margin-top:0.5rem;">
+                                    <div style="font-weight:700; color:#01579B;">🍂 Combustibles muertos</div>
+                                    <ul class="compact-list">
+                                        <li>🔄 La variación está ligada a cambios en humedad ambiental y a la rapidez con que el combustible se equilibra con el ambiente.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Tiempo de retardo -->
+                            <div class="compact-card" style="border-top-color: #F57C00; flex: 1 1 320px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#F57C00;"><i class="fas fa-hourglass-half"></i></div>
+                                    <span class="compact-title">⏱️ Tiempo de retardo</span>
+                                </div>
+                                <p style="font-size:0.9rem;">Tiempo que tarda un combustible muerto en equilibrar su humedad con la humedad relativa ambiente. Depende de la superficie de contacto (forma y tamaño).</p>
+                                <ul class="compact-list">
+                                    <li>⏳ <strong>1 hora:</strong> diámetro <span class="data-number">&#60;6 mm</span> (hierbas, pinochas, hojas).</li>
+                                    <li>⏳ <strong>10 horas:</strong> <span class="data-number">6 mm - 2,5 cm</span> (ramas pequeñas).</li>
+                                    <li>⏳ <strong>100 horas:</strong> <span class="data-number">2,5 - 7,5 cm</span> (ramas mayores, restos de poda).</li>
+                                    <li>⏳ <strong>1000 horas:</strong> <span class="data-number">7,5 - 20 cm</span> (cepas, troncos).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.3 DISPONIBILIDAD Y DISTRIBUCIÓN ESPACIAL DEL COMBUSTIBLE -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2E7D32;"><i class="fas fa-layer-group"></i></div>
+                            <h3>4.3 Disponibilidad y distribución espacial del combustible</h3>
+                        </div>
+
+                        <!-- Cantidad de combustible -->
+                        <div class="compact-card" style="border-top-color: #388E3C; margin-bottom:1rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#388E3C;"><i class="fas fa-weight-hanging"></i></div>
+                                <span class="compact-title">📊 Cantidad de combustible (fitomasa)</span>
+                            </div>
+                            <div class="columnas">
+                                <div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 1rem;">
+                                <p style="font-size: 1rem;">Se determina por el peso seco total de combustible por unidad de superficie (t/ha). Valores típicos:</p>
+                                <ul class="compact-list" style="gap: 0.5rem; display: flex; flex-direction: column;">
+                                    <li>🌿 Pastos y arbustos: <span class="data-number">1‑10 t/ha</span></li>
+                                    <li>🌳 Matorrales: <span class="data-number">10‑40 t/ha</span></li>
+                                </ul>
+                                </div>
+
+                                <div style=" flex: 4 1 200px;">
+                                    <div style="font-weight:700; color:#2E7D32;">Clasificación según disponibilidad:</div>
+                                    <ul class="compact-list">
+                                        <li>📦 <strong>Cantidad total:</strong> toda la fitomasa presente. Se quemaría en un fuego muy intenso con máxima sequía.</li>
+                                        <li>🔥 <strong>Cantidad disponible:</strong> fracción realmente consumida en un incendio. Depende de humedad y distribución espacial.</li>
+                                        <li>⏳ <strong>Cantidad restante:</strong> combustible que no arde por humedad, disposición o gran tamaño.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Distribución espacial -->
+                        <div class="compact-card" style="border-top-color: #388E3C; margin-bottom:1rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#388E3C;"><i class="fas fa-arrows-alt"></i></div>
+                                <span class="compact-title">🗺️ Distribución espacial</span>
+                            </div>
+
+                            <div class="columnas">
+                                <!-- Continuidad horizontal -->
+                                <div style="flex: 1 1 200px;">
+                                    <div style="font-weight:700; color:#2E7D32; margin-bottom:0.3rem;">↔️ Continuidad horizontal</div>
+                                    <ul class="compact-list">
+                                        <li>📐 Distribución del combustible en el plano horizontal.</li>
+                                        <li>🟢 <strong>Uniforme o continuo:</strong> facilita la propagación del fuego en todas direcciones.</li>
+                                        <li>🔴 <strong>No uniforme o discontinuo:</strong> interrumpe o ralentiza el avance.</li>
+                                        <li>🔥 Influye directamente en la dirección y velocidad del incendio.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Continuidad vertical -->
+                                <div style="flex: 1 1 200px;">
+                                    <div style="font-weight:700; color:#2E7D32; margin-bottom:0.3rem;">⬆️⬇️ Continuidad vertical</div>
+                                    <ul class="compact-list">
+                                        <li>📏 Distribución del combustible en el plano vertical (desde el suelo hasta las copas).</li>
+                                        <li>🌲 Determina la posibilidad de que un incendio de superficie pase a ser de copas.</li>
+                                        <li>🔥 Si hay escalera de combustible (matorral bajo árboles), el fuego puede ascender fácilmente.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+
+                    <!-- 4.4 MODELOS DE COMBUSTIBLES (ROTHERMEL) -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #2E7D32;"><i class="fas fa-cubes"></i></div>
+                            <h3>4.4 Modelos de combustibles (Rothermel): descripción y comportamiento del fuego</h3>
+                        </div>
+
+                        <!-- Introducción histórica -->
+                        <div class="compact-card" style="border-top-color: #2E7D32; margin-bottom:1rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#2E7D32;"><i class="fas fa-history"></i></div>
+                                <span class="compact-title">📜 Origen y aplicación</span>
+                            </div>
+                            <ul class="compact-list">
+                                <li>📅 En los años 70, Rothermel, Anderson, Albini y otros desarrollaron en EE.UU. un sistema evolucionado a partir de modelos de 1914 y 1930.</li>
+                                <li>🌍 Llegó a Europa a mediados de los 80.</li>
+                                <li>📊 Describen <strong>13 modelos</strong> clasificados en 4 grupos.</li>
+                                <li>💻 En 1984, Rothermel y Burgan publicaron el sistema de modelización <strong>Behave</strong> (actualmente Behave Plus).</li>
+                                <li>🔢 Son el primer dato de entrada en los sistemas de predicción de incendios forestales.</li>
+                            </ul>
+                        </div>
+
+                        <div class="columnas">
+                            <!-- GRUPO 1: PASTOS (modelos 1-3) -->
+                            <div class="compact-card" style="border-top-color: #FBC02D; flex: 1 1 420px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#FBC02D;"><i class="fas fa-leaf"></i></div>
+                                    <span class="compact-title">🌾 Grupo Pastos (modelos 1 al 3)</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🔥 <strong>Modelo 1:</strong> Propagación rápida gobernada por herbáceas finas. Matorral/arbolado &lt;1/3 del área. Carga <span class="data-number">1-2 t/ha</span>. Ej: praderas, rastrojos.</li>
+                                    <li>🔥 <strong>Modelo 2:</strong> Propagación rápida por herbáceas finas secas. Matorral/arbolado ocupa 1/3 a 2/3 del área. Mayor intensidad, posibles pavesas. Carga <span class="data-number">1-2 t/ha</span>.</li>
+                                    <li>🔥 <strong>Modelo 3:</strong> Propagación por herbáceas finas (≥1/3 secas). Altura media del pasto ~1 m. Carga <span class="data-number">4-6 t/ha</span>. Ej: campos de cereales sin cosechar, praderas altas.</li>
+                                </ul>
+                            </div>
+
+                            <!-- GRUPO 2: MATORRAL (modelos 4-7) -->
+                            <div class="compact-card" style="border-top-color: #8D6E63; flex: 6 1 420px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#8D6E63;"><i class="fas fa-tree"></i></div>
+                                    <span class="compact-title">🌳 Grupo Matorral (modelos 4 al 7)</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🔥 <strong>Modelo 4:</strong> Matorrales de ~2 m, densos. Fuegos rápidos por copas casi continuas. Consume follaje y leñoso fino. Carga <span class="data-number">25-35 t/ha</span>.</li>
+                                    <li>🔥 <strong>Modelo 5:</strong> Matorral &lt;1 m que cubre casi todo. Propagación por hojarasca superficial y herbáceas. Fuegos menos intensos. Carga <span class="data-number">25-35 t/ha</span>.</li>
+                                    <li>🔥 <strong>Modelo 6:</strong> Matorral con restos secos de frondosas. Propagación por copas (follaje más inflamable que modelo 5). Requiere vientos >13 km/h. Carga <span class="data-number">10-15 t/ha</span>.</li>
+                                    <li>🔥 <strong>Modelo 7:</strong> Matorrales >2 m, pinares con sotobosque inflamable. Propagación por suelo y matorral. Puede arder incluso con humedad alta. Carga <span class="data-number">10-15 t/ha</span>.</li>
+                                </ul>
+                            </div>
+
+                            <!-- GRUPO 3: HOJARASCA BAJO ARBOLADO (modelos 8-10) -->
+                            <div class="compact-card" style="border-top-color: #2E7D32; flex: 2 1 420px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#2E7D32;"><i class="fas fa-layer-group"></i></div>
+                                    <span class="compact-title">🍂 Grupo Hojarasca bajo arbolado (modelos 8 al 10)</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🔥 <strong>Modelo 8:</strong> Bosques cerrados de coníferas/frondosas con hojarasca compacta y poco matorral. Fuegos superficiales lentos, llama baja. Carga <span class="data-number">10-12 t/ha</span>.</li>
+                                    <li>🔥 <strong>Modelo 9:</strong> Bosques con hojarasca menos compacta (pinares de hoja larga, frondosas en otoño). Propagación más rápida que modelo 8. Carga <span class="data-number">10-12 t/ha</span>.</li>
+                                    <li>🔥 <strong>Modelo 10:</strong> Bosques con plagas, enfermedades, daños por viento o claras. Mayor intensidad, más material leñoso caído (>76 mm). Posible coronamiento. Carga <span class="data-number">10-12 t/ha</span>.</li>
+                                </ul>
+                            </div>
+
+                            <!-- GRUPO 4: RAMAJE Y RESTOS DE OPERACIONES (modelos 11-13) -->
+                            <div class="compact-card" style="border-top-color: #795548; flex: 1 1 420px;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#795548;"><i class="fas fa-cut"></i></div>
+                                    <span class="compact-title">🪵 Grupo Ramaje y restos (modelos 11 al 13)</span>
+                                </div>
+                                <ul class="compact-list">
+                                    <li>🔥 <strong>Modelo 11:</strong> Bosque claro o aclarado con restos de poda y herbáceas. Pocos materiales >76 mm. Carga <span class="data-number">25-30 t/ha</span>.</li>
+                                    <li>🔥 <strong>Modelo 12:</strong> Predominio de restos sobre arbolado, cubriendo todo el suelo. Más materiales >76 mm. Propagación hasta cortafuegos. Puede generar pavesas. Carga <span class="data-number">50-80 t/ha</span>.</li>
+                                    <li>🔥 <strong>Modelo 13:</strong> Gran acumulación de restos >76 mm. Puede generar pavesas. Carga <span class="data-number">50-80 t/ha</span>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>                    
+
+                    <!-- 4.5 CLASIFICACIÓN DE ESPECIES SEGÚN SU INFLAMABILIDAD -->
+                    <div class="section">
+                        <div class="section-title">
+                            <div class="section-icon" style="background: #9C27B0;"><i class="fas fa-leaf"></i></div>
+                            <h3>4.5 Clasificación de especies según su inflamabilidad</h3>
+                        </div>
+
+                        <!-- Introducción -->
+                        <div class="compact-card" style="border-top-color: #9C27B0; margin-bottom:1rem;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#9C27B0;"><i class="fas fa-flask"></i></div>
+                                <span class="compact-title">📋 Estudio de Elvira y Hernando (1989)</span>
+                            </div>
+                            <p style="font-size:0.9rem;">Luis María Elvira y Carmen Hernando realizaron la siguiente clasificación de especies forestales según su inflamabilidad:</p>
+                        </div>
+
+                        <div class="columnas">
+                            <div style="flex: 1 1 280px; gap: 1rem; display: flex; flex-direction: column; align-self: center;">
+                                <!-- Muy inflamables durante casi todo el año -->
+                                <div class="compact-card" style="border-top-color: #D32F2F; flex: 1 1 280px;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background:#D32F2F;"><i class="fas fa-fire"></i></div>
+                                        <span class="compact-title">🔥 Muy inflamables durante casi todo el año</span>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>🌿 <strong>Brezo</strong> (<em>Calluna vulgaris</em>)</li>
+                                        <li>🌳 <strong>Eucalipto</strong> (<em>Eucalyptus sp.</em>)</li>
+                                        <li>🌱 <strong>Retama</strong> (<em>Genista falcata</em>)</li>
+                                        <li>🌿 <strong>Tojo</strong> (<em>Genista hirsuta</em>)</li>
+                                        <li>🌲 <strong>Pino carrasco</strong> (<em>Pinus halepensis</em>)</li>
+                                        <li>🌳 <strong>Encina</strong> (<em>Quercus ilex</em>)</li>
+                                        <li>🌿 <strong>Romero</strong> (<em>Rosmarinus officinalis</em>)</li>
+                                        <li>🌿 <strong>Tomillo</strong> (<em>Thymus vulgaris</em>)</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Medianamente inflamables -->
+                                <div class="compact-card" style="border-top-color: #4CAF50;">
+                                    <div class="compact-header">
+                                        <div class="compact-icon" style="background:#4CAF50;"><i class="fas fa-seedling"></i></div>
+                                        <span class="compact-title">🌱 Medianamente inflamables</span>
+                                    </div>
+                                    <ul class="compact-list">
+                                        <li>🌳 <strong>Madroño</strong> (<em>Arbutus unedo</em>)</li>
+                                        <li>🌲 <strong>Enebro</strong> (<em>Juniperus oxycedrus</em>)</li>
+                                        <li>🌳 <strong>Carrasca</strong> (<em>Quercus coccifera</em>)</li>
+                                        <li>🌳 <strong>Quejigo</strong> (<em>Quercus faginea</em>)</li>
+                                    </ul>
+                                </div>
+                            </div>                            
+
+                            <!-- Muy inflamables durante el verano -->
+                            <div class="compact-card" style="border-top-color: #FF9800; flex: 1 1 280px; align-self: center;">
+                                <div class="compact-header">
+                                    <div class="compact-icon" style="background:#FF9800;"><i class="fas fa-sun"></i></div>
+                                    <span class="compact-title">☀️ Muy inflamables durante el verano</span>
+                                </div>
+                                <div class="columnas" style="gap: 0;">
+                                    <ul class="compact-list" style="flex: 1 1 200px;">
+                                        <li>🌿 <strong>Albaida</strong> (<em>Anthyllis cytisoides</em>)</li>
+                                        <li>🌾 <strong>Pasto o hierba yesquera</strong> (<em>Brachypodium ramosum</em>)</li>
+                                        <li>🌿 <strong>Jara pringosa</strong> (<em>Cistus ladaniferus</em>)</li>
+                                        <li>🌿 <strong>Espliego</strong> (<em>Lavandula latifolia</em>)</li>
+                                        <li>🌿 <strong>Cantueso</strong> (<em>Lavandula stoechas</em>)</li>
+                                        <li>🌲 <strong>Pino rodeno</strong> (<em>Pinus pinaster</em>)</li>
+                                        <li>🌲 <strong>Pino piñonero</strong> (<em>Pinus pinea</em>)</li>
+                                        <li>🌲 <strong>Pino de Monterrey</strong> (<em>Pinus radiata</em>)</li>
+                                        <li>🌳 <strong>Alcornoque</strong> (<em>Quercus suber</em>)</li>
+                                        <li>🍓 <strong>Frambuesa</strong> (<em>Rubus idaeus</em>)</li>
+                                        <li>🌿 <strong>Esparto</strong> (<em>Stipa tenacissima</em>)</li>
+                                        <li>🌿 <strong>Tomillo o ajedrea</strong> (<em>Thymus zygis</em>)</li>
+                                        <li>🌿 <strong>Aliaga</strong> (<em>Ulex parviflorus</em>)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
                 </div>
             </div>
 
-            <!-- TARJETA 5 – FACTORES DEL PROPIO INCENDIO -->
-            <div class="horizontal-card" id="card5">
+            <!-- TARJETA 5 – FACTORES DEL PROPIO INCENDIO (sin secciones) -->
+            <div class="horizontal-card" id="comportamiento">
                 <div class="card-header-top" style="background: var(--gradient-topo);">
-                    <div class="card-title-container"><div class="card-icon-large"><i class="fas fa-ruler"></i></div><div><div class="card-title-top">5. FACTORES DEL PROPIO INCENDIO</div><div class="card-subtitle-top">longitud de llama · intensidad lineal · velocidad · GIF</div></div></div>
-                    <div class="topic-number-badge">5/6</div>
+                    <div class="card-title-container">
+                        <div class="card-icon-large"><i class="fas fa-ruler"></i></div>
+                        <div>
+                            <div class="card-title-top">5. FACTORES DEL PROPIO INCENDIO</div>
+                            <div class="card-subtitle-top">longitud de llama · intensidad lineal · velocidad de propagación · GIF · ambiente del fuego</div>
+                            <div style="margin-top: 0.5rem;">
+                                <span class="compact-chip" style="background:#FFEBEE; color:#D32F2F;">llama 700-1000°C</span>
+                                <span class="compact-chip" style="background:#E3F2FD; color:#1976D2;">intensidad kW/m</span>
+                                <span class="compact-chip" style="background:#FFF3E0; color:#EF6C00;">GIF ≥500 ha</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-number-badge">Tema 5</div>
                 </div>
+
                 <div class="card-content">
-                    <ul class="visual-list">
-                        <li><strong>Longitud de llama (m):</strong> distancia base‑punta. Indicador de intensidad.</li>
-                        <li><strong>Intensidad lineal (kW/m):</strong> potencia por unidad de frente; determina controlabilidad.</li>
-                        <li><strong>Velocidad de propagación:</strong> lineal (control perímetro), perimetral (recursos), areal (daño).</li>
-                        <li><strong>GIF (≥500 ha):</strong> crean su propio “ambiente de fuego” (temperatura, humedad, viento propios).</li>
-                    </ul>
-                    <div class="tip-box"><div class="box-icon" style="background:#2E7D32;"><i class="fas fa-chart-line"></i></div><div>Estos factores permiten decidir ataque directo, indirecto o mixto.</div></div>
+                    <!-- Introducción -->
+                    <div class="info-box" style="margin-bottom:1rem; margin-top: 0;">
+                        <div class="box-icon" style="background:#8D6E63;"><i class="fas fa-link"></i></div>
+                        <div>
+                            <p>Una vez conocidos los factores externos (topografía, meteorología, combustibles), el comportamiento real del incendio se cuantifica mediante parámetros propios. Estos permiten decidir si se puede actuar con ataque directo, indirecto o mixto, y si se está dentro o fuera de la capacidad de extinción.</p>
+                        </div>
+                    </div>
+
+                    <div class="columnas">
+                        <!-- 5.1 Longitud de llama -->
+                        <div class="compact-card" style="border-top-color:#FF7043; flex: 1 1 280px;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#FF7043;"><i class="fas fa-ruler-vertical"></i></div>
+                                <span class="compact-title">5.1 Longitud de llama</span>
+                            </div>
+                            <ul class="compact-list">
+                                <li>📏 <strong>Definición:</strong> máxima distancia entre la base y la punta de la llama.</li>
+                                <li>📐 Se mide sobre un ángulo cuando las llamas están inclinadas por viento o pendiente.</li>
+                                <li>🔥 Es un indicador de la <strong>intensidad del fuego</strong> (a mayor longitud, mayor intensidad).</li>
+                                <li>📊 Se expresa en metros y varía según topografía y tipo de masa forestal.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 5.2 Intensidad lineal del fuego -->
+                        <div class="compact-card" style="border-top-color:#F57C00; flex: 1 1 280px;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#F57C00;"><i class="fas fa-chart-line"></i></div>
+                                <span class="compact-title">5.2 Intensidad lineal del fuego</span>
+                            </div>
+                            <ul class="compact-list">
+                                <li>⚡ <strong>Definición:</strong> velocidad de liberación de energía (potencia) por unidad de frente de llamas. Unidades: kW/m.</li>
+                                <li>📈 Es el parámetro más determinante para evaluar la capacidad de control y los efectos del incendio.</li>
+                                <li>🚒 A mayor intensidad lineal, más difícil es el control y mayor la necesidad de medios pesados o estrategias indirectas.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 5.3 Velocidad de propagación -->
+                        <div class="compact-card" style="border-top-color:#0288D1; flex: 5 1 330px;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#0288D1;"><i class="fas fa-tachometer-alt"></i></div>
+                                <span class="compact-title">5.3 Velocidad de propagación</span>
+                            </div>
+                            <p style="font-size:0.9rem; margin-bottom:0.5rem;">Describe el avance del frente en distintas direcciones (km/h o m/s). Interesa conocer tres tipos:</p>
+                            <ul class="compact-list">
+                                <li>📏 <strong>Velocidad lineal:</strong> avance del frente en la dirección principal. Permite estimar el tiempo que tardará el fuego en llegar a una línea de control.</li>
+                                <li>🔄 <strong>Velocidad perimetral:</strong> tasa de crecimiento del perímetro. Determina los recursos humanos y mecánicos necesarios para extinción, remate y control.</li>
+                                <li>📊 <strong>Velocidad areal:</strong> incremento de la superficie afectada por unidad de tiempo. Permite evaluar el daño previsible o potencial.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 5.4 Grandes Incendios Forestales (GIF) y el ambiente del fuego -->
+                        <div class="compact-card" style="border-top-color:#B71C1C; flex: 1 1 350px;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#B71C1C;"><i class="fas fa-fire"></i></div>
+                                <span class="compact-title">5.4 Grandes Incendios Forestales (GIF) y el ambiente del fuego</span>
+                            </div>
+                            <ul class="compact-list">
+                                <li>🔥 <strong>GIF:</strong> incendio que afecta a una superficie ≥ <span class="data-number">500 ha</span>.</li>
+                                <li>🌪️ <strong>Ambiente de fuego:</strong> los GIF generan sus propias condiciones atmosféricas locales (temperatura, humedad relativa, velocidad del viento) independientes de la meteorología general.</li>
+                                <li>🛡️ Se discrimina si se puede actuar con un ataque directo, indirecto o mixto, si se está dentro o fuera de capacidad de extinción, etc.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- TARJETA 6 – CLASIFICACIÓN POR EL HUMO -->
-            <div class="horizontal-card" id="card6">
+            <!-- TARJETA 6 – CLASIFICACIÓN E IDENTIFICACIÓN DE ALARMA POR EL HUMO -->
+            <div class="horizontal-card" id="humo">
                 <div class="card-header-top" style="background: var(--gradient-humo);">
-                    <div class="card-title-container"><div class="card-icon-large"><i class="fas fa-smog"></i></div><div><div class="card-title-top">6. ALARMA POR EL HUMO</div><div class="card-subtitle-top">origen · color · volumen · ángulo</div></div></div>
-                    <div class="topic-number-badge">6/6</div>
-                </div>
-                <div class="card-content">
-                    <div class="comparison-container">
-                        <div class="comparison-card"><strong>Origen:</strong> legítimo (quemas), ilegítimo (incendio), falso (polvo/polen).</div>
-                        <div class="comparison-card"><strong>Color:</strong> gris‑café (matorral ralo), gris‑negro (denso/eucalipto/pinar), amarillo (coníferas), blanco (pastos húmedos), blanco‑azulado (pastos secos).</div>
+                    <div class="card-title-container">
+                        <div class="card-icon-large"><i class="fas fa-smog"></i></div>
+                        <div>
+                            <div class="card-title-top">6. CLASIFICACIÓN E IDENTIFICACIÓN DE ALARMA POR EL HUMO</div>
+                            <div class="card-subtitle-top">origen · color · volumen · ángulo de elevación</div>
+                            <div style="margin-top: 0.5rem;">
+                                <span class="compact-chip" style="background:#E0E0E0; color:#424242;">legítimos/ilegítimos</span>
+                                <span class="compact-chip" style="background:#B0BEC5; color:#263238;">color según combustible</span>
+                                <span class="compact-chip" style="background:#FFF9C4; color:#F57F17;">ángulo 80-90°</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="info-box"><div class="box-icon" style="background:#616161;"><i class="fas fa-arrow-up"></i></div><div><strong>Volumen:</strong> proporcional a combustible. <strong>Ángulo:</strong> vertical (<span class="data-number">80‑90°</span> poco viento, fácil control); diagonal (<span class="data-number">40‑50°</span> viento 20‑30 nudos, peligroso); tumbada (<span class="data-number">~20°</span> vientos muy fuertes, estabilidad).</div></div>
+                    <div class="topic-number-badge">Tema 6</div>
+                </div>
+
+                <div class="card-content">
+                    <!-- Introducción: la columna de humo como fuente de información -->
+                    <div class="info-box" style="margin-bottom:1rem;">
+                        <div class="box-icon" style="background:#757575;"><i class="fas fa-info-circle"></i></div>
+                        <div>
+                            <p>La columna de humo ofrece información clave sobre la intensidad y el patrón de comportamiento del incendio. La intensidad se relaciona con el color, mientras que el patrón depende de la meteorología y las características intrínsecas del fuego.</p>
+                        </div>
+                    </div>
+
+                    <div class="columnas" style="margin-bottom: 1rem;">
+                        <!-- 6.1 SEGÚN EL ORIGEN -->
+                        <div class="compact-card" style="border-top-color:#757575; flex: 1 1 180px;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#757575;"><i class="fas fa-map-marker-alt"></i></div>
+                                <span class="compact-title">6.1 Según el origen</span>
+                            </div>
+                            <ul class="compact-list">
+                                <li>✅ <strong>Humos legítimos:</strong> producidos por quemas autorizadas, fábricas, hornos, etc.</li>
+                                <li>⚠️ <strong>Humos ilegítimos:</strong> producidos por incendios, quemas ilegales.</li>
+                                <li>❓ <strong>Humos falsos:</strong> nubes de polvo, nubes de polen, etc.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 6.2 SEGÚN EL COLOR -->
+                        <div class="compact-card" style="border-top-color:#757575; flex: 3 1 280px;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#757575;"><i class="fas fa-palette"></i></div>
+                                <span class="compact-title">6.2 Según el color</span>
+                            </div>
+                            <ul class="compact-list">
+                                <li>🟫 <strong>Gris‑café:</strong> matorrales o arbustos ralos.</li>
+                                <li>⬛ <strong>Gris‑negro:</strong> matorrales densos, eucaliptos, pinares, encinares. Fuego de alta intensidad.</li>
+                                <li>🟨 <strong>Amarillo:</strong> bosques de coníferas (ej. pino insigne).</li>
+                                <li>⬜ <strong>Blanco:</strong> pastizales. Fuego de poca intensidad. Combustible húmedo generalmente.</li>
+                                <li>🔵 <strong>Blanco‑azulado:</strong> pastos o hierbas secas.</li>
+                            </ul>
+                        </div>
+
+                        <div style="display: flex; flex: 2 1 180px;">
+                            <img src="image vegetacion/Humo.png" alt="" style="max-width: 100%; height: auto; margin: auto;">
+                        </div>                        
+                    </div>
+
+                    <div class="columnas">
+                        <!-- 6.3 SEGÚN EL VOLUMEN -->
+                        <div class="compact-card" style="border-top-color:#757575; flex: 1 1 280px;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#757575;"><i class="fas fa-chart-bar"></i></div>
+                                <span class="compact-title">6.3 Según el volumen</span>
+                            </div>
+                            <ul class="compact-list">
+                                <li>📦 El tamaño de la columna de humo es <strong>directamente proporcional</strong> a la cantidad, tipo y área de combustible incendiado.</li>
+                                <li>🔥 A mayor volumen, más intensidad y extensión del incendio.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 6.4 SEGÚN EL ÁNGULO DE ELEVACIÓN -->
+                        <div class="compact-card" style="border-top-color:#757575; flex: 10 1 280px;">
+                            <div class="compact-header">
+                                <div class="compact-icon" style="background:#757575;"><i class="fas fa-angle-up"></i></div>
+                                <span class="compact-title">6.4 Según el ángulo de elevación</span>
+                            </div>
+                            <p style="font-size:0.9rem;">Ángulo de la columna de humo con la horizontal del terreno:</p>
+                            <ul class="compact-list">
+                                <li>⬆️ <strong>Vertical (<span class="data-number">80‑90°</span>):</strong> poco viento en el sector, propagación lenta. Inicialmente más fácil de controlar.</li>
+                                <li>↗️ <strong>Diagonal (<span class="data-number">40‑50°</span>):</strong> presencia de vientos de <span class="data-number">20‑30 nudos</span> (~<span class="data-number">37‑55 km/h</span>). Foco peligroso.</li>
+                                <li>➡️ <strong>Tumbada (~<span class="data-number">20°</span>):</strong> vientos muy fuertes en la base del incendio. Indica posible estabilidad atmosférica (aire cálido en capas altas impide ascenso vertical).</li>
+                            </ul>
+                            <div style="margin-top:0.5rem; background:#E0E0E0; border-radius:6px; padding:0.5rem;">
+                                <p style="font-size:0.85rem; margin:0;"><strong>🌬️ Estabilidad atmosférica:</strong> Una columna tumbada indica aire estable (capa inferior fría, superior cálida). Si el aire superior es frío, la columna asciende (inestabilidad).</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2224,7 +3191,6 @@
                 <div class="footer-icon"><i class="fas fa-wind"></i></div>
                 <div class="footer-icon"><i class="fas fa-mountain"></i></div>
             </div>
-            <p style="opacity:0.7;">© 2025 · Datos numéricos en rojo · Fiel al PDF original</p>
         </div>
     </footer>
 
