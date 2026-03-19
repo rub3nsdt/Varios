@@ -8,19 +8,19 @@
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7f6;
-    padding: 20px;
+    padding: 2px;
   }
 
     @media (max-width: 630px) {
       body {
-          --escala: 0.6; /* Cambia este valor para ajustar el tamaño */
+          --escala: 0.5; /* Cambia este valor para ajustar el tamaño */
           
           transform: scale(var(--escala));
           transform-origin: top left; /* <--- Esto quita el margen izquierdo */
           
           /* Compensación de ancho para que no quede hueco a la derecha */
-          width: calc(92% / var(--escala)); 
-          height: calc(80vh / var(--escala));
+          width: calc(96% / var(--escala)); 
+          height: calc(100vh / var(--escala));
           
           /* Evita que aparezca scroll horizontal innecesario */
           overflow-x: hidden;
