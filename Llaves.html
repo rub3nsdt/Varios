@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Llaves de Instalación</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    padding: 20px;
+  }
+  .table-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+  .header-title {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+    color: #ffffff;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 16px;
+    text-align: left;
+    border-bottom: 2px solid #e9ecef;
+  }
+  td {
+    padding: 16px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.5;
+    border-bottom: 1px solid #f1f3f5;
+    vertical-align: top;
+  }
+  tbody tr:hover {
+    background-color: #fcfcfc;
+  }
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .badge-gas {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    box-shadow: 0 2px 5px rgba(253, 160, 133, 0.4);
+  }
+  .badge-agua {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    box-shadow: 0 2px 5px rgba(143, 211, 244, 0.4);
+    color: #2b5876;
+  }
+  .key-name {
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  .citation {
+    font-size: 12px;
+    color: #888;
+  }
+</style>
+</head>
+<body>
+
+<div class="table-container">
+  <h2 class="header-title">Llaves en Instalaciones de Edificación</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 15%;">Instalación</th>
+        <th style="width: 25%;">Nombre de la Llave</th>
+        <th style="width: 60%;">Descripción Exacta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge badge-gas">Gas Natural</span></td>
+        <td class="key-name">Llave de aparato</td>
+        <td>Esta llave debe encontrarse en la misma estancia donde se encuentre el aparato a gas al que da servicio y lo más próximo posible a el. En intervención nos permitirá cortar el suministro de ese dispositivo en particular, sectorizando la fuga y permitiendo que el resto de la instalación siga en uso.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-gas">Gas Natural</span></td>
+        <td class="key-name">Llave de vivienda o local</td>
+        <td>Esta llave puede estar fuera o dentro de la vivienda, pero accesible desde dentro para que el morador pueda hacer uso de ella. En intervención nos permite cortar el suministro de toda la vivienda.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-gas">Gas Natural</span></td>
+        <td class="key-name">Llave de usuario o abonado</td>
+        <td>Podemos encontrar esta llave en la centralización de contadores o en las derivaciones de los montantes colectivos en edificaciones con contadores no centralizados. En intervención nos permite cortar el suministro a una vivienda.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-gas">Gas Natural</span></td>
+        <td class="key-name">Llave de contador</td>
+        <td>Esta llave la encontramos antes del contador y nos permite cerrar el suministro al mismo.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-gas">Gas Natural</span></td>
+        <td class="key-name">Llave de acometida</td>
+        <td>Llave situada en via pública en arqueta lo más próximo posible al edificio. Se hace necesario utilizar una llave especial para su manipulación.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-gas">Gas Natural</span></td>
+        <td class="key-name">Llave de edificio</td>
+        <td>Se trata de una llave situada lo más cerca posible de la fachada del edificio. Será necesaria siempre que una acometida suministre a más de un edificio en la misma propiedad o la distancia desde la llave de acometida hasta la edificación a la que da servicio sea demasiado elevada.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-gas">Gas Natural</span></td>
+        <td class="key-name">Llave de armario de regulación</td>
+        <td>Llave situada dentro de un armario de regulación cuando la acometida trabaja a presiones de hasta 5 bar. El armario de regulación nos lo solemos encontrar en fachada con llave de triángulo para su apertura, y nos permite cortar el gas del edificio.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-gas">Gas Natural</span></td>
+        <td class="key-name">Llave de salida</td>
+        <td>Es un punto tipico de escape de gas cuando las temperaturas son inferiores a 0°C por disponer de juntas y membranas que se degradan, por esta razón es un punto clave a comprobar en siniestros con olor a gas en las inmediaciones. Por normativa la llave se encontrará antes del regulador, permitiendo cerrar la fuga con facilidad.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-gas">Gas Natural</span></td>
+        <td class="key-name">Llave de Montante Colectivo</td>
+        <td>Se sitúan en las conducciones verticales colectivas que llevan el gas, planta por planta, a cada vivienda. Son fácilmente reconocibles por encontrarse en la parte inferior del montante, nos permiten cortar el suministro a varias viviendas simultáneamente en las intervenciones.</td>
+      </tr>
+
+      <tr>
+        <td><span class="badge badge-agua">Agua Fría (AFCH)</span></td>
+        <td class="key-name">Llave de toma</td>
+        <td>Elemento de la acometida que enlaza esta con la red de distribución, aportando refuerzo estructural a la tubería y estanqueidad al conjunto.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-agua">Agua Fría (AFCH)</span></td>
+        <td class="key-name">Llave de acometida o registro</td>
+        <td>Permite el aislamiento entre la red de distribución y el conjunto de medida. Su ubicación se realizará generalmente fuera de la calzada (en la acera) y lo más próximo posible a la red de distribución. Llave colocada al final de la acometida para que pueda cerrarse el paso del agua hacia la instalación interior.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-agua">Agua Fría (AFCH)</span></td>
+        <td class="key-name">Llave de entrada del conjunto de medida</td>
+        <td>Esta llave se ubica inmediatamente anterior al contador de agua de la acometida. Sirve para cortar el suministro de toda la instalación del edificio.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-agua">Agua Fría (AFCH)</span></td>
+        <td class="key-name">Llave de corte general</td>
+        <td>La llave de corte general servirá para interrumpir el suministro del edificio, y estará situada dentro de la propiedad, en una zona de uso común, accesible para su manipulación y señalada adecuadamente para permitir su identificación.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-agua">Agua Fría (AFCH)</span></td>
+        <td class="key-name">Llave de paso</td>
+        <td>Llave colocada en el tubo de alimentación que pueda cortarse el paso del agua hacia el resto de la instalación interior.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-agua">Agua Fría (AFCH)</span></td>
+        <td class="key-name">Llave de aparato</td>
+        <td>Obligatoriamente en inodoros, lavadora, fregadero y lavaplatos, siendo aconsejable en el resto de aparatos.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-agua">Agua Fría (AFCH)</span></td>
+        <td class="key-name">Llave de cuarto húmedo</td>
+        <td>Cada derivación a cuarto húmedo será independiente y contará con una llave de cuarto húmedo tanto para AFS como ACS.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
