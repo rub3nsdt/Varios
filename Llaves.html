@@ -13,14 +13,14 @@
 
     @media (max-width: 630px) {
       body {
-          --escala: 0.4; /* Cambia este valor para ajustar el tamaño */
+          --escala: 0.6; /* Cambia este valor para ajustar el tamaño */
           
           transform: scale(var(--escala));
           transform-origin: top left; /* <--- Esto quita el margen izquierdo */
           
           /* Compensación de ancho para que no quede hueco a la derecha */
-          width: calc(100% / var(--escala)); 
-          height: calc(100vh / var(--escala));
+          width: calc(92% / var(--escala)); 
+          height: calc(80vh / var(--escala));
           
           /* Evita que aparezca scroll horizontal innecesario */
           overflow-x: hidden;
