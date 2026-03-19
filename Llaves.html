@@ -10,6 +10,22 @@
     background-color: #f4f7f6;
     padding: 20px;
   }
+
+    @media (max-width: 630px) {
+      body {
+          --escala: 0.4; /* Cambia este valor para ajustar el tamaño */
+          
+          transform: scale(var(--escala));
+          transform-origin: top left; /* <--- Esto quita el margen izquierdo */
+          
+          /* Compensación de ancho para que no quede hueco a la derecha */
+          width: calc(100% / var(--escala)); 
+          height: calc(100vh / var(--escala));
+          
+          /* Evita que aparezca scroll horizontal innecesario */
+          overflow-x: hidden;
+      }
+  } 
   .table-container {
     max-width: 1000px;
     margin: 0 auto;
