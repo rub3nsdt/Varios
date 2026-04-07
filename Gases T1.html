@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Gases de combustión - Características físicas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #1e2a3a 0%, #0f1a24 100%);
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        /* Escalado responsive para móviles (manteniendo alineación) */
+        @media (max-width: 630px) {
+            body {
+                --escala: 0.6;
+                transform: scale(var(--escala));
+                transform-origin: top left;
+                width: calc(100% / var(--escala));
+                height: calc(10vh / var(--escala));
+                overflow-x: hidden;
+            }
+        }
+
+        .table-container {
+            max-width: 1400px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            padding: 1.5rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .tabla-gases {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            font-size: 0.95rem;
+        }
+
+        .tabla-gases thead tr {
+            background: #0b2b2f;
+            color: #f5f9ff;
+            text-align: left;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .tabla-gases th {
+            padding: 1.2rem 1rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            border-bottom: 3px solid #ffb347;
+        }
+
+        /* Todas las celdas: centrado vertical por defecto */
+        .tabla-gases td {
+            padding: 1rem 1rem;
+            vertical-align: middle;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            color: #f0f3f8;
+            background-color: rgba(10, 25, 35, 0.85);
+            transition: all 0.2s ease;
+        }
+
+        /* Hover sutil */
+        .tabla-gases tr:hover td {
+            background-color: rgba(255, 180, 70, 0.15);
+            backdrop-filter: brightness(1.05);
+        }
+
+        /* --- PRIMERA COLUMNA: centrado vertical y horizontal, ocupa toda la altura --- */
+        .tabla-gases td:first-child {
+            vertical-align: middle;
+            height: 100%;          /* toma referencia de la fila */
+        }
+
+        /* Contenedor interno de la primera columna: se estira al 100% de la celda y centra su contenido */
+        .tabla-gases td:first-child .nombre-gas {
+            height: 100%;
+            display: flex;
+            align-items: center;      /* centrado vertical */
+            justify-content: center;  /* centrado horizontal */
+            gap: 8px;
+            flex-wrap: wrap;          /* permite que el texto ocupe varias líneas si es necesario, pero centrado */
+            text-align: center;
+        }
+
+        /* Estilo del bloque nombre-gas (para mantener iconos y fórmulas) */
+        .nombre-gas {
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .formula {
+            font-family: 'Courier New', monospace;
+            background: #00000055;
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+
+        /* Colores representativos por gas (borde izquierdo + fondo sutil) */
+        .gas-co2 td { background-color: rgba(180, 200, 210, 0.2); border-left: 4px solid #7f8c8d; }
+        .gas-co td { background-color: rgba(231, 76, 60, 0.2); border-left: 4px solid #e67e22; }
+        .gas-hcn td { background-color: rgba(155, 89, 182, 0.2); border-left: 4px solid #9b59b6; }
+        .gas-h2s td { background-color: rgba(241, 196, 15, 0.2); border-left: 4px solid #f1c40f; }
+        .gas-nh3 td { background-color: rgba(46, 204, 113, 0.2); border-left: 4px solid #2ecc71; }
+        .gas-formol td { background-color: rgba(52, 152, 219, 0.2); border-left: 4px solid #3498db; }
+        .gas-cloro td { background-color: rgba(31, 97, 61, 0.25); border-left: 4px solid #b3ffaa; }
+        .gas-fluor td { background-color: rgba(245, 218, 97, 0.2); border-left: 4px solid #f7dc6f; }
+        .gas-so2 td { background-color: rgba(210, 140, 70, 0.2); border-left: 4px solid #d35400; }
+        .gas-fosgeno td { background-color: rgba(125, 60, 80, 0.25); border-left: 4px solid #c44569; }
+        .gas-acroleina td { background-color: rgba(230, 126, 34, 0.2); border-left: 4px solid #e67e22; }
+
+        /* Ajuste para la segunda columna (texto descriptivo) */
+        .fisicas {
+            line-height: 1.5;
+        }
+
+        .badge-peligro {
+            display: inline-block;
+            background: #ff4d4d20;
+            border-radius: 20px;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffb347;
+            margin-top: 0.5rem;
+        }
+
+        /* Para que el contenido de la segunda columna no tenga margin extra que afecte al centrado vertical */
+        .tabla-gases td:last-child {
+            vertical-align: middle;
+        }
+
+        @media (max-width: 630px) {
+            .formula {
+                white-space: normal;
+                font-size: 0.7rem;
+            }
+            .nombre-gas {
+                font-size: 0.9rem;
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="table-container">
+    <table class="tabla-gases">
+        <thead>
+            <tr>
+                <th>Gas / Compuesto</th>
+                <th>Características físicas y de aspecto<br>(textual del PDF)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- CO2 - Dióxido de carbono -->
+            <tr class="gas-co2">
+                <td class="nombre-gas">💨 Dióxido de carbono <span class="formula">CO₂</span></td>
+                <td class="fisicas">"Es un gas no inflamable, soluble en agua, incoloro e inodoro, pero con pequeña molestia picante. Es más pesado que el aire y oxidante al contacto con el agua. No es tóxico pero sí asfixiante."<br>
+                <span class="badge-peligro">📌 Punto de fusión: -78 °C | Punto de ebullición: -57 °C | Densidad relativa (aire=1): 1,52</span></td>
+            </tr>
+            <!-- Monóxido de carbono CO -->
+            <tr class="gas-co">
+                <td class="nombre-gas">🔥 Monóxido de carbono <span class="formula">CO</span></td>
+                <td class="fisicas">"Es un gas incoloro, más ligero que el aire, que arde con llama azul. Es inflamable y explosivo en mezclas con el aire de 12.5% a 74.2%." Además: "Densidad relativa: (aire=1): 1,52 (una vez y media más pesado que el aire)."<br>
+                <span class="badge-peligro">⚠️ Se forma en combustión incompleta. Inflamable.</span></td>
+            </tr>
+            <!-- Cianuro de hidrógeno HCN -->
+            <tr class="gas-hcn">
+                <td class="nombre-gas">☠️ Cianuro de hidrógeno <span class="formula">HCN</span></td>
+                <td class="fisicas">"En estado gaseoso es un gas incoloro más pesado que el aire, en estado líquido es un líquido blanco azulado de olor característico a almendras amargas. Es explosivo en mezclas de 5% a 40% con el aire."<br>
+                <span class="badge-peligro">🧪 También llamado ácido cianhídrico o ácido prúsico.</span></td>
+            </tr>
+            <!-- Sulfuro de hidrógeno H2S -->
+            <tr class="gas-h2s">
+                <td class="nombre-gas">🥚 Sulfuro de hidrógeno <span class="formula">H₂S</span></td>
+                <td class="fisicas">"El ácido sulfhídrico (H2S) es un gas inflamable (en mezclas con el aire del 4.5% al 45%), incoloro, tóxico y soluble en agua. Emana un olor característico a huevos podridos ... Desprende un olor dulce a concentraciones más altas y paralizante del olfato."<br>
+                <span class="badge-peligro">❄️ Punto de ebullición: -60 °C | Punto de fusión: -86 °C</span></td>
+            </tr>
+            <!-- Amoniaco NH3 -->
+            <tr class="gas-nh3">
+                <td class="nombre-gas">🧼 Amoniaco <span class="formula">NH₃</span></td>
+                <td class="fisicas">"Es un gas inflamable (16% - 25% con el aire). A temperatura ambiente el amoniaco es un gas incoloro de olor muy penetrante y nauseabundo. Es fácilmente soluble y se evapora con rapidez. Generalmente se vende en forma líquida."</td>
+            </tr>
+            <!-- Formaldehído / metanal -->
+            <tr class="gas-formol">
+                <td class="nombre-gas">🏭 Formaldehído (metanal) <span class="formula">H₂C=O</span></td>
+                <td class="fisicas">"Es un compuesto químico, más específicamente un aldehído (el más simple de ellos), altamente volátil y muy inflamable. A temperatura normal es un gas incoloro de un olor penetrante, muy soluble en agua y en ésteres. Puede ser comprimido hasta el estado líquido y su punto de ebullición es -21 °C."</td>
+            </tr>
+            <!-- Cloro Cl2 -->
+            <tr class="gas-cloro">
+                <td class="nombre-gas">🧪 Cloro <span class="formula">Cl₂</span></td>
+                <td class="fisicas">"En condiciones normales y en estado puro forma dicloro, un gas tóxico no inflamable de color amarillo-verdoso formado por moléculas diatómicas (Cl2), unas 2,5 veces más pesado que el aire, de olor desagradable y picante. El cloro forma mezclas inflamables y explosivas con el hidrógeno y con algunos compuestos orgánicos."<br>
+                <span class="badge-peligro">🌡️ Punto de ebullición: -34,7 °C | Punto de fusión: -101,0 °C</span></td>
+            </tr>
+            <!-- Flúor / ácido fluorhídrico HF -->
+            <tr class="gas-fluor">
+                <td class="nombre-gas">⚛️ Flúor <span class="formula">F₂ / HF</span></td>
+                <td class="fisicas">"El flúor es un gas a temperatura ambiente, de color amarillo pálido, formado por moléculas diatómicas F2. Es el más electronegativo y reactivo de todos los elementos. Las soluciones de HF son transparentes e incoloras."<br>
+                <span class="badge-peligro">❄️ Punto de ebullición: -188 °C | Punto de fusión: -220 °C</span></td>
+            </tr>
+            <!-- Dióxido de azufre SO2 -->
+            <tr class="gas-so2">
+                <td class="nombre-gas">🌋 Dióxido de azufre <span class="formula">SO₂</span></td>
+                <td class="fisicas">"Es un gas incoloro con un característico olor asfixiante. Se trata de una sustancia reductora que con el tiempo, el contacto con el aire y la humedad, se convierte en trióxido de azufre. Forma una disolución ácida al disolverse en el agua."</td>
+            </tr>
+            <!-- Fosgeno (cloruro de carboncillo) COCl2 -->
+            <tr class="gas-fosgeno">
+                <td class="nombre-gas">💀 Fosgeno <span class="formula">COCl₂</span></td>
+                <td class="fisicas">"A temperatura ambiente (21 °C) el fosgeno es un gas venenoso. El gas de fosgeno puede ser incoloro o puede verse como una nube que varía de blanca a amarilla pálida. En bajas concentraciones tiene un olor agradable, como a heno recién cortado o maíz verde. El fosgeno por sí mismo no es inflamable, pero es un comburente."<br>
+                <span class="badge-peligro">📊 Punto de ebullición: 8 °C | Punto de fusión: -118 °C</span></td>
+            </tr>
+            <!-- Acroleína (aldehído acrílico) -->
+            <tr class="gas-acroleina">
+                <td class="nombre-gas">🔥 Acroleína <span class="formula">C₃H₄O</span></td>
+                <td class="fisicas">"Es un líquido incoloro o amarillo, de olor desagradable. Se disuelve fácilmente en agua y se evapora rápidamente cuando se calienta. También se inflama con facilidad."<br>
+                <span class="badge-peligro">🌡️ Punto de ebullición: 52,5 °C | Punto de fusión: -87,7 °C</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="text-align: center; margin-top: 1.5rem; font-size: 0.75rem; color: #bbb; letter-spacing: 0.5px;">
+        📄 Basado estrictamente en la sección 3.3.4 del documento "TEORÍA DEL FUEGO" (Normativa UNE, ISO) — Características literales extraídas del PDF.
+    </div>
+</div>
+</body>
+</html>
