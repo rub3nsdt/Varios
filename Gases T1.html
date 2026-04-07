@@ -24,7 +24,7 @@
         /* Escalado responsive para móviles (manteniendo alineación) */
         @media (max-width: 630px) {
             body {
-                --escala: 0.6;
+                --escala: 0.5;
                 transform: scale(var(--escala));
                 transform-origin: top left;
                 width: calc(100% / var(--escala));
@@ -104,7 +104,6 @@
         .nombre-gas {
             font-weight: 800;
             font-size: 1.1rem;
-            letter-spacing: 0.3px;
         }
 
         .formula {
@@ -151,17 +150,7 @@
             vertical-align: middle;
         }
 
-        @media (max-width: 630px) {
-            .formula {
-                white-space: normal;
-                font-size: 0.7rem;
-            }
-            .nombre-gas {
-                font-size: 0.9rem;
-                flex-direction: column;
-                gap: 4px;
-            }
-        }
+
     </style>
 </head>
 <body>
