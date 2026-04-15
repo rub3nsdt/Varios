@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Generadores de Vehículos de Emergencia | Tabla Técnica</title>
+    <!-- Google Fonts para tipografía moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (gratuito para iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #e9f0f5 0%, #d9e2ec 100%);
+            font-family: 'Inter', sans-serif;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Contenedor principal con sombra y borde elegante */
+        .table-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.65);
+            backdrop-filter: blur(1px);
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        /* Encabezado decorativo */
+        .table-header {
+            background: linear-gradient(135deg, #1A2A3F 0%, #0F1A28 100%);
+            padding: 1.6rem 2rem;
+            border-bottom: 3px solid #FFB347;
+        }
+
+        .table-header h1 {
+            color: white;
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .table-header h1 i {
+            background: #FFB347;
+            padding: 10px;
+            border-radius: 60px;
+            color: #1A2A3F;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .table-header p {
+            color: #cbd5e1;
+            margin-top: 0.5rem;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.2px;
+        }
+
+        /* Scroll horizontal para móviles */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 0 0 1.5rem 1.5rem;
+            background: #ffffffd9;
+        }
+
+        /* Diseño de tabla moderna */
+        .custom-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.95rem;
+            min-width: 680px;
+        }
+
+        .custom-table th {
+            background: #2C3E50;
+            color: white;
+            font-weight: 600;
+            padding: 1.1rem 1rem;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #FFB347;
+        }
+
+        /* Estilo de celdas */
+        .custom-table td {
+            padding: 1rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: middle;
+            transition: all 0.2s;
+            background-color: #ffffff;
+        }
+
+        /* Filas alternas sutiles */
+        .custom-table tbody tr:nth-child(even) td {
+            background-color: #f8fafc;
+        }
+
+        /* Hover con efecto suave */
+        .custom-table tbody tr:hover td {
+            background-color: #fff6e8;
+            transition: background 0.2s ease;
+        }
+
+        /* Columna vehículo más destacada */
+        .vehicle-name {
+            font-weight: 600;
+            color: #0b2b3b;
+            border-left: 4px solid #FFB347;
+            padding-left: 12px !important;
+            font-size: 0.98rem;
+        }
+
+        /* Badges para valores de generadores */
+        .gen-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f1f5f9;
+            padding: 0.4rem 0.9rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .gen-fixed {
+            background: #e6f7ec;
+            color: #1f6e43;
+            border-left: 3px solid #2e7d32;
+        }
+
+        .gen-portable {
+            background: #fff0db;
+            color: #b45f06;
+            border-left: 3px solid #f39c12;
+        }
+
+        .gen-empty {
+            background: #f1f1f1;
+            color: #7f8c8d;
+            font-weight: 400;
+            border-left: 3px solid #bdc3c7;
+        }
+
+        .gen-badge i {
+            font-size: 0.9rem;
+        }
+
+        .kva-unit {
+            font-size: 0.7rem;
+            font-weight: 500;
+            margin-left: 2px;
+        }
+
+        /* Centrado de columnas de generadores */
+        .custom-table th:not(:first-child),
+        .custom-table td:not(:first-child) {
+            text-align: center;
+        }
+
+        /* Pie de tabla opcional (estético) */
+        .table-footer {
+            background: #eef2f5;
+            padding: 0.8rem 1.5rem;
+            font-size: 0.75rem;
+            color: #4b5563;
+            border-top: 1px solid #cddfe7;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive extra */
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem;
+            }
+            .table-header h1 {
+                font-size: 1.4rem;
+            }
+            .custom-table th, .custom-table td {
+                padding: 0.8rem 0.6rem;
+            }
+            .gen-badge {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Animación sutil al cargar */
+        .table-container {
+            animation: fadeSlideUp 0.5s ease-out;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="table-container">
+    <div class="table-header">
+        <h1>
+            <i class="fas fa-charging-station"></i> 
+            Potencia de Emergencia
+        </h1>
+        <p><i class="fas fa-truck-fast"></i> Generadores fijos y portátiles · Vehículos de salvamento, desescombro, descontaminación y unidades especiales</p>
+    </div>
+    <div class="table-wrapper">
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-truck"></i> Tipo de vehículo</th>
+                    <th><i class="fas fa-plug"></i> Generador FIJO (kVA)</th>
+                    <th><i class="fas fa-battery-full"></i> Generador PORTÁTIL (kVA)</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <!-- Los datos se extraen fielmente del listado proporcionado -->
+                    <!-- 1. Salvamento y Desescombro (fijo 30) -->
+                    <tr>
+                        <td class="vehicle-name">🚛 Vehículos de Salvamento y Desescombro</td>
+                        <td><span class="gen-badge gen-fixed"><i class="fas fa-tower-broadcast"></i> 30 <span class="kva-unit">kVA</span></span></td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                    </tr>
+                    <!-- 2. Descontaminación (portátil 3) -->
+                    <tr>
+                        <td class="vehicle-name">🧼 Vehículos de Descontaminación</td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                        <td><span class="gen-badge gen-portable"><i class="fas fa-solar-panel"></i> 3 <span class="kva-unit">kVA</span></span></td>
+                    </tr>
+                    <!-- 3. Electroventilador ELEC 1359 (fijo 25 / portátil 5) -->
+                    <tr>
+                        <td class="vehicle-name">💨 Vehículos Electroventilador ELEC 1359</td>
+                        <td><span class="gen-badge gen-fixed"><i class="fas fa-tower-broadcast"></i> 25 <span class="kva-unit">kVA</span></span></td>
+                        <td><span class="gen-badge gen-portable"><i class="fas fa-solar-panel"></i> 5 <span class="kva-unit">kVA</span></span></td>
+                    </tr>
+                    <!-- 4. Electroventilador ELECT 1718 (fijo 30) -->
+                    <tr>
+                        <td class="vehicle-name">🌀 Vehículos Electroventilador ELECT 1718</td>
+                        <td><span class="gen-badge gen-fixed"><i class="fas fa-tower-broadcast"></i> 30 <span class="kva-unit">kVA</span></span></td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                    </tr>
+                    <!-- 5. Contenedor de Gran Desagüe (fijo 65) -->
+                    <tr>
+                        <td class="vehicle-name">💧 Vehículos Contenedor de Gran Desagüe</td>
+                        <td><span class="gen-badge gen-fixed"><i class="fas fa-tower-broadcast"></i> 65 <span class="kva-unit">kVA</span></span></td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                    </tr>
+                    <!-- 6. Contenedor de Agentes Especiales (portátil 9) -->
+                    <tr>
+                        <td class="vehicle-name">🧪 Vehículos Contenedor de Agentes Especiales</td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                        <td><span class="gen-badge gen-portable"><i class="fas fa-solar-panel"></i> 9 <span class="kva-unit">kVA</span></span></td>
+                    </tr>
+                    <!-- 7. Contenedor de Material de Extinción (fijo 5) -->
+                    <tr>
+                        <td class="vehicle-name">🔥 Vehículos Contenedor de Material de Extinción</td>
+                        <td><span class="gen-badge gen-fixed"><i class="fas fa-tower-broadcast"></i> 5 <span class="kva-unit">kVA</span></span></td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                    </tr>
+                    <!-- 8. Contenedor de Salvamento y Desescombro (fijo 9) -->
+                    <tr>
+                        <td class="vehicle-name">🏗️ Vehículos Contenedor de Salvamento y Desescombro</td>
+                        <td><span class="gen-badge gen-fixed"><i class="fas fa-tower-broadcast"></i> 9 <span class="kva-unit">kVA</span></span></td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                    </tr>
+                    <!-- 9. Contenedor de Protección (portátil 5) -->
+                    <tr>
+                        <td class="vehicle-name">🛡️ Vehículos Contenedor de Protección Civil</td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                        <td><span class="gen-badge gen-portable"><i class="fas fa-solar-panel"></i> 5 <span class="kva-unit">kVA</span></span></td>
+                    </tr>
+                    <!-- 10. Contenedor de Recuperación (portátil 9) -->
+                    <tr>
+                        <td class="vehicle-name">♻️ Vehículos Contenedor de Recuperación</td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                        <td><span class="gen-badge gen-portable"><i class="fas fa-solar-panel"></i> 9 <span class="kva-unit">kVA</span></span></td>
+                    </tr>
+                    <!-- 11. Furgoneta de Centro de Mando (portátil 9) -->
+                    <tr>
+                        <td class="vehicle-name">📡 Furgoneta de Centro de Mando (AL)</td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                        <td><span class="gen-badge gen-portable"><i class="fas fa-solar-panel"></i> 9 <span class="kva-unit">kVA</span></span></td>
+                    </tr>
+                    <!-- 12. Fulgoreta de Salvamento Acuático (portátil 3) -> respetamos nombre original Fulgoreta -->
+                    <tr>
+                        <td class="vehicle-name">🌊 Fulgoreta de Salvamento Acuático</td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                        <td><span class="gen-badge gen-portable"><i class="fas fa-solar-panel"></i> 3 <span class="kva-unit">kVA</span></span></td>
+                    </tr>
+                    <!-- 13. Fulgoreta de Avituallamiento (portátil 5) -->
+                    <tr>
+                        <td class="vehicle-name">🍱 Fulgoreta de Avituallamiento</td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                        <td><span class="gen-badge gen-portable"><i class="fas fa-solar-panel"></i> 5 <span class="kva-unit">kVA</span></span></td>
+                    </tr>
+                    <!-- 14. Fulgoreta de Enjambres (portátil 2) -->
+                    <tr>
+                        <td class="vehicle-name">🐝 Fulgoreta de Enjambres</td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                        <td><span class="gen-badge gen-portable"><i class="fas fa-solar-panel"></i> 2 <span class="kva-unit">kVA</span></span></td>
+                    </tr>
+                    <!-- 15. Fulgoreta BREC (portátil 9) -->
+                    <tr>
+                        <td class="vehicle-name">⚙️ Fulgoreta BREC</td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                        <td><span class="gen-badge gen-portable"><i class="fas fa-solar-panel"></i> 9 <span class="kva-unit">kVA</span></span></td>
+                    </tr>
+                    <!-- 16. Vehículos de Emergencias (fijo 30) -->
+                    <tr>
+                        <td class="vehicle-name">🚨 Vehículos de Emergencias</td>
+                        <td><span class="gen-badge gen-fixed"><i class="fas fa-tower-broadcast"></i> 30 <span class="kva-unit">kVA</span></span></td>
+                        <td><span class="gen-badge gen-empty"><i class="fas fa-minus-circle"></i> —</span></td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+    <div class="table-footer">
+        <span><i class="fas fa-microchip"></i> Fuente: especificaciones técnicas de flota</span>
+        <span><i class="fas fa-charging-station"></i> FIJO: integrado al vehículo · PORTÁTIL: unidad móvil auxiliar</span>
+    </div>
+</div>
+</body>
+</html>
